@@ -1,0 +1,37 @@
+{
+    "transactionResponse": {
+        "responseCode": "1",
+        "authCode": "HH5414",
+        "avsResultCode": "P",
+        "cvvResultCode": "",
+        "cavvResultCode": "",
+        "transId": "2149186848",
+        "refTransID": "2149186848",
+        "transHash": "D3A855F0934EB404DE3B13508D0E3826",
+        "testRequest": "0",
+        "accountNumber": "XXXX0015",
+        "accountType": "MasterCard",
+        "messages": [
+            {
+                "code": "1",
+                "description": "This transaction has been approved."
+            }
+        ],
+		"errors": [
+            {
+                "errorCode": "54",
+                "errorText": "The referenced transaction does not meet the criteria for issuing a credit."
+            }
+        ]
+    },
+    "refId": "123456",
+    "messages": {
+        "resultCode": "Ok",
+        "message": [
+            {
+                "code": "I00001",
+                "text": "Successful."
+            }
+        ]
+    }
+}

@@ -45,8 +45,8 @@ All OrderCloud Documentation should be culturally neutral.
 All OrderCloud Documentation should be [Accessible]().
 
 - Don't assume keyboard or mouse input in your directions.
-- Do not use [visual or directional language]() for descirptions or steps.
-- Further reading:
+- Do not use [visual or directional language]() for descirptions or steps
+.- Further reading:
     + [Google's Accessibility Style Guide]()
     + [MailChimp's style guide](https://styleguide.mailchimp.com/writing-for-accessibility/)
 
