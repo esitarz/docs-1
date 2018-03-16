@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Assignments</title>
+        <link rel="stylesheet" href="../../../../../../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../../../../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li><a href="../../../../../../../../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../../../../../../../../category/authentication.html">authentication</a></li>
+                    <li><a href="../../../../../../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../../../../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li class="active"><a href="../../../../../../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../../../../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../../../../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../../../../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../../../../../../posts/2018/Mar/16//docs/content/platform-guides/core-concepts assignments/" rel="bookmark"
+           title="Permalink to Assignments">Assignments</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../../../../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../../../../../../category/core-concepts.html">core-concepts</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>__Overview</h2>
+<p>There are basic principles around how assignments work that are critical to
+understanding our data model and more importantly how the data model can be
+applied to solve the most complex ordering scenarios.</p>
+<ul>
+<li>Assignments are used to define relationships</li>
+<li>Assignments are inclusive</li>
+<li>Assignments can be made at different levels depending on the resource</li>
+<li>Assignments may include configuration data</li>
+<li>Assignments cascade down higher levels to the individual user (except pricing)</li>
+<li>Assignments are many to many</li>
+</ul>
+<h2>__Assignments are Used to Define Relationships</h2>
+<p>When you are saving an assignment you are creating a relationship between a
+single resource (address, spending account, etc.) and a buyer party(user, user
+group, or buyer company). There is one exception to this binary rule, which is
+product assignment. The product assignment is a three-way association between
+a product, a buyer party and a price schedule.</p>
+<h2>__Assignments are Inclusive</h2>
+<p>When a buyer user is created they exist in a vacuum. The user will not have
+access to any objects until an assignment is made to them directly, or through
+a higher level party assignment.</p>
+<h2>__Assignments Can be Made at Different Levels</h2>
+<p>Assignments can be made to either the entire buyer company, a specific group
+of users (UserGroup) within that buyer company or for some resources a single
+buyer user.</p>
+<p>You may notice that some assignments contain configuration options. These
+options allow you to provide additional information about the assignment. For
+example, when assigning an address to a user, you can set IsShipping &amp;
+IsBilling, these properties control whether the address can be used as a
+shipping and/or billing address on an order.</p>
+<h2>__Assignments Cascade Down Higher Levels to the Individual User</h2>
+<p>When the platform is looking for what a given buyer user has access to, it is
+checking for assignments. If an assignment is made to a buyer then all the
+users that exist in that buyer organization have access to the assigned
+object. The same principle applies to user groups and their constituent users.
+Regardless of where an assignment is saved, all of these objects are presented
+to the buyer user seamlessly and in a very flat structure.</p>
+<p>The three-way product assignment is the exception to this, in that case the
+most specific pricing assignment will apply. For example, if you have a
+product assignment at the buyer level, but you would like a specific group of
+users to have different pricing, you could make an additional product
+assignment that included a UserGroupID and users assigned to that group would
+no longer see the buyer level pricing.</p>
+<p>The scenario you’ll want to avoid is a user with multiple product assignments
+of the same specificity party level (e.g. a user belonging to two user groups,
+each with different product assignments). While the platform won’t prohibit
+you from making these potentially problematic assignments, the pricing
+returned for any user belonging to multiple pricing groups will always be
+indeterminate.</p>
+<h2>__Assignments are Many to Many</h2>
+<p>Resources can be assigned to many different buyer parties. Those buyer parties
+can be assigned to many other resources. For example, one user can be assigned
+to multiple address while one address can be assigned to multiple users.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

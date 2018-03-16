@@ -1,0 +1,11 @@
+{
+	"ID":"sdfsdfsdfsd",	
+	"Type": "CreditCard",
+    "DateCreated": "2016-02-29T00:42:16.66+00:00",
+    "CreditCardID": "dXNHxqaRDkKWGU3z_s3N6g",
+    "SpendingAccountID": null,
+    "Description": null,
+    "Amount": 113.88,
+    "xp": {		
+	 }
+}

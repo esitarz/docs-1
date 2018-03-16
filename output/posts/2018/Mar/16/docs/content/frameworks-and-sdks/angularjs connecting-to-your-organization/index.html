@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Connecting To Your Organization</title>
+        <link rel="stylesheet" href="../../../../../../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../../../../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="../../../../../../../../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../../../../../../../../category/authentication.html">authentication</a></li>
+                    <li><a href="../../../../../../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../../../../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../../../../../../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../../../../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../../../../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../../../../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../../../../../../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs connecting-to-your-organization/" rel="bookmark"
+           title="Permalink to Connecting To Your Organization">Connecting To Your Organization</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../../../../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../../../../../../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->      <p>Linking your front-end application to an OrderCloud seller or buyer
+organization can be accomplished using the <code>scope</code> and <code>clientid</code> constants
+described below.</p>
+<h2>Application Constants</h2>
+<p><code>src/app/app.constants.json</code> is a small, yet powerful file host a JSON object
+of key value pairs to be used throughout the application. From this object,
+the build process will generate a file containing AngularJS constants:
+<a href="https://github.com/ordercloud-api/angular-
+seller/blob/development/gulp.config.js#L86">here</a>, which can then be injected into
+your various AngularJS controllers, factories, providers, etc. Think of it as
+a base configuration or settings file for your application.  </p>
+<table>  
+<tr>  
+<th>
+
+Constant
+
+</th>  
+<th>
+
+Type
+
+</th>  
+<th>
+
+Description
+
+</th> </tr>  
+<tr>  
+<td>
+
+`appname`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A short name for your application. This will be used in the `<title>` as well
+as displayed in the top left navigation of the application.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`scope`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A space delimited string of OrderCloud roles that will be requested during
+authentication.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`clientid`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+An OrderCloud ClientID for the seller, buyer network, or buyer application
+that will be used for authentication.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`environment`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A string declaring the OrderCloud environment the application will point to.
+Currently, only `production` is available; however, when a large release
+consisting of breaking changes is scheduled, a `staging` environment will be
+provided.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`defaultstate`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+The default ui-router state within the application that users will be directed
+to should they attempt to access a state that does not exist.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`html5mode`
+
+</td>  
+<td>
+
+bool
+
+</td>  
+<td>
+
+True/false whether you want HTML5 Mode enable within the application.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`bootswatchtheme`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+The Bootswatch theme that is automatically applied to the application during
+the build process. A list of available themes can be found
+[here](https://bootswatch.com/). A value of `null` will apply the default
+angular-seller theme.
+
+</td> </tr> </table>
+
+<h2>Process Environment Variable Overrides</h2>
+<p>The constants provided above can be overwritten within your hosting providers
+application settings. For example, within Heroku, you can override these
+constants using their <a href="https://devcenter.heroku.com/articles/config-vars#setting-up-
+config-vars-for-a-deployed-application">Config
+Variables</a>. This is accomplished in the
+<a href="https://github.com/ordercloud-api/angular-
+seller/blob/development/gulp.config.js#L116-L121"><code>gulp.config.js</code></a> file, which can be
+customized to include additional application constants.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

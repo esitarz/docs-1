@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Impersonation</title>
+        <link rel="stylesheet" href="../../../../../../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../../../../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li><a href="../../../../../../../../category/angularjs.html">angularjs</a></li>
+                    <li class="active"><a href="../../../../../../../../category/authentication.html">authentication</a></li>
+                    <li><a href="../../../../../../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../../../../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../../../../../../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../../../../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../../../../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../../../../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../../../../../../posts/2018/Mar/16//docs/content/platform-guides/authentication impersonation/" rel="bookmark"
+           title="Permalink to Impersonation">Impersonation</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../../../../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../../../../../../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>Overview</h2>
+<p>In some instances, you may want to allow a user to order on behalf of another
+user. We see this use case a lot in Customer Service Desk and Call Center
+scenarios where customers will call their orders in and the service rep places
+the order on the customer’s behalf. This workflow preserves the reporting
+data, email notifications, and presents the catalog ordering rules the buyer
+is configured for.</p>
+<p>The OrderCloud.io API supports this capability by allowing certain users to
+make API calls on behalf of a buyer user, which we refer to as impersonation.
+If you're an admin user, with the <code>BuyerImpersonation</code> role you can
+impersonate any buyer user under your organizational umbrella as long as an
+applicable Impersonation Config has been created. If you're a buyer user with
+the <code>BuyerImpersonation</code> role can impersonate any other buyer user within the
+same buyer company as long as an applicable Impersonation Config has been
+created.</p>
+<h2>Creating an Impersonation Config</h2>
+<p><code>ImpersonationBuyerID</code>, <code>ImpersonationGroupID</code>, and <code>ImpersonationUserID</code> all
+reference the party you want to grant access to do the impersonating. While
+<code>BuyerID</code>, <code>GroupID</code>, <code>UserID</code> all reference the party who will be
+impersonated. The <code>SecurityProfileID</code> is the Security Profile you would like
+to grant the user doing the impersonating (only while they are impersonating).
+<code>ClientID</code> is the specific application impersonation will be allowed in, if
+you need to impersonate in multiple applications, you’ll need to set up
+multiple Impersonation Configs.</p>
+<p>API reference: Create Impersonation Config</p>
+<div class="highlight"><pre><span></span>POST POST https://api.ordercloud.io/v1/impersonationconfig HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json
+
+{
+  &quot;ID&quot;: &quot;…&quot;,
+  &quot;ImpersonationBuyerID&quot;: &quot;…&quot;,
+  &quot;ImpersonationGroupID&quot;: &quot;…&quot;,
+  &quot;ImpersonationUserID&quot;: &quot;…&quot;,
+  &quot;BuyerID&quot;: &quot;…&quot;,
+  &quot;GroupID&quot;: &quot;…&quot;,
+  &quot;UserID&quot;: &quot;…&quot;,
+  &quot;SecurityProfileID&quot;: &quot;…&quot;,
+  &quot;ClientID&quot;: &quot;…&quot;,
+  &quot;BuyerID&quot;: &quot;…&quot;
+}
+</pre></div>
+
+
+<h2>Retrieving the Access Token</h2>
+<p>After you have successfully created an applicable Impersonation Config, the
+next step is to retrieve that buyer user's Access Token by using the Users
+<code>GetAccessToken</code> endpoint:</p>
+<p>API reference: Get Access Token</p>
+<div class="highlight"><pre><span></span>POST https://api.ordercloud.io/v1/buyers/{buyerID}/users/{userID}/accesstoken HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json
+
+{
+  &quot;ClientID&quot;: &quot;…&quot;,
+  &quot;Roles&quot;: [
+    &quot;DevCenterImpersonate&quot;
+  ]
+}
+</pre></div>
+
+
+<h2>Subsequent Requests</h2>
+<p>The<code>access_token</code> from the response will need to be included for each and
+every OrderCloud.io API request in the Authorization header prefaced by
+<code>Bearer</code>:</p>
+<div class="highlight"><pre><span></span>GET https://api.ordercloud.io/v1/buyers HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json
+</pre></div>
+
+
+<h2>Conclusion</h2>
+<p>You should now have a basic understanding of how to impersonate a buyer user
+on Ordercloud.io, and when you may need to use this functionality.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

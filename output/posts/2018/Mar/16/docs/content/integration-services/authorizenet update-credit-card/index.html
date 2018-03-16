@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Update Credit Card</title>
+        <link rel="stylesheet" href="../../../../../../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../../../../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li><a href="../../../../../../../../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../../../../../../../../category/authentication.html">authentication</a></li>
+                    <li class="active"><a href="../../../../../../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../../../../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../../../../../../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../../../../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../../../../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../../../../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../../../../../../posts/2018/Mar/16//docs/content/integration-services/authorizenet update-credit-card/" rel="bookmark"
+           title="Permalink to Update Credit Card">Update Credit Card</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../../../../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../../../../../../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>__Update Credit Card Overview</h2>
+<p>When a customer within your buyer application updates a credit card, the
+integration endpoint can be called in order to update that card on
+OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
+updated on Authorize.Net, followed by the card being patched on OrderCloud.io.
+If either step fails, all changes will be reverted in order to keep each
+system in sync. If the card is shared, meaning <code>Shared</code> was set to <code>true</code> when
+the card was created, <code>Shared</code> must be passed as <code>true</code> when updating.</p>
+<h2>__Update Credit Card Request</h2>
+<h2>__Update Credit Card Response</h2>
+<h2>__Error Handling</h2>
+<p>During the credit card update process, the Authorize.Net Customer Payment
+Profile will first be updated. Next, the card will be updated on
+OrderCloud.io. In the case that either step fails, the card data will be
+reverted in both locations, ensuring the data is accurate in each system.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+UpdateCreditCard.CreditCardIDRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID is required to update a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>Authorize.Net Error Response</h3>
+<table>  
+<tr>  
+<th>
+
+resultCode
+
+</th>  
+<th>
+
+message.code
+
+</th>  
+<th>
+
+message.text
+
+</th> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00013
+
+</td>  
+<td>
+
+Card Number is invalid.
+
+</td> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00013
+
+</td>  
+<td>
+
+Expiration Date is invalid.
+
+</td> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The credit card has expired.
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

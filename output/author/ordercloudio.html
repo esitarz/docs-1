@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>OrderCloud Documentation Content - OrderCloud.io</title>
+        <link rel="stylesheet" href="../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li><a href="../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../category/authentication.html">authentication</a></li>
+                    <li><a href="../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../category/csharp.html">csharp</a></li>
+                    <li><a href="../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs application-files/">Application Files</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info --><h2>Overview</h2>
+<p>The <code>src/app</code> directory contains all code specific to this application. Apart
+from <code>app.*.js</code> and its accompanying tests (discussed below), this directory
+is filled with subdirectories corresponding to high-level sections of the
+application, often corresponding to top-level routes. Each directory can have
+as many subdirectories as it needs, and the build system will understand what
+to do. For example, a top-level route might be <code>productManagement</code>, which
+would be a directory within the <code>src/app</code> directory that conceptually
+corresponds to the top-level route <code>/products</code>, though this is in no way
+enforced. <code>productManagement</code> may then have subdirectories for <code>inventory</code>,
+<code>pricing</code>, <code>product</code>, etc. The <code>product</code> submodule may then define a route of
+<code>/products/:id</code>, ad infinitum.</p>
+<div class="highlight"><pre><span></span>src/
+  |- app/
+  |  |- app.constants.json
+  |  |- app.controller.js
+  |  |- app.module.js
+  |  |- app.run.js
+  |  |- app.spec.js
+</pre></div>
+
+
+<h2><code>app.constants.json</code></h2>
+<p>This small, yet powerful file host a JSON object of key value pairs to be used
+throughout the application. From this object, the build process will generate
+a file containing AngularJS constants <a href="https://github.com/ordercloud-
+api/angular-seller/blob/development/gulp.config.js#L86-L123">here</a>, which are used
+to connect to your OrderCloud organizations.</p>
+<h2><code>app.controller.js</code></h2>
+<p>This is the application's main controller. <code>AppCtrl</code> is a good place for logic
+not specific to the template or route, such as menu logic or page title
+wiring. This controller also allows for numerous Angular services such as
+<code>$state</code> and <code>$ocMedia</code> and service methods such as <code>ocIsTouchDevice</code> and
+<code>stateLoading</code> to be globally available throughout the application's various
+templates. <code>AppCtrl</code> is not declared in a state provider like the
+application's component controllers. Instead, it is declared directly in
+<code>index.html</code> with <code>ng-controller="AppCtrl as application"</code>.</p>
+<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;AppCtrl&#39;</span><span class="p">,</span> <span class="nx">AppController</span><span class="p">)</span>
+<span class="p">;</span>
+<span class="kd">function</span> <span class="nx">AppController</span><span class="p">(</span><span class="nx">$state</span><span class="p">,</span> <span class="nx">$ocMedia</span><span class="p">,</span> <span class="nx">LoginService</span><span class="p">,</span> <span class="nx">appname</span><span class="p">,</span> <span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocIsTouchDevice</span><span class="p">,</span> <span class="nx">ocRoles</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">appname</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">$state</span> <span class="o">=</span> <span class="nx">$state</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">$ocMedia</span> <span class="o">=</span> <span class="nx">$ocMedia</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">isTouchDevice</span> <span class="o">=</span> <span class="nx">ocIsTouchDevice</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">stateLoading</span> <span class="o">=</span> <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Watch</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">logout</span> <span class="o">=</span> <span class="nx">LoginService</span><span class="p">.</span><span class="nx">Logout</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">userIsAuthorized</span> <span class="o">=</span> <span class="nx">ocRoles</span><span class="p">.</span><span class="nx">UserIsAuthorized</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2><code>app.module.js</code></h2>
+<p>This is our main app file. It kickstarts the whole process by requiring all
+the modules that we need.</p>
+<p>By default, the OrderCloud AngularJS Seed includes a few useful modules
+written by the AngularJS and Angular-UI teams. We also include the
+<code>orderCloud.sdk</code> module for connecting to the OrderCloud API. Lastly, some
+helpful third party modules are included as well, such as <code>toastr</code> and
+<code>angular-busy</code>.</p>
+<p>All components within the application are tied directly to the <code>orderCloud</code>
+module, so they do not need to be included here.</p>
+<div class="highlight"><pre><span></span>angular.module(&#39;orderCloud&#39;, [
+        &#39;ngSanitize&#39;,
+        &#39;ngAnimate&#39;,
+        &#39;ngMessages&#39;,
+        &#39;ngTouch&#39;,
+        &#39;ui.tree&#39;,
+        &#39;ui.router&#39;,
+        &#39;ui.select&#39;,
+        &#39;ui.bootstrap&#39;,
+        &#39;ui.select&#39;,
+        &#39;LocalForageModule&#39;,
+        &#39;toastr&#39;,
+        &#39;angular-busy&#39;,
+        &#39;jcs-autoValidate&#39;,
+        &#39;treeControl&#39;,
+        &#39;hl.sticky&#39;,
+        &#39;angularPayments&#39;,
+        &#39;ordercloud-angular-sdk&#39;
+    ]
+);
+</pre></div>
+
+
+<p>id="-app-run-js-"</p>
+<h2><code>app.run.js</code></h2>
+<p>Use the main applications run method to execute any code after services have
+been instantiated. By default, we initialize <code>ocStateLoading</code>, validation
+error messages (using <code>angular-auto-validate</code>), and validation styling.</p>
+<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">AppRun</span><span class="p">)</span>
+<span class="p">;</span>
+
+
+<span class="kd">function</span> <span class="nx">AppRun</span><span class="p">(</span><span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocRefreshToken</span><span class="p">,</span> <span class="nx">defaultErrorMessageResolver</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Init</span><span class="p">();</span>
+
+
+    <span class="nx">defaultErrorMessageResolver</span><span class="p">.</span><span class="nx">getErrorMessages</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorMessages</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">errorMessages</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">);</span>
+    <span class="p">});</span>
+
+
+    <span class="nx">validator</span><span class="p">.</span><span class="nx">setValidElementStyling</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2><code>app.spec.js</code></h2>
+<p>One of the design philosophies of <code>angular-seller</code> is that tests should exist
+alongside the code they test and that the build system should be smart enough
+to know the difference and react accordingly. As such, the unit test for
+<code>app.*.js</code> is <code>app.spec.js</code>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs connecting-to-your-organization/" rel="bookmark"
+                           title="Permalink to Connecting To Your Organization">Connecting To Your Organization</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->                <p>Linking your front-end application to an OrderCloud seller or buyer
+organization can be accomplished using the <code>scope</code> and <code>clientid</code> constants
+described below.</p>
+<h2>Application Constants</h2>
+<p><code>src/app/app.constants.json</code> is a small, yet powerful file host a JSON object
+of key value pairs to be used throughout the application. From …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs connecting-to-your-organization/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs contributing/" rel="bookmark"
+                           title="Permalink to Contributing">Contributing</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->                <p>The OrderCloud team welcomes any and all open-source contributors to create a
+pull request for bug fixes, enhancements, or new features (pending review).</p>
+<p>Prior to writing any code, be sure to open an issue
+(<a href="https://github.com/ordercloud-api/angular-seller/issues">Seller</a>,
+<a href="https://github.com/ordercloud-api/angular-seller/issues">Buyer</a>) with a
+detailed description of your problem or proposed enhancement. We may already
+be …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs contributing/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs getting-started/" rel="bookmark"
+                           title="Permalink to Getting Started">Getting Started</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>Introduction</h2>
+<p>OrderCloud provides fully functional, open source starter applications built
+for seller and buyer users on the OrderCloud.io platform in Angular 1.X.
+Ideally solution implementers will fork or clone this repository to maintain
+their customized admin application through merges and pull requests after new
+versions are released in …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs getting-started/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs source-directory/" rel="bookmark"
+                           title="Permalink to Source Directory">Source Directory</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->                <h2><code>./src/</code> Directory</h2>
+<p>This is where the majority of development work will occur. It contains all of
+the application code, tests, and assets.</p>
+<div class="highlight"><pre><span></span>src/
+  |- app/
+  |- assets/
+  |- index.html
+</pre></div>
+
+
+<ul>
+<li><strong>src/app/</strong> - contains all of the application code and corresponding tests</li>
+<li><code>src/assets/</code> - static files like fonts and images</li>
+<li><strong>src/index.html</strong> - this …</li></ul>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/angularjs source-directory/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/csharp getting-started/" rel="bookmark"
+                           title="Permalink to Getting Started">Getting Started</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/csharp.html">csharp</a>.</p>
+
+</footer><!-- /.post-info -->                <h4>We are currently updating and enhancing our C# SDK. When that work is</h4>
+<p>complete, we'll publish an updated guide here. In the meantime, you can still
+use our <a href="https://github.com/ordercloud-api/OrderCloud-CSharp-
+SDK">existing C# SDK</a>. Please don't hesitate to contact us with any questions.</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/frameworks-and-sdks/csharp getting-started/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet authorize-and-capture-transaction/" rel="bookmark"
+                           title="Permalink to Authorize And Capture Transaction">Authorize And Capture Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Authorize and Capture Transaction Overview</h2>
+<p>Authorizing and Capturing a credit card transaction is one of the most
+involved methods included in this integration. This method will create a new
+Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
+one does not already exist, authorize and capture …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet authorize-and-capture-transaction/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet authorize-only-transaction/" rel="bookmark"
+                           title="Permalink to Authorize Only Transaction">Authorize Only Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Authorize Only Transaction Overview</h2>
+<p>Though a payment is not actually being captured, the Authorize Only
+transaction method involves just as many integration calls as Authorizing and
+Capturing a credit card transaction. This method will create a new Customer
+Payment Profile on Authorize.Net and credit card on OrderCloud.io if …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet authorize-only-transaction/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet configuring-integration/" rel="bookmark"
+                           title="Permalink to Configuring Integration">Configuring Integration</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Authorize.Net Credentials</h2>
+<p>To configure your integration, register for an account on
+<a href="https://www.authorize.net/solutions/merchantsolutions/pricing/">Authorize.Net</a>
+or login to your existing account. Navigate to <em>Account &gt; Settings</em> to obtain
+your Api Login ID and Transaction Key.</p>
+<p>![](assets/images/docs-guides/integrations/authorizenet/authorize-net-
+credentials.png)</p>
+<h2>__OrderCloud.io Configuration</h2>
+<p>Once you’ve obtained these credentials …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet configuring-integration/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet create-credit-card/" rel="bookmark"
+                           title="Permalink to Create Credit Card">Create Credit Card</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Create Credit Card Overview</h2>
+<p>When a customer within your buyer application creates a credit card, the
+integration endpoint can be called in order to create that card within
+OrderCloud.io as well as Authorize.Net. The card will created as a personal
+card by default. However, passing <code>true</code> for <code>Shared …</code></p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet create-credit-card/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet delete-credit-card/" rel="bookmark"
+                           title="Permalink to Delete Credit Card">Delete Credit Card</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Delete Credit Card Overview</h2>
+<p>When a customer within your buyer application deletes a credit card, the
+integration endpoint can be called in order to delete that card on
+OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
+removed on Authorize.Net, followed by the card being …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet delete-credit-card/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet overview/" rel="bookmark"
+                           title="Permalink to Overview">Overview</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Authorize.Net Overview</h2>
+<p><a href="http://www.authorize.net/">Authorize.Net</a> enables merchants to authorize,
+settle and manage credit card and electronic check transactions securely and
+reliably. Authorize.Net merchants encompass a wide variety of business
+industries: information, communication, government, sports, religion,
+education, gourmet foods and many others. Regardless of their business type,
+merchants benefit by …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet overview/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet prior-authorization-capture-transaction/" rel="bookmark"
+                           title="Permalink to Prior Authorization Capture Transaction">Prior Authorization Capture Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Prior Authorization Capture Transaction Overview</h2>
+<p>In the case that Authorize Only was previously used for a payment, Prior
+Authorization Capture Transaction can be used to actually capture the payment.
+This method will first capture the payment on Authorize.Net, then create an
+additional transaction on the previously created payment on …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet prior-authorization-capture-transaction/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet refund-transaction/" rel="bookmark"
+                           title="Permalink to Refund Transaction">Refund Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Refund Transaction Overview</h2>
+<p>In the case that a refund is required for a previously captured transaction,
+use the Refund Transaction method. This method will refund the transaction on
+Authorize.Net for either an existing card or dynamically to the card details
+provided then create an additional transaction on the existing …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet refund-transaction/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet update-credit-card/" rel="bookmark"
+                           title="Permalink to Update Credit Card">Update Credit Card</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Update Credit Card Overview</h2>
+<p>When a customer within your buyer application updates a credit card, the
+integration endpoint can be called in order to update that card on
+OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
+updated on Authorize.Net, followed by the card being …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet update-credit-card/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet void-transaction/" rel="bookmark"
+                           title="Permalink to Void Transaction">Void Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Void Transaction Overview</h2>
+<p>Though this method is used most commonly by other methods when certain actions
+fail, it can also be called directly through the integration. This method will
+void a previous transaction on Authorize.Net, then create a transaction tied
+to the original payment on OrderCloud.io.</p>
+<h2>__Void Transaction …</h2>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/authorizenet void-transaction/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates configuring-catalog/" rel="bookmark"
+                           title="Permalink to Configuring Catalog">Configuring Catalog</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Configuring Catalog Overview</h2>
+<p>In order to be considered when estimating shipping rates, products and their
+price schedules will need a few things set up first.</p>
+<h2>__ApplyShipping</h2>
+<p>First, <code>ApplyShipping</code> will need to be set to true on the price schedule
+assigned to the product. Any Line Items containing Products without this …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates configuring-catalog/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates configuring-integration/" rel="bookmark"
+                           title="Permalink to Configuring Integration">Configuring Integration</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Creating Configuration</h2>
+<p>To configure your integration, navigate to the Dashboard Dashboard
+Integrations page within OrderCloud.io and select Shipping Rates.</p>
+<h3>Selecting Carriers</h3>
+<p>First, select which carriers you would like shipping rate estimates returned
+from. Current options include USPS and UPS. If UPS or FedEx are selected, you
+have the option …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates configuring-integration/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates get-line-item-rates/" rel="bookmark"
+                           title="Permalink to Get Line Item Rates">Get Line Item Rates</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Get Line Item Rates Overview</h2>
+<p>The next method available within the OrderCloud.io Shipping Rates integration
+is <em>GetLineItemRates</em>. This method will obtain shipping rate estimates from
+the carriers selected in your integration configuration for each individual
+Line Item in your order based on the item’s product weight, but regardless …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates get-line-item-rates/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates get-rates/" rel="bookmark"
+                           title="Permalink to Get Rates">Get Rates</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Get Rates Overview</h2>
+<p>The first method available within the OrderCloud.io Shipping Rates integration
+is <em>GetRates</em>. This method will group together Line Items on an Order based on
+the Line Items' <code>ShippingAddress</code> and the Line Item Products'
+<code>ShipFromAddressID</code>, calculate the total weight of each shipment based on the
+included Products' …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates get-rates/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates overview/" rel="bookmark"
+                           title="Permalink to Overview">Overview</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Shipping Rates Overview</h2>
+<p>OrderCloud.io offers the ability to provide weight-based shipping rate
+estimates within your storefronts based on the commercial shipping rates.
+Supported carriers within this integration currently include USPS, UPS, and
+FedEx.</p>
+<p>Once configured, the OrderCloud.io Shipping Rates integration offers three
+methods: <em>GetRates</em> , <em>GetLineItemRates</em> , and <em>SetShippingCost</em>.</p>
+<p>GetRates …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates overview/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates set-shipping-cost/" rel="bookmark"
+                           title="Permalink to Set Shipping Cost">Set Shipping Cost</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/shippingrates.html">shippingrates</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Set Shipping Cost Overview</h2>
+<p>Once a user selects their desired shipper(s) for their order, the
+<code>ShippingCost</code> on the Order can be set via the <em>SetShippingCost</em> method. This
+method will patch the Order with the provided <code>ShippingCost</code> value and return
+the updated Order.</p>
+<h2>__Set Shipping Cost Request</h2>
+<h2>__Set Shipping Cost …</h2>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/integration-services/shippingrates set-shipping-cost/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication anonymous-shopping/" rel="bookmark"
+                           title="Permalink to Anonymous Shopping">Anonymous Shopping</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>Overview</h2>
+<p>Anonymous Shopping, or Guest Checkout, is when a user is enabled to browse a
+catalog of products and/or checkout without registering themselves.
+Accomplishing this requires OrderCloud.io developers to pull together a lot of
+platform knowledge. We'll summarize that information here.</p>
+<h2>Configuring the Application</h2>
+<p>An anonymous buyer experience …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication anonymous-shopping/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication developer-access/" rel="bookmark"
+                           title="Permalink to Developer Access">Developer Access</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Developer Access</h2>
+<p>In order to make it easier for developers to get in and start testing
+applications we made a unique role called <code>DevCenterImpersonate</code>. This role
+allows you to log into your application with your Dev Center username and
+password so you don't have to go through the trouble of …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication developer-access/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication impersonation/" rel="bookmark"
+                           title="Permalink to Impersonation">Impersonation</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>Overview</h2>
+<p>In some instances, you may want to allow a user to order on behalf of another
+user. We see this use case a lot in Customer Service Desk and Call Center
+scenarios where customers will call their orders in and the service rep places
+the order on the customer …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication impersonation/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication oauth2-workflows/" rel="bookmark"
+                           title="Permalink to Oauth2 Workflows">Oauth2 Workflows</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>What is OAuth?</h2>
+<p>OAuth is an open standard for authorization commonly used as a way for users
+to log into third party websites using Microsoft, Google, Facebook etc.
+accounts without exposing their password. It is increasingly becoming an
+industry standard for security and permission-based application experiences
+and is what we …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication oauth2-workflows/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication refresh-tokens/" rel="bookmark"
+                           title="Permalink to Refresh Tokens">Refresh Tokens</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>You will learn how to set-up and use refresh tokens which will allow your
+users to remain signed in without having to reauthenticate. This guide assumes
+you already know how to authenticate using one of the four workflows</p>
+<h2>__Understanding Tokens</h2>
+<p>A successful request to authenticate will return a response …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication refresh-tokens/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/authentication security-profiles/" rel="bookmark"
+                           title="Permalink to Security Profiles">Security Profiles</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/authentication.html">authentication</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Security Profiles are an assortment of roles that give access to specific
+endpoints in the OrderCloud.io API. Profiles can be assigned to the users of
+your Seller or Buyer application. If a request is made by a user without
+sufficient roles they will receive 403 Forbidden response. Configuration …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/authentication security-profiles/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features conventions/" rel="bookmark"
+                           title="Permalink to Conventions">Conventions</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>With few exceptions, the OrderCloud.io API adheres to a RESTful architectural
+style. URIs, HTTP verbs, headers, payloads, and response codes all follow
+consistent and predictable patterns. This guide will outline conventions that
+permeate the entire platform.</p>
+<h2>__SSL Everywhere</h2>
+<p>API access is only allowed via HTTPS; connections on port …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features conventions/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features errors/" rel="bookmark"
+                           title="Permalink to Errors">Errors</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>OrderCloud.io uses conventional HTTP response codes to indicate success or
+failure of an API request. In general, codes in the <code>2xx</code> range indicate
+success and codes in the <code>4xx</code> range indicate an error failed given the
+information provided (e.g., a required parameter). Only when something goes
+terribly …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features errors/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features extended-properties/" rel="bookmark"
+                           title="Permalink to Extended Properties">Extended Properties</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>Overview</h2>
+<p>The reality of all enterprise platforms is the need to customize the data
+model. To accommodate this, OrderCloud.io designed a property called Extended
+Properties (XP) to allow enterprise customization of the OrderCloud data
+model. OrderCloud.io exposes the <code>{ xp: {} }</code> property on most resources
+allowing you to apply JSON …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features extended-properties/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features filtering/" rel="bookmark"
+                           title="Permalink to Filtering">Filtering</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. The items from such a call could very well be in the thousands so
+being able to narrow down the range of the items returned is critical, this
+can be done with the use of filters …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features filtering/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features http-methods/" rel="bookmark"
+                           title="Permalink to Http Methods">Http Methods</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>A resource is a set of endpoints used to interact with an object of that same
+name. OrderCloud.io adheres to RESTful conventions in its usage of HTTP verbs.
+You can expect a subset of the following methods to exist on every Resource.</p>
+<h2>__HTTP Methods</h2>
+<table>  
+<tr>  
+<th>
+
+OrderCloud.io Verb
+
+</th>  
+<th>
+
+HTTP …</th></tr></table>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features http-methods/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features pagination/" rel="bookmark"
+                           title="Permalink to Pagination">Pagination</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. These resources can potentially include thousands of items so
+restricting the data that is returned from such a request is not only
+practical but necessary. OrderCloud.io offers server-side pagination that
+partitions the data returned from …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features pagination/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features searching/" rel="bookmark"
+                           title="Permalink to Searching">Searching</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Searching data client side can be fine for smaller sets of data but can
+quickly become unwieldy with large sets of data. To address this issue our API
+supports server side search queries that do all of the heavy lifting for you.</p>
+<h2>__Searching</h2>
+<p>For open-ended, Google-esque searches, simply provide …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features searching/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features sorting/" rel="bookmark"
+                           title="Permalink to Sorting">Sorting</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/basic-api-features.html">basic-api-features</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. The results returned from a list method have a default sort order,
+but you can also specify a sort order. Properties marked as “Sortable” in the
+API Reference can be sorted on.</p>
+<h2>__Sorting</h2>
+<p>Perhaps you want …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/basic-api-features sorting/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/core-concepts assignments/" rel="bookmark"
+                           title="Permalink to Assignments">Assignments</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/core-concepts.html">core-concepts</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>There are basic principles around how assignments work that are critical to
+understanding our data model and more importantly how the data model can be
+applied to solve the most complex ordering scenarios.</p>
+<ul>
+<li>Assignments are used to define relationships</li>
+<li>Assignments are inclusive</li>
+<li>Assignments can be made at different levels …</li></ul>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/core-concepts assignments/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/core-concepts rules-engine/" rel="bookmark"
+                           title="Permalink to Rules Engine">Rules Engine</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/core-concepts.html">core-concepts</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Introduction</h2>
+<p>What’s a rules engine? It’s a system that executes rules. Okay...so what’s a
+rule? In its simplest form, it’s an if-then statement that is provided from
+the outside, rather than being “baked in” to the engine itself. In the case of
+OrderCloud.io, we …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/core-concepts rules-engine/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started introduction-to-ordercloud/" rel="bookmark"
+                           title="Permalink to Introduction To Ordercloud">Introduction To Ordercloud</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/getting-started.html">getting-started</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__What is OrderCloud.io?</h2>
+<h3>Overview</h3>
+<p>OrderCloud.io is a cloud-hosted B2B eCommerce platform exposed entirely via a
+RESTful API. It enables rapid development of custom, secure, and scalable B2B
+eCommerce solutions. Spin up a fully functional B2B app in minutes and
+customize it to limits of your imagination.</p>
+<h3>Benefits of …</h3>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started introduction-to-ordercloud/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started quick-start-guide/" rel="bookmark"
+                           title="Permalink to Quick Start Guide">Quick Start Guide</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/getting-started.html">getting-started</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Getting Started with OrderCloud.io</h2>
+<p>OrderCloud.io is a RESTful API that enables you to create complex, custom B2B
+eCommerce solutions.</p>
+<p>This guide is meant to get you started with OrderCloud.io as quickly as
+possible. In order to accomplish this, we’ve stripped away some of the detail,
+so …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started quick-start-guide/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started using-the-api-console/" rel="bookmark"
+                           title="Permalink to Using The Api Console">Using The Api Console</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/getting-started.html">getting-started</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Introduction</h2>
+<p>The OrderCloud.io API Console provides instant access to your OrderCloud
+applications. It is extremely useful for rapidly spinning up some data to
+develop against or learning about all the different endpoints OrderCloud.io
+has to offer.</p>
+<h2>__Getting to the Console</h2>
+<p>The console is available at console.ordercloud.io …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started using-the-api-console/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started using-the-dashboard/" rel="bookmark"
+                           title="Permalink to Using The Dashboard">Using The Dashboard</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../category/getting-started.html">getting-started</a>.</p>
+
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>The OrderCloud.io Dashboard is the central hub for managing your OrderCloud
+organizations and applications. This guide is meant to help you understand all
+the tools available to you and your team while creating and maintaining
+amazing B2B eCommerce solutions.</p>
+<p>You will not be able to view the Dashboard …</p>
+                <a class="readmore" href="../posts/2018/Mar/16//docs/content/platform-guides/getting-started using-the-dashboard/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
