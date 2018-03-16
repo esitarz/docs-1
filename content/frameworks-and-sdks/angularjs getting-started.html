@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Getting Started</title>
+        <link rel="stylesheet" href="../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="../../../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../../../category/authentication.html">authentication</a></li>
+                    <li><a href="../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../..//docs/content/frameworks-and-sdks/angularjs getting-started.html" rel="bookmark"
+           title="Permalink to Getting Started">Getting Started</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../category/angularjs.html">angularjs</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>Introduction</h2>
+<p>OrderCloud provides fully functional, open source starter applications built
+for seller and buyer users on the OrderCloud.io platform in Angular 1.X.
+Ideally solution implementers will fork or clone this repository to maintain
+their customized admin application through merges and pull requests after new
+versions are released in the base fork (this repository).</p>
+<p>The starter app for both types of applications can be found on GitHub by
+following the links below:</p>
+<ul>
+<li><a href="https://github.com/ordercloud-api/angular-seller">seller starter application</a></li>
+<li><a href="https://github.com/ordercloud-api/angular-buyer">buyer starter application</a></li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+<li><a href="https://git-scm.com/">Git (version control)</a></li>
+<li><a href="http://nodejs.org/">Node.js (npm)</a></li>
+<li><a href="https://bower.io/#install-bower">Bower (another package manager)</a></li>
+<li><a href="http://gulpjs.com/">Gulp.js (automation)</a></li>
+</ul>
+<h2>Installation</h2>
+<p>Install the project dependencies:</p>
+<div class="highlight"><pre><span></span>$ npm install
+</pre></div>
+
+
+<p>If for some reason the <code>post-install</code> script fails, reattempt the bower
+install manually:</p>
+<div class="highlight"><pre><span></span>$ bower install
+</pre></div>
+
+
+<h2>Local Development</h2>
+<p>To view your application locally while you work, run the following gulp
+command:</p>
+<div class="highlight"><pre><span></span>$ gulp build
+</pre></div>
+
+
+<p>This will pull together everything in the projects <code>./src/</code> directory and put
+the result into a new <code>./build/</code> folder (ignored by source control).</p>
+<p>After the build succeeds, an express server will fire up and open the app in
+your default browser @ <code>http://localhost:3000/</code>. Additionally, a watch is
+initiated so that <a href="https://browsersync.io/">BrowserSync</a> can automatically
+refresh the app when changes to the <code>./src/</code> directory are made.</p>
+<h2>Running Unit and E2E Tests</h2>
+<p><a href="https://karma-runner.github.io/1.0/index.html">Karma</a>,
+<a href="https://jasmine.github.io/">Jasmine</a>, and <a href="http://www.protractortest.org/#/">Protrator (e2e test framework for
+AngularJS)</a> are our test frameworks of
+choice, everything you need to run unit or E2E tests should already be
+installed via npm.  </p>
+<table>  
+<tr>  
+<th>
+
+Task
+
+</th>  
+<th>
+
+File Extension
+
+</th>  
+<th>
+
+Description
+
+</th> </tr>  
+<tr>  
+<td>
+
+`gulp test:unit`
+
+</td>  
+<td>
+
+`*.spec.js`
+
+</td>  
+<td>
+
+Runs only the unit tests
+
+</td> </tr>  
+<tr>  
+<td>
+
+`gulp test:e2e`
+
+</td>  
+<td>
+
+`*.test.js`
+
+</td>  
+<td>
+
+Runs only the E2E tests
+
+</td> </tr>  
+<tr>  
+<td>
+
+`gulp test`
+
+</td>  
+<td>
+
+`*.spec.js` or `*.test.js`
+
+</td>  
+<td>
+
+Runs both the unit and E2E tests
+
+</td> </tr> </table>
+
+<h2>Compiling for Production</h2>
+<p>You can run the following command to compile your code to a production-ready
+state:</p>
+<div class="highlight"><pre><span></span>$ gulp compile
+</pre></div>
+
+
+<p>This will concat all similar file types into a single file, minify the code,
+and drop the result into a new <code>./compile/</code> folder. Images in the
+<code>./src/assets/</code> directory are compressed for web optimization and template
+file contents are stringified and added to the angular <code>$templateCache</code> for
+faster load times.</p>
+<blockquote>
+<p>While we've worked hard to ensure that your app will behave the same on both
+build and compile, it is always recommended that the compiled code be
+thoroughly tested before moving to production.</p>
+</blockquote>
+<p>When the compile is complete, the express server will fire up again and open
+the app @ <code>http://localhost:3000/</code>. For performance reasons the watch is not
+fired on compile like it is on build.</p>
+<h2>Deploying to <a href="https://pages.github.com/">GitHub Pages</a></h2>
+<p>Having worked in the B2B world for over 15 years we know that showing
+development progress is extremely important, especially during large projects.
+That is why we've provided an easy way for you to deploy your compiled code
+directly to a gh-pages branch for fast and easy demos!</p>
+<div class="highlight"><pre><span></span>$ gulp deploy
+</pre></div>
+
+
+<p>This will push a compiled version of your working copy directly to your
+default git remote and can be viewed here @ <code>username.github.io/repository-
+name</code>.</p>
+<p><strong>Important Note!</strong> Your angular app <em>must <strong>not</strong></em> be in HTML5 mode for the
+routing on gh-pages to work properly. This can be changed in
+<code>./src/app/app.constants.json</code> prior to running the task.</p>
+<p>Github pages can take a few minutes (about 10) to propagate before your app
+will become available.</p>
+<p>Of course, this is not the only deployment option available. Angular-based
+OrderCloud applications are
+<a href="https://devcenter.heroku.com/categories/nodejs">preconfigured</a> to be deployed
+on <a href="https://www.heroku.com/">Heroku</a> using their <a href="https://devcenter.heroku.com/articles/github-integration">GitHub
+integration</a> and the
+<code>./compile</code> directory is made up of entirely static files that can be easily
+deployed to any hosting provider.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

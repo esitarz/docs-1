@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+        <meta charset="utf-8" />
+        <title>Refund Transaction</title>
+        <link rel="stylesheet" href="../../../theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../">OrderCloud Documentation Content </a></h1>
+                <nav><ul>
+                    <li><a href="../../../category/angularjs.html">angularjs</a></li>
+                    <li><a href="../../../category/authentication.html">authentication</a></li>
+                    <li class="active"><a href="../../../category/authorizenet.html">authorizenet</a></li>
+                    <li><a href="../../../category/basic-api-features.html">basic-api-features</a></li>
+                    <li><a href="../../../category/core-concepts.html">core-concepts</a></li>
+                    <li><a href="../../../category/csharp.html">csharp</a></li>
+                    <li><a href="../../../category/getting-started.html">getting-started</a></li>
+                    <li><a href="../../../category/shippingrates.html">shippingrates</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../..//docs/content/integration-services/authorizenet refund-transaction.html" rel="bookmark"
+           title="Permalink to Refund Transaction">Refund Transaction</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-16T12:35:35.774570-05:00">
+                Published: Fri 16 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../../author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="../../../category/authorizenet.html">authorizenet</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>__Refund Transaction Overview</h2>
+<p>In the case that a refund is required for a previously captured transaction,
+use the Refund Transaction method. This method will refund the transaction on
+Authorize.Net for either an existing card or dynamically to the card details
+provided then create an additional transaction on the existing payment on
+OrderCloud.io.</p>
+<p>If the refund transaction is successful, but there is an error while creating
+the transaction on OrderCloud.io, the Authorize.Net transaction will be
+voided.</p>
+<h2>__Refund Transaction Request</h2>
+<p>This method requires either CardDetails.CreditCardID (for a previously created
+card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
+new card). It also requires CardDetails.PaymentID referencing the previously
+created payment being refunded.</p>
+<h2>__Refund Transaction Response</h2>
+<h2>__Error Handling</h2>
+<p>During the refund process, the Authorize.Net refund transaction will be
+created first, followed by the transaction on OrderCloud.io. In the case that
+the OrderCloud.io step fails, the refund will be voided automatically on
+Authorize.Net.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+RefundTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to refund a transaction.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+RefundTransaction.PaymentIDRequired
+
+</td>  
+<td>
+
+CardDetails.PaymentID is required to refund a transaction.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+RefundTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to refund a transaction.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+RefundTransaction.CardDetailsRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID OR CardDetails.CardNumber and
+CardDetails.ExpirationDate are required to refund a transaction.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.PaymentID</code> was provided:</p>
+<p>If an incorrect <code>OrderID</code> was provided:</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
