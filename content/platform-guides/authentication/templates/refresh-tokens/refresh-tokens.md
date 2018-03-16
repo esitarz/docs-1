@@ -34,14 +34,54 @@ Dashboard. A refresh token duration of `0` will not return a refresh token.
 
 ## __Using a Refresh Token
 
-The following information will be needed for the request:
-
-Variable | Definition  
----|---  
-grant_type | Value must be refresh_token  
-client_id | This will be the client ID used in the original request  
-refresh_token | This will be the refresh_token from the first response  
+The following information will be needed for the request:  
   
+<table>  
+<tr>  
+<th>
+
+Variable
+
+</th>  
+<th>
+
+Definition
+
+</th> </tr>  
+<tr>  
+<td>
+
+grant_type
+
+</td>  
+<td>
+
+Value must be refresh_token
+
+</td> </tr>  
+<tr>  
+<td>
+
+client_id
+
+</td>  
+<td>
+
+This will be the client ID used in the original request
+
+</td> </tr>  
+<tr>  
+<td>
+
+refresh_token
+
+</td>  
+<td>
+
+This will be the refresh_token from the first response
+
+</td> </tr> </table>
+
 A successful request might look like this:
 
     

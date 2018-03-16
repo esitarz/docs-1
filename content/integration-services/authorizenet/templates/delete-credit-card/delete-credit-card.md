@@ -31,13 +31,43 @@ executed.
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.
-
-ErrorCode | Message | Status Code  
----|---|---  
-DeleteCreditCard.CreditCardIDRequired | CardDetails.CreditCardID is required
-to delete a credit card. | 400  
+are listed below.  
   
+
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+DeleteCreditCard.CreditCardIDRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID is required to delete a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:

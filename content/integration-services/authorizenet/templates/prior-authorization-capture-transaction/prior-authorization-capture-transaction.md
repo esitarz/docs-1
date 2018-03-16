@@ -32,17 +32,75 @@ executed.
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.
-
-ErrorCode | Message | Status Code  
----|---|---  
-PriorAuthCaptureTransaction.OrderIDRequired | OrderID is required to capture a
-prior authorization. | 400  
-PriorAuthCaptureTransaction.PaymentIDRequired | CardDetails.PaymentID is
-required to capture a prior authorization. | 400  
-PriorAuthCaptureTransaction.BuyerIDRequired | BuyerID is required to capture a
-prior authorization. | 400  
+are listed below.  
   
+
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.PaymentIDRequired
+
+</td>  
+<td>
+
+CardDetails.PaymentID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:

@@ -1,5 +1,5 @@
-  
-  
+
+
 ##  __Get Rates Overview
 
 The first method available within the OrderCloud.io Shipping Rates integration
@@ -30,14 +30,72 @@ will be used when calculating rates, resulting in an inaccurate estimate.
 In the case that a required field is missing from your request or there are
 any issues with your Order, the following response will be returned containing
 a unique ErrorCode and Message, as well as the request body sent during the
-call. The possible ErrorCodes and Messages are listed below.
+call. The possible ErrorCodes and Messages are listed below.  
+  
 
-ErrorCode | Message | Status Code  
----|---|---  
-ShippingRatesValidation.BuyerIDRequired | BuyerID is required to get shipping
-rates. | 400  
-ShippingRatesValidation.OrderIDRequired | OrderID is required to get shipping
-rates. | 400  
-ShippingRatesValidation.LineItemsRequired | At least one line item is required
-to get shipping rates. | 400
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+ShippingRatesValidation.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to get shipping rates.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+ShippingRatesValidation.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to get shipping rates.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+ShippingRatesValidation.LineItemsRequired
+
+</td>  
+<td>
+
+At least one line item is required to get shipping rates.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
 

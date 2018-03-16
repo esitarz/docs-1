@@ -39,34 +39,253 @@ executed.
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.
-
-ErrorCode | Message | Status Code  
----|---|---  
-AuthCaptureTransaction.OrderIDRequired | OrderID is required to authorize and
-capture a credit card. | 400  
-AuthCaptureTransaction.AmountRequired | Amount is required to authorize and
-capture a credit card. | 400  
-AuthCaptureTransaction.BuyerIDRequired | BuyerID is required to authorize and
-capture a credit card. | 400  
-AuthCaptureTransaction.CardDetailsRequired | CardDetails.CreditCardID OR
-CardDetails.CardNumber and CardDetails.ExpirationDate are required to
-authorize and capture a credit card. | 400  
+are listed below.  
   
-### Authorize.Net Error Response
 
-responseCode | errorCode | errorText | resultCode | message.code |
-message.text  
----|---|---|---|---|---  
-3 | 5 | A valid amount is required. | Error | E00027 | The transaction was
-unsuccessful.  
-3 | 6 | The credit card number is invalid. | Error | E00027 | The transaction
-was unsuccessful.  
-3 | 7 | Credit card expiration date is invalid. | Error | E00027 | The
-transaction was unsuccessful.  
-3 | 8 | The credit card has expired. | Error | E00027 | The transaction was
-unsuccessful.  
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.AmountRequired
+
+</td>  
+<td>
+
+Amount is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.CardDetailsRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID OR CardDetails.CardNumber and
+CardDetails.ExpirationDate are required to authorize and capture a credit
+card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+### Authorize.Net Error Response  
   
+
+<table>  
+<tr>  
+<th>
+
+responseCode
+
+</th>  
+<th>
+
+errorCode
+
+</th>  
+<th>
+
+errorText
+
+</th>  
+<th>
+
+resultCode
+
+</th>  
+<th>
+
+message.code
+
+</th>  
+<th>
+
+message.text
+
+</th> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+5
+
+</td>  
+<td>
+
+A valid amount is required.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+6
+
+</td>  
+<td>
+
+The credit card number is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+7
+
+</td>  
+<td>
+
+Credit card expiration date is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+8
+
+</td>  
+<td>
+
+The credit card has expired.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr> </table>
+
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:
