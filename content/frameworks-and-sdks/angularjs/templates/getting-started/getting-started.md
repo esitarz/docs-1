@@ -59,74 +59,14 @@ refresh the app when changes to the `./src/` directory are made.
 [Jasmine](https://jasmine.github.io/), and [Protrator (e2e test framework for
 AngularJS)](http://www.protractortest.org/#/) are our test frameworks of
 choice, everything you need to run unit or E2E tests should already be
-installed via npm.  
+installed via npm.
+
+Task | File Extension | Description  
+---|---|---  
+`gulp test:unit` | `*.spec.js` | Runs only the unit tests  
+`gulp test:e2e` | `*.test.js` | Runs only the E2E tests  
+`gulp test` | `*.spec.js` or `*.test.js` | Runs both the unit and E2E tests  
   
-<table>  
-<tr>  
-<th>
-
-Task
-
-</th>  
-<th>
-
-File Extension
-
-</th>  
-<th>
-
-Description
-
-</th> </tr>  
-<tr>  
-<td>
-
-`gulp test:unit`
-
-</td>  
-<td>
-
-`*.spec.js`
-
-</td>  
-<td>
-
-Runs only the unit tests
-
-</td> </tr>  
-<tr>  
-<td>
-
-`gulp test:e2e`
-
-</td>  
-<td>
-
-`*.test.js`
-
-</td>  
-<td>
-
-Runs only the E2E tests
-
-</td> </tr>  
-<tr>  
-<td>
-
-`gulp test`
-
-</td>  
-<td>
-
-`*.spec.js` or `*.test.js`
-
-</td>  
-<td>
-
-Runs both the unit and E2E tests
-
-</td> </tr> </table>
-
 ## Compiling for Production
 
 You can run the following command to compile your code to a production-ready

@@ -1,5 +1,5 @@
-
-
+  
+  
 ## Overview
 
 Anonymous Shopping, or Guest Checkout, is when a user is enabled to browse a

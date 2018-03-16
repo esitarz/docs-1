@@ -28,93 +28,20 @@ executed.
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.  
+are listed below.
+
+ErrorCode | Message | Status Code  
+---|---|---  
+VoidTransaction.OrderIDRequired | OrderID is required to void a transaction. |
+400  
+VoidTransaction.PaymentIDRequired | CardDetails.PaymentID or refTransId
+(optional) is required to void a transaction. | 400  
+VoidTransaction.BuyerIDRequired | BuyerID is required to void a transaction. |
+400  
+VoidTransaction.CardDetailsRequired | CardDetails.CreditCardID OR
+CardDetails.CardNumber and CardDetails.ExpirationDate are required to void a
+transaction. | 400  
   
-
-<table>  
-<tr>  
-<th>
-
-ErrorCode
-
-</th>  
-<th>
-
-Message
-
-</th>  
-<th>
-
-Status Code
-
-</th> </tr>  
-<tr>  
-<td>
-
-VoidTransaction.OrderIDRequired
-
-</td>  
-<td>
-
-OrderID is required to void a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-VoidTransaction.PaymentIDRequired
-
-</td>  
-<td>
-
-CardDetails.PaymentID or refTransId (optional) is required to void a
-transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-VoidTransaction.BuyerIDRequired
-
-</td>  
-<td>
-
-BuyerID is required to void a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-VoidTransaction.CardDetailsRequired
-
-</td>  
-<td>
-
-CardDetails.CreditCardID OR CardDetails.CardNumber and
-CardDetails.ExpirationDate are required to void a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr> </table>
-
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:

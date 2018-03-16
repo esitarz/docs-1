@@ -38,92 +38,20 @@ executed
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.  
+are listed below.
+
+ErrorCode | Message | Status Code  
+---|---|---  
+RefundTransaction.OrderIDRequired | OrderID is required to refund a
+transaction. | 400  
+RefundTransaction.PaymentIDRequired | CardDetails.PaymentID is required to
+refund a transaction. | 400  
+RefundTransaction.BuyerIDRequired | BuyerID is required to refund a
+transaction. | 400  
+RefundTransaction.CardDetailsRequired | CardDetails.CreditCardID OR
+CardDetails.CardNumber and CardDetails.ExpirationDate are required to refund a
+transaction. | 400  
   
-
-<table>  
-<tr>  
-<th>
-
-ErrorCode
-
-</th>  
-<th>
-
-Message
-
-</th>  
-<th>
-
-Status Code
-
-</th> </tr>  
-<tr>  
-<td>
-
-RefundTransaction.OrderIDRequired
-
-</td>  
-<td>
-
-OrderID is required to refund a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-RefundTransaction.PaymentIDRequired
-
-</td>  
-<td>
-
-CardDetails.PaymentID is required to refund a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-RefundTransaction.BuyerIDRequired
-
-</td>  
-<td>
-
-BuyerID is required to refund a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-RefundTransaction.CardDetailsRequired
-
-</td>  
-<td>
-
-CardDetails.CreditCardID OR CardDetails.CardNumber and
-CardDetails.ExpirationDate are required to refund a transaction.
-
-</td>  
-<td>
-
-400
-
-</td> </tr> </table>
-
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:

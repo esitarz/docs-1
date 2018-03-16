@@ -32,128 +32,23 @@ creation process is executed.
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.  
+are listed below.
+
+ErrorCode | Message | Status Code  
+---|---|---  
+CreateCreditCard.CardNumberRequired | CardDetails.CardNumber is required to
+create a new credit card. | 400  
+CreateCreditCard.ExpirationDateRequired | CardDetails.ExpirationDate is
+required to create a new credit card. | 400  
   
+### Authorize.Net Error Response
 
-<table>  
-<tr>  
-<th>
-
-ErrorCode
-
-</th>  
-<th>
-
-Message
-
-</th>  
-<th>
-
-Status Code
-
-</th> </tr>  
-<tr>  
-<td>
-
-CreateCreditCard.CardNumberRequired
-
-</td>  
-<td>
-
-CardDetails.CardNumber is required to create a new credit card.
-
-</td>  
-<td>
-
-400
-
-</td> </tr>  
-<tr>  
-<td>
-
-CreateCreditCard.ExpirationDateRequired
-
-</td>  
-<td>
-
-CardDetails.ExpirationDate is required to create a new credit card.
-
-</td>  
-<td>
-
-400
-
-</td> </tr> </table>
-
-### Authorize.Net Error Response  
+resultCode | message.code | message.text  
+---|---|---  
+Error | E00013 | Card Number is invalid.  
+Error | E00013 | Expiration Date is invalid.  
+Error | E00027 | The credit card has expired.  
   
-
-<table>  
-<tr>  
-<th>
-
-resultCode
-
-</th>  
-<th>
-
-message.code
-
-</th>  
-<th>
-
-message.text
-
-</th> </tr>  
-<tr>  
-<td>
-
-Error
-
-</td>  
-<td>
-
-E00013
-
-</td>  
-<td>
-
-Card Number is invalid.
-
-</td> </tr>  
-<tr>  
-<td>
-
-Error
-
-</td>  
-<td>
-
-E00013
-
-</td>  
-<td>
-
-Expiration Date is invalid.
-
-</td> </tr>  
-<tr>  
-<td>
-
-Error
-
-</td>  
-<td>
-
-E00027
-
-</td>  
-<td>
-
-The credit card has expired.
-
-</td> </tr> </table>
-
 ### OrderCloud.io Error Response
 
 If an incorrect `BuyerID` was provided:

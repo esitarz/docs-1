@@ -104,87 +104,31 @@ Opening an individual application will bring you to the **Settings** tab for
 that application. Seller Organization owners and contributors with permission
 to administer applications can update application information in this tab and
 activate/deactivate the application. Within this tab you’ll find the
-following:  
-  
-<table>  
-<tr>  
-<th>
+following:
 
-Client ID
-
-</th>  
-<td>
-
-The unique identifier of an application. This field is read-only and used in
-all OAuth2.0 workflows. It is a general rule that one front-end application be
-associated with a single Client ID or "application".
-
-</td> </tr>  
-<tr>  
-<th>
-
-Client Secret
-
-</th>  
-<td>
-
-This is an optional elevated level of security. It allows you to require an
-additional keyphrase in all authentication requests. It is also used as part
-of the Client Credentials Grant Type workflow for anonymous authentication or
-back office systems.
-
-</td> </tr>  
-<tr>  
-<th>
-
+Client ID | The unique identifier of an application. This field is read-only
+and used in all OAuth2.0 workflows. It is a general rule that one front-end
+application be associated with a single Client ID or "application".  
+---|---  
+Client Secret | This is an optional elevated level of security. It allows you
+to require an additional keyphrase in all authentication requests. It is also
+used as part of the Client Credentials Grant Type workflow for anonymous
+authentication or back office systems.  
 Back Office User  
-(Seller Applications Only)
-
-</th>  
-<td>
-
-This is for automated systems using a Client Credentials Grant Type. After
-following this OAuth2.0 workflow you will appear as this user.
-
-</td> </tr>  
-<tr>  
-<th>
-
+(Seller Applications Only) |  This is for automated systems using a Client
+Credentials Grant Type. After following this OAuth2.0 workflow you will appear
+as this user.  
 Anonymous Template User  
-(Buyer Applications Only)
-
-</th>  
-<td>
-
-This enables anonymous shopping and/or registration on buyer applications. Use
-the Client Credentials Grant Type you can authenticate without a password and
-you will appear as a temporary user that has the same assignment based
-relationships and security as the anonymous template user.
-
-</td> </tr>  
-<tr>  
-<th>
-
-Access Token Duration
-
-</th>  
-<td>
-
-How long (in minutes) an access token will remain valid (max: 600m)
-
-</td> </tr>  
-<tr>  
-<th>
-
-Refresh Token Duration
-
-</th>  
-<td>
-
-How long (in minutes) you are able to obtain a new Access Token (max: 43200m)
-
-</td> </tr> </table>
-
+(Buyer Applications Only) |  This enables anonymous shopping and/or
+registration on buyer applications. Use the Client Credentials Grant Type you
+can authenticate without a password and you will appear as a temporary user
+that has the same assignment based relationships and security as the anonymous
+template user.  
+Access Token Duration | How long (in minutes) an access token will remain
+valid (max: 600m)  
+Refresh Token Duration | How long (in minutes) you are able to obtain a new
+Access Token (max: 43200m)  
+  
 ### Active Webhooks
 
 The _"webhooks"_ tab is visible to owners and contributors with permission to
@@ -242,66 +186,27 @@ fundamentally designed to provide maximum flexibility within the integrated
 solution.
 
 Owners and contributors with permission to administer webhooks can access this
-feature. OrderCloud requires standard webhook information:  
+feature. OrderCloud requires standard webhook information:
+
+Payload URL | The URL OrderCloud will send data to.  
+---|---  
+Secret | OrderCloud will encrypt this secret and pass it through the request
+headers.  
+Trigger Events |  The OrderCloud API endpoints that will trigger the webhook
+event. Webhooks can only be triggered by endpoints that write to the database
+(`POST`/`PUT`/ `PATCH`/`DELETE`). The request body sent to the OrderCloud
+endpoint (if any) will be passed along to the webhooks that use it.  
   
-<table>  
-<tr>  
-<th>
-
-Payload URL
-
-</th>  
-<td>
-
-The URL OrderCloud will send data to.
-
-</td> </tr>  
-<tr>  
-<th>
-
-Secret
-
-</th>  
-<td>
-
-OrderCloud will encrypt this secret and pass it through the request headers.
-
-</td> </tr>  
-<tr>  
-<th>
-
-Trigger Events
-
-</th>  
-<td>
-
-The OrderCloud API endpoints that will trigger the webhook event. Webhooks can
-only be triggered by endpoints that write to the database (`POST`/`PUT`/
-`PATCH`/`DELETE`). The request body sent to the OrderCloud endpoint (if any)
-will be passed along to the webhooks that use it.
-
-</td> </tr> </table>
-
 Beyond this basic info, we've enhanced our webhooks with some other, more
-nuanced options:  
+nuanced options:
+
+Elevated Roles |  Normally, OrderCloud will pass along a token that has the
+same roles as the original request's access token. Elevated roles are any
+roles that you need for your webhook that the original request's access token
+doesn't have (usually for subsequent requests that access information the
+originating user doesn't have permission to view).  
+---|---  
   
-<table>  
-<tr>  
-<th>
-
-Elevated Roles
-
-</th>  
-<td>
-
-Normally, OrderCloud will pass along a token that has the same roles as the
-original request's access token. Elevated roles are any roles that you need
-for your webhook that the original request's access token doesn't have
-(usually for subsequent requests that access information the originating user
-doesn't have permission to view).
-
-</td> </tr> </table>
-
 ## __Integrations
 
 Organization owners and contributors with permission to administer
