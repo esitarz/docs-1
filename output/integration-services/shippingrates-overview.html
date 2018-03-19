@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="shippingrates">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Shippingrates: Overview    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\shippingrates-overview.html">Shippingrates: Overview</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/shippingrates.html">#shippingrates</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Shipping Rates Overview</h2>
+<p>OrderCloud.io offers the ability to provide weight-based shipping rate
+estimates within your storefronts based on the commercial shipping rates.
+Supported carriers within this integration currently include USPS, UPS, and
+FedEx.</p>
+<p>Once configured, the OrderCloud.io Shipping Rates integration offers three
+methods: <em>GetRates</em> , <em>GetLineItemRates</em> , and <em>SetShippingCost</em>.</p>
+<p>GetRates will automatically separate the Order's Line Items into shipments
+based on their <code>ShippingAddress</code> and the Line Item Product's
+<code>ShipFromAddress</code>. Rates will be returned based on these determined shipments.</p>
+<p>GetLineItemRates will obtain shipping rates for each Line Item individually,
+regardless of the item’s <code>ShippingAddress</code> and the Line Item Product’s
+<code>ShipFromAddress</code>.</p>
+<p>SetShippingCost simply allows your application to set an Order's
+<code>ShippingCost</code> value once the user has selected their desired shipper(s) for
+their Order.</p>
+<p>Additional configuration options include rate adjustments and manual shippers.
+Rate adjustments allows you to automatically increase or decrease the
+estimated shipping rates by a percentage or flat rate. This can be configured
+at a global or carrier level.</p>
+<p>Manual shippers allows you to configure shipper options with a Name and flat
+rate Price. This price will not be adjusted using the rate adjustments
+described above. Manual shippers can be configured to always be returned or to
+only be returned when no shipping rate estimates are returned. This may be
+caused by a determined shipment with a weight greater than 150 lbs., invalid
+addresses, or simply because the carrier's web services are not functioning
+properly.</p>
+<p>OrderCloud.io's Shipping Rates integration not only requires configuration for
+the integration endpoint itself, but for the products that will be included
+for shipping rate estimates as well. These topics will be covered in the
+following sections.</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

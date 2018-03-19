@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="authentication">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Authentication: Security Profiles    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../platform-guides\authentication-security-profiles.html">Authentication: Security Profiles</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/authentication.html">#authentication</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Overview</h2>
+<p>Security Profiles are an assortment of roles that give access to specific
+endpoints in the OrderCloud.io API. Profiles can be assigned to the users of
+your Seller or Buyer application. If a request is made by a user without
+sufficient roles they will receive 403 Forbidden response. Configuration of
+these profiles is possible within the Security Profiles view in the
+OrderCloud.io Dashboard.</p>
+<h2>__Roles</h2>
+<p>Security Profiles are made up of a list of roles which fall into one of two
+categories: Admin and Reader. An <strong>Admin</strong> role allows read and write access
+while a <strong>Reader</strong> role type allows only read access.</p>
+<p><img alt="" src="../images/docs-guides/authentication/security-profiles.roles.png"></p>
+<h2>__Assigning Profiles</h2>
+<p>Security Profiles are assigned at the party level (User, User Group, Buyer
+Organization or Admin Organization).</p>
+<p>If more than one Security Profile is inherited, the roles will be a union of
+the roles from every inherited Security Profile.</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

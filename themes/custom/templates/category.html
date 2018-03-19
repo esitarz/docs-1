@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}&ndash; Category: {{ category }}{% endblock %}
+
+
+{% block content %}
+<article>
+  <div class="article__text">
+      {% for tag, articles in tags|sort %}
+      <h3>{{ tag }}</h3>
+      <ul>
+      	{% for article in articles %}
+	      	{% if article.category == category %}
+	      		<li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+	      	{% endif %}
+	     {% endfor %}
+	 </ul>
+      {% endfor %}
+
+  </div>
+</article>
+{% endblock %}

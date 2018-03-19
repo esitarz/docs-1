@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="authorizenet">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Authorizenet: Authorize And Capture Transaction    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/authorizenet.html">#authorizenet</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Authorize and Capture Transaction Overview</h2>
+<p>Authorizing and Capturing a credit card transaction is one of the most
+involved methods included in this integration. This method will create a new
+Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
+one does not already exist, authorize and capture a payment transaction on
+Authorize.Net, create a payment on OrderCloud.io tied to the authenticated
+user’s current Order (if a payment already exists, simply pass the ID in
+<code>PaymentID</code>), and also create a transaction tied to that payment.</p>
+<p>If the transaction authorization and capture are successful, but there is an
+error while creating the payment or transaction on OrderCloud.io, the
+Authorize.Net transaction will be voided.</p>
+<h2>__Authorize and Capture Transaction Request</h2>
+<p>This method requires either CardDetails.CreditCardID (for a previously created
+card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
+new card).</p>
+<h2>__Authorize and Capture Transaction Response</h2>
+<h2>__Error Handling</h2>
+<p>During the authorization and capture process, the Authorize.Net payment
+transaction will be created first, followed by the payment and transaction on
+OrderCloud.io. In the case that the OrderCloud.io steps fail, the transaction
+will be voided automatically on Authorize.Net.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.AmountRequired
+
+</td>  
+<td>
+
+Amount is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.CardDetailsRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID OR CardDetails.CardNumber and
+CardDetails.ExpirationDate are required to authorize and capture a credit
+card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>Authorize.Net Error Response</h3>
+<table>  
+<tr>  
+<th>
+
+responseCode
+
+</th>  
+<th>
+
+errorCode
+
+</th>  
+<th>
+
+errorText
+
+</th>  
+<th>
+
+resultCode
+
+</th>  
+<th>
+
+message.code
+
+</th>  
+<th>
+
+message.text
+
+</th> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+5
+
+</td>  
+<td>
+
+A valid amount is required.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+6
+
+</td>  
+<td>
+
+The credit card number is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+7
+
+</td>  
+<td>
+
+Credit card expiration date is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+8
+
+</td>  
+<td>
+
+The credit card has expired.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+<p>If an incorrect <code>OrderID</code> was provided:</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="getting started">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Getting Started: Quick Start Guide    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../platform-guides\getting-started-quick-start-guide.html">Getting Started: Quick Start Guide</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/getting-started.html">#getting started</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Getting Started with OrderCloud.io</h2>
+<p>OrderCloud.io is a RESTful API that enables you to create complex, custom B2B
+eCommerce solutions.</p>
+<p>This guide is meant to get you started with OrderCloud.io as quickly as
+possible. In order to accomplish this, we’ve stripped away some of the detail,
+so keep an eye out for links to relevant guides that provide much more in-
+depth explanations.</p>
+<h2>__Creating an Account</h2>
+<p>The first thing you will need to do is create an account. Registration is free
+and gives you access to the entire OrderCloud.io platform.</p>
+<p>After you submit your email address, you will be sent a verification code
+which will be required to complete the registration process.</p>
+<h2>__Your First Seller Organization</h2>
+<p>Now that you have an OrderCloud.io account you can navigate to your
+<a href="https://dashboard.ordercloud.io">dashboard</a> and access your first seller
+organization.</p>
+<p>It is the highest level container that encompasses everything else in
+OrderCloud.io (applications, products, pricing, users, etc.). You can have
+multiple Seller Organizations; however, data is not shared between them.</p>
+<p>Newly created Seller Organizations come with a "default access" application
+giving you immediate access to the API however you can also create your own.
+To do this first click on the seller applications pane on the left and then
+click the  __New button located in the upper right hand corner.</p>
+<p>Using the API Console is the simplest way to start exploring OrderCloud.io;
+however, understanding the fundamentals of how to access and use the API on
+it's own is extremely important for any OrderCloud.io developer.</p>
+<h2>__Authentication</h2>
+<p>Before you are able to interact with the OrderCloud.io API you will need to
+get an <code>access_token</code> from the auth server. The following sections will
+include raw request and response examples to the OAuth API.</p>
+<p>The first thing you need is the <code>ClientID</code>. This unique identifier represents
+a single application on OrderCloud.io. Feel free to use the ClientID from the
+"default access" application that was automatically created on your first
+Seller Organization.</p>
+<p>![](/{filename}/images/docs-guides/getting-started/quick-start-guide/quick-start-
+guide-1.jpg)</p>
+<p>The second thing you will need is a list of roles, or in OAuth terms, scope.
+For this example you are not authenticating as an actual user (because we
+haven't created one yet). Instead, you will be taking advantage of a useful
+developer role, <code>DevCenterImpersonate</code>". This role will allow you to use the
+password grant type workflow with your own Dev Center username and password.</p>
+<p>Along with our special DevCenterImpersonate role we will also request
+"FullAccess". Being the owners of this Organization it's safe to say we can
+access and change any data related to it. Giving real users "FullAccess" is
+highly discouraged, a subset of roles helps protect your application from
+malicious attacks or oblivious users.</p>
+<p>Using your ClientID, roles list, and Dev Center username/password, request an
+access token following the example below:</p>
+<p>Request</p>
+<p>Response</p>
+<h2>__Subsequent Requests</h2>
+<p>Using the access_token from the OAuth response make your first <code>GET</code> request
+to the UserPerspecive -&gt; Me -&gt; Get endpoint. This will return the details for
+the currently authenticated user. (In this case, you will appear as the
+default user because we authenticated as a developer). Make sure you put your
+<code>access_token</code> in the Authentication header before making the request.</p>
+<p>Request</p>
+<p>Response</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

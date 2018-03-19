@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="authorizenet">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Authorizenet: Create Credit Card    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\authorizenet-create-credit-card.html">Authorizenet: Create Credit Card</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/authorizenet.html">#authorizenet</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Create Credit Card Overview</h2>
+<p>When a customer within your buyer application creates a credit card, the
+integration endpoint can be called in order to create that card within
+OrderCloud.io as well as Authorize.Net. The card will created as a personal
+card by default. However, passing <code>true</code> for <code>Shared</code> assign the card to the
+entire Buyer Organization provided in the <code>BuyerID</code>. This endpoint will create
+a Customer Profile within Authorize.Net if one does not already exist
+(Authorize.Net Customer Profile ID will be saved as xp.AuthorizeNetProfileID
+on the User), create a Customer Payment Profile within Authorize.Net that
+securely stores the tokenized data for the card, and finally create and assign
+the card on OrderCloud.io to the authenticate user.</p>
+<h2>__Create Credit Card Request</h2>
+<h2>__Create Credit Card Response</h2>
+<h2>__Error Handling</h2>
+<p>During the credit card create process, the Authorize.Net Customer Profile and
+Customer Payment Profile are created (if necessary) first, followed by the
+creation of the card on OrderCloud.io. Therefore, if any errors occur, they
+will occur in that order. Errors will return the exact response directly from
+the Authorize.Net or OrderCloud.io endpoint that failed. However, if any
+required fields are missing, a 400 error will be returned before any of the
+creation process is executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+CreateCreditCard.CardNumberRequired
+
+</td>  
+<td>
+
+CardDetails.CardNumber is required to create a new credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+CreateCreditCard.ExpirationDateRequired
+
+</td>  
+<td>
+
+CardDetails.ExpirationDate is required to create a new credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>Authorize.Net Error Response</h3>
+<table>  
+<tr>  
+<th>
+
+resultCode
+
+</th>  
+<th>
+
+message.code
+
+</th>  
+<th>
+
+message.text
+
+</th> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00013
+
+</td>  
+<td>
+
+Card Number is invalid.
+
+</td> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00013
+
+</td>  
+<td>
+
+Expiration Date is invalid.
+
+</td> </tr>  
+<tr>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The credit card has expired.
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

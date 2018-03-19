@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="shippingrates">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Shippingrates: Set Shipping Cost    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\shippingrates-set-shipping-cost.html">Shippingrates: Set Shipping Cost</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/shippingrates.html">#shippingrates</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Set Shipping Cost Overview</h2>
+<p>Once a user selects their desired shipper(s) for their order, the
+<code>ShippingCost</code> on the Order can be set via the <em>SetShippingCost</em> method. This
+method will patch the Order with the provided <code>ShippingCost</code> value and return
+the updated Order.</p>
+<h2>__Set Shipping Cost Request</h2>
+<h2>__Set Shipping Cost Response</h2>
+<h2>__Error Handling</h2>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request or there are
+any issues with your Order, the following response will be returned containing
+a unique ErrorCode and Message, as well as the request body sent during the
+call. The possible ErrorCodes and Messages are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+ShippingRatesValidation.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to get shipping rates.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+ShippingRatesValidation.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to get shipping rates.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

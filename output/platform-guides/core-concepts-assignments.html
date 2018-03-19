@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="core concepts">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Core Concepts: Assignments    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../platform-guides\core-concepts-assignments.html">Core Concepts: Assignments</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/core-concepts.html">#core concepts</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Overview</h2>
+<p>There are basic principles around how assignments work that are critical to
+understanding our data model and more importantly how the data model can be
+applied to solve the most complex ordering scenarios.</p>
+<ul>
+<li>Assignments are used to define relationships</li>
+<li>Assignments are inclusive</li>
+<li>Assignments can be made at different levels depending on the resource</li>
+<li>Assignments may include configuration data</li>
+<li>Assignments cascade down higher levels to the individual user (except pricing)</li>
+<li>Assignments are many to many</li>
+</ul>
+<h2>__Assignments are Used to Define Relationships</h2>
+<p>When you are saving an assignment you are creating a relationship between a
+single resource (address, spending account, etc.) and a buyer party(user, user
+group, or buyer company). There is one exception to this binary rule, which is
+product assignment. The product assignment is a three-way association between
+a product, a buyer party and a price schedule.</p>
+<h2>__Assignments are Inclusive</h2>
+<p>When a buyer user is created they exist in a vacuum. The user will not have
+access to any objects until an assignment is made to them directly, or through
+a higher level party assignment.</p>
+<h2>__Assignments Can be Made at Different Levels</h2>
+<p>Assignments can be made to either the entire buyer company, a specific group
+of users (UserGroup) within that buyer company or for some resources a single
+buyer user.</p>
+<p>You may notice that some assignments contain configuration options. These
+options allow you to provide additional information about the assignment. For
+example, when assigning an address to a user, you can set IsShipping &amp;
+IsBilling, these properties control whether the address can be used as a
+shipping and/or billing address on an order.</p>
+<h2>__Assignments Cascade Down Higher Levels to the Individual User</h2>
+<p>When the platform is looking for what a given buyer user has access to, it is
+checking for assignments. If an assignment is made to a buyer then all the
+users that exist in that buyer organization have access to the assigned
+object. The same principle applies to user groups and their constituent users.
+Regardless of where an assignment is saved, all of these objects are presented
+to the buyer user seamlessly and in a very flat structure.</p>
+<p>The three-way product assignment is the exception to this, in that case the
+most specific pricing assignment will apply. For example, if you have a
+product assignment at the buyer level, but you would like a specific group of
+users to have different pricing, you could make an additional product
+assignment that included a UserGroupID and users assigned to that group would
+no longer see the buyer level pricing.</p>
+<p>The scenario you’ll want to avoid is a user with multiple product assignments
+of the same specificity party level (e.g. a user belonging to two user groups,
+each with different product assignments). While the platform won’t prohibit
+you from making these potentially problematic assignments, the pricing
+returned for any user belonging to multiple pricing groups will always be
+indeterminate.</p>
+<h2>__Assignments are Many to Many</h2>
+<p>Resources can be assigned to many different buyer parties. Those buyer parties
+can be assigned to many other resources. For example, one user can be assigned
+to multiple address while one address can be assigned to multiple users.</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

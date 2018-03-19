@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Tag: basic api features    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+&gt; Tag: basic api features
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+  <!--each docs section's main template replaces this view-->
+  <ui-view>
+  <main class="oc-docs-home">
+    <div class="oc-banner-full-width oc-tequila-sunrise-bg oc-flex-layout vertical center-center">
+      <div class="container text-center">
+        <h1>Explore the OrderCloud API</h1>
+        <p class="lead text-center">Our RESTful API provides access to OrderCloud.io's B2B eCommerce platform-as-a-service.<br>Dive into our API Docs or download our Swagger Spec to quickly try out our endpoints.
+        </p>
+        <a class="btn btn-knockout btn-lg" href="https://raw.githubusercontent.com/ordercloud-api/swagger/master/ordercloud_swagger.json"
+        target="_self" download="ordercloud_swagger_spec"><i class="fa fa-download" aria-hidden="true"></i> Get Swagger Spec</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <article>
+          <div class="oc-flex-layout horizontal wrap center-justified">
+            <div class="oc-flex-layout flex-col-lg-6 text-center">
+                <div ui-sref="frameworks-and-sdks" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                  <h2 class="card-title"><i class="fa fa-book color__curry"></i>Frameworks And Sdks</h2>
+                  <p class="small text-muted card-descrip"> <p>Take advantage of our rapid development tools &amp; resources.</p></p>
+                  <a class="btn btn-secondary">
+                    <a href="../frameworks-and-sdks">Learn More</a>
+                  </a>
+                </div>
+              </div>
+                <div ui-sref="integration-services" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                  <h2 class="card-title"><i class="fa fa-book color__curry"></i>Integration Services</h2>
+                  <p class="small text-muted card-descrip"> <p>Get started with the OrderCloud.io standard integrations.</p></p>
+                  <a class="btn btn-secondary">
+                    <a href="../integration-services">Learn More</a>
+                  </a>
+                </div>
+              </div>
+                <div ui-sref="platform-guides" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                  <h2 class="card-title"><i class="fa fa-book color__curry"></i>Platform Guides</h2>
+                  <p class="small text-muted card-descrip"> <p>Jumpstart your project by learning the basics of OrderCloud.</p></p>
+                  <a class="btn btn-secondary">
+                    <a href="../platform-guides">Learn More</a>
+                  </a>
+                </div>
+              </div>
+          </div>
+          </hr>
+        </article>
+      </div>
+    </div>
+  </main>
+  </ui-view>
+  
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

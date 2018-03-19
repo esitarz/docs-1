@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="authentication">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Authentication: Anonymous Shopping    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../platform-guides\authentication-anonymous-shopping.html">Authentication: Anonymous Shopping</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/authentication.html">#authentication</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>Overview</h2>
+<p>Anonymous Shopping, or Guest Checkout, is when a user is enabled to browse a
+catalog of products and/or checkout without registering themselves.
+Accomplishing this requires OrderCloud.io developers to pull together a lot of
+platform knowledge. We'll summarize that information here.</p>
+<h2>Configuring the Application</h2>
+<p>An anonymous buyer experience must work within a given buyer user perspective
+- otherwise OrderCloud.io has no context for determining data the anonymous
+user has access to, like product and pricing information. Therefore, you will
+need an active buyer user before we can proceed.</p>
+<p>Once you've done that, navigate to the Dashboard and click on the <strong>Buyer
+Organizations</strong> tab from the left hand nav and select your buyer organization
+by clicking on the name. From there click on the application associated with
+your Buyer Organization.</p>
+<p>Next, we will add an <strong>Anonymous Template User</strong>. This will be the user that
+all anonymous users will inherit security and assignments from.</p>
+<p>![Anonymous-Template-User]({filename}/images/docs-guides/authentication/anonymous-
+template-user.jpg)</p>
+<h2>Authenticating Anonymous Users</h2>
+<p>Once your application is set up with a template user, we're ready to
+authenticate anonymously. Using the Client Credentials grant-type and only a
+client_id, make a request to the OrderCloud.io OAuth server:</p>
+<div class="highlight"><pre><span></span>POST https://auth.ordercloud.io/oauth/token HTTP/1.1
+client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&amp;scope=ProductReader CategoryReader MeAddressAdmin MeCreditCardAdmin&amp;grant_type=client_credentials
+</pre></div>
+
+
+<p>You will receive a standard OAuth response that contains an access_token you
+can use for the duration of the anonymous shopping experience.</p>
+<p>Anonymous access_tokens have a fixed duration of <strong>1 week</strong> , access token
+duration has no affect on anonymous users. Refresh tokens <strong>are not
+available</strong> to anonymous users.</p>
+<p>It is important to note that while it is possible to fully submit an order
+using this token, there isn't a secure way to let the anonymous user view
+historical order data. If this is required for your project, you should
+consider profiling your users at some point before submitting an order.</p>
+<h2>Profiling Anonymous Users</h2>
+<p>Prompting your anonymous shoppers to profile themselves before checking out
+ensures that historical order data can be captured so the user can view it
+when they return to your site. When you choose to profile users doesn't
+matter, it can happen before or after they create an order. Order information
+created during the anonymous access_token's life-cycle will transfer to the
+newly profiled user automatically.</p>
+<p>The request is relatively simple: provide the anonymous access_token for the
+<code>tempUserToken</code> and the request body should contain the profile information
+filled out by the anonymous user:</p>
+<div class="highlight"><pre><span></span>POST https://api.ordercloud.io/v1/me/register HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json
+
+
+{
+  &quot;ID&quot;: &quot;NewUserName&quot;,
+  &quot;Username&quot;: &quot;MyUserName&quot;,
+  &quot;FirstName&quot;: &quot;John&quot;,
+  &quot;LastName&quot;: &quot;Doe&quot;,
+  &quot;Email&quot;: &quot;user@email.com&quot;,
+  &quot;Phone&quot;: &quot;555-555-5555&quot;,
+  &quot;TermsAccepted&quot;: true,
+  &quot;Active&quot;: true,
+  &quot;xp&quot;: null
+}
+</pre></div>
+
+
+<p>Similar to the OAuth 2.0 Response, you will receive an access_token after
+profiling the user. At this point, remove the anonymous access_token and
+continue forward with the profiled user's access_token.</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

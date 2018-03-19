@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="authorizenet">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Authorizenet: Delete Credit Card    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\authorizenet-delete-credit-card.html">Authorizenet: Delete Credit Card</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/authorizenet.html">#authorizenet</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Delete Credit Card Overview</h2>
+<p>When a customer within your buyer application deletes a credit card, the
+integration endpoint can be called in order to delete that card on
+OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
+removed on Authorize.Net, followed by the card being deleted on OrderCloud.io.
+If either call fails, the response from that particular call will be returned.
+Otherwise, the response will simply be a 204 No Content. If the card is
+shared, meaning <code>Shared</code> was set to <code>true</code> when the card was created, <code>Shared</code>
+must be passed as <code>true</code> when deleting.</p>
+<h2>__Delete Credit Card Request</h2>
+<h2>__Delete Credit Card Response</h2>
+<h2>__Error Handling</h2>
+<p>During the credit card delete process, the Authorize.Net Customer Payment
+Profile will first be deleted. Next, the card will be deleted on
+OrderCloud.io.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+DeleteCreditCard.CreditCardIDRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID is required to delete a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="angularjs">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Angularjs: Application Files    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../frameworks-and-sdks\angularjs-application-files.html">Angularjs: Application Files</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/angularjs.html">#angularjs</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>Overview</h2>
+<p>The <code>src/app</code> directory contains all code specific to this application. Apart
+from <code>app.*.js</code> and its accompanying tests (discussed below), this directory
+is filled with subdirectories corresponding to high-level sections of the
+application, often corresponding to top-level routes. Each directory can have
+as many subdirectories as it needs, and the build system will understand what
+to do. For example, a top-level route might be <code>productManagement</code>, which
+would be a directory within the <code>src/app</code> directory that conceptually
+corresponds to the top-level route <code>/products</code>, though this is in no way
+enforced. <code>productManagement</code> may then have subdirectories for <code>inventory</code>,
+<code>pricing</code>, <code>product</code>, etc. The <code>product</code> submodule may then define a route of
+<code>/products/:id</code>, ad infinitum.</p>
+<div class="highlight"><pre><span></span>src/
+  |- app/
+  |  |- app.constants.json
+  |  |- app.controller.js
+  |  |- app.module.js
+  |  |- app.run.js
+  |  |- app.spec.js
+</pre></div>
+
+
+<h2><code>app.constants.json</code></h2>
+<p>This small, yet powerful file host a JSON object of key value pairs to be used
+throughout the application. From this object, the build process will generate
+a file containing AngularJS constants <a href="https://github.com/ordercloud-
+api/angular-seller/blob/development/gulp.config.js#L86-L123">here</a>, which are used
+to connect to your OrderCloud organizations.</p>
+<h2><code>app.controller.js</code></h2>
+<p>This is the application's main controller. <code>AppCtrl</code> is a good place for logic
+not specific to the template or route, such as menu logic or page title
+wiring. This controller also allows for numerous Angular services such as
+<code>$state</code> and <code>$ocMedia</code> and service methods such as <code>ocIsTouchDevice</code> and
+<code>stateLoading</code> to be globally available throughout the application's various
+templates. <code>AppCtrl</code> is not declared in a state provider like the
+application's component controllers. Instead, it is declared directly in
+<code>index.html</code> with <code>ng-controller="AppCtrl as application"</code>.</p>
+<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;AppCtrl&#39;</span><span class="p">,</span> <span class="nx">AppController</span><span class="p">)</span>
+<span class="p">;</span>
+<span class="kd">function</span> <span class="nx">AppController</span><span class="p">(</span><span class="nx">$state</span><span class="p">,</span> <span class="nx">$ocMedia</span><span class="p">,</span> <span class="nx">LoginService</span><span class="p">,</span> <span class="nx">appname</span><span class="p">,</span> <span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocIsTouchDevice</span><span class="p">,</span> <span class="nx">ocRoles</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">appname</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">$state</span> <span class="o">=</span> <span class="nx">$state</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">$ocMedia</span> <span class="o">=</span> <span class="nx">$ocMedia</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">isTouchDevice</span> <span class="o">=</span> <span class="nx">ocIsTouchDevice</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">stateLoading</span> <span class="o">=</span> <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Watch</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">logout</span> <span class="o">=</span> <span class="nx">LoginService</span><span class="p">.</span><span class="nx">Logout</span><span class="p">;</span>
+    <span class="nx">vm</span><span class="p">.</span><span class="nx">userIsAuthorized</span> <span class="o">=</span> <span class="nx">ocRoles</span><span class="p">.</span><span class="nx">UserIsAuthorized</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2><code>app.module.js</code></h2>
+<p>This is our main app file. It kickstarts the whole process by requiring all
+the modules that we need.</p>
+<p>By default, the OrderCloud AngularJS Seed includes a few useful modules
+written by the AngularJS and Angular-UI teams. We also include the
+<code>orderCloud.sdk</code> module for connecting to the OrderCloud API. Lastly, some
+helpful third party modules are included as well, such as <code>toastr</code> and
+<code>angular-busy</code>.</p>
+<p>All components within the application are tied directly to the <code>orderCloud</code>
+module, so they do not need to be included here.</p>
+<div class="highlight"><pre><span></span>angular.module(&#39;orderCloud&#39;, [
+        &#39;ngSanitize&#39;,
+        &#39;ngAnimate&#39;,
+        &#39;ngMessages&#39;,
+        &#39;ngTouch&#39;,
+        &#39;ui.tree&#39;,
+        &#39;ui.router&#39;,
+        &#39;ui.select&#39;,
+        &#39;ui.bootstrap&#39;,
+        &#39;ui.select&#39;,
+        &#39;LocalForageModule&#39;,
+        &#39;toastr&#39;,
+        &#39;angular-busy&#39;,
+        &#39;jcs-autoValidate&#39;,
+        &#39;treeControl&#39;,
+        &#39;hl.sticky&#39;,
+        &#39;angularPayments&#39;,
+        &#39;ordercloud-angular-sdk&#39;
+    ]
+);
+</pre></div>
+
+
+<p>id="-app-run-js-"</p>
+<h2><code>app.run.js</code></h2>
+<p>Use the main applications run method to execute any code after services have
+been instantiated. By default, we initialize <code>ocStateLoading</code>, validation
+error messages (using <code>angular-auto-validate</code>), and validation styling.</p>
+<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">AppRun</span><span class="p">)</span>
+<span class="p">;</span>
+
+
+<span class="kd">function</span> <span class="nx">AppRun</span><span class="p">(</span><span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocRefreshToken</span><span class="p">,</span> <span class="nx">defaultErrorMessageResolver</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Init</span><span class="p">();</span>
+
+
+    <span class="nx">defaultErrorMessageResolver</span><span class="p">.</span><span class="nx">getErrorMessages</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorMessages</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">errorMessages</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">);</span>
+    <span class="p">});</span>
+
+
+    <span class="nx">validator</span><span class="p">.</span><span class="nx">setValidElementStyling</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2><code>app.spec.js</code></h2>
+<p>One of the design philosophies of <code>angular-seller</code> is that tests should exist
+alongside the code they test and that the build system should be smart enough
+to know the difference and react accordingly. As such, the unit test for
+<code>app.*.js</code> is <code>app.spec.js</code>.</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <!-- ## for client-side less
+    <link rel="stylesheet/less" type="text/css" href="../theme/css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+    -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../">
+    <link rel="stylesheet" type="text/css" href="../theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/hatena-bookmark-icon.css">
+      <link rel="stylesheet" type="text/css" href="theme/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OrderCloud.io">
+    <meta name="description" content="Posts and writings by OrderCloud.io">
+<meta name="keywords" content="shippingrates">
+    <title>
+    OrderCloud Documentation Content
+&ndash; Shippingrates: Configuring Catalog    </title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="..">OrderCloud Documentation Content</a>
+      </div>
+      <p>
+          <a href="../archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+    <aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+      <nav>
+        <header class="navmenu-text visible-xs">
+          <h2>Documentation Nav</h2>
+          
+          <ul class="nav navmenu-nav">
+              <li> <a href="C:\docs\content\pages\frameworks-and-sdks.md"> Frameworks And Sdks </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\integration-services.md"> Integration Services </a>
+            </li>
+              <li> <a href="C:\docs\content\pages\platform-guides.md"> Platform Guides </a>
+            </li>
+        </ul>
+      </nav>
+    </header>
+  </aside>
+<article>
+  <div class="article__title">
+    <h1><a href="../integration-services\shippingrates-configuring-catalog.html">Shippingrates: Configuring Catalog</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: Mon 19 March 2018</p>
+ Tags:
+      <a href="../tag/shippingrates.html">#shippingrates</a>    </p>
+  </div>
+  <div class="article__text">
+    <h2>__Configuring Catalog Overview</h2>
+<p>In order to be considered when estimating shipping rates, products and their
+price schedules will need a few things set up first.</p>
+<h2>__ApplyShipping</h2>
+<p>First, <code>ApplyShipping</code> will need to be set to true on the price schedule
+assigned to the product. Any Line Items containing Products without this value
+set to true on its Price Schedule will be ignored when calculating shipping
+rates. Here's a sample Price Schedule with this configuration set:</p>
+<h2>__ShipWeight</h2>
+<p>Next, a <code>ShipWeight</code> (in lbs.) should to be set on the Product being ordered
+to provide accurate shipping rates. If a value is not set, the Product will
+still be included in the calculation. However, a weight of <code>0</code> will be used
+when calculating rates, resulting in inaccurate rates.</p>
+<h2>__ShipFromAddressID</h2>
+<p>Next, a <code>ShipFromAddressID</code> needs to be set on the Product being ordered to be
+considered when estimating shipping rates. The value for this field should be
+a previously created Admin Address ID. Each Product should have the
+<code>ShipFromAddressID</code> set for the location it is being shipped from. Products
+being shipped from separate locations will be considered a separate shipment
+within OrderCloud.io, meaning Line Items will be grouped by these addresses
+(as well as the item's Shipping Address) when calculating rates. Here's a
+sample Admin Address and a Product containing that Admin Address' ID, as well
+as a <code>ShipWeight</code>:</p>
+  </div>
+
+</article>
+</main>
+<footer>
+  <p>THE END</p>
+</footer>
+</body>
+</html>
