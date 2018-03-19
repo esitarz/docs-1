@@ -1,2 +1,6 @@
-pillow
+pelican
+Markdown
 beautifulsoup4
+gitpython
+webassets
+typogrify
