@@ -59,7 +59,7 @@
           
           <ul class="nav navmenu-nav">
             {% for page in pages %}
-              <li> <a href="{{ page }}"> {{ page.title }} </a>
+              <li> <a href="{{ SITEURL }}/ {{ page.stub }}"> {{ page.title }} </a>
             </li>
           {% endfor %}
         </ul>
