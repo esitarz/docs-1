@@ -4,21 +4,12 @@ This repo contains all the Documentation content for [OrderCloud.io](), as well 
 
 ## Layout
 
-The OrderCloud documentation content is laid out as follows:
-
 - /content
-    + /api-reference
-        * /images
-    + /components
-        * /images
-    + /frameworks-and-sdks
-        * /images
-    + /integration-services
-        * /images
-    + /platform-guides
-        * /images
-    + /user-case-guides
-        * /images
+    + frameworks-and-sdks
+    + images
+    + integration-services
+    + pages
+    + platform-guides
 - /output
 - /styles
 
@@ -26,12 +17,7 @@ The OrderCloud documentation content is laid out as follows:
 
 Each guide is a seperate [Markdown]() file. We stick to [Github-flavoured Markdown]().
 
-Our [Style Guide](StyleGuide.md) lays out our house style in detail, but in brief:
-
-1. Be *Clear*, and *Brief*.
-2. Keep it *[International]()*
-3. Keep documentation *[Accessible]()* 
-
+Our [Style Guide](StyleGuide.md) lays out our house style in detail.
 
 ## How To Raise A Bug or Request A Feature
 
@@ -48,7 +34,14 @@ We do *not* promise to include every requested feature, nor do we promise any pa
 
 If you would like to contribute to this documentation project, please grab a bug or issue from the backlog, fix, and then make a PR to the development branch. The OrderCloud team will review and address these PRs.
 
-When creating new content or editing old, please keep our [House Style Guide]() in mind. 
+### Pelican Build Process
+
+We are using the python-based [Pelican]() to build our output files. The output html are transfered to the [DevCenter]() application when they are converted. 
+
+### Local Development
+
+
+
 
 
 > All content is © [Four51]() 2018. 
