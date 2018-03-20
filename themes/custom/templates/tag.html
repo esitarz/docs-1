@@ -1,21 +1,33 @@
 {% extends "index.html" %}
-{% block title %}&ndash; Tag: {{ tag }}{% endblock %}
-
-{% block head %}
-{% if TAG_FEED_ATOM %}
-<link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ tag }} Tag Atom" />
-{% endif %}
-{% if TAG_FEED_RSS %}
-<link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} {{ tag }} Tag RSS" />
-{% endif %}
-{% endblock %}
-
-{% block header %}
-&gt; Tag: {{ tag }}
-{% if TAG_FEED_ATOM %}
-&brvbar; <a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}">Atom</a>
-{% endif %}
-{% if TAG_FEED_RSS %}
-&brvbar; <a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}">RSS</a>
-{% endif %}
+{% block content %}
+	<div class="oc-banner-full-width oc-ordercloud-four51-bg oc-flex-layout vertical center-center">
+		<div class="container text-center">
+			<i class="fa fa-bolt fa-2x"></i>
+			<h1>{{tag.name}}</h1>
+		</div>
+	</div>
+	<div class="container">
+		<article>
+			<div class="oc-toc docs-toc">
+				<div class="toc-block" ng-repeat="section in ::documentation.navSections | filter: { type: 'Frameworks and SDKs' }:true">
+					<div class="row">
+						<div class="col-md-20">
+							<ul>
+								{% for article in articles %}
+									<li ng-repeat="guide in ::documentation.navResources | filter: { section: section.name }:true" ng-if="!guide.href">
+										<a href="{{siteurl}}/{{article.url}}">
+											<h3>{{article.title}}</h3>
+											<small>{{article.summary}}</small>
+										</a>
+									</li>
+									<hr>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	
 {% endblock %}

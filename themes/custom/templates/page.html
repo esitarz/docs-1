@@ -1,23 +1,42 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 {% block title %}&ndash; {{ page.title }}{% endblock %}
 {% block content %}
-	<article>
-		<div class="article__title">
-			<h3><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></h3>
+	<div class="oc-banner-full-width oc-radically-io-bg  oc-flex-layout vertical center-center">
+		<div class="container text-center">
+			<i class="{{page.icon}}"></i>
+			<h1>{{page.title}}</h1>
+			<p class="lead">{{ page.content }}</p>
 		</div>
-		<div class="article__meta">
-			<p>Updated on: {{ page.locale_date }}</p>
-		</div>
-		<div class="article__text">
-			{{ page.content }}
-		</div>
-		<div>
-			{% for article in articles %}
-				{% if page.slug == article.category %}
-					<li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
-				{% endif %}
-			{% endfor %}
-		</ul>
+	</div>
+	<div class="container">
+		<article>
+			<div class="oc-toc docs-toc">
+				<div class="toc-block" ng-repeat="section in ::documentation.navSections | filter: { type: '{{page.title}}' }:true">
+					{% for tag, articles in tags|sort %}
+						{% for article in articles if article.category == page.title %}
+							<div class="row">
+								<div class="col-md-4">
+									<h2 class="toc-block-title">{{tag.name}}</h2>
+								</div>
+								
+								<div class="col-md-8">
+									
+									<ul>
+										<li ng-repeat="guide in ::documentation.navResources | filter: { section: section.name }:true">
+											<a href="{{SITEURL}}/{{article.url}}">
+												<h3>{{article.title}}</h3>
+												<small>{{article.summary}}</small>
+											</a>
+										</li>
+									</ul>
+									
+								</div>
+							</div>
+						{% endfor %}
+					{% endfor %}
+				</div>
+			</div>
+		</article>
 	</div>
 </article>
 {% endblock %}

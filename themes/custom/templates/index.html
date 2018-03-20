@@ -1,4 +1,57 @@
 {% extends "base.html" %}
+{% block header %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <!--Brand and toggle get grouped for better mobile display-->
+            <div class="navbar-header">
+              <!--Navmenu Left Toggle-->
+              <button ng-hide="'account' | isState" type="button" class="navmenu-toggle navmenu-toggle-left" data-toggle="offcanvas" data-target="#navmenuLeft" data-canvas="body">
+              <i class="fa fa-bars"></i>
+              </button>
+              <a href="{{ siteurl }}" class="navbar-brand oc-logo">
+                <img alt="Ordercloud.io" src="/assets/images/svg/ordercloudio_horizontal_logo.svg">
+              </a>
+              <!--Navmenu Mobile Right Toggle-->
+              <button type="button" class="navmenu-toggle" data-toggle="offcanvas" data-target="#navmenuRight" data-canvas="body">
+              <i class="fa fa-user"></i>
+              </button>
+              <!--Navbar Collapsed Toggle-->
+              <button type="button" class="navbar-toggle collapsed" ng-click="isNavCollapsed = !isNavCollapsed">
+              <i class="fa fa-th"></i>
+              </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-left">
+              <div class="collapse navbar-collapse" uib-collapse="!isNavCollapsed" ng-click="isNavCollapsed = !isNavCollapsed">
+                <ul class="nav navbar-nav">
+                  <li ng-class="{active: base.isActive('{{ siteurl }}')}">
+                    <a ui-sref="{{ siteurl }}">Dashboard</a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a ui-sref="{{ siteurl }}">Documentation</a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a ui-sref="{{ siteurl }}">Console</a>
+                  </li>
+                  <li>
+                    <a ui-sref="{{ siteurl }}">Community</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--Navmenu Desktop Right Toggle-->
+            <div class="navbar-right">
+              <button type="button" ng-if="base.currentUser != null" class="navmenu-toggle navbar-btn navbar-toggle navmenu-toggle-right" data-toggle="offcanvas" data-target="#navmenuRight" data-canvas="body">
+              <i class="fa fa-user"></i>
+              </button>
+              <button type="button" class="btn btn-nav-login btn-desktop" ui-sref="login" ng-if="base.currentUser == null">
+              Login
+              </button>
+            </div>
+          </div>
+        </nav>
+
+{% endblock %}
 {% block content %}
   <!--each docs section's main template replaces this view-->
   <ui-view>
@@ -19,7 +72,7 @@
             <div class="oc-flex-layout flex-col-lg-6 text-center">
               {% for page in pages %}
                 <div ui-sref="{{ page.slug }}" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
-                  <h2 class="card-title"><i class="fa fa-book color__curry"></i>{{ page.title }}</h2>
+                  <h2 class="card-title"><i class="{{page.icon}}"></i>{{ page.title }}</h2>
                   <p class="small text-muted card-descrip"> {{ page.content }}</p>
                   <a class="btn btn-secondary">
                     <a href="{{ SITEURL }}/{{ page.slug }}">Learn More</a>

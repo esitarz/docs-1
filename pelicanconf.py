@@ -20,8 +20,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 THEME_PATHS = ['pelican-themes']
-#THEME = 'pelican-themes/pelican-sober'
-THEME = 'themes/custom'
+#THEME = 'pelican-themes/flex'
+THEME = 'themes/flex-ordercloudio'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
 PLUGINS = ['ace_editor']
