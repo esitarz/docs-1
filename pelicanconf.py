@@ -40,6 +40,7 @@ ARTICLE_SAVE_AS = os.path.join('{category}','{slug}.html')
 ARTICLE_URL = os.path.join('{category}','{slug}.html')
 
 READERS = {'html': None}
+IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 
 DEFAULT_PAGINATION = 5
 
