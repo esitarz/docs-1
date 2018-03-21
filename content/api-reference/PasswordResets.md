@@ -1,8 +1,8 @@
 ---
 title: Forgotten Password
-date: 2018-03-19 18:56:07
-category: Api Reference
-tags: AuthenticationAndAuthorization
+date: 2018-03-21
+category: API Reference
+tags: Authentication And Authorization
 slug: PasswordResets
 ---
 [{'ID': 'SendVerificationCode', 'Name': 'Send a verification code', 'Comments': ['Sends a temporary verification code via email, which must subsequently be passed in a Reset Password call.'], 'HttpVerb': 'POST', 'UriTemplate': 'v1/password/reset', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "ClientID": "",\r\n  "Email": "",\r\n  "Username": "",\r\n  "URL": ""\r\n}', 'Fields': [{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the password reset request.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the password reset request.', 'Required': False}, {'Name': 'URL', 'Type': 'string', 'Description': 'URL of the password reset request.', 'Required': False}]}, 'ResponseStatus': 204, 'ResponseBody': None, 'Roles': []}, {'ID': 'ResetPasswordByVerificationCode', 'Name': 'Reset a password by verification code', 'Comments': [], 'HttpVerb': 'PUT', 'UriTemplate': 'v1/password/reset/{verificationCode}', 'Parameters': [{'Name': 'verificationCode', 'Type': 'string', 'Description': 'Verification code of the password reset.', 'Required': True}], 'RequestBody': {'Sample': '{\r\n  "ClientID": "",\r\n  "Username": "",\r\n  "Password": ""\r\n}', 'Fields': [{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required.', 'Required': True}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the password reset.', 'Required': False}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the password reset.', 'Required': False}]}, 'ResponseStatus': 204, 'ResponseBody': None, 'Roles': []}]
