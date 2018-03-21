@@ -1,7 +1,7 @@
 ---
 title: Products
 date: 2018-03-19 18:56:07
-category: content\api-reference
+category: Api Reference
 tags: MeAndMyStuff
 slug: MeProducts
 ---

@@ -21,6 +21,12 @@ p = Path('**/api-reference/*.md')
 rootLoc = Path('content/api-reference')
 print(str(rootLoc))
 
+parents = str(rootLoc).replace('-', ' ') 
+parents = parents.title()
+parents = parents.split('\\')
+
+print(parents)
+
 
 resources = r.json()['Resources']
 
@@ -33,7 +39,7 @@ for item in resources:
 	#print(item)
 	itemPath = item['ID']+'.md'
 
-	header = "---\ntitle: "+item['Name']+"\ndate: "+str(updatedOn)+"\ncategory: "+str(rootLoc)+"\ntags: "+item['Section']+"\nslug: "+item['ID']+"\n---\n"
+	header = "---\ntitle: "+item['Name']+"\ndate: "+str(updatedOn)+"\ncategory: "+str(parents[1])+"\ntags: "+item['Section']+"\nslug: "+item['ID']+"\n---\n"
 
 	with open(str(rootLoc)+'/'+itemPath, 'w') as mark:
             #print(newLoc)
@@ -43,3 +49,4 @@ for item in resources:
 
 
 
+# TODO: run in build if updated last < build date

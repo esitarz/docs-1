@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog - Integration Services</title><link href="/" rel="alternate"></link><link href="/feeds/integration-services.atom.xml" rel="self"></link><id>/</id><updated>2018-03-19T15:32:44+00:00</updated><entry><title>Authorizenet: Authorize And Capture Transaction</title><link href="/authorizenet-authorize-and-capture-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-authorize-and-capture-transaction.html</id><summary type="html">&lt;h2&gt;__Authorize and Capture Transaction Overview&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>OrderCloud Documentation Content - Integration Services</title><link href="https://ordercloud-api.github.io/docs/" rel="alternate"></link><link href="https://ordercloud-api.github.io/docs/feeds/integration-services.atom.xml" rel="self"></link><id>https://ordercloud-api.github.io/docs/</id><updated>2018-03-19T15:32:44-05:00</updated><entry><title>Authorizenet: Authorize And Capture Transaction</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-authorize-and-capture-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-authorize-and-capture-transaction.html</id><summary type="html">&lt;h2&gt;__Authorize and Capture Transaction Overview&lt;/h2&gt;
 &lt;p&gt;Authorizing and Capturing a credit card transaction is one of the most
 involved methods included in this integration. This method will create a new
 Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
@@ -278,7 +278,7 @@ The transaction was unsuccessful.
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Authorize Only Transaction</title><link href="/authorizenet-authorize-only-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-authorize-only-transaction.html</id><summary type="html">&lt;h2&gt;__Authorize Only Transaction Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Authorize Only Transaction</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-authorize-only-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-authorize-only-transaction.html</id><summary type="html">&lt;h2&gt;__Authorize Only Transaction Overview&lt;/h2&gt;
 &lt;p&gt;Though a payment is not actually being captured, the Authorize Only
 transaction method involves just as many integration calls as Authorizing and
 Capturing a credit card transaction. This method will create a new Customer
@@ -559,7 +559,7 @@ The transaction was unsuccessful.
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Create Credit Card</title><link href="/authorizenet-create-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-create-credit-card.html</id><summary type="html">&lt;h2&gt;__Create Credit Card Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Create Credit Card</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-create-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-create-credit-card.html</id><summary type="html">&lt;h2&gt;__Create Credit Card Overview&lt;/h2&gt;
 &lt;p&gt;When a customer within your buyer application creates a credit card, the
 integration endpoint can be called in order to create that card within
 OrderCloud.io as well as Authorize.Net. The card will created as a personal
@@ -707,7 +707,7 @@ The credit card has expired.
 &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
 
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Delete Credit Card</title><link href="/authorizenet-delete-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-delete-credit-card.html</id><summary type="html">&lt;h2&gt;__Delete Credit Card Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Delete Credit Card</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-delete-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-delete-credit-card.html</id><summary type="html">&lt;h2&gt;__Delete Credit Card Overview&lt;/h2&gt;
 &lt;p&gt;When a customer within your buyer application deletes a credit card, the
 integration endpoint can be called in order to delete that card on
 OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
@@ -771,7 +771,7 @@ CardDetails.CreditCardID is required to delete a credit card.
 
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Prior Authorization Capture Transaction</title><link href="/authorizenet-prior-authorization-capture-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-prior-authorization-capture-transaction.html</id><summary type="html">&lt;h2&gt;__Prior Authorization Capture Transaction Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Prior Authorization Capture Transaction</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-prior-authorization-capture-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-prior-authorization-capture-transaction.html</id><summary type="html">&lt;h2&gt;__Prior Authorization Capture Transaction Overview&lt;/h2&gt;
 &lt;p&gt;In the case that Authorize Only was previously used for a payment, Prior
 Authorization Capture Transaction can be used to actually capture the payment.
 This method will first capture the payment on Authorize.Net, then create an
@@ -868,7 +868,7 @@ BuyerID is required to capture a prior authorization.
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.PaymentID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Refund Transaction</title><link href="/authorizenet-refund-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-refund-transaction.html</id><summary type="html">&lt;h2&gt;__Refund Transaction Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Refund Transaction</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-refund-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-refund-transaction.html</id><summary type="html">&lt;h2&gt;__Refund Transaction Overview&lt;/h2&gt;
 &lt;p&gt;In the case that a refund is required for a previously captured transaction,
 use the Refund Transaction method. This method will refund the transaction on
 Authorize.Net for either an existing card or dynamically to the card details
@@ -988,7 +988,7 @@ CardDetails.ExpirationDate are required to refund a transaction.
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.PaymentID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Update Credit Card</title><link href="/authorizenet-update-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-update-credit-card.html</id><summary type="html">&lt;h2&gt;__Update Credit Card Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Update Credit Card</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-update-credit-card.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-update-credit-card.html</id><summary type="html">&lt;h2&gt;__Update Credit Card Overview&lt;/h2&gt;
 &lt;p&gt;When a customer within your buyer application updates a credit card, the
 integration endpoint can be called in order to update that card on
 OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
@@ -1119,7 +1119,7 @@ The credit card has expired.
 
 &lt;h3&gt;OrderCloud.io Error Response&lt;/h3&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Void Transaction</title><link href="/authorizenet-void-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authorizenet-void-transaction.html</id><summary type="html">&lt;h2&gt;__Void Transaction Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Authorizenet: Void Transaction</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cauthorizenet-void-transaction.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\authorizenet-void-transaction.html</id><summary type="html">&lt;h2&gt;__Void Transaction Overview&lt;/h2&gt;
 &lt;p&gt;Though this method is used most commonly by other methods when certain actions
 fail, it can also be called directly through the integration. This method will
 void a previous transaction on Authorize.Net, then create a transaction tied
@@ -1233,7 +1233,7 @@ CardDetails.ExpirationDate are required to void a transaction.
 &lt;p&gt;If an incorrect &lt;code&gt;BuyerID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.CreditCardID&lt;/code&gt; was provided:&lt;/p&gt;
 &lt;p&gt;If an incorrect &lt;code&gt;CardDetails.PaymentID&lt;/code&gt; was provided:&lt;/p&gt;
-&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Shippingrates: Configuring Catalog</title><link href="/shippingrates-configuring-catalog.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-configuring-catalog.html</id><summary type="html">&lt;h2&gt;__Configuring Catalog Overview&lt;/h2&gt;
+&lt;p&gt;If an incorrect &lt;code&gt;OrderID&lt;/code&gt; was provided:&lt;/p&gt;</content><category term="authorizenet"></category></entry><entry><title>Shippingrates: Configuring Catalog</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-configuring-catalog.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-configuring-catalog.html</id><summary type="html">&lt;h2&gt;__Configuring Catalog Overview&lt;/h2&gt;
 &lt;p&gt;In order to be considered when estimating shipping rates, products and their
 price schedules will need a few things set up first.&lt;/p&gt;
 &lt;h2&gt;__ApplyShipping&lt;/h2&gt;
@@ -1260,7 +1260,7 @@ being shipped from separate locations will be considered a separate shipment
 within OrderCloud.io, meaning Line Items will be grouped by these addresses
 (as well as the item's Shipping Address) when calculating rates. Here's a
 sample Admin Address and a Product containing that Admin Address' ID, as well
-as a &lt;code&gt;ShipWeight&lt;/code&gt;:&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Configuring Integration</title><link href="/shippingrates-configuring-integration.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-configuring-integration.html</id><summary type="html">&lt;h2&gt;__Creating Configuration&lt;/h2&gt;
+as a &lt;code&gt;ShipWeight&lt;/code&gt;:&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Configuring Integration</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-configuring-integration.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-configuring-integration.html</id><summary type="html">&lt;h2&gt;__Creating Configuration&lt;/h2&gt;
 &lt;p&gt;To configure your integration, navigate to the Dashboard Dashboard
 Integrations page within OrderCloud.io and select Shipping Rates.&lt;/p&gt;
 &lt;h3&gt;Selecting Carriers&lt;/h3&gt;
@@ -1299,7 +1299,7 @@ Add. Since you previously created the Shipping Rates configuration, it should
 be available within the modal. Simply click Enable and your Buyer Application
 will be ready to use the Shipping Rates integration.&lt;/p&gt;
 &lt;p&gt;![]({filename}/images/docs-guides/integrations/shippingrates/shippingrates-
-assignment.png)&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Get Line Item Rates</title><link href="/shippingrates-get-line-item-rates.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-get-line-item-rates.html</id><summary type="html">&lt;h2&gt;__Get Line Item Rates Overview&lt;/h2&gt;
+assignment.png)&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Get Line Item Rates</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-get-line-item-rates.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-get-line-item-rates.html</id><summary type="html">&lt;h2&gt;__Get Line Item Rates Overview&lt;/h2&gt;
 &lt;p&gt;The next method available within the OrderCloud.io Shipping Rates integration
 is &lt;em&gt;GetLineItemRates&lt;/em&gt;. This method will obtain shipping rate estimates from
 the carriers selected in your integration configuration for each individual
@@ -1390,7 +1390,7 @@ At least one line item is required to get shipping rates.
 
 400
 
-&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Get Rates</title><link href="/shippingrates-get-rates.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-get-rates.html</id><summary type="html">&lt;h2&gt;__Get Rates Overview&lt;/h2&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Get Rates</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-get-rates.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-get-rates.html</id><summary type="html">&lt;h2&gt;__Get Rates Overview&lt;/h2&gt;
 &lt;p&gt;The first method available within the OrderCloud.io Shipping Rates integration
 is &lt;em&gt;GetRates&lt;/em&gt;. This method will group together Line Items on an Order based on
 the Line Items' &lt;code&gt;ShippingAddress&lt;/code&gt; and the Line Item Products'
@@ -1483,7 +1483,7 @@ At least one line item is required to get shipping rates.
 
 400
 
-&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Overview</title><link href="/shippingrates-overview.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-overview.html</id><summary type="html">&lt;h2&gt;__Shipping Rates Overview&lt;/h2&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Overview</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-overview.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-overview.html</id><summary type="html">&lt;h2&gt;__Shipping Rates Overview&lt;/h2&gt;
 &lt;p&gt;OrderCloud.io offers the ability to provide weight-based shipping rate
 estimates within your storefronts based on the commercial shipping rates.
 Supported carriers within this integration currently include USPS, UPS, and
@@ -1520,7 +1520,7 @@ properly.&lt;/p&gt;
 &lt;p&gt;OrderCloud.io's Shipping Rates integration not only requires configuration for
 the integration endpoint itself, but for the products that will be included
 for shipping rate estimates as well. These topics will be covered in the
-following sections.&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Set Shipping Cost</title><link href="/shippingrates-set-shipping-cost.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/shippingrates-set-shipping-cost.html</id><summary type="html">&lt;h2&gt;__Set Shipping Cost Overview&lt;/h2&gt;
+following sections.&lt;/p&gt;</content><category term="shippingrates"></category></entry><entry><title>Shippingrates: Set Shipping Cost</title><link href="https://ordercloud-api.github.io/docs/integration-services%5Cshippingrates-set-shipping-cost.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/integration-services\shippingrates-set-shipping-cost.html</id><summary type="html">&lt;h2&gt;__Set Shipping Cost Overview&lt;/h2&gt;
 &lt;p&gt;Once a user selects their desired shipper(s) for their order, the
 &lt;code&gt;ShippingCost&lt;/code&gt; on the Order can be set via the &lt;em&gt;SetShippingCost&lt;/em&gt; method. This
 method will patch the Order with the provided &lt;code&gt;ShippingCost&lt;/code&gt; value and return

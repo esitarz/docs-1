@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="OrderCloud.io" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="OrderCloud Documentation Content"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+
+  <title>OrderCloud Documentation Content &ndash;     Category content\api-reference
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article>
+  <header>
+    <h2><a href="../contentapi-reference\MessageSenders.html#MessageSenders">Message Senders</a></h2>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/contentapi-reference.html">content\api-reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/seller.html">Seller</a>
+    </p>
+  </header>
+  <div>
+      <p>[{'ID': 'Get', 'Name': 'Get a single message sender', 'Comments': [], 'HttpVerb': 'GET', 'UriTemplate': 'v1/messagesenders/{messageSenderID}', 'Parameters': [{'Name': 'messageSenderID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': True}], 'RequestBody': None, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "MessageTypes": [\r\n    "OrderDeclined"\r\n  ],\r\n …</p>
+      <br>
+      <a class="btn" href="../contentapi-reference\MessageSenders.html#MessageSenders">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../contentapi-reference\Orders.html#Orders">Orders</a></h2>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/contentapi-reference.html">content\api-reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/ordersandfulfillment.html">OrdersAndFulfillment</a>
+    </p>
+  </header>
+  <div>
+      <p>[{'ID': 'Get', 'Name': 'Get a single order', 'Comments': [], 'HttpVerb': 'GET', 'UriTemplate': 'v1/orders/{direction}/{orderID}', 'Parameters': [{'Name': 'direction', 'Type': 'string', 'Description': "Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.", 'Required': True}, {'Name': 'orderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': True}], 'RequestBody': None, 'ResponseStatus' …</p>
+      <br>
+      <a class="btn" href="../contentapi-reference\Orders.html#Orders">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../contentapi-reference\PasswordResets.html#PasswordResets">Forgotten Password</a></h2>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/contentapi-reference.html">content\api-reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/authenticationandauthorization.html">AuthenticationAndAuthorization</a>
+    </p>
+  </header>
+  <div>
+      <p>[{'ID': 'SendVerificationCode', 'Name': 'Send a verification code', 'Comments': ['Sends a temporary verification code via email, which must subsequently be passed in a Reset Password call.'], 'HttpVerb': 'POST', 'UriTemplate': 'v1/password/reset', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "ClientID": "",\r\n  "Email": "",\r\n  "Username": "",\r\n  "URL": ""\r\n}', 'Fields': [{'Name' …</p>
+      <br>
+      <a class="btn" href="../contentapi-reference\PasswordResets.html#PasswordResets">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../contentapi-reference\Payments.html#Payments">Payments</a></h2>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/contentapi-reference.html">content\api-reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/ordersandfulfillment.html">OrdersAndFulfillment</a>
+    </p>
+  </header>
+  <div>
+      <p>[{'ID': 'Get', 'Name': 'Get a single payment', 'Comments': [], 'HttpVerb': 'GET', 'UriTemplate': 'v1/orders/{direction}/{orderID}/payments/{paymentID}', 'Parameters': [{'Name': 'direction', 'Type': 'string', 'Description': "Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.", 'Required': True}, {'Name': 'orderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': True}, {'Name' …</p>
+      <br>
+      <a class="btn" href="../contentapi-reference\Payments.html#Payments">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../contentapi-reference\PriceSchedules.html#PriceSchedules">Price Schedules</a></h2>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/contentapi-reference.html">content\api-reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/productcatalogs.html">ProductCatalogs</a>
+    </p>
+  </header>
+  <div>
+      <p>[{'ID': 'Get', 'Name': 'Get a single price schedule', 'Comments': [], 'HttpVerb': 'GET', 'UriTemplate': 'v1/priceschedules/{priceScheduleID}', 'Parameters': [{'Name': 'priceScheduleID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': True}], 'RequestBody': None, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n …</p>
+      <br>
+      <a class="btn" href="../contentapi-reference\PriceSchedules.html#PriceSchedules">    Continue reading
+</a>
+  </div>
+</article>
+
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

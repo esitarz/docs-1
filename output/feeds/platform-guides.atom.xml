@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog - Platform Guides</title><link href="/" rel="alternate"></link><link href="/feeds/platform-guides.atom.xml" rel="self"></link><id>/</id><updated>2018-03-19T15:32:44+00:00</updated><entry><title>Authentication: Anonymous Shopping</title><link href="/authentication-anonymous-shopping.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-anonymous-shopping.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>OrderCloud Documentation Content - Platform Guides</title><link href="https://ordercloud-api.github.io/docs/" rel="alternate"></link><link href="https://ordercloud-api.github.io/docs/feeds/platform-guides.atom.xml" rel="self"></link><id>https://ordercloud-api.github.io/docs/</id><updated>2018-03-19T15:32:44-05:00</updated><entry><title>Authentication: Anonymous Shopping</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-anonymous-shopping.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-anonymous-shopping.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
 &lt;p&gt;Anonymous Shopping, or Guest Checkout, is when a user is enabled to browse a
 catalog of products and/or checkout without registering themselves.
 Accomplishing this requires OrderCloud.io developers to pull together a lot of
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 &lt;p&gt;Similar to the OAuth 2.0 Response, you will receive an access_token after
 profiling the user. At this point, remove the anonymous access_token and
-continue forward with the profiled user's access_token.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Developer Access</title><link href="/authentication-developer-access.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-developer-access.html</id><summary type="html">&lt;h2&gt;__Developer Access&lt;/h2&gt;
+continue forward with the profiled user's access_token.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Developer Access</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-developer-access.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-developer-access.html</id><summary type="html">&lt;h2&gt;__Developer Access&lt;/h2&gt;
 &lt;p&gt;In order to make it easier for developers to get in and start testing
 applications we made a unique role called &lt;code&gt;DevCenterImpersonate&lt;/code&gt;. This role
 allows you to log into your application with your Dev Center username and
@@ -82,7 +82,7 @@ applications we made a unique role called &lt;code&gt;DevCenterImpersonate&lt;/c
 allows you to log into your application with your Dev Center username and
 password so you don't have to go through the trouble of creating a user first.&lt;/p&gt;
 &lt;p&gt;To take advantage of this feature simply include the role
-&lt;code&gt;DevCenterImpersonate&lt;/code&gt; in the scope of your authentication request:&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Impersonation</title><link href="/authentication-impersonation.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-impersonation.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;code&gt;DevCenterImpersonate&lt;/code&gt; in the scope of your authentication request:&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Impersonation</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-impersonation.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-impersonation.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
 &lt;p&gt;In some instances, you may want to allow a user to order on behalf of another
 user. We see this use case a lot in Customer Service Desk and Call Center
 scenarios where customers will call their orders in and the service rep places
@@ -160,7 +160,7 @@ Content-Type: application/json
 
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;You should now have a basic understanding of how to impersonate a buyer user
-on Ordercloud.io, and when you may need to use this functionality.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Oauth2 Workflows</title><link href="/authentication-oauth2-workflows.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-oauth2-workflows.html</id><summary type="html">&lt;h2&gt;What is OAuth?&lt;/h2&gt;
+on Ordercloud.io, and when you may need to use this functionality.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Oauth2 Workflows</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-oauth2-workflows.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-oauth2-workflows.html</id><summary type="html">&lt;h2&gt;What is OAuth?&lt;/h2&gt;
 &lt;p&gt;OAuth is an open standard for authorization commonly used as a way for users
 to log into third party websites using Microsoft, Google, Facebook etc.
 accounts without exposing their password. It is increasingly becoming an
@@ -256,7 +256,7 @@ by &lt;code&gt;Bearer&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;You should now have a basic understanding of the four different OAuth 2
 workflows. Each of these workflows return a token which allows you to make
-authenticated calls to OrderCloud.io.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Refresh Tokens</title><link href="/authentication-refresh-tokens.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-refresh-tokens.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+authenticated calls to OrderCloud.io.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Refresh Tokens</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-refresh-tokens.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-refresh-tokens.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;You will learn how to set-up and use refresh tokens which will allow your
 users to remain signed in without having to reauthenticate. This guide assumes
 you already know how to authenticate using one of the four workflows&lt;/p&gt;
@@ -331,7 +331,7 @@ This will be the refresh_token from the first response
 &lt;h2&gt;__Conclusion&lt;/h2&gt;
 &lt;p&gt;After reading this guide you should now be able to retrieve access tokens by
 using refresh tokens. This will allow your users to remain signed in as long
-as their refresh token has not expired.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Security Profiles</title><link href="/authentication-security-profiles.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/authentication-security-profiles.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+as their refresh token has not expired.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Authentication: Security Profiles</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cauthentication-security-profiles.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\authentication-security-profiles.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;Security Profiles are an assortment of roles that give access to specific
 endpoints in the OrderCloud.io API. Profiles can be assigned to the users of
 your Seller or Buyer application. If a request is made by a user without
@@ -346,12 +346,12 @@ OrderCloud.io Dashboard.&lt;/p&gt;
 &lt;p&gt;Security Profiles are made up of a list of roles which fall into one of two
 categories: Admin and Reader. An &lt;strong&gt;Admin&lt;/strong&gt; role allows read and write access
 while a &lt;strong&gt;Reader&lt;/strong&gt; role type allows only read access.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/authentication/security-profiles.roles.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/authentication/security-profiles.roles.png"&gt;&lt;/p&gt;
 &lt;h2&gt;__Assigning Profiles&lt;/h2&gt;
 &lt;p&gt;Security Profiles are assigned at the party level (User, User Group, Buyer
 Organization or Admin Organization).&lt;/p&gt;
 &lt;p&gt;If more than one Security Profile is inherited, the roles will be a union of
-the roles from every inherited Security Profile.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Basic Api Features: Conventions</title><link href="/basic-api-features-conventions.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-conventions.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+the roles from every inherited Security Profile.&lt;/p&gt;</content><category term="authentication"></category></entry><entry><title>Basic Api Features: Conventions</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-conventions.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-conventions.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;With few exceptions, the OrderCloud.io API adheres to a RESTful architectural
 style. URIs, HTTP verbs, headers, payloads, and response codes all follow
 consistent and predictable patterns. This guide will outline conventions that
@@ -393,7 +393,7 @@ range&lt;/a&gt;.
 Only when something goes terribly wrong on our end will you get a 500
 response. And so long as our platform is responding (i.e. returing anything in
 the 4xx range or 500), you can count on the response body taking a standard
-shape.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Errors</title><link href="/basic-api-features-errors.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-errors.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+shape.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Errors</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-errors.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-errors.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;OrderCloud.io uses conventional HTTP response codes to indicate success or
 failure of an API request. In general, codes in the &lt;code&gt;2xx&lt;/code&gt; range indicate
 success and codes in the &lt;code&gt;4xx&lt;/code&gt; range indicate an error failed given the
@@ -499,7 +499,7 @@ request.
 There was a server-side issue. Please contact us if you encounter this error
 code.
 
-&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Extended Properties</title><link href="/basic-api-features-extended-properties.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-extended-properties.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Extended Properties</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-extended-properties.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-extended-properties.html</id><summary type="html">&lt;h2&gt;Overview&lt;/h2&gt;
 &lt;p&gt;The reality of all enterprise platforms is the need to customize the data
 model. To accommodate this, OrderCloud.io designed a property called Extended
 Properties (XP) to allow enterprise customization of the OrderCloud data
@@ -676,7 +676,7 @@ sorting guides to learn more about querying.&lt;/p&gt;
 &lt;p&gt;XP is a very powerful feature to extend the capabilities of your application.
 It provides the flexibility developers need to meet challenging requirements,
 giving you the ability to provide a highly customized solutions. Head over to
-the API Console to try it for yourself!&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Filtering</title><link href="/basic-api-features-filtering.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-filtering.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+the API Console to try it for yourself!&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Filtering</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-filtering.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-filtering.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;Most OrderCloud.io Resources include a method for listing items from that
 Resource. The items from such a call could very well be in the thousands so
 being able to narrow down the range of the items returned is critical, this
@@ -724,7 +724,7 @@ model well, and use grouping constructs like User Groups and Categories
 effectively.&lt;/p&gt;
 &lt;h2&gt;__Combining Queries&lt;/h2&gt;
 &lt;p&gt;Filtering can be mixed and matched with Searching and Sorting to give you
-ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Http Methods</title><link href="/basic-api-features-http-methods.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-http-methods.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Http Methods</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-http-methods.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-http-methods.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;A resource is a set of endpoints used to interact with an object of that same
 name. OrderCloud.io adheres to RESTful conventions in its usage of HTTP verbs.
 You can expect a subset of the following methods to exist on every Resource.&lt;/p&gt;
@@ -890,7 +890,7 @@ Deletes an item
 
 Delete address ABC from the database
 
-&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Pagination</title><link href="/basic-api-features-pagination.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-pagination.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Pagination</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-pagination.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-pagination.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;Most OrderCloud.io Resources include a method for listing items from that
 Resource. These resources can potentially include thousands of items so
 restricting the data that is returned from such a request is not only
@@ -912,7 +912,7 @@ array stores the actual results of the resource you are querying.&lt;/p&gt;
 If you have more results than the page count, you will have multiple pages.
 You can use the &lt;code&gt;Page&lt;/code&gt; and &lt;code&gt;PageSize&lt;/code&gt; values from the &lt;code&gt;Meta&lt;/code&gt; object to specify
 the page (starting at 1) and items per page. Note that unlike the page
-parameter, &lt;code&gt;ItemRange&lt;/code&gt; values are zero-based.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Searching</title><link href="/basic-api-features-searching.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-searching.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+parameter, &lt;code&gt;ItemRange&lt;/code&gt; values are zero-based.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Searching</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-searching.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-searching.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;Searching data client side can be fine for smaller sets of data but can
 quickly become unwieldy with large sets of data. To address this issue our API
 supports server side search queries that do all of the heavy lifting for you.&lt;/p&gt;
@@ -934,7 +934,7 @@ are searched by providing a &lt;code&gt;searchOn&lt;/code&gt; parameter for any 
 the resource you're searching.&lt;/p&gt;
 &lt;h2&gt;__Combining Queries&lt;/h2&gt;
 &lt;p&gt;Searching can be mixed and matched with Sorting and Filtering to give you
-ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Sorting</title><link href="/basic-api-features-sorting.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/basic-api-features-sorting.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Basic Api Features: Sorting</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cbasic-api-features-sorting.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\basic-api-features-sorting.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;Most OrderCloud.io Resources include a method for listing items from that
 Resource. The results returned from a list method have a default sort order,
 but you can also specify a sort order. Properties marked as “Sortable” in the
@@ -951,7 +951,7 @@ an order. To do this you can simply include the &lt;code&gt;sortBy&lt;/code&gt; 
 field you would like to sort by.&lt;/p&gt;
 &lt;h2&gt;__Combining Queries&lt;/h2&gt;
 &lt;p&gt;Sorting can be mixed and matched with Searching and Filtering to give you
-ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Core Concepts: Assignments</title><link href="/core-concepts-assignments.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/core-concepts-assignments.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+ultimate control when defining what is returned from a list.&lt;/p&gt;</content><category term="basic api features"></category></entry><entry><title>Core Concepts: Assignments</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Ccore-concepts-assignments.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\core-concepts-assignments.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;There are basic principles around how assignments work that are critical to
 understanding our data model and more importantly how the data model can be
 applied to solve the most complex ordering scenarios.&lt;/p&gt;
@@ -1011,7 +1011,7 @@ indeterminate.&lt;/p&gt;
 &lt;h2&gt;__Assignments are Many to Many&lt;/h2&gt;
 &lt;p&gt;Resources can be assigned to many different buyer parties. Those buyer parties
 can be assigned to many other resources. For example, one user can be assigned
-to multiple address while one address can be assigned to multiple users.&lt;/p&gt;</content><category term="core concepts"></category></entry><entry><title>Core Concepts: Rules Engine</title><link href="/core-concepts-rules-engine.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/core-concepts-rules-engine.html</id><summary type="html">&lt;h2&gt;__Introduction&lt;/h2&gt;
+to multiple address while one address can be assigned to multiple users.&lt;/p&gt;</content><category term="core concepts"></category></entry><entry><title>Core Concepts: Rules Engine</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Ccore-concepts-rules-engine.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\core-concepts-rules-engine.html</id><summary type="html">&lt;h2&gt;__Introduction&lt;/h2&gt;
 &lt;p&gt;What’s a rules engine? It’s a system that executes rules. Okay...so what’s a
 rule? In its simplest form, it’s an if-then statement that is provided from
 the outside, rather than being “baked in” to the engine itself. In the case of
@@ -1088,7 +1088,7 @@ may leverage the rules engine for in the future:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;We’d love to get your thoughts on these ideas. Look for significant
 enhancements to the rules engine and new applications of it in the months
-ahead.&lt;/p&gt;</content><category term="core concepts"></category></entry><entry><title>Getting Started: Introduction To Ordercloud</title><link href="/getting-started-introduction-to-ordercloud.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/getting-started-introduction-to-ordercloud.html</id><summary type="html">&lt;h2&gt;__What is OrderCloud.io?&lt;/h2&gt;
+ahead.&lt;/p&gt;</content><category term="core concepts"></category></entry><entry><title>Getting Started: Introduction To Ordercloud</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cgetting-started-introduction-to-ordercloud.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\getting-started-introduction-to-ordercloud.html</id><summary type="html">&lt;h2&gt;__What is OrderCloud.io?&lt;/h2&gt;
 &lt;h3&gt;Overview&lt;/h3&gt;
 &lt;p&gt;OrderCloud.io is a cloud-hosted B2B eCommerce platform exposed entirely via a
 RESTful API. It enables rapid development of custom, secure, and scalable B2B
@@ -1105,14 +1105,14 @@ customize it to limits of your imagination.&lt;/p&gt;
 a larger microservices-based solution, the benefits of a RESTful API vs. other
 approaches are clear.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/intro/agnostic.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/intro/agnostic.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;OrderCloud.io enables developers to use their tech stack of choice. Plus,
 releases are automatic and non-breaking; there’s a clear, inherent boundary
 between our code and yours.&lt;/p&gt;
 &lt;p&gt;Nearly all modern web and mobile front-end frameworks are designed to work
 well out of the box with JSON-over-HTTP services that follow RESTful patterns.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/intro/scale.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/intro/scale.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Unlike on-premise solutions, server infrastructure and data security are taken
 care of for you. Start small and scale up only as your business usage grows.&lt;/p&gt;
 &lt;p&gt;Unlike SaaS products, your ability to customize user interfaces and workflows
@@ -1258,7 +1258,7 @@ assigned (like many other things) at the company, group, or user level.&lt;/p&gt
 adding them as contributors through the Dashboard. Adding a contributor
 developer is as easy as obtaining the email address they used to sign up with
 on DevCenter. You can even define how much access you would like them to have
-within any given seller organization.&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Quick Start Guide</title><link href="/getting-started-quick-start-guide.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/getting-started-quick-start-guide.html</id><summary type="html">&lt;h2&gt;__Getting Started with OrderCloud.io&lt;/h2&gt;
+within any given seller organization.&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Quick Start Guide</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cgetting-started-quick-start-guide.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\getting-started-quick-start-guide.html</id><summary type="html">&lt;h2&gt;__Getting Started with OrderCloud.io&lt;/h2&gt;
 &lt;p&gt;OrderCloud.io is a RESTful API that enables you to create complex, custom B2B
 eCommerce solutions.&lt;/p&gt;
 &lt;p&gt;This guide is meant to get you started with OrderCloud.io as quickly as
@@ -1320,7 +1320,7 @@ the currently authenticated user. (In this case, you will appear as the
 default user because we authenticated as a developer). Make sure you put your
 &lt;code&gt;access_token&lt;/code&gt; in the Authentication header before making the request.&lt;/p&gt;
 &lt;p&gt;Request&lt;/p&gt;
-&lt;p&gt;Response&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Using The Api Console</title><link href="/getting-started-using-the-api-console.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/getting-started-using-the-api-console.html</id><summary type="html">&lt;h2&gt;__Introduction&lt;/h2&gt;
+&lt;p&gt;Response&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Using The Api Console</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cgetting-started-using-the-api-console.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\getting-started-using-the-api-console.html</id><summary type="html">&lt;h2&gt;__Introduction&lt;/h2&gt;
 &lt;p&gt;The OrderCloud.io API Console provides instant access to your OrderCloud
 applications. It is extremely useful for rapidly spinning up some data to
 develop against or learning about all the different endpoints OrderCloud.io
@@ -1391,7 +1391,7 @@ list above the active response body.&lt;/p&gt;
 using the OrderCloud API. Use it to dive into your data quickly and make rapid
 changes while developing your applications. We're always looking for ways to
 improve the experience, so any feedback or suggestions you have as a user of
-the platform are greatly appreciated!&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Using The Dashboard</title><link href="/getting-started-using-the-dashboard.html" rel="alternate"></link><published>2018-03-19T15:32:44+00:00</published><updated>2018-03-19T15:32:44+00:00</updated><author><name>OrderCloud.io</name></author><id>tag:None,2018-03-19:/getting-started-using-the-dashboard.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
+the platform are greatly appreciated!&lt;/p&gt;</content><category term="getting started"></category></entry><entry><title>Getting Started: Using The Dashboard</title><link href="https://ordercloud-api.github.io/docs/platform-guides%5Cgetting-started-using-the-dashboard.html" rel="alternate"></link><published>2018-03-19T15:32:44-05:00</published><updated>2018-03-19T15:32:44-05:00</updated><author><name>OrderCloud.io</name></author><id>tag:ordercloud-api.github.io,2018-03-19:/docs/platform-guides\getting-started-using-the-dashboard.html</id><summary type="html">&lt;h2&gt;__Overview&lt;/h2&gt;
 &lt;p&gt;The OrderCloud.io Dashboard is the central hub for managing your OrderCloud
 organizations and applications. This guide is meant to help you understand all
 the tools available to you and your team while creating and maintaining
@@ -1409,7 +1409,7 @@ account.&lt;/p&gt;
 page. Here you can edit your profile information and change your password.&lt;/p&gt;
 &lt;p&gt;Below your profile information you should see a &lt;em&gt;"My Seller Organizations"&lt;/em&gt;
 tab with a new seller organization called &lt;em&gt;"Default trial company"&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/navigation.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/navigation.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Clicking on a seller in this list or creating a new organization will redirect
 you to what we call the &lt;strong&gt;OrderCloud.io Dashboard&lt;/strong&gt;. Once you're in the
 dashboard you are now working within the context of a &lt;em&gt;single&lt;/em&gt; seller
@@ -1429,14 +1429,14 @@ together on a single seller. Once a new contributor is added you can refine
 their access to your organization by adjusting their &lt;strong&gt;permissions&lt;/strong&gt; &amp;amp; &lt;strong&gt;data
 access&lt;/strong&gt;.&lt;/p&gt;
 &lt;h4&gt;Contributor Permissions&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/permissions.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/permissions.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Each permission controls whether or not a given contributor can access
 specific dashboard functionality for your seller organization. For example,
 you may have one contributor that is responsible for creating webhooks and
 integrations and another who is responsible for setting up security profiles
 for your end users.&lt;/p&gt;
 &lt;h4&gt;Contributor Data Access&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/data_access.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/data_access.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Data Access gives you control over which roles (if any) a given contributor
 can request when using the OrderCloud API with this seller organization or any
 of it's buyer organizations. A contributor with &lt;code&gt;FullAccess&lt;/code&gt; here will have
@@ -1446,7 +1446,7 @@ each developer to accomplish their project tasks to avoid unwanted or
 unexpected changes to your organization's data. OrderCloud roles are covered
 in-depth later in this guide.&lt;/p&gt;
 &lt;h2&gt;__Dashboard Features&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/features.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/features.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The left-hand menu is where you can access each of the dashboard features
 available to you for a given seller organization. Some features such as
 Message Senders or Integrations will be hidden from this menu if you do not
@@ -1571,7 +1571,7 @@ API endpoints and/or data each user can access within your organization
 (similar to your contributor's data access!). In general, an &lt;strong&gt;Admin&lt;/strong&gt; role
 allows read and write access of a given resource while a &lt;strong&gt;Reader&lt;/strong&gt; role
 allows only read access.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/security.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/security.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;It is &lt;strong&gt;strongly discouraged&lt;/strong&gt; and considered a security risk to give your
 admin or buyer users the &lt;code&gt;FullAccess&lt;/code&gt; role. While it may be convenient to use
 in the early stages of development - it is &lt;strong&gt;always&lt;/strong&gt; better to give end users
@@ -1660,7 +1660,7 @@ Services"&lt;/em&gt; tab and click &lt;em&gt;"Add"&lt;/em&gt;.&lt;/p&gt;
 started/dashboard/available_services.jpg)&lt;/p&gt;
 &lt;p&gt;You will be prompted to fill out the information required for OrderCloud to
 communicate with the new account.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/docs-guides/getting-started/dashboard/authorize_net.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ordercloud-api.github.io/docs/images/docs-guides/getting-started/dashboard/authorize_net.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Any applications that have the configured integration activated will have
 access to use it.&lt;/p&gt;
 &lt;h2&gt;__Conclusion&lt;/h2&gt;

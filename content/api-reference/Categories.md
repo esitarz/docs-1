@@ -1,7 +1,7 @@
 ---
 title: Categories
 date: 2018-03-19 18:56:07
-category: content\api-reference
+category: Api Reference
 tags: ProductCatalogs
 slug: Categories
 ---
