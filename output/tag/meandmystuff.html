@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>A Pelican Blog - MeAndMyStuff</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/Me.html">Me</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info --><p>[{'ID': 'Get', 'Name': 'Get the Current Authenticated User', 'Comments': [], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me', 'Parameters': [], 'RequestBody': None, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}, 'Roles': []}, {'ID': 'Update', 'Name': 'Update the Currently Authenticated User', 'Comments': [], 'HttpVerb': 'PUT', 'UriTemplate': 'v1/me', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and <em>. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}, 'Roles': ['FullAccess', 'MeAdmin']}, {'ID': 'Patch', 'Name': 'Patch the Currently Authenticated User', 'Comments': [], 'HttpVerb': 'PATCH', 'UriTemplate': 'v1/me', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and </em>. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}, 'Roles': ['FullAccess', 'MeAdmin']}, {'ID': 'Register', 'Name': 'Register a register', 'Comments': [], 'HttpVerb': 'PUT', 'UriTemplate': 'v1/me/register', 'Parameters': [{'Name': 'anonUserToken', 'Type': 'string', 'Description': 'Anon user token of the user.', 'Required': True}], 'RequestBody': {'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-20T05:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{}', 'Fields': []}, 'Roles': ['FullAccess', 'Shopper']}, {'ID': 'TransferAnonUserOrder', 'Name': 'Transfer a anon user order', 'Comments': [], 'HttpVerb': 'PUT', 'UriTemplate': 'v1/me/orders', 'Parameters': [{'Name': 'anonUserToken', 'Type': 'string', 'Description': 'Anon user token of the me.', 'Required': True}], 'RequestBody': None, 'ResponseStatus': 204, 'ResponseBody': None, 'Roles': ['FullAccess', 'Shopper']}, {'ID': 'ResetPasswordByToken', 'Name': 'Reset a password by token', 'Comments': [], 'HttpVerb': 'POST', 'UriTemplate': 'v1/me/password', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "NewPassword": ""\r\n}', 'Fields': [{'Name': 'NewPassword', 'Type': 'string', 'Description': 'New password of the token password reset. Required.', 'Required': True}]}, 'ResponseStatus': 204, 'ResponseBody': None, 'Roles': ['FullAccess', 'PasswordReset']}]</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeAddresses.html" rel="bookmark"
+                           title="Permalink to Addresses">Addresses</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListAddresses', 'Name': 'Get a list of addresses visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/addresses', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search on …</p>
+                <a class="readmore" href="/MeAddresses.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeCatalogs.html" rel="bookmark"
+                           title="Permalink to Catalogs">Catalogs</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListCatalogs', 'Name': 'Get a list of catalogs visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/catalogs', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search on …</p>
+                <a class="readmore" href="/MeCatalogs.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeCategories.html" rel="bookmark"
+                           title="Permalink to Categories">Categories</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListCategories', 'Name': 'Get a list of categories visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/categories', 'Parameters': [{'Name': 'depth', 'Type': 'string', 'Description': 'Depth of the category.', 'Required': False}, {'Name': 'catalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'productID', 'Type' …</p>
+                <a class="readmore" href="/MeCategories.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeCostCenters.html" rel="bookmark"
+                           title="Permalink to Cost Centers">Cost Centers</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListCostCenters', 'Name': 'Get a list of cost centers visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/costcenters', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search …</p>
+                <a class="readmore" href="/MeCostCenters.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeCreditCards.html" rel="bookmark"
+                           title="Permalink to Credit Cards">Credit Cards</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'CreateCreditCard', 'Name': 'Create a new credit card', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'POST', 'UriTemplate': 'v1/me/creditcards', 'Parameters': [], 'RequestBody': {'Sample': '{\r\n  "Token": "",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-20T05:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name' …</p>
+                <a class="readmore" href="/MeCreditCards.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeOrders.html" rel="bookmark"
+                           title="Permalink to Orders">Orders</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListOrders', 'Name': 'Get a list of orders visible to this user', 'Comments': ['List orders created by this user.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/orders', 'Parameters': [{'Name': 'from', 'Type': 'date', 'Description': 'Lower bound of date range that the order was created (if outgoing) or submitted (if incoming).', 'Required': False}, {'Name' …</p>
+                <a class="readmore" href="/MeOrders.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeProducts.html" rel="bookmark"
+                           title="Permalink to Products">Products</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListProducts', 'Name': 'Get a list of products visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/products', 'Parameters': [{'Name': 'catalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'categoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'depth', 'Type' …</p>
+                <a class="readmore" href="/MeProducts.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MePromotions.html" rel="bookmark"
+                           title="Permalink to Promotions">Promotions</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListPromotions', 'Name': 'Get a list of promotions visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/promotions', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search on …</p>
+                <a class="readmore" href="/MePromotions.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeShipments.html" rel="bookmark"
+                           title="Permalink to Shipments">Shipments</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListShipments', 'Name': 'Get a list of shipments visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/shipments', 'Parameters': [{'Name': 'orderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': False}, {'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name' …</p>
+                <a class="readmore" href="/MeShipments.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeSpendingAccounts.html" rel="bookmark"
+                           title="Permalink to Spending Accounts">Spending Accounts</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListSpendingAccounts', 'Name': 'Get a list of spending accounts visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/spendingAccounts', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search …</p>
+                <a class="readmore" href="/MeSpendingAccounts.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/MeUserGroups.html" rel="bookmark"
+                           title="Permalink to User Groups">User Groups</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T18:56:07+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+<p>In <a href="/category/contentapi-reference.html">content\api-reference</a>.</p>
+<p>tags: <a href="/tag/meandmystuff.html">MeAndMyStuff</a> </p>
+</footer><!-- /.post-info -->                <p>[{'ID': 'ListUserGroups', 'Name': 'Get a list of user groups visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/usergroups', 'Parameters': [{'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search …</p>
+                <a class="readmore" href="/MeUserGroups.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

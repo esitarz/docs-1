@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Basic Api Features: Filtering</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li class="active"><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/basic-api-features-filtering.html" rel="bookmark"
+           title="Permalink to Basic Api Features: Filtering">Basic Api Features: Filtering</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->      <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. The items from such a call could very well be in the thousands so
+being able to narrow down the range of the items returned is critical, this
+can be done with the use of filters.</p>
+<h2>__Filtering On XP</h2>
+<p>Let's examine a common scenario of filtering on an extended property (XP)
+field. Suppose our XP field looks like this:</p>
+<p>We can use dot notation to access deeply nested values. The following call
+will return all buyers with team name "Tigers"</p>
+<h2>__Fuzzy Searches</h2>
+<p>Fuzzy matches are supported using the <code>*</code> wildcard character.</p>
+<p>This will return both "John Smith" and "Johnny McSmooth".</p>
+<h2>__Logical OR</h2>
+<p>You can also use <code>|</code> as a logical OR.</p>
+<p>This will return "John Smith", "Johnny Jones", and "John Johnson". Maybe you
+want "John Smith" but not "John Jones".</p>
+<h2>__Negate and Logical AND</h2>
+<p>You can negate your conditions by prefixing them with <code>!</code>, and logically <code>AND</code>
+them together by simply providing the same parameter multiple times.</p>
+<p>This will return all users <em>except</em> those with last name "Smith" or "Jones".</p>
+<h2>__Comparison Operators</h2>
+<p>Dates and numeric values support <code>&gt;</code> (greater than) and <code>&lt;</code> (less than)
+prefixes.</p>
+<p>For a more advanced example, let's say you want users whose ID is the range of
+0 to 9 inclusive. Ranges are not directly supported, but you can use the
+existing features to achieve this.</p>
+<p>Of course that's not going to be feasible if the range is very large or you're
+dealing with floating-point numbers. A better way would be to leverage <code>&gt;</code> and
+<code>&lt;</code>, but we want the range to be inclusive, and there are no <code>&gt;=</code> or <code>&lt;=</code>
+operators. We can however leverage the <code>!</code> operator.</p>
+<p>Here we're saying "give me all users whose ID is not less than 0 and not
+greater than 9", which is effectively equivalent to our 0-9 range.</p>
+<h2>__Performance Considerations</h2>
+<p>Your data is highly indexed for fast retrieval using any of the methods above,
+including deep XP object graphs. However, there are a few things to keep in
+mind to keep search and listing functionality efficient. Filters with many
+<code>OR</code> conditions or with values that start with the <code>*</code> wildcard character may
+be particularly performance-sensitive. The larger the set of data, the more
+likely you are to notice any performance impact. It pays to know the data
+model well, and use grouping constructs like User Groups and Categories
+effectively.</p>
+<h2>__Combining Queries</h2>
+<p>Filtering can be mixed and matched with Searching and Sorting to give you
+ultimate control when defining what is returned from a list.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

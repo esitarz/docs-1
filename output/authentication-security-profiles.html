@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Authentication: Security Profiles</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li class="active"><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/authentication-security-profiles.html" rel="bookmark"
+           title="Permalink to Authentication: Security Profiles">Authentication: Security Profiles</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/authentication.html">authentication</a> </p>
+</footer><!-- /.post-info -->      <h2>__Overview</h2>
+<p>Security Profiles are an assortment of roles that give access to specific
+endpoints in the OrderCloud.io API. Profiles can be assigned to the users of
+your Seller or Buyer application. If a request is made by a user without
+sufficient roles they will receive 403 Forbidden response. Configuration of
+these profiles is possible within the Security Profiles view in the
+OrderCloud.io Dashboard.</p>
+<h2>__Roles</h2>
+<p>Security Profiles are made up of a list of roles which fall into one of two
+categories: Admin and Reader. An <strong>Admin</strong> role allows read and write access
+while a <strong>Reader</strong> role type allows only read access.</p>
+<p><img alt="" src="/images/docs-guides/authentication/security-profiles.roles.png"></p>
+<h2>__Assigning Profiles</h2>
+<p>Security Profiles are assigned at the party level (User, User Group, Buyer
+Organization or Admin Organization).</p>
+<p>If more than one Security Profile is inherited, the roles will be a union of
+the roles from every inherited Security Profile.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

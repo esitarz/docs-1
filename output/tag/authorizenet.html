@@ -1,194 +1,526 @@
-
 <!DOCTYPE html>
-<html lang="english">
+<html lang="en">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+        <meta charset="utf-8" />
+        <title>A Pelican Blog - authorizenet</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 
-    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
-
-  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-
-
-
-
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-
-
-    <meta name="author" content="OrderCloud.io" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="OrderCloud Documentation Content"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content=".."/>
-
-  <title>OrderCloud Documentation Content &ndash;     Tag authorizenet
-</title>
-
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
-  <aside>
-    <div>
-      <a href="..">
-        <img src="../theme/img/profile.png" alt="" title="">
-      </a>
-      <h1><a href=".."></a></h1>
 
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
 
-      <nav>
-        <ul class="list">
-          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
-          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
-          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
-        </ul>
-      </nav>
-
-      <ul class="social">
-      </ul>
-    </div>
-
-
-  </aside>
-  <main>
-
-
-		<article>
-			<header>
-				<h2><a href="../integration-services\authorizenet-authorize-and-capture-transaction.html#authorizenet-authorize-and-capture-transaction">Authorizenet: Authorize And Capture Transaction</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
-
-						&#8226;     Tagged with
-
-							<a href="../tag/authorizenet.html">authorizenet</a>				</p>
-			</header>
-			<div>
-					<h2>__Authorize and Capture Transaction Overview</h2>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info --><h2>__Authorize and Capture Transaction Overview</h2>
 <p>Authorizing and Capturing a credit card transaction is one of the most
 involved methods included in this integration. This method will create a new
 Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
-one does not already exist, authorize and capture …</p>
-					<br>
-					<a class="btn" href="../integration-services\authorizenet-authorize-and-capture-transaction.html#authorizenet-authorize-and-capture-transaction">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../integration-services\authorizenet-authorize-only-transaction.html#authorizenet-authorize-only-transaction">Authorizenet: Authorize Only Transaction</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+one does not already exist, authorize and capture a payment transaction on
+Authorize.Net, create a payment on OrderCloud.io tied to the authenticated
+user’s current Order (if a payment already exists, simply pass the ID in
+<code>PaymentID</code>), and also create a transaction tied to that payment.</p>
+<p>If the transaction authorization and capture are successful, but there is an
+error while creating the payment or transaction on OrderCloud.io, the
+Authorize.Net transaction will be voided.</p>
+<h2>__Authorize and Capture Transaction Request</h2>
+<p>This method requires either CardDetails.CreditCardID (for a previously created
+card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
+new card).</p>
+<h2>__Authorize and Capture Transaction Response</h2>
+<h2>__Error Handling</h2>
+<p>During the authorization and capture process, the Authorize.Net payment
+transaction will be created first, followed by the payment and transaction on
+OrderCloud.io. In the case that the OrderCloud.io steps fail, the transaction
+will be voided automatically on Authorize.Net.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
 
-						&#8226;     Tagged with
+ErrorCode
 
-							<a href="../tag/authorizenet.html">authorizenet</a>				</p>
-			</header>
-			<div>
-					<h2>__Authorize Only Transaction Overview</h2>
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.AmountRequired
+
+</td>  
+<td>
+
+Amount is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to authorize and capture a credit card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+AuthCaptureTransaction.CardDetailsRequired
+
+</td>  
+<td>
+
+CardDetails.CreditCardID OR CardDetails.CardNumber and
+CardDetails.ExpirationDate are required to authorize and capture a credit
+card.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>Authorize.Net Error Response</h3>
+<table>  
+<tr>  
+<th>
+
+responseCode
+
+</th>  
+<th>
+
+errorCode
+
+</th>  
+<th>
+
+errorText
+
+</th>  
+<th>
+
+resultCode
+
+</th>  
+<th>
+
+message.code
+
+</th>  
+<th>
+
+message.text
+
+</th> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+5
+
+</td>  
+<td>
+
+A valid amount is required.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+6
+
+</td>  
+<td>
+
+The credit card number is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+7
+
+</td>  
+<td>
+
+Credit card expiration date is invalid.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr>  
+<tr>  
+<td>
+
+3
+
+</td>  
+<td>
+
+8
+
+</td>  
+<td>
+
+The credit card has expired.
+
+</td>  
+<td>
+
+Error
+
+</td>  
+<td>
+
+E00027
+
+</td>  
+<td>
+
+The transaction was unsuccessful.
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+<p>If an incorrect <code>OrderID</code> was provided:</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-authorize-only-transaction.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Authorize Only Transaction">Authorizenet: Authorize Only Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Authorize Only Transaction Overview</h2>
 <p>Though a payment is not actually being captured, the Authorize Only
 transaction method involves just as many integration calls as Authorizing and
 Capturing a credit card transaction. This method will create a new Customer
 Payment Profile on Authorize.Net and credit card on OrderCloud.io if …</p>
-					<br>
-					<a class="btn" href="../integration-services\authorizenet-authorize-only-transaction.html#authorizenet-authorize-only-transaction">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../integration-services\authorizenet-create-credit-card.html#authorizenet-create-credit-card">Authorizenet: Create Credit Card</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+                <a class="readmore" href="/authorizenet-authorize-only-transaction.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-create-credit-card.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Create Credit Card">Authorizenet: Create Credit Card</a></h1>
+                </header>
 
-							<a href="../tag/authorizenet.html">authorizenet</a>				</p>
-			</header>
-			<div>
-					<h2>__Create Credit Card Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Create Credit Card Overview</h2>
 <p>When a customer within your buyer application creates a credit card, the
 integration endpoint can be called in order to create that card within
 OrderCloud.io as well as Authorize.Net. The card will created as a personal
 card by default. However, passing <code>true</code> for <code>Shared …</code></p>
-					<br>
-					<a class="btn" href="../integration-services\authorizenet-create-credit-card.html#authorizenet-create-credit-card">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../integration-services\authorizenet-delete-credit-card.html#authorizenet-delete-credit-card">Authorizenet: Delete Credit Card</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+                <a class="readmore" href="/authorizenet-create-credit-card.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-delete-credit-card.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Delete Credit Card">Authorizenet: Delete Credit Card</a></h1>
+                </header>
 
-							<a href="../tag/authorizenet.html">authorizenet</a>				</p>
-			</header>
-			<div>
-					<h2>__Delete Credit Card Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Delete Credit Card Overview</h2>
 <p>When a customer within your buyer application deletes a credit card, the
 integration endpoint can be called in order to delete that card on
 OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
 removed on Authorize.Net, followed by the card being …</p>
-					<br>
-					<a class="btn" href="../integration-services\authorizenet-delete-credit-card.html#authorizenet-delete-credit-card">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../integration-services\authorizenet-prior-authorization-capture-transaction.html#authorizenet-prior-authorization-capture-transaction">Authorizenet: Prior Authorization Capture Transaction</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+                <a class="readmore" href="/authorizenet-delete-credit-card.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-prior-authorization-capture-transaction.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Prior Authorization Capture Transaction">Authorizenet: Prior Authorization Capture Transaction</a></h1>
+                </header>
 
-							<a href="../tag/authorizenet.html">authorizenet</a>				</p>
-			</header>
-			<div>
-					<h2>__Prior Authorization Capture Transaction Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Prior Authorization Capture Transaction Overview</h2>
 <p>In the case that Authorize Only was previously used for a payment, Prior
 Authorization Capture Transaction can be used to actually capture the payment.
 This method will first capture the payment on Authorize.Net, then create an
 additional transaction on the previously created payment on …</p>
-					<br>
-					<a class="btn" href="../integration-services\authorizenet-prior-authorization-capture-transaction.html#authorizenet-prior-authorization-capture-transaction">    Continue reading
-</a>
-			</div>
-		</article>
+                <a class="readmore" href="/authorizenet-prior-authorization-capture-transaction.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-refund-transaction.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Refund Transaction">Authorizenet: Refund Transaction</a></h1>
+                </header>
 
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Refund Transaction Overview</h2>
+<p>In the case that a refund is required for a previously captured transaction,
+use the Refund Transaction method. This method will refund the transaction on
+Authorize.Net for either an existing card or dynamically to the card details
+provided then create an additional transaction on the existing …</p>
+                <a class="readmore" href="/authorizenet-refund-transaction.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-update-credit-card.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Update Credit Card">Authorizenet: Update Credit Card</a></h1>
+                </header>
 
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : "..",
-  "image": "",
-  "description": ""
-}
-</script>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Update Credit Card Overview</h2>
+<p>When a customer within your buyer application updates a credit card, the
+integration endpoint can be called in order to update that card on
+OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
+updated on Authorize.Net, followed by the card being …</p>
+                <a class="readmore" href="/authorizenet-update-credit-card.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/authorizenet-void-transaction.html" rel="bookmark"
+                           title="Permalink to Authorizenet: Void Transaction">Authorizenet: Void Transaction</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/integration-services.html">Integration Services</a>.</p>
+<p>tags: <a href="/tag/authorizenet.html">authorizenet</a> </p>
+</footer><!-- /.post-info -->                <h2>__Void Transaction Overview</h2>
+<p>Though this method is used most commonly by other methods when certain actions
+fail, it can also be called directly through the integration. This method will
+void a previous transaction on Authorize.Net, then create a transaction tied
+to the original payment on OrderCloud.io.</p>
+<h2>__Void Transaction …</h2>
+                <a class="readmore" href="/authorizenet-void-transaction.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
 </body>
 </html>

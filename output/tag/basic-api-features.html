@@ -1,169 +1,184 @@
-
 <!DOCTYPE html>
-<html lang="english">
+<html lang="en">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+        <meta charset="utf-8" />
+        <title>A Pelican Blog - basic api features</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 
-    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
-
-  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-
-
-
-
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-
-
-    <meta name="author" content="OrderCloud.io" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="OrderCloud Documentation Content"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content=".."/>
-
-  <title>OrderCloud Documentation Content &ndash;     Tag basic api features
-</title>
-
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 </head>
-<body>
-  <aside>
-    <div>
-      <a href="..">
-        <img src="../theme/img/profile.png" alt="" title="">
-      </a>
-      <h1><a href=".."></a></h1>
 
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
 
-      <nav>
-        <ul class="list">
-          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
-          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
-          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/basic-api-features-conventions.html">Basic Api Features: Conventions</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
-        </ul>
-      </nav>
-
-      <ul class="social">
-      </ul>
-    </div>
-
-
-  </aside>
-  <main>
-
-
-		<article>
-			<header>
-				<h2><a href="../platform-guides\basic-api-features-conventions.html#basic-api-features-conventions">Basic Api Features: Conventions</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
-
-						&#8226;     Tagged with
-
-							<a href="../tag/basic-api-features.html">basic api features</a>				</p>
-			</header>
-			<div>
-					<h2>__Overview</h2>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info --><h2>__Overview</h2>
 <p>With few exceptions, the OrderCloud.io API adheres to a RESTful architectural
 style. URIs, HTTP verbs, headers, payloads, and response codes all follow
 consistent and predictable patterns. This guide will outline conventions that
 permeate the entire platform.</p>
 <h2>__SSL Everywhere</h2>
-<p>API access is only allowed via HTTPS; connections on port …</p>
-					<br>
-					<a class="btn" href="../platform-guides\basic-api-features-conventions.html#basic-api-features-conventions">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../platform-guides\basic-api-features-errors.html#basic-api-features-errors">Basic Api Features: Errors</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
+<p>API access is only allowed via HTTPS; connections on port 80 are refused
+entirely. This simplifies the token-based authentication.</p>
+<h2>__JSON Everywhere</h2>
+<p>UTF-8 encoded JSON is currently the only supported data format for both
+request and response payloads.</p>
+<h2>__Date Format</h2>
+<p>Dates/times returned in the API are in UTC time and conform to <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO
+8601</a>.</p>
+<h2>__OAuth 2</h2>
+<p>OrderCloud API authentication is based on the <a href="http://tools.ietf.org/html/rfc6749">OAuth 2
+specification</a> and supports four different
+workflows, or, in OAuth terms, grant types. Check out our workflows guide to
+learn more.</p>
+<h2>__Writeable IDs</h2>
+<p>Writable IDs can be extremely useful for back-office integrations. They can
+potentially eliminate the need for a mapping middleware layer.</p>
+<p>Most resources that map to an entity of some sort (Orders, Users, Addresses,
+etc.) contain an ID that is optionally writable on creation or update. If you
+do not pass one, one will be auto-generated and returned in the response, and
+will be guaranteed to be unique. If you choose to pass an ID, you are
+responsible for ensuring uniqueness. Things that live under the context of a
+single Buyer need only be unique within that context. Things that are shared
+(such as products) must be unique across the entire Admin organization.</p>
+<h2>__Error Handling</h2>
+<p>For all unsuccessful requests, we attempt to return the <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error">most appropriate HTTP
+status in the 400
+range</a>.
+Only when something goes terribly wrong on our end will you get a 500
+response. And so long as our platform is responding (i.e. returing anything in
+the 4xx range or 500), you can count on the response body taking a standard
+shape.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-errors.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Errors">Basic Api Features: Errors</a></h1>
+                </header>
 
-							<a href="../tag/basic-api-features.html">basic api features</a>				</p>
-			</header>
-			<div>
-					<h2>__Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
 <p>OrderCloud.io uses conventional HTTP response codes to indicate success or
 failure of an API request. In general, codes in the <code>2xx</code> range indicate
 success and codes in the <code>4xx</code> range indicate an error failed given the
 information provided (e.g., a required parameter). Only when something goes
 terribly …</p>
-					<br>
-					<a class="btn" href="../platform-guides\basic-api-features-errors.html#basic-api-features-errors">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../platform-guides\basic-api-features-extended-properties.html#basic-api-features-extended-properties">Basic Api Features: Extended Properties</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
+                <a class="readmore" href="/basic-api-features-errors.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-extended-properties.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Extended Properties">Basic Api Features: Extended Properties</a></h1>
+                </header>
 
-							<a href="../tag/basic-api-features.html">basic api features</a>				</p>
-			</header>
-			<div>
-					<h2>Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>Overview</h2>
 <p>The reality of all enterprise platforms is the need to customize the data
 model. To accommodate this, OrderCloud.io designed a property called Extended
 Properties (XP) to allow enterprise customization of the OrderCloud data
 model. OrderCloud.io exposes the <code>{ xp: {} }</code> property on most resources
 allowing you to apply JSON …</p>
-					<br>
-					<a class="btn" href="../platform-guides\basic-api-features-extended-properties.html#basic-api-features-extended-properties">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../platform-guides\basic-api-features-filtering.html#basic-api-features-filtering">Basic Api Features: Filtering</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
+                <a class="readmore" href="/basic-api-features-extended-properties.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-filtering.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Filtering">Basic Api Features: Filtering</a></h1>
+                </header>
 
-							<a href="../tag/basic-api-features.html">basic api features</a>				</p>
-			</header>
-			<div>
-					<h2>__Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
 <p>Most OrderCloud.io Resources include a method for listing items from that
 Resource. The items from such a call could very well be in the thousands so
 being able to narrow down the range of the items returned is critical, this
 can be done with the use of filters …</p>
-					<br>
-					<a class="btn" href="../platform-guides\basic-api-features-filtering.html#basic-api-features-filtering">    Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../platform-guides\basic-api-features-http-methods.html#basic-api-features-http-methods">Basic Api Features: Http Methods</a></h2>
-				<p>
-					    Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
+                <a class="readmore" href="/basic-api-features-filtering.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-						&#8226;     Tagged with
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-http-methods.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Http Methods">Basic Api Features: Http Methods</a></h1>
+                </header>
 
-							<a href="../tag/basic-api-features.html">basic api features</a>				</p>
-			</header>
-			<div>
-					<h2>__Overview</h2>
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
 <p>A resource is a set of endpoints used to interact with an object of that same
 name. OrderCloud.io adheres to RESTful conventions in its usage of HTTP verbs.
 You can expect a subset of the following methods to exist on every Resource.</p>
@@ -178,31 +193,110 @@ OrderCloud.io Verb
 <th>
 
 HTTP …</th></tr></table>
-					<br>
-					<a class="btn" href="../platform-guides\basic-api-features-http-methods.html#basic-api-features-http-methods">    Continue reading
-</a>
-			</div>
-		</article>
+                <a class="readmore" href="/basic-api-features-http-methods.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-pagination.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Pagination">Basic Api Features: Pagination</a></h1>
+                </header>
 
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. These resources can potentially include thousands of items so
+restricting the data that is returned from such a request is not only
+practical but necessary. OrderCloud.io offers server-side pagination that
+partitions the data returned from …</p>
+                <a class="readmore" href="/basic-api-features-pagination.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-searching.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Searching">Basic Api Features: Searching</a></h1>
+                </header>
 
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : "..",
-  "image": "",
-  "description": ""
-}
-</script>
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Searching data client side can be fine for smaller sets of data but can
+quickly become unwieldy with large sets of data. To address this issue our API
+supports server side search queries that do all of the heavy lifting for you.</p>
+<h2>__Searching</h2>
+<p>For open-ended, Google-esque searches, simply provide …</p>
+                <a class="readmore" href="/basic-api-features-searching.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/basic-api-features-sorting.html" rel="bookmark"
+                           title="Permalink to Basic Api Features: Sorting">Basic Api Features: Sorting</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->                <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. The results returned from a list method have a default sort order,
+but you can also specify a sort order. Properties marked as “Sortable” in the
+API Reference can be sorted on.</p>
+<h2>__Sorting</h2>
+<p>Perhaps you want …</p>
+                <a class="readmore" href="/basic-api-features-sorting.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
 </body>
 </html>

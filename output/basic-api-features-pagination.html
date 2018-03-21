@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Basic Api Features: Pagination</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li><a href="/pages/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/pages/integration-services.html">Integration Services</a></li>
+                    <li><a href="/pages/platform-guides.html">Platform Guides</a></li>
+                    <li><a href="/category/contentapi-reference.html">content\api-reference</a></li>
+                    <li><a href="/category/frameworks-and-sdks.html">Frameworks And Sdks</a></li>
+                    <li><a href="/category/integration-services.html">Integration Services</a></li>
+                    <li class="active"><a href="/category/platform-guides.html">Platform Guides</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/basic-api-features-pagination.html" rel="bookmark"
+           title="Permalink to Basic Api Features: Pagination">Basic Api Features: Pagination</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-03-19T15:32:44.250255+00:00">
+                Published: Mon 19 March 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/ordercloudio.html">OrderCloud.io</a>
+        </address>
+<p>In <a href="/category/platform-guides.html">Platform Guides</a>.</p>
+<p>tags: <a href="/tag/basic-api-features.html">basic api features</a> </p>
+</footer><!-- /.post-info -->      <h2>__Overview</h2>
+<p>Most OrderCloud.io Resources include a method for listing items from that
+Resource. These resources can potentially include thousands of items so
+restricting the data that is returned from such a request is not only
+practical but necessary. OrderCloud.io offers server-side pagination that
+partitions the data returned from these requests into manageable chunks to
+optimize client-side performance</p>
+<h2>__Listing</h2>
+<p>A request to list a resource will return an object with two values: <code>Meta</code> and
+<code>Items</code>. The <code>Meta</code> value returns important information regarding your query,
+such as total results, how many results are shown in the Items array, how many
+more pages of results there are, and what page you are currently on. The Items
+array stores the actual results of the resource you are querying.</p>
+<p>Lists default to 20 items per page, but you can set the <code>pageSize</code> up to 100.
+If you have more results than the page count, you will have multiple pages.
+You can use the <code>Page</code> and <code>PageSize</code> values from the <code>Meta</code> object to specify
+the page (starting at 1) and items per page. Note that unlike the page
+parameter, <code>ItemRange</code> values are zero-based.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
