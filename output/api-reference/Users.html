@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="A user is a person with access to the application. The properties of a user define who they are and what they are able to do with their login to the application. Get a single user GET v1/buyers/{buyerID}/users/{userID} Parameters Description Name buyerID Type string Description ID …" />
+<meta name="keywords" content="Buyers">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Users"/>
+<meta property="og:description" content="A user is a person with access to the application. The properties of a user define who they are and what they are able to do with their login to the application. Get a single user GET v1/buyers/{buyerID}/users/{userID} Parameters Description Name buyerID Type string Description ID …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference\Users.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-23 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Buyers"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Users</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="Users">Users</h1>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>A user is a person with access to the application. The properties of a
+user define who they are and what they are able to do with their login
+to the application.</p>
+<hr>
+<h2>Get a single user</h2>
+<h3><code>GET</code> <code>v1/buyers/{buyerID}/users/{userID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Get a list of users</p>
+<h3><code>GET</code> <code>v1/buyers/{buyerID}/users</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userGroupID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user group.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Username": "",\r\n      "FirstName": "",\r\n      "LastName": "",\r\n      "Email": "",\r\n      "Phone": "",\r\n      "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n      "Active": false,\r\n      "xp": {},\r\n      "AvailableRoles": [\r\n        ""\r\n      ]\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Create a new user</p>
+<h3><code>POST</code> <code>v1/buyers/{buyerID}/users</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Create or update a user</p>
+<h3><code>PUT</code> <code>v1/buyers/{buyerID}/users/{userID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Delete a user</p>
+<h3><code>DELETE</code> <code>v1/buyers/{buyerID}/users/{userID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None## Partially update a user</p>
+<h3><code>PATCH</code> <code>v1/buyers/{buyerID}/users/{userID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "Password": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Move a user to a different buyer</p>
+<h3><code>POST</code> <code>v1/buyers/{buyerID}/users/{userID}/moveto/{newBuyerID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>newBuyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the new buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orders</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Orders of the user. Possible values: None, Unsubmitted, All.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Get a single user access token</p>
+<h3><code>POST</code> <code>v1/buyers/{buyerID}/users/{userID}/accesstoken</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>userID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ClientID": "",\r\n  "Roles": [\r\n    "DevCenterImpersonate"\r\n  ]\r\n}', 'Fields': [{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client.', 'Required': False}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the impersonate token request.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "access_token": "",\r\n  "expires_in": 0,\r\n  "token_type": "",\r\n  "refresh_token": ""\r\n}', 'Fields': [{'Name': 'access_token', 'Type': 'string', 'Description': 'Access token of the access token.', 'Required': False}, {'Name': 'expires_in', 'Type': 'integer', 'Description': 'Expires in of the access token.', 'Required': False}, {'Name': 'token_type', 'Type': 'string', 'Description': 'Token type of the access token.', 'Required': False}, {'Name': 'refresh_token', 'Type': 'string', 'Description': 'Refresh token of the access token.', 'Required': False}]}</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/buyers.html">Buyers</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

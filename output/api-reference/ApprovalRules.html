@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="Approval rules are used to verify the integrity of an order. Common examples include orders requiring managerial approval, approval for orders that contain a specific product category, approval for quantity thresholds or approval for orders that exceed a specific price. Properties are also available to control the triggers and timing …" />
+<meta name="keywords" content="Buyers">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Approval Rules"/>
+<meta property="og:description" content="Approval rules are used to verify the integrity of an order. Common examples include orders requiring managerial approval, approval for orders that contain a specific product category, approval for quantity thresholds or approval for orders that exceed a specific price. Properties are also available to control the triggers and timing …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference\ApprovalRules.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-23 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Buyers"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Approval Rules</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="ApprovalRules">Approval Rules</h1>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Approval rules are used to verify the integrity of an order. Common
+examples include orders requiring managerial approval, approval for
+orders that contain a specific product category, approval for quantity
+thresholds or approval for orders that exceed a specific price.
+Properties are also available to control the triggers and timing for
+processing approvals whether parallel to another rule, or in succession
+of a previous rule.</p>
+<hr>
+<h2>Get a single approval rule</h2>
+<h3><code>GET</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>approvalRuleID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the approval rule.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}## Get a list of approval rules</p>
+<h3><code>GET</code> <code>v1/buyers/{buyerID}/approvalrules</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ApprovingGroupID": "",\r\n      "RuleExpression": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}## Create a new approval rule</p>
+<h3><code>POST</code> <code>v1/buyers/{buyerID}/approvalrules</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}## Create or update an approval rule</p>
+<h3><code>PUT</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>approvalRuleID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the approval rule.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}## Delete an approval rule</p>
+<h3><code>DELETE</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>approvalRuleID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the approval rule.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None## Partially update an approval rule</p>
+<h3><code>PATCH</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>buyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>approvalRuleID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the approval rule.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ApprovingGroupID": "",\r\n  "RuleExpression": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]}</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/buyers.html">Buyers</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

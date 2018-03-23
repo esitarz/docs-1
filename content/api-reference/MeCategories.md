@@ -1,8 +1,81 @@
 ---
 title: Categories
-date: 2018-03-21
+date: 2018-03-23
 category: API Reference
 tags: Me And My Stuff
 slug: MeCategories
 ---
-[{'ID': 'ListCategories', 'Name': 'Get a list of categories visible to this user', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/categories', 'Parameters': [{'Name': 'depth', 'Type': 'string', 'Description': 'Depth of the category.', 'Required': False}, {'Name': 'catalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'productID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': False}, {'Name': 'search', 'Type': 'string', 'Description': 'Word or phrase to search for.', 'Required': False}, {'Name': 'searchOn', 'Type': 'string', 'Description': 'Comma-delimited list of fields to search on.', 'Required': False}, {'Name': 'sortBy', 'Type': 'string', 'Description': 'Comma-delimited list of fields to sort by.', 'Required': False}, {'Name': 'page', 'Type': 'integer', 'Description': 'Page of results to return. Default: 1', 'Required': False}, {'Name': 'pageSize', 'Type': 'integer', 'Description': 'Number of results to return per page. Default: 20, max: 100.', 'Required': False}, {'Name': 'filters', 'Type': 'object', 'Description': "Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'", 'Required': False}], 'RequestBody': None, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "Active": false,\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}, 'Roles': ['FullAccess', 'Shopper']}, {'ID': 'GetCategory', 'Name': 'Get a single category', 'Comments': ['Only available to Buyer Users.'], 'HttpVerb': 'GET', 'UriTemplate': 'v1/me/categories/{categoryID}', 'Parameters': [{'Name': 'categoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': True}, {'Name': 'catalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}], 'RequestBody': None, 'ResponseStatus': 200, 'ResponseBody': {'Sample': '{\r\n  "Active": false,\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}, 'Roles': ['FullAccess', 'Shopper']}]
+"Me" is a container for read-only endpoints that return a filtered view
+of things that the current buyer user is allowed to see, i.e. things
+that they are assigned to either directly or as a member of a buyer
+organization or user group. It also provides ways for a user to update
+or change their own information.
+
+---
+## Get a list of categories visible to this user
+### `GET` `v1/me/categories`
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | depth                          |
+| Type            | string                         |
+| Description     | Depth of the category.         |
+| Required        | False                          |
+| Name            | catalogID                      |
+| Type            | string                         |
+| Description     | ID of the catalog.             |
+| Required        | False                          |
+| Name            | productID                      |
+| Type            | string                         |
+| Description     | ID of the product.             |
+| Required        | False                          |
+| Name            | search                         |
+| Type            | string                         |
+| Description     | Word or phrase to search for.  |
+| Required        | False                          |
+| Name            | searchOn                       |
+| Type            | string                         |
+| Description     | Comma-delimited list of fields to search on. |
+| Required        | False                          |
+| Name            | sortBy                         |
+| Type            | string                         |
+| Description     | Comma-delimited list of fields to sort by. |
+| Required        | False                          |
+| Name            | page                           |
+| Type            | integer                        |
+| Description     | Page of results to return. Default: 1 |
+| Required        | False                          |
+| Name            | pageSize                       |
+| Type            | integer                        |
+| Description     | Number of results to return per page. Default: 20, max: 100. |
+| Required        | False                          |
+| Name            | filters                        |
+| Type            | object                         |
+| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
+| Required        | False                          |
+
+ **Requestbody**: 
+None
+ **Responsestatus**: `200`
+
+ **Responsebody**: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "Active": false,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Get a single category
+### `GET` `v1/me/categories/{categoryID}`
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | categoryID                     |
+| Type            | string                         |
+| Description     | ID of the category.            |
+| Required        | True                           |
+| Name            | catalogID                      |
+| Type            | string                         |
+| Description     | ID of the catalog.             |
+| Required        | True                           |
+
+ **Requestbody**: 
+None
+ **Responsestatus**: `200`
+
+ **Responsebody**: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}

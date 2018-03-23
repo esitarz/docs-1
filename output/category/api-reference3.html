@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="OrderCloud.io" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="OrderCloud Documentation Content"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+
+  <title>OrderCloud Documentation Content &ndash;     Category API Reference
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article>
+  <header>
+    <h2><a href="../api-reference\ImpersonationConfigs.html#ImpersonationConfigs">Impersonation Configs</a></h2>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
+    </p>
+  </header>
+  <div>
+      <h2>Get a single impersonation config</h2>
+<h3><code>GET</code> <code>v1/impersonationconfig/{impersonationConfigID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>impersonationConfigID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the impersonation config.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ImpersonationBuyerID": "",\r\n  "ImpersonationGroupID": "",\r\n  "ImpersonationUserID": "",\r\n  "BuyerID": "",\r\n  "GroupID": "",\r\n  "UserID …</p>
+      <br>
+      <a class="btn" href="../api-reference\ImpersonationConfigs.html#ImpersonationConfigs">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../api-reference\Incrementors.html#Incrementors">Incrementors</a></h2>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/seller.html">Seller</a>
+    </p>
+  </header>
+  <div>
+      <p>An incrementor is used to add an atomically incremented number to your
+object IDs. For example, "aprefix-{myIncrementorID}", will yield an
+order ID of aprefix-10010.</p>
+<hr>
+<h2>Get a single incrementor</h2>
+<h3><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>incrementorID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the incrementor.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200 …</code></p>
+      <br>
+      <a class="btn" href="../api-reference\Incrementors.html#Incrementors">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../api-reference\LineItems.html#LineItems">Line Items</a></h2>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+    </p>
+  </header>
+  <div>
+      <p>A Line Item represents a single line on an Order. At a minimum, it
+contains a single Product SKU and a quantity. A line item may also
+include Spec values, a Cost Center, shipping details, date needed, and
+other custom information.</p>
+<hr>
+<h2>Get a single line item</h2>
+<h3><code>GET</code> <code>v1/orders/{direction …</code></h3>
+      <br>
+      <a class="btn" href="../api-reference\LineItems.html#LineItems">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../api-reference\Me.html#Me">Me</a></h2>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+    </p>
+  </header>
+  <div>
+      <p>"Me" is a container for read-only endpoints that return a filtered view
+of things that the current buyer user is allowed to see, i.e. things
+that they are assigned to either directly or as a member of a buyer
+organization or user group. It also provides ways for a …</p>
+      <br>
+      <a class="btn" href="../api-reference\Me.html#Me">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../api-reference\MeAddresses.html#MeAddresses">Addresses</a></h2>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+    </p>
+  </header>
+  <div>
+      <p>"Me" is a container for read-only endpoints that return a filtered view
+of things that the current buyer user is allowed to see, i.e. things
+that they are assigned to either directly or as a member of a buyer
+organization or user group. It also provides ways for a …</p>
+      <br>
+      <a class="btn" href="../api-reference\MeAddresses.html#MeAddresses">    Continue reading
+</a>
+  </div>
+</article>
+
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

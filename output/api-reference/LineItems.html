@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="A Line Item represents a single line on an Order. At a minimum, it contains a single Product SKU and a quantity. A line item may also include Spec values, a Cost Center, shipping details, date needed, and other custom information. Get a single line item GET v1/orders/{direction …" />
+<meta name="keywords" content="Orders And Fulfillment">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Line Items"/>
+<meta property="og:description" content="A Line Item represents a single line on an Order. At a minimum, it contains a single Product SKU and a quantity. A line item may also include Spec values, a Cost Center, shipping details, date needed, and other custom information. Get a single line item GET v1/orders/{direction …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference\LineItems.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-23 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Orders And Fulfillment"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Line Items</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="LineItems">Line Items</h1>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>A Line Item represents a single line on an Order. At a minimum, it
+contains a single Product SKU and a quantity. A line item may also
+include Spec values, a Cost Center, shipping details, date needed, and
+other custom information.</p>
+<hr>
+<h2>Get a single line item</h2>
+<h3><code>GET</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Get a list of line items</p>
+<h3><code>GET</code> <code>v1/orders/{direction}/{orderID}/lineitems</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "ProductID": "",\r\n      "Quantity": 0,\r\n      "DateAdded": "2018-03-21T23:00:00+00:00",\r\n      "QuantityShipped": 0,\r\n      "UnitPrice": 0,\r\n      "LineTotal": 0,\r\n      "CostCenter": "",\r\n      "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n      "ShippingAccount": "",\r\n      "ShippingAddressID": "",\r\n      "ShipFromAddressID": "",\r\n      "Product": {\r\n        "ID": "",\r\n        "Name": "",\r\n        "Description": "",\r\n        "QuantityMultiplier": 0,\r\n        "ShipWeight": 0,\r\n        "ShipHeight": 0,\r\n        "ShipWidth": 0,\r\n        "ShipLength": 0,\r\n        "xp": {}\r\n      },\r\n      "ShippingAddress": {\r\n        "ID": "",\r\n        "DateCreated": "2018-03-21T23:00:00+00:00",\r\n        "CompanyName": "",\r\n        "FirstName": "",\r\n        "LastName": "",\r\n        "Street1": "",\r\n        "Street2": "",\r\n        "City": "",\r\n        "State": "",\r\n        "Zip": "",\r\n        "Country": "",\r\n        "Phone": "",\r\n        "AddressName": "",\r\n        "xp": {}\r\n      },\r\n      "ShipFromAddress": {\r\n        "ID": "",\r\n        "DateCreated": "2018-03-21T23:00:00+00:00",\r\n        "CompanyName": "",\r\n        "FirstName": "",\r\n        "LastName": "",\r\n        "Street1": "",\r\n        "Street2": "",\r\n        "City": "",\r\n        "State": "",\r\n        "Zip": "",\r\n        "Country": "",\r\n        "Phone": "",\r\n        "AddressName": "",\r\n        "xp": {}\r\n      },\r\n      "Specs": [\r\n        {\r\n          "SpecID": "",\r\n          "Name": "",\r\n          "OptionID": "",\r\n          "Value": ""\r\n        }\r\n      ],\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Create a new line item</p>
+<h3><code>POST</code> <code>v1/orders/{direction}/{orderID}/lineitems</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "UnitPrice": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required. Searchable: priority level 2. Sortable.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item. Required. Must be at least 1.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item. Must be between -9999999999999 and 9999999999999.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Create or update a line item</p>
+<h3><code>PUT</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "UnitPrice": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required. Searchable: priority level 2. Sortable.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item. Required. Must be at least 1.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item. Must be between -9999999999999 and 9999999999999.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Delete a line item</p>
+<h3><code>DELETE</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None## Partially update a line item</p>
+<h3><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "UnitPrice": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required. Searchable: priority level 2. Sortable.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item. Required. Must be at least 1.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item. Must be between -9999999999999 and 9999999999999.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Set a shipping address</p>
+<h3><code>PUT</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}/shipto</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "CompanyName": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Street1": "",\r\n  "Street2": "",\r\n  "City": "",\r\n  "State": "",\r\n  "Zip": "",\r\n  "Country": "",\r\n  "Phone": "",\r\n  "AddressName": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'CompanyName', 'Type': 'string', 'Description': 'Company name of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': False}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': False}, {'Name': 'Street1', 'Type': 'string', 'Description': 'Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'Street2', 'Type': 'string', 'Description': 'Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.', 'Required': False}, {'Name': 'City', 'Type': 'string', 'Description': 'City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.', 'Required': True}, {'Name': 'State', 'Type': 'string', 'Description': 'State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': True}, {'Name': 'Zip', 'Type': 'string', 'Description': 'Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': True}, {'Name': 'Country', 'Type': 'string', 'Description': 'Country of the address. Required. Max length 2 characters. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'AddressName', 'Type': 'string', 'Description': 'Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the address.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}## Partially update a line item shipping address</p>
+<h3><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}/shipto</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "CompanyName": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Street1": "",\r\n  "Street2": "",\r\n  "City": "",\r\n  "State": "",\r\n  "Zip": "",\r\n  "Country": "",\r\n  "Phone": "",\r\n  "AddressName": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'CompanyName', 'Type': 'string', 'Description': 'Company name of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': False}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': False}, {'Name': 'Street1', 'Type': 'string', 'Description': 'Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'Street2', 'Type': 'string', 'Description': 'Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.', 'Required': False}, {'Name': 'City', 'Type': 'string', 'Description': 'City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.', 'Required': True}, {'Name': 'State', 'Type': 'string', 'Description': 'State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': True}, {'Name': 'Zip', 'Type': 'string', 'Description': 'Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': True}, {'Name': 'Country', 'Type': 'string', 'Description': 'Country of the address. Required. Max length 2 characters. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'AddressName', 'Type': 'string', 'Description': 'Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the address.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "ProductID": "",\r\n  "Quantity": 0,\r\n  "DateAdded": "2018-03-21T23:00:00+00:00",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "LineTotal": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "ShippingAccount": "",\r\n  "ShippingAddressID": "",\r\n  "ShipFromAddressID": "",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "ShippingAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ShipFromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the line item.', 'Required': True}, {'Name': 'DateAdded', 'Type': 'date', 'Description': 'Date added of the line item.', 'Required': False}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the line item.', 'Required': False}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the line item.', 'Required': False}, {'Name': 'LineTotal', 'Type': 'float', 'Description': 'Line total of the line item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the line item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the line item.', 'Required': False}, {'Name': 'ShippingAccount', 'Type': 'string', 'Description': 'Shipping account of the line item.', 'Required': False}, {'Name': 'ShippingAddressID', 'Type': 'string', 'Description': 'ID of the shipping address.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the line item.', 'Required': False}, {'Name': 'ShippingAddress', 'Type': 'object', 'Description': 'Shipping address of the line item.', 'Required': False}, {'Name': 'ShipFromAddress', 'Type': 'object', 'Description': 'Ship from address of the line item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the line item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the line item.', 'Required': False}]}</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

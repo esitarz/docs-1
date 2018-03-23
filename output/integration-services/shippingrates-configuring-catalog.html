@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="__Configuring Catalog Overview In order to be considered when estimating shipping rates, products and their price schedules will need a few things set up first. __ApplyShipping First, ApplyShipping will need to be set to true on the price schedule assigned to the product. Any Line Items containing Products without this …" />
+<meta name="keywords" content="shippingrates">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Shippingrates: Configuring Catalog"/>
+<meta property="og:description" content="__Configuring Catalog Overview In order to be considered when estimating shipping rates, products and their price schedules will need a few things set up first. __ApplyShipping First, ApplyShipping will need to be set to true on the price schedule assigned to the product. Any Line Items containing Products without this …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../integration-services\shippingrates-configuring-catalog.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-19 15:32:44.250255-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="Integration Services"/>
+<meta property="article:tag" content="shippingrates"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Shippingrates: Configuring Catalog</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="shippingrates-configuring-catalog">Shippingrates: Configuring Catalog</h1>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>__Configuring Catalog Overview</h2>
+<p>In order to be considered when estimating shipping rates, products and their
+price schedules will need a few things set up first.</p>
+<h2>__ApplyShipping</h2>
+<p>First, <code>ApplyShipping</code> will need to be set to true on the price schedule
+assigned to the product. Any Line Items containing Products without this value
+set to true on its Price Schedule will be ignored when calculating shipping
+rates. Here's a sample Price Schedule with this configuration set:</p>
+<h2>__ShipWeight</h2>
+<p>Next, a <code>ShipWeight</code> (in lbs.) should to be set on the Product being ordered
+to provide accurate shipping rates. If a value is not set, the Product will
+still be included in the calculation. However, a weight of <code>0</code> will be used
+when calculating rates, resulting in inaccurate rates.</p>
+<h2>__ShipFromAddressID</h2>
+<p>Next, a <code>ShipFromAddressID</code> needs to be set on the Product being ordered to be
+considered when estimating shipping rates. The value for this field should be
+a previously created Admin Address ID. Each Product should have the
+<code>ShipFromAddressID</code> set for the location it is being shipped from. Products
+being shipped from separate locations will be considered a separate shipment
+within OrderCloud.io, meaning Line Items will be grouped by these addresses
+(as well as the item's Shipping Address) when calculating rates. Here's a
+sample Admin Address and a Product containing that Admin Address' ID, as well
+as a <code>ShipWeight</code>:</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/shippingrates.html">shippingrates</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

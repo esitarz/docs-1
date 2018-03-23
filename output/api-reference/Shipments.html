@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="A Shipment is a grouping of one or more Line Items from one or more Orders that is physically packaged and delivered to the Buyer as a single unit. It is typically created by the Seller after the Order is submitted as part of the fulfillment process. Get a single …" />
+<meta name="keywords" content="Orders And Fulfillment">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Shipments"/>
+<meta property="og:description" content="A Shipment is a grouping of one or more Line Items from one or more Orders that is physically packaged and delivered to the Buyer as a single unit. It is typically created by the Seller after the Order is submitted as part of the fulfillment process. Get a single …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference\Shipments.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-23 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Orders And Fulfillment"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Shipments</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="Shipments">Shipments</h1>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>A Shipment is a grouping of one or more Line Items from one or more
+Orders that is physically packaged and delivered to the Buyer as a
+single unit. It is typically created by the Seller after the Order is
+submitted as part of the fulfillment process.</p>
+<hr>
+<h2>Get a single shipment</h2>
+<h3><code>GET</code> <code>v1/shipments/{shipmentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": "",\r\n  "FromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ToAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  }\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}, {'Name': 'FromAddress', 'Type': 'object', 'Description': 'From address of the shipment.', 'Required': False}, {'Name': 'ToAddress', 'Type': 'object', 'Description': 'To address of the shipment.', 'Required': False}]}## Get a list of shipments</p>
+<h3><code>GET</code> <code>v1/shipments</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "BuyerID": "",\r\n      "Shipper": "",\r\n      "DateShipped": "2018-03-21T23:00:00+00:00",\r\n      "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n      "TrackingNumber": "",\r\n      "Cost": 0,\r\n      "xp": {},\r\n      "Account": "",\r\n      "FromAddressID": "",\r\n      "ToAddressID": "",\r\n      "FromAddress": {\r\n        "ID": "",\r\n        "DateCreated": "2018-03-21T23:00:00+00:00",\r\n        "CompanyName": "",\r\n        "FirstName": "",\r\n        "LastName": "",\r\n        "Street1": "",\r\n        "Street2": "",\r\n        "City": "",\r\n        "State": "",\r\n        "Zip": "",\r\n        "Country": "",\r\n        "Phone": "",\r\n        "AddressName": "",\r\n        "xp": {}\r\n      },\r\n      "ToAddress": {\r\n        "ID": "",\r\n        "DateCreated": "2018-03-21T23:00:00+00:00",\r\n        "CompanyName": "",\r\n        "FirstName": "",\r\n        "LastName": "",\r\n        "Street1": "",\r\n        "Street2": "",\r\n        "City": "",\r\n        "State": "",\r\n        "Zip": "",\r\n        "Country": "",\r\n        "Phone": "",\r\n        "AddressName": "",\r\n        "xp": {}\r\n      }\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}, {'Name': 'FromAddress', 'Type': 'object', 'Description': 'From address of the shipment.', 'Required': False}, {'Name': 'ToAddress', 'Type': 'object', 'Description': 'To address of the shipment.', 'Required': False}]}## Create a new shipment</p>
+<h3><code>POST</code> <code>v1/shipments</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment. Searchable: priority level 2. Sortable.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment. Searchable: priority level 3. Sortable: priority level 1.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment. Searchable: priority level 4. Sortable.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment. Max length 3000 characters. Searchable: priority level 4.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment. Sortable.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": "",\r\n  "FromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ToAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  }\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}, {'Name': 'FromAddress', 'Type': 'object', 'Description': 'From address of the shipment.', 'Required': False}, {'Name': 'ToAddress', 'Type': 'object', 'Description': 'To address of the shipment.', 'Required': False}]}## Create or update a shipment</p>
+<h3><code>PUT</code> <code>v1/shipments/{shipmentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment. Searchable: priority level 2. Sortable.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment. Searchable: priority level 3. Sortable: priority level 1.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment. Searchable: priority level 4. Sortable.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment. Max length 3000 characters. Searchable: priority level 4.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment. Sortable.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": "",\r\n  "FromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ToAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  }\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}, {'Name': 'FromAddress', 'Type': 'object', 'Description': 'From address of the shipment.', 'Required': False}, {'Name': 'ToAddress', 'Type': 'object', 'Description': 'To address of the shipment.', 'Required': False}]}## Delete a shipment</p>
+<h3><code>DELETE</code> <code>v1/shipments/{shipmentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None## Partially update a shipment</p>
+<h3><code>PATCH</code> <code>v1/shipments/{shipmentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment. Searchable: priority level 2. Sortable.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment. Searchable: priority level 3. Sortable: priority level 1.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment. Searchable: priority level 4. Sortable.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment. Max length 3000 characters. Searchable: priority level 4.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment. Sortable.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "BuyerID": "",\r\n  "Shipper": "",\r\n  "DateShipped": "2018-03-21T23:00:00+00:00",\r\n  "DateDelivered": "2018-03-21T23:00:00+00:00",\r\n  "TrackingNumber": "",\r\n  "Cost": 0,\r\n  "xp": {},\r\n  "Account": "",\r\n  "FromAddressID": "",\r\n  "ToAddressID": "",\r\n  "FromAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  },\r\n  "ToAddress": {\r\n    "ID": "",\r\n    "DateCreated": "2018-03-21T23:00:00+00:00",\r\n    "CompanyName": "",\r\n    "FirstName": "",\r\n    "LastName": "",\r\n    "Street1": "",\r\n    "Street2": "",\r\n    "City": "",\r\n    "State": "",\r\n    "Zip": "",\r\n    "Country": "",\r\n    "Phone": "",\r\n    "AddressName": "",\r\n    "xp": {}\r\n  }\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the shipment.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Shipper', 'Type': 'string', 'Description': 'Shipper of the shipment.', 'Required': False}, {'Name': 'DateShipped', 'Type': 'date', 'Description': 'Date shipped of the shipment.', 'Required': False}, {'Name': 'DateDelivered', 'Type': 'date', 'Description': 'Date delivered of the shipment.', 'Required': False}, {'Name': 'TrackingNumber', 'Type': 'string', 'Description': 'Tracking number of the shipment.', 'Required': False}, {'Name': 'Cost', 'Type': 'float', 'Description': 'Cost of the shipment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment.', 'Required': False}, {'Name': 'Account', 'Type': 'string', 'Description': 'Account of the shipment.', 'Required': False}, {'Name': 'FromAddressID', 'Type': 'string', 'Description': 'ID of the from address.', 'Required': False}, {'Name': 'ToAddressID', 'Type': 'string', 'Description': 'ID of the to address.', 'Required': False}, {'Name': 'FromAddress', 'Type': 'object', 'Description': 'From address of the shipment.', 'Required': False}, {'Name': 'ToAddress', 'Type': 'object', 'Description': 'To address of the shipment.', 'Required': False}]}## Get a list of shipment items</p>
+<h3><code>GET</code> <code>v1/shipments/{shipmentID}/items</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "OrderID": "",\r\n      "LineItemID": "",\r\n      "QuantityShipped": 0,\r\n      "UnitPrice": 0,\r\n      "CostCenter": "",\r\n      "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n      "Product": {\r\n        "ID": "",\r\n        "Name": "",\r\n        "Description": "",\r\n        "QuantityMultiplier": 0,\r\n        "ShipWeight": 0,\r\n        "ShipHeight": 0,\r\n        "ShipWidth": 0,\r\n        "ShipLength": 0,\r\n        "xp": {}\r\n      },\r\n      "Specs": [\r\n        {\r\n          "SpecID": "",\r\n          "Name": "",\r\n          "OptionID": "",\r\n          "Value": ""\r\n        }\r\n      ],\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'OrderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': True}, {'Name': 'LineItemID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': True}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the shipment item.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the shipment item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the shipment item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the shipment item.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the shipment item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the shipment item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment item.', 'Required': False}]}## Get a single shipment item</p>
+<h3><code>GET</code> <code>v1/shipments/{shipmentID}/items/{orderID}/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "OrderID": "",\r\n  "LineItemID": "",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'OrderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': True}, {'Name': 'LineItemID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': True}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the shipment item.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the shipment item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the shipment item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the shipment item.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the shipment item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the shipment item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment item.', 'Required': False}]}## Save a shipment item</p>
+<h3><code>POST</code> <code>v1/shipments/{shipmentID}/items</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "OrderID": "",\r\n  "LineItemID": "",\r\n  "QuantityShipped": 0\r\n}', 'Fields': [{'Name': 'OrderID', 'Type': 'string', 'Description': 'ID of the order. Required.', 'Required': True}, {'Name': 'LineItemID', 'Type': 'string', 'Description': 'ID of the line item. Required.', 'Required': True}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the shipment item. Required.', 'Required': True}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "OrderID": "",\r\n  "LineItemID": "",\r\n  "QuantityShipped": 0,\r\n  "UnitPrice": 0,\r\n  "CostCenter": "",\r\n  "DateNeeded": "2018-03-21T23:00:00+00:00",\r\n  "Product": {\r\n    "ID": "",\r\n    "Name": "",\r\n    "Description": "",\r\n    "QuantityMultiplier": 0,\r\n    "ShipWeight": 0,\r\n    "ShipHeight": 0,\r\n    "ShipWidth": 0,\r\n    "ShipLength": 0,\r\n    "xp": {}\r\n  },\r\n  "Specs": [\r\n    {\r\n      "SpecID": "",\r\n      "Name": "",\r\n      "OptionID": "",\r\n      "Value": ""\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'OrderID', 'Type': 'string', 'Description': 'ID of the order.', 'Required': True}, {'Name': 'LineItemID', 'Type': 'string', 'Description': 'ID of the line item.', 'Required': True}, {'Name': 'QuantityShipped', 'Type': 'integer', 'Description': 'Quantity shipped of the shipment item.', 'Required': True}, {'Name': 'UnitPrice', 'Type': 'float', 'Description': 'Unit price of the shipment item.', 'Required': False}, {'Name': 'CostCenter', 'Type': 'string', 'Description': 'Cost center of the shipment item.', 'Required': False}, {'Name': 'DateNeeded', 'Type': 'date', 'Description': 'Date needed of the shipment item.', 'Required': False}, {'Name': 'Product', 'Type': 'object', 'Description': 'Product of the shipment item.', 'Required': False}, {'Name': 'Specs', 'Type': 'array', 'Description': 'Specs of the shipment item.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the shipment item.', 'Required': False}]}## Delete a shipment item</p>
+<h3><code>DELETE</code> <code>v1/shipments/{shipmentID}/items/{orderID}/{lineItemID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>shipmentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the shipment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>lineItemID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the line item.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

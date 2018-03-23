@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="__Prior Authorization Capture Transaction Overview In the case that Authorize Only was previously used for a payment, Prior Authorization Capture Transaction can be used to actually capture the payment. This method will first capture the payment on Authorize.Net, then create an additional transaction on the previously created payment on …" />
+<meta name="keywords" content="authorizenet">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Authorizenet: Prior Authorization Capture Transaction"/>
+<meta property="og:description" content="__Prior Authorization Capture Transaction Overview In the case that Authorize Only was previously used for a payment, Prior Authorization Capture Transaction can be used to actually capture the payment. This method will first capture the payment on Authorize.Net, then create an additional transaction on the previously created payment on …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../integration-services\authorizenet-prior-authorization-capture-transaction.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-19 15:32:44.250255-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="Integration Services"/>
+<meta property="article:tag" content="authorizenet"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Authorizenet: Prior Authorization Capture Transaction</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="authorizenet-prior-authorization-capture-transaction">Authorizenet: Prior Authorization Capture Transaction</h1>
+    <p>
+          Posted on Mon 19 March 2018 in <a href="../category/integration-services.html">Integration Services</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>__Prior Authorization Capture Transaction Overview</h2>
+<p>In the case that Authorize Only was previously used for a payment, Prior
+Authorization Capture Transaction can be used to actually capture the payment.
+This method will first capture the payment on Authorize.Net, then create an
+additional transaction on the previously created payment on OrderCloud.io.</p>
+<p>If the capture transaction is successful, but there is an error while creating
+the transaction on OrderCloud.io, the Authorize.Net transaction will be
+voided.</p>
+<h2>__Prior Authorization Capture Transaction Request</h2>
+<h2>__Prior Authorization Capture Transaction Response</h2>
+<h2>__Error Handling</h2>
+<p>During the prior authorization capture process, the Authorize.Net payment
+authorization will be captured, followed by the creation of the transaction on
+OrderCloud.io. In the case that the OrderCloud.io step fails, the transaction
+will be voided automatically on Authorize.Net.</p>
+<p>Errors will return the exact response directly from the Authorize.Net or
+OrderCloud.io endpoint that failed. However, if any required fields are
+missing, a 400 error will be returned before any of the update process is
+executed.</p>
+<h3>Validation Response</h3>
+<p>In the case that a required field is missing from your request, the following
+response will be returned containing a unique ErrorCode and Message, as well
+as the request body sent during the call. The possible ErrorCodes and Messages
+are listed below.  </p>
+<table>  
+<tr>  
+<th>
+
+ErrorCode
+
+</th>  
+<th>
+
+Message
+
+</th>  
+<th>
+
+Status Code
+
+</th> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.OrderIDRequired
+
+</td>  
+<td>
+
+OrderID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.PaymentIDRequired
+
+</td>  
+<td>
+
+CardDetails.PaymentID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr>  
+<tr>  
+<td>
+
+PriorAuthCaptureTransaction.BuyerIDRequired
+
+</td>  
+<td>
+
+BuyerID is required to capture a prior authorization.
+
+</td>  
+<td>
+
+400
+
+</td> </tr> </table>
+
+<h3>OrderCloud.io Error Response</h3>
+<p>If an incorrect <code>BuyerID</code> was provided:</p>
+<p>If an incorrect <code>CardDetails.PaymentID</code> was provided:</p>
+<p>If an incorrect <code>OrderID</code> was provided:</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/authorizenet.html">authorizenet</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>

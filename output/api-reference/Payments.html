@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="Get a single payment GET v1/orders/{direction}/{orderID}/payments/{paymentID} Parameters Description Name direction Type string Description Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. Required True Name orderID Type string Description ID of the order. Required True Name paymentID Type string Description ID …" />
+<meta name="keywords" content="Orders And Fulfillment">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Payments"/>
+<meta property="og:description" content="Get a single payment GET v1/orders/{direction}/{orderID}/payments/{paymentID} Parameters Description Name direction Type string Description Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. Required True Name orderID Type string Description ID of the order. Required True Name paymentID Type string Description ID …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference\Payments.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-23 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Orders And Fulfillment"/>
+<meta property="og:image" content="">
+
+  <title>OrderCloud Documentation Content &ndash; Payments</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+
+
+      <nav>
+        <ul class="list">
+          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
+          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
+          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="Payments">Payments</h1>
+    <p>
+          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>Get a single payment</h2>
+<h3><code>GET</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>paymentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the payment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {},\r\n  "Transactions": [\r\n    {\r\n      "ID": "",\r\n      "Type": "",\r\n      "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n      "Amount": 0,\r\n      "Succeeded": false,\r\n      "ResultCode": "",\r\n      "ResultMessage": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the payment.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}, {'Name': 'Transactions', 'Type': 'array', 'Description': 'Transactions of the payment.', 'Required': False}]}## Get a list of payments</p>
+<h3><code>GET</code> <code>v1/orders/{direction}/{orderID}/payments</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Type": "PurchaseOrder",\r\n      "DateCreated": "2018-03-21T23:00:00+00:00",\r\n      "CreditCardID": "",\r\n      "SpendingAccountID": "",\r\n      "Description": "",\r\n      "Amount": 0,\r\n      "Accepted": false,\r\n      "xp": {},\r\n      "Transactions": [\r\n        {\r\n          "ID": "",\r\n          "Type": "",\r\n          "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n          "Amount": 0,\r\n          "Succeeded": false,\r\n          "ResultCode": "",\r\n          "ResultMessage": "",\r\n          "xp": {}\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the payment.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}, {'Name': 'Transactions', 'Type': 'array', 'Description': 'Transactions of the payment.', 'Required': False}]}## Create a new payment</p>
+<h3><code>POST</code> <code>v1/orders/{direction}/{orderID}/payments</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card. Sortable.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account. Sortable.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment. Max length 2000 characters. Searchable: priority level 2.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {},\r\n  "Transactions": [\r\n    {\r\n      "ID": "",\r\n      "Type": "",\r\n      "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n      "Amount": 0,\r\n      "Succeeded": false,\r\n      "ResultCode": "",\r\n      "ResultMessage": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the payment.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}, {'Name': 'Transactions', 'Type': 'array', 'Description': 'Transactions of the payment.', 'Required': False}]}## Delete a payment</p>
+<h3><code>DELETE</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>paymentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the payment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None## Partially update a payment</p>
+<h3><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>paymentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the payment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card. Sortable.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account. Sortable.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment. Max length 2000 characters. Searchable: priority level 2.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>200</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {},\r\n  "Transactions": [\r\n    {\r\n      "ID": "",\r\n      "Type": "",\r\n      "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n      "Amount": 0,\r\n      "Succeeded": false,\r\n      "ResultCode": "",\r\n      "ResultMessage": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the payment.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}, {'Name': 'Transactions', 'Type': 'array', 'Description': 'Transactions of the payment.', 'Required': False}]}## Create a new payment transaction</p>
+<h3><code>POST</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>paymentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the payment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "",\r\n  "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n  "Amount": 0,\r\n  "Succeeded": false,\r\n  "ResultCode": "",\r\n  "ResultMessage": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment transaction. Required. Sortable.', 'Required': True}, {'Name': 'DateExecuted', 'Type': 'date', 'Description': 'Date executed of the payment transaction. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'Amount', 'Type': 'float', 'Description': 'Usually the same as Payment Amount, but can be different. A charge might have a subsequent partial credit, for example.', 'Required': False}, {'Name': 'Succeeded', 'Type': 'boolean', 'Description': 'Succeeded of the payment transaction. Sortable.', 'Required': False}, {'Name': 'ResultCode', 'Type': 'string', 'Description': 'Result code of the payment transaction. Sortable.', 'Required': False}, {'Name': 'ResultMessage', 'Type': 'string', 'Description': 'Result message of the payment transaction. Sortable.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment transaction.', 'Required': False}]}
+ <strong>Responsestatus</strong>: <code>201</code></p>
+<p><strong>Responsebody</strong>: 
+{'Sample': '{\r\n  "ID": "",\r\n  "Type": "PurchaseOrder",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CreditCardID": "",\r\n  "SpendingAccountID": "",\r\n  "Description": "",\r\n  "Amount": 0,\r\n  "Accepted": false,\r\n  "xp": {},\r\n  "Transactions": [\r\n    {\r\n      "ID": "",\r\n      "Type": "",\r\n      "DateExecuted": "2018-03-21T23:00:00+00:00",\r\n      "Amount": 0,\r\n      "Succeeded": false,\r\n      "ResultCode": "",\r\n      "ResultMessage": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the payment.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}, {'Name': 'Transactions', 'Type': 'array', 'Description': 'Transactions of the payment.', 'Required': False}]}## Delete a payment transaction</p>
+<h3><code>DELETE</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions/{transactionID}</code></h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>direction</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>orderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the order.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>paymentID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the payment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>transactionID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the transaction.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requestbody</strong>: 
+None
+ <strong>Responsestatus</strong>: <code>204</code></p>
+<p><strong>Responsebody</strong>: 
+None</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "",
+  "description": ""
+}
+</script>
+</body>
+</html>
