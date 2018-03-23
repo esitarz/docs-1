@@ -6,6 +6,7 @@ tags: Authentication And Authorization
 slug: SecurityProfiles
 ---
 
+
 ## Get a single security profile
 ### `GET` `v1/securityprofiles/{securityProfileID}`
 
@@ -21,7 +22,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Roles": [\r\n    "DevCenterImpersonate"\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}## Get a list of security profiles
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Roles": [\r\n    "DevCenterImpersonate"\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}
+## Get a list of security profiles
 ### `GET` `v1/securityprofiles`
 
 | Parameters      | Description                    |
@@ -56,7 +58,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Roles": [\r\n        "DevCenterImpersonate"\r\n      ]\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}## Get a list of security profile assignments
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Roles": [\r\n        "DevCenterImpersonate"\r\n      ]\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}
+## Get a list of security profile assignments
 ### `GET` `v1/securityprofiles/assignments`
 
 | Parameters      | Description                    |
@@ -103,7 +106,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "SecurityProfileID": "",\r\n      "BuyerID": "",\r\n      "SupplierID": "",\r\n      "UserID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'SupplierID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}## Delete a security profile assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "SecurityProfileID": "",\r\n      "BuyerID": "",\r\n      "SupplierID": "",\r\n      "UserID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'SupplierID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}
+## Delete a security profile assignment
 ### `DELETE` `v1/securityprofiles/{securityProfileID}/assignments`
 
 | Parameters      | Description                    |
@@ -130,7 +134,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Save a security profile assignment
+None
+## Save a security profile assignment
 ### `POST` `v1/securityprofiles/assignments`
 
 | Parameters      | Description                    |

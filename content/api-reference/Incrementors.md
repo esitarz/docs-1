@@ -10,6 +10,7 @@ object IDs. For example, "aprefix-{myIncrementorID}", will yield an
 order ID of aprefix-10010.
 
 ---
+
 ## Get a single incrementor
 ### `GET` `v1/incrementors/{incrementorID}`
 
@@ -25,7 +26,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}## Get a list of incrementors
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}
+## Get a list of incrementors
 ### `GET` `v1/incrementors`
 
 | Parameters      | Description                    |
@@ -60,7 +62,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "LastNumber": 0,\r\n      "LeftPaddingCount": 0\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}## Create a new incrementor
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "LastNumber": 0,\r\n      "LeftPaddingCount": 0\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}
+## Create a new incrementor
 ### `POST` `v1/incrementors`
 
 | Parameters      | Description                    |
@@ -71,7 +74,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}## Create or update an incrementor
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}
+## Create or update an incrementor
 ### `PUT` `v1/incrementors/{incrementorID}`
 
 | Parameters      | Description                    |
@@ -86,7 +90,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}## Delete an incrementor
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "LastNumber": 0,\r\n  "LeftPaddingCount": 0\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the incrementor.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the incrementor.', 'Required': False}, {'Name': 'LastNumber', 'Type': 'integer', 'Description': 'Last number of the incrementor.', 'Required': True}, {'Name': 'LeftPaddingCount', 'Type': 'integer', 'Description': 'Left padding count of the incrementor.', 'Required': True}]}
+## Delete an incrementor
 ### `DELETE` `v1/incrementors/{incrementorID}`
 
 | Parameters      | Description                    |
@@ -101,7 +106,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update an incrementor
+None
+## Partially update an incrementor
 ### `PATCH` `v1/incrementors/{incrementorID}`
 
 | Parameters      | Description                    |

@@ -9,6 +9,7 @@ Buyers, or customers, are the organizations that view the categories and
 products and place orders.
 
 ---
+
 ## Get a single buyer
 ### `GET` `v1/buyers/{buyerID}`
 
@@ -24,7 +25,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}## Get a list of buyers
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}
+## Get a list of buyers
 ### `GET` `v1/buyers`
 
 | Parameters      | Description                    |
@@ -59,7 +61,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "DefaultCatalogID": "",\r\n      "Active": false,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}## Create a new buyer
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "DefaultCatalogID": "",\r\n      "Active": false,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}
+## Create a new buyer
 ### `POST` `v1/buyers`
 
 | Parameters      | Description                    |
@@ -70,7 +73,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}## Create or update a buyer
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}
+## Create or update a buyer
 ### `PUT` `v1/buyers/{buyerID}`
 
 | Parameters      | Description                    |
@@ -85,7 +89,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}## Delete a buyer
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "DefaultCatalogID": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]}
+## Delete a buyer
 ### `DELETE` `v1/buyers/{buyerID}`
 
 | Parameters      | Description                    |
@@ -100,7 +105,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a buyer
+None
+## Partially update a buyer
 ### `PATCH` `v1/buyers/{buyerID}`
 
 | Parameters      | Description                    |

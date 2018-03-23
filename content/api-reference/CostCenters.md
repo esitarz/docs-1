@@ -11,6 +11,7 @@ businesses call these by different names such as "allocation codes" or
 expense back to someone or some department of an organization.
 
 ---
+
 ## Get a single cost center
 ### `GET` `v1/buyers/{buyerID}/costcenters/{costCenterID}`
 
@@ -30,7 +31,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}## Get a list of cost centers
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}
+## Get a list of cost centers
 ### `GET` `v1/buyers/{buyerID}/costcenters`
 
 | Parameters      | Description                    |
@@ -69,7 +71,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}## Create a new cost center
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}
+## Create a new cost center
 ### `POST` `v1/buyers/{buyerID}/costcenters`
 
 | Parameters      | Description                    |
@@ -84,7 +87,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}## Create or update a cost center
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}
+## Create or update a cost center
 ### `PUT` `v1/buyers/{buyerID}/costcenters/{costCenterID}`
 
 | Parameters      | Description                    |
@@ -103,7 +107,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}## Delete a cost center
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}
+## Delete a cost center
 ### `DELETE` `v1/buyers/{buyerID}/costcenters/{costCenterID}`
 
 | Parameters      | Description                    |
@@ -122,7 +127,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a cost center
+None
+## Partially update a cost center
 ### `PATCH` `v1/buyers/{buyerID}/costcenters/{costCenterID}`
 
 | Parameters      | Description                    |
@@ -141,7 +147,8 @@ None## Partially update a cost center
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}## Get a list of cost center assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the cost center.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the cost center.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the cost center.', 'Required': False}]}
+## Get a list of cost center assignments
 ### `GET` `v1/buyers/{buyerID}/costcenters/assignments`
 
 | Parameters      | Description                    |
@@ -180,7 +187,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CostCenterID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CostCenterID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': True}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}## Delete a cost center assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CostCenterID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CostCenterID', 'Type': 'string', 'Description': 'ID of the cost center.', 'Required': True}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}
+## Delete a cost center assignment
 ### `DELETE` `v1/buyers/{buyerID}/costcenters/{costCenterID}/assignments`
 
 | Parameters      | Description                    |
@@ -207,7 +215,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Save a cost center assignment
+None
+## Save a cost center assignment
 ### `POST` `v1/buyers/{buyerID}/costcenters/assignments`
 
 | Parameters      | Description                    |

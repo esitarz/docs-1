@@ -9,6 +9,7 @@ Suppliers are the organizations that supply products distributed by
 Seller oganizations.
 
 ---
+
 ## Get a single supplier
 ### `GET` `v1/suppliers/{supplierID}`
 
@@ -24,7 +25,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}## Get a list of suppliers
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}
+## Get a list of suppliers
 ### `GET` `v1/suppliers`
 
 | Parameters      | Description                    |
@@ -59,7 +61,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Active": false,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}## Create a new supplier
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Active": false,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}
+## Create a new supplier
 ### `POST` `v1/suppliers`
 
 | Parameters      | Description                    |
@@ -70,7 +73,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}## Create or update a supplier
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}
+## Create or update a supplier
 ### `PUT` `v1/suppliers/{supplierID}`
 
 | Parameters      | Description                    |
@@ -85,7 +89,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}## Delete a supplier
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]}
+## Delete a supplier
 ### `DELETE` `v1/suppliers/{supplierID}`
 
 | Parameters      | Description                    |
@@ -100,7 +105,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a supplier
+None
+## Partially update a supplier
 ### `PATCH` `v1/suppliers/{supplierID}`
 
 | Parameters      | Description                    |

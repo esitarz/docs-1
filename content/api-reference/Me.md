@@ -12,6 +12,7 @@ organization or user group. It also provides ways for a user to update
 or change their own information.
 
 ---
+
 ## Get the Current Authenticated User
 ### `GET` `v1/me`
 
@@ -23,7 +24,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Update the Currently Authenticated User
+{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}
+## Update the Currently Authenticated User
 ### `PUT` `v1/me`
 
 | Parameters      | Description                    |
@@ -34,7 +36,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Patch the Currently Authenticated User
+{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}
+## Patch the Currently Authenticated User
 ### `PATCH` `v1/me`
 
 | Parameters      | Description                    |
@@ -45,7 +48,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}## Register a register
+{'Sample': '{\r\n  "Buyer": {\r\n    "ID": "",\r\n    "DefaultCatalogID": ""\r\n  },\r\n  "ID": "",\r\n  "Username": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n  "Email": "",\r\n  "Phone": "",\r\n  "TermsAccepted": "2018-03-21T23:00:00+00:00",\r\n  "Active": false,\r\n  "xp": {},\r\n  "AvailableRoles": [\r\n    ""\r\n  ]\r\n}', 'Fields': [{'Name': 'Buyer', 'Type': 'object', 'Description': 'Buyer of the user.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user.', 'Required': True}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}, {'Name': 'AvailableRoles', 'Type': 'array', 'Description': 'Available roles of the user.', 'Required': False}]}
+## Register a register
 ### `PUT` `v1/me/register`
 
 | Parameters      | Description                    |
@@ -60,7 +64,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{}', 'Fields': []}## Transfer a anon user order
+{'Sample': '{}', 'Fields': []}
+## Transfer a anon user order
 ### `PUT` `v1/me/orders`
 
 | Parameters      | Description                    |
@@ -75,7 +80,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Reset a password by token
+None
+## Reset a password by token
 ### `POST` `v1/me/password`
 
 | Parameters      | Description                    |

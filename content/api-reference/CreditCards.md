@@ -11,6 +11,7 @@ Credit Cards may be saved and assigned to members of an organization for
 use during purchase.
 
 ---
+
 ## Get a single credit card
 ### `GET` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 
@@ -30,7 +31,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}## Get a list of credit cards
+{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}
+## Get a list of credit cards
 ### `GET` `v1/buyers/{buyerID}/creditcards`
 
 | Parameters      | Description                    |
@@ -69,7 +71,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Token": "",\r\n      "DateCreated": "2018-03-21T23:00:00+00:00",\r\n      "CardType": "",\r\n      "PartialAccountNumber": "",\r\n      "CardholderName": "",\r\n      "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}## Create a new credit card
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Token": "",\r\n      "DateCreated": "2018-03-21T23:00:00+00:00",\r\n      "CardType": "",\r\n      "PartialAccountNumber": "",\r\n      "CardholderName": "",\r\n      "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}
+## Create a new credit card
 ### `POST` `v1/buyers/{buyerID}/creditcards`
 
 | Parameters      | Description                    |
@@ -84,7 +87,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}## Create or update a credit card
+{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}
+## Create or update a credit card
 ### `PUT` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 
 | Parameters      | Description                    |
@@ -103,7 +107,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}## Delete a credit card
+{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}
+## Delete a credit card
 ### `DELETE` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 
 | Parameters      | Description                    |
@@ -122,7 +127,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a credit card
+None
+## Partially update a credit card
 ### `PATCH` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 
 | Parameters      | Description                    |
@@ -141,7 +147,8 @@ None## Partially update a credit card
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}## Get a list of credit card assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Token": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CardType": "",\r\n  "PartialAccountNumber": "",\r\n  "CardholderName": "",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': False}, {'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'DateCreated', 'Type': 'date', 'Description': 'Date created of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]}
+## Get a list of credit card assignments
 ### `GET` `v1/buyers/{buyerID}/creditcards/assignments`
 
 | Parameters      | Description                    |
@@ -180,7 +187,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CreditCardID": "",\r\n      "UserID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': True}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}## Save a credit card assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CreditCardID": "",\r\n      "UserID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card.', 'Required': True}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}
+## Save a credit card assignment
 ### `POST` `v1/buyers/{buyerID}/creditcards/assignments`
 
 | Parameters      | Description                    |
@@ -195,7 +203,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Delete a credit card assignment
+None
+## Delete a credit card assignment
 ### `DELETE` `v1/buyers/{buyerID}/creditcards/{creditCardID}/assignments`
 
 | Parameters      | Description                    |

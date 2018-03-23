@@ -11,6 +11,7 @@ default catalog upon creation. Catalogs can be shared between buyers
 using assignments.
 
 ---
+
 ## Get a single catalog
 ### `GET` `v1/catalogs/{catalogID}`
 
@@ -26,7 +27,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}## Get a list of catalogs
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
+## Get a list of catalogs
 ### `GET` `v1/catalogs`
 
 | Parameters      | Description                    |
@@ -61,7 +63,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "Active": false,\r\n      "CategoryCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}## Create a new catalog
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "Active": false,\r\n      "CategoryCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
+## Create a new catalog
 ### `POST` `v1/catalogs`
 
 | Parameters      | Description                    |
@@ -72,7 +75,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}## Create or update a catalog
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
+## Create or update a catalog
 ### `PUT` `v1/catalogs/{catalogID}`
 
 | Parameters      | Description                    |
@@ -87,7 +91,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}## Delete a catalog
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
+## Delete a catalog
 ### `DELETE` `v1/catalogs/{catalogID}`
 
 | Parameters      | Description                    |
@@ -102,7 +107,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a catalog
+None
+## Partially update a catalog
 ### `PATCH` `v1/catalogs/{catalogID}`
 
 | Parameters      | Description                    |
@@ -117,7 +123,8 @@ None## Partially update a catalog
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}## Get a list of catalog assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
+## Get a list of catalog assignments
 ### `GET` `v1/catalogs/assignments`
 
 | Parameters      | Description                    |
@@ -144,7 +151,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "BuyerID": "",\r\n      "ViewAllCategories": false,\r\n      "ViewAllProducts": false\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': True}, {'Name': 'ViewAllCategories', 'Type': 'boolean', 'Description': 'View all categories of the catalog assignment.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'View all products of the catalog assignment.', 'Required': False}]}## Save a catalog assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "BuyerID": "",\r\n      "ViewAllCategories": false,\r\n      "ViewAllProducts": false\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': True}, {'Name': 'ViewAllCategories', 'Type': 'boolean', 'Description': 'View all categories of the catalog assignment.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'View all products of the catalog assignment.', 'Required': False}]}
+## Save a catalog assignment
 ### `POST` `v1/catalogs/assignments`
 
 | Parameters      | Description                    |
@@ -155,7 +163,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Delete a catalog assignment
+None
+## Delete a catalog assignment
 ### `DELETE` `v1/catalogs/{catalogID}/assignments`
 
 | Parameters      | Description                    |
@@ -174,7 +183,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Get a list of catalog product assignments
+None
+## Get a list of catalog product assignments
 ### `GET` `v1/catalogs/productassignments`
 
 | Parameters      | Description                    |
@@ -201,7 +211,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "ProductID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}]}## Save a catalog product assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "ProductID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}]}
+## Save a catalog product assignment
 ### `POST` `v1/catalogs/productassignments`
 
 | Parameters      | Description                    |
@@ -212,7 +223,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Delete a catalog product assignment
+None
+## Delete a catalog product assignment
 ### `DELETE` `v1/catalogs/{catalogID}/productassignments/{productID}`
 
 | Parameters      | Description                    |

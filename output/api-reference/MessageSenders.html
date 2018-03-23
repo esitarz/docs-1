@@ -110,7 +110,8 @@
 None
  <strong>Responsestatus</strong>: <code>200</code></p>
 <p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "MessageTypes": [\r\n    "OrderDeclined"\r\n  ],\r\n  "Description": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}## Get a list of message senders</p>
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "MessageTypes": [\r\n    "OrderDeclined"\r\n  ],\r\n  "Description": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}</p>
+<h2>Get a list of message senders</h2>
 <h3><code>GET</code> <code>v1/messagesenders</code></h3>
 <table>
 <thead>
@@ -222,7 +223,8 @@ None
 None
  <strong>Responsestatus</strong>: <code>200</code></p>
 <p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "MessageTypes": [\r\n        "OrderDeclined"\r\n      ],\r\n      "Description": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}## Get a list of message sender assignments</p>
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "MessageTypes": [\r\n        "OrderDeclined"\r\n      ],\r\n      "Description": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}</p>
+<h2>Get a list of message sender assignments</h2>
 <h3><code>GET</code> <code>v1/messagesenders/assignments</code></h3>
 <table>
 <thead>
@@ -350,7 +352,8 @@ None
 None
  <strong>Responsestatus</strong>: <code>200</code></p>
 <p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderID": "",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message sender assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message sender assignment.', 'Required': False}]}## Delete a message sender assignment</p>
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderID": "",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message sender assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message sender assignment.', 'Required': False}]}</p>
+<h2>Delete a message sender assignment</h2>
 <h3><code>DELETE</code> <code>v1/messagesenders/{messageSenderID}/assignments</code></h3>
 <table>
 <thead>
@@ -430,7 +433,8 @@ None
 None
  <strong>Responsestatus</strong>: <code>204</code></p>
 <p><strong>Responsebody</strong>: 
-None## Save a message sender assignment</p>
+None</p>
+<h2>Save a message sender assignment</h2>
 <h3><code>POST</code> <code>v1/messagesenders/assignments</code></h3>
 <table>
 <thead>
@@ -450,7 +454,8 @@ None## Save a message sender assignment</p>
 {'Sample': '{\r\n  "MessageSenderID": "",\r\n  "BuyerID": "",\r\n  "UserGroupID": ""\r\n}', 'Fields': [{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Sortable: priority level 3.', 'Required': False}]}
  <strong>Responsestatus</strong>: <code>204</code></p>
 <p><strong>Responsebody</strong>: 
-None## Get a list of message sender cc listener assignments</p>
+None</p>
+<h2>Get a list of message sender cc listener assignments</h2>
 <h3><code>GET</code> <code>v1/messagesenders/CCListenerAssignments</code></h3>
 <table>
 <thead>
@@ -562,7 +567,8 @@ None## Get a list of message sender cc listener assignments</p>
 None
  <strong>Responsestatus</strong>: <code>200</code></p>
 <p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderAssignment": {\r\n        "MessageSenderID": "",\r\n        "BuyerID": "",\r\n        "UserGroupID": "",\r\n        "MessageConfigName": "",\r\n        "MessageConfigDescription": ""\r\n      },\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": "",\r\n      "MessageType": "OrderDeclined",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderAssignment', 'Type': 'object', 'Description': 'Message sender assignment of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageType', 'Type': 'string', 'Description': 'Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}## Save a message sender cc listener assignment</p>
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderAssignment": {\r\n        "MessageSenderID": "",\r\n        "BuyerID": "",\r\n        "UserGroupID": "",\r\n        "MessageConfigName": "",\r\n        "MessageConfigDescription": ""\r\n      },\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": "",\r\n      "MessageType": "OrderDeclined",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderAssignment', 'Type': 'object', 'Description': 'Message sender assignment of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageType', 'Type': 'string', 'Description': 'Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}</p>
+<h2>Save a message sender cc listener assignment</h2>
 <h3><code>POST</code> <code>v1/messagesenders/CCListenerAssignments</code></h3>
 <table>
 <thead>

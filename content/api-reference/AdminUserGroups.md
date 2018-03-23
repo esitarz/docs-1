@@ -6,6 +6,7 @@ tags: Seller
 slug: AdminUserGroups
 ---
 
+
 ## Get a single admin user group
 ### `GET` `v1/usergroups/{userGroupID}`
 
@@ -21,7 +22,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Get a list of admin user groups
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Get a list of admin user groups
 ### `GET` `v1/usergroups`
 
 | Parameters      | Description                    |
@@ -56,7 +58,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Create a new admin user group
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Create a new admin user group
 ### `POST` `v1/usergroups`
 
 | Parameters      | Description                    |
@@ -67,7 +70,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Create or update an admin user group
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Create or update an admin user group
 ### `PUT` `v1/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -82,7 +86,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Delete an admin user group
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Delete an admin user group
 ### `DELETE` `v1/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -97,7 +102,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update an admin user group
+None
+## Partially update an admin user group
 ### `PATCH` `v1/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -112,7 +118,8 @@ None## Partially update an admin user group
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Get a list of admin user group user assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Get a list of admin user group user assignments
 ### `GET` `v1/usergroups/assignments`
 
 | Parameters      | Description                    |
@@ -139,7 +146,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}## Delete an admin user group user assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}
+## Delete an admin user group user assignment
 ### `DELETE` `v1/usergroups/{userGroupID}/assignments/{userID}`
 
 | Parameters      | Description                    |
@@ -158,7 +166,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Save an admin user group user assignment
+None
+## Save an admin user group user assignment
 ### `POST` `v1/usergroups/assignments`
 
 | Parameters      | Description                    |

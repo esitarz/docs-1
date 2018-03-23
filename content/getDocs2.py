@@ -173,7 +173,7 @@ def main():
 					continue
 
 				elif key == 'Name':
-					page['contents'] += '## '+value+''.title()
+					page['contents'] += '\n## '+value+''.title()
 
 				elif key == 'RequestBody':
 					page['contents'] += '\n **'+str(key).title()+'**: \n'+str(value)

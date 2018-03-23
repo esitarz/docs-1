@@ -10,6 +10,7 @@ specific audience. Content can be in the form of another category,
 nested categories, products or HTML.
 
 ---
+
 ## Get a single category
 ### `GET` `v1/catalogs/{catalogID}/categories/{categoryID}`
 
@@ -29,7 +30,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Get a list of categories
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Get a list of categories
 ### `GET` `v1/catalogs/{catalogID}/categories`
 
 | Parameters      | Description                    |
@@ -72,7 +74,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "Active": false,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Create a new category
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "Active": false,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Create a new category
 ### `POST` `v1/catalogs/{catalogID}/categories`
 
 | Parameters      | Description                    |
@@ -87,7 +90,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Create or update a category
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Create or update a category
 ### `PUT` `v1/catalogs/{catalogID}/categories/{categoryID}`
 
 | Parameters      | Description                    |
@@ -106,7 +110,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Delete a category
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Delete a category
 ### `DELETE` `v1/catalogs/{catalogID}/categories/{categoryID}`
 
 | Parameters      | Description                    |
@@ -125,7 +130,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a category
+None
+## Partially update a category
 ### `PATCH` `v1/catalogs/{catalogID}/categories/{categoryID}`
 
 | Parameters      | Description                    |
@@ -144,7 +150,8 @@ None## Partially update a category
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Get a list of category assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "ListOrder": 1,\r\n  "Active": false,\r\n  "ParentID": "",\r\n  "ChildCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Get a list of category assignments
 ### `GET` `v1/catalogs/{catalogID}/categories/assignments`
 
 | Parameters      | Description                    |
@@ -187,7 +194,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CategoryID": "",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "Visible": false,\r\n      "ViewAllProducts": false\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CategoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': True}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Visible', 'Type': 'boolean', 'Description': 'Optional. Set to null to inherit from parent category or catlog level.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'Optional. Set to null to inherit from parent category or catlog level.', 'Required': False}]}## Delete a category assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CategoryID": "",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "Visible": false,\r\n      "ViewAllProducts": false\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CategoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': True}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Visible', 'Type': 'boolean', 'Description': 'Optional. Set to null to inherit from parent category or catlog level.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'Optional. Set to null to inherit from parent category or catlog level.', 'Required': False}]}
+## Delete a category assignment
 ### `DELETE` `v1/catalogs/{catalogID}/categories/{categoryID}/assignments`
 
 | Parameters      | Description                    |
@@ -218,7 +226,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Save a category assignment
+None
+## Save a category assignment
 ### `POST` `v1/catalogs/{catalogID}/categories/assignments`
 
 | Parameters      | Description                    |
@@ -233,7 +242,8 @@ None## Save a category assignment
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Get a list of category product assignments
+None
+## Get a list of category product assignments
 ### `GET` `v1/catalogs/{catalogID}/categories/productassignments`
 
 | Parameters      | Description                    |
@@ -264,7 +274,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CategoryID": "",\r\n      "ProductID": "",\r\n      "ListOrder": 1\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CategoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the category product assignment.', 'Required': False}]}## Save a category product assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CategoryID": "",\r\n      "ProductID": "",\r\n      "ListOrder": 1\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CategoryID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the category product assignment.', 'Required': False}]}
+## Save a category product assignment
 ### `POST` `v1/catalogs/{catalogID}/categories/productassignments`
 
 | Parameters      | Description                    |
@@ -279,7 +290,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Delete a category product assignment
+None
+## Delete a category product assignment
 ### `DELETE` `v1/catalogs/{catalogID}/categories/{categoryID}/productassignments/{productID}`
 
 | Parameters      | Description                    |

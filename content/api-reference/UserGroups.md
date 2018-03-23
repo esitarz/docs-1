@@ -11,6 +11,7 @@ define order management rules, and manage changes much more easily than
 trying to account for individual users.
 
 ---
+
 ## Get a single user group
 ### `GET` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 
@@ -30,7 +31,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Get a list of user groups
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Get a list of user groups
 ### `GET` `v1/buyers/{buyerID}/usergroups`
 
 | Parameters      | Description                    |
@@ -69,7 +71,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Create a new user group
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Create a new user group
 ### `POST` `v1/buyers/{buyerID}/usergroups`
 
 | Parameters      | Description                    |
@@ -84,7 +87,8 @@ None
  **Responsestatus**: `201`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Create or update a user group
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Create or update a user group
 ### `PUT` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -103,7 +107,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Delete a user group
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Delete a user group
 ### `DELETE` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -122,7 +127,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Partially update a user group
+None
+## Partially update a user group
 ### `PATCH` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 
 | Parameters      | Description                    |
@@ -141,7 +147,8 @@ None## Partially update a user group
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}## Get a list of user group user assignments
+{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]}
+## Get a list of user group user assignments
 ### `GET` `v1/buyers/{buyerID}/usergroups/assignments`
 
 | Parameters      | Description                    |
@@ -172,7 +179,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}## Delete a user group user assignment
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}
+## Delete a user group user assignment
 ### `DELETE` `v1/buyers/{buyerID}/usergroups/{userGroupID}/assignments/{userID}`
 
 | Parameters      | Description                    |
@@ -195,7 +203,8 @@ None
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Save a user group user assignment
+None
+## Save a user group user assignment
 ### `POST` `v1/buyers/{buyerID}/usergroups/assignments`
 
 | Parameters      | Description                    |

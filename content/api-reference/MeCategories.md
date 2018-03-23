@@ -12,6 +12,7 @@ organization or user group. It also provides ways for a user to update
 or change their own information.
 
 ---
+
 ## Get a list of categories visible to this user
 ### `GET` `v1/me/categories`
 
@@ -59,7 +60,8 @@ None
  **Responsestatus**: `200`
 
  **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "Active": false,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}## Get a single category
+{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "ListOrder": 1,\r\n      "Active": false,\r\n      "ParentID": "",\r\n      "ChildCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the category.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the category.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the category.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'Order that the category appears within its parent or catalog (if root level).', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'If false, buyers cannot see this Category or any Categories or Products under it.', 'Required': False}, {'Name': 'ParentID', 'Type': 'string', 'Description': 'ID of the parent category.', 'Required': False}, {'Name': 'ChildCount', 'Type': 'integer', 'Description': 'Number of categories that are *immediate* children of this category.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the category.', 'Required': False}]}
+## Get a single category
 ### `GET` `v1/me/categories/{categoryID}`
 
 | Parameters      | Description                    |

@@ -6,6 +6,7 @@ tags: Authentication And Authorization
 slug: PasswordResets
 ---
 
+
 ## Send a verification code
 ### `POST` `v1/password/reset`
 
@@ -17,7 +18,8 @@ slug: PasswordResets
  **Responsestatus**: `204`
 
  **Responsebody**: 
-None## Reset a password by verification code
+None
+## Reset a password by verification code
 ### `PUT` `v1/password/reset/{verificationCode}`
 
 | Parameters      | Description                    |

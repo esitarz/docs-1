@@ -12,6 +12,7 @@ organization or user group. It also provides ways for a user to update
 or change their own information.
 
 ---
+
 ## Get a list of cost centers visible to this user
 ### `GET` `v1/me/costcenters`
 
