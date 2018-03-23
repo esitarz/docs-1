@@ -75,8 +75,22 @@
 address may belong to a list that can be shared among many users if
 appropriate.</p>
 <hr>
-<h2>Get a single address</h2>
-<h3><code>GET</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h3>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h2>
+<p>Get a single address</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -95,10 +109,7 @@ appropriate.</p>
 </tr>
 <tr>
 <td>Description</td>
-<td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required …</td></tr></tbody></table>
+<td>ID of the …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Addresses.html#Addresses">    Continue reading
 </a>
@@ -141,8 +152,22 @@ Properties are also available to control the triggers and timing …</p>
 					<p>Buyers, or customers, are the organizations that view the categories and
 products and place orders.</p>
 <hr>
-<h2>Get a single buyer</h2>
-<h3><code>GET</code> <code>v1/buyers/{buyerID}</code></h3>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}</code></h2>
+<p>Get a single buyer</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -169,11 +194,18 @@ products and place orders.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;DefaultCatalogID&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description …</th></tr></thead></table>
 					<br>
 					<a class="btn" href="../api-reference\Buyers.html#Buyers">    Continue reading
 </a>
@@ -196,8 +228,7 @@ businesses call these by different names such as "allocation codes" or
 "charge back codes", but the basic purpose is the same - to allocate an
 expense back to someone or some department of an organization.</p>
 <hr>
-<h2>Get a single cost center</h2>
-<h3><code>GET …</code></h3>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/costcenters/{costCenterID …</code></h2>
 					<br>
 					<a class="btn" href="../api-reference\CostCenters.html#CostCenters">    Continue reading
 </a>
@@ -220,8 +251,7 @@ access to one or many credit cards for personal spend or group spending.
 Credit Cards may be saved and assigned to members of an organization for
 use during purchase.</p>
 <hr>
-<h2>Get a single credit card</h2>
-<h3><code>GET …</code></h3>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID …</code></h2>
 					<br>
 					<a class="btn" href="../api-reference\CreditCards.html#CreditCards">    Continue reading
 </a>

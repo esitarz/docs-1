@@ -73,8 +73,22 @@
     </p>
   </header>
   <div>
-      <h2>Get a single impersonation config</h2>
-<h3><code>GET</code> <code>v1/impersonationconfig/{impersonationConfigID}</code></h3>
+      <h2><code>GET</code> <code>v1/impersonationconfig/{impersonationConfigID}</code></h2>
+<p>Get a single impersonation config</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -101,11 +115,32 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "ImpersonationBuyerID": "",\r\n  "ImpersonationGroupID": "",\r\n  "ImpersonationUserID": "",\r\n  "BuyerID": "",\r\n  "GroupID": "",\r\n  "UserID …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the impersonation config …</td></tr></tbody></table>
       <br>
       <a class="btn" href="../api-reference\ImpersonationConfigs.html#ImpersonationConfigs">    Continue reading
 </a>
@@ -129,8 +164,22 @@ None
 object IDs. For example, "aprefix-{myIncrementorID}", will yield an
 order ID of aprefix-10010.</p>
 <hr>
-<h2>Get a single incrementor</h2>
-<h3><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h3>
+<h2><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h2>
+<p>Get a single incrementor</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -157,9 +206,8 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200 …</code></p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus …</strong></p>
       <br>
       <a class="btn" href="../api-reference\Incrementors.html#Incrementors">    Continue reading
 </a>
@@ -184,8 +232,8 @@ contains a single Product SKU and a quantity. A line item may also
 include Spec values, a Cost Center, shipping details, date needed, and
 other custom information.</p>
 <hr>
-<h2>Get a single line item</h2>
-<h3><code>GET</code> <code>v1/orders/{direction …</code></h3>
+<h2><code>GET</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h2>
+<p>Get a …</p>
       <br>
       <a class="btn" href="../api-reference\LineItems.html#LineItems">    Continue reading
 </a>

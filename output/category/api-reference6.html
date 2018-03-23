@@ -73,8 +73,22 @@
     </p>
   </header>
   <div>
-      <h2>Get a single message sender</h2>
-<h3><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h3>
+      <h2><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h2>
+<p>Get a single message sender</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -101,11 +115,44 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "MessageTypes": [\r\n    "OrderDeclined"\r\n  ],\r\n  "Description": ""\r\n}', 'Fields': [{'Name' …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;MessageTypes&#39;: [&#39;OrderDeclined&#39;], &#39;Description&#39;: &#39;&#39;}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description …</th></tr></thead></table>
       <br>
       <a class="btn" href="../api-reference\MessageSenders.html#MessageSenders">    Continue reading
 </a>
@@ -149,24 +196,14 @@ Ship, etc. These actions transform the state of …</p>
     </p>
   </header>
   <div>
-      <h2>Send a verification code</h2>
-<h3><code>POST</code> <code>v1/password/reset</code></h3>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "ClientID": "",\r\n  "Email": "",\r\n  "Username": "",\r\n  "URL": ""\r\n}', 'Fields': [{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the password reset request …</p>
+      <h2><code>POST</code> <code>v1/password/reset</code></h2>
+<p>Send a verification code</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;ClientID&#39;: &#39;&#39;, &#39;Email&#39;: &#39;&#39;, &#39;Username&#39;: &#39;&#39;, &#39;URL&#39;: &#39;&#39;}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ClientID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the client. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Email&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Email of the password reset request.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Username&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Username of the password reset request.&#39;, &#39;Required …</pre></div>
       <br>
       <a class="btn" href="../api-reference\PasswordResets.html#PasswordResets">    Continue reading
 </a>
@@ -186,8 +223,22 @@ Ship, etc. These actions transform the state of …</p>
     </p>
   </header>
   <div>
-      <h2>Get a single payment</h2>
-<h3><code>GET</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h3>
+      <h2><code>GET</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h2>
+<p>Get a single payment</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -212,6 +263,16 @@ Ship, etc. These actions transform the state of …</p>
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>orderID</td>
@@ -228,17 +289,13 @@ Ship, etc. These actions transform the state of …</p>
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
 <tr>
-<td>Name</td>
-<td>paymentID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID …</td></tr></tbody></table>
+<th>Parameters</th>
+<th>Description …</th></tr></thead></table>
       <br>
       <a class="btn" href="../api-reference\Payments.html#Payments">    Continue reading
 </a>
@@ -263,8 +320,8 @@ channels. A price schedule may include quantity price breaks, min and
 max quantity per order, whether to apply tax or shipping calculations,
 or to what type of order the price schedule applies.</p>
 <hr>
-<h2>Get a single price schedule</h2>
-<h3><code>GET</code> <code>v1 …</code></h3>
+<h2><code>GET</code> <code>v1/priceschedules/{priceScheduleID}</code></h2>
+<p>Get a single …</p>
       <br>
       <a class="btn" href="../api-reference\PriceSchedules.html#PriceSchedules">    Continue reading
 </a>

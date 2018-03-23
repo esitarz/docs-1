@@ -77,8 +77,22 @@
 address may belong to a list that can be shared among many users if
 appropriate.</p>
 <hr>
-<h2>Get a single address</h2>
-<h3><code>GET</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h3>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h2>
+<p>Get a single address</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -97,10 +111,7 @@ appropriate.</p>
 </tr>
 <tr>
 <td>Description</td>
-<td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required …</td></tr></tbody></table>
+<td>ID of the …</td></tr></tbody></table>
       <br>
       <a class="btn" href="../api-reference\Addresses.html#Addresses">    Continue reading
 </a>
@@ -120,8 +131,22 @@ appropriate.</p>
     </p>
   </header>
   <div>
-      <h2>Get a single admin address</h2>
-<h3><code>GET</code> <code>v1/addresses/{addressID}</code></h3>
+      <h2><code>GET</code> <code>v1/addresses/{addressID}</code></h2>
+<p>Get a single admin address</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -148,11 +173,23 @@ appropriate.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "DateCreated": "2018-03-21T23:00:00+00:00",\r\n  "CompanyName": "",\r\n  "FirstName": "",\r\n  "LastName": "",\r\n …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name …</td></tr></tbody></table>
       <br>
       <a class="btn" href="../api-reference\AdminAddresses.html#AdminAddresses">    Continue reading
 </a>
@@ -172,8 +209,22 @@ None
     </p>
   </header>
   <div>
-      <h2>Get a single admin user group</h2>
-<h3><code>GET</code> <code>v1/usergroups/{userGroupID}</code></h3>
+      <h2><code>GET</code> <code>v1/usergroups/{userGroupID}</code></h2>
+<p>Get a single admin user group</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -200,11 +251,44 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description' …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user group.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description …</th></tr></thead></table>
       <br>
       <a class="btn" href="../api-reference\AdminUserGroups.html#AdminUserGroups">    Continue reading
 </a>
@@ -228,8 +312,22 @@ None
 to things like adding users, creating catalogs, processing orders or
 creating products. These users are not specific to a buyer company.</p>
 <hr>
-<h2>Get a single admin user</h2>
-<h3><code>GET</code> <code>v1/adminusers/{userID}</code></h3>
+<h2><code>GET</code> <code>v1/adminusers/{userID}</code></h2>
+<p>Get a single admin user</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -247,8 +345,7 @@ creating products. These users are not specific to a buyer company.</p>
 <td>string</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of …</td></tr></tbody></table>
+<td>Description …</td></tr></tbody></table>
       <br>
       <a class="btn" href="../api-reference\AdminUsers.html#AdminUsers">    Continue reading
 </a>

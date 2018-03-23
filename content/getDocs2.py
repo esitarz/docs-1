@@ -147,7 +147,7 @@ def main():
 			for item in section['Comments']:
 				text = pypandoc.convert_text(item, 'gfm', format='rst')
 				text = format(text)
-				print(text)
+				#print(text)
 				page['contents'] += text
 			page['contents'] += '\n---\n'
 							
@@ -164,23 +164,60 @@ def main():
 
 
 				if key == 'HttpVerb':
-					page['contents'] += '\n### `'+value+'`'.title()
+					page['contents'] += '\n## `'+value+'`'.title()
 
 				elif key == 'UriTemplate':
 					page['contents'] += ' `'+value+'`'
+					page['contents'] += '\n'+endpoints[endpoints.index(item)]['Name']+''.title()
 
 				elif key == 'ID':
 					continue
 
-				elif key == 'Name':
-					page['contents'] += '\n## '+value+''.title()
+				elif key == 'RequestBody' and value == None:
+					page['contents'] += '\n## '+str(key).title()
+				elif key == 'RequestBody' and value != None:
+					page['contents'] += '\n## '+str(key).title()
+					if type(value) == dict:
 
-				elif key == 'RequestBody':
-					page['contents'] += '\n **'+str(key).title()+'**: \n'+str(value)
+						body = json.JSONDecoder().decode(value['Sample'])
+						#print(type(body))
+						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+
+						body = str(value['Fields'])
+						#print(type(body))
+						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+
+
+
+				elif key == 'ResponseBody' and value == None:
+					page['contents'] += '\n## '+str(key).title()
+				elif key == 'ResponseBody' and value != None:
+					page['contents'] += '\n## '+str(key).title()
+					if type(value) == dict:
+
+						body = json.JSONDecoder().decode(value['Sample'])
+						#print(value.keys())
+						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+						
+						for bullet in value['Fields']:
+							#print(type(bullet))
+							if type(bullet) is str:
+								page['contents'] += ' '+bullet
+							if type(bullet) is dict:
+													
+								for k, v in bullet.items():
+									if k == "Name":
+										page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
+										page['contents'] += '|'.ljust(19, '-')+'|'.ljust(34, '-')+'|\n'
+
+									page['contents'] += '| '+k.ljust(15)+' | '+str(v).ljust(30)+' |\n'
+
+						
+
+
 				elif key == 'ResponseStatus':
-					page['contents'] += '\n **'+str(key).title()+'**: `'+str(value)+'`\n'
-				elif key == 'ResponseBody':
-					page['contents'] += '\n **'+str(key).title()+'**: \n'+str(value)
+					page['contents'] += '\n**'+str(key).title()+'**: `'+str(value)+'`\n'
+
 
 				
 				#print(type(value))
@@ -193,6 +230,9 @@ def main():
 				#	page['contents'] += '`'+str(value)+'`'
 				#	page['contents'] += '\n---\n'
 
+				if key == 'Parameters' and len(value) == 0:
+					continue
+
 				if key == 'Parameters' and type(value) is list:
 							#unwrap_list(v)
 					page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
@@ -204,6 +244,9 @@ def main():
 						if type(bullet) is dict:
 												
 							for k, v in bullet.items():
+								if k == "Name":
+									page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
+									page['contents'] += '|'.ljust(19, '-')+'|'.ljust(34, '-')+'|\n'
 								page['contents'] += '| '+k.ljust(15)+' | '+str(v).ljust(30)+' |\n'
 							#page['contents'] += table
 

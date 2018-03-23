@@ -13,8 +13,12 @@ or change their own information.
 
 ---
 
-## Get a list of promotions visible to this user
-### `GET` `v1/me/promotions`
+## `GET` `v1/me/promotions`
+Get a list of promotions visible to this user
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -22,35 +26,173 @@ or change their own information.
 | Type            | string                         |
 | Description     | Word or phrase to search for.  |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | searchOn                       |
 | Type            | string                         |
 | Description     | Comma-delimited list of fields to search on. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | sortBy                         |
 | Type            | string                         |
 | Description     | Comma-delimited list of fields to sort by. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | page                           |
 | Type            | integer                        |
 | Description     | Page of results to return. Default: 1 |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | pageSize                       |
 | Type            | integer                        |
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | filters                        |
 | Type            | object                         |
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
- **Requestbody**: 
-None
- **Responsestatus**: `200`
+## Requestbody
+**Responsestatus**: `200`
 
- **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Code": "",\r\n      "Name": "",\r\n      "RedemptionLimit": 0,\r\n      "RedemptionLimitPerUser": 0,\r\n      "RedemptionCount": 0,\r\n      "Description": "",\r\n      "FinePrint": "",\r\n      "StartDate": "2018-03-21T23:00:00+00:00",\r\n      "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n      "EligibleExpression": "",\r\n      "ValueExpression": "",\r\n      "CanCombine": false,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the promotion.', 'Required': False}, {'Name': 'Code', 'Type': 'string', 'Description': 'Must be unique. Entered by buyer when adding promo to order.', 'Required': True}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the promotion.', 'Required': False}, {'Name': 'RedemptionLimit', 'Type': 'integer', 'Description': 'Redemption limit of the promotion.', 'Required': False}, {'Name': 'RedemptionLimitPerUser', 'Type': 'integer', 'Description': 'Redemption limit per user of the promotion.', 'Required': False}, {'Name': 'RedemptionCount', 'Type': 'integer', 'Description': 'Redemption count of the promotion.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the promotion.', 'Required': False}, {'Name': 'FinePrint', 'Type': 'string', 'Description': 'Terms, conditions, and other legal jargon.', 'Required': False}, {'Name': 'StartDate', 'Type': 'date', 'Description': 'Start date of the promotion.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the promotion.', 'Required': False}, {'Name': 'EligibleExpression', 'Type': 'string', 'Description': 'Eligible expression of the promotion.', 'Required': True}, {'Name': 'ValueExpression', 'Type': 'string', 'Description': 'Value expression of the promotion.', 'Required': True}, {'Name': 'CanCombine', 'Type': 'boolean', 'Description': 'Can combine of the promotion.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the promotion.', 'Required': False}]}
-## Get a single promotion
-### `GET` `v1/me/promotions/{promotionID}`
+## Responsebody
+```
+{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Code': '', 'Name': '', 'RedemptionLimit': 0, 'RedemptionLimitPerUser': 0, 'RedemptionCount': 0, 'Description': '', 'FinePrint': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'EligibleExpression': '', 'ValueExpression': '', 'CanCombine': False, 'xp': {}}]}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the promotion.           |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Code                           |
+| Type            | string                         |
+| Description     | Must be unique. Entered by buyer when adding promo to order. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the promotion.         |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionLimit                |
+| Type            | integer                        |
+| Description     | Redemption limit of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionLimitPerUser         |
+| Type            | integer                        |
+| Description     | Redemption limit per user of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionCount                |
+| Type            | integer                        |
+| Description     | Redemption count of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Description                    |
+| Type            | string                         |
+| Description     | Description of the promotion.  |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | FinePrint                      |
+| Type            | string                         |
+| Description     | Terms, conditions, and other legal jargon. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | StartDate                      |
+| Type            | date                           |
+| Description     | Start date of the promotion.   |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ExpirationDate                 |
+| Type            | date                           |
+| Description     | Expiration date of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | EligibleExpression             |
+| Type            | string                         |
+| Description     | Eligible expression of the promotion. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ValueExpression                |
+| Type            | string                         |
+| Description     | Value expression of the promotion. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | CanCombine                     |
+| Type            | boolean                        |
+| Description     | Can combine of the promotion.  |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the promotion. |
+| Required        | False                          |
+
+## `GET` `v1/me/promotions/{promotionID}`
+Get a single promotion
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -59,9 +201,122 @@ None
 | Description     | ID of the promotion.           |
 | Required        | True                           |
 
- **Requestbody**: 
-None
- **Responsestatus**: `200`
+## Requestbody
+**Responsestatus**: `200`
 
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Code": "",\r\n  "Name": "",\r\n  "RedemptionLimit": 0,\r\n  "RedemptionLimitPerUser": 0,\r\n  "RedemptionCount": 0,\r\n  "Description": "",\r\n  "FinePrint": "",\r\n  "StartDate": "2018-03-21T23:00:00+00:00",\r\n  "ExpirationDate": "2018-03-21T23:00:00+00:00",\r\n  "EligibleExpression": "",\r\n  "ValueExpression": "",\r\n  "CanCombine": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the promotion.', 'Required': False}, {'Name': 'Code', 'Type': 'string', 'Description': 'Must be unique. Entered by buyer when adding promo to order.', 'Required': True}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the promotion.', 'Required': False}, {'Name': 'RedemptionLimit', 'Type': 'integer', 'Description': 'Redemption limit of the promotion.', 'Required': False}, {'Name': 'RedemptionLimitPerUser', 'Type': 'integer', 'Description': 'Redemption limit per user of the promotion.', 'Required': False}, {'Name': 'RedemptionCount', 'Type': 'integer', 'Description': 'Redemption count of the promotion.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the promotion.', 'Required': False}, {'Name': 'FinePrint', 'Type': 'string', 'Description': 'Terms, conditions, and other legal jargon.', 'Required': False}, {'Name': 'StartDate', 'Type': 'date', 'Description': 'Start date of the promotion.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the promotion.', 'Required': False}, {'Name': 'EligibleExpression', 'Type': 'string', 'Description': 'Eligible expression of the promotion.', 'Required': True}, {'Name': 'ValueExpression', 'Type': 'string', 'Description': 'Value expression of the promotion.', 'Required': True}, {'Name': 'CanCombine', 'Type': 'boolean', 'Description': 'Can combine of the promotion.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the promotion.', 'Required': False}]}
+## Responsebody
+```
+{'ID': '', 'Code': '', 'Name': '', 'RedemptionLimit': 0, 'RedemptionLimitPerUser': 0, 'RedemptionCount': 0, 'Description': '', 'FinePrint': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'EligibleExpression': '', 'ValueExpression': '', 'CanCombine': False, 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the promotion.           |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Code                           |
+| Type            | string                         |
+| Description     | Must be unique. Entered by buyer when adding promo to order. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the promotion.         |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionLimit                |
+| Type            | integer                        |
+| Description     | Redemption limit of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionLimitPerUser         |
+| Type            | integer                        |
+| Description     | Redemption limit per user of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RedemptionCount                |
+| Type            | integer                        |
+| Description     | Redemption count of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Description                    |
+| Type            | string                         |
+| Description     | Description of the promotion.  |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | FinePrint                      |
+| Type            | string                         |
+| Description     | Terms, conditions, and other legal jargon. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | StartDate                      |
+| Type            | date                           |
+| Description     | Start date of the promotion.   |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ExpirationDate                 |
+| Type            | date                           |
+| Description     | Expiration date of the promotion. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | EligibleExpression             |
+| Type            | string                         |
+| Description     | Eligible expression of the promotion. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ValueExpression                |
+| Type            | string                         |
+| Description     | Value expression of the promotion. |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | CanCombine                     |
+| Type            | boolean                        |
+| Description     | Can combine of the promotion.  |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the promotion. |
+| Required        | False                          |

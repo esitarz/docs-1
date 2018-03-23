@@ -21,11 +21,11 @@
 
 
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. Get a single catalog GET v1/catalogs/{catalogID} Parameters Description Name catalogID Type string …" />
+<meta name="description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Parameters Description Parameters Description Name catalogID …" />
 <meta name="keywords" content="Product Catalogs">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Catalogs"/>
-<meta property="og:description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. Get a single catalog GET v1/catalogs/{catalogID} Parameters Description Name catalogID Type string …"/>
+<meta property="og:description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Parameters Description Parameters Description Name catalogID …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Catalogs.html"/>
 <meta property="og:type" content="article"/>
@@ -83,8 +83,22 @@ content for a specific audience. All buyers are issued and assigned a
 default catalog upon creation. Catalogs can be shared between buyers
 using assignments.</p>
 <hr>
-<h2>Get a single catalog</h2>
-<h3><code>GET</code> <code>v1/catalogs/{catalogID}</code></h3>
+<h2><code>GET</code> <code>v1/catalogs/{catalogID}</code></h2>
+<p>Get a single catalog</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -111,13 +125,185 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}</p>
-<h2>Get a list of catalogs</h2>
-<h3><code>GET</code> <code>v1/catalogs</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/catalogs</code></h2>
+<p>Get a list of catalogs</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -142,6 +328,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>searchOn</td>
@@ -158,6 +354,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>sortBy</td>
@@ -174,6 +380,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -190,6 +406,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -206,6 +432,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>filters</td>
@@ -224,13 +460,344 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Description": "",\r\n      "Active": false,\r\n      "CategoryCount": 0,\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}</p>
-<h2>Create a new catalog</h2>
-<h3><code>POST</code> <code>v1/catalogs</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/catalogs</code></h2>
+<p>Create a new catalog</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the catalog. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the catalog.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the catalog.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>201</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/catalogs/{catalogID}</code></h2>
+<p>Create or update a catalog</p>
 <table>
 <thead>
 <tr>
@@ -245,13 +812,6 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>201</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}</p>
-<h2>Create or update a catalog</h2>
-<h3><code>PUT</code> <code>v1/catalogs/{catalogID}</code></h3>
 <table>
 <thead>
 <tr>
@@ -278,13 +838,193 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}</p>
-<h2>Delete a catalog</h2>
-<h3><code>DELETE</code> <code>v1/catalogs/{catalogID}</code></h3>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the catalog. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the catalog.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the catalog.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/catalogs/{catalogID}</code></h2>
+<p>Delete a catalog</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -311,13 +1051,25 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Partially update a catalog</h2>
-<h3><code>PATCH</code> <code>v1/catalogs/{catalogID}</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>PATCH</code> <code>v1/catalogs/{catalogID}</code></h2>
+<p>Partially update a catalog</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -344,13 +1096,193 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Description": "",\r\n  "Active": false,\r\n  "CategoryCount": 0,\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'CategoryCount', 'Type': 'integer', 'Description': 'Category count of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]}</p>
-<h2>Get a list of catalog assignments</h2>
-<h3><code>GET</code> <code>v1/catalogs/assignments</code></h3>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the catalog. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the catalog.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the catalog.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/catalogs/assignments</code></h2>
+<p>Get a list of catalog assignments</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -375,6 +1307,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>buyerID</td>
@@ -391,6 +1333,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -407,6 +1359,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -425,13 +1387,132 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "BuyerID": "",\r\n      "ViewAllCategories": false,\r\n      "ViewAllProducts": false\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': True}, {'Name': 'ViewAllCategories', 'Type': 'boolean', 'Description': 'View all categories of the catalog assignment.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'View all products of the catalog assignment.', 'Required': False}]}</p>
-<h2>Save a catalog assignment</h2>
-<h3><code>POST</code> <code>v1/catalogs/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;CatalogID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;ViewAllCategories&#39;: False, &#39;ViewAllProducts&#39;: False}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CatalogID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>BuyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ViewAllCategories</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>View all categories of the catalog assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ViewAllProducts</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>View all products of the catalog assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/catalogs/assignments</code></h2>
+<p>Save a catalog assignment</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;CatalogID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;ViewAllCategories&#39;: False, &#39;ViewAllProducts&#39;: False}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;CatalogID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the catalog. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ViewAllCategories&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;View all categories of the catalog assignment.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ViewAllProducts&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;View all products of the catalog assignment.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>DELETE</code> <code>v1/catalogs/{catalogID}/assignments</code></h2>
+<p>Delete a catalog assignment</p>
 <table>
 <thead>
 <tr>
@@ -446,13 +1527,6 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "CatalogID": "",\r\n  "BuyerID": "",\r\n  "ViewAllCategories": false,\r\n  "ViewAllProducts": false\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required.', 'Required': True}, {'Name': 'ViewAllCategories', 'Type': 'boolean', 'Description': 'View all categories of the catalog assignment.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'View all products of the catalog assignment.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Delete a catalog assignment</h2>
-<h3><code>DELETE</code> <code>v1/catalogs/{catalogID}/assignments</code></h3>
 <table>
 <thead>
 <tr>
@@ -477,6 +1551,16 @@ None</p>
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>buyerID</td>
@@ -495,13 +1579,25 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Get a list of catalog product assignments</h2>
-<h3><code>GET</code> <code>v1/catalogs/productassignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>GET</code> <code>v1/catalogs/productassignments</code></h2>
+<p>Get a list of catalog product assignments</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -526,6 +1622,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>productID</td>
@@ -542,6 +1648,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -558,6 +1674,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -576,13 +1702,80 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "CatalogID": "",\r\n      "ProductID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product.', 'Required': True}]}</p>
-<h2>Save a catalog product assignment</h2>
-<h3><code>POST</code> <code>v1/catalogs/productassignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;CatalogID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CatalogID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ProductID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the product.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/catalogs/productassignments</code></h2>
+<p>Save a catalog product assignment</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;CatalogID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;CatalogID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the catalog. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ProductID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Required.&#39;, &#39;Required&#39;: True}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>DELETE</code> <code>v1/catalogs/{catalogID}/productassignments/{productID}</code></h2>
+<p>Delete a catalog product assignment</p>
 <table>
 <thead>
 <tr>
@@ -597,13 +1790,6 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "CatalogID": "",\r\n  "ProductID": ""\r\n}', 'Fields': [{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog. Required.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required.', 'Required': True}]}
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Delete a catalog product assignment</h2>
-<h3><code>DELETE</code> <code>v1/catalogs/{catalogID}/productassignments/{productID}</code></h3>
 <table>
 <thead>
 <tr>
@@ -628,6 +1814,16 @@ None</p>
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>productID</td>
@@ -646,11 +1842,9 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
   </div>
   <div class="tag-cloud">
     <p>

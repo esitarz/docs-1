@@ -21,11 +21,11 @@
 
 
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="Get a single message sender GET v1/messagesenders/{messageSenderID} Parameters Description Name messageSenderID Type string Description ID of the message sender. Required True Requestbody: None Responsestatus: 200 Responsebody: {'Sample': '{\r\n "ID": "",\r\n "Name": "",\r\n "MessageTypes": [\r\n "OrderDeclined"\r\n ],\r\n "Description": ""\r\n}', 'Fields': [{'Name' …" />
+<meta name="description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Parameters Description Parameters Description Name messageSenderID Type string Description ID of the message sender. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'Name': '', 'MessageTypes': ['OrderDeclined'], 'Description': ''} Parameters Description Name ID Type string Description ID of the message sender. Required False Parameters Description …" />
 <meta name="keywords" content="Seller">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Message Senders"/>
-<meta property="og:description" content="Get a single message sender GET v1/messagesenders/{messageSenderID} Parameters Description Name messageSenderID Type string Description ID of the message sender. Required True Requestbody: None Responsestatus: 200 Responsebody: {'Sample': '{\r\n "ID": "",\r\n "Name": "",\r\n "MessageTypes": [\r\n "OrderDeclined"\r\n ],\r\n "Description": ""\r\n}', 'Fields': [{'Name' …"/>
+<meta property="og:description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Parameters Description Parameters Description Name messageSenderID Type string Description ID of the message sender. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'Name': '', 'MessageTypes': ['OrderDeclined'], 'Description': ''} Parameters Description Name ID Type string Description ID of the message sender. Required False Parameters Description …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\MessageSenders.html"/>
 <meta property="og:type" content="article"/>
@@ -78,8 +78,22 @@
 
 
   <div>
-    <h2>Get a single message sender</h2>
-<h3><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h3>
+    <h2><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h2>
+<p>Get a single message sender</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -106,13 +120,133 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "MessageTypes": [\r\n    "OrderDeclined"\r\n  ],\r\n  "Description": ""\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}</p>
-<h2>Get a list of message senders</h2>
-<h3><code>GET</code> <code>v1/messagesenders</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;MessageTypes&#39;: [&#39;OrderDeclined&#39;], &#39;Description&#39;: &#39;&#39;}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageTypes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message types of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/messagesenders</code></h2>
+<p>Get a list of message senders</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -137,6 +271,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>searchOn</td>
@@ -153,6 +297,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>sortBy</td>
@@ -169,6 +323,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -185,6 +349,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -201,6 +375,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>filters</td>
@@ -219,13 +403,133 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "MessageTypes": [\r\n        "OrderDeclined"\r\n      ],\r\n      "Description": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the message sender.', 'Required': False}, {'Name': 'MessageTypes', 'Type': 'array', 'Description': 'Message types of the message sender.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the message sender.', 'Required': False}]}</p>
-<h2>Get a list of message sender assignments</h2>
-<h3><code>GET</code> <code>v1/messagesenders/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;MessageTypes&#39;: [&#39;OrderDeclined&#39;], &#39;Description&#39;: &#39;&#39;}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageTypes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message types of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/messagesenders/assignments</code></h2>
+<p>Get a list of message sender assignments</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -250,6 +554,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>messageSenderID</td>
@@ -266,6 +580,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userID</td>
@@ -282,6 +606,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userGroupID</td>
@@ -298,6 +632,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>level</td>
@@ -314,6 +658,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -330,6 +684,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -348,13 +712,159 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderID": "",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message sender assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message sender assignment.', 'Required': False}]}</p>
-<h2>Delete a message sender assignment</h2>
-<h3><code>DELETE</code> <code>v1/messagesenders/{messageSenderID}/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;MessageSenderID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;MessageConfigName&#39;: &#39;&#39;, &#39;MessageConfigDescription&#39;: &#39;&#39;}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageSenderID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the message sender.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>BuyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>UserGroupID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user group.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageConfigName</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message config name of the message sender assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageConfigDescription</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message config description of the message sender assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/messagesenders/{messageSenderID}/assignments</code></h2>
+<p>Delete a message sender assignment</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -379,6 +889,16 @@ None
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>buyerID</td>
@@ -395,6 +915,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userID</td>
@@ -411,6 +941,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userGroupID</td>
@@ -429,13 +969,24 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Save a message sender assignment</h2>
-<h3><code>POST</code> <code>v1/messagesenders/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>POST</code> <code>v1/messagesenders/assignments</code></h2>
+<p>Save a message sender assignment</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;MessageSenderID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;MessageSenderID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the message sender. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group. Sortable: priority level 3.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>GET</code> <code>v1/messagesenders/CCListenerAssignments</code></h2>
+<p>Get a list of message sender cc listener assignments</p>
 <table>
 <thead>
 <tr>
@@ -450,13 +1001,6 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "MessageSenderID": "",\r\n  "BuyerID": "",\r\n  "UserGroupID": ""\r\n}', 'Fields': [{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Sortable: priority level 3.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Get a list of message sender cc listener assignments</h2>
-<h3><code>GET</code> <code>v1/messagesenders/CCListenerAssignments</code></h3>
 <table>
 <thead>
 <tr>
@@ -481,6 +1025,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>searchOn</td>
@@ -497,6 +1051,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>sortBy</td>
@@ -513,6 +1077,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -529,6 +1103,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -545,6 +1129,16 @@ None</p>
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>filters</td>
@@ -563,13 +1157,13 @@ None</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "MessageSenderAssignment": {\r\n        "MessageSenderID": "",\r\n        "BuyerID": "",\r\n        "UserGroupID": "",\r\n        "MessageConfigName": "",\r\n        "MessageConfigDescription": ""\r\n      },\r\n      "MessageConfigName": "",\r\n      "MessageConfigDescription": "",\r\n      "MessageType": "OrderDeclined",\r\n      "BuyerID": "",\r\n      "UserGroupID": "",\r\n      "UserID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'MessageSenderAssignment', 'Type': 'object', 'Description': 'Message sender assignment of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigName', 'Type': 'string', 'Description': 'Message config name of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageConfigDescription', 'Type': 'string', 'Description': 'Message config description of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageType', 'Type': 'string', 'Description': 'Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]}</p>
-<h2>Save a message sender cc listener assignment</h2>
-<h3><code>POST</code> <code>v1/messagesenders/CCListenerAssignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;MessageSenderAssignment&#39;: {&#39;MessageSenderID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;MessageConfigName&#39;: &#39;&#39;, &#39;MessageConfigDescription&#39;: &#39;&#39;}, &#39;MessageConfigName&#39;: &#39;&#39;, &#39;MessageConfigDescription&#39;: &#39;&#39;, &#39;MessageType&#39;: &#39;OrderDeclined&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;}]}
+</pre></div>
+
+
 <table>
 <thead>
 <tr>
@@ -579,16 +1173,192 @@ None
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>Name</td>
+<td>MessageSenderAssignment</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message sender assignment of the message cc listener assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "MessageSenderAssignment": {\r\n    "MessageSenderID": "",\r\n    "BuyerID": "",\r\n    "UserGroupID": ""\r\n  },\r\n  "MessageType": "OrderDeclined",\r\n  "BuyerID": "",\r\n  "UserGroupID": "",\r\n  "UserID": ""\r\n}', 'Fields': [{'Name': 'MessageSenderAssignment', 'Type': 'object', 'Description': 'Message sender assignment of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageType', 'Type': 'string', 'Description': 'Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Searchable: priority level 0. Sortable: priority level 0.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageConfigName</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message config name of the message cc listener assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageConfigDescription</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message config description of the message cc listener assignment.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>MessageType</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>BuyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>UserGroupID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user group.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>UserID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/messagesenders/CCListenerAssignments</code></h2>
+<p>Save a message sender cc listener assignment</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;MessageSenderAssignment&#39;: {&#39;MessageSenderID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}, &#39;MessageType&#39;: &#39;OrderDeclined&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;MessageSenderAssignment&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Message sender assignment of the message cc listener assignment.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;MessageType&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Searchable: priority level 0. Sortable: priority level 0.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
   </div>
   <div class="tag-cloud">
     <p>

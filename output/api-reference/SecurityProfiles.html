@@ -21,11 +21,11 @@
 
 
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="Get a single security profile GET v1/securityprofiles/{securityProfileID} Parameters Description Name securityProfileID Type string Description ID of the security profile. Required True Requestbody: None Responsestatus: 200 Responsebody: {'Sample': '{\r\n "ID": "",\r\n "Name": "",\r\n "Roles": [\r\n "DevCenterImpersonate"\r\n ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string' …" />
+<meta name="description" content="GET v1/securityprofiles/{securityProfileID} Get a single security profile Parameters Description Parameters Description Name securityProfileID Type string Description ID of the security profile. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'Name': '', 'Roles': ['DevCenterImpersonate']} Parameters Description Name ID Type string Description ID of the security profile. Required False Parameters Description Name …" />
 <meta name="keywords" content="Authentication And Authorization">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Security Profiles"/>
-<meta property="og:description" content="Get a single security profile GET v1/securityprofiles/{securityProfileID} Parameters Description Name securityProfileID Type string Description ID of the security profile. Required True Requestbody: None Responsestatus: 200 Responsebody: {'Sample': '{\r\n "ID": "",\r\n "Name": "",\r\n "Roles": [\r\n "DevCenterImpersonate"\r\n ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string' …"/>
+<meta property="og:description" content="GET v1/securityprofiles/{securityProfileID} Get a single security profile Parameters Description Parameters Description Name securityProfileID Type string Description ID of the security profile. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'Name': '', 'Roles': ['DevCenterImpersonate']} Parameters Description Name ID Type string Description ID of the security profile. Required False Parameters Description Name …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\SecurityProfiles.html"/>
 <meta property="og:type" content="article"/>
@@ -78,8 +78,22 @@
 
 
   <div>
-    <h2>Get a single security profile</h2>
-<h3><code>GET</code> <code>v1/securityprofiles/{securityProfileID}</code></h3>
+    <h2><code>GET</code> <code>v1/securityprofiles/{securityProfileID}</code></h2>
+<p>Get a single security profile</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -106,13 +120,107 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Roles": [\r\n    "DevCenterImpersonate"\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}</p>
-<h2>Get a list of security profiles</h2>
-<h3><code>GET</code> <code>v1/securityprofiles</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Roles&#39;: [&#39;DevCenterImpersonate&#39;]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Roles</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Roles of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/securityprofiles</code></h2>
+<p>Get a list of security profiles</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -137,6 +245,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>searchOn</td>
@@ -153,6 +271,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>sortBy</td>
@@ -169,6 +297,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -185,6 +323,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -201,6 +349,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>filters</td>
@@ -219,13 +377,107 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "Roles": [\r\n        "DevCenterImpersonate"\r\n      ]\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the security profile.', 'Required': True}, {'Name': 'Roles', 'Type': 'array', 'Description': 'Roles of the security profile.', 'Required': False}]}</p>
-<h2>Get a list of security profile assignments</h2>
-<h3><code>GET</code> <code>v1/securityprofiles/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Roles&#39;: [&#39;DevCenterImpersonate&#39;]}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Roles</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>array</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Roles of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/securityprofiles/assignments</code></h2>
+<p>Get a list of security profile assignments</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -250,6 +502,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>supplierID</td>
@@ -266,6 +528,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>securityProfileID</td>
@@ -282,6 +554,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userID</td>
@@ -298,6 +580,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userGroupID</td>
@@ -314,6 +606,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>commerceRole</td>
@@ -330,6 +632,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>level</td>
@@ -346,6 +658,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>page</td>
@@ -362,6 +684,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>pageSize</td>
@@ -380,13 +712,159 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "SecurityProfileID": "",\r\n      "BuyerID": "",\r\n      "SupplierID": "",\r\n      "UserID": "",\r\n      "UserGroupID": ""\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'SupplierID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}</p>
-<h2>Delete a security profile assignment</h2>
-<h3><code>DELETE</code> <code>v1/securityprofiles/{securityProfileID}/assignments</code></h3>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;SecurityProfileID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;SupplierID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>SecurityProfileID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>BuyerID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the buyer.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>SupplierID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the supplier.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>UserID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>UserGroupID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the user group.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/securityprofiles/{securityProfileID}/assignments</code></h2>
+<p>Delete a security profile assignment</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -411,6 +889,16 @@ None
 <td>Required</td>
 <td>True</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>buyerID</td>
@@ -427,6 +915,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userID</td>
@@ -443,6 +941,16 @@ None
 <td>Required</td>
 <td>False</td>
 </tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>Name</td>
 <td>userGroupID</td>
@@ -461,32 +969,22 @@ None
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
-<h2>Save a security profile assignment</h2>
-<h3><code>POST</code> <code>v1/securityprofiles/assignments</code></h3>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Requestbody</strong>: 
-{'Sample': '{\r\n  "SecurityProfileID": "",\r\n  "BuyerID": "",\r\n  "SupplierID": "",\r\n  "UserID": "",\r\n  "UserGroupID": ""\r\n}', 'Fields': [{'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'SupplierID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]}
- <strong>Responsestatus</strong>: <code>204</code></p>
-<p><strong>Responsebody</strong>: 
-None</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
+<h2><code>POST</code> <code>v1/securityprofiles/assignments</code></h2>
+<p>Save a security profile assignment</p>
+<h2>Requestbody</h2>
+<div class="highlight"><pre><span></span>{&#39;SecurityProfileID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;SupplierID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;SecurityProfileID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the security profile. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SupplierID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the supplier.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group.&#39;, &#39;Required&#39;: False}]
+</pre></div>
+
+
+<p><strong>Responsestatus</strong>: <code>204</code></p>
+<h2>Responsebody</h2>
   </div>
   <div class="tag-cloud">
     <p>

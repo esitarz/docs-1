@@ -76,8 +76,8 @@ application. By placing like users in groups, you can filter content,
 define order management rules, and manage changes much more easily than
 trying to account for individual users.</p>
 <hr>
-<h2>Get a single supplier user group</h2>
-<h3><code>GET</code> <code>v1/suppliers/{supplierID …</code></h3>
+<h2><code>GET</code> <code>v1/suppliers/{supplierID}/usergroups/{userGroupID}</code></h2>
+<p>Get a single supplier …</p>
 					<br>
 					<a class="btn" href="../api-reference\SupplierUserGroups.html#SupplierUserGroups">    Continue reading
 </a>
@@ -99,8 +99,22 @@ trying to account for individual users.</p>
 user define who they are and what they are able to do with their login
 to the application.</p>
 <hr>
-<h2>Get a single supplier user</h2>
-<h3><code>GET</code> <code>v1/suppliers/{supplierID}/users/{userID}</code></h3>
+<h2><code>GET</code> <code>v1/suppliers/{supplierID}/users/{userID}</code></h2>
+<p>Get a single supplier user</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -114,11 +128,7 @@ to the application.</p>
 <td>supplierID</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description …</td></tr></tbody></table>
+<td>Type …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\SupplierUsers.html#SupplierUsers">    Continue reading
 </a>
@@ -139,8 +149,22 @@ to the application.</p>
 					<p>Suppliers are the organizations that supply products distributed by
 Seller oganizations.</p>
 <hr>
-<h2>Get a single supplier</h2>
-<h3><code>GET</code> <code>v1/suppliers/{supplierID}</code></h3>
+<h2><code>GET</code> <code>v1/suppliers/{supplierID}</code></h2>
+<p>Get a single supplier</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -167,11 +191,31 @@ Seller oganizations.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Active": false,\r\n …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Suppliers.html#Suppliers">    Continue reading
 </a>

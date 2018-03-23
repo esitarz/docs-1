@@ -12,8 +12,12 @@ or to what type of order the price schedule applies.
 
 ---
 
-## Get a single price schedule
-### `GET` `v1/priceschedules/{priceScheduleID}`
+## `GET` `v1/priceschedules/{priceScheduleID}`
+Get a single price schedule
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -22,14 +26,100 @@ or to what type of order the price schedule applies.
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
 
- **Requestbody**: 
-None
- **Responsestatus**: `200`
+## Requestbody
+**Responsestatus**: `200`
 
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Get a list of price schedules
-### `GET` `v1/priceschedules`
+## Responsebody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `GET` `v1/priceschedules`
+Get a list of price schedules
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -37,47 +127,239 @@ None
 | Type            | string                         |
 | Description     | Word or phrase to search for.  |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | searchOn                       |
 | Type            | string                         |
 | Description     | Comma-delimited list of fields to search on. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | sortBy                         |
 | Type            | string                         |
 | Description     | Comma-delimited list of fields to sort by. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | page                           |
 | Type            | integer                        |
 | Description     | Page of results to return. Default: 1 |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | pageSize                       |
 | Type            | integer                        |
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | filters                        |
 | Type            | object                         |
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
- **Requestbody**: 
-None
- **Responsestatus**: `200`
+## Requestbody
+**Responsestatus**: `200`
 
- **Responsebody**: 
-{'Sample': '{\r\n  "Meta": {\r\n    "Page": 1,\r\n    "PageSize": 20,\r\n    "TotalCount": 25,\r\n    "TotalPages": 2,\r\n    "ItemRange": [\r\n      1,\r\n      20\r\n    ]\r\n  },\r\n  "Items": [\r\n    {\r\n      "ID": "",\r\n      "Name": "",\r\n      "ApplyTax": false,\r\n      "ApplyShipping": false,\r\n      "MinQuantity": 0,\r\n      "MaxQuantity": 0,\r\n      "UseCumulativeQuantity": false,\r\n      "RestrictedQuantity": false,\r\n      "PriceBreaks": [\r\n        {\r\n          "Quantity": 0,\r\n          "Price": 0\r\n        }\r\n      ],\r\n      "xp": {}\r\n    }\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Create a new price schedule
-### `POST` `v1/priceschedules`
+## Responsebody
+```
+{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}]}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `POST` `v1/priceschedules`
+Create a new price schedule
+## Requestbody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+```
+[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]
+```
+
+**Responsestatus**: `201`
+
+## Responsebody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `PUT` `v1/priceschedules/{priceScheduleID}`
+Create or update a price schedule
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
 
- **Requestbody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
- **Responsestatus**: `201`
-
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Create or update a price schedule
-### `PUT` `v1/priceschedules/{priceScheduleID}`
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -86,14 +368,108 @@ None
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
 
- **Requestbody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
- **Responsestatus**: `200`
+## Requestbody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
 
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Delete a price schedule
-### `DELETE` `v1/priceschedules/{priceScheduleID}`
+```
+[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]
+```
+
+**Responsestatus**: `200`
+
+## Responsebody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `DELETE` `v1/priceschedules/{priceScheduleID}`
+Delete a price schedule
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -102,14 +478,16 @@ None
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
 
- **Requestbody**: 
-None
- **Responsestatus**: `204`
+## Requestbody
+**Responsestatus**: `204`
 
- **Responsebody**: 
-None
-## Partially update a price schedule
-### `PATCH` `v1/priceschedules/{priceScheduleID}`
+## Responsebody
+## `PATCH` `v1/priceschedules/{priceScheduleID}`
+Partially update a price schedule
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -118,14 +496,108 @@ None
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
 
- **Requestbody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
- **Responsestatus**: `200`
+## Requestbody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
 
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Save a price schedule price break
-### `POST` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
+```
+[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule. Must be at least 1.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]
+```
+
+**Responsestatus**: `200`
+
+## Responsebody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `POST` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
+Save a price schedule price break
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -134,14 +606,108 @@ None
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
 
- **Requestbody**: 
-{'Sample': '{\r\n  "Quantity": 0,\r\n  "Price": 0\r\n}', 'Fields': [{'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the price break. Required. Must be at least 0.', 'Required': True}, {'Name': 'Price', 'Type': 'float', 'Description': 'Price of the price break. Required.', 'Required': True}]}
- **Responsestatus**: `201`
+## Requestbody
+```
+{'Quantity': 0, 'Price': 0}
+```
 
- **Responsebody**: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "ApplyTax": false,\r\n  "ApplyShipping": false,\r\n  "MinQuantity": 0,\r\n  "MaxQuantity": 0,\r\n  "UseCumulativeQuantity": false,\r\n  "RestrictedQuantity": false,\r\n  "PriceBreaks": [\r\n    {\r\n      "Quantity": 0,\r\n      "Price": 0\r\n    }\r\n  ],\r\n  "xp": {}\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the price schedule.', 'Required': True}, {'Name': 'ApplyTax', 'Type': 'boolean', 'Description': 'Apply tax of the price schedule.', 'Required': False}, {'Name': 'ApplyShipping', 'Type': 'boolean', 'Description': 'Apply shipping of the price schedule.', 'Required': False}, {'Name': 'MinQuantity', 'Type': 'integer', 'Description': 'Min quantity of the price schedule.', 'Required': False}, {'Name': 'MaxQuantity', 'Type': 'integer', 'Description': 'Max quantity of the price schedule.', 'Required': False}, {'Name': 'UseCumulativeQuantity', 'Type': 'boolean', 'Description': 'Use cumulative quantity of the price schedule.', 'Required': False}, {'Name': 'RestrictedQuantity', 'Type': 'boolean', 'Description': 'Restricted quantity of the price schedule.', 'Required': False}, {'Name': 'PriceBreaks', 'Type': 'array', 'Description': 'Price breaks of the price schedule.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the price schedule.', 'Required': False}]}
-## Delete a price schedule price break
-### `DELETE` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
+```
+[{'Name': 'Quantity', 'Type': 'integer', 'Description': 'Quantity of the price break. Required. Must be at least 0.', 'Required': True}, {'Name': 'Price', 'Type': 'float', 'Description': 'Price of the price break. Required.', 'Required': True}]
+```
+
+**Responsestatus**: `201`
+
+## Responsebody
+```
+{'ID': '', 'Name': '', 'ApplyTax': False, 'ApplyShipping': False, 'MinQuantity': 0, 'MaxQuantity': 0, 'UseCumulativeQuantity': False, 'RestrictedQuantity': False, 'PriceBreaks': [{'Quantity': 0, 'Price': 0}], 'xp': {}}
+```
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ID                             |
+| Type            | string                         |
+| Description     | ID of the price schedule.      |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | Name                           |
+| Type            | string                         |
+| Description     | Name of the price schedule.    |
+| Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyTax                       |
+| Type            | boolean                        |
+| Description     | Apply tax of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | ApplyShipping                  |
+| Type            | boolean                        |
+| Description     | Apply shipping of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MinQuantity                    |
+| Type            | integer                        |
+| Description     | Min quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | MaxQuantity                    |
+| Type            | integer                        |
+| Description     | Max quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | UseCumulativeQuantity          |
+| Type            | boolean                        |
+| Description     | Use cumulative quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | RestrictedQuantity             |
+| Type            | boolean                        |
+| Description     | Restricted quantity of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | PriceBreaks                    |
+| Type            | array                          |
+| Description     | Price breaks of the price schedule. |
+| Required        | False                          |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+| Name            | xp                             |
+| Type            | object                         |
+| Description     | Container for extended (custom) properties of the price schedule. |
+| Required        | False                          |
+
+## `DELETE` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
+Delete a price schedule price break
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
+
 
 | Parameters      | Description                    |
 |------------------|---------------------------------|
@@ -149,14 +715,16 @@ None
 | Type            | string                         |
 | Description     | ID of the price schedule.      |
 | Required        | True                           |
+
+
+| Parameters      | Description                    |
+|------------------|---------------------------------|
 | Name            | quantity                       |
 | Type            | integer                        |
 | Description     | Quantity of the price schedule. |
 | Required        | True                           |
 
- **Requestbody**: 
-None
- **Responsestatus**: `204`
+## Requestbody
+**Responsestatus**: `204`
 
- **Responsebody**: 
-None
+## Responsebody

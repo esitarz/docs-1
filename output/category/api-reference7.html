@@ -103,8 +103,8 @@ dates, occurences and value.
 Promotions can be assigned to Products, Categories, Buyers, UserGroups
 and Users for redemption.</p>
 <hr>
-<h2>Get a single promotion</h2>
-<h3><code>GET</code> <code>v1/promotions/{promotionID …</code></h3>
+<h2><code>GET</code> <code>v1/promotions/{promotionID}</code></h2>
+<p>Get a single promotion …</p>
       <br>
       <a class="btn" href="../api-reference\Promotions.html#Promotions">    Continue reading
 </a>
@@ -124,8 +124,22 @@ and Users for redemption.</p>
     </p>
   </header>
   <div>
-      <h2>Get a single security profile</h2>
-<h3><code>GET</code> <code>v1/securityprofiles/{securityProfileID}</code></h3>
+      <h2><code>GET</code> <code>v1/securityprofiles/{securityProfileID}</code></h2>
+<p>Get a single security profile</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -152,11 +166,49 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Requestbody</strong>: 
-None
- <strong>Responsestatus</strong>: <code>200</code></p>
-<p><strong>Responsebody</strong>: 
-{'Sample': '{\r\n  "ID": "",\r\n  "Name": "",\r\n  "Roles": [\r\n    "DevCenterImpersonate"\r\n  ]\r\n}', 'Fields': [{'Name': 'ID', 'Type': 'string' …</p>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Roles&#39;: [&#39;DevCenterImpersonate&#39;]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the security profile.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name …</td></tr></tbody></table>
       <br>
       <a class="btn" href="../api-reference\SecurityProfiles.html#SecurityProfiles">    Continue reading
 </a>
@@ -181,7 +233,7 @@ Orders that is physically packaged and delivered to the Buyer as a
 single unit. It is typically created by the Seller after the Order is
 submitted as part of the fulfillment process.</p>
 <hr>
-<h2>Get a single …</h2>
+<h2><code>GET</code> <code>v1/shipments …</code></h2>
       <br>
       <a class="btn" href="../api-reference\Shipments.html#Shipments">    Continue reading
 </a>
