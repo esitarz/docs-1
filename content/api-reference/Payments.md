@@ -1,9 +1,9 @@
 ---
 title: Payments
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Orders And Fulfillment
-slug: Payments
+slug: Orders-And-Fulfillment-Payments
 ---
 
 

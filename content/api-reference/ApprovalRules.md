@@ -1,9 +1,9 @@
 ---
 title: Approval Rules
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: ApprovalRules
+slug: Buyers-ApprovalRules
 ---
 Approval rules are used to verify the integrity of an order. Common
 examples include orders requiring managerial approval, approval for

@@ -1,9 +1,9 @@
 ---
 title: Orders
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Orders And Fulfillment
-slug: Orders
+slug: Orders-And-Fulfillment-Orders
 ---
 An Order represents a business transaction between two parties. It
 typically consists of a collection of Line Items, a Payment Method, Tax

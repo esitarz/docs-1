@@ -1,9 +1,9 @@
 ---
 title: Cost Centers
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: CostCenters
+slug: Buyers-CostCenters
 ---
 A cost center is used to allocate organizational expenditures. Different
 businesses call these by different names such as "allocation codes" or

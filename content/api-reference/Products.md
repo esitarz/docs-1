@@ -1,9 +1,9 @@
 ---
 title: Products
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Product Catalogs
-slug: Products
+slug: Product-Catalogs-Products
 ---
 A Product represents a physical, digital, or absract good that is
 offered for sale by a seller organization and is purchase-able by Buyer

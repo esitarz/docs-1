@@ -7,6 +7,9 @@ import os
 AUTHOR = 'OrderCloud.io'
 SITENAME = 'OrderCloud Documentation Content'
 SITEURL = 'localhost:8000'
+SITETITLE = 'OrderCloud Docs'
+
+SITELOGO = '/images/svg/ordercloudio_horizontal_logo.svg'
 
 TIMEZONE = 'America/Chicago'
 

@@ -1,9 +1,9 @@
 ---
 title: Promotions
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Orders And Fulfillment
-slug: Promotions
+slug: Orders-And-Fulfillment-Promotions
 ---
 Promotions are used to reduce the cost of a line item or an order.
 Promotions can have redemption rules that can be applied for available

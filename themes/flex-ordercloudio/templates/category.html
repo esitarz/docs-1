@@ -1,6 +1,25 @@
 {% extends "base.html" %}
 {% block title %} &ndash; {{ _('Category %(name)s', name=category) }}{% endblock %}
 {% set summarise = True %}
+{% block subnav %}
+  <hr>
+  <ul class="list">
+    {% for article in articles %}
+      {% if loop.changed(article.tags[0]) %}
+        
+        {% for tag in article.tags|sort %}
+          
+          <li>
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag.name }}</a>
+          </li>
+          
+        {% endfor %}
+        
+      {% endif %}
+      
+    {% endfor %}
+  </ul>
+{% endblock %}
 {% block content %}
   {% for article in articles %}
     <div>
@@ -18,5 +37,4 @@
     </div>
     
   {% endfor %}
-  
 {% endblock %}

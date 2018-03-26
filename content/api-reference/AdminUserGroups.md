@@ -1,9 +1,9 @@
 ---
 title: Admin User Groups
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Seller
-slug: AdminUserGroups
+slug: Seller-AdminUserGroups
 ---
 
 

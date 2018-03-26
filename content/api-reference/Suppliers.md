@@ -1,9 +1,9 @@
 ---
 title: Suppliers
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Suppliers
-slug: Suppliers
+slug: Suppliers-Suppliers
 ---
 Suppliers are the organizations that supply products distributed by
 Seller oganizations.

@@ -1,9 +1,9 @@
 ---
 title: Specs
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Product Catalogs
-slug: Specs
+slug: Product-Catalogs-Specs
 ---
 Specs are used to capture user input when adding a Product to an Order.
 At its simplest, a spec is a name/value pair. A spec value may have a

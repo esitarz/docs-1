@@ -1,9 +1,9 @@
 ---
 title: Categories
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Product Catalogs
-slug: Categories
+slug: Product-Catalogs-Categories
 ---
 Categories are used within a catalog to group and place content for a
 specific audience. Content can be in the form of another category,

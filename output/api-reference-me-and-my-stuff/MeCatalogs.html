@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content=""Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …" />
+<meta name="keywords" content="Me And My Stuff">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Catalogs"/>
+<meta property="og:description" content=""Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference-me-and-my-stuff\MeCatalogs.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference-Me-And-My-Stuff"/>
+<meta property="article:tag" content="Me And My Stuff"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Catalogs</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="" title="">
+      </a>
+      <h1><a href=".."></a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+              <li><a href="../#"></a></li>
+          </ul>
+      <ul class="social">
+      </ul>
+    </div>
+  </aside>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="MeCatalogs">Catalogs</h1>
+    <p>
+        Posted on Mon 26 March 2018 in <a href="../category/api-reference-me-and-my-stuff.html">API Reference-Me-And-My-Stuff</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>"Me" is a container for read-only endpoints that return a filtered view
+of things that the current buyer user is allowed to see, i.e. things
+that they are assigned to either directly or as a member of a buyer
+organization or user group. It also provides ways for a user to update
+or change their own information.</p>
+<hr>
+<h2><code>GET</code> <code>v1/me/catalogs</code></h2>
+<p>Get a list of catalogs visible to this user</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Word or phrase to search for.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>searchOn</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to search on.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>sortBy</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Comma-delimited list of fields to sort by.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>page</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Page of results to return. Default: 1</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>pageSize</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>filters</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}]}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/me/catalogs/{catalogID}</code></h2>
+<p>Get a single catalog</p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>catalogID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Requestbody</h2>
+<p><strong>Responsestatus</strong>: <code>200</code></p>
+<h2>Responsebody</h2>
+<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;CategoryCount&#39;: 0, &#39;xp&#39;: {}}
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>ID of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Name of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Description of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Active</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Active of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>CategoryCount</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Category count of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>xp</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Container for extended (custom) properties of the catalog.</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

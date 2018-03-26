@@ -1,9 +1,9 @@
 ---
 title: Admin Addresses
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Seller
-slug: AdminAddresses
+slug: Seller-AdminAddresses
 ---
 
 

@@ -1,9 +1,9 @@
 ---
 title: Incrementors
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Seller
-slug: Incrementors
+slug: Seller-Incrementors
 ---
 An incrementor is used to add an atomically incremented number to your
 object IDs. For example, "aprefix-{myIncrementorID}", will yield an

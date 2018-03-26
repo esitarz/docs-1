@@ -1,9 +1,9 @@
 ---
 title: Catalogs
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Product Catalogs
-slug: Catalogs
+slug: Product-Catalogs-Catalogs
 ---
 A Catalog represents a group of categories used to group and place
 content for a specific audience. All buyers are issued and assigned a

@@ -1,9 +1,9 @@
 ---
 title: Spending Accounts
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: SpendingAccounts
+slug: Buyers-SpendingAccounts
 ---
 Spending Accounts are funds given to users by a managing entity and are
 managed as part of a user's account. These funds are generally used as

@@ -1,9 +1,9 @@
 ---
 title: Buyers
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: Buyers
+slug: Buyers-Buyers
 ---
 Buyers, or customers, are the organizations that view the categories and
 products and place orders.

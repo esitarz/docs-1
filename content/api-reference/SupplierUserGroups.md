@@ -1,9 +1,9 @@
 ---
 title: Supplier User Groups
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Suppliers
-slug: SupplierUserGroups
+slug: Suppliers-SupplierUserGroups
 ---
 User Groups are used to streamline the management of users within an
 application. By placing like users in groups, you can filter content,

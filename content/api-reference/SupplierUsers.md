@@ -1,9 +1,9 @@
 ---
 title: Supplier Users
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Suppliers
-slug: SupplierUsers
+slug: Suppliers-SupplierUsers
 ---
 A user is a person with access to the application. The properties of a
 user define who they are and what they are able to do with their login

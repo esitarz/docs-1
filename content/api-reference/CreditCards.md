@@ -1,9 +1,9 @@
 ---
 title: Credit Cards
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: CreditCards
+slug: Buyers-CreditCards
 ---
 Credit cards are used as a payment method for an order. A user may have
 access to one or many credit cards for personal spend or group spending.

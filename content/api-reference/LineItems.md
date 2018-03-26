@@ -1,9 +1,9 @@
 ---
 title: Line Items
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Orders And Fulfillment
-slug: LineItems
+slug: Orders-And-Fulfillment-LineItems
 ---
 A Line Item represents a single line on an Order. At a minimum, it
 contains a single Product SKU and a quantity. A line item may also

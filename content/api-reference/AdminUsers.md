@@ -1,9 +1,9 @@
 ---
 title: Admin Users
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Seller
-slug: AdminUsers
+slug: Seller-AdminUsers
 ---
 Users on an Organization level are users that have administrative access
 to things like adding users, creating catalogs, processing orders or

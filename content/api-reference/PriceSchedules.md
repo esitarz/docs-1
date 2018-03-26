@@ -1,9 +1,9 @@
 ---
 title: Price Schedules
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Product Catalogs
-slug: PriceSchedules
+slug: Product-Catalogs-PriceSchedules
 ---
 Price schedules allow the same product to be sold across multiple
 channels. A price schedule may include quantity price breaks, min and

@@ -1,9 +1,9 @@
 ---
 title: Addresses
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Buyers
-slug: Addresses
+slug: Buyers-Addresses
 ---
 Addresses are used for the purposes of billing and shipping an order. An
 address may belong to a list that can be shared among many users if

@@ -1,9 +1,9 @@
 ---
 title: Security Profiles
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Authentication And Authorization
-slug: SecurityProfiles
+slug: Authentication-And-Authorization-SecurityProfiles
 ---
 
 

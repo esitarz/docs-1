@@ -1,9 +1,9 @@
 ---
 title: Shipments
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Me And My Stuff
-slug: MeShipments
+slug: Me-And-My-Stuff-MeShipments
 ---
 "Me" is a container for read-only endpoints that return a filtered view
 of things that the current buyer user is allowed to see, i.e. things

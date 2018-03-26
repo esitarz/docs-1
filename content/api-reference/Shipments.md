@@ -1,9 +1,9 @@
 ---
 title: Shipments
-date: 2018-03-23
+date: 2018-03-26
 category: API Reference
 tags: Orders And Fulfillment
-slug: Shipments
+slug: Orders-And-Fulfillment-Shipments
 ---
 A Shipment is a grouping of one or more Line Items from one or more
 Orders that is physically packaged and delivered to the Buyer as a

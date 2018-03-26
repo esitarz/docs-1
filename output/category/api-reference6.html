@@ -1,25 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="english">
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
     <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
-
   <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
   <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-
-
-
-
-
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
-
-
     <meta name="author" content="OrderCloud.io" />
     <meta name="description" content="" />
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
@@ -28,326 +18,307 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content=".."/>
-
-  <title>OrderCloud Documentation Content &ndash;     Category API Reference
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash;   Category API Reference
 </title>
-
 </head>
 <body>
   <aside>
     <div>
       <a href="..">
-        <img src="../theme/img/profile.png" alt="" title="">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
       </a>
-      <h1><a href=".."></a></h1>
-
-
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
       <nav>
-        <ul class="list">
-          <li><a href="../frameworks-and-sdks/#frameworks-and-sdks">Frameworks And Sdks</a></li>
-          <li><a href="../integration-services/#integration-services">Integration Services</a></li>
-          <li><a href="../platform-guides/#platform-guides">Platform Guides</a></li>
-
-        </ul>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
       </nav>
-
-      <ul class="social">
-      </ul>
-    </div>
-
-
-  </aside>
+  <hr>
+  <ul class="list">
+        
+          
+          <li>
+            <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
+          </li>
+          
+        
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/buyers.html">Buyers</a>
+          </li>
+          
+        
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+          </li>
+          
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+          </li>
+          
+        
+      
+      
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/product-catalogs.html">Product Catalogs</a>
+          </li>
+          
+        
+      
+      
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/seller.html">Seller</a>
+          </li>
+          
+        
+      
+      
+      
+      
+      
+        
+          
+          <li>
+            <a href="../tag/suppliers.html">Suppliers</a>
+          </li>
+          
+        
+      
+      
+      
+  </ul>
+    </aside>
+  </div>
   <main>
-
-
-<article>
-  <header>
-    <h2><a href="../api-reference\MessageSenders.html#MessageSenders">Message Senders</a></h2>
-    <p>
-          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="../tag/seller.html">Seller</a>
-    </p>
-  </header>
-  <div>
-      <h2><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h2>
-<p>Get a single message sender</p>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>messageSenderID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the message sender.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;MessageTypes&#39;: [&#39;OrderDeclined&#39;], &#39;Description&#39;: &#39;&#39;}
-</pre></div>
-
-
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the message sender.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description …</th></tr></thead></table>
-      <br>
-      <a class="btn" href="../api-reference\MessageSenders.html#MessageSenders">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../api-reference\Orders.html#Orders">Orders</a></h2>
-    <p>
-          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
-    </p>
-  </header>
-  <div>
-      <p>An Order represents a business transaction between two parties. It
-typically consists of a collection of Line Items, a Payment Method, Tax
-and Shipping information, etc. The OrderCloud platform defines various
-"actions" that can be performed against Orders, such as Submit, Approve,
-Ship, etc. These actions transform the state of …</p>
-      <br>
-      <a class="btn" href="../api-reference\Orders.html#Orders">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../api-reference\PasswordResets.html#PasswordResets">Forgotten Password</a></h2>
-    <p>
-          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-
-          &#8226;     Tagged with
-
+    <div>
+        <ul>
+            
+            <li>
               <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
-    </p>
-  </header>
-  <div>
-      <h2><code>POST</code> <code>v1/password/reset</code></h2>
-<p>Send a verification code</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ClientID&#39;: &#39;&#39;, &#39;Email&#39;: &#39;&#39;, &#39;Username&#39;: &#39;&#39;, &#39;URL&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ClientID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the client. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Email&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Email of the password reset request.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Username&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Username of the password reset request.&#39;, &#39;Required …</pre></div>
-      <br>
-      <a class="btn" href="../api-reference\PasswordResets.html#PasswordResets">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../api-reference\Payments.html#Payments">Payments</a></h2>
-    <p>
-          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-
-          &#8226;     Tagged with
-
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
+              <a href="../tag/buyers.html">Buyers</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
+              <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
               <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
-    </p>
-  </header>
-  <div>
-      <h2><code>GET</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h2>
-<p>Get a single payment</p>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description …</th></tr></thead></table>
-      <br>
-      <a class="btn" href="../api-reference\Payments.html#Payments">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../api-reference\PriceSchedules.html#PriceSchedules">Price Schedules</a></h2>
-    <p>
-          Posted on Fri 23 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-
-          &#8226;     Tagged with
-
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
               <a href="../tag/product-catalogs.html">Product Catalogs</a>
-    </p>
-  </header>
-  <div>
-      <p>Price schedules allow the same product to be sold across multiple
-channels. A price schedule may include quantity price breaks, min and
-max quantity per order, whether to apply tax or shipping calculations,
-or to what type of order the price schedule applies.</p>
-<hr>
-<h2><code>GET</code> <code>v1/priceschedules/{priceScheduleID}</code></h2>
-<p>Get a single …</p>
-      <br>
-      <a class="btn" href="../api-reference\PriceSchedules.html#PriceSchedules">    Continue reading
-</a>
-  </div>
-</article>
-
-
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
+              <a href="../tag/seller.html">Seller</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+        <ul>
+            
+            <li>
+              <a href="../tag/suppliers.html">Suppliers</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div>
+    </div>
+    
+    <div>
+    </div>
+    
     <footer>
 <p>&copy; OrderCloud.io </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
 </p>    </footer>
   </main>
-
-
-
-
-
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " OrderCloud Documentation Content ",
   "url" : "..",
-  "image": "",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
   "description": ""
 }
-</script>
-</body>
+</script></body>
 </html>
