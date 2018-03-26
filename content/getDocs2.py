@@ -88,10 +88,11 @@ def define_meta(item):
 	page['date'] = str(date.today())
 	tags = re.findall('[A-Z][^A-Z]*', str(item['Section']))
 	tagList = ' '.join(str(e) for e in tags)
+	tagSlug = '-'.join(str(e) for e in tags)
 	#print(catList)
 	page['tags'] = tagList
 	page['category']= 'API Reference'
-	page['slug']=str(item['ID'])
+	page['slug']=tagSlug+'-'+str(item['ID'])
 	page['comments'] = item['Comments']
 	page['endpoints'] = item['Endpoints']
 
