@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Buyers-ApprovalRules.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Buyers-ApprovalRules">Approval Rules</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -65,7 +65,7 @@ thresholds or approval for orders that exceed a specific price.
 Properties are also available to control the triggers and timing for
 processing approvals whether parallel to another rule, or in succession
 of a previous rule.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h2>
 <p>Get a single approval rule</p>
 <table>
@@ -134,165 +134,62 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ApprovingGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the approving group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RuleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Rule expression of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -495,165 +392,76 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "ApprovingGroupID": "",
+            "Description": "",
+            "ID": "",
+            "Name": "",
+            "RuleExpression": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ApprovingGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the approving group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RuleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Rule expression of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -700,173 +508,119 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ApprovingGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approving group. Required. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;RuleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the approval rule.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ApprovingGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approving group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approving group. Required. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RuleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Rule expression of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.</td>
 <td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
+<td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Name</td>
+<td>string</td>
+<td>Name of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the approval rule.</td>
+<td>string</td>
+<td>Description of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>ApprovingGroupID</td>
+<td>string</td>
+<td>ID of the approving group.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>RuleExpression</td>
+<td>string</td>
+<td>Rule expression of the approval rule.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -939,173 +693,119 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ApprovingGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approving group. Required. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;RuleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the approval rule.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ApprovingGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approving group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approving group. Required. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RuleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Rule expression of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.</td>
 <td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
+<td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Name</td>
+<td>string</td>
+<td>Name of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the approval rule.</td>
+<td>string</td>
+<td>Description of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>ApprovingGroupID</td>
+<td>string</td>
+<td>ID of the approving group.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>RuleExpression</td>
+<td>string</td>
+<td>Rule expression of the approval rule.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1178,9 +878,9 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h2>
 <p>Partially update an approval rule</p>
 <table>
@@ -1249,173 +949,119 @@ of a previous rule.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ApprovingGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the approving group. Required. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;RuleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the approval rule.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ApprovingGroupID&#39;: &#39;&#39;, &#39;RuleExpression&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ApprovingGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the approving group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the approving group. Required. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RuleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Rule expression of the approval rule.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.</td>
 <td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
+<td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ApprovingGroupID": "",
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "RuleExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Name</td>
+<td>string</td>
+<td>Name of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the approval rule.</td>
+<td>string</td>
+<td>Description of the approval rule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>ApprovingGroupID</td>
+<td>string</td>
+<td>ID of the approving group.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>RuleExpression</td>
+<td>string</td>
+<td>Rule expression of the approval rule.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the approval rule.</td>
 <td>False</td>
 </tr>
 </tbody>

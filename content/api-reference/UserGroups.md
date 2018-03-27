@@ -1,6 +1,6 @@
 ---
 title: User Groups
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Buyers
 slug: Buyers-UserGroups
@@ -34,45 +34,22 @@ Get a single user group
 | Description     | ID of the user group.          |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the user group.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the user group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user group. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. | False |
+| Name | string | Name of the user group. | True |
+| Description | string | Description of the user group. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## `GET` `v1/buyers/{buyerID}/usergroups`
 Get a list of user groups
@@ -136,45 +113,36 @@ Get a list of user groups
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Description': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the user group.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the user group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user group. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Description": "",
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. | False |
+| Name | string | Name of the user group. | True |
+| Description | string | Description of the user group. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## `POST` `v1/buyers/{buyerID}/usergroups`
 Create a new user group
@@ -190,53 +158,35 @@ Create a new user group
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the user group.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the user group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user group. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. | False |
+| Name | string | Name of the user group. | True |
+| Description | string | Description of the user group. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## `PUT` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 Create or update a user group
@@ -260,53 +210,35 @@ Create or update a user group
 | Description     | ID of the user group.          |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the user group.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the user group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user group. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. | False |
+| Name | string | Name of the user group. | True |
+| Description | string | Description of the user group. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 Delete a user group
@@ -330,10 +262,10 @@ Delete a user group
 | Description     | ID of the user group.          |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/usergroups/{userGroupID}`
 Partially update a user group
 
@@ -356,53 +288,35 @@ Partially update a user group
 | Description     | ID of the user group.          |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the user group. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user group.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the user group.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the user group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user group. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user group. | False |
+| Name | string | Name of the user group. | True |
+| Description | string | Description of the user group. | False |
+| xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## `GET` `v1/buyers/{buyerID}/usergroups/assignments`
 Get a list of user group user assignments
@@ -450,29 +364,32 @@ Get a list of user group user assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'UserGroupID': '', 'UserID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "UserGroupID": "",
+	            "UserID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| UserGroupID | string | ID of the user group. | False |
+| UserID | string | ID of the user. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}/usergroups/{userGroupID}/assignments/{userID}`
 Delete a user group user assignment
@@ -504,10 +421,10 @@ Delete a user group user assignment
 | Description     | ID of the user.                |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `POST` `v1/buyers/{buyerID}/usergroups/assignments`
 Save a user group user assignment
 
@@ -522,15 +439,16 @@ Save a user group user assignment
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'UserGroupID': '', 'UserID': ''}
-```
+## Request Body
+	{
+	    "UserGroupID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| UserGroupID | string | ID of the user group. | False |
+| UserID | string | ID of the user. | False |
 
-```
-[{'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body

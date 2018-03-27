@@ -1,6 +1,6 @@
 ---
 title: Forgotten Password
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Authentication And Authorization
 slug: Authentication-And-Authorization-PasswordResets
@@ -9,18 +9,23 @@ slug: Authentication-And-Authorization-PasswordResets
 
 ## `POST` `v1/password/reset`
 Send a verification code
-## Requestbody
-```
-{'ClientID': '', 'Email': '', 'Username': '', 'URL': ''}
-```
+## Request Body
+	{
+	    "ClientID": "",
+	    "Email": "",
+	    "URL": "",
+	    "Username": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ClientID | string | ID of the client. Required. | True |
+| Email | string | Email of the password reset request. | False |
+| Username | string | Username of the password reset request. | False |
+| URL | string | URL of the password reset request. | False |
 
-```
-[{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the password reset request.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the password reset request.', 'Required': False}, {'Name': 'URL', 'Type': 'string', 'Description': 'URL of the password reset request.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `PUT` `v1/password/reset/{verificationCode}`
 Reset a password by verification code
 
@@ -35,15 +40,18 @@ Reset a password by verification code
 | Description     | Verification code of the password reset. |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ClientID': '', 'Username': '', 'Password': ''}
-```
+## Request Body
+	{
+	    "ClientID": "",
+	    "Password": "",
+	    "Username": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ClientID | string | ID of the client. Required. | True |
+| Username | string | Username of the password reset. | False |
+| Password | string | Password of the password reset. | False |
 
-```
-[{'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required.', 'Required': True}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the password reset.', 'Required': False}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the password reset.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body

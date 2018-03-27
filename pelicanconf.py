@@ -27,7 +27,7 @@ THEME_PATHS = ['pelican-themes']
 THEME = 'themes/flex-ordercloudio'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
-PLUGINS = ['ace_editor']
+PLUGINS = ['better_tables', 'ace_editor']#ace_editor
 
 DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
@@ -50,15 +50,18 @@ DEFAULT_PAGINATION = 5
 HIDE_DATE = True
 
 ACE_EDITOR_PLUGIN = {
+'ACE_EDITOR_THEME' : 'chrome',
+'ACE_EDITOR_SHOW_INVISIBLE' : True,
+'ACE_EDITOR_READONLY' : False,
+'ACE_EDITOR_AUTOSCROLL' : True
 
 }
 
 
-CUSTOM_CSS_URL = 'theme/css/style.css'
+#CUSTOM_CSS_URL = 'theme/css/style.css'
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },

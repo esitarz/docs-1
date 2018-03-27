@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Me-And-My-Stuff-MeCategories.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Me-And-My-Stuff-MeCategories">Categories</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -63,7 +63,7 @@ of things that the current buyer user is allowed to see, i.e. things
 that they are assigned to either directly or as a member of a buyer
 organization or user group. It also provides ways for a user to update
 or change their own information.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/me/categories</code></h2>
 <p>Get a list of categories visible to this user</p>
 <table>
@@ -314,217 +314,90 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ListOrder&#39;: 1, &#39;Active&#39;: False, &#39;ParentID&#39;: &#39;&#39;, &#39;ChildCount&#39;: 0, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Active": false,
+            "ChildCount": 0,
+            "Description": "",
+            "ID": "",
+            "ListOrder": 1,
+            "Name": "",
+            "ParentID": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ListOrder</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Order that the category appears within its parent or catalog (if root level).</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If false, buyers cannot see this Category or any Categories or Products under it.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ParentID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the parent category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ChildCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of categories that are <em>immediate</em> children of this category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -597,217 +470,76 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;ListOrder&#39;: 1, &#39;Active&#39;: False, &#39;ParentID&#39;: &#39;&#39;, &#39;ChildCount&#39;: 0, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "ChildCount": 0,
+    "Description": "",
+    "ID": "",
+    "ListOrder": 1,
+    "Name": "",
+    "ParentID": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ListOrder</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Order that the category appears within its parent or catalog (if root level).</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If false, buyers cannot see this Category or any Categories or Products under it.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ParentID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the parent category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ChildCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of categories that are <em>immediate</em> children of this category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the category.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>

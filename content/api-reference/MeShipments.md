@@ -1,6 +1,6 @@
 ---
 title: Shipments
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Me And My Stuff
 slug: Me-And-My-Stuff-MeShipments
@@ -75,117 +75,84 @@ Get a list of shipments visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'BuyerID': '', 'Shipper': '', 'DateShipped': '2018-03-21T23:00:00+00:00', 'DateDelivered': '2018-03-21T23:00:00+00:00', 'TrackingNumber': '', 'Cost': 0, 'xp': {}, 'Account': '', 'FromAddressID': '', 'ToAddressID': '', 'FromAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}, 'ToAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Shipper                        |
-| Type            | string                         |
-| Description     | Shipper of the shipment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateShipped                    |
-| Type            | date                           |
-| Description     | Date shipped of the shipment.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateDelivered                  |
-| Type            | date                           |
-| Description     | Date delivered of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TrackingNumber                 |
-| Type            | string                         |
-| Description     | Tracking number of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Cost                           |
-| Type            | float                          |
-| Description     | Cost of the shipment.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Account                        |
-| Type            | string                         |
-| Description     | Account of the shipment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromAddressID                  |
-| Type            | string                         |
-| Description     | ID of the from address.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ToAddressID                    |
-| Type            | string                         |
-| Description     | ID of the to address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromAddress                    |
-| Type            | object                         |
-| Description     | From address of the shipment.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ToAddress                      |
-| Type            | object                         |
-| Description     | To address of the shipment.    |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Account": "",
+	            "BuyerID": "",
+	            "Cost": 0,
+	            "DateDelivered": "2018-03-27T16:00:00+00:00",
+	            "DateShipped": "2018-03-27T16:00:00+00:00",
+	            "FromAddress": {
+	                "AddressName": "",
+	                "City": "",
+	                "CompanyName": "",
+	                "Country": "",
+	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "State": "",
+	                "Street1": "",
+	                "Street2": "",
+	                "Zip": "",
+	                "xp": {}
+	            },
+	            "FromAddressID": "",
+	            "ID": "",
+	            "Shipper": "",
+	            "ToAddress": {
+	                "AddressName": "",
+	                "City": "",
+	                "CompanyName": "",
+	                "Country": "",
+	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "State": "",
+	                "Street1": "",
+	                "Street2": "",
+	                "Zip": "",
+	                "xp": {}
+	            },
+	            "ToAddressID": "",
+	            "TrackingNumber": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the shipment. | False |
+| BuyerID | string | ID of the buyer. | False |
+| Shipper | string | Shipper of the shipment. | False |
+| DateShipped | date | Date shipped of the shipment. | False |
+| DateDelivered | date | Date delivered of the shipment. | False |
+| TrackingNumber | string | Tracking number of the shipment. | False |
+| Cost | float | Cost of the shipment. | False |
+| xp | object | Container for extended (custom) properties of the shipment. | False |
+| Account | string | Account of the shipment. | False |
+| FromAddressID | string | ID of the from address. | False |
+| ToAddressID | string | ID of the to address. | False |
+| FromAddress | object | From address of the shipment. | False |
+| ToAddress | object | To address of the shipment. | False |
 
 ## `GET` `v1/me/shipments/{shipmentID}`
 Get a single shipment
@@ -201,117 +168,70 @@ Get a single shipment
 | Description     | ID of the shipment.            |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'BuyerID': '', 'Shipper': '', 'DateShipped': '2018-03-21T23:00:00+00:00', 'DateDelivered': '2018-03-21T23:00:00+00:00', 'TrackingNumber': '', 'Cost': 0, 'xp': {}, 'Account': '', 'FromAddressID': '', 'ToAddressID': '', 'FromAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}, 'ToAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Shipper                        |
-| Type            | string                         |
-| Description     | Shipper of the shipment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateShipped                    |
-| Type            | date                           |
-| Description     | Date shipped of the shipment.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateDelivered                  |
-| Type            | date                           |
-| Description     | Date delivered of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TrackingNumber                 |
-| Type            | string                         |
-| Description     | Tracking number of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Cost                           |
-| Type            | float                          |
-| Description     | Cost of the shipment.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the shipment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Account                        |
-| Type            | string                         |
-| Description     | Account of the shipment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromAddressID                  |
-| Type            | string                         |
-| Description     | ID of the from address.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ToAddressID                    |
-| Type            | string                         |
-| Description     | ID of the to address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromAddress                    |
-| Type            | object                         |
-| Description     | From address of the shipment.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ToAddress                      |
-| Type            | object                         |
-| Description     | To address of the shipment.    |
-| Required        | False                          |
+## Response Body
+	{
+	    "Account": "",
+	    "BuyerID": "",
+	    "Cost": 0,
+	    "DateDelivered": "2018-03-27T16:00:00+00:00",
+	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "FromAddress": {
+	        "AddressName": "",
+	        "City": "",
+	        "CompanyName": "",
+	        "Country": "",
+	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "FirstName": "",
+	        "ID": "",
+	        "LastName": "",
+	        "Phone": "",
+	        "State": "",
+	        "Street1": "",
+	        "Street2": "",
+	        "Zip": "",
+	        "xp": {}
+	    },
+	    "FromAddressID": "",
+	    "ID": "",
+	    "Shipper": "",
+	    "ToAddress": {
+	        "AddressName": "",
+	        "City": "",
+	        "CompanyName": "",
+	        "Country": "",
+	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "FirstName": "",
+	        "ID": "",
+	        "LastName": "",
+	        "Phone": "",
+	        "State": "",
+	        "Street1": "",
+	        "Street2": "",
+	        "Zip": "",
+	        "xp": {}
+	    },
+	    "ToAddressID": "",
+	    "TrackingNumber": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the shipment. | False |
+| BuyerID | string | ID of the buyer. | False |
+| Shipper | string | Shipper of the shipment. | False |
+| DateShipped | date | Date shipped of the shipment. | False |
+| DateDelivered | date | Date delivered of the shipment. | False |
+| TrackingNumber | string | Tracking number of the shipment. | False |
+| Cost | float | Cost of the shipment. | False |
+| xp | object | Container for extended (custom) properties of the shipment. | False |
+| Account | string | Account of the shipment. | False |
+| FromAddressID | string | ID of the from address. | False |
+| ToAddressID | string | ID of the to address. | False |
+| FromAddress | object | From address of the shipment. | False |
+| ToAddress | object | To address of the shipment. | False |
 
 ## `GET` `v1/me/shipments/{shipmentID}/items`
 Get a list of shipment items visible to this user
@@ -383,82 +303,60 @@ Get a list of shipment items visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'OrderID': '', 'LineItemID': '', 'QuantityShipped': 0, 'UnitPrice': 0, 'CostCenter': '', 'DateNeeded': '2018-03-21T23:00:00+00:00', 'Product': {'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'xp': {}}, 'Specs': [{'SpecID': '', 'Name': '', 'OptionID': '', 'Value': ''}], 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OrderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LineItemID                     |
-| Type            | string                         |
-| Description     | ID of the line item.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityShipped                |
-| Type            | integer                        |
-| Description     | Quantity shipped of the shipment item. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UnitPrice                      |
-| Type            | float                          |
-| Description     | Unit price of the shipment item. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CostCenter                     |
-| Type            | string                         |
-| Description     | Cost center of the shipment item. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateNeeded                     |
-| Type            | date                           |
-| Description     | Date needed of the shipment item. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Product                        |
-| Type            | object                         |
-| Description     | Product of the shipment item.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Specs                          |
-| Type            | array                          |
-| Description     | Specs of the shipment item.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the shipment item. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "CostCenter": "",
+	            "DateNeeded": "2018-03-27T16:00:00+00:00",
+	            "LineItemID": "",
+	            "OrderID": "",
+	            "Product": {
+	                "Description": "",
+	                "ID": "",
+	                "Name": "",
+	                "QuantityMultiplier": 0,
+	                "ShipHeight": 0,
+	                "ShipLength": 0,
+	                "ShipWeight": 0,
+	                "ShipWidth": 0,
+	                "xp": {}
+	            },
+	            "QuantityShipped": 0,
+	            "Specs": [
+	                {
+	                    "Name": "",
+	                    "OptionID": "",
+	                    "SpecID": "",
+	                    "Value": ""
+	                }
+	            ],
+	            "UnitPrice": 0,
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| OrderID | string | ID of the order. | True |
+| LineItemID | string | ID of the line item. | True |
+| QuantityShipped | integer | Quantity shipped of the shipment item. | True |
+| UnitPrice | float | Unit price of the shipment item. | False |
+| CostCenter | string | Cost center of the shipment item. | False |
+| DateNeeded | date | Date needed of the shipment item. | False |
+| Product | object | Product of the shipment item. | False |
+| Specs | array | Specs of the shipment item. | False |
+| xp | object | Container for extended (custom) properties of the shipment item. | False |

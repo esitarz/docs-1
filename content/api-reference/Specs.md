@@ -1,6 +1,6 @@
 ---
 title: Specs
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Product Catalogs
 slug: Product-Catalogs-Specs
@@ -29,93 +29,34 @@ Get a single spec
 | Description     | ID of the spec.                |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'OptionCount': 0, 'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OptionCount                    |
-| Type            | integer                        |
-| Description     | Option count of the spec.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spec.              |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Default value of the spec.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Required                       |
-| Type            | boolean                        |
-| Description     | Required of the spec.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowOpenText                  |
-| Type            | boolean                        |
-| Description     | Allow open text of the spec.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | ID of the default option.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefinesVariant                 |
-| Type            | boolean                        |
-| Description     | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "OptionCount": 0,
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. | False |
+| OptionCount | integer | Option count of the spec. | False |
+| ListOrder | integer | List order of the spec. | False |
+| Name | string | Name of the spec. | True |
+| DefaultValue | string | Default value of the spec. | False |
+| Required | boolean | Required of the spec. | False |
+| AllowOpenText | boolean | Allow open text of the spec. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## `GET` `v1/specs`
 Get a list of specs
@@ -171,191 +112,102 @@ Get a list of specs
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'OptionCount': 0, 'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OptionCount                    |
-| Type            | integer                        |
-| Description     | Option count of the spec.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spec.              |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Default value of the spec.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Required                       |
-| Type            | boolean                        |
-| Description     | Required of the spec.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowOpenText                  |
-| Type            | boolean                        |
-| Description     | Allow open text of the spec.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | ID of the default option.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefinesVariant                 |
-| Type            | boolean                        |
-| Description     | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "AllowOpenText": false,
+	            "DefaultOptionID": "",
+	            "DefaultValue": "",
+	            "DefinesVariant": false,
+	            "ID": "",
+	            "ListOrder": 1,
+	            "Name": "",
+	            "OptionCount": 0,
+	            "Required": false,
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. | False |
+| OptionCount | integer | Option count of the spec. | False |
+| ListOrder | integer | List order of the spec. | False |
+| Name | string | Name of the spec. | True |
+| DefaultValue | string | Default value of the spec. | False |
+| Required | boolean | Required of the spec. | False |
+| AllowOpenText | boolean | Allow open text of the spec. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## `POST` `v1/specs`
 Create a new spec
-## Requestbody
-```
-{'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
+| ListOrder | integer | List order of the spec. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultValue | string | Default value of the spec. Max length 2000 characters. | False |
+| Required | boolean | Required of the spec. Searchable: priority level 4. | False |
+| AllowOpenText | boolean | Allow open text of the spec. Searchable: priority level 5. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultValue', 'Type': 'string', 'Description': 'Default value of the spec. Max length 2000 characters.', 'Required': False}, {'Name': 'Required', 'Type': 'boolean', 'Description': 'Required of the spec. Searchable: priority level 4.', 'Required': False}, {'Name': 'AllowOpenText', 'Type': 'boolean', 'Description': 'Allow open text of the spec. Searchable: priority level 5.', 'Required': False}, {'Name': 'DefaultOptionID', 'Type': 'string', 'Description': 'ID of the default option.', 'Required': False}, {'Name': 'DefinesVariant', 'Type': 'boolean', 'Description': "True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs.", 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'OptionCount': 0, 'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OptionCount                    |
-| Type            | integer                        |
-| Description     | Option count of the spec.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spec.              |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Default value of the spec.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Required                       |
-| Type            | boolean                        |
-| Description     | Required of the spec.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowOpenText                  |
-| Type            | boolean                        |
-| Description     | Allow open text of the spec.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | ID of the default option.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefinesVariant                 |
-| Type            | boolean                        |
-| Description     | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "OptionCount": 0,
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. | False |
+| OptionCount | integer | Option count of the spec. | False |
+| ListOrder | integer | List order of the spec. | False |
+| Name | string | Name of the spec. | True |
+| DefaultValue | string | Default value of the spec. | False |
+| Required | boolean | Required of the spec. | False |
+| AllowOpenText | boolean | Allow open text of the spec. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## `PUT` `v1/specs/{specID}`
 Create or update a spec
@@ -371,101 +223,57 @@ Create or update a spec
 | Description     | ID of the spec.                |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
+| ListOrder | integer | List order of the spec. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultValue | string | Default value of the spec. Max length 2000 characters. | False |
+| Required | boolean | Required of the spec. Searchable: priority level 4. | False |
+| AllowOpenText | boolean | Allow open text of the spec. Searchable: priority level 5. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultValue', 'Type': 'string', 'Description': 'Default value of the spec. Max length 2000 characters.', 'Required': False}, {'Name': 'Required', 'Type': 'boolean', 'Description': 'Required of the spec. Searchable: priority level 4.', 'Required': False}, {'Name': 'AllowOpenText', 'Type': 'boolean', 'Description': 'Allow open text of the spec. Searchable: priority level 5.', 'Required': False}, {'Name': 'DefaultOptionID', 'Type': 'string', 'Description': 'ID of the default option.', 'Required': False}, {'Name': 'DefinesVariant', 'Type': 'boolean', 'Description': "True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs.", 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'OptionCount': 0, 'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OptionCount                    |
-| Type            | integer                        |
-| Description     | Option count of the spec.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spec.              |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Default value of the spec.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Required                       |
-| Type            | boolean                        |
-| Description     | Required of the spec.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowOpenText                  |
-| Type            | boolean                        |
-| Description     | Allow open text of the spec.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | ID of the default option.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefinesVariant                 |
-| Type            | boolean                        |
-| Description     | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "OptionCount": 0,
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. | False |
+| OptionCount | integer | Option count of the spec. | False |
+| ListOrder | integer | List order of the spec. | False |
+| Name | string | Name of the spec. | True |
+| DefaultValue | string | Default value of the spec. | False |
+| Required | boolean | Required of the spec. | False |
+| AllowOpenText | boolean | Allow open text of the spec. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## `DELETE` `v1/specs/{specID}`
 Delete a spec
@@ -481,10 +289,10 @@ Delete a spec
 | Description     | ID of the spec.                |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/specs/{specID}`
 Partially update a spec
 
@@ -499,101 +307,57 @@ Partially update a spec
 | Description     | ID of the spec.                |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
+| ListOrder | integer | List order of the spec. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultValue | string | Default value of the spec. Max length 2000 characters. | False |
+| Required | boolean | Required of the spec. Searchable: priority level 4. | False |
+| AllowOpenText | boolean | Allow open text of the spec. Searchable: priority level 5. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spec. Required. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultValue', 'Type': 'string', 'Description': 'Default value of the spec. Max length 2000 characters.', 'Required': False}, {'Name': 'Required', 'Type': 'boolean', 'Description': 'Required of the spec. Searchable: priority level 4.', 'Required': False}, {'Name': 'AllowOpenText', 'Type': 'boolean', 'Description': 'Allow open text of the spec. Searchable: priority level 5.', 'Required': False}, {'Name': 'DefaultOptionID', 'Type': 'string', 'Description': 'ID of the default option.', 'Required': False}, {'Name': 'DefinesVariant', 'Type': 'boolean', 'Description': "True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs.", 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'OptionCount': 0, 'ID': '', 'ListOrder': 1, 'Name': '', 'DefaultValue': '', 'Required': False, 'AllowOpenText': False, 'DefaultOptionID': '', 'DefinesVariant': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | OptionCount                    |
-| Type            | integer                        |
-| Description     | Option count of the spec.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spec.              |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Default value of the spec.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Required                       |
-| Type            | boolean                        |
-| Description     | Required of the spec.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowOpenText                  |
-| Type            | boolean                        |
-| Description     | Allow open text of the spec.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | ID of the default option.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefinesVariant                 |
-| Type            | boolean                        |
-| Description     | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowOpenText": false,
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "DefinesVariant": false,
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "OptionCount": 0,
+	    "Required": false,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec. | False |
+| OptionCount | integer | Option count of the spec. | False |
+| ListOrder | integer | List order of the spec. | False |
+| Name | string | Name of the spec. | True |
+| DefaultValue | string | Default value of the spec. | False |
+| Required | boolean | Required of the spec. | False |
+| AllowOpenText | boolean | Allow open text of the spec. | False |
+| DefaultOptionID | string | ID of the default option. | False |
+| DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
+| xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## `GET` `v1/specs/productassignments`
 Get a list of spec product assignments
@@ -649,45 +413,36 @@ Get a list of spec product assignments
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'SpecID': '', 'ProductID': '', 'DefaultValue': '', 'DefaultOptionID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ProductID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultValue                   |
-| Type            | string                         |
-| Description     | Optional. When defined, overrides the DefaultValue set on the Spec for just this Product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultOptionID                |
-| Type            | string                         |
-| Description     | Optional. When defined, overrides the DefaultOptionID set on the Spec for just this Product. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "DefaultOptionID": "",
+	            "DefaultValue": "",
+	            "ProductID": "",
+	            "SpecID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SpecID | string | ID of the spec. | False |
+| ProductID | string | ID of the product. | False |
+| DefaultValue | string | Optional. When defined, overrides the DefaultValue set on the Spec for just this Product. | False |
+| DefaultOptionID | string | Optional. When defined, overrides the DefaultOptionID set on the Spec for just this Product. | False |
 
 ## `DELETE` `v1/specs/{specID}/productassignments/{productID}`
 Delete a spec product assignment
@@ -711,24 +466,29 @@ Delete a spec product assignment
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `POST` `v1/specs/productassignments`
 Save a spec product assignment
-## Requestbody
-```
-{'SpecID': '', 'ProductID': '', 'DefaultValue': '', 'DefaultOptionID': ''}
-```
+## Request Body
+	{
+	    "DefaultOptionID": "",
+	    "DefaultValue": "",
+	    "ProductID": "",
+	    "SpecID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SpecID | string | ID of the spec. Searchable: priority level 1. Sortable: priority level 1. | False |
+| ProductID | string | ID of the product. Searchable: priority level 2. Sortable: priority level 2. | False |
+| DefaultValue | string | Optional. When defined, overrides the DefaultValue set on the Spec for just this Product. | False |
+| DefaultOptionID | string | Optional. When defined, overrides the DefaultOptionID set on the Spec for just this Product. | False |
 
-```
-[{'Name': 'SpecID', 'Type': 'string', 'Description': 'ID of the spec. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'DefaultValue', 'Type': 'string', 'Description': 'Optional. When defined, overrides the DefaultValue set on the Spec for just this Product.', 'Required': False}, {'Name': 'DefaultOptionID', 'Type': 'string', 'Description': 'Optional. When defined, overrides the DefaultOptionID set on the Spec for just this Product.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `POST` `v1/specs/{specID}/options`
 Create a new spec option
 
@@ -743,77 +503,47 @@ Create a new spec option
 | Description     | ID of the spec.                |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
+## Request Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
+| Value | string | Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1. | True |
+| ListOrder | integer | List order of the spec option. Searchable: priority level 4. Sortable: priority level 1. | False |
+| IsOpenText | boolean | Is open text of the spec option. Searchable: priority level 3. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'Value', 'Type': 'string', 'Description': 'Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1.', 'Required': True}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec option. Searchable: priority level 4. Sortable: priority level 1.', 'Required': False}, {'Name': 'IsOpenText', 'Type': 'boolean', 'Description': 'Is open text of the spec option. Searchable: priority level 3.', 'Required': False}, {'Name': 'PriceMarkupType', 'Type': 'string', 'Description': 'Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage.', 'Required': False}, {'Name': 'PriceMarkup', 'Type': 'float', 'Description': 'Price markup of the spec option. Searchable: priority level 6.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec option.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec option.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Value                          |
-| Type            | string                         |
-| Description     | Value of the spec option.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsOpenText                     |
-| Type            | boolean                        |
-| Description     | Is open text of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkupType                |
-| Type            | string                         |
-| Description     | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkup                    |
-| Type            | float                          |
-| Description     | Price markup of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec option. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. | False |
+| Value | string | Value of the spec option. | True |
+| ListOrder | integer | List order of the spec option. | False |
+| IsOpenText | boolean | Is open text of the spec option. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## `GET` `v1/specs/{specID}/options`
 Get a list of spec options
@@ -877,69 +607,42 @@ Get a list of spec options
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec option.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Value                          |
-| Type            | string                         |
-| Description     | Value of the spec option.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsOpenText                     |
-| Type            | boolean                        |
-| Description     | Is open text of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkupType                |
-| Type            | string                         |
-| Description     | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkup                    |
-| Type            | float                          |
-| Description     | Price markup of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec option. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "ID": "",
+	            "IsOpenText": false,
+	            "ListOrder": 1,
+	            "PriceMarkup": 0,
+	            "PriceMarkupType": "NoMarkup",
+	            "Value": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. | False |
+| Value | string | Value of the spec option. | True |
+| ListOrder | integer | List order of the spec option. | False |
+| IsOpenText | boolean | Is open text of the spec option. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## `PUT` `v1/specs/{specID}/options/{optionID}`
 Create or update a spec option
@@ -963,77 +666,47 @@ Create or update a spec option
 | Description     | ID of the option.              |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
+## Request Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
+| Value | string | Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1. | True |
+| ListOrder | integer | List order of the spec option. Searchable: priority level 4. Sortable: priority level 1. | False |
+| IsOpenText | boolean | Is open text of the spec option. Searchable: priority level 3. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'Value', 'Type': 'string', 'Description': 'Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1.', 'Required': True}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec option. Searchable: priority level 4. Sortable: priority level 1.', 'Required': False}, {'Name': 'IsOpenText', 'Type': 'boolean', 'Description': 'Is open text of the spec option. Searchable: priority level 3.', 'Required': False}, {'Name': 'PriceMarkupType', 'Type': 'string', 'Description': 'Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage.', 'Required': False}, {'Name': 'PriceMarkup', 'Type': 'float', 'Description': 'Price markup of the spec option. Searchable: priority level 6.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec option.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec option.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Value                          |
-| Type            | string                         |
-| Description     | Value of the spec option.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsOpenText                     |
-| Type            | boolean                        |
-| Description     | Is open text of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkupType                |
-| Type            | string                         |
-| Description     | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkup                    |
-| Type            | float                          |
-| Description     | Price markup of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec option. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. | False |
+| Value | string | Value of the spec option. | True |
+| ListOrder | integer | List order of the spec option. | False |
+| IsOpenText | boolean | Is open text of the spec option. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## `PATCH` `v1/specs/{specID}/options/{optionID}`
 Partially update a spec option
@@ -1057,77 +730,47 @@ Partially update a spec option
 | Description     | ID of the option.              |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
+## Request Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
+| Value | string | Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1. | True |
+| ListOrder | integer | List order of the spec option. Searchable: priority level 4. Sortable: priority level 1. | False |
+| IsOpenText | boolean | Is open text of the spec option. Searchable: priority level 3. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'Value', 'Type': 'string', 'Description': 'Value of the spec option. Required. Max length 2000 characters. Searchable: priority level 1.', 'Required': True}, {'Name': 'ListOrder', 'Type': 'integer', 'Description': 'List order of the spec option. Searchable: priority level 4. Sortable: priority level 1.', 'Required': False}, {'Name': 'IsOpenText', 'Type': 'boolean', 'Description': 'Is open text of the spec option. Searchable: priority level 3.', 'Required': False}, {'Name': 'PriceMarkupType', 'Type': 'string', 'Description': 'Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage.', 'Required': False}, {'Name': 'PriceMarkup', 'Type': 'float', 'Description': 'Price markup of the spec option. Searchable: priority level 6.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spec option.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec option.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Value                          |
-| Type            | string                         |
-| Description     | Value of the spec option.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsOpenText                     |
-| Type            | boolean                        |
-| Description     | Is open text of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkupType                |
-| Type            | string                         |
-| Description     | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkup                    |
-| Type            | float                          |
-| Description     | Price markup of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec option. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. | False |
+| Value | string | Value of the spec option. | True |
+| ListOrder | integer | List order of the spec option. | False |
+| IsOpenText | boolean | Is open text of the spec option. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## `GET` `v1/specs/{specID}/options/{optionID}`
 Get a single spec option
@@ -1151,69 +794,28 @@ Get a single spec option
 | Description     | ID of the option.              |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Value': '', 'ListOrder': 1, 'IsOpenText': False, 'PriceMarkupType': 'NoMarkup', 'PriceMarkup': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spec option.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Value                          |
-| Type            | string                         |
-| Description     | Value of the spec option.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | List order of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsOpenText                     |
-| Type            | boolean                        |
-| Description     | Is open text of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkupType                |
-| Type            | string                         |
-| Description     | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceMarkup                    |
-| Type            | float                          |
-| Description     | Price markup of the spec option. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spec option. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ID": "",
+	    "IsOpenText": false,
+	    "ListOrder": 1,
+	    "PriceMarkup": 0,
+	    "PriceMarkupType": "NoMarkup",
+	    "Value": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spec option. | False |
+| Value | string | Value of the spec option. | True |
+| ListOrder | integer | List order of the spec option. | False |
+| IsOpenText | boolean | Is open text of the spec option. | False |
+| PriceMarkupType | string | Price markup type of the spec option. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
+| PriceMarkup | float | Price markup of the spec option. | False |
+| xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## `DELETE` `v1/specs/{specID}/options/{optionID}`
 Delete a spec option
@@ -1237,7 +839,7 @@ Delete a spec option
 | Description     | ID of the option.              |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

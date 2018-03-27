@@ -49,7 +49,7 @@
 			<header>
 				<h2><a href="../api-reference\Suppliers-SupplierUserGroups.html#Suppliers-SupplierUserGroups">Supplier User Groups</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -60,7 +60,7 @@
 application. By placing like users in groups, you can filter content,
 define order management rules, and manage changes much more easily than
 trying to account for individual users.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/suppliers/{supplierID}/usergroups/{userGroupID}</code></h2>
 <p>Get a single supplier …</p>
 					<br>
@@ -73,7 +73,7 @@ trying to account for individual users.</p>
 			<header>
 				<h2><a href="../api-reference\Suppliers-SupplierUsers.html#Suppliers-SupplierUsers">Supplier Users</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -83,7 +83,7 @@ trying to account for individual users.</p>
 					<p>A user is a person with access to the application. The properties of a
 user define who they are and what they are able to do with their login
 to the application.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/suppliers/{supplierID}/users/{userID}</code></h2>
 <p>Get a single supplier user</p>
 <table>
@@ -124,7 +124,7 @@ to the application.</p>
 			<header>
 				<h2><a href="../api-reference\Suppliers-Suppliers.html#Suppliers-Suppliers">Suppliers</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -133,7 +133,7 @@ to the application.</p>
 			<div>
 					<p>Suppliers are the organizations that supply products distributed by
 Seller oganizations.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/suppliers/{supplierID}</code></h2>
 <p>Get a single supplier</p>
 <table>
@@ -176,31 +176,23 @@ Seller oganizations.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description …</td></tr></tbody></table>
+<th>Required …</th></tr></thead></table>
 					<br>
 					<a class="btn" href="../api-reference\Suppliers-Suppliers.html#Suppliers-Suppliers">  Continue reading
 </a>

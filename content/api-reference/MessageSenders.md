@@ -1,6 +1,6 @@
 ---
 title: Message Senders
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Seller
 slug: Seller-MessageSenders
@@ -21,45 +21,24 @@ Get a single message sender
 | Description     | ID of the message sender.      |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'MessageTypes': ['OrderDeclined'], 'Description': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the message sender.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the message sender.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageTypes                   |
-| Type            | array                          |
-| Description     | Message types of the message sender. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the message sender. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Description": "",
+	    "ID": "",
+	    "MessageTypes": [
+	        "OrderDeclined"
+	    ],
+	    "Name": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the message sender. | False |
+| Name | string | Name of the message sender. | False |
+| MessageTypes | array | Message types of the message sender. | True |
+| Description | string | Description of the message sender. | False |
 
 ## `GET` `v1/messagesenders`
 Get a list of message senders
@@ -115,45 +94,38 @@ Get a list of message senders
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'MessageTypes': ['OrderDeclined'], 'Description': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the message sender.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the message sender.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageTypes                   |
-| Type            | array                          |
-| Description     | Message types of the message sender. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the message sender. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Description": "",
+	            "ID": "",
+	            "MessageTypes": [
+	                "OrderDeclined"
+	            ],
+	            "Name": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the message sender. | False |
+| Name | string | Name of the message sender. | False |
+| MessageTypes | array | Message types of the message sender. | True |
+| Description | string | Description of the message sender. | False |
 
 ## `GET` `v1/messagesenders/assignments`
 Get a list of message sender assignments
@@ -217,53 +189,38 @@ Get a list of message sender assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'MessageSenderID': '', 'BuyerID': '', 'UserGroupID': '', 'MessageConfigName': '', 'MessageConfigDescription': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageSenderID                |
-| Type            | string                         |
-| Description     | ID of the message sender.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageConfigName              |
-| Type            | string                         |
-| Description     | Message config name of the message sender assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageConfigDescription       |
-| Type            | string                         |
-| Description     | Message config description of the message sender assignment. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "MessageConfigDescription": "",
+	            "MessageConfigName": "",
+	            "MessageSenderID": "",
+	            "UserGroupID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| MessageSenderID | string | ID of the message sender. | True |
+| BuyerID | string | ID of the buyer. | False |
+| UserGroupID | string | ID of the user group. | False |
+| MessageConfigName | string | Message config name of the message sender assignment. | False |
+| MessageConfigDescription | string | Message config description of the message sender assignment. | False |
 
 ## `DELETE` `v1/messagesenders/{messageSenderID}/assignments`
 Delete a message sender assignment
@@ -303,24 +260,27 @@ Delete a message sender assignment
 | Description     | ID of the user group.          |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `POST` `v1/messagesenders/assignments`
 Save a message sender assignment
-## Requestbody
-```
-{'MessageSenderID': '', 'BuyerID': '', 'UserGroupID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "MessageSenderID": "",
+	    "UserGroupID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| MessageSenderID | string | ID of the message sender. Required. Sortable: priority level 1. | True |
+| BuyerID | string | ID of the buyer. Sortable: priority level 2. | False |
+| UserGroupID | string | ID of the user group. Sortable: priority level 3. | False |
 
-```
-[{'Name': 'MessageSenderID', 'Type': 'string', 'Description': 'ID of the message sender. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Sortable: priority level 3.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `GET` `v1/messagesenders/CCListenerAssignments`
 Get a list of message sender cc listener assignments
 
@@ -375,81 +335,71 @@ Get a list of message sender cc listener assignments
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'MessageSenderAssignment': {'MessageSenderID': '', 'BuyerID': '', 'UserGroupID': '', 'MessageConfigName': '', 'MessageConfigDescription': ''}, 'MessageConfigName': '', 'MessageConfigDescription': '', 'MessageType': 'OrderDeclined', 'BuyerID': '', 'UserGroupID': '', 'UserID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageSenderAssignment        |
-| Type            | object                         |
-| Description     | Message sender assignment of the message cc listener assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageConfigName              |
-| Type            | string                         |
-| Description     | Message config name of the message cc listener assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageConfigDescription       |
-| Type            | string                         |
-| Description     | Message config description of the message cc listener assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | MessageType                    |
-| Type            | string                         |
-| Description     | Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "MessageConfigDescription": "",
+	            "MessageConfigName": "",
+	            "MessageSenderAssignment": {
+	                "BuyerID": "",
+	                "MessageConfigDescription": "",
+	                "MessageConfigName": "",
+	                "MessageSenderID": "",
+	                "UserGroupID": ""
+	            },
+	            "MessageType": "OrderDeclined",
+	            "UserGroupID": "",
+	            "UserID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| MessageSenderAssignment | object | Message sender assignment of the message cc listener assignment. | False |
+| MessageConfigName | string | Message config name of the message cc listener assignment. | False |
+| MessageConfigDescription | string | Message config description of the message cc listener assignment. | False |
+| MessageType | string | Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation. | False |
+| BuyerID | string | ID of the buyer. | False |
+| UserGroupID | string | ID of the user group. | False |
+| UserID | string | ID of the user. | False |
 
 ## `POST` `v1/messagesenders/CCListenerAssignments`
 Save a message sender cc listener assignment
-## Requestbody
-```
-{'MessageSenderAssignment': {'MessageSenderID': '', 'BuyerID': '', 'UserGroupID': ''}, 'MessageType': 'OrderDeclined', 'BuyerID': '', 'UserGroupID': '', 'UserID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "MessageSenderAssignment": {
+	        "BuyerID": "",
+	        "MessageSenderID": "",
+	        "UserGroupID": ""
+	    },
+	    "MessageType": "OrderDeclined",
+	    "UserGroupID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| MessageSenderAssignment | object | Message sender assignment of the message cc listener assignment. | False |
+| MessageType | string | Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation. | False |
+| BuyerID | string | ID of the buyer. Searchable: priority level 0. Sortable: priority level 0. | False |
+| UserGroupID | string | ID of the user group. Searchable: priority level 1. Sortable: priority level 1. | False |
+| UserID | string | ID of the user. Searchable: priority level 2. Sortable: priority level 2. | False |
 
-```
-[{'Name': 'MessageSenderAssignment', 'Type': 'object', 'Description': 'Message sender assignment of the message cc listener assignment.', 'Required': False}, {'Name': 'MessageType', 'Type': 'string', 'Description': 'Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Searchable: priority level 0. Sortable: priority level 0.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body

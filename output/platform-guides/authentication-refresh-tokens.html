@@ -78,52 +78,51 @@ access and refresh tokens can be changed from the Applications view in the
 Dashboard. A refresh token duration of <code>0</code> will not return a refresh token.</p>
 <h2>__Using a Refresh Token</h2>
 <p>The following information will be needed for the request:  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 Variable
 
-</th>  
+</th>
 <th>
 
 Definition
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 grant_type
 
-</td>  
+</td>
 <td>
 
 Value must be refresh_token
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 client_id
 
-</td>  
+</td>
 <td>
 
 This will be the client ID used in the original request
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 refresh_token
 
-</td>  
+</td>
 <td>
 
 This will be the refresh_token from the first response
 
 </td> </tr> </table>
-
 <p>A successful request might look like this:</p>
 <h2>__Conclusion</h2>
 <p>After reading this guide you should now be able to retrieve access tokens by

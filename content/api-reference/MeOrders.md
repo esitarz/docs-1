@@ -1,6 +1,6 @@
 ---
 title: Orders
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Me And My Stuff
 slug: Me-And-My-Stuff-MeOrders
@@ -83,197 +83,102 @@ Get a list of orders visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'FromUser': {'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}, 'FromCompanyID': '', 'FromUserID': '', 'BillingAddressID': '', 'BillingAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}, 'ShippingAddressID': '', 'Comments': '', 'LineItemCount': 0, 'Status': 'Unsubmitted', 'DateCreated': '2018-03-21T23:00:00+00:00', 'DateSubmitted': '2018-03-21T23:00:00+00:00', 'DateApproved': '2018-03-21T23:00:00+00:00', 'DateDeclined': '2018-03-21T23:00:00+00:00', 'DateCanceled': '2018-03-21T23:00:00+00:00', 'DateCompleted': '2018-03-21T23:00:00+00:00', 'Subtotal': 0, 'ShippingCost': 0, 'TaxCost': 0, 'PromotionDiscount': 0, 'Total': 0, 'IsSubmitted': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromUser                       |
-| Type            | object                         |
-| Description     | From user of the order.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromCompanyID                  |
-| Type            | string                         |
-| Description     | ID of the from company.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromUserID                     |
-| Type            | string                         |
-| Description     | ID of the from user.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BillingAddressID               |
-| Type            | string                         |
-| Description     | ID of the billing address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BillingAddress                 |
-| Type            | object                         |
-| Description     | Billing address of the order.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShippingAddressID              |
-| Type            | string                         |
-| Description     | ID of the Shipping Address for all LineItems on the Order. Null when there are multiple Shipping Addresses involved. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Comments                       |
-| Type            | string                         |
-| Description     | Comments of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LineItemCount                  |
-| Type            | integer                        |
-| Description     | Line item count of the order.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Status                         |
-| Type            | string                         |
-| Description     | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the order.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateSubmitted                  |
-| Type            | date                           |
-| Description     | Date submitted of the order.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateApproved                   |
-| Type            | date                           |
-| Description     | Date approved of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateDeclined                   |
-| Type            | date                           |
-| Description     | Date declined of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCanceled                   |
-| Type            | date                           |
-| Description     | Date canceled of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCompleted                  |
-| Type            | date                           |
-| Description     | Date completed of the order.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Subtotal                       |
-| Type            | float                          |
-| Description     | Subtotal of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShippingCost                   |
-| Type            | float                          |
-| Description     | Shipping cost of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TaxCost                        |
-| Type            | float                          |
-| Description     | Tax cost of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PromotionDiscount              |
-| Type            | float                          |
-| Description     | Promotion discount of the order. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Total                          |
-| Type            | float                          |
-| Description     | Total of the order.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsSubmitted                    |
-| Type            | boolean                        |
-| Description     | True if this Order has been passed from the Buyer to the Seller. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the order. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BillingAddress": {
+	                "AddressName": "",
+	                "City": "",
+	                "CompanyName": "",
+	                "Country": "",
+	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "State": "",
+	                "Street1": "",
+	                "Street2": "",
+	                "Zip": "",
+	                "xp": {}
+	            },
+	            "BillingAddressID": "",
+	            "Comments": "",
+	            "DateApproved": "2018-03-27T16:00:00+00:00",
+	            "DateCanceled": "2018-03-27T16:00:00+00:00",
+	            "DateCompleted": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateDeclined": "2018-03-27T16:00:00+00:00",
+	            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	            "FromCompanyID": "",
+	            "FromUser": {
+	                "Active": false,
+	                "AvailableRoles": [
+	                    ""
+	                ],
+	                "Email": "",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "Username": "",
+	                "xp": {}
+	            },
+	            "FromUserID": "",
+	            "ID": "",
+	            "IsSubmitted": false,
+	            "LineItemCount": 0,
+	            "PromotionDiscount": 0,
+	            "ShippingAddressID": "",
+	            "ShippingCost": 0,
+	            "Status": "Unsubmitted",
+	            "Subtotal": 0,
+	            "TaxCost": 0,
+	            "Total": 0,
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DateSubmitted | date | Date submitted of the order. | False |
+| ID | string | ID of the order. | False |
+| FromUser | object | From user of the order. | False |
+| FromCompanyID | string | ID of the from company. | False |
+| FromUserID | string | ID of the from user. | False |
+| BillingAddressID | string | ID of the billing address. | False |
+| BillingAddress | object | Billing address of the order. | False |
+| ShippingAddressID | string | ID of the Shipping Address for all LineItems on the Order. Null when there are multiple Shipping Addresses involved. | False |
+| Comments | string | Comments of the order. | False |
+| LineItemCount | integer | Line item count of the order. | False |
+| Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
+| DateCreated | date | Date created of the order. | False |
+| DateApproved | date | Date approved of the order. | False |
+| DateDeclined | date | Date declined of the order. | False |
+| DateCanceled | date | Date canceled of the order. | False |
+| DateCompleted | date | Date completed of the order. | False |
+| Subtotal | float | Subtotal of the order. | False |
+| ShippingCost | float | Shipping cost of the order. | False |
+| TaxCost | float | Tax cost of the order. | False |
+| PromotionDiscount | float | Promotion discount of the order. | False |
+| Total | float | Total of the order. | False |
+| IsSubmitted | boolean | True if this Order has been passed from the Buyer to the Seller. | False |
+| xp | object | Container for extended (custom) properties of the order. | False |
 
 ## `GET` `v1/me/orders/approvable`
 Get a list of orders that this user can approve
@@ -345,194 +250,99 @@ Get a list of orders that this user can approve
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'FromUser': {'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}, 'FromCompanyID': '', 'FromUserID': '', 'BillingAddressID': '', 'BillingAddress': {'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}, 'ShippingAddressID': '', 'Comments': '', 'LineItemCount': 0, 'Status': 'Unsubmitted', 'DateCreated': '2018-03-21T23:00:00+00:00', 'DateSubmitted': '2018-03-21T23:00:00+00:00', 'DateApproved': '2018-03-21T23:00:00+00:00', 'DateDeclined': '2018-03-21T23:00:00+00:00', 'DateCanceled': '2018-03-21T23:00:00+00:00', 'DateCompleted': '2018-03-21T23:00:00+00:00', 'Subtotal': 0, 'ShippingCost': 0, 'TaxCost': 0, 'PromotionDiscount': 0, 'Total': 0, 'IsSubmitted': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromUser                       |
-| Type            | object                         |
-| Description     | From user of the order.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromCompanyID                  |
-| Type            | string                         |
-| Description     | ID of the from company.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FromUserID                     |
-| Type            | string                         |
-| Description     | ID of the from user.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BillingAddressID               |
-| Type            | string                         |
-| Description     | ID of the billing address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BillingAddress                 |
-| Type            | object                         |
-| Description     | Billing address of the order.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShippingAddressID              |
-| Type            | string                         |
-| Description     | ID of the Shipping Address for all LineItems on the Order. Null when there are multiple Shipping Addresses involved. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Comments                       |
-| Type            | string                         |
-| Description     | Comments of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LineItemCount                  |
-| Type            | integer                        |
-| Description     | Line item count of the order.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Status                         |
-| Type            | string                         |
-| Description     | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the order.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateSubmitted                  |
-| Type            | date                           |
-| Description     | Date submitted of the order.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateApproved                   |
-| Type            | date                           |
-| Description     | Date approved of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateDeclined                   |
-| Type            | date                           |
-| Description     | Date declined of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCanceled                   |
-| Type            | date                           |
-| Description     | Date canceled of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCompleted                  |
-| Type            | date                           |
-| Description     | Date completed of the order.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Subtotal                       |
-| Type            | float                          |
-| Description     | Subtotal of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShippingCost                   |
-| Type            | float                          |
-| Description     | Shipping cost of the order.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TaxCost                        |
-| Type            | float                          |
-| Description     | Tax cost of the order.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PromotionDiscount              |
-| Type            | float                          |
-| Description     | Promotion discount of the order. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Total                          |
-| Type            | float                          |
-| Description     | Total of the order.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | IsSubmitted                    |
-| Type            | boolean                        |
-| Description     | True if this Order has been passed from the Buyer to the Seller. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the order. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BillingAddress": {
+	                "AddressName": "",
+	                "City": "",
+	                "CompanyName": "",
+	                "Country": "",
+	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "State": "",
+	                "Street1": "",
+	                "Street2": "",
+	                "Zip": "",
+	                "xp": {}
+	            },
+	            "BillingAddressID": "",
+	            "Comments": "",
+	            "DateApproved": "2018-03-27T16:00:00+00:00",
+	            "DateCanceled": "2018-03-27T16:00:00+00:00",
+	            "DateCompleted": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateDeclined": "2018-03-27T16:00:00+00:00",
+	            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	            "FromCompanyID": "",
+	            "FromUser": {
+	                "Active": false,
+	                "AvailableRoles": [
+	                    ""
+	                ],
+	                "Email": "",
+	                "FirstName": "",
+	                "ID": "",
+	                "LastName": "",
+	                "Phone": "",
+	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "Username": "",
+	                "xp": {}
+	            },
+	            "FromUserID": "",
+	            "ID": "",
+	            "IsSubmitted": false,
+	            "LineItemCount": 0,
+	            "PromotionDiscount": 0,
+	            "ShippingAddressID": "",
+	            "ShippingCost": 0,
+	            "Status": "Unsubmitted",
+	            "Subtotal": 0,
+	            "TaxCost": 0,
+	            "Total": 0,
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DateSubmitted | date | Date submitted of the order. | False |
+| ID | string | ID of the order. | False |
+| FromUser | object | From user of the order. | False |
+| FromCompanyID | string | ID of the from company. | False |
+| FromUserID | string | ID of the from user. | False |
+| BillingAddressID | string | ID of the billing address. | False |
+| BillingAddress | object | Billing address of the order. | False |
+| ShippingAddressID | string | ID of the Shipping Address for all LineItems on the Order. Null when there are multiple Shipping Addresses involved. | False |
+| Comments | string | Comments of the order. | False |
+| LineItemCount | integer | Line item count of the order. | False |
+| Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
+| DateCreated | date | Date created of the order. | False |
+| DateApproved | date | Date approved of the order. | False |
+| DateDeclined | date | Date declined of the order. | False |
+| DateCanceled | date | Date canceled of the order. | False |
+| DateCompleted | date | Date completed of the order. | False |
+| Subtotal | float | Subtotal of the order. | False |
+| ShippingCost | float | Shipping cost of the order. | False |
+| TaxCost | float | Tax cost of the order. | False |
+| PromotionDiscount | float | Promotion discount of the order. | False |
+| Total | float | Total of the order. | False |
+| IsSubmitted | boolean | True if this Order has been passed from the Buyer to the Seller. | False |
+| xp | object | Container for extended (custom) properties of the order. | False |

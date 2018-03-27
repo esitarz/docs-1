@@ -11,15 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Parameters Description Parameters Description Name impersonationConfigID Type string Description ID of the impersonation config. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''} Parameters Description Name ID Type string Description ID of the impersonation config …" />
+<meta name="description" content="GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Parameters Description Parameters Description Name impersonationConfigID Type string Description ID of the impersonation config. Required True Request Body Response Status: 200 Response Body { "BuyerID": "", "ClientID": "", "GroupID": "", "ID": "", "ImpersonationBuyerID": "", "ImpersonationGroupID": "", "ImpersonationUserID": "", "SecurityProfileID": "", "UserID": "" } Name Type Description Required ID string ID of the …" />
 <meta name="keywords" content="Authentication And Authorization">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Impersonation Configs"/>
-<meta property="og:description" content="GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Parameters Description Parameters Description Name impersonationConfigID Type string Description ID of the impersonation config. Required True Requestbody Responsestatus: 200 Responsebody {'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''} Parameters Description Name ID Type string Description ID of the impersonation config …"/>
+<meta property="og:description" content="GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Parameters Description Parameters Description Name impersonationConfigID Type string Description ID of the impersonation config. Required True Request Body Response Status: 200 Response Body { "BuyerID": "", "ClientID": "", "GroupID": "", "ID": "", "ImpersonationBuyerID": "", "ImpersonationGroupID": "", "ImpersonationUserID": "", "SecurityProfileID": "", "UserID": "" } Name Type Description Required ID string ID of the …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Authentication-And-Authorization-ImpersonationConfigs.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Authentication-And-Authorization-ImpersonationConfigs">Impersonation Configs</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -100,243 +100,83 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation config.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationBuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationUserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>GroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SecurityProfileID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the security profile.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ClientID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the client.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -513,494 +353,258 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "BuyerID": "",
+            "ClientID": "",
+            "GroupID": "",
+            "ID": "",
+            "ImpersonationBuyerID": "",
+            "ImpersonationGroupID": "",
+            "ImpersonationUserID": "",
+            "SecurityProfileID": "",
+            "UserID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation config.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationBuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationUserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the impersonation user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>GroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SecurityProfileID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the security profile.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ClientID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the client.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/impersonationconfig</code></h2>
 <p>Create a new impersonation config</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationBuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationUserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;GroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the group. Searchable: priority level 4. Sortable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Searchable: priority level 5. Sortable: priority level 5.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SecurityProfileID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ClientID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation config.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationBuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationUserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>GroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the group. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the user. Searchable: priority level 5. Sortable: priority level 5.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SecurityProfileID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
+<td>ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the security profile.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ClientID</td>
+<td>string</td>
+<td>ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>ClientID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the impersonation config.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ImpersonationBuyerID</td>
+<td>string</td>
+<td>ID of the impersonation buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationGroupID</td>
+<td>string</td>
+<td>ID of the impersonation group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationUserID</td>
+<td>string</td>
+<td>ID of the impersonation user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>GroupID</td>
+<td>string</td>
+<td>ID of the group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SecurityProfileID</td>
+<td>string</td>
+<td>ID of the security profile.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ClientID</td>
+<td>string</td>
 <td>ID of the client.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1047,251 +651,161 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationBuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationUserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;GroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the group. Searchable: priority level 4. Sortable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Searchable: priority level 5. Sortable: priority level 5.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SecurityProfileID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ClientID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation config.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationBuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationUserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>GroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the group. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the user. Searchable: priority level 5. Sortable: priority level 5.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SecurityProfileID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
+<td>ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the security profile.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ClientID</td>
+<td>string</td>
+<td>ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>ClientID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the impersonation config.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ImpersonationBuyerID</td>
+<td>string</td>
+<td>ID of the impersonation buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationGroupID</td>
+<td>string</td>
+<td>ID of the impersonation group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationUserID</td>
+<td>string</td>
+<td>ID of the impersonation user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>GroupID</td>
+<td>string</td>
+<td>ID of the group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SecurityProfileID</td>
+<td>string</td>
+<td>ID of the security profile.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ClientID</td>
+<td>string</td>
 <td>ID of the client.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1338,9 +852,9 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/impersonationconfig/{impersonationConfigID}</code></h2>
 <p>Partially update an impersonation config</p>
 <table>
@@ -1383,251 +897,161 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationBuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ImpersonationUserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;GroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the group. Searchable: priority level 4. Sortable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Searchable: priority level 5. Sortable: priority level 5.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SecurityProfileID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ClientID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ImpersonationBuyerID&#39;: &#39;&#39;, &#39;ImpersonationGroupID&#39;: &#39;&#39;, &#39;ImpersonationUserID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;GroupID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;SecurityProfileID&#39;: &#39;&#39;, &#39;ClientID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation config.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationBuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ImpersonationUserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the impersonation user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>GroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the group.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the group. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the user. Searchable: priority level 5. Sortable: priority level 5.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SecurityProfileID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
+<td>ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the security profile.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ClientID</td>
+<td>string</td>
+<td>ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>ClientID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the impersonation config.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ImpersonationBuyerID</td>
+<td>string</td>
+<td>ID of the impersonation buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationGroupID</td>
+<td>string</td>
+<td>ID of the impersonation group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationUserID</td>
+<td>string</td>
+<td>ID of the impersonation user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>GroupID</td>
+<td>string</td>
+<td>ID of the group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SecurityProfileID</td>
+<td>string</td>
+<td>ID of the security profile.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ClientID</td>
+<td>string</td>
 <td>ID of the client.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>

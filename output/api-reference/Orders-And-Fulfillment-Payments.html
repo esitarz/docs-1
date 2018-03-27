@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Orders-And-Fulfillment-Payments.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Orders-And-Fulfillment-Payments">Payments</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -152,269 +152,101 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}, &#39;Transactions&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Transactions": [
+        {
+            "Amount": 0,
+            "DateExecuted": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "ResultCode": "",
+            "ResultMessage": "",
+            "Succeeded": false,
+            "Type": "",
+            "xp": {}
+        }
+    ],
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Type</td>
 </tr>
 <tr>
 <td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateCreated</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date created of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CreditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Amount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Accepted</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Accepted of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Transactions</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Transactions of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -643,269 +475,115 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}, &#39;Transactions&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Accepted": false,
+            "Amount": 0,
+            "CreditCardID": "",
+            "DateCreated": "2018-03-27T16:00:00+00:00",
+            "Description": "",
+            "ID": "",
+            "SpendingAccountID": "",
+            "Transactions": [
+                {
+                    "Amount": 0,
+                    "DateExecuted": "2018-03-27T16:00:00+00:00",
+                    "ID": "",
+                    "ResultCode": "",
+                    "ResultMessage": "",
+                    "Succeeded": false,
+                    "Type": "",
+                    "xp": {}
+                }
+            ],
+            "Type": "PurchaseOrder",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Type</td>
 </tr>
 <tr>
 <td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateCreated</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date created of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CreditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Amount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Accepted</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Accepted of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Transactions</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Transactions of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -978,277 +656,172 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Type&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CreditCardID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the credit card. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SpendingAccountID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the payment. Max length 2000 characters. Searchable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Amount&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Accepted&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Accepted of the payment.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the payment.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}, &#39;Transactions&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
+<td>string</td>
+<td>ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Type</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateCreated</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date created of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CreditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the credit card. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the spending account. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the payment. Max length 2000 characters. Searchable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Amount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Accepted</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Accepted of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Transactions": [
+        {
+            "Amount": 0,
+            "DateExecuted": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "ResultCode": "",
+            "ResultMessage": "",
+            "Succeeded": false,
+            "Type": "",
+            "xp": {}
+        }
+    ],
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>Transactions</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
-<td>array</td>
+<td>string</td>
+<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CreditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpendingAccountID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Transactions of the payment.</td>
+<td>string</td>
+<td>Description of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>Amount</td>
+<td>float</td>
+<td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Accepted</td>
+<td>boolean</td>
+<td>Accepted of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>array</td>
+<td>Transactions of the payment.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1347,9 +920,9 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/payments/{paymentID}</code></h2>
 <p>Partially update a payment</p>
 <table>
@@ -1444,277 +1017,172 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Type&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CreditCardID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the credit card. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;SpendingAccountID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the payment. Max length 2000 characters. Searchable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Amount&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Accepted&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Accepted of the payment.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the payment.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}, &#39;Transactions&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
+<td>string</td>
+<td>ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Type</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateCreated</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date created of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CreditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the credit card. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the spending account. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the payment. Max length 2000 characters. Searchable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Amount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Accepted</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Accepted of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Transactions": [
+        {
+            "Amount": 0,
+            "DateExecuted": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "ResultCode": "",
+            "ResultMessage": "",
+            "Succeeded": false,
+            "Type": "",
+            "xp": {}
+        }
+    ],
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>Transactions</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
-<td>array</td>
+<td>string</td>
+<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CreditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpendingAccountID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Transactions of the payment.</td>
+<td>string</td>
+<td>Description of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>Amount</td>
+<td>float</td>
+<td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Accepted</td>
+<td>boolean</td>
+<td>Accepted of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>array</td>
+<td>Transactions of the payment.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1813,277 +1281,172 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Type&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Type of the payment transaction. Required. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;DateExecuted&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Date executed of the payment transaction. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Amount&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Usually the same as Payment Amount, but can be different. A charge might have a subsequent partial credit, for example.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Succeeded&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Succeeded of the payment transaction. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ResultCode&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Result code of the payment transaction. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ResultMessage&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Result message of the payment transaction. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the payment transaction.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;PurchaseOrder&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CreditCardID&#39;: &#39;&#39;, &#39;SpendingAccountID&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Amount&#39;: 0, &#39;Accepted&#39;: False, &#39;xp&#39;: {}, &#39;Transactions&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Type&#39;: &#39;&#39;, &#39;DateExecuted&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Amount&#39;: 0, &#39;Succeeded&#39;: False, &#39;ResultCode&#39;: &#39;&#39;, &#39;ResultMessage&#39;: &#39;&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Amount": 0,
+    "DateExecuted": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "ResultCode": "",
+    "ResultMessage": "",
+    "Succeeded": false,
+    "Type": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
+<td>string</td>
+<td>ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
 <td>string</td>
+<td>Type of the payment transaction. Required. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Type</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateCreated</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>DateExecuted</td>
 <td>date</td>
+<td>Date executed of the payment transaction. Required. Sortable: priority level 1.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Date created of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>CreditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Amount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Usually the same as Payment Amount, but can be different. A charge might have a subsequent partial credit, for example.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Accepted</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Succeeded</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Accepted of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Succeeded of the payment transaction. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
+<td>ResultCode</td>
+<td>string</td>
+<td>Result code of the payment transaction. Sortable.</td>
+<td>False</td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td>Name</td>
+<td>ResultMessage</td>
+<td>string</td>
+<td>Result message of the payment transaction. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Container for extended (custom) properties of the payment.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Container for extended (custom) properties of the payment transaction.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Accepted": false,
+    "Amount": 0,
+    "CreditCardID": "",
+    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "Description": "",
+    "ID": "",
+    "SpendingAccountID": "",
+    "Transactions": [
+        {
+            "Amount": 0,
+            "DateExecuted": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "ResultCode": "",
+            "ResultMessage": "",
+            "Succeeded": false,
+            "Type": "",
+            "xp": {}
+        }
+    ],
+    "Type": "PurchaseOrder",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>Transactions</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Type</td>
-<td>array</td>
+<td>string</td>
+<td>Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CreditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpendingAccountID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Transactions of the payment.</td>
+<td>string</td>
+<td>Description of the payment.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>Amount</td>
+<td>float</td>
+<td>If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Accepted</td>
+<td>boolean</td>
+<td>Accepted of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the payment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>array</td>
+<td>Transactions of the payment.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2208,9 +1571,9 @@
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
   </div>
   <div class="tag-cloud">
     <p>

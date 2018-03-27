@@ -1,6 +1,6 @@
 ---
 title: Impersonation Configs
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Authentication And Authorization
 slug: Authentication-And-Authorization-ImpersonationConfigs
@@ -21,85 +21,32 @@ Get a single impersonation config
 | Description     | ID of the impersonation config. |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationBuyerID           |
-| Type            | string                         |
-| Description     | ID of the impersonation buyer. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationGroupID           |
-| Type            | string                         |
-| Description     | ID of the impersonation group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationUserID            |
-| Type            | string                         |
-| Description     | ID of the impersonation user.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | GroupID                        |
-| Type            | string                         |
-| Description     | ID of the group.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ClientID                       |
-| Type            | string                         |
-| Description     | ID of the client.              |
-| Required        | True                           |
+## Response Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. | False |
+| ImpersonationUserID | string | ID of the impersonation user. | False |
+| BuyerID | string | ID of the buyer. | True |
+| GroupID | string | ID of the group. | False |
+| UserID | string | ID of the user. | False |
+| SecurityProfileID | string | ID of the security profile. | True |
+| ClientID | string | ID of the client. | True |
 
 ## `GET` `v1/impersonationconfig`
 Get a list of impersonation configs
@@ -155,175 +102,98 @@ Get a list of impersonation configs
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationBuyerID           |
-| Type            | string                         |
-| Description     | ID of the impersonation buyer. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationGroupID           |
-| Type            | string                         |
-| Description     | ID of the impersonation group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationUserID            |
-| Type            | string                         |
-| Description     | ID of the impersonation user.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | GroupID                        |
-| Type            | string                         |
-| Description     | ID of the group.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ClientID                       |
-| Type            | string                         |
-| Description     | ID of the client.              |
-| Required        | True                           |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "ClientID": "",
+	            "GroupID": "",
+	            "ID": "",
+	            "ImpersonationBuyerID": "",
+	            "ImpersonationGroupID": "",
+	            "ImpersonationUserID": "",
+	            "SecurityProfileID": "",
+	            "UserID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. | False |
+| ImpersonationUserID | string | ID of the impersonation user. | False |
+| BuyerID | string | ID of the buyer. | True |
+| GroupID | string | ID of the group. | False |
+| UserID | string | ID of the user. | False |
+| SecurityProfileID | string | ID of the security profile. | True |
+| ClientID | string | ID of the client. | True |
 
 ## `POST` `v1/impersonationconfig`
 Create a new impersonation config
-## Requestbody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1. | False |
+| ImpersonationUserID | string | ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2. | False |
+| BuyerID | string | ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3. | True |
+| GroupID | string | ID of the group. Searchable: priority level 4. Sortable: priority level 4. | False |
+| UserID | string | ID of the user. Searchable: priority level 5. Sortable: priority level 5. | False |
+| SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
+| ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.', 'Required': False}, {'Name': 'ImpersonationBuyerID', 'Type': 'string', 'Description': 'ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.', 'Required': False}, {'Name': 'ImpersonationGroupID', 'Type': 'string', 'Description': 'ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'ImpersonationUserID', 'Type': 'string', 'Description': 'ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.', 'Required': True}, {'Name': 'GroupID', 'Type': 'string', 'Description': 'ID of the group. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Searchable: priority level 5. Sortable: priority level 5.', 'Required': False}, {'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.', 'Required': True}, {'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.', 'Required': True}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationBuyerID           |
-| Type            | string                         |
-| Description     | ID of the impersonation buyer. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationGroupID           |
-| Type            | string                         |
-| Description     | ID of the impersonation group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationUserID            |
-| Type            | string                         |
-| Description     | ID of the impersonation user.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | GroupID                        |
-| Type            | string                         |
-| Description     | ID of the group.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ClientID                       |
-| Type            | string                         |
-| Description     | ID of the client.              |
-| Required        | True                           |
+## Response Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. | False |
+| ImpersonationUserID | string | ID of the impersonation user. | False |
+| BuyerID | string | ID of the buyer. | True |
+| GroupID | string | ID of the group. | False |
+| UserID | string | ID of the user. | False |
+| SecurityProfileID | string | ID of the security profile. | True |
+| ClientID | string | ID of the client. | True |
 
 ## `PUT` `v1/impersonationconfig/{impersonationConfigID}`
 Create or update an impersonation config
@@ -339,93 +209,55 @@ Create or update an impersonation config
 | Description     | ID of the impersonation config. |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1. | False |
+| ImpersonationUserID | string | ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2. | False |
+| BuyerID | string | ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3. | True |
+| GroupID | string | ID of the group. Searchable: priority level 4. Sortable: priority level 4. | False |
+| UserID | string | ID of the user. Searchable: priority level 5. Sortable: priority level 5. | False |
+| SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
+| ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.', 'Required': False}, {'Name': 'ImpersonationBuyerID', 'Type': 'string', 'Description': 'ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.', 'Required': False}, {'Name': 'ImpersonationGroupID', 'Type': 'string', 'Description': 'ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'ImpersonationUserID', 'Type': 'string', 'Description': 'ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.', 'Required': True}, {'Name': 'GroupID', 'Type': 'string', 'Description': 'ID of the group. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Searchable: priority level 5. Sortable: priority level 5.', 'Required': False}, {'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.', 'Required': True}, {'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.', 'Required': True}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationBuyerID           |
-| Type            | string                         |
-| Description     | ID of the impersonation buyer. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationGroupID           |
-| Type            | string                         |
-| Description     | ID of the impersonation group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationUserID            |
-| Type            | string                         |
-| Description     | ID of the impersonation user.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | GroupID                        |
-| Type            | string                         |
-| Description     | ID of the group.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ClientID                       |
-| Type            | string                         |
-| Description     | ID of the client.              |
-| Required        | True                           |
+## Response Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. | False |
+| ImpersonationUserID | string | ID of the impersonation user. | False |
+| BuyerID | string | ID of the buyer. | True |
+| GroupID | string | ID of the group. | False |
+| UserID | string | ID of the user. | False |
+| SecurityProfileID | string | ID of the security profile. | True |
+| ClientID | string | ID of the client. | True |
 
 ## `DELETE` `v1/impersonationconfig/{impersonationConfigID}`
 Delete an impersonation config
@@ -441,10 +273,10 @@ Delete an impersonation config
 | Description     | ID of the impersonation config. |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/impersonationconfig/{impersonationConfigID}`
 Partially update an impersonation config
 
@@ -459,90 +291,52 @@ Partially update an impersonation config
 | Description     | ID of the impersonation config. |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1. | False |
+| ImpersonationUserID | string | ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2. | False |
+| BuyerID | string | ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3. | True |
+| GroupID | string | ID of the group. Searchable: priority level 4. Sortable: priority level 4. | False |
+| UserID | string | ID of the user. Searchable: priority level 5. Sortable: priority level 5. | False |
+| SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
+| ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8.', 'Required': False}, {'Name': 'ImpersonationBuyerID', 'Type': 'string', 'Description': 'ID of the impersonation buyer. Searchable: priority level 0. Sortable: priority level 0.', 'Required': False}, {'Name': 'ImpersonationGroupID', 'Type': 'string', 'Description': 'ID of the impersonation group. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'ImpersonationUserID', 'Type': 'string', 'Description': 'ID of the impersonation user. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required. Searchable: priority level 3. Sortable: priority level 3.', 'Required': True}, {'Name': 'GroupID', 'Type': 'string', 'Description': 'ID of the group. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Searchable: priority level 5. Sortable: priority level 5.', 'Required': False}, {'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6.', 'Required': True}, {'Name': 'ClientID', 'Type': 'string', 'Description': 'ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7.', 'Required': True}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'ImpersonationBuyerID': '', 'ImpersonationGroupID': '', 'ImpersonationUserID': '', 'BuyerID': '', 'GroupID': '', 'UserID': '', 'SecurityProfileID': '', 'ClientID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationBuyerID           |
-| Type            | string                         |
-| Description     | ID of the impersonation buyer. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationGroupID           |
-| Type            | string                         |
-| Description     | ID of the impersonation group. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ImpersonationUserID            |
-| Type            | string                         |
-| Description     | ID of the impersonation user.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | GroupID                        |
-| Type            | string                         |
-| Description     | ID of the group.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ClientID                       |
-| Type            | string                         |
-| Description     | ID of the client.              |
-| Required        | True                           |
+## Response Body
+	{
+	    "BuyerID": "",
+	    "ClientID": "",
+	    "GroupID": "",
+	    "ID": "",
+	    "ImpersonationBuyerID": "",
+	    "ImpersonationGroupID": "",
+	    "ImpersonationUserID": "",
+	    "SecurityProfileID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the impersonation config. | False |
+| ImpersonationBuyerID | string | ID of the impersonation buyer. | False |
+| ImpersonationGroupID | string | ID of the impersonation group. | False |
+| ImpersonationUserID | string | ID of the impersonation user. | False |
+| BuyerID | string | ID of the buyer. | True |
+| GroupID | string | ID of the group. | False |
+| UserID | string | ID of the user. | False |
+| SecurityProfileID | string | ID of the security profile. | True |
+| ClientID | string | ID of the client. | True |

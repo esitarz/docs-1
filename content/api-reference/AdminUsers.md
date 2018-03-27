@@ -1,6 +1,6 @@
 ---
 title: Admin Users
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Seller
 slug: Seller-AdminUsers
@@ -25,93 +25,36 @@ Get a single admin user
 | Description     | ID of the user.                |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Username                       |
-| Type            | string                         |
-| Description     | Username of the user.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the user.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the user.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Email                          |
-| Type            | string                         |
-| Description     | Email of the user.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the user.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TermsAccepted                  |
-| Type            | date                           |
-| Description     | Terms accepted of the user.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the user.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AvailableRoles                 |
-| Type            | array                          |
-| Description     | Available roles of the user.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AvailableRoles": [
+	        ""
+	    ],
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. | False |
+| Username | string | Username of the user. | True |
+| FirstName | string | First name of the user. | True |
+| LastName | string | Last name of the user. | True |
+| Email | string | Email of the user. | True |
+| Phone | string | Phone of the user. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
+| AvailableRoles | array | Available roles of the user. | False |
 
 ## `GET` `v1/adminusers`
 Get a list of admin users
@@ -167,191 +110,108 @@ Get a list of admin users
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Username                       |
-| Type            | string                         |
-| Description     | Username of the user.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the user.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the user.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Email                          |
-| Type            | string                         |
-| Description     | Email of the user.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the user.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TermsAccepted                  |
-| Type            | date                           |
-| Description     | Terms accepted of the user.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the user.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AvailableRoles                 |
-| Type            | array                          |
-| Description     | Available roles of the user.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "AvailableRoles": [
+	                ""
+	            ],
+	            "Email": "",
+	            "FirstName": "",
+	            "ID": "",
+	            "LastName": "",
+	            "Phone": "",
+	            "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	            "Username": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. | False |
+| Username | string | Username of the user. | True |
+| FirstName | string | First name of the user. | True |
+| LastName | string | Last name of the user. | True |
+| Email | string | Email of the user. | True |
+| Phone | string | Phone of the user. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
+| AvailableRoles | array | Available roles of the user. | False |
 
 ## `POST` `v1/adminusers`
 Create a new admin user
-## Requestbody
-```
-{'ID': '', 'Username': '', 'Password': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Password": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Username | string | Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3. | True |
+| Password | string | Password of the user. | False |
+| FirstName | string | First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2. | True |
+| LastName | string | Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1. | True |
+| Email | string | Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable. | True |
+| Phone | string | Phone of the user. Max length 100 characters. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. Required. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Username                       |
-| Type            | string                         |
-| Description     | Username of the user.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the user.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the user.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Email                          |
-| Type            | string                         |
-| Description     | Email of the user.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the user.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TermsAccepted                  |
-| Type            | date                           |
-| Description     | Terms accepted of the user.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the user.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AvailableRoles                 |
-| Type            | array                          |
-| Description     | Available roles of the user.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AvailableRoles": [
+	        ""
+	    ],
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. | False |
+| Username | string | Username of the user. | True |
+| FirstName | string | First name of the user. | True |
+| LastName | string | Last name of the user. | True |
+| Email | string | Email of the user. | True |
+| Phone | string | Phone of the user. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
+| AvailableRoles | array | Available roles of the user. | False |
 
 ## `PUT` `v1/adminusers/{userID}`
 Create or update an admin user
@@ -367,101 +227,61 @@ Create or update an admin user
 | Description     | ID of the user.                |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Username': '', 'Password': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Password": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Username | string | Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3. | True |
+| Password | string | Password of the user. | False |
+| FirstName | string | First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2. | True |
+| LastName | string | Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1. | True |
+| Email | string | Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable. | True |
+| Phone | string | Phone of the user. Max length 100 characters. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. Required. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Username                       |
-| Type            | string                         |
-| Description     | Username of the user.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the user.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the user.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Email                          |
-| Type            | string                         |
-| Description     | Email of the user.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the user.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TermsAccepted                  |
-| Type            | date                           |
-| Description     | Terms accepted of the user.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the user.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AvailableRoles                 |
-| Type            | array                          |
-| Description     | Available roles of the user.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AvailableRoles": [
+	        ""
+	    ],
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. | False |
+| Username | string | Username of the user. | True |
+| FirstName | string | First name of the user. | True |
+| LastName | string | Last name of the user. | True |
+| Email | string | Email of the user. | True |
+| Phone | string | Phone of the user. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
+| AvailableRoles | array | Available roles of the user. | False |
 
 ## `DELETE` `v1/adminusers/{userID}`
 Delete an admin user
@@ -477,10 +297,10 @@ Delete an admin user
 | Description     | ID of the user.                |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/adminusers/{userID}`
 Partially update an admin user
 
@@ -495,98 +315,58 @@ Partially update an admin user
 | Description     | ID of the user.                |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Username': '', 'Password': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Password": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Username | string | Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3. | True |
+| Password | string | Password of the user. | False |
+| FirstName | string | First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2. | True |
+| LastName | string | Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1. | True |
+| Email | string | Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable. | True |
+| Phone | string | Phone of the user. Max length 100 characters. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. Required. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Username', 'Type': 'string', 'Description': 'Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.', 'Required': True}, {'Name': 'Password', 'Type': 'string', 'Description': 'Password of the user.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.', 'Required': True}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.', 'Required': True}, {'Name': 'Email', 'Type': 'string', 'Description': 'Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the user. Max length 100 characters.', 'Required': False}, {'Name': 'TermsAccepted', 'Type': 'date', 'Description': 'Terms accepted of the user.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the user. Required.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the user.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Username': '', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': '', 'TermsAccepted': '2018-03-21T23:00:00+00:00', 'Active': False, 'xp': {}, 'AvailableRoles': ['']}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Username                       |
-| Type            | string                         |
-| Description     | Username of the user.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the user.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the user.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Email                          |
-| Type            | string                         |
-| Description     | Email of the user.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the user.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | TermsAccepted                  |
-| Type            | date                           |
-| Description     | Terms accepted of the user.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the user.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the user. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AvailableRoles                 |
-| Type            | array                          |
-| Description     | Available roles of the user.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AvailableRoles": [
+	        ""
+	    ],
+	    "Email": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "Username": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the user. | False |
+| Username | string | Username of the user. | True |
+| FirstName | string | First name of the user. | True |
+| LastName | string | Last name of the user. | True |
+| Email | string | Email of the user. | True |
+| Phone | string | Phone of the user. | False |
+| TermsAccepted | date | Terms accepted of the user. | False |
+| Active | boolean | Active of the user. | True |
+| xp | object | Container for extended (custom) properties of the user. | False |
+| AvailableRoles | array | Available roles of the user. | False |

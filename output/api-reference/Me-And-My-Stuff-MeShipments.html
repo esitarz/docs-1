@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Me-And-My-Stuff-MeShipments.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Me-And-My-Stuff-MeShipments">Shipments</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -63,7 +63,7 @@ of things that the current buyer user is allowed to see, i.e. things
 that they are assigned to either directly or as a member of a buyer
 organization or user group. It also provides ways for a user to update
 or change their own information.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/me/shipments</code></h2>
 <p>Get a list of shipments visible to this user</p>
 <table>
@@ -262,347 +262,155 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;Shipper&#39;: &#39;&#39;, &#39;DateShipped&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;DateDelivered&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;TrackingNumber&#39;: &#39;&#39;, &#39;Cost&#39;: 0, &#39;xp&#39;: {}, &#39;Account&#39;: &#39;&#39;, &#39;FromAddressID&#39;: &#39;&#39;, &#39;ToAddressID&#39;: &#39;&#39;, &#39;FromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ToAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Account": "",
+            "BuyerID": "",
+            "Cost": 0,
+            "DateDelivered": "2018-03-27T16:00:00+00:00",
+            "DateShipped": "2018-03-27T16:00:00+00:00",
+            "FromAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T16:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "FromAddressID": "",
+            "ID": "",
+            "Shipper": "",
+            "ToAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T16:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "ToAddressID": "",
+            "TrackingNumber": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Shipper</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipper of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateShipped</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date shipped of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateDelivered</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date delivered of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>TrackingNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Tracking number of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Cost</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Account</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Account of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ToAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the to address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>From address of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ToAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>To address of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -649,347 +457,141 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;Shipper&#39;: &#39;&#39;, &#39;DateShipped&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;DateDelivered&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;TrackingNumber&#39;: &#39;&#39;, &#39;Cost&#39;: 0, &#39;xp&#39;: {}, &#39;Account&#39;: &#39;&#39;, &#39;FromAddressID&#39;: &#39;&#39;, &#39;ToAddressID&#39;: &#39;&#39;, &#39;FromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ToAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Account": "",
+    "BuyerID": "",
+    "Cost": 0,
+    "DateDelivered": "2018-03-27T16:00:00+00:00",
+    "DateShipped": "2018-03-27T16:00:00+00:00",
+    "FromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "FromAddressID": "",
+    "ID": "",
+    "Shipper": "",
+    "ToAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ToAddressID": "",
+    "TrackingNumber": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Shipper</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipper of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateShipped</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date shipped of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateDelivered</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date delivered of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>TrackingNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Tracking number of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Cost</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Account</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Account of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ToAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the to address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>From address of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ToAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>To address of the shipment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1218,243 +820,114 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;OrderID&#39;: &#39;&#39;, &#39;LineItemID&#39;: &#39;&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "CostCenter": "",
+            "DateNeeded": "2018-03-27T16:00:00+00:00",
+            "LineItemID": "",
+            "OrderID": "",
+            "Product": {
+                "Description": "",
+                "ID": "",
+                "Name": "",
+                "QuantityMultiplier": 0,
+                "ShipHeight": 0,
+                "ShipLength": 0,
+                "ShipWeight": 0,
+                "ShipWidth": 0,
+                "xp": {}
+            },
+            "QuantityShipped": 0,
+            "Specs": [
+                {
+                    "Name": "",
+                    "OptionID": "",
+                    "SpecID": "",
+                    "Value": ""
+                }
+            ],
+            "UnitPrice": 0,
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>OrderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LineItemID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity shipped of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Unit price of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Product of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the shipment item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>

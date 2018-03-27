@@ -1,6 +1,6 @@
 ---
 title: Approval Rules
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Buyers
 slug: Buyers-ApprovalRules
@@ -37,61 +37,26 @@ Get a single approval rule
 | Description     | ID of the approval rule.       |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the approval rule.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the approval rule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ApprovingGroupID               |
-| Type            | string                         |
-| Description     | ID of the approving group.     |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RuleExpression                 |
-| Type            | string                         |
-| Description     | Rule expression of the approval rule. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the approval rule. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. | False |
+| Name | string | Name of the approval rule. | False |
+| Description | string | Description of the approval rule. | False |
+| ApprovingGroupID | string | ID of the approving group. | True |
+| RuleExpression | string | Rule expression of the approval rule. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## `GET` `v1/buyers/{buyerID}/approvalrules`
 Get a list of approval rules
@@ -155,61 +120,40 @@ Get a list of approval rules
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the approval rule.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the approval rule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ApprovingGroupID               |
-| Type            | string                         |
-| Description     | ID of the approving group.     |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RuleExpression                 |
-| Type            | string                         |
-| Description     | Rule expression of the approval rule. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the approval rule. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "ApprovingGroupID": "",
+	            "Description": "",
+	            "ID": "",
+	            "Name": "",
+	            "RuleExpression": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. | False |
+| Name | string | Name of the approval rule. | False |
+| Description | string | Description of the approval rule. | False |
+| ApprovingGroupID | string | ID of the approving group. | True |
+| RuleExpression | string | Rule expression of the approval rule. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## `POST` `v1/buyers/{buyerID}/approvalrules`
 Create a new approval rule
@@ -225,69 +169,43 @@ Create a new approval rule
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Description | string | Description of the approval rule. Max length 2000 characters. Searchable: priority level 3. | False |
+| ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
+| RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the approval rule.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the approval rule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ApprovingGroupID               |
-| Type            | string                         |
-| Description     | ID of the approving group.     |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RuleExpression                 |
-| Type            | string                         |
-| Description     | Rule expression of the approval rule. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the approval rule. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. | False |
+| Name | string | Name of the approval rule. | False |
+| Description | string | Description of the approval rule. | False |
+| ApprovingGroupID | string | ID of the approving group. | True |
+| RuleExpression | string | Rule expression of the approval rule. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## `PUT` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Create or update an approval rule
@@ -311,69 +229,43 @@ Create or update an approval rule
 | Description     | ID of the approval rule.       |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Description | string | Description of the approval rule. Max length 2000 characters. Searchable: priority level 3. | False |
+| ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
+| RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the approval rule.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the approval rule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ApprovingGroupID               |
-| Type            | string                         |
-| Description     | ID of the approving group.     |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RuleExpression                 |
-| Type            | string                         |
-| Description     | Rule expression of the approval rule. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the approval rule. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. | False |
+| Name | string | Name of the approval rule. | False |
+| Description | string | Description of the approval rule. | False |
+| ApprovingGroupID | string | ID of the approving group. | True |
+| RuleExpression | string | Rule expression of the approval rule. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Delete an approval rule
@@ -397,10 +289,10 @@ Delete an approval rule
 | Description     | ID of the approval rule.       |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Partially update an approval rule
 
@@ -423,66 +315,40 @@ Partially update an approval rule
 | Description     | ID of the approval rule.       |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Description | string | Description of the approval rule. Max length 2000 characters. Searchable: priority level 3. | False |
+| ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
+| RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the approval rule. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the approval rule. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'ApprovingGroupID', 'Type': 'string', 'Description': 'ID of the approving group. Required. Sortable.', 'Required': True}, {'Name': 'RuleExpression', 'Type': 'string', 'Description': 'Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the approval rule.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ApprovingGroupID': '', 'RuleExpression': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the approval rule.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the approval rule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ApprovingGroupID               |
-| Type            | string                         |
-| Description     | ID of the approving group.     |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RuleExpression                 |
-| Type            | string                         |
-| Description     | Rule expression of the approval rule. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the approval rule. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ApprovingGroupID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "RuleExpression": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the approval rule. | False |
+| Name | string | Name of the approval rule. | False |
+| Description | string | Description of the approval rule. | False |
+| ApprovingGroupID | string | ID of the approving group. | True |
+| RuleExpression | string | Rule expression of the approval rule. | True |
+| xp | object | Container for extended (custom) properties of the approval rule. | False |

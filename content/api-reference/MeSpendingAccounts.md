@@ -1,6 +1,6 @@
 ---
 title: Spending Accounts
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Me And My Stuff
 slug: Me-And-My-Stuff-MeSpendingAccounts
@@ -67,77 +67,44 @@ Get a list of spending accounts visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "AllowAsPaymentMethod": false,
+	            "Balance": 0,
+	            "EndDate": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "Name": "",
+	            "RedemptionCode": "",
+	            "StartDate": "2018-03-27T16:00:00+00:00",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `GET` `v1/me/spendingaccounts/{spendingAccountID}`
 Get a single spending account
@@ -153,74 +120,27 @@ Get a single spending account
 | Description     | ID of the spending account.    |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |

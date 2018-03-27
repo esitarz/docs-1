@@ -82,72 +82,71 @@ executed.</p>
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
 are listed below.  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 ErrorCode
 
-</th>  
+</th>
 <th>
 
 Message
 
-</th>  
+</th>
 <th>
 
 Status Code
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 PriorAuthCaptureTransaction.OrderIDRequired
 
-</td>  
+</td>
 <td>
 
 OrderID is required to capture a prior authorization.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 PriorAuthCaptureTransaction.PaymentIDRequired
 
-</td>  
+</td>
 <td>
 
 CardDetails.PaymentID is required to capture a prior authorization.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 PriorAuthCaptureTransaction.BuyerIDRequired
 
-</td>  
+</td>
 <td>
 
 BuyerID is required to capture a prior authorization.
 
-</td>  
+</td>
 <td>
 
 400
 
 </td> </tr> </table>
-
 <h3>OrderCloud.io Error Response</h3>
 <p>If an incorrect <code>BuyerID</code> was provided:</p>
 <p>If an incorrect <code>CardDetails.PaymentID</code> was provided:</p>

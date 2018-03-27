@@ -71,7 +71,7 @@ account.</p>
 page. Here you can edit your profile information and change your password.</p>
 <p>Below your profile information you should see a <em>"My Seller Organizations"</em>
 tab with a new seller organization called <em>"Default trial company"</em>.</p>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/navigation.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/navigation.jpg"/></p>
 <p>Clicking on a seller in this list or creating a new organization will redirect
 you to what we call the <strong>OrderCloud.io Dashboard</strong>. Once you're in the
 dashboard you are now working within the context of a <em>single</em> seller
@@ -91,14 +91,14 @@ together on a single seller. Once a new contributor is added you can refine
 their access to your organization by adjusting their <strong>permissions</strong> &amp; <strong>data
 access</strong>.</p>
 <h4>Contributor Permissions</h4>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/permissions.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/permissions.jpg"/></p>
 <p>Each permission controls whether or not a given contributor can access
 specific dashboard functionality for your seller organization. For example,
 you may have one contributor that is responsible for creating webhooks and
 integrations and another who is responsible for setting up security profiles
 for your end users.</p>
 <h4>Contributor Data Access</h4>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/data_access.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/data_access.jpg"/></p>
 <p>Data Access gives you control over which roles (if any) a given contributor
 can request when using the OrderCloud API with this seller organization or any
 of it's buyer organizations. A contributor with <code>FullAccess</code> here will have
@@ -108,7 +108,7 @@ each developer to accomplish their project tasks to avoid unwanted or
 unexpected changes to your organization's data. OrderCloud roles are covered
 in-depth later in this guide.</p>
 <h2>__Dashboard Features</h2>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/features.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/features.jpg"/></p>
 <p>The left-hand menu is where you can access each of the dashboard features
 available to you for a given seller organization. Some features such as
 Message Senders or Integrations will be hidden from this menu if you do not
@@ -134,26 +134,26 @@ that application. Seller Organization owners and contributors with permission
 to administer applications can update application information in this tab and
 activate/deactivate the application. Within this tab you’ll find the
 following:  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 Client ID
 
-</th>  
+</th>
 <td>
 
 The unique identifier of an application. This field is read-only and used in
 all OAuth2.0 workflows. It is a general rule that one front-end application be
 associated with a single Client ID or "application".
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Client Secret
 
-</th>  
+</th>
 <td>
 
 This is an optional elevated level of security. It allows you to require an
@@ -161,27 +161,27 @@ additional keyphrase in all authentication requests. It is also used as part
 of the Client Credentials Grant Type workflow for anonymous authentication or
 back office systems.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Back Office User  
 (Seller Applications Only)
 
-</th>  
+</th>
 <td>
 
 This is for automated systems using a Client Credentials Grant Type. After
 following this OAuth2.0 workflow you will appear as this user.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Anonymous Template User  
 (Buyer Applications Only)
 
-</th>  
+</th>
 <td>
 
 This enables anonymous shopping and/or registration on buyer applications. Use
@@ -189,30 +189,29 @@ the Client Credentials Grant Type you can authenticate without a password and
 you will appear as a temporary user that has the same assignment based
 relationships and security as the anonymous template user.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Access Token Duration
 
-</th>  
+</th>
 <td>
 
 How long (in minutes) an access token will remain valid (max: 600m)
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Refresh Token Duration
 
-</th>  
+</th>
 <td>
 
 How long (in minutes) you are able to obtain a new Access Token (max: 43200m)
 
 </td> </tr> </table>
-
 <h3>Active Webhooks</h3>
 <p>The <em>"webhooks"</em> tab is visible to owners and contributors with permission to
 administer webhooks. This is where you will enable / disable webhooks for a
@@ -233,7 +232,7 @@ API endpoints and/or data each user can access within your organization
 (similar to your contributor's data access!). In general, an <strong>Admin</strong> role
 allows read and write access of a given resource while a <strong>Reader</strong> role
 allows only read access.</p>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/security.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/security.jpg"/></p>
 <p>It is <strong>strongly discouraged</strong> and considered a security risk to give your
 admin or buyer users the <code>FullAccess</code> role. While it may be convenient to use
 in the early stages of development - it is <strong>always</strong> better to give end users
@@ -257,35 +256,35 @@ fundamentally designed to provide maximum flexibility within the integrated
 solution.</p>
 <p>Owners and contributors with permission to administer webhooks can access this
 feature. OrderCloud requires standard webhook information:  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 Payload URL
 
-</th>  
+</th>
 <td>
 
 The URL OrderCloud will send data to.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Secret
 
-</th>  
+</th>
 <td>
 
 OrderCloud will encrypt this secret and pass it through the request headers.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <th>
 
 Trigger Events
 
-</th>  
+</th>
 <td>
 
 The OrderCloud API endpoints that will trigger the webhook event. Webhooks can
@@ -294,16 +293,15 @@ only be triggered by endpoints that write to the database (`POST`/`PUT`/
 will be passed along to the webhooks that use it.
 
 </td> </tr> </table>
-
 <p>Beyond this basic info, we've enhanced our webhooks with some other, more
 nuanced options:  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 Elevated Roles
 
-</th>  
+</th>
 <td>
 
 Normally, OrderCloud will pass along a token that has the same roles as the
@@ -313,7 +311,6 @@ for your webhook that the original request's access token doesn't have
 doesn't have permission to view).
 
 </td> </tr> </table>
-
 <h2>__Integrations</h2>
 <p>Organization owners and contributors with permission to administer
 integrations can access this feature. Choose a service from the <em>"Available
@@ -322,7 +319,7 @@ Services"</em> tab and click <em>"Add"</em>.</p>
 started/dashboard/available_services.jpg)</p>
 <p>You will be prompted to fill out the information required for OrderCloud to
 communicate with the new account.</p>
-<p><img alt="" src="../images/docs-guides/getting-started/dashboard/authorize_net.jpg"></p>
+<p><img alt="" src="../images/docs-guides/getting-started/dashboard/authorize_net.jpg"/></p>
 <p>Any applications that have the configured integration activated will have
 access to use it.</p>
 <h2>__Conclusion</h2>

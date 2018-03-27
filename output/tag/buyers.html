@@ -49,7 +49,7 @@
 			<header>
 				<h2><a href="../api-reference\Buyers-Addresses.html#Buyers-Addresses">Addresses</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -59,7 +59,7 @@
 					<p>Addresses are used for the purposes of billing and shipping an order. An
 address may belong to a list that can be shared among many users if
 appropriate.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h2>
 <p>Get a single address</p>
 <table>
@@ -105,7 +105,7 @@ appropriate.</p>
 			<header>
 				<h2><a href="../api-reference\Buyers-ApprovalRules.html#Buyers-ApprovalRules">Approval Rules</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -127,7 +127,7 @@ Properties are also available to control the triggers and timing …</p>
 			<header>
 				<h2><a href="../api-reference\Buyers-Buyers.html#Buyers-Buyers">Buyers</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -136,7 +136,7 @@ Properties are also available to control the triggers and timing …</p>
 			<div>
 					<p>Buyers, or customers, are the organizations that view the categories and
 products and place orders.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}</code></h2>
 <p>Get a single buyer</p>
 <table>
@@ -179,18 +179,14 @@ products and place orders.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;DefaultCatalogID&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description …</th></tr></thead></table>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "DefaultCatalogID": "",
+    "ID": "",
+    "Name …</code></pre>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-Buyers.html#Buyers-Buyers">  Continue reading
 </a>
@@ -201,7 +197,7 @@ products and place orders.</p>
 			<header>
 				<h2><a href="../api-reference\Buyers-CostCenters.html#Buyers-CostCenters">Cost Centers</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -212,7 +208,7 @@ products and place orders.</p>
 businesses call these by different names such as "allocation codes" or
 "charge back codes", but the basic purpose is the same - to allocate an
 expense back to someone or some department of an organization.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/costcenters/{costCenterID …</code></h2>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-CostCenters.html#Buyers-CostCenters">  Continue reading
@@ -224,7 +220,7 @@ expense back to someone or some department of an organization.</p>
 			<header>
 				<h2><a href="../api-reference\Buyers-CreditCards.html#Buyers-CreditCards">Credit Cards</a></h2>
 				<p>
-					  Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 						&#8226;   : 
 
@@ -233,9 +229,9 @@ expense back to someone or some department of an organization.</p>
 			<div>
 					<p>Credit cards are used as a payment method for an order. A user may have
 access to one or many credit cards for personal spend or group spending.
-Credit Cards may be saved and assigned to members of an organization for
+ Credit Cards may be saved and assigned to members of an organization for
 use during purchase.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID …</code></h2>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-CreditCards.html#Buyers-CreditCards">  Continue reading

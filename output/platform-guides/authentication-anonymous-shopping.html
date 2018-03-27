@@ -80,11 +80,9 @@ template-user.jpg)</p>
 <p>Once your application is set up with a template user, we're ready to
 authenticate anonymously. Using the Client Credentials grant-type and only a
 client_id, make a request to the OrderCloud.io OAuth server:</p>
-<div class="highlight"><pre><span></span>POST https://auth.ordercloud.io/oauth/token HTTP/1.1
+<pre><code>POST https://auth.ordercloud.io/oauth/token HTTP/1.1
 client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&amp;scope=ProductReader CategoryReader MeAddressAdmin MeCreditCardAdmin&amp;grant_type=client_credentials
-</pre></div>
-
-
+</code></pre>
 <p>You will receive a standard OAuth response that contains an access_token you
 can use for the duration of the anonymous shopping experience.</p>
 <p>Anonymous access_tokens have a fixed duration of <strong>1 week</strong> , access token
@@ -104,25 +102,23 @@ newly profiled user automatically.</p>
 <p>The request is relatively simple: provide the anonymous access_token for the
 <code>tempUserToken</code> and the request body should contain the profile information
 filled out by the anonymous user:</p>
-<div class="highlight"><pre><span></span>POST https://api.ordercloud.io/v1/me/register HTTP/1.1
+<pre><code>POST https://api.ordercloud.io/v1/me/register HTTP/1.1
 Authentication: Bearer put_access_token_here
 Content-Type: application/json
 
 
 {
-  &quot;ID&quot;: &quot;NewUserName&quot;,
-  &quot;Username&quot;: &quot;MyUserName&quot;,
-  &quot;FirstName&quot;: &quot;John&quot;,
-  &quot;LastName&quot;: &quot;Doe&quot;,
-  &quot;Email&quot;: &quot;user@email.com&quot;,
-  &quot;Phone&quot;: &quot;555-555-5555&quot;,
-  &quot;TermsAccepted&quot;: true,
-  &quot;Active&quot;: true,
-  &quot;xp&quot;: null
+  "ID": "NewUserName",
+  "Username": "MyUserName",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "Email": "user@email.com",
+  "Phone": "555-555-5555",
+  "TermsAccepted": true,
+  "Active": true,
+  "xp": null
 }
-</pre></div>
-
-
+</code></pre>
 <p>Similar to the OAuth 2.0 Response, you will receive an access_token after
 profiling the user. At this point, remove the anonymous access_token and
 continue forward with the profiled user's access_token.</p>

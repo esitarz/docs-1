@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Product-Catalogs-Products.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Product-Catalogs-Products">Products</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -61,12 +61,12 @@
     <p>A Product represents a physical, digital, or absract good that is
 offered for sale by a seller organization and is purchase-able by Buyer
 Users via an Order.
-Products can be a static SKU or a version of a static SKU, known as a
+ Products can be a static SKU or a version of a static SKU, known as a
 Variant. For example, a variant is often a size or color choice that
 drives a different product SKU.
-Products may also have inventory associated with them and various
+ Products may also have inventory associated with them and various
 inventory attributes like quantity available and re-order notifications.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/products/{productID}</code></h2>
 <p>Get a single product</p>
 <table>
@@ -109,425 +109,139 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "LastUpdated": "2018-03-27T16:00:00+00:00",
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "SpecCount": 0,
+    "VariantCount": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AutoForwardSupplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the auto forward supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -782,858 +496,411 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Active": false,
+            "AutoForwardSupplierID": "",
+            "DefaultPriceScheduleID": "",
+            "Description": "",
+            "ID": "",
+            "Inventory": {
+                "Enabled": false,
+                "LastUpdated": "2018-03-27T16:00:00+00:00",
+                "NotificationPoint": 0,
+                "OrderCanExceed": false,
+                "QuantityAvailable": 0,
+                "VariantLevelTracking": false
+            },
+            "Name": "",
+            "QuantityMultiplier": 0,
+            "ShipFromAddressID": "",
+            "ShipHeight": 0,
+            "ShipLength": 0,
+            "ShipWeight": 0,
+            "ShipWidth": 0,
+            "SpecCount": 0,
+            "VariantCount": 0,
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AutoForwardSupplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the auto forward supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/products</code></h2>
 <p>Create a new product</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;xp&#39;: {}, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;DefaultPriceScheduleID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the default price schedule.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the product. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;QuantityMultiplier&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity multiplier of the product. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ShipWeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship weight of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipHeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship height of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipWidth&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship width of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipLength&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship length of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Inventory&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Inventory of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AutoForwardSupplierID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the auto forward supplier.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the product. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity multiplier of the product. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "LastUpdated": "2018-03-27T16:00:00+00:00",
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "SpecCount": 0,
+    "VariantCount": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>AutoForwardSupplierID</td>
+<td>DefaultPriceScheduleID</td>
+<td>string</td>
+<td>ID of the default price schedule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the product.</td>
+<td>True</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>ID of the auto forward supplier.</td>
+<td>string</td>
+<td>Description of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>QuantityMultiplier</td>
+<td>integer</td>
+<td>Quantity multiplier of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ShipWeight</td>
+<td>float</td>
+<td>Ship weight of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipHeight</td>
+<td>float</td>
+<td>Ship height of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipWidth</td>
+<td>float</td>
+<td>Ship width of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipLength</td>
+<td>float</td>
+<td>Ship length of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpecCount</td>
+<td>integer</td>
+<td>Spec count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>VariantCount</td>
+<td>integer</td>
+<td>Variant count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Inventory</td>
+<td>object</td>
+<td>Inventory of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1680,433 +947,258 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;xp&#39;: {}, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;DefaultPriceScheduleID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the default price schedule.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the product. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;QuantityMultiplier&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity multiplier of the product. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ShipWeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship weight of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipHeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship height of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipWidth&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship width of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipLength&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship length of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Inventory&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Inventory of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AutoForwardSupplierID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the auto forward supplier.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the product. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity multiplier of the product. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "LastUpdated": "2018-03-27T16:00:00+00:00",
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "SpecCount": 0,
+    "VariantCount": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>AutoForwardSupplierID</td>
+<td>DefaultPriceScheduleID</td>
+<td>string</td>
+<td>ID of the default price schedule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the product.</td>
+<td>True</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>ID of the auto forward supplier.</td>
+<td>string</td>
+<td>Description of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>QuantityMultiplier</td>
+<td>integer</td>
+<td>Quantity multiplier of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ShipWeight</td>
+<td>float</td>
+<td>Ship weight of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipHeight</td>
+<td>float</td>
+<td>Ship height of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipWidth</td>
+<td>float</td>
+<td>Ship width of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipLength</td>
+<td>float</td>
+<td>Ship length of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpecCount</td>
+<td>integer</td>
+<td>Spec count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>VariantCount</td>
+<td>integer</td>
+<td>Variant count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Inventory</td>
+<td>object</td>
+<td>Inventory of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2153,9 +1245,9 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/products/{productID}</code></h2>
 <p>Partially update a product</p>
 <table>
@@ -2198,433 +1290,258 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;xp&#39;: {}, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;DefaultPriceScheduleID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the default price schedule.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the product. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;QuantityMultiplier&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity multiplier of the product. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ShipWeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship weight of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipHeight&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship height of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipWidth&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship width of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipLength&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Ship length of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Inventory&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Inventory of the product.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AutoForwardSupplierID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the auto forward supplier.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the product. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity multiplier of the product. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "LastUpdated": "2018-03-27T16:00:00+00:00",
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "SpecCount": 0,
+    "VariantCount": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>AutoForwardSupplierID</td>
+<td>DefaultPriceScheduleID</td>
+<td>string</td>
+<td>ID of the default price schedule.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ID</td>
 <td>string</td>
+<td>ID of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the product.</td>
+<td>True</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>ID of the auto forward supplier.</td>
+<td>string</td>
+<td>Description of the product.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>QuantityMultiplier</td>
+<td>integer</td>
+<td>Quantity multiplier of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ShipWeight</td>
+<td>float</td>
+<td>Ship weight of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipHeight</td>
+<td>float</td>
+<td>Ship height of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipWidth</td>
+<td>float</td>
+<td>Ship width of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipLength</td>
+<td>float</td>
+<td>Ship length of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>SpecCount</td>
+<td>integer</td>
+<td>Spec count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>VariantCount</td>
+<td>integer</td>
+<td>Variant count of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Inventory</td>
+<td>object</td>
+<td>Inventory of the product.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AutoForwardSupplierID</td>
+<td>string</td>
+<td>ID of the auto forward supplier.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2697,425 +1614,139 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;DefaultPriceScheduleID&#39;: &#39;&#39;, &#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;Active&#39;: False, &#39;SpecCount&#39;: 0, &#39;xp&#39;: {}, &#39;VariantCount&#39;: 0, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Inventory&#39;: {&#39;Enabled&#39;: False, &#39;NotificationPoint&#39;: 0, &#39;VariantLevelTracking&#39;: False, &#39;OrderCanExceed&#39;: False, &#39;QuantityAvailable&#39;: 0, &#39;LastUpdated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;}, &#39;AutoForwardSupplierID&#39;: &#39;&#39;}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "AutoForwardSupplierID": "",
+    "DefaultPriceScheduleID": "",
+    "Description": "",
+    "ID": "",
+    "Inventory": {
+        "Enabled": false,
+        "LastUpdated": "2018-03-27T16:00:00+00:00",
+        "NotificationPoint": 0,
+        "OrderCanExceed": false,
+        "QuantityAvailable": 0,
+        "VariantLevelTracking": false
+    },
+    "Name": "",
+    "QuantityMultiplier": 0,
+    "ShipFromAddressID": "",
+    "ShipHeight": 0,
+    "ShipLength": 0,
+    "ShipWeight": 0,
+    "ShipWidth": 0,
+    "SpecCount": 0,
+    "VariantCount": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>DefaultPriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the default price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityMultiplier</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity multiplier of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship weight of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipHeight</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship height of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipWidth</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship width of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipLength</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship length of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>SpecCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Spec count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>VariantCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Variant count of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Inventory</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Inventory of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AutoForwardSupplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the auto forward supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3318,139 +1949,69 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Active": false,
+            "Description": "",
+            "ID": "",
+            "Name": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3523,147 +2084,105 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the variant. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the variant. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the variant.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the variant.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Active": false,
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the variant. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the variant. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the variant.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Name</td>
+<td>string</td>
+<td>Name of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the variant.</td>
+<td>string</td>
+<td>Description of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the variant.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the variant.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3736,147 +2255,105 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the variant. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the variant. Max length 2000 characters. Searchable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Active&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Active of the variant.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the variant.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "Active": false,
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the variant. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the variant. Max length 2000 characters. Searchable: priority level 3.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the variant.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Name</td>
+<td>string</td>
+<td>Name of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the variant.</td>
+<td>string</td>
+<td>Description of the variant.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the variant.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the variant.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3949,139 +2426,55 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Active": false,
+    "Description": "",
+    "ID": "",
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the variant.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -4284,113 +2677,62 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Active&#39;: False, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "Active": false,
+            "ID": "",
+            "Name": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Active</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Active of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -4463,9 +2805,9 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/products/{productID}/suppliers/{supplierID}</code></h2>
 <p>Remove a supplier</p>
 <table>
@@ -4534,22 +2876,57 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>POST</code> <code>v1/products/assignments</code></h2>
 <p>Save a product assignment</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ProductID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;PriceScheduleID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ProductID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;PriceScheduleID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the price schedule.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "PriceScheduleID": "",
+    "ProductID": "",
+    "UserGroupID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PriceScheduleID</td>
+<td>string</td>
+<td>ID of the price schedule.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>GET</code> <code>v1/products/assignments</code></h2>
 <p>Get a list of product assignments</p>
 <table>
@@ -4774,113 +3151,62 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ProductID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;PriceScheduleID&#39;: &#39;&#39;}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "BuyerID": "",
+            "PriceScheduleID": "",
+            "ProductID": "",
+            "UserGroupID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>PriceScheduleID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the price schedule.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -5005,9 +3331,9 @@ inventory attributes like quantity available and re-order notifications.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
   </div>
   <div class="tag-cloud">
     <p>

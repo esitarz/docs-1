@@ -84,123 +84,121 @@ creation process is executed.</p>
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
 are listed below.  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 ErrorCode
 
-</th>  
+</th>
 <th>
 
 Message
 
-</th>  
+</th>
 <th>
 
 Status Code
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 CreateCreditCard.CardNumberRequired
 
-</td>  
+</td>
 <td>
 
 CardDetails.CardNumber is required to create a new credit card.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 CreateCreditCard.ExpirationDateRequired
 
-</td>  
+</td>
 <td>
 
 CardDetails.ExpirationDate is required to create a new credit card.
 
-</td>  
+</td>
 <td>
 
 400
 
 </td> </tr> </table>
-
 <h3>Authorize.Net Error Response</h3>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 resultCode
 
-</th>  
+</th>
 <th>
 
 message.code
 
-</th>  
+</th>
 <th>
 
 message.text
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00013
 
-</td>  
+</td>
 <td>
 
 Card Number is invalid.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00013
 
-</td>  
+</td>
 <td>
 
 Expiration Date is invalid.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00027
 
-</td>  
+</td>
 <td>
 
 The credit card has expired.
 
 </td> </tr> </table>
-
 <h3>OrderCloud.io Error Response</h3>
 <p>If an incorrect <code>BuyerID</code> was provided:</p>
   </div>

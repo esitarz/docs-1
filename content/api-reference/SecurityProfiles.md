@@ -1,6 +1,6 @@
 ---
 title: Security Profiles
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Authentication And Authorization
 slug: Authentication-And-Authorization-SecurityProfiles
@@ -21,37 +21,22 @@ Get a single security profile
 | Description     | ID of the security profile.    |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Roles': ['DevCenterImpersonate']}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the security profile.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Roles                          |
-| Type            | array                          |
-| Description     | Roles of the security profile. |
-| Required        | False                          |
+## Response Body
+	{
+	    "ID": "",
+	    "Name": "",
+	    "Roles": [
+	        "DevCenterImpersonate"
+	    ]
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the security profile. | False |
+| Name | string | Name of the security profile. | True |
+| Roles | array | Roles of the security profile. | False |
 
 ## `GET` `v1/securityprofiles`
 Get a list of security profiles
@@ -107,37 +92,36 @@ Get a list of security profiles
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Roles': ['DevCenterImpersonate']}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the security profile.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Roles                          |
-| Type            | array                          |
-| Description     | Roles of the security profile. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "ID": "",
+	            "Name": "",
+	            "Roles": [
+	                "DevCenterImpersonate"
+	            ]
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the security profile. | False |
+| Name | string | Name of the security profile. | True |
+| Roles | array | Roles of the security profile. | False |
 
 ## `GET` `v1/securityprofiles/assignments`
 Get a list of security profile assignments
@@ -217,53 +201,38 @@ Get a list of security profile assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'SecurityProfileID': '', 'BuyerID': '', 'SupplierID': '', 'UserID': '', 'UserGroupID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SecurityProfileID              |
-| Type            | string                         |
-| Description     | ID of the security profile.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SupplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "SecurityProfileID": "",
+	            "SupplierID": "",
+	            "UserGroupID": "",
+	            "UserID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SecurityProfileID | string | ID of the security profile. | True |
+| BuyerID | string | ID of the buyer. | False |
+| SupplierID | string | ID of the supplier. | False |
+| UserID | string | ID of the user. | False |
+| UserGroupID | string | ID of the user group. | False |
 
 ## `DELETE` `v1/securityprofiles/{securityProfileID}/assignments`
 Delete a security profile assignment
@@ -303,21 +272,28 @@ Delete a security profile assignment
 | Description     | ID of the user group.          |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `POST` `v1/securityprofiles/assignments`
 Save a security profile assignment
-## Requestbody
-```
-{'SecurityProfileID': '', 'BuyerID': '', 'SupplierID': '', 'UserID': '', 'UserGroupID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "SecurityProfileID": "",
+	    "SupplierID": "",
+	    "UserGroupID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SecurityProfileID | string | ID of the security profile. Required. Sortable: priority level 1. | True |
+| BuyerID | string | ID of the buyer. | False |
+| SupplierID | string | ID of the supplier. | False |
+| UserID | string | ID of the user. Sortable: priority level 2. | False |
+| UserGroupID | string | ID of the user group. | False |
 
-```
-[{'Name': 'SecurityProfileID', 'Type': 'string', 'Description': 'ID of the security profile. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer.', 'Required': False}, {'Name': 'SupplierID', 'Type': 'string', 'Description': 'ID of the supplier.', 'Required': False}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body

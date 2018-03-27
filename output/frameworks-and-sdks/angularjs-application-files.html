@@ -70,16 +70,14 @@ corresponds to the top-level route <code>/products</code>, though this is in no 
 enforced. <code>productManagement</code> may then have subdirectories for <code>inventory</code>,
 <code>pricing</code>, <code>product</code>, etc. The <code>product</code> submodule may then define a route of
 <code>/products/:id</code>, ad infinitum.</p>
-<div class="highlight"><pre><span></span>src/
+<pre><code>src/
   |- app/
   |  |- app.constants.json
   |  |- app.controller.js
   |  |- app.module.js
   |  |- app.run.js
   |  |- app.spec.js
-</pre></div>
-
-
+</code></pre>
 <h2><code>app.constants.json</code></h2>
 <p>This small, yet powerful file host a JSON object of key value pairs to be used
 throughout the application. From this object, the build process will generate
@@ -95,22 +93,20 @@ wiring. This controller also allows for numerous Angular services such as
 templates. <code>AppCtrl</code> is not declared in a state provider like the
 application's component controllers. Instead, it is declared directly in
 <code>index.html</code> with <code>ng-controller="AppCtrl as application"</code>.</p>
-<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;AppCtrl&#39;</span><span class="p">,</span> <span class="nx">AppController</span><span class="p">)</span>
-<span class="p">;</span>
-<span class="kd">function</span> <span class="nx">AppController</span><span class="p">(</span><span class="nx">$state</span><span class="p">,</span> <span class="nx">$ocMedia</span><span class="p">,</span> <span class="nx">LoginService</span><span class="p">,</span> <span class="nx">appname</span><span class="p">,</span> <span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocIsTouchDevice</span><span class="p">,</span> <span class="nx">ocRoles</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">appname</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">$state</span> <span class="o">=</span> <span class="nx">$state</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">$ocMedia</span> <span class="o">=</span> <span class="nx">$ocMedia</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">isTouchDevice</span> <span class="o">=</span> <span class="nx">ocIsTouchDevice</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">stateLoading</span> <span class="o">=</span> <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Watch</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">logout</span> <span class="o">=</span> <span class="nx">LoginService</span><span class="p">.</span><span class="nx">Logout</span><span class="p">;</span>
-    <span class="nx">vm</span><span class="p">.</span><span class="nx">userIsAuthorized</span> <span class="o">=</span> <span class="nx">ocRoles</span><span class="p">.</span><span class="nx">UserIsAuthorized</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-
+<pre><code>angular.module('orderCloud')
+    .controller('AppCtrl', AppController)
+;
+function AppController($state, $ocMedia, LoginService, appname, ocStateLoading, ocIsTouchDevice, ocRoles) {
+    var vm = this;
+    vm.name = appname;
+    vm.$state = $state;
+    vm.$ocMedia = $ocMedia;
+    vm.isTouchDevice = ocIsTouchDevice;
+    vm.stateLoading = ocStateLoading.Watch;
+    vm.logout = LoginService.Logout;
+    vm.userIsAuthorized = ocRoles.UserIsAuthorized;
+}
+</code></pre>
 <h2><code>app.module.js</code></h2>
 <p>This is our main app file. It kickstarts the whole process by requiring all
 the modules that we need.</p>
@@ -121,53 +117,49 @@ helpful third party modules are included as well, such as <code>toastr</code> an
 <code>angular-busy</code>.</p>
 <p>All components within the application are tied directly to the <code>orderCloud</code>
 module, so they do not need to be included here.</p>
-<div class="highlight"><pre><span></span>angular.module(&#39;orderCloud&#39;, [
-        &#39;ngSanitize&#39;,
-        &#39;ngAnimate&#39;,
-        &#39;ngMessages&#39;,
-        &#39;ngTouch&#39;,
-        &#39;ui.tree&#39;,
-        &#39;ui.router&#39;,
-        &#39;ui.select&#39;,
-        &#39;ui.bootstrap&#39;,
-        &#39;ui.select&#39;,
-        &#39;LocalForageModule&#39;,
-        &#39;toastr&#39;,
-        &#39;angular-busy&#39;,
-        &#39;jcs-autoValidate&#39;,
-        &#39;treeControl&#39;,
-        &#39;hl.sticky&#39;,
-        &#39;angularPayments&#39;,
-        &#39;ordercloud-angular-sdk&#39;
+<pre><code>angular.module('orderCloud', [
+        'ngSanitize',
+        'ngAnimate',
+        'ngMessages',
+        'ngTouch',
+        'ui.tree',
+        'ui.router',
+        'ui.select',
+        'ui.bootstrap',
+        'ui.select',
+        'LocalForageModule',
+        'toastr',
+        'angular-busy',
+        'jcs-autoValidate',
+        'treeControl',
+        'hl.sticky',
+        'angularPayments',
+        'ordercloud-angular-sdk'
     ]
 );
-</pre></div>
-
-
+</code></pre>
 <p>id="-app-run-js-"</p>
 <h2><code>app.run.js</code></h2>
 <p>Use the main applications run method to execute any code after services have
 been instantiated. By default, we initialize <code>ocStateLoading</code>, validation
 error messages (using <code>angular-auto-validate</code>), and validation styling.</p>
-<div class="highlight"><pre><span></span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;orderCloud&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">AppRun</span><span class="p">)</span>
-<span class="p">;</span>
+<pre><code>angular.module('orderCloud')
+    .run(AppRun)
+;
 
 
-<span class="kd">function</span> <span class="nx">AppRun</span><span class="p">(</span><span class="nx">ocStateLoading</span><span class="p">,</span> <span class="nx">ocRefreshToken</span><span class="p">,</span> <span class="nx">defaultErrorMessageResolver</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ocStateLoading</span><span class="p">.</span><span class="nx">Init</span><span class="p">();</span>
+function AppRun(ocStateLoading, ocRefreshToken, defaultErrorMessageResolver, ocErrorMessages, validator) {
+    ocStateLoading.Init();
 
 
-    <span class="nx">defaultErrorMessageResolver</span><span class="p">.</span><span class="nx">getErrorMessages</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorMessages</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">errorMessages</span><span class="p">,</span> <span class="nx">ocErrorMessages</span><span class="p">);</span>
-    <span class="p">});</span>
+    defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+        angular.extend(errorMessages, ocErrorMessages);
+    });
 
 
-    <span class="nx">validator</span><span class="p">.</span><span class="nx">setValidElementStyling</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-
+    validator.setValidElementStyling(false);
+}
+</code></pre>
 <h2><code>app.spec.js</code></h2>
 <p>One of the design philosophies of <code>angular-seller</code> is that tests should exist
 alongside the code they test and that the build system should be smart enough

@@ -11,15 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Requestbody Responsestatus …" />
+<meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Request Body …" />
 <meta name="keywords" content="Seller">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Incrementors"/>
-<meta property="og:description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Requestbody Responsestatus …"/>
+<meta property="og:description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Request Body …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Seller-Incrementors.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Seller-Incrementors">Incrementors</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -61,7 +61,7 @@
     <p>An incrementor is used to add an atomically incremented number to your
 object IDs. For example, "aprefix-{myIncrementorID}", will yield an
 order ID of aprefix-10010.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h2>
 <p>Get a single incrementor</p>
 <table>
@@ -104,113 +104,48 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LastNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Last number of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LeftPaddingCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Left padding count of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -387,234 +322,153 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "ID": "",
+            "LastNumber": 0,
+            "LeftPaddingCount": 0,
+            "Name": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LastNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Last number of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LeftPaddingCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Left padding count of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/incrementors</code></h2>
 <p>Create a new incrementor</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;LastNumber&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Last number of the incrementor. Required. Must be between 0 and 2147483647.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;LeftPaddingCount&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Left padding count of the incrementor. Required. Must be between 0 and 25.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LastNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Last number of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
-<td>LeftPaddingCount</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>LastNumber</td>
 <td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
 <td>Left padding count of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -661,121 +515,91 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;LastNumber&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Last number of the incrementor. Required. Must be between 0 and 2147483647.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;LeftPaddingCount&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Left padding count of the incrementor. Required. Must be between 0 and 25.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LastNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Last number of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
-<td>LeftPaddingCount</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>LastNumber</td>
 <td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
 <td>Left padding count of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -822,9 +646,9 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/incrementors/{incrementorID}</code></h2>
 <p>Partially update an incrementor</p>
 <table>
@@ -867,121 +691,91 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;LastNumber&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Last number of the incrementor. Required. Must be between 0 and 2147483647.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;LeftPaddingCount&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Left padding count of the incrementor. Required. Must be between 0 and 25.&#39;, &#39;Required&#39;: True}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;LastNumber&#39;: 0, &#39;LeftPaddingCount&#39;: 0}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LastNumber</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Last number of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
-<td>LeftPaddingCount</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>LastNumber</td>
 <td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>LeftPaddingCount</td>
+<td>integer</td>
 <td>Left padding count of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>

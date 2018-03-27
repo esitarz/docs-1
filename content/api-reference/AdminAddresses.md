@@ -1,6 +1,6 @@
 ---
 title: Admin Addresses
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Seller
 slug: Seller-AdminAddresses
@@ -21,125 +21,42 @@ Get a single admin address
 | Description     | ID of the address.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CompanyName                    |
-| Type            | string                         |
-| Description     | Company name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the address.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street1                        |
-| Type            | string                         |
-| Description     | Street 1 of the address.       |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street2                        |
-| Type            | string                         |
-| Description     | Street 2 of the address.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | City                           |
-| Type            | string                         |
-| Description     | City of the address.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | State                          |
-| Type            | string                         |
-| Description     | State of the address.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Zip                            |
-| Type            | string                         |
-| Description     | Zip of the address.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Country                        |
-| Type            | string                         |
-| Description     | Country of the address.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AddressName                    |
-| Type            | string                         |
-| Description     | Address name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the address. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. | False |
+| DateCreated | date | Date created of the address. | False |
+| CompanyName | string | Company name of the address. | False |
+| FirstName | string | First name of the address. | False |
+| LastName | string | Last name of the address. | False |
+| Street1 | string | Street 1 of the address. | True |
+| Street2 | string | Street 2 of the address. | False |
+| City | string | City of the address. | True |
+| State | string | State of the address. | True |
+| Zip | string | Zip of the address. | True |
+| Country | string | Country of the address. | True |
+| Phone | string | Phone of the address. | False |
+| AddressName | string | Address name of the address. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
 ## `GET` `v1/addresses`
 Get a list of admin addresses
@@ -195,255 +112,126 @@ Get a list of admin addresses
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CompanyName                    |
-| Type            | string                         |
-| Description     | Company name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the address.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street1                        |
-| Type            | string                         |
-| Description     | Street 1 of the address.       |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street2                        |
-| Type            | string                         |
-| Description     | Street 2 of the address.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | City                           |
-| Type            | string                         |
-| Description     | City of the address.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | State                          |
-| Type            | string                         |
-| Description     | State of the address.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Zip                            |
-| Type            | string                         |
-| Description     | Zip of the address.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Country                        |
-| Type            | string                         |
-| Description     | Country of the address.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AddressName                    |
-| Type            | string                         |
-| Description     | Address name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the address. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "AddressName": "",
+	            "City": "",
+	            "CompanyName": "",
+	            "Country": "",
+	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "FirstName": "",
+	            "ID": "",
+	            "LastName": "",
+	            "Phone": "",
+	            "State": "",
+	            "Street1": "",
+	            "Street2": "",
+	            "Zip": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. | False |
+| DateCreated | date | Date created of the address. | False |
+| CompanyName | string | Company name of the address. | False |
+| FirstName | string | First name of the address. | False |
+| LastName | string | Last name of the address. | False |
+| Street1 | string | Street 1 of the address. | True |
+| Street2 | string | Street 2 of the address. | False |
+| City | string | City of the address. | True |
+| State | string | State of the address. | True |
+| Zip | string | Zip of the address. | True |
+| Country | string | Country of the address. | True |
+| Phone | string | Phone of the address. | False |
+| AddressName | string | Address name of the address. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
 ## `POST` `v1/addresses`
 Create a new admin address
-## Requestbody
-```
-{'ID': '', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| CompanyName | string | Company name of the address. Max length 100 characters. Sortable. | False |
+| FirstName | string | First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable. | False |
+| LastName | string | Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable. | False |
+| Street1 | string | Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable. | True |
+| Street2 | string | Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable. | False |
+| City | string | City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable. | True |
+| State | string | State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable. | True |
+| Zip | string | Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable. | True |
+| Country | string | Country of the address. Required. Max length 2 characters. Sortable. | True |
+| Phone | string | Phone of the address. Max length 100 characters. Sortable. | False |
+| AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'CompanyName', 'Type': 'string', 'Description': 'Company name of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': False}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': False}, {'Name': 'Street1', 'Type': 'string', 'Description': 'Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'Street2', 'Type': 'string', 'Description': 'Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.', 'Required': False}, {'Name': 'City', 'Type': 'string', 'Description': 'City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.', 'Required': True}, {'Name': 'State', 'Type': 'string', 'Description': 'State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': True}, {'Name': 'Zip', 'Type': 'string', 'Description': 'Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': True}, {'Name': 'Country', 'Type': 'string', 'Description': 'Country of the address. Required. Max length 2 characters. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'AddressName', 'Type': 'string', 'Description': 'Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the address.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CompanyName                    |
-| Type            | string                         |
-| Description     | Company name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the address.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street1                        |
-| Type            | string                         |
-| Description     | Street 1 of the address.       |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street2                        |
-| Type            | string                         |
-| Description     | Street 2 of the address.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | City                           |
-| Type            | string                         |
-| Description     | City of the address.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | State                          |
-| Type            | string                         |
-| Description     | State of the address.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Zip                            |
-| Type            | string                         |
-| Description     | Zip of the address.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Country                        |
-| Type            | string                         |
-| Description     | Country of the address.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AddressName                    |
-| Type            | string                         |
-| Description     | Address name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the address. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. | False |
+| DateCreated | date | Date created of the address. | False |
+| CompanyName | string | Company name of the address. | False |
+| FirstName | string | First name of the address. | False |
+| LastName | string | Last name of the address. | False |
+| Street1 | string | Street 1 of the address. | True |
+| Street2 | string | Street 2 of the address. | False |
+| City | string | City of the address. | True |
+| State | string | State of the address. | True |
+| Zip | string | Zip of the address. | True |
+| Country | string | Country of the address. | True |
+| Phone | string | Phone of the address. | False |
+| AddressName | string | Address name of the address. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
 ## `PUT` `v1/addresses/{addressID}`
 Create or update an admin address
@@ -459,133 +247,73 @@ Create or update an admin address
 | Description     | ID of the address.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| CompanyName | string | Company name of the address. Max length 100 characters. Sortable. | False |
+| FirstName | string | First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable. | False |
+| LastName | string | Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable. | False |
+| Street1 | string | Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable. | True |
+| Street2 | string | Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable. | False |
+| City | string | City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable. | True |
+| State | string | State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable. | True |
+| Zip | string | Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable. | True |
+| Country | string | Country of the address. Required. Max length 2 characters. Sortable. | True |
+| Phone | string | Phone of the address. Max length 100 characters. Sortable. | False |
+| AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'CompanyName', 'Type': 'string', 'Description': 'Company name of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': False}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': False}, {'Name': 'Street1', 'Type': 'string', 'Description': 'Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'Street2', 'Type': 'string', 'Description': 'Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.', 'Required': False}, {'Name': 'City', 'Type': 'string', 'Description': 'City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.', 'Required': True}, {'Name': 'State', 'Type': 'string', 'Description': 'State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': True}, {'Name': 'Zip', 'Type': 'string', 'Description': 'Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': True}, {'Name': 'Country', 'Type': 'string', 'Description': 'Country of the address. Required. Max length 2 characters. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'AddressName', 'Type': 'string', 'Description': 'Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the address.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CompanyName                    |
-| Type            | string                         |
-| Description     | Company name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the address.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street1                        |
-| Type            | string                         |
-| Description     | Street 1 of the address.       |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street2                        |
-| Type            | string                         |
-| Description     | Street 2 of the address.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | City                           |
-| Type            | string                         |
-| Description     | City of the address.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | State                          |
-| Type            | string                         |
-| Description     | State of the address.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Zip                            |
-| Type            | string                         |
-| Description     | Zip of the address.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Country                        |
-| Type            | string                         |
-| Description     | Country of the address.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AddressName                    |
-| Type            | string                         |
-| Description     | Address name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the address. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. | False |
+| DateCreated | date | Date created of the address. | False |
+| CompanyName | string | Company name of the address. | False |
+| FirstName | string | First name of the address. | False |
+| LastName | string | Last name of the address. | False |
+| Street1 | string | Street 1 of the address. | True |
+| Street2 | string | Street 2 of the address. | False |
+| City | string | City of the address. | True |
+| State | string | State of the address. | True |
+| Zip | string | Zip of the address. | True |
+| Country | string | Country of the address. | True |
+| Phone | string | Phone of the address. | False |
+| AddressName | string | Address name of the address. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
 ## `DELETE` `v1/addresses/{addressID}`
 Delete an admin address
@@ -601,10 +329,10 @@ Delete an admin address
 | Description     | ID of the address.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/addresses/{addressID}`
 Partially update an admin address
 
@@ -619,130 +347,70 @@ Partially update an admin address
 | Description     | ID of the address.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| CompanyName | string | Company name of the address. Max length 100 characters. Sortable. | False |
+| FirstName | string | First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable. | False |
+| LastName | string | Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable. | False |
+| Street1 | string | Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable. | True |
+| Street2 | string | Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable. | False |
+| City | string | City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable. | True |
+| State | string | State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable. | True |
+| Zip | string | Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable. | True |
+| Country | string | Country of the address. Required. Max length 2 characters. Sortable. | True |
+| Phone | string | Phone of the address. Max length 100 characters. Sortable. | False |
+| AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'CompanyName', 'Type': 'string', 'Description': 'Company name of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'FirstName', 'Type': 'string', 'Description': 'First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': False}, {'Name': 'LastName', 'Type': 'string', 'Description': 'Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': False}, {'Name': 'Street1', 'Type': 'string', 'Description': 'Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.', 'Required': True}, {'Name': 'Street2', 'Type': 'string', 'Description': 'Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.', 'Required': False}, {'Name': 'City', 'Type': 'string', 'Description': 'City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.', 'Required': True}, {'Name': 'State', 'Type': 'string', 'Description': 'State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.', 'Required': True}, {'Name': 'Zip', 'Type': 'string', 'Description': 'Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.', 'Required': True}, {'Name': 'Country', 'Type': 'string', 'Description': 'Country of the address. Required. Max length 2 characters. Sortable.', 'Required': True}, {'Name': 'Phone', 'Type': 'string', 'Description': 'Phone of the address. Max length 100 characters. Sortable.', 'Required': False}, {'Name': 'AddressName', 'Type': 'string', 'Description': 'Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the address.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CompanyName': '', 'FirstName': '', 'LastName': '', 'Street1': '', 'Street2': '', 'City': '', 'State': '', 'Zip': '', 'Country': '', 'Phone': '', 'AddressName': '', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CompanyName                    |
-| Type            | string                         |
-| Description     | Company name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | FirstName                      |
-| Type            | string                         |
-| Description     | First name of the address.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | LastName                       |
-| Type            | string                         |
-| Description     | Last name of the address.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street1                        |
-| Type            | string                         |
-| Description     | Street 1 of the address.       |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Street2                        |
-| Type            | string                         |
-| Description     | Street 2 of the address.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | City                           |
-| Type            | string                         |
-| Description     | City of the address.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | State                          |
-| Type            | string                         |
-| Description     | State of the address.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Zip                            |
-| Type            | string                         |
-| Description     | Zip of the address.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Country                        |
-| Type            | string                         |
-| Description     | Country of the address.        |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Phone                          |
-| Type            | string                         |
-| Description     | Phone of the address.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AddressName                    |
-| Type            | string                         |
-| Description     | Address name of the address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the address. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AddressName": "",
+	    "City": "",
+	    "CompanyName": "",
+	    "Country": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "FirstName": "",
+	    "ID": "",
+	    "LastName": "",
+	    "Phone": "",
+	    "State": "",
+	    "Street1": "",
+	    "Street2": "",
+	    "Zip": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the address. | False |
+| DateCreated | date | Date created of the address. | False |
+| CompanyName | string | Company name of the address. | False |
+| FirstName | string | First name of the address. | False |
+| LastName | string | Last name of the address. | False |
+| Street1 | string | Street 1 of the address. | True |
+| Street2 | string | Street 2 of the address. | False |
+| City | string | City of the address. | True |
+| State | string | State of the address. | True |
+| Zip | string | Zip of the address. | True |
+| Country | string | Country of the address. | True |
+| Phone | string | Phone of the address. | False |
+| AddressName | string | Address name of the address. | False |
+| xp | object | Container for extended (custom) properties of the address. | False |

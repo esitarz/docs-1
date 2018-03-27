@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Buyers-SpendingAccounts.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Buyers-SpendingAccounts">Spending Accounts</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -61,15 +61,15 @@
     <p>Spending Accounts are funds given to users by a managing entity and are
 managed as part of a user's account. These funds are generally used as
 "corporate dollars", "rewards dollars", or "gift cards".
-They can be used to pay for all of or part of an order with parameters
+ They can be used to pay for all of or part of an order with parameters
 that control account expiration, balance available, balance renewal,
 user access and overdraft.
-Multiple spending accounts can be assigned to a member of an
+ Multiple spending accounts can be assigned to a member of an
 organization and applied to all transactions, but only one can be used
 as a payment method.
-When multiple Spending Accounts are used on a transaction each is
+ When multiple Spending Accounts are used on a transaction each is
 deducted individually.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}</code></h2>
 <p>Get a single spending account</p>
 <table>
@@ -138,217 +138,76 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Balance</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Balance of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowAsPaymentMethod</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow as payment method of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EndDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>End date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -551,217 +410,90 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "AllowAsPaymentMethod": false,
+            "Balance": 0,
+            "EndDate": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "Name": "",
+            "RedemptionCode": "",
+            "StartDate": "2018-03-27T16:00:00+00:00",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Balance</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Balance of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowAsPaymentMethod</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow as payment method of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EndDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>End date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -808,225 +540,147 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Balance&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Balance of the spending account. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;AllowAsPaymentMethod&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Allow as payment method of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionCode&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EndDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;End date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the spending account.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Balance</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Balance of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Balance of the spending account. Required.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowAsPaymentMethod</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow as payment method of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EndDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>End date of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the spending account.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
+<td>string</td>
+<td>Name of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Balance</td>
+<td>float</td>
+<td>Balance of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>AllowAsPaymentMethod</td>
+<td>boolean</td>
+<td>Allow as payment method of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCode</td>
+<td>string</td>
+<td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EndDate</td>
+<td>date</td>
+<td>End date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1099,225 +753,147 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Balance&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Balance of the spending account. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;AllowAsPaymentMethod&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Allow as payment method of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionCode&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EndDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;End date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the spending account.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Balance</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Balance of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Balance of the spending account. Required.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowAsPaymentMethod</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow as payment method of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EndDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>End date of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the spending account.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
+<td>string</td>
+<td>Name of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Balance</td>
+<td>float</td>
+<td>Balance of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>AllowAsPaymentMethod</td>
+<td>boolean</td>
+<td>Allow as payment method of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCode</td>
+<td>string</td>
+<td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EndDate</td>
+<td>date</td>
+<td>End date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1390,9 +966,9 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}</code></h2>
 <p>Partially update a spending account</p>
 <table>
@@ -1461,225 +1037,147 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Balance&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Balance of the spending account. Required.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;AllowAsPaymentMethod&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Allow as payment method of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionCode&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EndDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;End date of the spending account.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the spending account.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Balance&#39;: 0, &#39;AllowAsPaymentMethod&#39;: False, &#39;RedemptionCode&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EndDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Balance</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Balance of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Balance of the spending account. Required.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowAsPaymentMethod</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow as payment method of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EndDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>End date of the spending account.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the spending account.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "AllowAsPaymentMethod": false,
+    "Balance": 0,
+    "EndDate": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "Name": "",
+    "RedemptionCode": "",
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>Name</td>
+<td>string</td>
+<td>Name of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Balance</td>
+<td>float</td>
+<td>Balance of the spending account.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>AllowAsPaymentMethod</td>
+<td>boolean</td>
+<td>Allow as payment method of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCode</td>
+<td>string</td>
+<td>If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EndDate</td>
+<td>date</td>
+<td>End date of the spending account.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1882,113 +1380,62 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;SpendingAccountID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;AllowExceed&#39;: False}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "AllowExceed": false,
+            "SpendingAccountID": "",
+            "UserGroupID": "",
+            "UserID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>SpendingAccountID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the spending account.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>AllowExceed</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Allow exceed of the spending account assignment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2035,17 +1482,52 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;SpendingAccountID&#39;: &#39;&#39;, &#39;UserID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;, &#39;AllowExceed&#39;: False}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;SpendingAccountID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the spending account. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UserID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group. Sortable: priority level 3.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AllowExceed&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Allow exceed of the spending account assignment.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<pre><code>{
+    "AllowExceed": false,
+    "SpendingAccountID": "",
+    "UserGroupID": "",
+    "UserID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpendingAccountID</td>
+<td>string</td>
+<td>ID of the spending account. Required. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AllowExceed</td>
+<td>boolean</td>
+<td>Allow exceed of the spending account assignment.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}/assignments</code></h2>
 <p>Delete a spending account assignment</p>
 <table>
@@ -2166,9 +1648,9 @@ deducted individually.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
   </div>
   <div class="tag-cloud">
     <p>

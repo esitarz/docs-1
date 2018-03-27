@@ -1,6 +1,6 @@
 ---
 title: Categories
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Me And My Stuff
 slug: Me-And-My-Stuff-MeCategories
@@ -91,77 +91,44 @@ Get a list of categories visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Description': '', 'ListOrder': 1, 'Active': False, 'ParentID': '', 'ChildCount': 0, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the category.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the category.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the category.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | Order that the category appears within its parent or catalog (if root level). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | If false, buyers cannot see this Category or any Categories or Products under it. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ParentID                       |
-| Type            | string                         |
-| Description     | ID of the parent category.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ChildCount                     |
-| Type            | integer                        |
-| Description     | Number of categories that are *immediate* children of this category. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the category. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "ChildCount": 0,
+	            "Description": "",
+	            "ID": "",
+	            "ListOrder": 1,
+	            "Name": "",
+	            "ParentID": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the category. | False |
+| Name | string | Name of the category. | True |
+| Description | string | Description of the category. | False |
+| ListOrder | integer | Order that the category appears within its parent or catalog (if root level). | False |
+| Active | boolean | If false, buyers cannot see this Category or any Categories or Products under it. | False |
+| ParentID | string | ID of the parent category. | False |
+| ChildCount | integer | Number of categories that are *immediate* children of this category. | False |
+| xp | object | Container for extended (custom) properties of the category. | False |
 
 ## `GET` `v1/me/categories/{categoryID}`
 Get a single category
@@ -185,74 +152,27 @@ Get a single category
 | Description     | ID of the catalog.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'ListOrder': 1, 'Active': False, 'ParentID': '', 'ChildCount': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the category.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the category.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the category.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ListOrder                      |
-| Type            | integer                        |
-| Description     | Order that the category appears within its parent or catalog (if root level). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | If false, buyers cannot see this Category or any Categories or Products under it. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ParentID                       |
-| Type            | string                         |
-| Description     | ID of the parent category.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ChildCount                     |
-| Type            | integer                        |
-| Description     | Number of categories that are *immediate* children of this category. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the category. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "ChildCount": 0,
+	    "Description": "",
+	    "ID": "",
+	    "ListOrder": 1,
+	    "Name": "",
+	    "ParentID": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the category. | False |
+| Name | string | Name of the category. | True |
+| Description | string | Description of the category. | False |
+| ListOrder | integer | Order that the category appears within its parent or catalog (if root level). | False |
+| Active | boolean | If false, buyers cannot see this Category or any Categories or Products under it. | False |
+| ParentID | string | ID of the parent category. | False |
+| ChildCount | integer | Number of categories that are *immediate* children of this category. | False |
+| xp | object | Container for extended (custom) properties of the category. | False |

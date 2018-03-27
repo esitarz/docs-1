@@ -61,13 +61,11 @@
     <h2><code>./src/</code> Directory</h2>
 <p>This is where the majority of development work will occur. It contains all of
 the application code, tests, and assets.</p>
-<div class="highlight"><pre><span></span>src/
+<pre><code>src/
   |- app/
   |- assets/
   |- index.html
-</pre></div>
-
-
+</code></pre>
 <ul>
 <li><strong>src/app/</strong> - contains all of the application code and corresponding tests</li>
 <li><code>src/assets/</code> - static files like fonts and images</li>
@@ -87,13 +85,11 @@ under the name <code>application</code> in all of your template files.</p>
 <code>&lt;title&gt;</code> tag which takes advantage of <code>ui-router</code>'s <code>$state</code> service and the
 <code>appname</code> constant. You can see how we are referencing the <code>AppCtrl</code> via the
 controllerAs syntax below:</p>
-<div class="highlight"><pre><span></span>//dynamic application title
-<span class="nt">&lt;title</span> <span class="na">ng-bind=</span><span class="s">&quot;application.$state.current.data.pageTitle + (application.$state.current.data.pageTitle ? &#39; | &#39; : &#39;&#39;) + application.name()&quot;</span><span class="nt">&gt;</span>
+<pre><code>//dynamic application title
+&lt;title ng-bind="application.$state.current.data.pageTitle + (application.$state.current.data.pageTitle ? ' | ' : '') + application.name()"&gt;
     OrderCloud
-<span class="nt">&lt;/title&gt;</span>
-</pre></div>
-
-
+&lt;/title&gt;
+</code></pre>
 <p>After the <code>&lt;title&gt;</code>, there are some very important comments that are used to
 dynamically set the <code>base[href]</code> attribute and inject reference bower and
 application CSS styles during the gulp <code>build</code> and <code>compile</code>.</p>

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Orders-And-Fulfillment-Promotions.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Orders-And-Fulfillment-Promotions">Promotions</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -61,9 +61,9 @@
     <p>Promotions are used to reduce the cost of a line item or an order.
 Promotions can have redemption rules that can be applied for available
 dates, occurences and value.
-Promotions can be assigned to Products, Categories, Buyers, UserGroups
+ Promotions can be assigned to Products, Categories, Buyers, UserGroups
 and Users for redemption.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/promotions/{promotionID}</code></h2>
 <p>Get a single promotion</p>
 <table>
@@ -106,373 +106,118 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;RedemptionCount&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Code</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Must be unique. Entered by buyer when adding promo to order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimit</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimitPerUser</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit per user of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption count of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FinePrint</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Terms, conditions, and other legal jargon.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ExpirationDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Expiration date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EligibleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Eligible expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ValueExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Value expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CanCombine</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Can combine of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -649,754 +394,356 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;RedemptionCount&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "CanCombine": false,
+            "Code": "",
+            "Description": "",
+            "EligibleExpression": "",
+            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+            "FinePrint": "",
+            "ID": "",
+            "Name": "",
+            "RedemptionCount": 0,
+            "RedemptionLimit": 0,
+            "RedemptionLimitPerUser": 0,
+            "StartDate": "2018-03-27T16:00:00+00:00",
+            "ValueExpression": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Code</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Must be unique. Entered by buyer when adding promo to order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Name of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimit</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimitPerUser</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit per user of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionCount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption count of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Description of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FinePrint</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Terms, conditions, and other legal jargon.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Start date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ExpirationDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Expiration date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EligibleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Eligible expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ValueExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Value expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CanCombine</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Can combine of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/promotions</code></h2>
 <p>Create a new promotion</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Code&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Must be unique. Entered by buyer when adding promo to order.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimit&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimitPerUser&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit per user of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the promotion. Max length 2000 characters. Searchable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;FinePrint&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Terms, conditions, and other legal jargon.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ExpirationDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Expiration date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EligibleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ValueExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;CanCombine&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Can combine of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the promotion.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;RedemptionCount&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Code</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Must be unique. Entered by buyer when adding promo to order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimit</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimitPerUser</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit per user of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>RedemptionCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Redemption count of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FinePrint</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Terms, conditions, and other legal jargon.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Start date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Start date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ExpirationDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Expiration date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Expiration date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EligibleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Eligible expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ValueExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Value expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CanCombine</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Can combine of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the promotion.</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1443,381 +790,224 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Code&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Must be unique. Entered by buyer when adding promo to order.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimit&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimitPerUser&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit per user of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the promotion. Max length 2000 characters. Searchable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;FinePrint&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Terms, conditions, and other legal jargon.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ExpirationDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Expiration date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EligibleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ValueExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;CanCombine&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Can combine of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the promotion.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;RedemptionCount&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Code</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Must be unique. Entered by buyer when adding promo to order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimit</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimitPerUser</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit per user of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>RedemptionCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Redemption count of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FinePrint</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Terms, conditions, and other legal jargon.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Start date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Start date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ExpirationDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Expiration date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Expiration date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EligibleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Eligible expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ValueExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Value expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CanCombine</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Can combine of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the promotion.</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1864,9 +1054,9 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/promotions/{promotionID}</code></h2>
 <p>Partially update a promotion</p>
 <table>
@@ -1909,381 +1099,224 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Code&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Must be unique. Entered by buyer when adding promo to order.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Name&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimit&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;RedemptionLimitPerUser&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Redemption limit per user of the promotion.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Description&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Description of the promotion. Max length 2000 characters. Searchable: priority level 4.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;FinePrint&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Terms, conditions, and other legal jargon.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;StartDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Start date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ExpirationDate&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Expiration date of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;EligibleExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;ValueExpression&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;CanCombine&#39;, &#39;Type&#39;: &#39;boolean&#39;, &#39;Description&#39;: &#39;Can combine of the promotion. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the promotion.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;Code&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;RedemptionLimit&#39;: 0, &#39;RedemptionLimitPerUser&#39;: 0, &#39;RedemptionCount&#39;: 0, &#39;Description&#39;: &#39;&#39;, &#39;FinePrint&#39;: &#39;&#39;, &#39;StartDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ExpirationDate&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;EligibleExpression&#39;: &#39;&#39;, &#39;ValueExpression&#39;: &#39;&#39;, &#39;CanCombine&#39;: False, &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Code</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Must be unique. Entered by buyer when adding promo to order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>Name</td>
-<td>Name</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Name of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimit</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>RedemptionLimitPerUser</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Redemption limit per user of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>RedemptionCount</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Redemption count of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Description of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>FinePrint</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Terms, conditions, and other legal jargon.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>StartDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Start date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Start date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ExpirationDate</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Expiration date of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Expiration date of the promotion. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>EligibleExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Eligible expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ValueExpression</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Value expression of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CanCombine</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Can combine of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T16:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>object</td>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Container for extended (custom) properties of the promotion.</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2486,104 +1519,100 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;PromotionID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "BuyerID": "",
+            "PromotionID": "",
+            "UserGroupID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>PromotionID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>BuyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UserGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/promotions/assignments</code></h2>
 <p>Save a promotion assignment</p>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;PromotionID&#39;: &#39;&#39;, &#39;BuyerID&#39;: &#39;&#39;, &#39;UserGroupID&#39;: &#39;&#39;}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;PromotionID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the promotion. Required. Sortable: priority level 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;BuyerID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the buyer. Required. Sortable: priority level 2.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UserGroupID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the user group. Sortable: priority level 4.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<pre><code>{
+    "BuyerID": "",
+    "PromotionID": "",
+    "UserGroupID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PromotionID</td>
+<td>string</td>
+<td>ID of the promotion. Required. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer. Required. Sortable: priority level 2.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Sortable: priority level 4.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/promotions/{promotionID}/assignments</code></h2>
 <p>Delete a promotion assignment</p>
 <table>
@@ -2704,9 +1733,9 @@ and Users for redemption.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
   </div>
   <div class="tag-cloud">
     <p>

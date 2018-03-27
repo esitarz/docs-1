@@ -81,80 +81,74 @@ and gender of users. You can accomplish this by storing those data points in
 the user's XP. If you do not include JSON, XP will be set to null by default
 on all parent objects. To declare XP, simply replace the null value with the
 valid JSON.</p>
-<div class="highlight"><pre><span></span><span class="nt">POST</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
+<pre><code>POST https://api.ordercloud.io/buyers/newbuyer/users HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
 
-<span class="p">{</span>
- <span class="err">&quot;Username&quot;:</span> <span class="err">&quot;janesmith&quot;,</span>
- <span class="err">&quot;Password&quot;:</span> <span class="err">&quot;test12345&quot;,</span>
- <span class="err">&quot;FirstName&quot;:</span> <span class="err">&quot;Jane&quot;,</span>
- <span class="err">&quot;LastName&quot;:</span> <span class="err">&quot;Smith&quot;,</span>
- <span class="err">&quot;Email&quot;:</span> <span class="err">&quot;jsmith@company.com&quot;,</span>
- <span class="err">&quot;Phone&quot;:</span> <span class="err">&quot;555-555-5555&quot;,</span>
- <span class="err">&quot;TermsAccepted&quot;:</span> <span class="err">null,</span>
- <span class="err">&quot;Active&quot;:</span> <span class="err">true,</span>
- <span class="err">&quot;xp&quot;:</span> <span class="err">{</span>
-   <span class="err">&quot;Gender&quot;:</span> <span class="err">&quot;Female&quot;,</span>
-   <span class="err">&quot;Age&quot;</span> <span class="err">:</span> <span class="err">26</span>
- <span class="p">}</span><span class="o">,</span>
- <span class="s2">&quot;SecurityProfileID&quot;</span><span class="o">:</span> <span class="s2">&quot;FullAccess&quot;</span>
-<span class="err">}</span>
-</pre></div>
-
-
+{
+ "Username": "janesmith",
+ "Password": "test12345",
+ "FirstName": "Jane",
+ "LastName": "Smith",
+ "Email": "jsmith@company.com",
+ "Phone": "555-555-5555",
+ "TermsAccepted": null,
+ "Active": true,
+ "xp": {
+   "Gender": "Female",
+   "Age" : 26
+ },
+ "SecurityProfileID": "FullAccess"
+}
+</code></pre>
 <h2>Nesting XP</h2>
 <p>Let's say requirements have shifted and the solution now requires the ability
 to store information about the user's employment details, specifically job
 title and department. This can easily be accomplished using nested objects
 within XP.</p>
-<div class="highlight"><pre><span></span><span class="nt">PUT</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span><span class="o">/</span><span class="nt">userID</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
+<pre><code>PUT https://api.ordercloud.io/buyers/newbuyer/users/userID HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
 
-<span class="p">{</span>
- <span class="err">&quot;Username&quot;:</span> <span class="err">&quot;janesmith&quot;,</span>
- <span class="err">&quot;Password&quot;:</span> <span class="err">&quot;test12345&quot;,</span>
- <span class="err">&quot;FirstName&quot;:</span> <span class="err">&quot;Jane&quot;,</span>
- <span class="err">&quot;LastName&quot;:</span> <span class="err">&quot;Smith&quot;,</span>
- <span class="err">&quot;Email&quot;:</span> <span class="err">&quot;jsmith@company.com&quot;,</span>
- <span class="err">&quot;Phone&quot;:</span> <span class="err">&quot;555-555-5555&quot;,</span>
- <span class="err">&quot;TermsAccepted&quot;:</span> <span class="err">null,</span>
- <span class="err">&quot;Active&quot;:</span> <span class="err">true,</span>
- <span class="err">&quot;xp&quot;:</span> <span class="err">{</span>
-         <span class="err">&quot;Gender&quot;:</span> <span class="err">&quot;Female&quot;,</span>
-         <span class="err">&quot;Age&quot;</span> <span class="err">:</span> <span class="err">26,</span>
-         <span class="err">&quot;EmploymentDetails&quot;</span> <span class="err">:</span> <span class="err">{</span>
-           <span class="err">&quot;Position&quot;:</span> <span class="err">&quot;Developer&quot;,</span>
-           <span class="err">&quot;Department&quot;:</span> <span class="err">&quot;Tech&quot;</span>
-   <span class="p">}</span>
+{
+ "Username": "janesmith",
+ "Password": "test12345",
+ "FirstName": "Jane",
+ "LastName": "Smith",
+ "Email": "jsmith@company.com",
+ "Phone": "555-555-5555",
+ "TermsAccepted": null,
+ "Active": true,
+ "xp": {
+         "Gender": "Female",
+         "Age" : 26,
+         "EmploymentDetails" : {
+           "Position": "Developer",
+           "Department": "Tech"
+   }
 
- <span class="err">}</span><span class="o">,</span>
- <span class="s2">&quot;SecurityProfileID&quot;</span><span class="o">:</span> <span class="s2">&quot;FullAccess&quot;</span>
-<span class="err">}</span>
-</pre></div>
-
-
+ },
+ "SecurityProfileID": "FullAccess"
+}
+</code></pre>
 <h2>Modifying XP</h2>
 <p>Now let's say Jane Smith receives a promotion. To update her job title we can
 use <code>PATCH</code> to modify the relevant data. Instead of sending the entire user
 object, we can send the XP key and the object that we want to update, the
 other XP (gender and age) will persist.</p>
-<div class="highlight"><pre><span></span><span class="nt">PUT</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span><span class="o">/</span><span class="nt">userID</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
+<pre><code>PUT https://api.ordercloud.io/buyers/newbuyer/users/userID HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
 
-<span class="p">{</span>
-   <span class="err">&quot;xp&quot;:</span> <span class="err">{</span>
-   <span class="err">&quot;EmploymentDetails&quot;</span> <span class="err">:</span> <span class="err">{</span>
-       <span class="err">&quot;Position&quot;:</span> <span class="err">&quot;Senior</span> <span class="err">Developer&quot;,</span>
-       <span class="err">&quot;Department&quot;:</span> <span class="err">&quot;Tech&quot;</span>
-        <span class="p">}</span>
-   <span class="err">}</span>
-<span class="err">}</span>
-</pre></div>
-
-
+{
+   "xp": {
+   "EmploymentDetails" : {
+       "Position": "Senior Developer",
+       "Department": "Tech"
+        }
+   }
+}
+</code></pre>
 <h2>Deleting XP</h2>
 <p>The only way to remove a specific xp from your resource is to use the Update
 (PUT) method. First GET the resource, then copy the response body returned,
@@ -162,52 +156,48 @@ paste it into your PUT request and omit the xp key/value you wish to remove.
 Alternatively, if you don’t need it actually deleted, you are able to set any
 xp’s value to null. In the example below, we're removing the "Age" xp from
 this user.</p>
-<div class="highlight"><pre><span></span><span class="nt">GET</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span><span class="o">/</span><span class="nt">userID</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
-                <span class="p">{</span>
- <span class="err">&quot;Username&quot;:</span> <span class="err">&quot;janesmith&quot;,</span>
- <span class="err">&quot;Password&quot;:</span> <span class="err">&quot;test12345&quot;,</span>
- <span class="err">&quot;FirstName&quot;:</span> <span class="err">&quot;Jane&quot;,</span>
- <span class="err">&quot;LastName&quot;:</span> <span class="err">&quot;Smith&quot;,</span>
- <span class="err">&quot;Email&quot;:</span> <span class="err">&quot;jsmith@company.com&quot;,</span>
- <span class="err">&quot;Phone&quot;:</span> <span class="err">&quot;555-555-5555&quot;,</span>
- <span class="err">&quot;TermsAccepted&quot;:</span> <span class="err">null,</span>
- <span class="err">&quot;Active&quot;:</span> <span class="err">true,</span>
- <span class="err">&quot;xp&quot;:</span> <span class="err">{</span>
-         <span class="err">&quot;Gender&quot;:</span> <span class="err">&quot;Female&quot;,</span>
-         <span class="err">&quot;Age&quot;</span> <span class="err">:</span> <span class="err">26,</span>
-         <span class="err">&quot;EmploymentDetails&quot;</span> <span class="err">:</span> <span class="err">{</span>
-           <span class="err">&quot;Position&quot;:</span> <span class="err">&quot;Developer&quot;,</span>
-           <span class="err">&quot;Department&quot;:</span> <span class="err">&quot;Tech&quot;</span>
-   <span class="p">}</span>
-</pre></div>
-
-
+<pre><code>GET https://api.ordercloud.io/buyers/newbuyer/users/userID HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
+                {
+ "Username": "janesmith",
+ "Password": "test12345",
+ "FirstName": "Jane",
+ "LastName": "Smith",
+ "Email": "jsmith@company.com",
+ "Phone": "555-555-5555",
+ "TermsAccepted": null,
+ "Active": true,
+ "xp": {
+         "Gender": "Female",
+         "Age" : 26,
+         "EmploymentDetails" : {
+           "Position": "Developer",
+           "Department": "Tech"
+   }
+</code></pre>
 <p>Then, use the response body from the request above (without the xp you wish to
 remove):</p>
-<div class="highlight"><pre><span></span><span class="nt">UPDATE</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span><span class="o">/</span><span class="nt">userID</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
+<pre><code>UPDATE https://api.ordercloud.io/buyers/newbuyer/users/userID HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
 
-<span class="p">{</span>
- <span class="err">&quot;Username&quot;:</span> <span class="err">&quot;janesmith&quot;,</span>
- <span class="err">&quot;Password&quot;:</span> <span class="err">&quot;test12345&quot;,</span>
- <span class="err">&quot;FirstName&quot;:</span> <span class="err">&quot;Jane&quot;,</span>
- <span class="err">&quot;LastName&quot;:</span> <span class="err">&quot;Smith&quot;,</span>
- <span class="err">&quot;Email&quot;:</span> <span class="err">&quot;jsmith@company.com&quot;,</span>
- <span class="err">&quot;Phone&quot;:</span> <span class="err">&quot;555-555-5555&quot;,</span>
- <span class="err">&quot;TermsAccepted&quot;:</span> <span class="err">null,</span>
- <span class="err">&quot;Active&quot;:</span> <span class="err">true,</span>
- <span class="err">&quot;xp&quot;:</span> <span class="err">{</span>
-         <span class="err">&quot;Gender&quot;:</span> <span class="err">&quot;Female&quot;,</span>
-         <span class="err">&quot;EmploymentDetails&quot;</span> <span class="err">:</span> <span class="err">{</span>
-           <span class="err">&quot;Position&quot;:</span> <span class="err">&quot;Developer&quot;,</span>
-           <span class="err">&quot;Department&quot;:</span> <span class="err">&quot;Tech&quot;</span>
-   <span class="p">}</span>
-</pre></div>
-
-
+{
+ "Username": "janesmith",
+ "Password": "test12345",
+ "FirstName": "Jane",
+ "LastName": "Smith",
+ "Email": "jsmith@company.com",
+ "Phone": "555-555-5555",
+ "TermsAccepted": null,
+ "Active": true,
+ "xp": {
+         "Gender": "Female",
+         "EmploymentDetails" : {
+           "Position": "Developer",
+           "Department": "Tech"
+   }
+</code></pre>
 <h2>Searching on XP</h2>
 <p>Not only can XP be used to extend the functionality of your application, but
 you can use filters to search for indexed xp values on any given resource.
@@ -217,12 +207,10 @@ apply to regular values on OrderCloud.io objects also apply to XP values. This
 means you can search with all of the standard operators available
 (<code>=</code>,<code>&lt;</code>,<code>&gt;</code>). Below is an example of filtering for a deeply nested value in
 XP:</p>
-<div class="highlight"><pre><span></span><span class="nt">GET</span> <span class="nt">https</span><span class="o">://</span><span class="nt">api</span><span class="p">.</span><span class="nc">ordercloud</span><span class="p">.</span><span class="nc">io</span><span class="o">/</span><span class="nt">buyers</span><span class="o">/</span><span class="nt">newbuyer</span><span class="o">/</span><span class="nt">users</span><span class="o">?</span><span class="nt">xp</span><span class="p">.</span><span class="nc">EmploymentDetails</span><span class="p">.</span><span class="nc">Department</span><span class="o">=</span><span class="nt">Tech</span> <span class="nt">HTTP</span><span class="o">/</span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span>
-<span class="nt">Authentication</span><span class="o">:</span> <span class="nt">Bearer</span> <span class="nt">put_access_token_here</span>
-<span class="nt">Content-Type</span><span class="o">:</span> <span class="nt">application</span><span class="o">/</span><span class="nt">json</span><span class="o">;</span> <span class="nt">charset</span><span class="o">=</span><span class="nt">UTF-8</span>
-</pre></div>
-
-
+<pre><code>GET https://api.ordercloud.io/buyers/newbuyer/users?xp.EmploymentDetails.Department=Tech HTTP/1.1
+Authentication: Bearer put_access_token_here
+Content-Type: application/json; charset=UTF-8
+</code></pre>
 <p>Note how the dot (".") notation is used in the query string to filter on the
 specified deeply nested XP field. Check out the searching, filtering and
 sorting guides to learn more about querying.</p>

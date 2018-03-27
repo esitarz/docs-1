@@ -1,6 +1,6 @@
 ---
 title: Products
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Product Catalogs
 slug: Product-Catalogs-Products
@@ -8,10 +8,10 @@ slug: Product-Catalogs-Products
 A Product represents a physical, digital, or absract good that is
 offered for sale by a seller organization and is purchase-able by Buyer
 Users via an Order.
-Products can be a static SKU or a version of a static SKU, known as a
+ Products can be a static SKU or a version of a static SKU, known as a
 Variant. For example, a variant is often a size or color choice that
 drives a different product SKU.
-Products may also have inventory associated with them and various
+ Products may also have inventory associated with them and various
 inventory attributes like quantity available and re-order notifications.
 
 ---
@@ -30,141 +30,53 @@ Get a single product
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "SpecCount": 0,
+	    "VariantCount": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `GET` `v1/products`
 Get a list of products
@@ -244,287 +156,156 @@ Get a list of products
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "AutoForwardSupplierID": "",
+	            "DefaultPriceScheduleID": "",
+	            "Description": "",
+	            "ID": "",
+	            "Inventory": {
+	                "Enabled": false,
+	                "LastUpdated": "2018-03-27T16:00:00+00:00",
+	                "NotificationPoint": 0,
+	                "OrderCanExceed": false,
+	                "QuantityAvailable": 0,
+	                "VariantLevelTracking": false
+	            },
+	            "Name": "",
+	            "QuantityMultiplier": 0,
+	            "ShipFromAddressID": "",
+	            "ShipHeight": 0,
+	            "ShipLength": 0,
+	            "ShipWeight": 0,
+	            "ShipWidth": 0,
+	            "SpecCount": 0,
+	            "VariantCount": 0,
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `POST` `v1/products`
 Create a new product
-## Requestbody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'xp': {}, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0}, 'AutoForwardSupplierID': ''}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the product. Max length 2000 characters. Searchable: priority level 3. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. Required. Must be at least 1. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-```
-[{'Name': 'DefaultPriceScheduleID', 'Type': 'string', 'Description': 'ID of the default price schedule.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the product. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'QuantityMultiplier', 'Type': 'integer', 'Description': 'Quantity multiplier of the product. Required. Must be at least 1.', 'Required': True}, {'Name': 'ShipWeight', 'Type': 'float', 'Description': 'Ship weight of the product.', 'Required': False}, {'Name': 'ShipHeight', 'Type': 'float', 'Description': 'Ship height of the product.', 'Required': False}, {'Name': 'ShipWidth', 'Type': 'float', 'Description': 'Ship width of the product.', 'Required': False}, {'Name': 'ShipLength', 'Type': 'float', 'Description': 'Ship length of the product.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the product.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the product.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Inventory', 'Type': 'object', 'Description': 'Inventory of the product.', 'Required': False}, {'Name': 'AutoForwardSupplierID', 'Type': 'string', 'Description': 'ID of the auto forward supplier.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "SpecCount": 0,
+	    "VariantCount": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `PUT` `v1/products/{productID}`
 Create or update a product
@@ -540,149 +321,92 @@ Create or update a product
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'xp': {}, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0}, 'AutoForwardSupplierID': ''}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the product. Max length 2000 characters. Searchable: priority level 3. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. Required. Must be at least 1. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-```
-[{'Name': 'DefaultPriceScheduleID', 'Type': 'string', 'Description': 'ID of the default price schedule.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the product. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'QuantityMultiplier', 'Type': 'integer', 'Description': 'Quantity multiplier of the product. Required. Must be at least 1.', 'Required': True}, {'Name': 'ShipWeight', 'Type': 'float', 'Description': 'Ship weight of the product.', 'Required': False}, {'Name': 'ShipHeight', 'Type': 'float', 'Description': 'Ship height of the product.', 'Required': False}, {'Name': 'ShipWidth', 'Type': 'float', 'Description': 'Ship width of the product.', 'Required': False}, {'Name': 'ShipLength', 'Type': 'float', 'Description': 'Ship length of the product.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the product.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the product.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Inventory', 'Type': 'object', 'Description': 'Inventory of the product.', 'Required': False}, {'Name': 'AutoForwardSupplierID', 'Type': 'string', 'Description': 'ID of the auto forward supplier.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "SpecCount": 0,
+	    "VariantCount": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `DELETE` `v1/products/{productID}`
 Delete a product
@@ -698,10 +422,10 @@ Delete a product
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/products/{productID}`
 Partially update a product
 
@@ -716,149 +440,92 @@ Partially update a product
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'xp': {}, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0}, 'AutoForwardSupplierID': ''}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the product. Max length 2000 characters. Searchable: priority level 3. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. Required. Must be at least 1. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-```
-[{'Name': 'DefaultPriceScheduleID', 'Type': 'string', 'Description': 'ID of the default price schedule.', 'Required': False}, {'Name': 'ID', 'Type': 'string', 'Description': 'ID of the product. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the product. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the product. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'QuantityMultiplier', 'Type': 'integer', 'Description': 'Quantity multiplier of the product. Required. Must be at least 1.', 'Required': True}, {'Name': 'ShipWeight', 'Type': 'float', 'Description': 'Ship weight of the product.', 'Required': False}, {'Name': 'ShipHeight', 'Type': 'float', 'Description': 'Ship height of the product.', 'Required': False}, {'Name': 'ShipWidth', 'Type': 'float', 'Description': 'Ship width of the product.', 'Required': False}, {'Name': 'ShipLength', 'Type': 'float', 'Description': 'Ship length of the product.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the product.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the product.', 'Required': False}, {'Name': 'ShipFromAddressID', 'Type': 'string', 'Description': 'ID of the ship from address.', 'Required': False}, {'Name': 'Inventory', 'Type': 'object', 'Description': 'Inventory of the product.', 'Required': False}, {'Name': 'AutoForwardSupplierID', 'Type': 'string', 'Description': 'ID of the auto forward supplier.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "SpecCount": 0,
+	    "VariantCount": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `POST` `v1/products/{productID}/variants/generate`
 Generate a variants
@@ -882,141 +549,53 @@ Generate a variants
 | Description     | Overwrite existing of the product. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `201`
+## Request Body
+**Response Status**: `201`
 
-## Responsebody
-```
-{'DefaultPriceScheduleID': '', 'ID': '', 'Name': '', 'Description': '', 'QuantityMultiplier': 0, 'ShipWeight': 0, 'ShipHeight': 0, 'ShipWidth': 0, 'ShipLength': 0, 'Active': False, 'SpecCount': 0, 'xp': {}, 'VariantCount': 0, 'ShipFromAddressID': '', 'Inventory': {'Enabled': False, 'NotificationPoint': 0, 'VariantLevelTracking': False, 'OrderCanExceed': False, 'QuantityAvailable': 0, 'LastUpdated': '2018-03-21T23:00:00+00:00'}, 'AutoForwardSupplierID': ''}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultPriceScheduleID         |
-| Type            | string                         |
-| Description     | ID of the default price schedule. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the product.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | QuantityMultiplier             |
-| Type            | integer                        |
-| Description     | Quantity multiplier of the product. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWeight                     |
-| Type            | float                          |
-| Description     | Ship weight of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipHeight                     |
-| Type            | float                          |
-| Description     | Ship height of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipWidth                      |
-| Type            | float                          |
-| Description     | Ship width of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipLength                     |
-| Type            | float                          |
-| Description     | Ship length of the product.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the product.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpecCount                      |
-| Type            | integer                        |
-| Description     | Spec count of the product.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the product. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | VariantCount                   |
-| Type            | integer                        |
-| Description     | Variant count of the product.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ShipFromAddressID              |
-| Type            | string                         |
-| Description     | ID of the ship from address.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Inventory                      |
-| Type            | object                         |
-| Description     | Inventory of the product.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AutoForwardSupplierID          |
-| Type            | string                         |
-| Description     | ID of the auto forward supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "AutoForwardSupplierID": "",
+	    "DefaultPriceScheduleID": "",
+	    "Description": "",
+	    "ID": "",
+	    "Inventory": {
+	        "Enabled": false,
+	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "NotificationPoint": 0,
+	        "OrderCanExceed": false,
+	        "QuantityAvailable": 0,
+	        "VariantLevelTracking": false
+	    },
+	    "Name": "",
+	    "QuantityMultiplier": 0,
+	    "ShipFromAddressID": "",
+	    "ShipHeight": 0,
+	    "ShipLength": 0,
+	    "ShipWeight": 0,
+	    "ShipWidth": 0,
+	    "SpecCount": 0,
+	    "VariantCount": 0,
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| DefaultPriceScheduleID | string | ID of the default price schedule. | False |
+| ID | string | ID of the product. | False |
+| Name | string | Name of the product. | True |
+| Description | string | Description of the product. | False |
+| QuantityMultiplier | integer | Quantity multiplier of the product. | True |
+| ShipWeight | float | Ship weight of the product. | False |
+| ShipHeight | float | Ship height of the product. | False |
+| ShipWidth | float | Ship width of the product. | False |
+| ShipLength | float | Ship length of the product. | False |
+| Active | boolean | Active of the product. | False |
+| SpecCount | integer | Spec count of the product. | False |
+| xp | object | Container for extended (custom) properties of the product. | False |
+| VariantCount | integer | Variant count of the product. | False |
+| ShipFromAddressID | string | ID of the ship from address. | False |
+| Inventory | object | Inventory of the product. | False |
+| AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## `GET` `v1/products/{productID}/variants`
 Get a list of product variants
@@ -1080,53 +659,38 @@ Get a list of product variants
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the variant.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the variant.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the variant.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the variant. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "Description": "",
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. | False |
+| Name | string | Name of the variant. | False |
+| Description | string | Description of the variant. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## `PUT` `v1/products/{productID}/variants/{variantID}`
 Create or update a product variant
@@ -1150,61 +714,39 @@ Create or update a product variant
 | Description     | ID of the variant.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
+| Name | string | Name of the variant. Searchable: priority level 2. Sortable: priority level 2. | False |
+| Description | string | Description of the variant. Max length 2000 characters. Searchable: priority level 3. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the variant. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the variant. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the variant.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the variant.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the variant.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the variant.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the variant.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the variant. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. | False |
+| Name | string | Name of the variant. | False |
+| Description | string | Description of the variant. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## `PATCH` `v1/products/{productID}/variants/{variantID}`
 Partially update a product variant
@@ -1228,61 +770,39 @@ Partially update a product variant
 | Description     | ID of the variant.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
+| Name | string | Name of the variant. Searchable: priority level 2. Sortable: priority level 2. | False |
+| Description | string | Description of the variant. Max length 2000 characters. Searchable: priority level 3. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the variant. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the variant. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the variant.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the variant.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the variant.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the variant.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the variant.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the variant. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. | False |
+| Name | string | Name of the variant. | False |
+| Description | string | Description of the variant. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## `GET` `v1/products/{productID}/variants/{variantID}`
 Get a single product variant
@@ -1306,53 +826,24 @@ Get a single product variant
 | Description     | ID of the variant.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the variant.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the variant.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the variant.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the variant. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the variant. | False |
+| Name | string | Name of the variant. | False |
+| Description | string | Description of the variant. | False |
+| Active | boolean | Active of the variant. | False |
+| xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## `GET` `v1/products/{productID}/suppliers`
 Get a list of product suppliers
@@ -1416,45 +907,36 @@ Get a list of product suppliers
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Active': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## `PUT` `v1/products/{productID}/suppliers/{supplierID}`
 Save a product supplier
@@ -1478,10 +960,10 @@ Save a product supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `DELETE` `v1/products/{productID}/suppliers/{supplierID}`
 Remove a supplier
 
@@ -1504,24 +986,29 @@ Remove a supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `POST` `v1/products/assignments`
 Save a product assignment
-## Requestbody
-```
-{'ProductID': '', 'BuyerID': '', 'UserGroupID': '', 'PriceScheduleID': ''}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "PriceScheduleID": "",
+	    "ProductID": "",
+	    "UserGroupID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ProductID | string | ID of the product. Required. | True |
+| BuyerID | string | ID of the buyer. Required. | True |
+| UserGroupID | string | ID of the user group. | False |
+| PriceScheduleID | string | ID of the price schedule. | False |
 
-```
-[{'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required.', 'Required': True}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group.', 'Required': False}, {'Name': 'PriceScheduleID', 'Type': 'string', 'Description': 'ID of the price schedule.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `GET` `v1/products/assignments`
 Get a list of product assignments
 
@@ -1592,45 +1079,36 @@ Get a list of product assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ProductID': '', 'BuyerID': '', 'UserGroupID': '', 'PriceScheduleID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ProductID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PriceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "PriceScheduleID": "",
+	            "ProductID": "",
+	            "UserGroupID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ProductID | string | ID of the product. | True |
+| BuyerID | string | ID of the buyer. | True |
+| UserGroupID | string | ID of the user group. | False |
+| PriceScheduleID | string | ID of the price schedule. | False |
 
 ## `DELETE` `v1/products/{productID}/assignments/{buyerID}`
 Delete a product assignment
@@ -1670,7 +1148,7 @@ Delete a product assignment
 | Description     | ID of the user group.          |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

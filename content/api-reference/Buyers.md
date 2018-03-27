@@ -1,6 +1,6 @@
 ---
 title: Buyers
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Buyers
 slug: Buyers-Buyers
@@ -24,53 +24,24 @@ Get a single buyer
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the buyer.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultCatalogID               |
-| Type            | string                         |
-| Description     | ID of the default catalog.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the buyer.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the buyer. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. | False |
+| Name | string | Name of the buyer. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## `GET` `v1/buyers`
 Get a list of buyers
@@ -126,111 +97,74 @@ Get a list of buyers
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the buyer.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultCatalogID               |
-| Type            | string                         |
-| Description     | ID of the default catalog.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the buyer.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the buyer. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "DefaultCatalogID": "",
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. | False |
+| Name | string | Name of the buyer. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## `POST` `v1/buyers`
 Create a new buyer
-## Requestbody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the buyer.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultCatalogID               |
-| Type            | string                         |
-| Description     | ID of the default catalog.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the buyer.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the buyer. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. | False |
+| Name | string | Name of the buyer. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## `PUT` `v1/buyers/{buyerID}`
 Create or update a buyer
@@ -246,61 +180,39 @@ Create or update a buyer
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the buyer.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultCatalogID               |
-| Type            | string                         |
-| Description     | ID of the default catalog.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the buyer.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the buyer. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. | False |
+| Name | string | Name of the buyer. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}`
 Delete a buyer
@@ -316,10 +228,10 @@ Delete a buyer
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/buyers/{buyerID}`
 Partially update a buyer
 
@@ -334,58 +246,36 @@ Partially update a buyer
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the buyer. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'DefaultCatalogID', 'Type': 'string', 'Description': 'ID of the default catalog.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the buyer.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the buyer.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'DefaultCatalogID': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the buyer.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DefaultCatalogID               |
-| Type            | string                         |
-| Description     | ID of the default catalog.     |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the buyer.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the buyer. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "DefaultCatalogID": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the buyer. | False |
+| Name | string | Name of the buyer. | True |
+| DefaultCatalogID | string | ID of the default catalog. | False |
+| Active | boolean | Active of the buyer. | False |
+| xp | object | Container for extended (custom) properties of the buyer. | False |

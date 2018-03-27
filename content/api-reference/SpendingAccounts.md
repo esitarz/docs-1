@@ -1,6 +1,6 @@
 ---
 title: Spending Accounts
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Buyers
 slug: Buyers-SpendingAccounts
@@ -8,13 +8,13 @@ slug: Buyers-SpendingAccounts
 Spending Accounts are funds given to users by a managing entity and are
 managed as part of a user's account. These funds are generally used as
 "corporate dollars", "rewards dollars", or "gift cards".
-They can be used to pay for all of or part of an order with parameters
+ They can be used to pay for all of or part of an order with parameters
 that control account expiration, balance available, balance renewal,
 user access and overdraft.
-Multiple spending accounts can be assigned to a member of an
+ Multiple spending accounts can be assigned to a member of an
 organization and applied to all transactions, but only one can be used
 as a payment method.
-When multiple Spending Accounts are used on a transaction each is
+ When multiple Spending Accounts are used on a transaction each is
 deducted individually.
 
 ---
@@ -41,77 +41,30 @@ Get a single spending account
 | Description     | ID of the spending account.    |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `GET` `v1/buyers/{buyerID}/spendingaccounts`
 Get a list of spending accounts
@@ -175,77 +128,44 @@ Get a list of spending accounts
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "AllowAsPaymentMethod": false,
+	            "Balance": 0,
+	            "EndDate": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "Name": "",
+	            "RedemptionCode": "",
+	            "StartDate": "2018-03-27T16:00:00+00:00",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `POST` `v1/buyers/{buyerID}/spendingaccounts`
 Create a new spending account
@@ -261,85 +181,51 @@ Create a new spending account
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Balance | float | Balance of the spending account. Required. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Balance', 'Type': 'float', 'Description': 'Balance of the spending account. Required.', 'Required': True}, {'Name': 'AllowAsPaymentMethod', 'Type': 'boolean', 'Description': 'Allow as payment method of the spending account.', 'Required': False}, {'Name': 'RedemptionCode', 'Type': 'string', 'Description': 'If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.', 'Required': False}, {'Name': 'StartDate', 'Type': 'date', 'Description': 'Start date of the spending account.', 'Required': False}, {'Name': 'EndDate', 'Type': 'date', 'Description': 'End date of the spending account.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spending account.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `PUT` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Create or update a spending account
@@ -363,85 +249,51 @@ Create or update a spending account
 | Description     | ID of the spending account.    |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Balance | float | Balance of the spending account. Required. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Balance', 'Type': 'float', 'Description': 'Balance of the spending account. Required.', 'Required': True}, {'Name': 'AllowAsPaymentMethod', 'Type': 'boolean', 'Description': 'Allow as payment method of the spending account.', 'Required': False}, {'Name': 'RedemptionCode', 'Type': 'string', 'Description': 'If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.', 'Required': False}, {'Name': 'StartDate', 'Type': 'date', 'Description': 'Start date of the spending account.', 'Required': False}, {'Name': 'EndDate', 'Type': 'date', 'Description': 'End date of the spending account.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spending account.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Delete a spending account
@@ -465,10 +317,10 @@ Delete a spending account
 | Description     | ID of the spending account.    |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Partially update a spending account
 
@@ -491,85 +343,51 @@ Partially update a spending account
 | Description     | ID of the spending account.    |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Balance | float | Balance of the spending account. Required. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the spending account. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Balance', 'Type': 'float', 'Description': 'Balance of the spending account. Required.', 'Required': True}, {'Name': 'AllowAsPaymentMethod', 'Type': 'boolean', 'Description': 'Allow as payment method of the spending account.', 'Required': False}, {'Name': 'RedemptionCode', 'Type': 'string', 'Description': 'If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards.', 'Required': False}, {'Name': 'StartDate', 'Type': 'date', 'Description': 'Start date of the spending account.', 'Required': False}, {'Name': 'EndDate', 'Type': 'date', 'Description': 'End date of the spending account.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the spending account.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Balance': 0, 'AllowAsPaymentMethod': False, 'RedemptionCode': '', 'StartDate': '2018-03-21T23:00:00+00:00', 'EndDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the spending account.  |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Balance                        |
-| Type            | float                          |
-| Description     | Balance of the spending account. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowAsPaymentMethod           |
-| Type            | boolean                        |
-| Description     | Allow as payment method of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | RedemptionCode                 |
-| Type            | string                         |
-| Description     | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | StartDate                      |
-| Type            | date                           |
-| Description     | Start date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | EndDate                        |
-| Type            | date                           |
-| Description     | End date of the spending account. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the spending account. |
-| Required        | False                          |
+## Response Body
+	{
+	    "AllowAsPaymentMethod": false,
+	    "Balance": 0,
+	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "Name": "",
+	    "RedemptionCode": "",
+	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the spending account. | False |
+| Name | string | Name of the spending account. | True |
+| Balance | float | Balance of the spending account. | True |
+| AllowAsPaymentMethod | boolean | Allow as payment method of the spending account. | False |
+| RedemptionCode | string | If specified, matching code must be provided on redemption in order for the transaction to be successful. Most commonly used to implement Gift Cards. | False |
+| StartDate | date | Start date of the spending account. | False |
+| EndDate | date | End date of the spending account. | False |
+| xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## `GET` `v1/buyers/{buyerID}/spendingaccounts/assignments`
 Get a list of spending account assignments
@@ -633,45 +451,36 @@ Get a list of spending account assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'SpendingAccountID': '', 'UserID': '', 'UserGroupID': '', 'AllowExceed': False}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | UserGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | AllowExceed                    |
-| Type            | boolean                        |
-| Description     | Allow exceed of the spending account assignment. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "AllowExceed": false,
+	            "SpendingAccountID": "",
+	            "UserGroupID": "",
+	            "UserID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SpendingAccountID | string | ID of the spending account. | True |
+| UserID | string | ID of the user. | False |
+| UserGroupID | string | ID of the user group. | False |
+| AllowExceed | boolean | Allow exceed of the spending account assignment. | False |
 
 ## `POST` `v1/buyers/{buyerID}/spendingaccounts/assignments`
 Save a spending account assignment
@@ -687,18 +496,23 @@ Save a spending account assignment
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'SpendingAccountID': '', 'UserID': '', 'UserGroupID': '', 'AllowExceed': False}
-```
+## Request Body
+	{
+	    "AllowExceed": false,
+	    "SpendingAccountID": "",
+	    "UserGroupID": "",
+	    "UserID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| SpendingAccountID | string | ID of the spending account. Required. Sortable: priority level 1. | True |
+| UserID | string | ID of the user. Sortable: priority level 2. | False |
+| UserGroupID | string | ID of the user group. Sortable: priority level 3. | False |
+| AllowExceed | boolean | Allow exceed of the spending account assignment. | False |
 
-```
-[{'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'UserID', 'Type': 'string', 'Description': 'ID of the user. Sortable: priority level 2.', 'Required': False}, {'Name': 'UserGroupID', 'Type': 'string', 'Description': 'ID of the user group. Sortable: priority level 3.', 'Required': False}, {'Name': 'AllowExceed', 'Type': 'boolean', 'Description': 'Allow exceed of the spending account assignment.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `DELETE` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}/assignments`
 Delete a spending account assignment
 
@@ -737,7 +551,7 @@ Delete a spending account assignment
 | Description     | ID of the user group.          |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

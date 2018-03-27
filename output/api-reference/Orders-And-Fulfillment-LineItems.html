@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Orders-And-Fulfillment-LineItems.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-26 00:00:00-05:00"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="../author/ordercloudio.html">
 <meta property="article:section" content="API Reference"/>
@@ -50,7 +50,7 @@
   <header>
     <h1 id="Orders-And-Fulfillment-LineItems">Line Items</h1>
     <p>
-        Posted on Mon 26 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
 
 
     </p>
@@ -62,7 +62,7 @@
 contains a single Product SKU and a quantity. A line item may also
 include Spec values, a Cost Center, shipping details, date needed, and
 other custom information.</p>
-<hr>
+<hr/>
 <h2><code>GET</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h2>
 <p>Get a single line item</p>
 <table>
@@ -157,451 +157,186 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Quantity</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -830,451 +565,200 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;Meta&#39;: {&#39;Page&#39;: 1, &#39;PageSize&#39;: 20, &#39;TotalCount&#39;: 25, &#39;TotalPages&#39;: 2, &#39;ItemRange&#39;: [1, 20]}, &#39;Items&#39;: [{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}]}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "Items": [
+        {
+            "CostCenter": "",
+            "DateAdded": "2018-03-27T16:00:00+00:00",
+            "DateNeeded": "2018-03-27T16:00:00+00:00",
+            "ID": "",
+            "LineTotal": 0,
+            "Product": {
+                "Description": "",
+                "ID": "",
+                "Name": "",
+                "QuantityMultiplier": 0,
+                "ShipHeight": 0,
+                "ShipLength": 0,
+                "ShipWeight": 0,
+                "ShipWidth": 0,
+                "xp": {}
+            },
+            "ProductID": "",
+            "Quantity": 0,
+            "QuantityShipped": 0,
+            "ShipFromAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T16:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "ShipFromAddressID": "",
+            "ShippingAccount": "",
+            "ShippingAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T16:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "ShippingAddressID": "",
+            "Specs": [
+                {
+                    "Name": "",
+                    "OptionID": "",
+                    "SpecID": "",
+                    "Value": ""
+                }
+            ],
+            "UnitPrice": 0,
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Quantity</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1347,459 +831,284 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ProductID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Required. Searchable: priority level 2. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Quantity&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity of the line item. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UnitPrice&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Unit price of the line item. Must be between -9999999999999 and 9999999999999.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CostCenter&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Cost center of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;DateNeeded&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Date needed of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAccount&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Shipping account of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the shipping address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Specs&#39;, &#39;Type&#39;: &#39;array&#39;, &#39;Description&#39;: &#39;Specs of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the line item.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>201</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "ProductID": "",
+    "Quantity": 0,
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Required. Searchable: priority level 2. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Quantity</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity of the line item. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Unit price of the line item. Must be between -9999999999999 and 9999999999999.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the line item.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>201</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer</td>
+<td>Quantity of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>date</td>
+<td>Date added of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LineTotal</td>
+<td>float</td>
+<td>Line total of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAccount</td>
+<td>string</td>
+<td>Shipping account of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddressID</td>
+<td>string</td>
+<td>ID of the shipping address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
 <td>object</td>
+<td>Product of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ShippingAddress</td>
+<td>object</td>
+<td>Shipping address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddress</td>
+<td>object</td>
+<td>Ship from address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1898,459 +1207,284 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ProductID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Required. Searchable: priority level 2. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Quantity&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity of the line item. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UnitPrice&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Unit price of the line item. Must be between -9999999999999 and 9999999999999.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CostCenter&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Cost center of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;DateNeeded&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Date needed of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAccount&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Shipping account of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the shipping address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Specs&#39;, &#39;Type&#39;: &#39;array&#39;, &#39;Description&#39;: &#39;Specs of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the line item.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "ProductID": "",
+    "Quantity": 0,
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Required. Searchable: priority level 2. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Quantity</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity of the line item. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Unit price of the line item. Must be between -9999999999999 and 9999999999999.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the line item.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer</td>
+<td>Quantity of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>date</td>
+<td>Date added of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LineTotal</td>
+<td>float</td>
+<td>Line total of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAccount</td>
+<td>string</td>
+<td>Shipping account of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddressID</td>
+<td>string</td>
+<td>ID of the shipping address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
 <td>object</td>
+<td>Product of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ShippingAddress</td>
+<td>object</td>
+<td>Shipping address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddress</td>
+<td>object</td>
+<td>Ship from address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2449,9 +1583,9 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<p><strong>Responsestatus</strong>: <code>204</code></p>
-<h2>Responsebody</h2>
+<h2>Request Body</h2>
+<p><strong>Response Status</strong>: <code>204</code></p>
+<h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/lineitems/{lineItemID}</code></h2>
 <p>Partially update a line item</p>
 <table>
@@ -2546,459 +1680,284 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ProductID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the product. Required. Searchable: priority level 2. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Quantity&#39;, &#39;Type&#39;: &#39;integer&#39;, &#39;Description&#39;: &#39;Quantity of the line item. Required. Must be at least 1.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;UnitPrice&#39;, &#39;Type&#39;: &#39;float&#39;, &#39;Description&#39;: &#39;Unit price of the line item. Must be between -9999999999999 and 9999999999999.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CostCenter&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Cost center of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;DateNeeded&#39;, &#39;Type&#39;: &#39;date&#39;, &#39;Description&#39;: &#39;Date needed of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAccount&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Shipping account of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShippingAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the shipping address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;ShipFromAddressID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the ship from address.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Specs&#39;, &#39;Type&#39;: &#39;array&#39;, &#39;Description&#39;: &#39;Specs of the line item.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the line item.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "ProductID": "",
+    "Quantity": 0,
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the line item. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the product. Required. Searchable: priority level 2. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Quantity</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Quantity of the line item. Required. Must be at least 1.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Unit price of the line item. Must be between -9999999999999 and 9999999999999.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>array</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Specs of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the line item.</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
-<td>xp</td>
+<td>ID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer</td>
+<td>Quantity of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>date</td>
+<td>Date added of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LineTotal</td>
+<td>float</td>
+<td>Line total of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAccount</td>
+<td>string</td>
+<td>Shipping account of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddressID</td>
+<td>string</td>
+<td>ID of the shipping address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
 <td>object</td>
+<td>Product of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ShippingAddress</td>
+<td>object</td>
+<td>Shipping address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddress</td>
+<td>object</td>
+<td>Ship from address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3097,459 +2056,292 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CompanyName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Company name of the address. Max length 100 characters. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;FirstName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;LastName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Street1&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Street2&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;City&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;State&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Zip&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Country&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Country of the address. Required. Max length 2 characters. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Phone&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Phone of the address. Max length 100 characters. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AddressName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the address.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "AddressName": "",
+    "City": "",
+    "CompanyName": "",
+    "Country": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Phone": "",
+    "State": "",
+    "Street1": "",
+    "Street2": "",
+    "Zip": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>CompanyName</td>
 <td>string</td>
+<td>Company name of the address. Max length 100 characters. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the product.</td>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Street1</td>
+<td>string</td>
+<td>Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Quantity</td>
+<td>Street2</td>
+<td>string</td>
+<td>Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>City</td>
+<td>string</td>
+<td>City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>State</td>
 <td>string</td>
+<td>State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Zip</td>
 <td>string</td>
+<td>Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Country</td>
 <td>string</td>
+<td>Country of the address. Required. Max length 2 characters. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Phone</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Phone of the address. Max length 100 characters. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>AddressName</td>
+<td>string</td>
+<td>Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>array</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Specs of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
+<td>Container for extended (custom) properties of the address.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer</td>
+<td>Quantity of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>date</td>
+<td>Date added of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LineTotal</td>
+<td>float</td>
+<td>Line total of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAccount</td>
+<td>string</td>
+<td>Shipping account of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddressID</td>
+<td>string</td>
+<td>ID of the shipping address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>object</td>
+<td>Product of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddress</td>
+<td>object</td>
+<td>Shipping address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddress</td>
+<td>object</td>
+<td>Ship from address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3648,459 +2440,292 @@ other custom information.</p>
 </tr>
 </tbody>
 </table>
-<h2>Requestbody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>[{&#39;Name&#39;: &#39;ID&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;CompanyName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Company name of the address. Max length 100 characters. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;FirstName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;LastName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;Street1&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Street2&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;City&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;State&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Zip&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Country&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Country of the address. Required. Max length 2 characters. Sortable.&#39;, &#39;Required&#39;: True}, {&#39;Name&#39;: &#39;Phone&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Phone of the address. Max length 100 characters. Sortable.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;AddressName&#39;, &#39;Type&#39;: &#39;string&#39;, &#39;Description&#39;: &#39;Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.&#39;, &#39;Required&#39;: False}, {&#39;Name&#39;: &#39;xp&#39;, &#39;Type&#39;: &#39;object&#39;, &#39;Description&#39;: &#39;Container for extended (custom) properties of the address.&#39;, &#39;Required&#39;: False}]
-</pre></div>
-
-
-<p><strong>Responsestatus</strong>: <code>200</code></p>
-<h2>Responsebody</h2>
-<div class="highlight"><pre><span></span>{&#39;ID&#39;: &#39;&#39;, &#39;ProductID&#39;: &#39;&#39;, &#39;Quantity&#39;: 0, &#39;DateAdded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;QuantityShipped&#39;: 0, &#39;UnitPrice&#39;: 0, &#39;LineTotal&#39;: 0, &#39;CostCenter&#39;: &#39;&#39;, &#39;DateNeeded&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;ShippingAccount&#39;: &#39;&#39;, &#39;ShippingAddressID&#39;: &#39;&#39;, &#39;ShipFromAddressID&#39;: &#39;&#39;, &#39;Product&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;Description&#39;: &#39;&#39;, &#39;QuantityMultiplier&#39;: 0, &#39;ShipWeight&#39;: 0, &#39;ShipHeight&#39;: 0, &#39;ShipWidth&#39;: 0, &#39;ShipLength&#39;: 0, &#39;xp&#39;: {}}, &#39;ShippingAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;ShipFromAddress&#39;: {&#39;ID&#39;: &#39;&#39;, &#39;DateCreated&#39;: &#39;2018-03-21T23:00:00+00:00&#39;, &#39;CompanyName&#39;: &#39;&#39;, &#39;FirstName&#39;: &#39;&#39;, &#39;LastName&#39;: &#39;&#39;, &#39;Street1&#39;: &#39;&#39;, &#39;Street2&#39;: &#39;&#39;, &#39;City&#39;: &#39;&#39;, &#39;State&#39;: &#39;&#39;, &#39;Zip&#39;: &#39;&#39;, &#39;Country&#39;: &#39;&#39;, &#39;Phone&#39;: &#39;&#39;, &#39;AddressName&#39;: &#39;&#39;, &#39;xp&#39;: {}}, &#39;Specs&#39;: [{&#39;SpecID&#39;: &#39;&#39;, &#39;Name&#39;: &#39;&#39;, &#39;OptionID&#39;: &#39;&#39;, &#39;Value&#39;: &#39;&#39;}], &#39;xp&#39;: {}}
-</pre></div>
-
-
+<h2>Request Body</h2>
+<pre><code>{
+    "AddressName": "",
+    "City": "",
+    "CompanyName": "",
+    "Country": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Phone": "",
+    "State": "",
+    "Street1": "",
+    "Street2": "",
+    "Zip": "",
+    "xp": {}
+}
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Name</td>
 <td>ID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ProductID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>CompanyName</td>
 <td>string</td>
+<td>Company name of the address. Max length 100 characters. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the product.</td>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the address. Max length 100 characters. Searchable: priority level 7. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Required</td>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the address. Max length 100 characters. Searchable: priority level 6. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Street1</td>
+<td>string</td>
+<td>Street 1 of the address. Required. Max length 100 characters. Searchable: priority level 4. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Quantity</td>
+<td>Street2</td>
+<td>string</td>
+<td>Street 2 of the address. Max length 100 characters. Searchable: priority level 5. Sortable.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>City</td>
+<td>string</td>
+<td>City of the address. Required. Max length 100 characters. Searchable: priority level 3. Sortable.</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateAdded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date added of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>QuantityShipped</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Quantity shipped of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>UnitPrice</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Unit price of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>LineTotal</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>float</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Line total of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>CostCenter</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>State</td>
 <td>string</td>
+<td>State of the address. Required. Max length 100 characters. Searchable: priority level 7. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Cost center of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>DateNeeded</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>date</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Date needed of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAccount</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Zip</td>
 <td>string</td>
+<td>Zip of the address. Required. Max length 100 characters. Searchable: priority level 6. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Shipping account of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Country</td>
 <td>string</td>
+<td>Country of the address. Required. Max length 2 characters. Sortable.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the shipping address.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddressID</td>
-</tr>
-<tr>
-<td>Type</td>
+<td>Phone</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>ID of the ship from address.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>Phone of the address. Max length 100 characters. Sortable.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Product</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Product of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
+<td>AddressName</td>
+<td>string</td>
+<td>Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShippingAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Shipping address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>ShipFromAddress</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>object</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Ship from address of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
-<td>Specs</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>array</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Specs of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>xp</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
+<td>Container for extended (custom) properties of the address.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Status</strong>: <code>200</code></p>
+<h2>Response Body</h2>
+<pre><code>{
+    "CostCenter": "",
+    "DateAdded": "2018-03-27T16:00:00+00:00",
+    "DateNeeded": "2018-03-27T16:00:00+00:00",
+    "ID": "",
+    "LineTotal": 0,
+    "Product": {
+        "Description": "",
+        "ID": "",
+        "Name": "",
+        "QuantityMultiplier": 0,
+        "ShipHeight": 0,
+        "ShipLength": 0,
+        "ShipWeight": 0,
+        "ShipWidth": 0,
+        "xp": {}
+    },
+    "ProductID": "",
+    "Quantity": 0,
+    "QuantityShipped": 0,
+    "ShipFromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShipFromAddressID": "",
+    "ShippingAccount": "",
+    "ShippingAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ShippingAddressID": "",
+    "Specs": [
+        {
+            "Name": "",
+            "OptionID": "",
+            "SpecID": "",
+            "Value": ""
+        }
+    ],
+    "UnitPrice": 0,
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>False</td>
 </tr>
 <tr>
-<td>Description</td>
+<td>ProductID</td>
+<td>string</td>
+<td>ID of the product.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer</td>
+<td>Quantity of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>DateAdded</td>
+<td>date</td>
+<td>Date added of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LineTotal</td>
+<td>float</td>
+<td>Line total of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAccount</td>
+<td>string</td>
+<td>Shipping account of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddressID</td>
+<td>string</td>
+<td>ID of the shipping address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddressID</td>
+<td>string</td>
+<td>ID of the ship from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>object</td>
+<td>Product of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShippingAddress</td>
+<td>object</td>
+<td>Shipping address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ShipFromAddress</td>
+<td>object</td>
+<td>Ship from address of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the line item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
 <td>Container for extended (custom) properties of the line item.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>

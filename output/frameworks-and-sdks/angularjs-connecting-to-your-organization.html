@@ -69,85 +69,85 @@ the build process will generate a file containing AngularJS constants:
 seller/blob/development/gulp.config.js#L86">here</a>, which can then be injected into
 your various AngularJS controllers, factories, providers, etc. Think of it as
 a base configuration or settings file for your application.  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 Constant
 
-</th>  
+</th>
 <th>
 
 Type
 
-</th>  
+</th>
 <th>
 
 Description
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 `appname`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 A short name for your application. This will be used in the `<title>` as well
 as displayed in the top left navigation of the application.
 
-</td> </tr>  
-<tr>  
+</title></td> </tr>
+<tr>
 <td>
 
 `scope`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 A space delimited string of OrderCloud roles that will be requested during
 authentication.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 `clientid`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 An OrderCloud ClientID for the seller, buyer network, or buyer application
 that will be used for authentication.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 `environment`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 A string declaring the OrderCloud environment the application will point to.
@@ -155,51 +155,51 @@ Currently, only `production` is available; however, when a large release
 consisting of breaking changes is scheduled, a `staging` environment will be
 provided.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 `defaultstate`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 The default ui-router state within the application that users will be directed
 to should they attempt to access a state that does not exist.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 `html5mode`
 
-</td>  
+</td>
 <td>
 
 bool
 
-</td>  
+</td>
 <td>
 
 True/false whether you want HTML5 Mode enable within the application.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 `bootswatchtheme`
 
-</td>  
+</td>
 <td>
 
 string
 
-</td>  
+</td>
 <td>
 
 The Bootswatch theme that is automatically applied to the application during
@@ -208,7 +208,6 @@ the build process. A list of available themes can be found
 angular-seller theme.
 
 </td> </tr> </table>
-
 <h2>Process Environment Variable Overrides</h2>
 <p>The constants provided above can be overwritten within your hosting providers
 application settings. For example, within Heroku, you can override these

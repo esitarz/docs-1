@@ -1,6 +1,6 @@
 ---
 title: Suppliers
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Suppliers
 slug: Suppliers-Suppliers
@@ -24,45 +24,22 @@ Get a single supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## `GET` `v1/suppliers`
 Get a list of suppliers
@@ -118,95 +95,68 @@ Get a list of suppliers
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Active': False, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## `POST` `v1/suppliers`
 Create a new supplier
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## `PUT` `v1/suppliers/{supplierID}`
 Create or update a supplier
@@ -222,53 +172,35 @@ Create or update a supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## `DELETE` `v1/suppliers/{supplierID}`
 Delete a supplier
@@ -284,10 +216,10 @@ Delete a supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/suppliers/{supplierID}`
 Partially update a supplier
 
@@ -302,50 +234,32 @@ Partially update a supplier
 | Description     | ID of the supplier.            |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
+| Name | string | Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the supplier. Required. Max length 100 characters. Searchable: priority level 1. Sortable: priority level 2.', 'Required': True}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the supplier.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the supplier.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Active': False, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the supplier.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the supplier.        |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the supplier. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the supplier. | False |
+| Name | string | Name of the supplier. | True |
+| Active | boolean | Active of the supplier. | False |
+| xp | object | Container for extended (custom) properties of the supplier. | False |

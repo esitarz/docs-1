@@ -1,6 +1,6 @@
 ---
 title: Payments
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Orders And Fulfillment
 slug: Orders-And-Fulfillment-Payments
@@ -37,93 +37,45 @@ Get a single payment
 | Description     | ID of the payment.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}, 'Transactions': [{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Type                           |
-| Type            | string                         |
-| Description     | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the payment.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CreditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the payment.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Amount                         |
-| Type            | float                          |
-| Description     | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Accepted                       |
-| Type            | boolean                        |
-| Description     | Accepted of the payment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the payment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Transactions                   |
-| Type            | array                          |
-| Description     | Transactions of the payment.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Transactions": [
+	        {
+	            "Amount": 0,
+	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "ResultCode": "",
+	            "ResultMessage": "",
+	            "Succeeded": false,
+	            "Type": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. | False |
+| Type | string | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| DateCreated | date | Date created of the payment. | False |
+| CreditCardID | string | ID of the credit card. | False |
+| SpendingAccountID | string | ID of the spending account. | False |
+| Description | string | Description of the payment. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
+| Transactions | array | Transactions of the payment. | False |
 
 ## `GET` `v1/orders/{direction}/{orderID}/payments`
 Get a list of payments
@@ -195,93 +147,59 @@ Get a list of payments
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Type': 'PurchaseOrder', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}, 'Transactions': [{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}]}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Type                           |
-| Type            | string                         |
-| Description     | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the payment.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CreditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the payment.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Amount                         |
-| Type            | float                          |
-| Description     | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Accepted                       |
-| Type            | boolean                        |
-| Description     | Accepted of the payment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the payment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Transactions                   |
-| Type            | array                          |
-| Description     | Transactions of the payment.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Accepted": false,
+	            "Amount": 0,
+	            "CreditCardID": "",
+	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "Description": "",
+	            "ID": "",
+	            "SpendingAccountID": "",
+	            "Transactions": [
+	                {
+	                    "Amount": 0,
+	                    "DateExecuted": "2018-03-27T16:00:00+00:00",
+	                    "ID": "",
+	                    "ResultCode": "",
+	                    "ResultMessage": "",
+	                    "Succeeded": false,
+	                    "Type": "",
+	                    "xp": {}
+	                }
+	            ],
+	            "Type": "PurchaseOrder",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. | False |
+| Type | string | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| DateCreated | date | Date created of the payment. | False |
+| CreditCardID | string | ID of the credit card. | False |
+| SpendingAccountID | string | ID of the spending account. | False |
+| Description | string | Description of the payment. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
+| Transactions | array | Transactions of the payment. | False |
 
 ## `POST` `v1/orders/{direction}/{orderID}/payments`
 Create a new payment
@@ -305,101 +223,66 @@ Create a new payment
 | Description     | ID of the order.               |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Type | string | Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| CreditCardID | string | ID of the credit card. Sortable. | False |
+| SpendingAccountID | string | ID of the spending account. Sortable. | False |
+| Description | string | Description of the payment. Max length 2000 characters. Searchable: priority level 2. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card. Sortable.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account. Sortable.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment. Max length 2000 characters. Searchable: priority level 2.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}, 'Transactions': [{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Type                           |
-| Type            | string                         |
-| Description     | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the payment.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CreditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the payment.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Amount                         |
-| Type            | float                          |
-| Description     | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Accepted                       |
-| Type            | boolean                        |
-| Description     | Accepted of the payment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the payment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Transactions                   |
-| Type            | array                          |
-| Description     | Transactions of the payment.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Transactions": [
+	        {
+	            "Amount": 0,
+	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "ResultCode": "",
+	            "ResultMessage": "",
+	            "Succeeded": false,
+	            "Type": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. | False |
+| Type | string | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| DateCreated | date | Date created of the payment. | False |
+| CreditCardID | string | ID of the credit card. | False |
+| SpendingAccountID | string | ID of the spending account. | False |
+| Description | string | Description of the payment. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
+| Transactions | array | Transactions of the payment. | False |
 
 ## `DELETE` `v1/orders/{direction}/{orderID}/payments/{paymentID}`
 Delete a payment
@@ -431,10 +314,10 @@ Delete a payment
 | Description     | ID of the payment.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/orders/{direction}/{orderID}/payments/{paymentID}`
 Partially update a payment
 
@@ -465,101 +348,66 @@ Partially update a payment
 | Description     | ID of the payment.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Type | string | Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| CreditCardID | string | ID of the credit card. Sortable. | False |
+| SpendingAccountID | string | ID of the spending account. Sortable. | False |
+| Description | string | Description of the payment. Max length 2000 characters. Searchable: priority level 2. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment. Sortable. Possible values: PurchaseOrder, CreditCard, SpendingAccount.', 'Required': False}, {'Name': 'CreditCardID', 'Type': 'string', 'Description': 'ID of the credit card. Sortable.', 'Required': False}, {'Name': 'SpendingAccountID', 'Type': 'string', 'Description': 'ID of the spending account. Sortable.', 'Required': False}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the payment. Max length 2000 characters. Searchable: priority level 2.', 'Required': False}, {'Name': 'Amount', 'Type': 'float', 'Description': 'If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set.', 'Required': False}, {'Name': 'Accepted', 'Type': 'boolean', 'Description': 'Accepted of the payment.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}, 'Transactions': [{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Type                           |
-| Type            | string                         |
-| Description     | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the payment.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CreditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the payment.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Amount                         |
-| Type            | float                          |
-| Description     | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Accepted                       |
-| Type            | boolean                        |
-| Description     | Accepted of the payment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the payment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Transactions                   |
-| Type            | array                          |
-| Description     | Transactions of the payment.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Transactions": [
+	        {
+	            "Amount": 0,
+	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "ResultCode": "",
+	            "ResultMessage": "",
+	            "Succeeded": false,
+	            "Type": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. | False |
+| Type | string | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| DateCreated | date | Date created of the payment. | False |
+| CreditCardID | string | ID of the credit card. | False |
+| SpendingAccountID | string | ID of the spending account. | False |
+| Description | string | Description of the payment. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
+| Transactions | array | Transactions of the payment. | False |
 
 ## `POST` `v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions`
 Create a new payment transaction
@@ -591,101 +439,66 @@ Create a new payment transaction
 | Description     | ID of the payment.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}
-```
+## Request Body
+	{
+	    "Amount": 0,
+	    "DateExecuted": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "ResultCode": "",
+	    "ResultMessage": "",
+	    "Succeeded": false,
+	    "Type": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
+| Type | string | Type of the payment transaction. Required. Sortable. | True |
+| DateExecuted | date | Date executed of the payment transaction. Required. Sortable: priority level 1. | True |
+| Amount | float | Usually the same as Payment Amount, but can be different. A charge might have a subsequent partial credit, for example. | False |
+| Succeeded | boolean | Succeeded of the payment transaction. Sortable. | False |
+| ResultCode | string | Result code of the payment transaction. Sortable. | False |
+| ResultMessage | string | Result message of the payment transaction. Sortable. | False |
+| xp | object | Container for extended (custom) properties of the payment transaction. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.', 'Required': False}, {'Name': 'Type', 'Type': 'string', 'Description': 'Type of the payment transaction. Required. Sortable.', 'Required': True}, {'Name': 'DateExecuted', 'Type': 'date', 'Description': 'Date executed of the payment transaction. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'Amount', 'Type': 'float', 'Description': 'Usually the same as Payment Amount, but can be different. A charge might have a subsequent partial credit, for example.', 'Required': False}, {'Name': 'Succeeded', 'Type': 'boolean', 'Description': 'Succeeded of the payment transaction. Sortable.', 'Required': False}, {'Name': 'ResultCode', 'Type': 'string', 'Description': 'Result code of the payment transaction. Sortable.', 'Required': False}, {'Name': 'ResultMessage', 'Type': 'string', 'Description': 'Result message of the payment transaction. Sortable.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the payment transaction.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Type': 'PurchaseOrder', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CreditCardID': '', 'SpendingAccountID': '', 'Description': '', 'Amount': 0, 'Accepted': False, 'xp': {}, 'Transactions': [{'ID': '', 'Type': '', 'DateExecuted': '2018-03-21T23:00:00+00:00', 'Amount': 0, 'Succeeded': False, 'ResultCode': '', 'ResultMessage': '', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Type                           |
-| Type            | string                         |
-| Description     | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the payment.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CreditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | SpendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the payment.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Amount                         |
-| Type            | float                          |
-| Description     | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Accepted                       |
-| Type            | boolean                        |
-| Description     | Accepted of the payment.       |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the payment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Transactions                   |
-| Type            | array                          |
-| Description     | Transactions of the payment.   |
-| Required        | False                          |
+## Response Body
+	{
+	    "Accepted": false,
+	    "Amount": 0,
+	    "CreditCardID": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Description": "",
+	    "ID": "",
+	    "SpendingAccountID": "",
+	    "Transactions": [
+	        {
+	            "Amount": 0,
+	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "ResultCode": "",
+	            "ResultMessage": "",
+	            "Succeeded": false,
+	            "Type": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Type": "PurchaseOrder",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the payment. | False |
+| Type | string | Type of the payment. Possible values: PurchaseOrder, CreditCard, SpendingAccount. | False |
+| DateCreated | date | Date created of the payment. | False |
+| CreditCardID | string | ID of the credit card. | False |
+| SpendingAccountID | string | ID of the spending account. | False |
+| Description | string | Description of the payment. | False |
+| Amount | float | If null, Payment applies to order total (or total of specific Line Items, if set), minus any other Payments where Amount is set. | False |
+| Accepted | boolean | Accepted of the payment. | False |
+| xp | object | Container for extended (custom) properties of the payment. | False |
+| Transactions | array | Transactions of the payment. | False |
 
 ## `DELETE` `v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions/{transactionID}`
 Delete a payment transaction
@@ -725,7 +538,7 @@ Delete a payment transaction
 | Description     | ID of the transaction.         |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

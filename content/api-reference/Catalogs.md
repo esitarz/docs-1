@@ -1,6 +1,6 @@
 ---
 title: Catalogs
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Product Catalogs
 slug: Product-Catalogs-Catalogs
@@ -26,61 +26,26 @@ Get a single catalog
 | Description     | ID of the catalog.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'CategoryCount': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the catalog.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the catalog.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the catalog.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CategoryCount                  |
-| Type            | integer                        |
-| Description     | Category count of the catalog. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the catalog. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "CategoryCount": 0,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. | False |
+| Name | string | Name of the catalog. | True |
+| Description | string | Description of the catalog. | False |
+| Active | boolean | Active of the catalog. | False |
+| CategoryCount | integer | Category count of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## `GET` `v1/catalogs`
 Get a list of catalogs
@@ -136,127 +101,78 @@ Get a list of catalogs
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'CategoryCount': 0, 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the catalog.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the catalog.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the catalog.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CategoryCount                  |
-| Type            | integer                        |
-| Description     | Category count of the catalog. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the catalog. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "Active": false,
+	            "CategoryCount": 0,
+	            "Description": "",
+	            "ID": "",
+	            "Name": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. | False |
+| Name | string | Name of the catalog. | True |
+| Description | string | Description of the catalog. | False |
+| Active | boolean | Active of the catalog. | False |
+| CategoryCount | integer | Category count of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## `POST` `v1/catalogs`
 Create a new catalog
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the catalog. Max length 2000 characters. Searchable: priority level 3. | False |
+| Active | boolean | Active of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'CategoryCount': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the catalog.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the catalog.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the catalog.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CategoryCount                  |
-| Type            | integer                        |
-| Description     | Category count of the catalog. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the catalog. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "CategoryCount": 0,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. | False |
+| Name | string | Name of the catalog. | True |
+| Description | string | Description of the catalog. | False |
+| Active | boolean | Active of the catalog. | False |
+| CategoryCount | integer | Category count of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## `PUT` `v1/catalogs/{catalogID}`
 Create or update a catalog
@@ -272,69 +188,41 @@ Create or update a catalog
 | Description     | ID of the catalog.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the catalog. Max length 2000 characters. Searchable: priority level 3. | False |
+| Active | boolean | Active of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'CategoryCount': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the catalog.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the catalog.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the catalog.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CategoryCount                  |
-| Type            | integer                        |
-| Description     | Category count of the catalog. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the catalog. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "CategoryCount": 0,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. | False |
+| Name | string | Name of the catalog. | True |
+| Description | string | Description of the catalog. | False |
+| Active | boolean | Active of the catalog. | False |
+| CategoryCount | integer | Category count of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## `DELETE` `v1/catalogs/{catalogID}`
 Delete a catalog
@@ -350,10 +238,10 @@ Delete a catalog
 | Description     | ID of the catalog.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `PATCH` `v1/catalogs/{catalogID}`
 Partially update a catalog
 
@@ -368,69 +256,41 @@ Partially update a catalog
 | Description     | ID of the catalog.             |
 | Required        | True                           |
 
-## Requestbody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'xp': {}}
-```
+## Request Body
+	{
+	    "Active": false,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
+| Name | string | Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
+| Description | string | Description of the catalog. Max length 2000 characters. Searchable: priority level 3. | False |
+| Active | boolean | Active of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
-```
-[{'Name': 'ID', 'Type': 'string', 'Description': 'ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.', 'Required': False}, {'Name': 'Name', 'Type': 'string', 'Description': 'Name of the catalog. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.', 'Required': True}, {'Name': 'Description', 'Type': 'string', 'Description': 'Description of the catalog. Max length 2000 characters. Searchable: priority level 3.', 'Required': False}, {'Name': 'Active', 'Type': 'boolean', 'Description': 'Active of the catalog.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the catalog.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Name': '', 'Description': '', 'Active': False, 'CategoryCount': 0, 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Name                           |
-| Type            | string                         |
-| Description     | Name of the catalog.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Description                    |
-| Type            | string                         |
-| Description     | Description of the catalog.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Active                         |
-| Type            | boolean                        |
-| Description     | Active of the catalog.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CategoryCount                  |
-| Type            | integer                        |
-| Description     | Category count of the catalog. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the catalog. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Active": false,
+	    "CategoryCount": 0,
+	    "Description": "",
+	    "ID": "",
+	    "Name": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the catalog. | False |
+| Name | string | Name of the catalog. | True |
+| Description | string | Description of the catalog. | False |
+| Active | boolean | Active of the catalog. | False |
+| CategoryCount | integer | Category count of the catalog. | False |
+| xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## `GET` `v1/catalogs/assignments`
 Get a list of catalog assignments
@@ -470,60 +330,56 @@ Get a list of catalog assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'CatalogID': '', 'BuyerID': '', 'ViewAllCategories': False, 'ViewAllProducts': False}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CatalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | BuyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ViewAllCategories              |
-| Type            | boolean                        |
-| Description     | View all categories of the catalog assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ViewAllProducts                |
-| Type            | boolean                        |
-| Description     | View all products of the catalog assignment. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "BuyerID": "",
+	            "CatalogID": "",
+	            "ViewAllCategories": false,
+	            "ViewAllProducts": false
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| CatalogID | string | ID of the catalog. | True |
+| BuyerID | string | ID of the buyer. | True |
+| ViewAllCategories | boolean | View all categories of the catalog assignment. | False |
+| ViewAllProducts | boolean | View all products of the catalog assignment. | False |
 
 ## `POST` `v1/catalogs/assignments`
 Save a catalog assignment
-## Requestbody
-```
-{'CatalogID': '', 'BuyerID': '', 'ViewAllCategories': False, 'ViewAllProducts': False}
-```
+## Request Body
+	{
+	    "BuyerID": "",
+	    "CatalogID": "",
+	    "ViewAllCategories": false,
+	    "ViewAllProducts": false
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| CatalogID | string | ID of the catalog. Required. Sortable: priority level 1. | True |
+| BuyerID | string | ID of the buyer. Required. | True |
+| ViewAllCategories | boolean | View all categories of the catalog assignment. | False |
+| ViewAllProducts | boolean | View all products of the catalog assignment. | False |
 
-```
-[{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog. Required. Sortable: priority level 1.', 'Required': True}, {'Name': 'BuyerID', 'Type': 'string', 'Description': 'ID of the buyer. Required.', 'Required': True}, {'Name': 'ViewAllCategories', 'Type': 'boolean', 'Description': 'View all categories of the catalog assignment.', 'Required': False}, {'Name': 'ViewAllProducts', 'Type': 'boolean', 'Description': 'View all products of the catalog assignment.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `DELETE` `v1/catalogs/{catalogID}/assignments`
 Delete a catalog assignment
 
@@ -546,10 +402,10 @@ Delete a catalog assignment
 | Description     | ID of the buyer.               |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body
 ## `GET` `v1/catalogs/productassignments`
 Get a list of catalog product assignments
 
@@ -588,44 +444,48 @@ Get a list of catalog product assignments
 | Description     | Number of results to return per page. Default: 20, max: 100. |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'CatalogID': '', 'ProductID': ''}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CatalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ProductID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "CatalogID": "",
+	            "ProductID": ""
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| CatalogID | string | ID of the catalog. | True |
+| ProductID | string | ID of the product. | True |
 
 ## `POST` `v1/catalogs/productassignments`
 Save a catalog product assignment
-## Requestbody
-```
-{'CatalogID': '', 'ProductID': ''}
-```
+## Request Body
+	{
+	    "CatalogID": "",
+	    "ProductID": ""
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| CatalogID | string | ID of the catalog. Required. | True |
+| ProductID | string | ID of the product. Required. | True |
 
-```
-[{'Name': 'CatalogID', 'Type': 'string', 'Description': 'ID of the catalog. Required.', 'Required': True}, {'Name': 'ProductID', 'Type': 'string', 'Description': 'ID of the product. Required.', 'Required': True}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `DELETE` `v1/catalogs/{catalogID}/productassignments/{productID}`
 Delete a catalog product assignment
 
@@ -648,7 +508,7 @@ Delete a catalog product assignment
 | Description     | ID of the product.             |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

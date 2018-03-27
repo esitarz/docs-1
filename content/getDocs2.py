@@ -181,13 +181,23 @@ def main():
 					if type(value) == dict:
 
 						body = json.JSONDecoder().decode(value['Sample'])
-						#print(type(body))
-						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+						#print(value.keys())
+						page['contents'] += '\n\t'+str(body)+'\n'
+						
+						for bullet in value['Fields']:
+							#print(type(bullet))
+							if type(bullet) is str:
+								page['contents'] += ' '+bullet
+							if type(bullet) is dict:
+													
+								for k, v in bullet.items():
+									if k == "Name":
+										page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
+										page['contents'] += '|'.ljust(19, '-')+'|'.ljust(34, '-')+'|\n'
 
-						body = str(value['Fields'])
-						#print(type(body))
-						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+									page['contents'] += '| '+k.ljust(15)+' | '+str(v).ljust(30)+' |\n'
 
+						
 
 
 				elif key == 'ResponseBody' and value == None:
@@ -198,7 +208,7 @@ def main():
 
 						body = json.JSONDecoder().decode(value['Sample'])
 						#print(value.keys())
-						page['contents'] += '\n```\n'+str(body)+'\n```\n'
+						page['contents'] += '\n\t'+json.dumps(body, sort_keys=True, indent=4)+'\n'
 						
 						for bullet in value['Fields']:
 							#print(type(bullet))

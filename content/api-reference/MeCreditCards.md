@@ -1,6 +1,6 @@
 ---
 title: Credit Cards
-date: 2018-03-26
+date: 2018-03-27
 category: API Reference
 tags: Me And My Stuff
 slug: Me-And-My-Stuff-MeCreditCards
@@ -15,93 +15,49 @@ or change their own information.
 
 ## `POST` `v1/me/creditcards`
 Create a new credit card
-## Requestbody
-```
-{'Token': '', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| Token | string | Token of the credit card. | False |
+| CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
+| CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
+| ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
-```
-[{'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card. Max length 5 characters.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]
-```
+**Response Status**: `201`
 
-**Responsestatus**: `201`
-
-## Responsebody
-```
-{'ID': '', 'Editable': False, 'Token': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Editable                       |
-| Type            | boolean                        |
-| Description     | Editable of the credit card.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Token                          |
-| Type            | string                         |
-| Description     | Token of the credit card.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardType                       |
-| Type            | string                         |
-| Description     | Card type of the credit card.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PartialAccountNumber           |
-| Type            | string                         |
-| Description     | Partial account number of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardholderName                 |
-| Type            | string                         |
-| Description     | Cardholder name of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ExpirationDate                 |
-| Type            | date                           |
-| Description     | Expiration date of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the credit card. |
-| Required        | False                          |
+## Response Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Editable": false,
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the credit card. | False |
+| Editable | boolean | Editable of the credit card. | False |
+| Token | string | Token of the credit card. | False |
+| DateCreated | date | Date created of the credit card. | False |
+| CardType | string | Card type of the credit card. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. | False |
+| CardholderName | string | Cardholder name of the credit card. | False |
+| ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `GET` `v1/me/creditcards`
 Get a list of credit cards visible to this user
@@ -157,85 +113,46 @@ Get a list of credit cards visible to this user
 | Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
 | Required        | False                          |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'Meta': {'Page': 1, 'PageSize': 20, 'TotalCount': 25, 'TotalPages': 2, 'ItemRange': [1, 20]}, 'Items': [{'ID': '', 'Editable': False, 'Token': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}]}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Editable                       |
-| Type            | boolean                        |
-| Description     | Editable of the credit card.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Token                          |
-| Type            | string                         |
-| Description     | Token of the credit card.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardType                       |
-| Type            | string                         |
-| Description     | Card type of the credit card.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PartialAccountNumber           |
-| Type            | string                         |
-| Description     | Partial account number of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardholderName                 |
-| Type            | string                         |
-| Description     | Cardholder name of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ExpirationDate                 |
-| Type            | date                           |
-| Description     | Expiration date of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the credit card. |
-| Required        | False                          |
+## Response Body
+	{
+	    "Items": [
+	        {
+	            "CardType": "",
+	            "CardholderName": "",
+	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "Editable": false,
+	            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	            "ID": "",
+	            "PartialAccountNumber": "",
+	            "Token": "",
+	            "xp": {}
+	        }
+	    ],
+	    "Meta": {
+	        "ItemRange": [
+	            1,
+	            20
+	        ],
+	        "Page": 1,
+	        "PageSize": 20,
+	        "TotalCount": 25,
+	        "TotalPages": 2
+	    }
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the credit card. | False |
+| Editable | boolean | Editable of the credit card. | False |
+| Token | string | Token of the credit card. | False |
+| DateCreated | date | Date created of the credit card. | False |
+| CardType | string | Card type of the credit card. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. | False |
+| CardholderName | string | Cardholder name of the credit card. | False |
+| ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `GET` `v1/me/creditcards/{creditcardID}`
 Get a single credit card
@@ -251,85 +168,32 @@ Get a single credit card
 | Description     | ID of the creditcard.          |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `200`
+## Request Body
+**Response Status**: `200`
 
-## Responsebody
-```
-{'ID': '', 'Editable': False, 'Token': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Editable                       |
-| Type            | boolean                        |
-| Description     | Editable of the credit card.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Token                          |
-| Type            | string                         |
-| Description     | Token of the credit card.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardType                       |
-| Type            | string                         |
-| Description     | Card type of the credit card.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PartialAccountNumber           |
-| Type            | string                         |
-| Description     | Partial account number of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardholderName                 |
-| Type            | string                         |
-| Description     | Cardholder name of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ExpirationDate                 |
-| Type            | date                           |
-| Description     | Expiration date of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the credit card. |
-| Required        | False                          |
+## Response Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Editable": false,
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the credit card. | False |
+| Editable | boolean | Editable of the credit card. | False |
+| Token | string | Token of the credit card. | False |
+| DateCreated | date | Date created of the credit card. | False |
+| CardType | string | Card type of the credit card. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. | False |
+| CardholderName | string | Cardholder name of the credit card. | False |
+| ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `PUT` `v1/me/creditcards/{creditcardID}`
 Create or update a credit card
@@ -345,93 +209,49 @@ Create or update a credit card
 | Description     | ID of the creditcard.          |
 | Required        | True                           |
 
-## Requestbody
-```
-{'Token': '', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| Token | string | Token of the credit card. | False |
+| CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
+| CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
+| ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
-```
-[{'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card. Max length 5 characters.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]
-```
+**Response Status**: `200`
 
-**Responsestatus**: `200`
-
-## Responsebody
-```
-{'ID': '', 'Editable': False, 'Token': '', 'DateCreated': '2018-03-21T23:00:00+00:00', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ID                             |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Editable                       |
-| Type            | boolean                        |
-| Description     | Editable of the credit card.   |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | Token                          |
-| Type            | string                         |
-| Description     | Token of the credit card.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | DateCreated                    |
-| Type            | date                           |
-| Description     | Date created of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardType                       |
-| Type            | string                         |
-| Description     | Card type of the credit card.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | PartialAccountNumber           |
-| Type            | string                         |
-| Description     | Partial account number of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | CardholderName                 |
-| Type            | string                         |
-| Description     | Cardholder name of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | ExpirationDate                 |
-| Type            | date                           |
-| Description     | Expiration date of the credit card. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | xp                             |
-| Type            | object                         |
-| Description     | Container for extended (custom) properties of the credit card. |
-| Required        | False                          |
+## Response Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "Editable": false,
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ID": "",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| ID | string | ID of the credit card. | False |
+| Editable | boolean | Editable of the credit card. | False |
+| Token | string | Token of the credit card. | False |
+| DateCreated | date | Date created of the credit card. | False |
+| CardType | string | Card type of the credit card. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. | False |
+| CardholderName | string | Cardholder name of the credit card. | False |
+| ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `PATCH` `v1/me/creditcards/{creditcardID}`
 Partially update a credit card
@@ -447,18 +267,27 @@ Partially update a credit card
 | Description     | ID of the creditcard.          |
 | Required        | True                           |
 
-## Requestbody
-```
-{'Token': '', 'CardType': '', 'PartialAccountNumber': '', 'CardholderName': '', 'ExpirationDate': '2018-03-21T23:00:00+00:00', 'xp': {}}
-```
+## Request Body
+	{
+	    "CardType": "",
+	    "CardholderName": "",
+	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "PartialAccountNumber": "",
+	    "Token": "",
+	    "xp": {}
+	}
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| Token | string | Token of the credit card. | False |
+| CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
+| PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
+| CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
+| ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
-```
-[{'Name': 'Token', 'Type': 'string', 'Description': 'Token of the credit card.', 'Required': False}, {'Name': 'CardType', 'Type': 'string', 'Description': 'Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.', 'Required': False}, {'Name': 'PartialAccountNumber', 'Type': 'string', 'Description': 'Partial account number of the credit card. Max length 5 characters.', 'Required': False}, {'Name': 'CardholderName', 'Type': 'string', 'Description': 'Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.', 'Required': False}, {'Name': 'ExpirationDate', 'Type': 'date', 'Description': 'Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.', 'Required': False}, {'Name': 'xp', 'Type': 'object', 'Description': 'Container for extended (custom) properties of the credit card.', 'Required': False}]
-```
+**Response Status**: `204`
 
-**Responsestatus**: `204`
-
-## Responsebody
+## Response Body
 ## `DELETE` `v1/me/creditcards/{creditcardID}`
 Delete a credit card
 
@@ -473,7 +302,7 @@ Delete a credit card
 | Description     | ID of the creditcard.          |
 | Required        | True                           |
 
-## Requestbody
-**Responsestatus**: `204`
+## Request Body
+**Response Status**: `204`
 
-## Responsebody
+## Response Body

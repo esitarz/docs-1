@@ -88,248 +88,246 @@ executed.</p>
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
 are listed below.  </p>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 ErrorCode
 
-</th>  
+</th>
 <th>
 
 Message
 
-</th>  
+</th>
 <th>
 
 Status Code
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 AuthCaptureTransaction.OrderIDRequired
 
-</td>  
+</td>
 <td>
 
 OrderID is required to authorize and capture a credit card.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 AuthCaptureTransaction.AmountRequired
 
-</td>  
+</td>
 <td>
 
 Amount is required to authorize and capture a credit card.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 AuthCaptureTransaction.BuyerIDRequired
 
-</td>  
+</td>
 <td>
 
 BuyerID is required to authorize and capture a credit card.
 
-</td>  
+</td>
 <td>
 
 400
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 AuthCaptureTransaction.CardDetailsRequired
 
-</td>  
+</td>
 <td>
 
 CardDetails.CreditCardID OR CardDetails.CardNumber and
 CardDetails.ExpirationDate are required to authorize and capture a credit
 card.
 
-</td>  
+</td>
 <td>
 
 400
 
 </td> </tr> </table>
-
 <h3>Authorize.Net Error Response</h3>
-<table>  
-<tr>  
+<table>
+<tr>
 <th>
 
 responseCode
 
-</th>  
+</th>
 <th>
 
 errorCode
 
-</th>  
+</th>
 <th>
 
 errorText
 
-</th>  
+</th>
 <th>
 
 resultCode
 
-</th>  
+</th>
 <th>
 
 message.code
 
-</th>  
+</th>
 <th>
 
 message.text
 
-</th> </tr>  
-<tr>  
+</th> </tr>
+<tr>
 <td>
 
 3
 
-</td>  
+</td>
 <td>
 
 5
 
-</td>  
+</td>
 <td>
 
 A valid amount is required.
 
-</td>  
+</td>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00027
 
-</td>  
+</td>
 <td>
 
 The transaction was unsuccessful.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 3
 
-</td>  
+</td>
 <td>
 
 6
 
-</td>  
+</td>
 <td>
 
 The credit card number is invalid.
 
-</td>  
+</td>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00027
 
-</td>  
+</td>
 <td>
 
 The transaction was unsuccessful.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 3
 
-</td>  
+</td>
 <td>
 
 7
 
-</td>  
+</td>
 <td>
 
 Credit card expiration date is invalid.
 
-</td>  
+</td>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00027
 
-</td>  
+</td>
 <td>
 
 The transaction was unsuccessful.
 
-</td> </tr>  
-<tr>  
+</td> </tr>
+<tr>
 <td>
 
 3
 
-</td>  
+</td>
 <td>
 
 8
 
-</td>  
+</td>
 <td>
 
 The credit card has expired.
 
-</td>  
+</td>
 <td>
 
 Error
 
-</td>  
+</td>
 <td>
 
 E00027
 
-</td>  
+</td>
 <td>
 
 The transaction was unsuccessful.
 
 </td> </tr> </table>
-
 <h3>OrderCloud.io Error Response</h3>
 <p>If an incorrect <code>BuyerID</code> was provided:</p>
 <p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
