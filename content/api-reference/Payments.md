@@ -10,49 +10,25 @@ slug: Orders-And-Fulfillment-Payments
 ## `GET` `v1/orders/{direction}/{orderID}/payments/{paymentID}`
 Get a single payment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | paymentID                      |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| paymentID | string | ID of the payment. | True |
 
 ## Response Body
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "DateExecuted": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -80,75 +56,16 @@ Get a single payment
 ## `GET` `v1/orders/{direction}/{orderID}/payments`
 Get a list of payments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -157,14 +74,14 @@ Get a list of payments
 	            "Accepted": false,
 	            "Amount": 0,
 	            "CreditCardID": "",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
 	            "Description": "",
 	            "ID": "",
 	            "SpendingAccountID": "",
 	            "Transactions": [
 	                {
 	                    "Amount": 0,
-	                    "DateExecuted": "2018-03-27T16:00:00+00:00",
+	                    "DateExecuted": "2018-03-21T23:00:00+00:00",
 	                    "ID": "",
 	                    "ResultCode": "",
 	                    "ResultMessage": "",
@@ -204,24 +121,10 @@ Get a list of payments
 ## `POST` `v1/orders/{direction}/{orderID}/payments`
 Create a new payment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -245,21 +148,19 @@ Create a new payment
 | Accepted | boolean | Accepted of the payment. | False |
 | xp | object | Container for extended (custom) properties of the payment. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "DateExecuted": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -287,66 +188,21 @@ Create a new payment
 ## `DELETE` `v1/orders/{direction}/{orderID}/payments/{paymentID}`
 Delete a payment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | paymentID                      |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| paymentID | string | ID of the payment. | True |
 
 ## Response Body
 ## `PATCH` `v1/orders/{direction}/{orderID}/payments/{paymentID}`
 Partially update a payment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | paymentID                      |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| paymentID | string | ID of the payment. | True |
 
 ## Request Body
 	{
@@ -370,21 +226,19 @@ Partially update a payment
 | Accepted | boolean | Accepted of the payment. | False |
 | xp | object | Container for extended (custom) properties of the payment. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "DateExecuted": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -412,37 +266,16 @@ Partially update a payment
 ## `POST` `v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions`
 Create a new payment transaction
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | paymentID                      |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| paymentID | string | ID of the payment. | True |
 
 ## Request Body
 	{
 	    "Amount": 0,
-	    "DateExecuted": "2018-03-27T16:00:00+00:00",
+	    "DateExecuted": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "ResultCode": "",
 	    "ResultMessage": "",
@@ -461,21 +294,19 @@ Create a new payment transaction
 | ResultMessage | string | Result message of the payment transaction. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the payment transaction. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-27T16:00:00+00:00",
+	            "DateExecuted": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -503,42 +334,11 @@ Create a new payment transaction
 ## `DELETE` `v1/orders/{direction}/{orderID}/payments/{paymentID}/transactions/{transactionID}`
 Delete a payment transaction
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | paymentID                      |
-| Type            | string                         |
-| Description     | ID of the payment.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | transactionID                  |
-| Type            | string                         |
-| Description     | ID of the transaction.         |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| paymentID | string | ID of the payment. | True |
+| transactionID | string | ID of the transaction. | True |
 
 ## Response Body

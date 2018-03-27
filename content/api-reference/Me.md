@@ -15,9 +15,6 @@ or change their own information.
 
 ## `GET` `v1/me`
 Get the Current Authenticated User
-## Request Body
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -33,7 +30,7 @@ Get the Current Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -62,7 +59,7 @@ Update the Currently Authenticated User
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -79,8 +76,6 @@ Update the Currently Authenticated User
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -96,7 +91,7 @@ Update the Currently Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -125,7 +120,7 @@ Patch the Currently Authenticated User
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -142,8 +137,6 @@ Patch the Currently Authenticated User
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -159,7 +152,7 @@ Patch the Currently Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -180,16 +173,9 @@ Patch the Currently Authenticated User
 ## `PUT` `v1/me/register`
 Register a register
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | anonUserToken                  |
-| Type            | string                         |
-| Description     | Anon user token of the user.   |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| anonUserToken | string | Anon user token of the user. | True |
 
 ## Request Body
 	{
@@ -200,7 +186,7 @@ Register a register
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -217,26 +203,14 @@ Register a register
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{}
 ## `PUT` `v1/me/orders`
 Transfer a anon user order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | anonUserToken                  |
-| Type            | string                         |
-| Description     | Anon user token of the me.     |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| anonUserToken | string | Anon user token of the me. | True |
 
 ## Response Body
 ## `POST` `v1/me/password`
@@ -248,7 +222,5 @@ Reset a password by token
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | NewPassword | string | New password of the token password reset. Required. | True |
-
-**Response Status**: `204`
 
 ## Response Body

@@ -8,11 +8,11 @@ from datetime import *
 from string import *
 import re
 import pypandoc
-from tabulate import tabulate
 
 
 
 d = requests.get('https://api.ordercloud.io/env')
+
 
 r = requests.get('https://api.ordercloud.io/v1/docs')
 
@@ -122,6 +122,11 @@ def main():
 		print(page['path'])
 		page['contents'] += meta
 
+		lastUpdated = d 
+		print(lastUpdated)
+
+		docsUpdated = None
+		
 		section = resources[resources.index(p)]
 		#print('\nSECTION: ')
 		#print(section['Comments'])

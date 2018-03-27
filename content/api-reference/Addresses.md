@@ -14,27 +14,10 @@ appropriate.
 ## `GET` `v1/buyers/{buyerID}/addresses/{addressID}`
 Get a single address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | True |
 
 ## Response Body
 	{
@@ -42,7 +25,7 @@ Get a single address
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -73,67 +56,15 @@ Get a single address
 ## `GET` `v1/buyers/{buyerID}/addresses`
 Get a list of addresses
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -143,7 +74,7 @@ Get a list of addresses
 	            "City": "",
 	            "CompanyName": "",
 	            "Country": "",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
 	            "FirstName": "",
 	            "ID": "",
 	            "LastName": "",
@@ -186,16 +117,9 @@ Get a list of addresses
 ## `POST` `v1/buyers/{buyerID}/addresses`
 Create a new address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
@@ -229,15 +153,13 @@ Create a new address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -268,24 +190,10 @@ Create a new address
 ## `PUT` `v1/buyers/{buyerID}/addresses/{addressID}`
 Create or update an address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | True |
 
 ## Request Body
 	{
@@ -319,15 +227,13 @@ Create or update an address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -358,50 +264,19 @@ Create or update an address
 ## `DELETE` `v1/buyers/{buyerID}/addresses/{addressID}`
 Delete an address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | True |
 
 ## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/addresses/{addressID}`
 Partially update an address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | True |
 
 ## Request Body
 	{
@@ -435,15 +310,13 @@ Partially update an address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -474,83 +347,17 @@ Partially update an address
 ## `GET` `v1/buyers/{buyerID}/addresses/assignments`
 Get a list of address assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | level                          |
-| Type            | string                         |
-| Description     | Level of the address assignment. Possible values: User, Group, Company. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | isShipping                     |
-| Type            | boolean                        |
-| Description     | Is shipping of the address assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | isBilling                      |
-| Type            | boolean                        |
-| Description     | Is billing of the address assignment. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | False |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
+| level | string | Level of the address assignment. Possible values: User, Group, Company. | False |
+| isShipping | boolean | Is shipping of the address assignment. | False |
+| isBilling | boolean | Is billing of the address assignment. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -585,58 +392,20 @@ Get a list of address assignments
 ## `DELETE` `v1/buyers/{buyerID}/addresses/{addressID}/assignments`
 Delete an address assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | addressID                      |
-| Type            | string                         |
-| Description     | ID of the address.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| addressID | string | ID of the address. | True |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
 
 ## Response Body
 ## `POST` `v1/buyers/{buyerID}/addresses/assignments`
 Save an address assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
@@ -653,7 +422,5 @@ Save an address assignment
 | UserGroupID | string | ID of the user group. Sortable: priority level 3. | False |
 | IsShipping | boolean | Is shipping of the address assignment. | False |
 | IsBilling | boolean | Is billing of the address assignment. | False |
-
-**Response Status**: `204`
 
 ## Response Body

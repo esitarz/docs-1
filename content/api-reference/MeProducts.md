@@ -16,83 +16,17 @@ or change their own information.
 ## `GET` `v1/me/products`
 Get a list of products visible to this user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | catalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | categoryID                     |
-| Type            | string                         |
-| Description     | ID of the category.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | depth                          |
-| Type            | string                         |
-| Description     | Depth of the product.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| catalogID | string | ID of the catalog. | False |
+| categoryID | string | ID of the category. | False |
+| depth | string | Depth of the product. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -104,7 +38,7 @@ Get a list of products visible to this user
 	            "ID": "",
 	            "Inventory": {
 	                "Enabled": false,
-	                "LastUpdated": "2018-03-27T16:00:00+00:00",
+	                "LastUpdated": "2018-03-21T23:00:00+00:00",
 	                "NotificationPoint": 0,
 	                "OrderCanExceed": false,
 	                "QuantityAvailable": 0,
@@ -152,8 +86,8 @@ Get a list of products visible to this user
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| PriceSchedule | object | Price schedule of the product. | False |
 | ID | string | ID of the product. | False |
+| PriceSchedule | object | Price schedule of the product. | False |
 | Name | string | Name of the product. | True |
 | Description | string | Description of the product. | False |
 | QuantityMultiplier | integer | Quantity multiplier of the product. | True |
@@ -172,19 +106,9 @@ Get a list of products visible to this user
 ## `GET` `v1/me/products/{productID}`
 Get a single product
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
 
 ## Response Body
 	{
@@ -194,7 +118,7 @@ Get a single product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -230,8 +154,8 @@ Get a single product
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| PriceSchedule | object | Price schedule of the product. | False |
 | ID | string | ID of the product. | False |
+| PriceSchedule | object | Price schedule of the product. | False |
 | Name | string | Name of the product. | True |
 | Description | string | Description of the product. | False |
 | QuantityMultiplier | integer | Quantity multiplier of the product. | True |
@@ -250,75 +174,16 @@ Get a single product
 ## `GET` `v1/me/products/{productID}/specs`
 Get a list of specs visible to this user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | catalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| catalogID | string | ID of the catalog. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -373,35 +238,11 @@ Get a list of specs visible to this user
 ## `GET` `v1/me/products/{productID}/specs/{specID}`
 Get a single spec
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | catalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| specID | string | ID of the spec. | True |
+| catalogID | string | ID of the catalog. | False |
 
 ## Response Body
 	{

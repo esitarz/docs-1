@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Request Body …" />
+<meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …" />
 <meta name="keywords" content="Seller">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Incrementors"/>
-<meta property="og:description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Parameters Description Parameters Description Name incrementorID Type string Description ID of the incrementor. Required True Request Body …"/>
+<meta property="og:description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Seller-Incrementors.html"/>
 <meta property="og:type" content="article"/>
@@ -67,45 +67,21 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>incrementorID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "ID": "",
@@ -155,175 +131,51 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -428,7 +280,6 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "ID": "",
@@ -478,39 +329,17 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>incrementorID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -559,7 +388,6 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "ID": "",
@@ -609,84 +437,38 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>incrementorID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/incrementors/{incrementorID}</code></h2>
 <p>Partially update an incrementor</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>incrementorID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -735,7 +517,6 @@ order ID of aprefix-10010.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "ID": "",

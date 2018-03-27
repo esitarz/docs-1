@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Parameters Description Parameters Description Name catalogID …" />
+<meta name="description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Name Type Description Required catalogID string …" />
 <meta name="keywords" content="Product Catalogs">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Catalogs"/>
-<meta property="og:description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Parameters Description Parameters Description Name catalogID …"/>
+<meta property="og:description" content="A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Name Type Description Required catalogID string …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Product-Catalogs-Catalogs.html"/>
 <meta property="og:type" content="article"/>
@@ -68,45 +68,21 @@ using assignments.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -170,175 +146,51 @@ using assignments.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -464,7 +316,6 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -528,39 +379,17 @@ using assignments.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -616,7 +445,6 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -680,84 +508,38 @@ using assignments.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/catalogs/{catalogID}</code></h2>
 <p>Partially update a catalog</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -813,7 +595,6 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -877,123 +658,39 @@ using assignments.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -1098,201 +795,72 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/catalogs/{catalogID}/assignments</code></h2>
 <p>Delete a catalog assignment</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>GET</code> <code>v1/catalogs/productassignments</code></h2>
 <p>Get a list of catalog product assignments</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>productID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -1369,78 +937,33 @@ using assignments.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/catalogs/{catalogID}/productassignments/{productID}</code></h2>
 <p>Delete a catalog product assignment</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>catalogID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the catalog.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>productID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the product.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
   </div>
   <div class="tag-cloud">

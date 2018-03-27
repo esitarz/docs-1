@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Parameters Description Parameters Description Name userGroupID Type string Description ID of the user group. Required True Request Body Response Status: 200 Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name …" />
+<meta name="description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …" />
 <meta name="keywords" content="Seller">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Admin User Groups"/>
-<meta property="og:description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Parameters Description Parameters Description Name userGroupID Type string Description ID of the user group. Required True Request Body Response Status: 200 Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name …"/>
+<meta property="og:description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Seller-AdminUserGroups.html"/>
 <meta property="og:type" content="article"/>
@@ -63,45 +63,21 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -151,175 +127,51 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -424,7 +276,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -474,39 +325,17 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -555,7 +384,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -605,84 +433,38 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/usergroups/{userGroupID}</code></h2>
 <p>Partially update an admin user group</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -731,7 +513,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -781,123 +562,39 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -947,71 +644,27 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>POST</code> <code>v1/usergroups/assignments</code></h2>
 <p>Save an admin user group user assignment</p>
@@ -1045,7 +698,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
   </div>
   <div class="tag-cloud">

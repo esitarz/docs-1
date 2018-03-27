@@ -14,19 +14,9 @@ creating products. These users are not specific to a buyer company.
 ## `GET` `v1/adminusers/{userID}`
 Get a single admin user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userID | string | ID of the user. | True |
 
 ## Response Body
 	{
@@ -39,7 +29,7 @@ Get a single admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -59,59 +49,14 @@ Get a single admin user
 ## `GET` `v1/adminusers`
 Get a list of admin users
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -126,7 +71,7 @@ Get a list of admin users
 	            "ID": "",
 	            "LastName": "",
 	            "Phone": "",
-	            "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	            "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	            "Username": "",
 	            "xp": {}
 	        }
@@ -166,7 +111,7 @@ Create a new admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -183,8 +128,6 @@ Create a new admin user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -196,7 +139,7 @@ Create a new admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -216,16 +159,9 @@ Create a new admin user
 ## `PUT` `v1/adminusers/{userID}`
 Create or update an admin user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userID | string | ID of the user. | True |
 
 ## Request Body
 	{
@@ -236,7 +172,7 @@ Create or update an admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -253,8 +189,6 @@ Create or update an admin user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -266,7 +200,7 @@ Create or update an admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -286,34 +220,17 @@ Create or update an admin user
 ## `DELETE` `v1/adminusers/{userID}`
 Delete an admin user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userID | string | ID of the user. | True |
 
 ## Response Body
 ## `PATCH` `v1/adminusers/{userID}`
 Partially update an admin user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userID | string | ID of the user. | True |
 
 ## Request Body
 	{
@@ -324,7 +241,7 @@ Partially update an admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -341,8 +258,6 @@ Partially update an admin user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -354,7 +269,7 @@ Partially update an admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}

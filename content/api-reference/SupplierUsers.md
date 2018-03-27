@@ -14,27 +14,10 @@ to the application.
 ## `GET` `v1/suppliers/{supplierID}/users/{userID}`
 Get a single supplier user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userID | string | ID of the user. | True |
 
 ## Response Body
 	{
@@ -47,7 +30,7 @@ Get a single supplier user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -67,75 +50,16 @@ Get a single supplier user
 ## `GET` `v1/suppliers/{supplierID}/users`
 Get a list of supplier users
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userGroupID | string | ID of the user group. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -150,7 +74,7 @@ Get a list of supplier users
 	            "ID": "",
 	            "LastName": "",
 	            "Phone": "",
-	            "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	            "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	            "Username": "",
 	            "xp": {}
 	        }
@@ -182,16 +106,9 @@ Get a list of supplier users
 ## `POST` `v1/suppliers/{supplierID}/users`
 Create a new supplier user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
 
 ## Request Body
 	{
@@ -202,7 +119,7 @@ Create a new supplier user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -219,8 +136,6 @@ Create a new supplier user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -232,7 +147,7 @@ Create a new supplier user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -252,24 +167,10 @@ Create a new supplier user
 ## `PUT` `v1/suppliers/{supplierID}/users/{userID}`
 Create or update a supplier user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userID | string | ID of the user. | True |
 
 ## Request Body
 	{
@@ -280,7 +181,7 @@ Create or update a supplier user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -297,8 +198,6 @@ Create or update a supplier user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -310,7 +209,7 @@ Create or update a supplier user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -330,50 +229,19 @@ Create or update a supplier user
 ## `DELETE` `v1/suppliers/{supplierID}/users/{userID}`
 Delete a supplier user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userID | string | ID of the user. | True |
 
 ## Response Body
 ## `PATCH` `v1/suppliers/{supplierID}/users/{userID}`
 Partially update a supplier user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userID | string | ID of the user. | True |
 
 ## Request Body
 	{
@@ -384,7 +252,7 @@ Partially update a supplier user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -401,8 +269,6 @@ Partially update a supplier user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -414,7 +280,7 @@ Partially update a supplier user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -434,24 +300,10 @@ Partially update a supplier user
 ## `POST` `v1/suppliers/{supplierID}/users/{userID}/accesstoken`
 Get a single supplier user access token
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| supplierID | string | ID of the supplier. | True |
+| userID | string | ID of the user. | True |
 
 ## Request Body
 	{
@@ -464,8 +316,6 @@ Get a single supplier user access token
 |---|---|---|---|
 | ClientID | string | ID of the client. | False |
 | Roles | array | Roles of the impersonate token request. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{

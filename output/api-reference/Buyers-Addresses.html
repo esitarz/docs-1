@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="Addresses are used for the purposes of billing and shipping an order. An address may belong to a list that can be shared among many users if appropriate. GET v1/buyers/{buyerID}/addresses/{addressID} Get a single address Parameters Description Parameters Description Name buyerID Type string Description ID of the …" />
+<meta name="description" content="Addresses are used for the purposes of billing and shipping an order. An address may belong to a list that can be shared among many users if appropriate. GET v1/buyers/{buyerID}/addresses/{addressID} Get a single address Name Type Description Required buyerID string ID of the buyer. True addressID …" />
 <meta name="keywords" content="Buyers">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Addresses"/>
-<meta property="og:description" content="Addresses are used for the purposes of billing and shipping an order. An address may belong to a list that can be shared among many users if appropriate. GET v1/buyers/{buyerID}/addresses/{addressID} Get a single address Parameters Description Parameters Description Name buyerID Type string Description ID of the …"/>
+<meta property="og:description" content="Addresses are used for the purposes of billing and shipping an order. An address may belong to a list that can be shared among many users if appropriate. GET v1/buyers/{buyerID}/addresses/{addressID} Get a single address Name Type Description Required buyerID string ID of the buyer. True addressID …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Buyers-Addresses.html"/>
 <meta property="og:type" content="article"/>
@@ -67,78 +67,34 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "AddressName": "",
     "City": "",
     "CompanyName": "",
     "Country": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
     "FirstName": "",
     "ID": "",
     "LastName": "",
@@ -251,201 +207,57 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -454,7 +266,7 @@ appropriate.</p>
             "City": "",
             "CompanyName": "",
             "Country": "",
-            "DateCreated": "2018-03-27T16:00:00+00:00",
+            "DateCreated": "2018-03-22T18:00:00+00:00",
             "FirstName": "",
             "ID": "",
             "LastName": "",
@@ -579,39 +391,17 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -723,14 +513,13 @@ appropriate.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "AddressName": "",
     "City": "",
     "CompanyName": "",
     "Country": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
     "FirstName": "",
     "ID": "",
     "LastName": "",
@@ -843,65 +632,23 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1013,14 +760,13 @@ appropriate.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "AddressName": "",
     "City": "",
     "CompanyName": "",
     "Country": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
     "FirstName": "",
     "ID": "",
     "LastName": "",
@@ -1133,136 +879,50 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/buyers/{buyerID}/addresses/{addressID}</code></h2>
 <p>Partially update an address</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1374,14 +1034,13 @@ appropriate.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "AddressName": "",
     "City": "",
     "CompanyName": "",
     "Country": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
     "FirstName": "",
     "ID": "",
     "LastName": "",
@@ -1494,253 +1153,69 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>level</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Level of the address assignment. Possible values: User, Group, Company.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>isShipping</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Is shipping of the address assignment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>isBilling</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>boolean</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Is billing of the address assignment.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -1811,162 +1286,56 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>POST</code> <code>v1/buyers/{buyerID}/addresses/assignments</code></h2>
 <p>Save an address assignment</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -2022,7 +1391,6 @@ appropriate.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
   </div>
   <div class="tag-cloud">

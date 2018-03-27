@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="" />
 <meta name="author" content="OrderCloud.io" />
-<meta name="description" content="Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Parameters Description Parameters Description Name supplierID Type string Description ID of the supplier. Required True Request Body Response Status: 200 Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required …" />
+<meta name="description" content="Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Name Type Description Required supplierID string ID of the supplier. True Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the supplier. False Name string …" />
 <meta name="keywords" content="Suppliers">
 <meta property="og:site_name" content="OrderCloud Documentation Content"/>
 <meta property="og:title" content="Suppliers"/>
-<meta property="og:description" content="Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Parameters Description Parameters Description Name supplierID Type string Description ID of the supplier. Required True Request Body Response Status: 200 Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required …"/>
+<meta property="og:description" content="Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Name Type Description Required supplierID string ID of the supplier. True Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the supplier. False Name string …"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="../api-reference\Suppliers-Suppliers.html"/>
 <meta property="og:type" content="article"/>
@@ -66,45 +66,21 @@ Seller oganizations.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>supplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -154,175 +130,51 @@ Seller oganizations.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -427,7 +279,6 @@ Seller oganizations.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -477,39 +328,17 @@ Seller oganizations.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>supplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -558,7 +387,6 @@ Seller oganizations.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -608,84 +436,38 @@ Seller oganizations.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>supplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/suppliers/{supplierID}</code></h2>
 <p>Partially update a supplier</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>supplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -734,7 +516,6 @@ Seller oganizations.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,

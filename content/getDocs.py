@@ -16,8 +16,6 @@ d = requests.get('https://api.ordercloud.io/env')
 
 r = requests.get('https://api.ordercloud.io/v1/docs')
 
-last_updated = None
-
 sections = r.json()['Sections']
 resources = r.json()['Resources']
 roles = r.json()['Roles']
@@ -33,44 +31,6 @@ def unwrap_list(input):
 
 	return(contents) #LIST of strings		
 
-def unwrap_str(input):
-	#print('UNWRAP THE STRINGS!')
-	#print(input)
-	contents = ''
-	text = ''
-	text = '\n '
-	text += pypandoc.convert_text(input, 'gfm', format='rst')
-	text = '\n'
-	contents += text
-
-	return(contents)
-
-def unwrap_dict(input):
-	contents = ''
-
-	#print(input)
-	#print(type(input))
-	if type(input) is dict:
-		for key, value in input.items():
-			text = '\n### '+str(key)
-			if type(value) is dict:
-				
-				text += unwrap_dict(value)
-
-			elif type(value) is list:
-				
-				contents += unwrap_list(value)
-
-			elif type(value) is str:
-				
-				contents += unwrap_str(value)
-	else:
-		contents += str(input) 
-		#contents += pypandoc.convert_text(str(input), 'gfm', format='md')
-
-
-	return(contents)
-
 def define_meta(item):
 	#print(item)
 	
@@ -78,6 +38,7 @@ def define_meta(item):
 	
 	page['title'] = str(item['Name'])
 	page['date'] = str(date.today())
+
 	tags = re.findall('[A-Z][^A-Z]*', str(item['Section']))
 	tagList = ' '.join(str(e) for e in tags)
 	tagSlug = '-'.join(str(e) for e in tags)
@@ -107,6 +68,35 @@ def parseSample(input):
 	contents += tabbed
 	return(contents)
 
+def parseList(input):
+	contents =''
+	table = ''
+	columns = []
+	rows = []
+	if len(input) > 0:
+		for bullet in input:
+			if type(bullet) is str:
+				contents += ' '+bullet
+			elif type(bullet) is dict:
+				row = '|'					
+				for item in bullet.keys():
+					row += ' '+str(bullet[item])+' |'
+				column = ' | '.join(bullet.keys())
+				columns.insert(0, column+' | ')
+				rows.append(row)
+				table = '\n'.join(rows)
+
+				if columns:
+					table = '\n| '+columns[0]+'\n|---|---|---|---|\n'+table+'\n'
+				else:
+					table = ''
+		contents += '\n'+table
+
+
+		#print(contents)
+
+	return(contents)
+
 def parseFields(input):
 	contents =''
 	table = ''
@@ -114,8 +104,6 @@ def parseFields(input):
 	rows = []
 	for bullet in input['Fields']:
 		#print(type(bullet))
-		
-		
 		if type(bullet) is str:
 			contents += ' '+bullet
 		if type(bullet) is dict:
@@ -145,10 +133,24 @@ def main():
 	print("Total Files To Process: "+str(len(resources)))
 	#del resources[5:]
 	#print("New Total Files To Process: "+str(len(resources)))
+	
+	p = Path('.')
 
+	files = list(p.glob('**/api-reference/*.md'))
+#	print(files)
 
-	p = Path('**/api-reference/*.md')
+	lastMod = datetime.utcfromtimestamp(p.stat().st_mtime)
+	docsUpdated = datetime.strptime(d.json()['CommitDate'], "%Y-%m-%dT%H:%M:%S+00:00")  #2018-03-21T22:18:13+00:00
+	print("Docs Content Last Modified: %s" % lastMod)
+	
+	print('Generated Docs Last Updated:'+str(docsUpdated))
+
+	if lastMod >= docsUpdated:
+		print('Docs are up to date!'.title())
+	#TODO: for server, use ^ to distinguish if docs need updating
+
 	rootLoc = Path('content/api-reference')
+
 
 	for p in resources:
 		itemPath = p['ID']+'.md'
@@ -156,7 +158,7 @@ def main():
 		page['path'] = str(rootLoc)+'/'+itemPath
 		title = str(p['Name'])
 		meta = define_meta(p)
-		print(page['path'])
+		print('updating... '+page['path'])
 		page['contents'] += meta
 
 		section = resources[resources.index(p)]
@@ -208,7 +210,7 @@ def main():
 					continue
 
 				elif key == 'RequestBody' and value == None:
-					page['contents'] += '\n## '+returnSplit(str(key)).title()
+					continue
 				elif key == 'RequestBody' and value != None:
 					page['contents'] += '\n## '+returnSplit(str(key)).title()
 					if type(value) == dict:
@@ -228,45 +230,15 @@ def main():
 
 						#print(value.keys())
 						
-						
-						
-						
-
-
-				elif key == 'ResponseStatus':
-					page['contents'] += '\n**'+returnSplit(str(key)).title()+'**: `'+str(value)+'`\n'
-
-
-				
-				#print(type(value))
-				#if type(value) is str:
-						#unwrap_str(v)
-				#	page['contents'] += pypandoc.convert_text(value, 'gfm', format='rst')
-
-				#elif type(value) is int:
-						#unwrap_str(v)
-				#	page['contents'] += '`'+str(value)+'`'
-				#	page['contents'] += '\n---\n'
+					elif key == 'ResponseStatus':
+						page['contents'] += '\n**'+returnSplit(str(key)).title()+'**: `'+str(value)+'`\n'
 
 				if key == 'Parameters' and len(value) == 0:
 					continue
 
 				if key == 'Parameters' and type(value) is list:
 							#unwrap_list(v)
-					page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
-					page['contents'] += '|'.ljust(19, '-')+'|'.ljust(34, '-')+'|\n'
-					for bullet in value:
-						#print(type(bullet))
-						if type(bullet) is str:
-							page['contents'] += ' '+bullet
-						if type(bullet) is dict:
-												
-							for k, v in bullet.items():
-								if k == "Name":
-									page['contents'] += '\n\n| '+'Parameters'.ljust(15)+' | '+'Description'.ljust(30)+' |\n'
-									page['contents'] += '|'.ljust(19, '-')+'|'.ljust(34, '-')+'|\n'
-								page['contents'] += '| '+k.ljust(15)+' | '+str(v).ljust(30)+' |\n'
-							#page['contents'] += table
+							page['contents']+=parseList(value)
 
 
 										
@@ -278,6 +250,7 @@ def main():
 		with open(page['path'], 'w') as mark:
 			mark.write(page['contents'])
 
+	last_updated = str(date.today())
 
 			#print(contents)
 

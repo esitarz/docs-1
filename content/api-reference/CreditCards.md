@@ -15,34 +15,17 @@ use during purchase.
 ## `GET` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 Get a single credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | True |
 
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -50,7 +33,6 @@ Get a single credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. | False |
 | Token | string | Token of the credit card. | False |
 | DateCreated | date | Date created of the credit card. | False |
@@ -58,71 +40,20 @@ Get a single credit card
 | PartialAccountNumber | string | Partial account number of the credit card. | False |
 | CardholderName | string | Cardholder name of the credit card. | False |
 | ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `GET` `v1/buyers/{buyerID}/creditcards`
 Get a list of credit cards
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -130,8 +61,8 @@ Get a list of credit cards
 	        {
 	            "CardType": "",
 	            "CardholderName": "",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
-	            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "PartialAccountNumber": "",
 	            "Token": "",
@@ -151,7 +82,6 @@ Get a list of credit cards
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. | False |
 | Token | string | Token of the credit card. | False |
 | DateCreated | date | Date created of the credit card. | False |
@@ -159,26 +89,20 @@ Get a list of credit cards
 | PartialAccountNumber | string | Partial account number of the credit card. | False |
 | CardholderName | string | Cardholder name of the credit card. | False |
 | ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `POST` `v1/buyers/{buyerID}/creditcards`
 Create a new credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -186,22 +110,20 @@ Create a new credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
 | Token | string | Token of the credit card. | False |
 | CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
 | PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
 | CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
-
-**Response Status**: `201`
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -209,7 +131,6 @@ Create a new credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. | False |
 | Token | string | Token of the credit card. | False |
 | DateCreated | date | Date created of the credit card. | False |
@@ -217,34 +138,21 @@ Create a new credit card
 | PartialAccountNumber | string | Partial account number of the credit card. | False |
 | CardholderName | string | Cardholder name of the credit card. | False |
 | ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `PUT` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 Create or update a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | True |
 
 ## Request Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -252,22 +160,20 @@ Create or update a credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
 | Token | string | Token of the credit card. | False |
 | CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
 | PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
 | CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
-
-**Response Status**: `200`
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -275,7 +181,6 @@ Create or update a credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. | False |
 | Token | string | Token of the credit card. | False |
 | DateCreated | date | Date created of the credit card. | False |
@@ -283,60 +188,30 @@ Create or update a credit card
 | PartialAccountNumber | string | Partial account number of the credit card. | False |
 | CardholderName | string | Cardholder name of the credit card. | False |
 | ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `DELETE` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 Delete a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | True |
 
 ## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/creditcards/{creditCardID}`
 Partially update a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | True |
 
 ## Request Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -344,22 +219,20 @@ Partially update a credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
 | Token | string | Token of the credit card. | False |
 | CardType | string | Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3. | False |
 | PartialAccountNumber | string | Partial account number of the credit card. Max length 5 characters. | False |
 | CardholderName | string | Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2. | False |
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
-
-**Response Status**: `200`
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -367,7 +240,6 @@ Partially update a credit card
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| xp | object | Container for extended (custom) properties of the credit card. | False |
 | ID | string | ID of the credit card. | False |
 | Token | string | Token of the credit card. | False |
 | DateCreated | date | Date created of the credit card. | False |
@@ -375,71 +247,20 @@ Partially update a credit card
 | PartialAccountNumber | string | Partial account number of the credit card. | False |
 | CardholderName | string | Cardholder name of the credit card. | False |
 | ExpirationDate | date | Expiration date of the credit card. | False |
+| xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## `GET` `v1/buyers/{buyerID}/creditcards/assignments`
 Get a list of credit card assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | level                          |
-| Type            | string                         |
-| Description     | Level of the credit card assignment. Possible values: User, Group, Company. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | False |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
+| level | string | Level of the credit card assignment. Possible values: User, Group, Company. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -470,16 +291,9 @@ Get a list of credit card assignments
 ## `POST` `v1/buyers/{buyerID}/creditcards/assignments`
 Save a credit card assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
@@ -493,48 +307,15 @@ Save a credit card assignment
 | UserID | string | ID of the user. Sortable: priority level 2. | False |
 | UserGroupID | string | ID of the user group. Sortable: priority level 3. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `DELETE` `v1/buyers/{buyerID}/creditcards/{creditCardID}/assignments`
 Delete a credit card assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditCardID                   |
-| Type            | string                         |
-| Description     | ID of the credit card.         |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| creditCardID | string | ID of the credit card. | True |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
 
 ## Response Body

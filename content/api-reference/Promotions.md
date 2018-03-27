@@ -16,19 +16,9 @@ and Users for redemption.
 ## `GET` `v1/promotions/{promotionID}`
 Get a single promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| promotionID | string | ID of the promotion. | True |
 
 ## Response Body
 	{
@@ -36,14 +26,14 @@ Get a single promotion
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -67,59 +57,14 @@ Get a single promotion
 ## `GET` `v1/promotions`
 Get a list of promotions
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -129,14 +74,14 @@ Get a list of promotions
 	            "Code": "",
 	            "Description": "",
 	            "EligibleExpression": "",
-	            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	            "FinePrint": "",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCount": 0,
 	            "RedemptionLimit": 0,
 	            "RedemptionLimitPerUser": 0,
-	            "StartDate": "2018-03-27T16:00:00+00:00",
+	            "StartDate": "2018-03-21T23:00:00+00:00",
 	            "ValueExpression": "",
 	            "xp": {}
 	        }
@@ -177,13 +122,13 @@ Create a new promotion
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -203,22 +148,20 @@ Create a new promotion
 | CanCombine | boolean | Can combine of the promotion. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -242,16 +185,9 @@ Create a new promotion
 ## `PUT` `v1/promotions/{promotionID}`
 Create or update a promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| promotionID | string | ID of the promotion. | True |
 
 ## Request Body
 	{
@@ -259,13 +195,13 @@ Create or update a promotion
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -285,22 +221,20 @@ Create or update a promotion
 | CanCombine | boolean | Can combine of the promotion. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -324,34 +258,17 @@ Create or update a promotion
 ## `DELETE` `v1/promotions/{promotionID}`
 Delete a promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| promotionID | string | ID of the promotion. | True |
 
 ## Response Body
 ## `PATCH` `v1/promotions/{promotionID}`
 Partially update a promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| promotionID | string | ID of the promotion. | True |
 
 ## Request Body
 	{
@@ -359,13 +276,13 @@ Partially update a promotion
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -385,22 +302,20 @@ Partially update a promotion
 | CanCombine | boolean | Can combine of the promotion. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -424,67 +339,15 @@ Partially update a promotion
 ## `GET` `v1/promotions/assignments`
 Get a list of promotion assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | level                          |
-| Type            | string                         |
-| Description     | Level of the promotion assignment. Possible values: User, Group, Company. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | False |
+| promotionID | string | ID of the promotion. | False |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
+| level | string | Level of the promotion assignment. Possible values: User, Group, Company. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -526,48 +389,15 @@ Save a promotion assignment
 | BuyerID | string | ID of the buyer. Required. Sortable: priority level 2. | True |
 | UserGroupID | string | ID of the user group. Sortable: priority level 4. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `DELETE` `v1/promotions/{promotionID}/assignments`
 Delete a promotion assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promotionID                    |
-| Type            | string                         |
-| Description     | ID of the promotion.           |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| promotionID | string | ID of the promotion. | True |
+| buyerID | string | ID of the buyer. | True |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
 
 ## Response Body

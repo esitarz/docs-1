@@ -19,7 +19,7 @@ Create a new credit card
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
@@ -33,15 +33,13 @@ Create a new credit card
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
 | xp | object | Container for extended (custom) properties of the credit card. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -62,59 +60,14 @@ Create a new credit card
 ## `GET` `v1/me/creditcards`
 Get a list of credit cards visible to this user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -122,9 +75,9 @@ Get a list of credit cards visible to this user
 	        {
 	            "CardType": "",
 	            "CardholderName": "",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
 	            "Editable": false,
-	            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "PartialAccountNumber": "",
 	            "Token": "",
@@ -157,27 +110,17 @@ Get a list of credit cards visible to this user
 ## `GET` `v1/me/creditcards/{creditcardID}`
 Get a single credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditcardID                   |
-| Type            | string                         |
-| Description     | ID of the creditcard.          |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| creditcardID | string | ID of the creditcard. | True |
 
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -198,22 +141,15 @@ Get a single credit card
 ## `PUT` `v1/me/creditcards/{creditcardID}`
 Create or update a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditcardID                   |
-| Type            | string                         |
-| Description     | ID of the creditcard.          |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| creditcardID | string | ID of the creditcard. | True |
 
 ## Request Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
@@ -227,15 +163,13 @@ Create or update a credit card
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
 | xp | object | Container for extended (custom) properties of the credit card. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
@@ -256,22 +190,15 @@ Create or update a credit card
 ## `PATCH` `v1/me/creditcards/{creditcardID}`
 Partially update a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditcardID                   |
-| Type            | string                         |
-| Description     | ID of the creditcard.          |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| creditcardID | string | ID of the creditcard. | True |
 
 ## Request Body
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
@@ -285,24 +212,12 @@ Partially update a credit card
 | ExpirationDate | date | Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4. | False |
 | xp | object | Container for extended (custom) properties of the credit card. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `DELETE` `v1/me/creditcards/{creditcardID}`
 Delete a credit card
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | creditcardID                   |
-| Type            | string                         |
-| Description     | ID of the creditcard.          |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| creditcardID | string | ID of the creditcard. | True |
 
 ## Response Body

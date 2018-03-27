@@ -16,75 +16,16 @@ or change their own information.
 ## `GET` `v1/me/orders`
 Get a list of orders visible to this user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | from                           |
-| Type            | date                           |
-| Description     | Lower bound of date range that the order was created (if outgoing) or submitted (if incoming). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | to                             |
-| Type            | date                           |
-| Description     | Upper bound of date range that the order was created (if outgoing) or submitted (if incoming). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| from | date | Lower bound of date range that the order was created (if outgoing) or submitted (if incoming). | False |
+| to | date | Upper bound of date range that the order was created (if outgoing) or submitted (if incoming). | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -95,7 +36,7 @@ Get a list of orders visible to this user
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "DateCreated": "2018-03-21T23:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -108,12 +49,12 @@ Get a list of orders visible to this user
 	            },
 	            "BillingAddressID": "",
 	            "Comments": "",
-	            "DateApproved": "2018-03-27T16:00:00+00:00",
-	            "DateCanceled": "2018-03-27T16:00:00+00:00",
-	            "DateCompleted": "2018-03-27T16:00:00+00:00",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
-	            "DateDeclined": "2018-03-27T16:00:00+00:00",
-	            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	            "DateApproved": "2018-03-21T23:00:00+00:00",
+	            "DateCanceled": "2018-03-21T23:00:00+00:00",
+	            "DateCompleted": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateDeclined": "2018-03-21T23:00:00+00:00",
+	            "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	            "FromCompanyID": "",
 	            "FromUser": {
 	                "Active": false,
@@ -125,7 +66,7 @@ Get a list of orders visible to this user
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
@@ -156,7 +97,6 @@ Get a list of orders visible to this user
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -168,6 +108,7 @@ Get a list of orders visible to this user
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -183,75 +124,16 @@ Get a list of orders visible to this user
 ## `GET` `v1/me/orders/approvable`
 Get a list of orders that this user can approve
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | from                           |
-| Type            | date                           |
-| Description     | Lower bound of date range that the order was created (if outgoing) or submitted (if incoming). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | to                             |
-| Type            | date                           |
-| Description     | Upper bound of date range that the order was created (if outgoing) or submitted (if incoming). |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| from | date | Lower bound of date range that the order was created (if outgoing) or submitted (if incoming). | False |
+| to | date | Upper bound of date range that the order was created (if outgoing) or submitted (if incoming). | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -262,7 +144,7 @@ Get a list of orders that this user can approve
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "DateCreated": "2018-03-21T23:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -275,12 +157,12 @@ Get a list of orders that this user can approve
 	            },
 	            "BillingAddressID": "",
 	            "Comments": "",
-	            "DateApproved": "2018-03-27T16:00:00+00:00",
-	            "DateCanceled": "2018-03-27T16:00:00+00:00",
-	            "DateCompleted": "2018-03-27T16:00:00+00:00",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
-	            "DateDeclined": "2018-03-27T16:00:00+00:00",
-	            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	            "DateApproved": "2018-03-21T23:00:00+00:00",
+	            "DateCanceled": "2018-03-21T23:00:00+00:00",
+	            "DateCompleted": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateDeclined": "2018-03-21T23:00:00+00:00",
+	            "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	            "FromCompanyID": "",
 	            "FromUser": {
 	                "Active": false,
@@ -292,7 +174,7 @@ Get a list of orders that this user can approve
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
@@ -323,7 +205,6 @@ Get a list of orders that this user can approve
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -335,6 +216,7 @@ Get a list of orders that this user can approve
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |

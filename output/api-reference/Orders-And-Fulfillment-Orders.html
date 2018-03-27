@@ -70,71 +70,27 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -142,7 +98,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -155,12 +111,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -172,7 +128,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -201,9 +157,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -273,6 +229,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -332,12 +294,6 @@ trigger external events such as financial transactions.</p>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
 <h2><code>GET</code> <code>v1/orders/{direction}</code></h2>
@@ -345,305 +301,81 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>supplierID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the supplier.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>from</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Lower bound of date range that the order was created.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>to</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>date</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Upper bound of date range that the order was created.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -653,7 +385,7 @@ trigger external events such as financial transactions.</p>
                 "City": "",
                 "CompanyName": "",
                 "Country": "",
-                "DateCreated": "2018-03-27T16:00:00+00:00",
+                "DateCreated": "2018-03-22T18:00:00+00:00",
                 "FirstName": "",
                 "ID": "",
                 "LastName": "",
@@ -666,12 +398,12 @@ trigger external events such as financial transactions.</p>
             },
             "BillingAddressID": "",
             "Comments": "",
-            "DateApproved": "2018-03-27T16:00:00+00:00",
-            "DateCanceled": "2018-03-27T16:00:00+00:00",
-            "DateCompleted": "2018-03-27T16:00:00+00:00",
-            "DateCreated": "2018-03-27T16:00:00+00:00",
-            "DateDeclined": "2018-03-27T16:00:00+00:00",
-            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+            "DateApproved": "2018-03-22T18:00:00+00:00",
+            "DateCanceled": "2018-03-22T18:00:00+00:00",
+            "DateCompleted": "2018-03-22T18:00:00+00:00",
+            "DateCreated": "2018-03-22T18:00:00+00:00",
+            "DateDeclined": "2018-03-22T18:00:00+00:00",
+            "DateSubmitted": "2018-03-22T18:00:00+00:00",
             "FromCompanyID": "",
             "FromUser": {
                 "Active": false,
@@ -683,7 +415,7 @@ trigger external events such as financial transactions.</p>
                 "ID": "",
                 "LastName": "",
                 "Phone": "",
-                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+                "TermsAccepted": "2018-03-22T18:00:00+00:00",
                 "Username": "",
                 "xp": {}
             },
@@ -724,9 +456,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -796,6 +528,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -853,12 +591,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -868,39 +600,17 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -928,6 +638,12 @@ trigger external events such as financial transactions.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
+<td>False</td>
+</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -976,15 +692,8 @@ trigger external events such as financial transactions.</p>
 <td>Tax cost of the order. Sortable.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -992,7 +701,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -1005,12 +714,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -1022,7 +731,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -1051,9 +760,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -1123,6 +832,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -1180,12 +895,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -1195,65 +904,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1281,6 +948,12 @@ trigger external events such as financial transactions.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
+<td>False</td>
+</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -1329,15 +1002,8 @@ trigger external events such as financial transactions.</p>
 <td>Tax cost of the order. Sortable.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -1345,7 +1011,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -1358,12 +1024,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -1375,7 +1041,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -1404,9 +1070,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -1476,6 +1142,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -1535,12 +1207,6 @@ trigger external events such as financial transactions.</p>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
 <h2><code>DELETE</code> <code>v1/orders/{direction}/{orderID}</code></h2>
@@ -1548,298 +1214,90 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>GET</code> <code>v1/orders/{direction}/{orderID}/approvals</code></h2>
 <p>Get a list of order approvals</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -1855,14 +1313,14 @@ trigger external events such as financial transactions.</p>
                 "ID": "",
                 "LastName": "",
                 "Phone": "",
-                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+                "TermsAccepted": "2018-03-22T18:00:00+00:00",
                 "Username": "",
                 "xp": {}
             },
             "ApprovingGroupID": "",
             "Comments": "",
-            "DateCompleted": "2018-03-27T16:00:00+00:00",
-            "DateCreated": "2018-03-27T16:00:00+00:00",
+            "DateCompleted": "2018-03-22T18:00:00+00:00",
+            "DateCreated": "2018-03-22T18:00:00+00:00",
             "Status": "Pending"
         }
     ],
@@ -1937,227 +1395,63 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -2171,7 +1465,7 @@ trigger external events such as financial transactions.</p>
             "ID": "",
             "LastName": "",
             "Phone": "",
-            "TermsAccepted": "2018-03-27T16:00:00+00:00",
+            "TermsAccepted": "2018-03-22T18:00:00+00:00",
             "Username": "",
             "xp": {}
         }
@@ -2265,65 +1559,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -2351,6 +1603,12 @@ trigger external events such as financial transactions.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
+<td>False</td>
+</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -2399,15 +1657,8 @@ trigger external events such as financial transactions.</p>
 <td>Tax cost of the order. Sortable.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -2415,7 +1666,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -2428,12 +1679,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -2445,7 +1696,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -2474,9 +1725,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -2546,6 +1797,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -2603,12 +1860,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2618,71 +1869,27 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -2690,7 +1897,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -2703,12 +1910,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -2720,7 +1927,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -2749,9 +1956,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -2821,6 +2028,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -2878,12 +2091,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -2893,65 +2100,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -2986,7 +2151,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -2994,7 +2158,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -3007,12 +2171,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -3024,7 +2188,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -3053,9 +2217,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -3125,6 +2289,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -3182,12 +2352,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3197,65 +2361,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -3290,7 +2412,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -3298,7 +2419,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -3311,12 +2432,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -3328,7 +2449,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -3357,9 +2478,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -3429,6 +2550,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -3486,12 +2613,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -3501,71 +2622,27 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -3573,7 +2650,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -3586,12 +2663,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -3603,7 +2680,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -3632,9 +2709,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -3704,6 +2781,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -3763,12 +2846,6 @@ trigger external events such as financial transactions.</p>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/orders/{direction}/{orderID}/ship</code></h2>
@@ -3776,65 +2853,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -3844,8 +2879,8 @@ trigger external events such as financial transactions.</p>
     "Account": "",
     "BuyerID": "",
     "Cost": 0,
-    "DateDelivered": "2018-03-27T16:00:00+00:00",
-    "DateShipped": "2018-03-27T16:00:00+00:00",
+    "DateDelivered": "2018-03-22T18:00:00+00:00",
+    "DateShipped": "2018-03-22T18:00:00+00:00",
     "FromAddressID": "",
     "ID": "",
     "Shipper": "",
@@ -3932,7 +2967,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -3940,7 +2974,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -3953,12 +2987,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -3970,7 +3004,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -3999,9 +3033,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -4071,6 +3105,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -4128,12 +3168,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -4143,65 +3177,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -4313,7 +3305,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -4321,7 +3312,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -4334,12 +3325,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -4351,7 +3342,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -4380,9 +3371,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -4452,6 +3443,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -4509,12 +3506,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -4524,65 +3515,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -4694,7 +3643,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -4702,7 +3650,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -4715,12 +3663,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -4732,7 +3680,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -4761,9 +3709,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -4833,6 +3781,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -4890,12 +3844,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -4905,65 +3853,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -5075,7 +3981,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -5083,7 +3988,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -5096,12 +4001,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -5113,7 +4018,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -5142,9 +4047,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -5214,6 +4119,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -5271,12 +4182,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -5286,65 +4191,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -5456,7 +4319,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -5464,7 +4326,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -5477,12 +4339,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -5494,7 +4356,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -5523,9 +4385,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -5595,6 +4457,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -5654,12 +4522,6 @@ trigger external events such as financial transactions.</p>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
 <h2><code>PATCH</code> <code>v1/orders/{direction}/{orderID}/fromuser</code></h2>
@@ -5667,65 +4529,23 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -5739,7 +4559,7 @@ trigger external events such as financial transactions.</p>
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -5816,7 +4636,6 @@ trigger external events such as financial transactions.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -5824,7 +4643,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -5837,12 +4656,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -5854,7 +4673,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -5883,9 +4702,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -5955,6 +4774,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -6014,12 +4839,6 @@ trigger external events such as financial transactions.</p>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
 <td>False</td>
 </tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
-<td>False</td>
-</tr>
 </tbody>
 </table>
 <h2><code>POST</code> <code>v1/orders/{direction}/{orderID}/promotions/{promoCode}</code></h2>
@@ -6027,111 +4846,47 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>promoCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Promo code of the promotion.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "CanCombine": false,
     "Code": "",
     "Description": "",
     "EligibleExpression": "",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "FinePrint": "",
     "ID": "",
     "Name": "",
     "RedemptionCount": 0,
     "RedemptionLimit": 0,
     "RedemptionLimitPerUser": 0,
-    "StartDate": "2018-03-27T16:00:00+00:00",
+    "StartDate": "2018-03-22T18:00:00+00:00",
     "ValueExpression": "",
     "xp": {}
 }
@@ -6237,227 +4992,63 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -6467,14 +5058,14 @@ trigger external events such as financial transactions.</p>
             "Code": "",
             "Description": "",
             "EligibleExpression": "",
-            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+            "ExpirationDate": "2018-03-22T18:00:00+00:00",
             "FinePrint": "",
             "ID": "",
             "Name": "",
             "RedemptionCount": 0,
             "RedemptionLimit": 0,
             "RedemptionLimitPerUser": 0,
-            "StartDate": "2018-03-27T16:00:00+00:00",
+            "StartDate": "2018-03-22T18:00:00+00:00",
             "ValueExpression": "",
             "xp": {}
         }
@@ -6598,97 +5189,33 @@ trigger external events such as financial transactions.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>direction</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Direction of the order, from the current user's perspective. Possible values: incoming, outgoing.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>orderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>promoCode</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Promo code of the order.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "BillingAddress": {
@@ -6696,7 +5223,7 @@ trigger external events such as financial transactions.</p>
         "City": "",
         "CompanyName": "",
         "Country": "",
-        "DateCreated": "2018-03-27T16:00:00+00:00",
+        "DateCreated": "2018-03-22T18:00:00+00:00",
         "FirstName": "",
         "ID": "",
         "LastName": "",
@@ -6709,12 +5236,12 @@ trigger external events such as financial transactions.</p>
     },
     "BillingAddressID": "",
     "Comments": "",
-    "DateApproved": "2018-03-27T16:00:00+00:00",
-    "DateCanceled": "2018-03-27T16:00:00+00:00",
-    "DateCompleted": "2018-03-27T16:00:00+00:00",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "DateDeclined": "2018-03-27T16:00:00+00:00",
-    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+    "DateApproved": "2018-03-22T18:00:00+00:00",
+    "DateCanceled": "2018-03-22T18:00:00+00:00",
+    "DateCompleted": "2018-03-22T18:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "DateDeclined": "2018-03-22T18:00:00+00:00",
+    "DateSubmitted": "2018-03-22T18:00:00+00:00",
     "FromCompanyID": "",
     "FromUser": {
         "Active": false,
@@ -6726,7 +5253,7 @@ trigger external events such as financial transactions.</p>
         "ID": "",
         "LastName": "",
         "Phone": "",
-        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+        "TermsAccepted": "2018-03-22T18:00:00+00:00",
         "Username": "",
         "xp": {}
     },
@@ -6755,9 +5282,9 @@ trigger external events such as financial transactions.</p>
 </thead>
 <tbody>
 <tr>
-<td>DateSubmitted</td>
-<td>date</td>
-<td>Date submitted of the order.</td>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 <tr>
@@ -6827,6 +5354,12 @@ trigger external events such as financial transactions.</p>
 <td>False</td>
 </tr>
 <tr>
+<td>DateSubmitted</td>
+<td>date</td>
+<td>Date submitted of the order.</td>
+<td>False</td>
+</tr>
+<tr>
 <td>DateApproved</td>
 <td>date</td>
 <td>Date approved of the order.</td>
@@ -6884,12 +5417,6 @@ trigger external events such as financial transactions.</p>
 <td>IsSubmitted</td>
 <td>boolean</td>
 <td>True if this Order has been passed from the Buyer to the Seller.</td>
-<td>False</td>
-</tr>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the order.</td>
 <td>False</td>
 </tr>
 </tbody>

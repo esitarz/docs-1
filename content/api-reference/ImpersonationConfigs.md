@@ -10,19 +10,9 @@ slug: Authentication-And-Authorization-ImpersonationConfigs
 ## `GET` `v1/impersonationconfig/{impersonationConfigID}`
 Get a single impersonation config
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | impersonationConfigID          |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Response Body
 	{
@@ -51,59 +41,14 @@ Get a single impersonation config
 ## `GET` `v1/impersonationconfig`
 Get a list of impersonation configs
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -169,8 +114,6 @@ Create a new impersonation config
 | SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "BuyerID": "",
@@ -198,16 +141,9 @@ Create a new impersonation config
 ## `PUT` `v1/impersonationconfig/{impersonationConfigID}`
 Create or update an impersonation config
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | impersonationConfigID          |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Request Body
 	{
@@ -232,8 +168,6 @@ Create or update an impersonation config
 | UserID | string | ID of the user. Searchable: priority level 5. Sortable: priority level 5. | False |
 | SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -262,34 +196,17 @@ Create or update an impersonation config
 ## `DELETE` `v1/impersonationconfig/{impersonationConfigID}`
 Delete an impersonation config
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | impersonationConfigID          |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Response Body
 ## `PATCH` `v1/impersonationconfig/{impersonationConfigID}`
 Partially update an impersonation config
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | impersonationConfigID          |
-| Type            | string                         |
-| Description     | ID of the impersonation config. |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Request Body
 	{
@@ -314,8 +231,6 @@ Partially update an impersonation config
 | UserID | string | ID of the user. Searchable: priority level 5. Sortable: priority level 5. | False |
 | SecurityProfileID | string | ID of the security profile. Required. Searchable: priority level 6. Sortable: priority level 6. | True |
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
-
-**Response Status**: `200`
 
 ## Response Body
 	{

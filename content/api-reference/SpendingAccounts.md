@@ -22,37 +22,20 @@ deducted individually.
 ## `GET` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Get a single spending account
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | True |
 
 ## Response Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -69,67 +52,15 @@ Get a single spending account
 ## `GET` `v1/buyers/{buyerID}/spendingaccounts`
 Get a list of spending accounts
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -137,11 +68,11 @@ Get a list of spending accounts
 	        {
 	            "AllowAsPaymentMethod": false,
 	            "Balance": 0,
-	            "EndDate": "2018-03-27T16:00:00+00:00",
+	            "EndDate": "2018-03-21T23:00:00+00:00",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCode": "",
-	            "StartDate": "2018-03-27T16:00:00+00:00",
+	            "StartDate": "2018-03-21T23:00:00+00:00",
 	            "xp": {}
 	        }
 	    ],
@@ -170,26 +101,19 @@ Get a list of spending accounts
 ## `POST` `v1/buyers/{buyerID}/spendingaccounts`
 Create a new spending account
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -203,17 +127,15 @@ Create a new spending account
 | EndDate | date | End date of the spending account. | False |
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -230,34 +152,20 @@ Create a new spending account
 ## `PUT` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Create or update a spending account
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | True |
 
 ## Request Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -271,17 +179,15 @@ Create or update a spending account
 | EndDate | date | End date of the spending account. | False |
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -298,60 +204,29 @@ Create or update a spending account
 ## `DELETE` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Delete a spending account
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | True |
 
 ## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}`
 Partially update a spending account
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | True |
 
 ## Request Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -365,17 +240,15 @@ Partially update a spending account
 | EndDate | date | End date of the spending account. | False |
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-27T16:00:00+00:00",
+	    "EndDate": "2018-03-21T23:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "xp": {}
 	}
 | Name | Type | Description | Required | 
@@ -392,67 +265,15 @@ Partially update a spending account
 ## `GET` `v1/buyers/{buyerID}/spendingaccounts/assignments`
 Get a list of spending account assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | level                          |
-| Type            | string                         |
-| Description     | Level of the spending account assignment. Possible values: User, Group, Company. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | False |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
+| level | string | Level of the spending account assignment. Possible values: User, Group, Company. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -485,16 +306,9 @@ Get a list of spending account assignments
 ## `POST` `v1/buyers/{buyerID}/spendingaccounts/assignments`
 Save a spending account assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
@@ -510,48 +324,15 @@ Save a spending account assignment
 | UserGroupID | string | ID of the user group. Sortable: priority level 3. | False |
 | AllowExceed | boolean | Allow exceed of the spending account assignment. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `DELETE` `v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}/assignments`
 Delete a spending account assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | spendingAccountID              |
-| Type            | string                         |
-| Description     | ID of the spending account.    |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| spendingAccountID | string | ID of the spending account. | True |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
 
 ## Response Body

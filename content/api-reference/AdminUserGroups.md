@@ -10,19 +10,9 @@ slug: Seller-AdminUserGroups
 ## `GET` `v1/usergroups/{userGroupID}`
 Get a single admin user group
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | True |
 
 ## Response Body
 	{
@@ -41,59 +31,14 @@ Get a single admin user group
 ## `GET` `v1/usergroups`
 Get a list of admin user groups
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -139,8 +84,6 @@ Create a new admin user group
 | Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Description": "",
@@ -158,16 +101,9 @@ Create a new admin user group
 ## `PUT` `v1/usergroups/{userGroupID}`
 Create or update an admin user group
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | True |
 
 ## Request Body
 	{
@@ -182,8 +118,6 @@ Create or update an admin user group
 | Name | string | Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
 | Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
 | xp | object | Container for extended (custom) properties of the user group. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -202,34 +136,17 @@ Create or update an admin user group
 ## `DELETE` `v1/usergroups/{userGroupID}`
 Delete an admin user group
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | True |
 
 ## Response Body
 ## `PATCH` `v1/usergroups/{userGroupID}`
 Partially update an admin user group
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | True |
 
 ## Request Body
 	{
@@ -244,8 +161,6 @@ Partially update an admin user group
 | Name | string | Name of the user group. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | True |
 | Description | string | Description of the user group. Max length 2000 characters. Searchable: priority level 3. | False |
 | xp | object | Container for extended (custom) properties of the user group. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -264,43 +179,12 @@ Partially update an admin user group
 ## `GET` `v1/usergroups/assignments`
 Get a list of admin user group user assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | False |
+| userID | string | ID of the user. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -329,27 +213,10 @@ Get a list of admin user group user assignments
 ## `DELETE` `v1/usergroups/{userGroupID}/assignments/{userID}`
 Delete an admin user group user assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| userGroupID | string | ID of the user group. | True |
+| userID | string | ID of the user. | True |
 
 ## Response Body
 ## `POST` `v1/usergroups/assignments`
@@ -363,7 +230,5 @@ Save an admin user group user assignment
 |---|---|---|---|
 | UserGroupID | string | ID of the user group. | False |
 | UserID | string | ID of the user. | False |
-
-**Response Status**: `204`
 
 ## Response Body

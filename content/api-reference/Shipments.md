@@ -15,33 +15,23 @@ submitted as part of the fulfillment process.
 ## `GET` `v1/shipments/{shipmentID}`
 Get a single shipment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
 
 ## Response Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -60,7 +50,7 @@ Get a single shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -94,67 +84,15 @@ Get a single shipment
 ## `GET` `v1/shipments`
 Get a list of shipments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| orderID | string | ID of the order. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -163,14 +101,14 @@ Get a list of shipments
 	            "Account": "",
 	            "BuyerID": "",
 	            "Cost": 0,
-	            "DateDelivered": "2018-03-27T16:00:00+00:00",
-	            "DateShipped": "2018-03-27T16:00:00+00:00",
+	            "DateDelivered": "2018-03-21T23:00:00+00:00",
+	            "DateShipped": "2018-03-21T23:00:00+00:00",
 	            "FromAddress": {
 	                "AddressName": "",
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "DateCreated": "2018-03-21T23:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -189,7 +127,7 @@ Get a list of shipments
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "DateCreated": "2018-03-21T23:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -239,8 +177,8 @@ Create a new shipment
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -262,21 +200,19 @@ Create a new shipment
 | FromAddressID | string | ID of the from address. | False |
 | ToAddressID | string | ID of the to address. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -295,7 +231,7 @@ Create a new shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -329,24 +265,17 @@ Create a new shipment
 ## `PUT` `v1/shipments/{shipmentID}`
 Create or update a shipment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -368,21 +297,19 @@ Create or update a shipment
 | FromAddressID | string | ID of the from address. | False |
 | ToAddressID | string | ID of the to address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -401,7 +328,7 @@ Create or update a shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -435,42 +362,25 @@ Create or update a shipment
 ## `DELETE` `v1/shipments/{shipmentID}`
 Delete a shipment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
 
 ## Response Body
 ## `PATCH` `v1/shipments/{shipmentID}`
 Partially update a shipment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -492,21 +402,19 @@ Partially update a shipment
 | FromAddressID | string | ID of the from address. | False |
 | ToAddressID | string | ID of the to address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -525,7 +433,7 @@ Partially update a shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -559,74 +467,22 @@ Partially update a shipment
 ## `GET` `v1/shipments/{shipmentID}/items`
 Get a list of shipment items
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
 	    "Items": [
 	        {
 	            "CostCenter": "",
-	            "DateNeeded": "2018-03-27T16:00:00+00:00",
+	            "DateNeeded": "2018-03-21T23:00:00+00:00",
 	            "LineItemID": "",
 	            "OrderID": "",
 	            "Product": {
@@ -679,40 +535,16 @@ Get a list of shipment items
 ## `GET` `v1/shipments/{shipmentID}/items/{orderID}/{lineItemID}`
 Get a single shipment item
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | lineItemID                     |
-| Type            | string                         |
-| Description     | ID of the line item.           |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
+| orderID | string | ID of the order. | True |
+| lineItemID | string | ID of the line item. | True |
 
 ## Response Body
 	{
 	    "CostCenter": "",
-	    "DateNeeded": "2018-03-27T16:00:00+00:00",
+	    "DateNeeded": "2018-03-21T23:00:00+00:00",
 	    "LineItemID": "",
 	    "OrderID": "",
 	    "Product": {
@@ -753,16 +585,9 @@ Get a single shipment item
 ## `POST` `v1/shipments/{shipmentID}/items`
 Save a shipment item
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
 	{
@@ -776,12 +601,10 @@ Save a shipment item
 | LineItemID | string | ID of the line item. Required. | True |
 | QuantityShipped | integer | Quantity shipped of the shipment item. Required. | True |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "CostCenter": "",
-	    "DateNeeded": "2018-03-27T16:00:00+00:00",
+	    "DateNeeded": "2018-03-21T23:00:00+00:00",
 	    "LineItemID": "",
 	    "OrderID": "",
 	    "Product": {
@@ -822,34 +645,10 @@ Save a shipment item
 ## `DELETE` `v1/shipments/{shipmentID}/items/{orderID}/{lineItemID}`
 Delete a shipment item
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | shipmentID                     |
-| Type            | string                         |
-| Description     | ID of the shipment.            |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | lineItemID                     |
-| Type            | string                         |
-| Description     | ID of the line item.           |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| shipmentID | string | ID of the shipment. | True |
+| orderID | string | ID of the order. | True |
+| lineItemID | string | ID of the line item. | True |
 
 ## Response Body

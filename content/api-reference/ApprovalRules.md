@@ -18,27 +18,10 @@ of a previous rule.
 ## `GET` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Get a single approval rule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | approvalRuleID                 |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| approvalRuleID | string | ID of the approval rule. | True |
 
 ## Response Body
 	{
@@ -61,67 +44,15 @@ Get a single approval rule
 ## `GET` `v1/buyers/{buyerID}/approvalrules`
 Get a list of approval rules
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -158,16 +89,9 @@ Get a list of approval rules
 ## `POST` `v1/buyers/{buyerID}/approvalrules`
 Create a new approval rule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
 
 ## Request Body
 	{
@@ -186,8 +110,6 @@ Create a new approval rule
 | ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
 | RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
-
-**Response Status**: `201`
 
 ## Response Body
 	{
@@ -210,24 +132,10 @@ Create a new approval rule
 ## `PUT` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Create or update an approval rule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | approvalRuleID                 |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| approvalRuleID | string | ID of the approval rule. | True |
 
 ## Request Body
 	{
@@ -246,8 +154,6 @@ Create or update an approval rule
 | ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
 | RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -270,50 +176,19 @@ Create or update an approval rule
 ## `DELETE` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Delete an approval rule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | approvalRuleID                 |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| approvalRuleID | string | ID of the approval rule. | True |
 
 ## Response Body
 ## `PATCH` `v1/buyers/{buyerID}/approvalrules/{approvalRuleID}`
 Partially update an approval rule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | approvalRuleID                 |
-| Type            | string                         |
-| Description     | ID of the approval rule.       |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| buyerID | string | ID of the buyer. | True |
+| approvalRuleID | string | ID of the approval rule. | True |
 
 ## Request Body
 	{
@@ -332,8 +207,6 @@ Partially update an approval rule
 | ApprovingGroupID | string | ID of the approving group. Required. Sortable. | True |
 | RuleExpression | string | Rule expression of the approval rule. Required. Max length 400 characters. Searchable: priority level 4. Sortable. | True |
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{

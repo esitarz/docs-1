@@ -15,19 +15,9 @@ or to what type of order the price schedule applies.
 ## `GET` `v1/priceschedules/{priceScheduleID}`
 Get a single price schedule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
 
 ## Response Body
 	{
@@ -63,59 +53,14 @@ Get a single price schedule
 ## `GET` `v1/priceschedules`
 Get a list of price schedules
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -195,8 +140,6 @@ Create a new price schedule
 | PriceBreaks | array | Price breaks of the price schedule. | False |
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "ApplyShipping": false,
@@ -231,16 +174,9 @@ Create a new price schedule
 ## `PUT` `v1/priceschedules/{priceScheduleID}`
 Create or update a price schedule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
 	{
@@ -272,8 +208,6 @@ Create or update a price schedule
 | RestrictedQuantity | boolean | Restricted quantity of the price schedule. | False |
 | PriceBreaks | array | Price breaks of the price schedule. | False |
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -309,34 +243,17 @@ Create or update a price schedule
 ## `DELETE` `v1/priceschedules/{priceScheduleID}`
 Delete a price schedule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
 
 ## Response Body
 ## `PATCH` `v1/priceschedules/{priceScheduleID}`
 Partially update a price schedule
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
 	{
@@ -368,8 +285,6 @@ Partially update a price schedule
 | RestrictedQuantity | boolean | Restricted quantity of the price schedule. | False |
 | PriceBreaks | array | Price breaks of the price schedule. | False |
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -405,16 +320,9 @@ Partially update a price schedule
 ## `POST` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
 Save a price schedule price break
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
 	{
@@ -425,8 +333,6 @@ Save a price schedule price break
 |---|---|---|---|
 | Quantity | integer | Quantity of the price break. Required. Must be at least 0. | True |
 | Price | float | Price of the price break. Required. | True |
-
-**Response Status**: `201`
 
 ## Response Body
 	{
@@ -462,26 +368,9 @@ Save a price schedule price break
 ## `DELETE` `v1/priceschedules/{priceScheduleID}/PriceBreaks`
 Delete a price schedule price break
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | quantity                       |
-| Type            | integer                        |
-| Description     | Quantity of the price schedule. |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| priceScheduleID | string | ID of the price schedule. | True |
+| quantity | integer | Quantity of the price schedule. | True |
 
 ## Response Body

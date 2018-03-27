@@ -17,27 +17,10 @@ trigger external events such as financial transactions.
 ## `GET` `v1/orders/{direction}/{orderID}`
 Get a single order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Response Body
 	{
@@ -46,7 +29,7 @@ Get a single order
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -59,12 +42,12 @@ Get a single order
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -76,7 +59,7 @@ Get a single order
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -95,7 +78,6 @@ Get a single order
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -107,6 +89,7 @@ Get a single order
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -122,99 +105,19 @@ Get a single order
 ## `GET` `v1/orders/{direction}`
 Get a list of orders
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | from                           |
-| Type            | date                           |
-| Description     | Lower bound of date range that the order was created. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | to                             |
-| Type            | date                           |
-| Description     | Upper bound of date range that the order was created. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| buyerID | string | ID of the buyer. | False |
+| supplierID | string | ID of the supplier. | False |
+| from | date | Lower bound of date range that the order was created. | False |
+| to | date | Upper bound of date range that the order was created. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -225,7 +128,7 @@ Get a list of orders
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-27T16:00:00+00:00",
+	                "DateCreated": "2018-03-21T23:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -238,12 +141,12 @@ Get a list of orders
 	            },
 	            "BillingAddressID": "",
 	            "Comments": "",
-	            "DateApproved": "2018-03-27T16:00:00+00:00",
-	            "DateCanceled": "2018-03-27T16:00:00+00:00",
-	            "DateCompleted": "2018-03-27T16:00:00+00:00",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
-	            "DateDeclined": "2018-03-27T16:00:00+00:00",
-	            "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	            "DateApproved": "2018-03-21T23:00:00+00:00",
+	            "DateCanceled": "2018-03-21T23:00:00+00:00",
+	            "DateCompleted": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateDeclined": "2018-03-21T23:00:00+00:00",
+	            "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	            "FromCompanyID": "",
 	            "FromUser": {
 	                "Active": false,
@@ -255,7 +158,7 @@ Get a list of orders
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
@@ -286,7 +189,6 @@ Get a list of orders
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -298,6 +200,7 @@ Get a list of orders
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -313,16 +216,9 @@ Get a list of orders
 ## `POST` `v1/orders/{direction}`
 Create a new order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
 
 ## Request Body
 	{
@@ -348,8 +244,6 @@ Create a new order
 | TaxCost | float | Tax cost of the order. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the order. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -357,7 +251,7 @@ Create a new order
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -370,12 +264,12 @@ Create a new order
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -387,7 +281,7 @@ Create a new order
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -406,7 +300,6 @@ Create a new order
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -418,6 +311,7 @@ Create a new order
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -433,24 +327,10 @@ Create a new order
 ## `PUT` `v1/orders/{direction}/{orderID}`
 Create or update an order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -476,8 +356,6 @@ Create or update an order
 | TaxCost | float | Tax cost of the order. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the order. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -485,7 +363,7 @@ Create or update an order
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -498,12 +376,12 @@ Create or update an order
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -515,7 +393,7 @@ Create or update an order
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -534,7 +412,6 @@ Create or update an order
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -546,6 +423,7 @@ Create or update an order
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -561,101 +439,25 @@ Create or update an order
 ## `DELETE` `v1/orders/{direction}/{orderID}`
 Delete an order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Response Body
 ## `GET` `v1/orders/{direction}/{orderID}/approvals`
 Get a list of order approvals
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -672,14 +474,14 @@ Get a list of order approvals
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
 	            "ApprovingGroupID": "",
 	            "Comments": "",
-	            "DateCompleted": "2018-03-27T16:00:00+00:00",
-	            "DateCreated": "2018-03-27T16:00:00+00:00",
+	            "DateCompleted": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-21T23:00:00+00:00",
 	            "Status": "Pending"
 	        }
 	    ],
@@ -707,75 +509,16 @@ Get a list of order approvals
 ## `GET` `v1/orders/{direction}/{orderID}/eligibleapprovers`
 Get a list of order eligible approvers
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -790,7 +533,7 @@ Get a list of order eligible approvers
 	            "ID": "",
 	            "LastName": "",
 	            "Phone": "",
-	            "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	            "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	            "Username": "",
 	            "xp": {}
 	        }
@@ -822,24 +565,10 @@ Get a list of order eligible approvers
 ## `PATCH` `v1/orders/{direction}/{orderID}`
 Partially update an order
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -865,8 +594,6 @@ Partially update an order
 | TaxCost | float | Tax cost of the order. Sortable. | False |
 | xp | object | Container for extended (custom) properties of the order. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -874,7 +601,7 @@ Partially update an order
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -887,12 +614,12 @@ Partially update an order
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -904,7 +631,7 @@ Partially update an order
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -923,7 +650,6 @@ Partially update an order
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -935,6 +661,7 @@ Partially update an order
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -950,27 +677,10 @@ Partially update an order
 ## `POST` `v1/orders/{direction}/{orderID}/submit`
 Submit an order submit
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `201`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Response Body
 	{
@@ -979,7 +689,7 @@ Submit an order submit
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -992,12 +702,12 @@ Submit an order submit
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1009,7 +719,7 @@ Submit an order submit
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1028,7 +738,6 @@ Submit an order submit
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1040,6 +749,7 @@ Submit an order submit
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1055,24 +765,10 @@ Submit an order submit
 ## `POST` `v1/orders/{direction}/{orderID}/approve`
 Approve an order approve
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1084,8 +780,6 @@ Approve an order approve
 | Comments | string | Comments of the order approval info. Max length 2000 characters. | False |
 | AllowResubmit | boolean | Allow resubmit of the order approval info. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1093,7 +787,7 @@ Approve an order approve
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1106,12 +800,12 @@ Approve an order approve
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1123,7 +817,7 @@ Approve an order approve
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1142,7 +836,6 @@ Approve an order approve
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1154,6 +847,7 @@ Approve an order approve
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1169,24 +863,10 @@ Approve an order approve
 ## `POST` `v1/orders/{direction}/{orderID}/decline`
 Decline an order decline
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1198,8 +878,6 @@ Decline an order decline
 | Comments | string | Comments of the order approval info. Max length 2000 characters. | False |
 | AllowResubmit | boolean | Allow resubmit of the order approval info. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1207,7 +885,7 @@ Decline an order decline
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1220,12 +898,12 @@ Decline an order decline
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1237,7 +915,7 @@ Decline an order decline
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1256,7 +934,6 @@ Decline an order decline
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1268,6 +945,7 @@ Decline an order decline
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1283,27 +961,10 @@ Decline an order decline
 ## `POST` `v1/orders/{direction}/{orderID}/cancel`
 Cancel an order cancel
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `201`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Response Body
 	{
@@ -1312,7 +973,7 @@ Cancel an order cancel
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1325,12 +986,12 @@ Cancel an order cancel
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1342,7 +1003,7 @@ Cancel an order cancel
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1361,7 +1022,6 @@ Cancel an order cancel
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1373,6 +1033,7 @@ Cancel an order cancel
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1388,32 +1049,18 @@ Cancel an order cancel
 ## `POST` `v1/orders/{direction}/{orderID}/ship`
 Ship an order ship
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-27T16:00:00+00:00",
-	    "DateShipped": "2018-03-27T16:00:00+00:00",
+	    "DateDelivered": "2018-03-21T23:00:00+00:00",
+	    "DateShipped": "2018-03-21T23:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -1435,8 +1082,6 @@ Ship an order ship
 | FromAddressID | string | ID of the from address. | False |
 | ToAddressID | string | ID of the to address. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1444,7 +1089,7 @@ Ship an order ship
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1457,12 +1102,12 @@ Ship an order ship
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1474,7 +1119,7 @@ Ship an order ship
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1493,7 +1138,6 @@ Ship an order ship
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1505,6 +1149,7 @@ Ship an order ship
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1520,24 +1165,10 @@ Ship an order ship
 ## `PUT` `v1/orders/{direction}/{orderID}/shipto`
 Set an shipping address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1571,8 +1202,6 @@ Set an shipping address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1580,7 +1209,7 @@ Set an shipping address
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1593,12 +1222,12 @@ Set an shipping address
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1610,7 +1239,7 @@ Set an shipping address
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1629,7 +1258,6 @@ Set an shipping address
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1641,6 +1269,7 @@ Set an shipping address
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1656,24 +1285,10 @@ Set an shipping address
 ## `PATCH` `v1/orders/{direction}/{orderID}/shipto`
 Partially update an order shipping address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1707,8 +1322,6 @@ Partially update an order shipping address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1716,7 +1329,7 @@ Partially update an order shipping address
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1729,12 +1342,12 @@ Partially update an order shipping address
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1746,7 +1359,7 @@ Partially update an order shipping address
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1765,7 +1378,6 @@ Partially update an order shipping address
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1777,6 +1389,7 @@ Partially update an order shipping address
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1792,24 +1405,10 @@ Partially update an order shipping address
 ## `PUT` `v1/orders/{direction}/{orderID}/billto`
 Set an billing address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1843,8 +1442,6 @@ Set an billing address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1852,7 +1449,7 @@ Set an billing address
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -1865,12 +1462,12 @@ Set an billing address
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -1882,7 +1479,7 @@ Set an billing address
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -1901,7 +1498,6 @@ Set an billing address
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -1913,6 +1509,7 @@ Set an billing address
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -1928,24 +1525,10 @@ Set an billing address
 ## `PATCH` `v1/orders/{direction}/{orderID}/billto`
 Partially update an order billing address
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -1979,8 +1562,6 @@ Partially update an order billing address
 | AddressName | string | Address name of the address. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1. | False |
 | xp | object | Container for extended (custom) properties of the address. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -1988,7 +1569,7 @@ Partially update an order billing address
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -2001,12 +1582,12 @@ Partially update an order billing address
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -2018,7 +1599,7 @@ Partially update an order billing address
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -2037,7 +1618,6 @@ Partially update an order billing address
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -2049,6 +1629,7 @@ Partially update an order billing address
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -2064,24 +1645,10 @@ Partially update an order billing address
 ## `PATCH` `v1/orders/{direction}/{orderID}/fromuser`
 Partially update an order from user
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
 
 ## Request Body
 	{
@@ -2092,7 +1659,7 @@ Partially update an order from user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
@@ -2109,8 +1676,6 @@ Partially update an order from user
 | Active | boolean | Active of the user. Required. | True |
 | xp | object | Container for extended (custom) properties of the user. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "BillingAddress": {
@@ -2118,7 +1683,7 @@ Partially update an order from user
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -2131,12 +1696,12 @@ Partially update an order from user
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -2148,7 +1713,7 @@ Partially update an order from user
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -2167,7 +1732,6 @@ Partially update an order from user
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -2179,6 +1743,7 @@ Partially update an order from user
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |
@@ -2194,35 +1759,11 @@ Partially update an order from user
 ## `POST` `v1/orders/{direction}/{orderID}/promotions/{promoCode}`
 Add an promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promoCode                      |
-| Type            | string                         |
-| Description     | Promo code of the promotion.   |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `201`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| promoCode | string | Promo code of the promotion. | True |
 
 ## Response Body
 	{
@@ -2230,14 +1771,14 @@ Add an promotion
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-27T16:00:00+00:00",
+	    "StartDate": "2018-03-21T23:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
@@ -2261,75 +1802,16 @@ Add an promotion
 ## `GET` `v1/orders/{direction}/{orderID}/promotions`
 Get a list of order promotions
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -2340,14 +1822,14 @@ Get a list of order promotions
 	            "Code": "",
 	            "Description": "",
 	            "EligibleExpression": "",
-	            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
 	            "FinePrint": "",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCount": 0,
 	            "RedemptionLimit": 0,
 	            "RedemptionLimitPerUser": 0,
-	            "StartDate": "2018-03-27T16:00:00+00:00",
+	            "StartDate": "2018-03-21T23:00:00+00:00",
 	            "ValueExpression": "",
 	            "xp": {}
 	        }
@@ -2384,35 +1866,11 @@ Get a list of order promotions
 ## `DELETE` `v1/orders/{direction}/{orderID}/promotions/{promoCode}`
 Remove an promotion
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | direction                      |
-| Type            | string                         |
-| Description     | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | orderID                        |
-| Type            | string                         |
-| Description     | ID of the order.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | promoCode                      |
-| Type            | string                         |
-| Description     | Promo code of the order.       |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| direction | string | Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. | True |
+| orderID | string | ID of the order. | True |
+| promoCode | string | Promo code of the order. | True |
 
 ## Response Body
 	{
@@ -2421,7 +1879,7 @@ Remove an promotion
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-27T16:00:00+00:00",
+	        "DateCreated": "2018-03-21T23:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -2434,12 +1892,12 @@ Remove an promotion
 	    },
 	    "BillingAddressID": "",
 	    "Comments": "",
-	    "DateApproved": "2018-03-27T16:00:00+00:00",
-	    "DateCanceled": "2018-03-27T16:00:00+00:00",
-	    "DateCompleted": "2018-03-27T16:00:00+00:00",
-	    "DateCreated": "2018-03-27T16:00:00+00:00",
-	    "DateDeclined": "2018-03-27T16:00:00+00:00",
-	    "DateSubmitted": "2018-03-27T16:00:00+00:00",
+	    "DateApproved": "2018-03-21T23:00:00+00:00",
+	    "DateCanceled": "2018-03-21T23:00:00+00:00",
+	    "DateCompleted": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateDeclined": "2018-03-21T23:00:00+00:00",
+	    "DateSubmitted": "2018-03-21T23:00:00+00:00",
 	    "FromCompanyID": "",
 	    "FromUser": {
 	        "Active": false,
@@ -2451,7 +1909,7 @@ Remove an promotion
 	        "ID": "",
 	        "LastName": "",
 	        "Phone": "",
-	        "TermsAccepted": "2018-03-27T16:00:00+00:00",
+	        "TermsAccepted": "2018-03-21T23:00:00+00:00",
 	        "Username": "",
 	        "xp": {}
 	    },
@@ -2470,7 +1928,6 @@ Remove an promotion
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| DateSubmitted | date | Date submitted of the order. | False |
 | ID | string | ID of the order. | False |
 | FromUser | object | From user of the order. | False |
 | FromCompanyID | string | ID of the from company. | False |
@@ -2482,6 +1939,7 @@ Remove an promotion
 | LineItemCount | integer | Line item count of the order. | False |
 | Status | string | Status of the order. Possible values: Unsubmitted, AwaitingApproval, Declined, Open, Completed, Canceled. | False |
 | DateCreated | date | Date created of the order. | False |
+| DateSubmitted | date | Date submitted of the order. | False |
 | DateApproved | date | Date approved of the order. | False |
 | DateDeclined | date | Date declined of the order. | False |
 | DateCanceled | date | Date canceled of the order. | False |

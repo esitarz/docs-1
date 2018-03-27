@@ -23,22 +23,13 @@ Send a verification code
 | Username | string | Username of the password reset request. | False |
 | URL | string | URL of the password reset request. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `PUT` `v1/password/reset/{verificationCode}`
 Reset a password by verification code
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | verificationCode               |
-| Type            | string                         |
-| Description     | Verification code of the password reset. |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| verificationCode | string | Verification code of the password reset. | True |
 
 ## Request Body
 	{
@@ -51,7 +42,5 @@ Reset a password by verification code
 | ClientID | string | ID of the client. Required. | True |
 | Username | string | Username of the password reset. | False |
 | Password | string | Password of the password reset. | False |
-
-**Response Status**: `204`
 
 ## Response Body

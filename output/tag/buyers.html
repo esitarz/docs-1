@@ -65,36 +65,21 @@ appropriate.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>ID of the …</td></tr></tbody></table>
+<td>addressID …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-Addresses.html#Buyers-Addresses">  Continue reading
 </a>
@@ -142,51 +127,44 @@ products and place orders.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
     "DefaultCatalogID": "",
     "ID": "",
-    "Name …</code></pre>
+    "Name": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-Buyers.html#Buyers-Buyers">  Continue reading
 </a>
@@ -235,6 +213,89 @@ use during purchase.</p>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID …</code></h2>
 					<br>
 					<a class="btn" href="../api-reference\Buyers-CreditCards.html#Buyers-CreditCards">  Continue reading
+</a>
+			</div>
+				<hr />
+		</article>
+		<article>
+			<header>
+				<h2><a href="../api-reference\Buyers-SpendingAccounts.html#Buyers-SpendingAccounts">Spending Accounts</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/buyers.html">Buyers</a>				</p>
+			</header>
+			<div>
+					<p>Spending Accounts are funds given to users by a managing entity and are
+managed as part of a user's account. These funds are generally used as
+"corporate dollars", "rewards dollars", or "gift cards".
+ They can be used to pay for all of or part of an order with parameters
+that …</p>
+					<br>
+					<a class="btn" href="../api-reference\Buyers-SpendingAccounts.html#Buyers-SpendingAccounts">  Continue reading
+</a>
+			</div>
+				<hr />
+		</article>
+		<article>
+			<header>
+				<h2><a href="../api-reference\Buyers-UserGroups.html#Buyers-UserGroups">User Groups</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/buyers.html">Buyers</a>				</p>
+			</header>
+			<div>
+					<p>User Groups are used to streamline the management of users within an
+application. By placing like users in groups, you can filter content,
+define order management rules, and manage changes much more easily than
+trying to account for individual users.</p>
+<hr/>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/usergroups/{userGroupID}</code></h2>
+<p>Get a single user …</p>
+					<br>
+					<a class="btn" href="../api-reference\Buyers-UserGroups.html#Buyers-UserGroups">  Continue reading
+</a>
+			</div>
+				<hr />
+		</article>
+		<article>
+			<header>
+				<h2><a href="../api-reference\Buyers-Users.html#Buyers-Users">Users</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/buyers.html">Buyers</a>				</p>
+			</header>
+			<div>
+					<p>A user is a person with access to the application. The properties of a
+user define who they are and what they are able to do with their login
+to the application.</p>
+<hr/>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/users/{userID}</code></h2>
+<p>Get a single user</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of …</td></tr></tbody></table>
+					<br>
+					<a class="btn" href="../api-reference\Buyers-Users.html#Buyers-Users">  Continue reading
 </a>
 			</div>
 		</article>

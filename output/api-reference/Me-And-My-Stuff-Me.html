@@ -66,8 +66,6 @@ or change their own information.</p>
 <hr/>
 <h2><code>GET</code> <code>v1/me</code></h2>
 <p>Get the Current Authenticated User</p>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -83,7 +81,7 @@ or change their own information.</p>
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -177,7 +175,7 @@ or change their own information.</p>
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -254,7 +252,6 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -270,7 +267,7 @@ or change their own information.</p>
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -364,7 +361,7 @@ or change their own information.</p>
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -441,7 +438,6 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Active": false,
@@ -457,7 +453,7 @@ or change their own information.</p>
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -545,39 +541,17 @@ or change their own information.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>anonUserToken</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Anon user token of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -591,7 +565,7 @@ or change their own information.</p>
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-27T16:00:00+00:00",
+    "TermsAccepted": "2018-03-22T18:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -668,7 +642,6 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{}
 </code></pre>
@@ -677,45 +650,21 @@ or change their own information.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>anonUserToken</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Anon user token of the me.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>POST</code> <code>v1/me/password</code></h2>
 <p>Reset a password by token</p>
@@ -742,7 +691,6 @@ or change their own information.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
   </div>
   <div class="tag-cloud">

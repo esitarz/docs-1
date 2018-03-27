@@ -68,77 +68,33 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -155,12 +111,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -203,6 +153,12 @@ use during purchase.</p>
 <td>Expiration date of the credit card.</td>
 <td>False</td>
 </tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
 </tbody>
 </table>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards</code></h2>
@@ -210,209 +166,65 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>search</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Word or phrase to search for.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>searchOn</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to search on.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>sortBy</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Comma-delimited list of fields to sort by.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>filters</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>object</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
         {
             "CardType": "",
             "CardholderName": "",
-            "DateCreated": "2018-03-27T16:00:00+00:00",
-            "ExpirationDate": "2018-03-27T16:00:00+00:00",
+            "DateCreated": "2018-03-22T18:00:00+00:00",
+            "ExpirationDate": "2018-03-22T18:00:00+00:00",
             "ID": "",
             "PartialAccountNumber": "",
             "Token": "",
@@ -442,12 +254,6 @@ use during purchase.</p>
 </thead>
 <tbody>
 <tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
-<tr>
 <td>ID</td>
 <td>string</td>
 <td>ID of the credit card.</td>
@@ -487,6 +293,12 @@ use during purchase.</p>
 <td>ExpirationDate</td>
 <td>date</td>
 <td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -496,39 +308,17 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -537,7 +327,7 @@ use during purchase.</p>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -554,12 +344,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -596,15 +380,20 @@ use during purchase.</p>
 <td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>201</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -621,12 +410,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -667,6 +450,12 @@ use during purchase.</p>
 <td>ExpirationDate</td>
 <td>date</td>
 <td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -676,65 +465,23 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -743,7 +490,7 @@ use during purchase.</p>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -760,12 +507,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -802,15 +543,20 @@ use during purchase.</p>
 <td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -827,12 +573,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -873,6 +613,12 @@ use during purchase.</p>
 <td>ExpirationDate</td>
 <td>date</td>
 <td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
 <td>False</td>
 </tr>
 </tbody>
@@ -882,136 +628,50 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>PATCH</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}</code></h2>
 <p>Partially update a credit card</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1020,7 +680,7 @@ use during purchase.</p>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -1037,12 +697,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -1079,15 +733,20 @@ use during purchase.</p>
 <td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
 <td>False</td>
 </tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "CardType": "",
     "CardholderName": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
-    "ExpirationDate": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
+    "ExpirationDate": "2018-03-22T18:00:00+00:00",
     "ID": "",
     "PartialAccountNumber": "",
     "Token": "",
@@ -1104,12 +763,6 @@ use during purchase.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>xp</td>
-<td>object</td>
-<td>Container for extended (custom) properties of the credit card.</td>
-<td>False</td>
-</tr>
 <tr>
 <td>ID</td>
 <td>string</td>
@@ -1152,6 +805,12 @@ use during purchase.</p>
 <td>Expiration date of the credit card.</td>
 <td>False</td>
 </tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
 </tbody>
 </table>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/assignments</code></h2>
@@ -1159,201 +818,57 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>level</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Level of the credit card assignment. Possible values: User, Group, Company.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>page</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Page of results to return. Default: 1</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>pageSize</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>integer</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>Number of results to return per page. Default: 20, max: 100.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Items": [
@@ -1410,39 +925,17 @@ use during purchase.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
@@ -1484,130 +977,45 @@ use during purchase.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
 <h2><code>DELETE</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}/assignments</code></h2>
 <p>Delete a credit card assignment</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>buyerID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the buyer.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>creditCardID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the credit card.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
-</tbody>
-</table>
-<table>
-<thead>
 <tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>False</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>204</code></p>
 <h2>Response Body</h2>
   </div>
   <div class="tag-cloud">

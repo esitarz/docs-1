@@ -19,19 +19,9 @@ inventory attributes like quantity available and re-order notifications.
 ## `GET` `v1/products/{productID}`
 Get a single product
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
 
 ## Response Body
 	{
@@ -42,7 +32,7 @@ Get a single product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -81,83 +71,17 @@ Get a single product
 ## `GET` `v1/products`
 Get a list of products
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | catalogID                      |
-| Type            | string                         |
-| Description     | ID of the catalog.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | categoryID                     |
-| Type            | string                         |
-| Description     | ID of the category.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| catalogID | string | ID of the catalog. | False |
+| categoryID | string | ID of the category. | False |
+| supplierID | string | ID of the supplier. | False |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -170,7 +94,7 @@ Get a list of products
 	            "ID": "",
 	            "Inventory": {
 	                "Enabled": false,
-	                "LastUpdated": "2018-03-27T16:00:00+00:00",
+	                "LastUpdated": "2018-03-21T23:00:00+00:00",
 	                "NotificationPoint": 0,
 	                "OrderCanExceed": false,
 	                "QuantityAvailable": 0,
@@ -260,8 +184,6 @@ Create a new product
 | Inventory | object | Inventory of the product. | False |
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -271,7 +193,7 @@ Create a new product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -310,16 +232,9 @@ Create a new product
 ## `PUT` `v1/products/{productID}`
 Create or update a product
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
 
 ## Request Body
 	{
@@ -361,8 +276,6 @@ Create or update a product
 | Inventory | object | Inventory of the product. | False |
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -372,7 +285,7 @@ Create or update a product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -411,34 +324,17 @@ Create or update a product
 ## `DELETE` `v1/products/{productID}`
 Delete a product
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
 
 ## Response Body
 ## `PATCH` `v1/products/{productID}`
 Partially update a product
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
 
 ## Request Body
 	{
@@ -480,8 +376,6 @@ Partially update a product
 | Inventory | object | Inventory of the product. | False |
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "Active": false,
@@ -491,7 +385,7 @@ Partially update a product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -530,27 +424,10 @@ Partially update a product
 ## `POST` `v1/products/{productID}/variants/generate`
 Generate a variants
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | overwriteExisting              |
-| Type            | boolean                        |
-| Description     | Overwrite existing of the product. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `201`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| overwriteExisting | boolean | Overwrite existing of the product. | False |
 
 ## Response Body
 	{
@@ -561,7 +438,7 @@ Generate a variants
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-27T16:00:00+00:00",
+	        "LastUpdated": "2018-03-21T23:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -600,67 +477,15 @@ Generate a variants
 ## `GET` `v1/products/{productID}/variants`
 Get a list of product variants
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -695,24 +520,10 @@ Get a list of product variants
 ## `PUT` `v1/products/{productID}/variants/{variantID}`
 Create or update a product variant
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | variantID                      |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| variantID | string | ID of the variant. | True |
 
 ## Request Body
 	{
@@ -729,8 +540,6 @@ Create or update a product variant
 | Description | string | Description of the variant. Max length 2000 characters. Searchable: priority level 3. | False |
 | Active | boolean | Active of the variant. | False |
 | xp | object | Container for extended (custom) properties of the variant. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -751,24 +560,10 @@ Create or update a product variant
 ## `PATCH` `v1/products/{productID}/variants/{variantID}`
 Partially update a product variant
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | variantID                      |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| variantID | string | ID of the variant. | True |
 
 ## Request Body
 	{
@@ -785,8 +580,6 @@ Partially update a product variant
 | Description | string | Description of the variant. Max length 2000 characters. Searchable: priority level 3. | False |
 | Active | boolean | Active of the variant. | False |
 | xp | object | Container for extended (custom) properties of the variant. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -807,27 +600,10 @@ Partially update a product variant
 ## `GET` `v1/products/{productID}/variants/{variantID}`
 Get a single product variant
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | variantID                      |
-| Type            | string                         |
-| Description     | ID of the variant.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| variantID | string | ID of the variant. | True |
 
 ## Response Body
 	{
@@ -848,67 +624,15 @@ Get a single product variant
 ## `GET` `v1/products/{productID}/suppliers`
 Get a list of product suppliers
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -941,53 +665,19 @@ Get a list of product suppliers
 ## `PUT` `v1/products/{productID}/suppliers/{supplierID}`
 Save a product supplier
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| supplierID | string | ID of the supplier. | True |
 
 ## Response Body
 ## `DELETE` `v1/products/{productID}/suppliers/{supplierID}`
 Remove a supplier
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | supplierID                     |
-| Type            | string                         |
-| Description     | ID of the supplier.            |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| supplierID | string | ID of the supplier. | True |
 
 ## Response Body
 ## `POST` `v1/products/assignments`
@@ -1006,81 +696,20 @@ Save a product assignment
 | UserGroupID | string | ID of the user group. | False |
 | PriceScheduleID | string | ID of the price schedule. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `GET` `v1/products/assignments`
 Get a list of product assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | priceScheduleID                |
-| Type            | string                         |
-| Description     | ID of the price schedule.      |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | level                          |
-| Type            | string                         |
-| Description     | Level of the product assignment. Possible values: User, Group, Company. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | False |
+| priceScheduleID | string | ID of the price schedule. | False |
+| buyerID | string | ID of the buyer. | False |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
+| level | string | Level of the product assignment. Possible values: User, Group, Company. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
 	{
@@ -1113,42 +742,11 @@ Get a list of product assignments
 ## `DELETE` `v1/products/{productID}/assignments/{buyerID}`
 Delete a product assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | buyerID                        |
-| Type            | string                         |
-| Description     | ID of the buyer.               |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userID                         |
-| Type            | string                         |
-| Description     | ID of the user.                |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | userGroupID                    |
-| Type            | string                         |
-| Description     | ID of the user group.          |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| productID | string | ID of the product. | True |
+| buyerID | string | ID of the buyer. | True |
+| userID | string | ID of the user. | False |
+| userGroupID | string | ID of the user group. | False |
 
 ## Response Body

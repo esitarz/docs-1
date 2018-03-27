@@ -61,52 +61,28 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>addressID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the address.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "AddressName": "",
     "City": "",
     "CompanyName": "",
     "Country": "",
-    "DateCreated": "2018-03-27T16:00:00+00:00",
+    "DateCreated": "2018-03-22T18:00:00+00:00",
     "FirstName": "",
     "ID": "",
     "LastName": "",
@@ -115,7 +91,23 @@
     "Street1": "",
     "Street2": "",
     "Zip": "",
-    "xp …</code></pre>
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Seller-AdminAddresses.html#Seller-AdminAddresses">  Continue reading
 </a>
@@ -138,45 +130,21 @@
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userGroupID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the user group.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -202,7 +170,14 @@
 <td>False</td>
 </tr>
 <tr>
-<td>Name …</td></tr></tbody></table>
+<td>Name</td>
+<td>string</td>
+<td>Name of the user group.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Seller-AdminUserGroups.html#Seller-AdminUserGroups">  Continue reading
 </a>
@@ -229,35 +204,17 @@ creating products. These users are not specific to a buyer company.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>userID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description …</td></tr></tbody></table>
+<td>ID of the …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Seller-AdminUsers.html#Seller-AdminUsers">  Continue reading
 </a>
@@ -284,44 +241,26 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>incrementorID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the incrementor.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body …</h2>
+<h2>Response Body</h2>
+<pre><code>{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount …</code></pre>
 					<br>
 					<a class="btn" href="../api-reference\Seller-Incrementors.html#Seller-Incrementors">  Continue reading
 </a>
@@ -344,45 +283,21 @@ order ID of aprefix-10010.</p>
 <table>
 <thead>
 <tr>
-<th>Parameters</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
+<th>Required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name</td>
 <td>messageSenderID</td>
-</tr>
-<tr>
-<td>Type</td>
 <td>string</td>
-</tr>
-<tr>
-<td>Description</td>
 <td>ID of the message sender.</td>
-</tr>
-<tr>
-<td>Required</td>
 <td>True</td>
 </tr>
 </tbody>
 </table>
-<h2>Request Body</h2>
-<p><strong>Response Status</strong>: <code>200</code></p>
 <h2>Response Body</h2>
 <pre><code>{
     "Description": "",
@@ -410,7 +325,14 @@ order ID of aprefix-10010.</p>
 <td>False</td>
 </tr>
 <tr>
-<td>Name …</td></tr></tbody></table>
+<td>Name</td>
+<td>string</td>
+<td>Name of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageTypes</td>
+<td>array …</td></tr></tbody></table>
 					<br>
 					<a class="btn" href="../api-reference\Seller-MessageSenders.html#Seller-MessageSenders">  Continue reading
 </a>

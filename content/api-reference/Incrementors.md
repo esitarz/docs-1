@@ -14,19 +14,9 @@ order ID of aprefix-10010.
 ## `GET` `v1/incrementors/{incrementorID}`
 Get a single incrementor
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | incrementorID                  |
-| Type            | string                         |
-| Description     | ID of the incrementor.         |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| incrementorID | string | ID of the incrementor. | True |
 
 ## Response Body
 	{
@@ -45,59 +35,14 @@ Get a single incrementor
 ## `GET` `v1/incrementors`
 Get a list of incrementors
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -143,8 +88,6 @@ Create a new incrementor
 | LastNumber | integer | Last number of the incrementor. Required. Must be between 0 and 2147483647. | True |
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "ID": "",
@@ -162,16 +105,9 @@ Create a new incrementor
 ## `PUT` `v1/incrementors/{incrementorID}`
 Create or update an incrementor
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | incrementorID                  |
-| Type            | string                         |
-| Description     | ID of the incrementor.         |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| incrementorID | string | ID of the incrementor. | True |
 
 ## Request Body
 	{
@@ -186,8 +122,6 @@ Create or update an incrementor
 | Name | string | Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2. | False |
 | LastNumber | integer | Last number of the incrementor. Required. Must be between 0 and 2147483647. | True |
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -206,34 +140,17 @@ Create or update an incrementor
 ## `DELETE` `v1/incrementors/{incrementorID}`
 Delete an incrementor
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | incrementorID                  |
-| Type            | string                         |
-| Description     | ID of the incrementor.         |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| incrementorID | string | ID of the incrementor. | True |
 
 ## Response Body
 ## `PATCH` `v1/incrementors/{incrementorID}`
 Partially update an incrementor
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | incrementorID                  |
-| Type            | string                         |
-| Description     | ID of the incrementor.         |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| incrementorID | string | ID of the incrementor. | True |
 
 ## Request Body
 	{
@@ -248,8 +165,6 @@ Partially update an incrementor
 | Name | string | Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2. | False |
 | LastNumber | integer | Last number of the incrementor. Required. Must be between 0 and 2147483647. | True |
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
-
-**Response Status**: `200`
 
 ## Response Body
 	{

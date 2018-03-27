@@ -18,19 +18,9 @@ user-selected color and size specs**.
 ## `GET` `v1/specs/{specID}`
 Get a single spec
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
 
 ## Response Body
 	{
@@ -47,8 +37,8 @@ Get a single spec
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the spec. | False |
 | OptionCount | integer | Option count of the spec. | False |
+| ID | string | ID of the spec. | False |
 | ListOrder | integer | List order of the spec. | False |
 | Name | string | Name of the spec. | True |
 | DefaultValue | string | Default value of the spec. | False |
@@ -61,59 +51,14 @@ Get a single spec
 ## `GET` `v1/specs`
 Get a list of specs
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -144,8 +89,8 @@ Get a list of specs
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the spec. | False |
 | OptionCount | integer | Option count of the spec. | False |
+| ID | string | ID of the spec. | False |
 | ListOrder | integer | List order of the spec. | False |
 | Name | string | Name of the spec. | True |
 | DefaultValue | string | Default value of the spec. | False |
@@ -181,8 +126,6 @@ Create a new spec
 | DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
-**Response Status**: `201`
-
 ## Response Body
 	{
 	    "AllowOpenText": false,
@@ -198,8 +141,8 @@ Create a new spec
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the spec. | False |
 | OptionCount | integer | Option count of the spec. | False |
+| ID | string | ID of the spec. | False |
 | ListOrder | integer | List order of the spec. | False |
 | Name | string | Name of the spec. | True |
 | DefaultValue | string | Default value of the spec. | False |
@@ -212,16 +155,9 @@ Create a new spec
 ## `PUT` `v1/specs/{specID}`
 Create or update a spec
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
 
 ## Request Body
 	{
@@ -247,8 +183,6 @@ Create or update a spec
 | DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AllowOpenText": false,
@@ -264,8 +198,8 @@ Create or update a spec
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the spec. | False |
 | OptionCount | integer | Option count of the spec. | False |
+| ID | string | ID of the spec. | False |
 | ListOrder | integer | List order of the spec. | False |
 | Name | string | Name of the spec. | True |
 | DefaultValue | string | Default value of the spec. | False |
@@ -278,34 +212,17 @@ Create or update a spec
 ## `DELETE` `v1/specs/{specID}`
 Delete a spec
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
 
 ## Response Body
 ## `PATCH` `v1/specs/{specID}`
 Partially update a spec
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
 
 ## Request Body
 	{
@@ -331,8 +248,6 @@ Partially update a spec
 | DefinesVariant | boolean | True if each unique combinations of this Spec's Options map to unique Product Variants/SKUs. | False |
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
-**Response Status**: `200`
-
 ## Response Body
 	{
 	    "AllowOpenText": false,
@@ -348,8 +263,8 @@ Partially update a spec
 	}
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the spec. | False |
 | OptionCount | integer | Option count of the spec. | False |
+| ID | string | ID of the spec. | False |
 | ListOrder | integer | List order of the spec. | False |
 | Name | string | Name of the spec. | True |
 | DefaultValue | string | Default value of the spec. | False |
@@ -362,59 +277,14 @@ Partially update a spec
 ## `GET` `v1/specs/productassignments`
 Get a list of spec product assignments
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -447,27 +317,10 @@ Get a list of spec product assignments
 ## `DELETE` `v1/specs/{specID}/productassignments/{productID}`
 Delete a spec product assignment
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | productID                      |
-| Type            | string                         |
-| Description     | ID of the product.             |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| productID | string | ID of the product. | True |
 
 ## Response Body
 ## `POST` `v1/specs/productassignments`
@@ -486,22 +339,13 @@ Save a spec product assignment
 | DefaultValue | string | Optional. When defined, overrides the DefaultValue set on the Spec for just this Product. | False |
 | DefaultOptionID | string | Optional. When defined, overrides the DefaultOptionID set on the Spec for just this Product. | False |
 
-**Response Status**: `204`
-
 ## Response Body
 ## `POST` `v1/specs/{specID}/options`
 Create a new spec option
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
 
 ## Request Body
 	{
@@ -522,8 +366,6 @@ Create a new spec option
 | PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
 | PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
 | xp | object | Container for extended (custom) properties of the spec option. | False |
-
-**Response Status**: `201`
 
 ## Response Body
 	{
@@ -548,67 +390,15 @@ Create a new spec option
 ## `GET` `v1/specs/{specID}/options`
 Get a list of spec options
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | search                         |
-| Type            | string                         |
-| Description     | Word or phrase to search for.  |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | searchOn                       |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to search on. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | sortBy                         |
-| Type            | string                         |
-| Description     | Comma-delimited list of fields to sort by. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | page                           |
-| Type            | integer                        |
-| Description     | Page of results to return. Default: 1 |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | pageSize                       |
-| Type            | integer                        |
-| Description     | Number of results to return per page. Default: 20, max: 100. |
-| Required        | False                          |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | filters                        |
-| Type            | object                         |
-| Description     | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' |
-| Required        | False                          |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| search | string | Word or phrase to search for. | False |
+| searchOn | string | Comma-delimited list of fields to search on. | False |
+| sortBy | string | Comma-delimited list of fields to sort by. | False |
+| page | integer | Page of results to return. Default: 1 | False |
+| pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
+| filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
 	{
@@ -647,24 +437,10 @@ Get a list of spec options
 ## `PUT` `v1/specs/{specID}/options/{optionID}`
 Create or update a spec option
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | optionID                       |
-| Type            | string                         |
-| Description     | ID of the option.              |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| optionID | string | ID of the option. | True |
 
 ## Request Body
 	{
@@ -685,8 +461,6 @@ Create or update a spec option
 | PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
 | PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
 | xp | object | Container for extended (custom) properties of the spec option. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -711,24 +485,10 @@ Create or update a spec option
 ## `PATCH` `v1/specs/{specID}/options/{optionID}`
 Partially update a spec option
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | optionID                       |
-| Type            | string                         |
-| Description     | ID of the option.              |
-| Required        | True                           |
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| optionID | string | ID of the option. | True |
 
 ## Request Body
 	{
@@ -749,8 +509,6 @@ Partially update a spec option
 | PriceMarkupType | string | Price markup type of the spec option. Searchable: priority level 5. Possible values: NoMarkup, AmountPerQuantity, AmountTotal, Percentage. | False |
 | PriceMarkup | float | Price markup of the spec option. Searchable: priority level 6. | False |
 | xp | object | Container for extended (custom) properties of the spec option. | False |
-
-**Response Status**: `200`
 
 ## Response Body
 	{
@@ -775,27 +533,10 @@ Partially update a spec option
 ## `GET` `v1/specs/{specID}/options/{optionID}`
 Get a single spec option
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | optionID                       |
-| Type            | string                         |
-| Description     | ID of the option.              |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `200`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| optionID | string | ID of the option. | True |
 
 ## Response Body
 	{
@@ -820,26 +561,9 @@ Get a single spec option
 ## `DELETE` `v1/specs/{specID}/options/{optionID}`
 Delete a spec option
 
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | specID                         |
-| Type            | string                         |
-| Description     | ID of the spec.                |
-| Required        | True                           |
-
-
-| Parameters      | Description                    |
-|------------------|---------------------------------|
-| Name            | optionID                       |
-| Type            | string                         |
-| Description     | ID of the option.              |
-| Required        | True                           |
-
-## Request Body
-**Response Status**: `204`
+| Name | Type | Description | Required | 
+|---|---|---|---|
+| specID | string | ID of the spec. | True |
+| optionID | string | ID of the option. | True |
 
 ## Response Body
