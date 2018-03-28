@@ -23,6 +23,7 @@ Get a single spec
 | specID | string | ID of the spec. | True |
 
 ## Response Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -35,6 +36,8 @@ Get a single spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OptionCount | integer | Option count of the spec. | False |
@@ -61,6 +64,7 @@ Get a list of specs
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -87,6 +91,8 @@ Get a list of specs
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OptionCount | integer | Option count of the spec. | False |
@@ -103,6 +109,7 @@ Get a list of specs
 ## `POST` `v1/specs`
 Create a new spec
 ## Request Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -114,6 +121,8 @@ Create a new spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
@@ -127,6 +136,7 @@ Create a new spec
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -139,6 +149,8 @@ Create a new spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OptionCount | integer | Option count of the spec. | False |
@@ -160,6 +172,7 @@ Create or update a spec
 | specID | string | ID of the spec. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -171,6 +184,8 @@ Create or update a spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
@@ -184,6 +199,7 @@ Create or update a spec
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -196,6 +212,8 @@ Create or update a spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OptionCount | integer | Option count of the spec. | False |
@@ -225,6 +243,7 @@ Partially update a spec
 | specID | string | ID of the spec. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -236,6 +255,8 @@ Partially update a spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 3. Sortable: priority level 3. | False |
@@ -249,6 +270,7 @@ Partially update a spec
 | xp | object | Container for extended (custom) properties of the spec. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -261,6 +283,8 @@ Partially update a spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OptionCount | integer | Option count of the spec. | False |
@@ -287,6 +311,7 @@ Get a list of spec product assignments
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -307,6 +332,8 @@ Get a list of spec product assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SpecID | string | ID of the spec. | False |
@@ -326,12 +353,15 @@ Delete a spec product assignment
 ## `POST` `v1/specs/productassignments`
 Save a spec product assignment
 ## Request Body
+	:::json
 	{
 	    "DefaultOptionID": "",
 	    "DefaultValue": "",
 	    "ProductID": "",
 	    "SpecID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SpecID | string | ID of the spec. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -348,6 +378,7 @@ Create a new spec option
 | specID | string | ID of the spec. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -357,6 +388,8 @@ Create a new spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
@@ -368,6 +401,7 @@ Create a new spec option
 | xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -377,6 +411,8 @@ Create a new spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. | False |
@@ -401,6 +437,7 @@ Get a list of spec options
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -424,6 +461,8 @@ Get a list of spec options
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. | False |
@@ -443,6 +482,7 @@ Create or update a spec option
 | optionID | string | ID of the option. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -452,6 +492,8 @@ Create or update a spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
@@ -463,6 +505,7 @@ Create or update a spec option
 | xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -472,6 +515,8 @@ Create or update a spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. | False |
@@ -491,6 +536,7 @@ Partially update a spec option
 | optionID | string | ID of the option. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -500,6 +546,8 @@ Partially update a spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 2. | False |
@@ -511,6 +559,7 @@ Partially update a spec option
 | xp | object | Container for extended (custom) properties of the spec option. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -520,6 +569,8 @@ Partially update a spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. | False |
@@ -539,6 +590,7 @@ Get a single spec option
 | optionID | string | ID of the option. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "IsOpenText": false,
@@ -548,6 +600,8 @@ Get a single spec option
 	    "Value": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spec option. | False |

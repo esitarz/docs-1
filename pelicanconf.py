@@ -50,7 +50,7 @@ IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 HIDE_DATE = True
 
 ACE_EDITOR_PLUGIN = {
-'ACE_EDITOR_THEME' : 'chrome',
+
 'ACE_EDITOR_SHOW_INVISIBLE' : True,
 'ACE_EDITOR_READONLY' : False,
 'ACE_EDITOR_AUTOSCROLL' : True
@@ -58,7 +58,7 @@ ACE_EDITOR_PLUGIN = {
 }
 
 
-#CUSTOM_CSS_URL = 'theme/css/style.css'
+CUSTOM_CSS_URL = 'pelican-plugins/ace_editor/static/style.css'
 
 MARKDOWN = {
     'extension_configs': {
@@ -68,9 +68,11 @@ MARKDOWN = {
     'output_format': 'html5',
 
     'markdown.extensions.codehilite': {
+        'noclasses' : True,
+        'pygments_style':'native',
         'css_class': 'highlight',
-        'linenums': False,
-        'use_pygments': False
+        'linenums': True,
+        'use_pygments': True
     }
 }
 

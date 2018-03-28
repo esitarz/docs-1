@@ -26,6 +26,7 @@ Get a list of user groups visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -46,6 +47,8 @@ Get a list of user groups visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |

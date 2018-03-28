@@ -20,6 +20,7 @@ Get a single user
 | userID | string | ID of the user. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -30,10 +31,12 @@ Get a single user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -62,6 +65,7 @@ Get a list of users
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -74,7 +78,7 @@ Get a list of users
 	            "ID": "",
 	            "LastName": "",
 	            "Phone": "",
-	            "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	            "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	            "Username": "",
 	            "xp": {}
 	        }
@@ -90,6 +94,8 @@ Get a list of users
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -111,6 +117,7 @@ Create a new user
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -119,10 +126,12 @@ Create a new user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -137,6 +146,7 @@ Create a new user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -147,10 +157,12 @@ Create a new user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -173,6 +185,7 @@ Create or update a user
 | userID | string | ID of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -181,10 +194,12 @@ Create or update a user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -199,6 +214,7 @@ Create or update a user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -209,10 +225,12 @@ Create or update a user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -244,6 +262,7 @@ Partially update a user
 | userID | string | ID of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -252,10 +271,12 @@ Partially update a user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -270,6 +291,7 @@ Partially update a user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -280,10 +302,12 @@ Partially update a user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -308,6 +332,7 @@ Move a user to a different buyer
 | orders | string | Orders of the user. Possible values: None, Unsubmitted, All. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -318,10 +343,12 @@ Move a user to a different buyer
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -344,24 +371,30 @@ Get a single user access token
 | userID | string | ID of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ClientID": "",
 	    "Roles": [
 	        "DevCenterImpersonate"
 	    ]
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ClientID | string | ID of the client. | False |
 | Roles | array | Roles of the impersonate token request. | False |
 
 ## Response Body
+	:::json
 	{
 	    "access_token": "",
 	    "expires_in": 0,
 	    "refresh_token": "",
 	    "token_type": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | access_token | string | Access token of the access token. | False |

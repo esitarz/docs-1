@@ -18,12 +18,15 @@ Get a single supplier
 | supplierID | string | ID of the supplier. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |
@@ -44,6 +47,7 @@ Get a list of suppliers
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -64,6 +68,8 @@ Get a list of suppliers
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |
@@ -74,12 +80,15 @@ Get a list of suppliers
 ## `POST` `v1/suppliers`
 Create a new supplier
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -88,12 +97,15 @@ Create a new supplier
 | xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |
@@ -109,12 +121,15 @@ Create or update a supplier
 | supplierID | string | ID of the supplier. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -123,12 +138,15 @@ Create or update a supplier
 | xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |
@@ -152,12 +170,15 @@ Partially update a supplier
 | supplierID | string | ID of the supplier. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -166,12 +187,15 @@ Partially update a supplier
 | xp | object | Container for extended (custom) properties of the supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |

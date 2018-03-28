@@ -20,6 +20,7 @@ Get a single price schedule
 | priceScheduleID | string | ID of the price schedule. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -37,6 +38,8 @@ Get a single price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |
@@ -63,6 +66,7 @@ Get a list of price schedules
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -94,6 +98,8 @@ Get a list of price schedules
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |
@@ -110,6 +116,7 @@ Get a list of price schedules
 ## `POST` `v1/priceschedules`
 Create a new price schedule
 ## Request Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -127,6 +134,8 @@ Create a new price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -141,6 +150,7 @@ Create a new price schedule
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -158,6 +168,8 @@ Create a new price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |
@@ -179,6 +191,7 @@ Create or update a price schedule
 | priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -196,6 +209,8 @@ Create or update a price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -210,6 +225,7 @@ Create or update a price schedule
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -227,6 +243,8 @@ Create or update a price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |
@@ -256,6 +274,7 @@ Partially update a price schedule
 | priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -273,6 +292,8 @@ Partially update a price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -287,6 +308,7 @@ Partially update a price schedule
 | xp | object | Container for extended (custom) properties of the price schedule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -304,6 +326,8 @@ Partially update a price schedule
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |
@@ -325,16 +349,20 @@ Save a price schedule price break
 | priceScheduleID | string | ID of the price schedule. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Price": 0,
 	    "Quantity": 0
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Quantity | integer | Quantity of the price break. Required. Must be at least 0. | True |
 | Price | float | Price of the price break. Required. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ApplyShipping": false,
 	    "ApplyTax": false,
@@ -352,6 +380,8 @@ Save a price schedule price break
 	    "UseCumulativeQuantity": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the price schedule. | False |

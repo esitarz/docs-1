@@ -28,6 +28,7 @@ Get a list of orders visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -36,7 +37,7 @@ Get a list of orders visible to this user
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -49,12 +50,12 @@ Get a list of orders visible to this user
 	            },
 	            "BillingAddressID": "",
 	            "Comments": "",
-	            "DateApproved": "2018-03-21T23:00:00+00:00",
-	            "DateCanceled": "2018-03-21T23:00:00+00:00",
-	            "DateCompleted": "2018-03-21T23:00:00+00:00",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
-	            "DateDeclined": "2018-03-21T23:00:00+00:00",
-	            "DateSubmitted": "2018-03-21T23:00:00+00:00",
+	            "DateApproved": "2018-03-27T19:00:00+00:00",
+	            "DateCanceled": "2018-03-27T19:00:00+00:00",
+	            "DateCompleted": "2018-03-27T19:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
+	            "DateDeclined": "2018-03-27T19:00:00+00:00",
+	            "DateSubmitted": "2018-03-27T19:00:00+00:00",
 	            "FromCompanyID": "",
 	            "FromUser": {
 	                "Active": false,
@@ -66,7 +67,7 @@ Get a list of orders visible to this user
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	                "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
@@ -95,6 +96,8 @@ Get a list of orders visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the order. | False |
@@ -136,6 +139,7 @@ Get a list of orders that this user can approve
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -144,7 +148,7 @@ Get a list of orders that this user can approve
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -157,12 +161,12 @@ Get a list of orders that this user can approve
 	            },
 	            "BillingAddressID": "",
 	            "Comments": "",
-	            "DateApproved": "2018-03-21T23:00:00+00:00",
-	            "DateCanceled": "2018-03-21T23:00:00+00:00",
-	            "DateCompleted": "2018-03-21T23:00:00+00:00",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
-	            "DateDeclined": "2018-03-21T23:00:00+00:00",
-	            "DateSubmitted": "2018-03-21T23:00:00+00:00",
+	            "DateApproved": "2018-03-27T19:00:00+00:00",
+	            "DateCanceled": "2018-03-27T19:00:00+00:00",
+	            "DateCompleted": "2018-03-27T19:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
+	            "DateDeclined": "2018-03-27T19:00:00+00:00",
+	            "DateSubmitted": "2018-03-27T19:00:00+00:00",
 	            "FromCompanyID": "",
 	            "FromUser": {
 	                "Active": false,
@@ -174,7 +178,7 @@ Get a list of orders that this user can approve
 	                "ID": "",
 	                "LastName": "",
 	                "Phone": "",
-	                "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	                "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	                "Username": "",
 	                "xp": {}
 	            },
@@ -203,6 +207,8 @@ Get a list of orders that this user can approve
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the order. | False |

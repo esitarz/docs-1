@@ -15,6 +15,7 @@ Get a single security profile
 | securityProfileID | string | ID of the security profile. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "Name": "",
@@ -22,6 +23,8 @@ Get a single security profile
 	        "DevCenterImpersonate"
 	    ]
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the security profile. | False |
@@ -41,6 +44,7 @@ Get a list of security profiles
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -62,6 +66,8 @@ Get a list of security profiles
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the security profile. | False |
@@ -84,6 +90,7 @@ Get a list of security profile assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -105,6 +112,8 @@ Get a list of security profile assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SecurityProfileID | string | ID of the security profile. | True |
@@ -127,6 +136,7 @@ Delete a security profile assignment
 ## `POST` `v1/securityprofiles/assignments`
 Save a security profile assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "SecurityProfileID": "",
@@ -134,6 +144,8 @@ Save a security profile assignment
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SecurityProfileID | string | ID of the security profile. Required. Sortable: priority level 1. | True |

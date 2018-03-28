@@ -18,6 +18,7 @@ Get a single buyer
 | buyerID | string | ID of the buyer. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -25,6 +26,8 @@ Get a single buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. | False |
@@ -46,6 +49,7 @@ Get a list of buyers
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -67,6 +71,8 @@ Get a list of buyers
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. | False |
@@ -78,6 +84,7 @@ Get a list of buyers
 ## `POST` `v1/buyers`
 Create a new buyer
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -85,6 +92,8 @@ Create a new buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -94,6 +103,7 @@ Create a new buyer
 | xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -101,6 +111,8 @@ Create a new buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. | False |
@@ -117,6 +129,7 @@ Create or update a buyer
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -124,6 +137,8 @@ Create or update a buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -133,6 +148,7 @@ Create or update a buyer
 | xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -140,6 +156,8 @@ Create or update a buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. | False |
@@ -164,6 +182,7 @@ Partially update a buyer
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -171,6 +190,8 @@ Partially update a buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 2. Sortable: priority level 1. | False |
@@ -180,6 +201,7 @@ Partially update a buyer
 | xp | object | Container for extended (custom) properties of the buyer. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "DefaultCatalogID": "",
@@ -187,6 +209,8 @@ Partially update a buyer
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the buyer. | False |

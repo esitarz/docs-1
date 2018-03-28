@@ -21,12 +21,15 @@ Get a single cost center
 | costCenterID | string | ID of the cost center. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. | False |
@@ -48,6 +51,7 @@ Get a list of cost centers
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -68,6 +72,8 @@ Get a list of cost centers
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. | False |
@@ -83,12 +89,15 @@ Create a new cost center
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -97,12 +106,15 @@ Create a new cost center
 | xp | object | Container for extended (custom) properties of the cost center. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. | False |
@@ -119,12 +131,15 @@ Create or update a cost center
 | costCenterID | string | ID of the cost center. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -133,12 +148,15 @@ Create or update a cost center
 | xp | object | Container for extended (custom) properties of the cost center. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. | False |
@@ -164,12 +182,15 @@ Partially update a cost center
 | costCenterID | string | ID of the cost center. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -178,12 +199,15 @@ Partially update a cost center
 | xp | object | Container for extended (custom) properties of the cost center. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the cost center. | False |
@@ -205,6 +229,7 @@ Get a list of cost center assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -223,6 +248,8 @@ Get a list of cost center assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CostCenterID | string | ID of the cost center. | True |
@@ -247,10 +274,13 @@ Save a cost center assignment
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CostCenterID": "",
 	    "UserGroupID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CostCenterID | string | ID of the cost center. Required. Sortable: priority level 1. | True |

@@ -21,12 +21,15 @@ Get a single user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -48,6 +51,7 @@ Get a list of user groups
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -68,6 +72,8 @@ Get a list of user groups
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -83,12 +89,15 @@ Create a new user group
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -97,12 +106,15 @@ Create a new user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -119,12 +131,15 @@ Create or update a user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -133,12 +148,15 @@ Create or update a user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -164,12 +182,15 @@ Partially update a user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -178,12 +199,15 @@ Partially update a user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -203,6 +227,7 @@ Get a list of user group user assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -221,6 +246,8 @@ Get a list of user group user assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | UserGroupID | string | ID of the user group. | False |
@@ -244,10 +271,13 @@ Save a user group user assignment
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | UserGroupID | string | ID of the user group. | False |

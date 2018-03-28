@@ -29,6 +29,7 @@ Get a list of products visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -38,7 +39,7 @@ Get a list of products visible to this user
 	            "ID": "",
 	            "Inventory": {
 	                "Enabled": false,
-	                "LastUpdated": "2018-03-21T23:00:00+00:00",
+	                "LastUpdated": "2018-03-27T19:00:00+00:00",
 	                "NotificationPoint": 0,
 	                "OrderCanExceed": false,
 	                "QuantityAvailable": 0,
@@ -84,10 +85,12 @@ Get a list of products visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the product. | False |
 | PriceSchedule | object | Price schedule of the product. | False |
+| ID | string | ID of the product. | False |
 | Name | string | Name of the product. | True |
 | Description | string | Description of the product. | False |
 | QuantityMultiplier | integer | Quantity multiplier of the product. | True |
@@ -111,6 +114,7 @@ Get a single product
 | productID | string | ID of the product. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -118,7 +122,7 @@ Get a single product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -152,10 +156,12 @@ Get a single product
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
-| ID | string | ID of the product. | False |
 | PriceSchedule | object | Price schedule of the product. | False |
+| ID | string | ID of the product. | False |
 | Name | string | Name of the product. | True |
 | Description | string | Description of the product. | False |
 | QuantityMultiplier | integer | Quantity multiplier of the product. | True |
@@ -186,6 +192,7 @@ Get a list of specs visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -222,6 +229,8 @@ Get a list of specs visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Options | array | Options of the spec. | False |
@@ -245,6 +254,7 @@ Get a single spec
 | catalogID | string | ID of the catalog. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowOpenText": false,
 	    "DefaultOptionID": "",
@@ -267,6 +277,8 @@ Get a single spec
 	    "Required": false,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Options | array | Options of the spec. | False |

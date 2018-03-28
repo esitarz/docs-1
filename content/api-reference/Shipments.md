@@ -20,18 +20,19 @@ Get a single shipment
 | shipmentID | string | ID of the shipment. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -50,7 +51,7 @@ Get a single shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -65,6 +66,8 @@ Get a single shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -95,20 +98,21 @@ Get a list of shipments
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "Account": "",
 	            "BuyerID": "",
 	            "Cost": 0,
-	            "DateDelivered": "2018-03-21T23:00:00+00:00",
-	            "DateShipped": "2018-03-21T23:00:00+00:00",
+	            "DateDelivered": "2018-03-27T19:00:00+00:00",
+	            "DateShipped": "2018-03-27T19:00:00+00:00",
 	            "FromAddress": {
 	                "AddressName": "",
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -127,7 +131,7 @@ Get a list of shipments
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -154,6 +158,8 @@ Get a list of shipments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -173,12 +179,13 @@ Get a list of shipments
 ## `POST` `v1/shipments`
 Create a new shipment
 ## Request Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -186,6 +193,8 @@ Create a new shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -201,18 +210,19 @@ Create a new shipment
 | ToAddressID | string | ID of the to address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -231,7 +241,7 @@ Create a new shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -246,6 +256,8 @@ Create a new shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -270,12 +282,13 @@ Create or update a shipment
 | shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -283,6 +296,8 @@ Create or update a shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -298,18 +313,19 @@ Create or update a shipment
 | ToAddressID | string | ID of the to address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -328,7 +344,7 @@ Create or update a shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -343,6 +359,8 @@ Create or update a shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -375,12 +393,13 @@ Partially update a shipment
 | shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddressID": "",
 	    "ID": "",
 	    "Shipper": "",
@@ -388,6 +407,8 @@ Partially update a shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -403,18 +424,19 @@ Partially update a shipment
 | ToAddressID | string | ID of the to address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -433,7 +455,7 @@ Partially update a shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -448,6 +470,8 @@ Partially update a shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -478,11 +502,12 @@ Get a list of shipment items
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "CostCenter": "",
-	            "DateNeeded": "2018-03-21T23:00:00+00:00",
+	            "DateNeeded": "2018-03-27T19:00:00+00:00",
 	            "LineItemID": "",
 	            "OrderID": "",
 	            "Product": {
@@ -520,6 +545,8 @@ Get a list of shipment items
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OrderID | string | ID of the order. | True |
@@ -542,9 +569,10 @@ Get a single shipment item
 | lineItemID | string | ID of the line item. | True |
 
 ## Response Body
+	:::json
 	{
 	    "CostCenter": "",
-	    "DateNeeded": "2018-03-21T23:00:00+00:00",
+	    "DateNeeded": "2018-03-27T19:00:00+00:00",
 	    "LineItemID": "",
 	    "OrderID": "",
 	    "Product": {
@@ -570,6 +598,8 @@ Get a single shipment item
 	    "UnitPrice": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OrderID | string | ID of the order. | True |
@@ -590,11 +620,14 @@ Save a shipment item
 | shipmentID | string | ID of the shipment. | True |
 
 ## Request Body
+	:::json
 	{
 	    "LineItemID": "",
 	    "OrderID": "",
 	    "QuantityShipped": 0
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OrderID | string | ID of the order. Required. | True |
@@ -602,9 +635,10 @@ Save a shipment item
 | QuantityShipped | integer | Quantity shipped of the shipment item. Required. | True |
 
 ## Response Body
+	:::json
 	{
 	    "CostCenter": "",
-	    "DateNeeded": "2018-03-21T23:00:00+00:00",
+	    "DateNeeded": "2018-03-27T19:00:00+00:00",
 	    "LineItemID": "",
 	    "OrderID": "",
 	    "Product": {
@@ -630,6 +664,8 @@ Save a shipment item
 	    "UnitPrice": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OrderID | string | ID of the order. | True |

@@ -27,20 +27,21 @@ Get a list of shipments visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "Account": "",
 	            "BuyerID": "",
 	            "Cost": 0,
-	            "DateDelivered": "2018-03-21T23:00:00+00:00",
-	            "DateShipped": "2018-03-21T23:00:00+00:00",
+	            "DateDelivered": "2018-03-27T19:00:00+00:00",
+	            "DateShipped": "2018-03-27T19:00:00+00:00",
 	            "FromAddress": {
 	                "AddressName": "",
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -59,7 +60,7 @@ Get a list of shipments visible to this user
 	                "City": "",
 	                "CompanyName": "",
 	                "Country": "",
-	                "DateCreated": "2018-03-21T23:00:00+00:00",
+	                "DateCreated": "2018-03-27T19:00:00+00:00",
 	                "FirstName": "",
 	                "ID": "",
 	                "LastName": "",
@@ -86,6 +87,8 @@ Get a list of shipments visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -110,18 +113,19 @@ Get a single shipment
 | shipmentID | string | ID of the shipment. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Account": "",
 	    "BuyerID": "",
 	    "Cost": 0,
-	    "DateDelivered": "2018-03-21T23:00:00+00:00",
-	    "DateShipped": "2018-03-21T23:00:00+00:00",
+	    "DateDelivered": "2018-03-27T19:00:00+00:00",
+	    "DateShipped": "2018-03-27T19:00:00+00:00",
 	    "FromAddress": {
 	        "AddressName": "",
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -140,7 +144,7 @@ Get a single shipment
 	        "City": "",
 	        "CompanyName": "",
 	        "Country": "",
-	        "DateCreated": "2018-03-21T23:00:00+00:00",
+	        "DateCreated": "2018-03-27T19:00:00+00:00",
 	        "FirstName": "",
 	        "ID": "",
 	        "LastName": "",
@@ -155,6 +159,8 @@ Get a single shipment
 	    "TrackingNumber": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the shipment. | False |
@@ -186,11 +192,12 @@ Get a list of shipment items visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "CostCenter": "",
-	            "DateNeeded": "2018-03-21T23:00:00+00:00",
+	            "DateNeeded": "2018-03-27T19:00:00+00:00",
 	            "LineItemID": "",
 	            "OrderID": "",
 	            "Product": {
@@ -228,6 +235,8 @@ Get a list of shipment items visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | OrderID | string | ID of the order. | True |

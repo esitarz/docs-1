@@ -24,6 +24,7 @@ Get a single approval rule
 | approvalRuleID | string | ID of the approval rule. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -32,6 +33,8 @@ Get a single approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. | False |
@@ -55,6 +58,7 @@ Get a list of approval rules
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -77,6 +81,8 @@ Get a list of approval rules
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. | False |
@@ -94,6 +100,7 @@ Create a new approval rule
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -102,6 +109,8 @@ Create a new approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -112,6 +121,7 @@ Create a new approval rule
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -120,6 +130,8 @@ Create a new approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. | False |
@@ -138,6 +150,7 @@ Create or update an approval rule
 | approvalRuleID | string | ID of the approval rule. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -146,6 +159,8 @@ Create or update an approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -156,6 +171,7 @@ Create or update an approval rule
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -164,6 +180,8 @@ Create or update an approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. | False |
@@ -191,6 +209,7 @@ Partially update an approval rule
 | approvalRuleID | string | ID of the approval rule. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -199,6 +218,8 @@ Partially update an approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -209,6 +230,7 @@ Partially update an approval rule
 | xp | object | Container for extended (custom) properties of the approval rule. | False |
 
 ## Response Body
+	:::json
 	{
 	    "ApprovingGroupID": "",
 	    "Description": "",
@@ -217,6 +239,8 @@ Partially update an approval rule
 	    "RuleExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the approval rule. | False |

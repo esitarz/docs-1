@@ -16,6 +16,7 @@ or change their own information.
 ## `GET` `v1/me`
 Get the Current Authenticated User
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -30,10 +31,12 @@ Get the Current Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Buyer | object | Buyer of the user. | False |
@@ -51,6 +54,7 @@ Get the Current Authenticated User
 ## `PUT` `v1/me`
 Update the Currently Authenticated User
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -59,10 +63,12 @@ Update the Currently Authenticated User
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -77,6 +83,7 @@ Update the Currently Authenticated User
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -91,10 +98,12 @@ Update the Currently Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Buyer | object | Buyer of the user. | False |
@@ -112,6 +121,7 @@ Update the Currently Authenticated User
 ## `PATCH` `v1/me`
 Patch the Currently Authenticated User
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -120,10 +130,12 @@ Patch the Currently Authenticated User
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -138,6 +150,7 @@ Patch the Currently Authenticated User
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -152,10 +165,12 @@ Patch the Currently Authenticated User
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Buyer | object | Buyer of the user. | False |
@@ -178,6 +193,7 @@ Register a register
 | anonUserToken | string | Anon user token of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -186,10 +202,12 @@ Register a register
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -204,7 +222,10 @@ Register a register
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{}
+
+
 ## `PUT` `v1/me/orders`
 Transfer a anon user order
 
@@ -216,9 +237,12 @@ Transfer a anon user order
 ## `POST` `v1/me/password`
 Reset a password by token
 ## Request Body
+	:::json
 	{
 	    "NewPassword": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | NewPassword | string | New password of the token password reset. Required. | True |

@@ -19,12 +19,15 @@ Get a single incrementor
 | incrementorID | string | ID of the incrementor. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. | False |
@@ -45,6 +48,7 @@ Get a list of incrementors
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -65,6 +69,8 @@ Get a list of incrementors
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. | False |
@@ -75,12 +81,15 @@ Get a list of incrementors
 ## `POST` `v1/incrementors`
 Create a new incrementor
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -89,12 +98,15 @@ Create a new incrementor
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. | False |
@@ -110,12 +122,15 @@ Create or update an incrementor
 | incrementorID | string | ID of the incrementor. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -124,12 +139,15 @@ Create or update an incrementor
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. | False |
@@ -153,12 +171,15 @@ Partially update an incrementor
 | incrementorID | string | ID of the incrementor. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -167,12 +188,15 @@ Partially update an incrementor
 | LeftPaddingCount | integer | Left padding count of the incrementor. Required. Must be between 0 and 25. | True |
 
 ## Response Body
+	:::json
 	{
 	    "ID": "",
 	    "LastNumber": 0,
 	    "LeftPaddingCount": 0,
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the incrementor. | False |
