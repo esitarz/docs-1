@@ -15,6 +15,7 @@ Get a single message sender
 | messageSenderID | string | ID of the message sender. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
@@ -23,6 +24,8 @@ Get a single message sender
 	    ],
 	    "Name": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the message sender. | False |
@@ -43,6 +46,7 @@ Get a list of message senders
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -65,6 +69,8 @@ Get a list of message senders
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the message sender. | False |
@@ -86,6 +92,7 @@ Get a list of message sender assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -107,6 +114,8 @@ Get a list of message sender assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | MessageSenderID | string | ID of the message sender. | True |
@@ -129,11 +138,14 @@ Delete a message sender assignment
 ## `POST` `v1/messagesenders/assignments`
 Save a message sender assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "MessageSenderID": "",
 	    "UserGroupID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | MessageSenderID | string | ID of the message sender. Required. Sortable: priority level 1. | True |
@@ -154,6 +166,7 @@ Get a list of message sender cc listener assignments
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -183,6 +196,8 @@ Get a list of message sender cc listener assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | MessageSenderAssignment | object | Message sender assignment of the message cc listener assignment. | False |
@@ -196,6 +211,7 @@ Get a list of message sender cc listener assignments
 ## `POST` `v1/messagesenders/CCListenerAssignments`
 Save a message sender cc listener assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "MessageSenderAssignment": {
@@ -207,6 +223,8 @@ Save a message sender cc listener assignment
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | MessageSenderAssignment | object | Message sender assignment of the message cc listener assignment. | False |

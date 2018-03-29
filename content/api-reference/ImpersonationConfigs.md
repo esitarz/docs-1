@@ -15,6 +15,7 @@ Get a single impersonation config
 | impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Response Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -26,6 +27,8 @@ Get a single impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. | False |
@@ -51,6 +54,7 @@ Get a list of impersonation configs
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -76,6 +80,8 @@ Get a list of impersonation configs
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. | False |
@@ -91,6 +97,7 @@ Get a list of impersonation configs
 ## `POST` `v1/impersonationconfig`
 Create a new impersonation config
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -102,6 +109,8 @@ Create a new impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
@@ -115,6 +124,7 @@ Create a new impersonation config
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
 ## Response Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -126,6 +136,8 @@ Create a new impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. | False |
@@ -146,6 +158,7 @@ Create or update an impersonation config
 | impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -157,6 +170,8 @@ Create or update an impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
@@ -170,6 +185,7 @@ Create or update an impersonation config
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
 ## Response Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -181,6 +197,8 @@ Create or update an impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. | False |
@@ -209,6 +227,7 @@ Partially update an impersonation config
 | impersonationConfigID | string | ID of the impersonation config. | True |
 
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -220,6 +239,8 @@ Partially update an impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 8. Sortable: priority level 8. | False |
@@ -233,6 +254,7 @@ Partially update an impersonation config
 | ClientID | string | ID of the client. Required. Searchable: priority level 7. Sortable: priority level 7. | True |
 
 ## Response Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "ClientID": "",
@@ -244,6 +266,8 @@ Partially update an impersonation config
 	    "SecurityProfileID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the impersonation config. | False |

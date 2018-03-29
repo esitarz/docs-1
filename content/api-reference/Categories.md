@@ -20,6 +20,7 @@ Get a single category
 | categoryID | string | ID of the category. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ChildCount": 0,
@@ -30,6 +31,8 @@ Get a single category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. | False |
@@ -56,6 +59,7 @@ Get a list of categories
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -80,6 +84,8 @@ Get a list of categories
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. | False |
@@ -99,6 +105,7 @@ Create a new category
 | catalogID | string | ID of the catalog. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -108,6 +115,8 @@ Create a new category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -119,6 +128,7 @@ Create a new category
 | xp | object | Container for extended (custom) properties of the category. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ChildCount": 0,
@@ -129,6 +139,8 @@ Create a new category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. | False |
@@ -149,6 +161,7 @@ Create or update a category
 | categoryID | string | ID of the category. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -158,6 +171,8 @@ Create or update a category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -169,6 +184,7 @@ Create or update a category
 | xp | object | Container for extended (custom) properties of the category. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ChildCount": 0,
@@ -179,6 +195,8 @@ Create or update a category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. | False |
@@ -208,6 +226,7 @@ Partially update a category
 | categoryID | string | ID of the category. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -217,6 +236,8 @@ Partially update a category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -228,6 +249,7 @@ Partially update a category
 | xp | object | Container for extended (custom) properties of the category. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "ChildCount": 0,
@@ -238,6 +260,8 @@ Partially update a category
 	    "ParentID": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the category. | False |
@@ -264,6 +288,7 @@ Get a list of category assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -285,6 +310,8 @@ Get a list of category assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CategoryID | string | ID of the category. | True |
@@ -313,6 +340,7 @@ Save a category assignment
 | catalogID | string | ID of the catalog. | True |
 
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "CategoryID": "",
@@ -320,6 +348,8 @@ Save a category assignment
 	    "ViewAllProducts": false,
 	    "Visible": false
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CategoryID | string | ID of the category. Required. Sortable: priority level 1. | True |
@@ -341,6 +371,7 @@ Get a list of category product assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -360,6 +391,8 @@ Get a list of category product assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CategoryID | string | ID of the category. | True |
@@ -374,11 +407,14 @@ Save a category product assignment
 | catalogID | string | ID of the catalog. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CategoryID": "",
 	    "ListOrder": 1,
 	    "ProductID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CategoryID | string | ID of the category. Required. | True |

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../theme/css/theme.css">
 
   
-  <meta name="description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …">
+  <meta name="description" content="GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body :::json { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description …">
 
 
 </head>
@@ -84,7 +84,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -178,7 +179,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "Description": "",
@@ -238,7 +240,8 @@
 <h2><code>POST</code> <code>v1/usergroups</code></h2>
 <p>Create a new admin user group</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -282,7 +285,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -346,7 +350,8 @@
 </tbody>
 </table>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -390,7 +395,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -475,7 +481,8 @@
 </tbody>
 </table>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -519,7 +526,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "Name": "",
@@ -601,7 +609,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "UserGroupID": "",
@@ -674,7 +683,8 @@
 <h2><code>POST</code> <code>v1/usergroups/assignments</code></h2>
 <p>Save an admin user group user assignment</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "UserGroupID": "",
     "UserID": ""
 }

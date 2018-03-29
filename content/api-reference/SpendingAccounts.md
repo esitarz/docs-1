@@ -28,16 +28,19 @@ Get a single spending account
 | spendingAccountID | string | ID of the spending account. | True |
 
 ## Response Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -63,16 +66,17 @@ Get a list of spending accounts
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "AllowAsPaymentMethod": false,
 	            "Balance": 0,
-	            "EndDate": "2018-03-21T23:00:00+00:00",
+	            "EndDate": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCode": "",
-	            "StartDate": "2018-03-21T23:00:00+00:00",
+	            "StartDate": "2018-03-27T19:00:00+00:00",
 	            "xp": {}
 	        }
 	    ],
@@ -87,6 +91,8 @@ Get a list of spending accounts
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -106,16 +112,19 @@ Create a new spending account
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -128,16 +137,19 @@ Create a new spending account
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -158,16 +170,19 @@ Create or update a spending account
 | spendingAccountID | string | ID of the spending account. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -180,16 +195,19 @@ Create or update a spending account
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -219,16 +237,19 @@ Partially update a spending account
 | spendingAccountID | string | ID of the spending account. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -241,16 +262,19 @@ Partially update a spending account
 | xp | object | Container for extended (custom) properties of the spending account. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -276,6 +300,7 @@ Get a list of spending account assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -296,6 +321,8 @@ Get a list of spending account assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SpendingAccountID | string | ID of the spending account. | True |
@@ -311,12 +338,15 @@ Save a spending account assignment
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AllowExceed": false,
 	    "SpendingAccountID": "",
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | SpendingAccountID | string | ID of the spending account. Required. Sortable: priority level 1. | True |

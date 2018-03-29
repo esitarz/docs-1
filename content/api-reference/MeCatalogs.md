@@ -26,6 +26,7 @@ Get a list of catalogs visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -48,6 +49,8 @@ Get a list of catalogs visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -65,6 +68,7 @@ Get a single catalog
 | catalogID | string | ID of the catalog. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "CategoryCount": 0,
@@ -73,6 +77,8 @@ Get a single catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |

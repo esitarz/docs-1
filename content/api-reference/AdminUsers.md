@@ -19,6 +19,7 @@ Get a single admin user
 | userID | string | ID of the user. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -29,10 +30,12 @@ Get a single admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -59,6 +62,7 @@ Get a list of admin users
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -71,7 +75,7 @@ Get a list of admin users
 	            "ID": "",
 	            "LastName": "",
 	            "Phone": "",
-	            "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	            "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	            "Username": "",
 	            "xp": {}
 	        }
@@ -87,6 +91,8 @@ Get a list of admin users
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -103,6 +109,7 @@ Get a list of admin users
 ## `POST` `v1/adminusers`
 Create a new admin user
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -111,10 +118,12 @@ Create a new admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -129,6 +138,7 @@ Create a new admin user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -139,10 +149,12 @@ Create a new admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -164,6 +176,7 @@ Create or update an admin user
 | userID | string | ID of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -172,10 +185,12 @@ Create or update an admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -190,6 +205,7 @@ Create or update an admin user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -200,10 +216,12 @@ Create or update an admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |
@@ -233,6 +251,7 @@ Partially update an admin user
 | userID | string | ID of the user. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Email": "",
@@ -241,10 +260,12 @@ Partially update an admin user
 	    "LastName": "",
 	    "Password": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -259,6 +280,7 @@ Partially update an admin user
 | xp | object | Container for extended (custom) properties of the user. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AvailableRoles": [
@@ -269,10 +291,12 @@ Partially update an admin user
 	    "ID": "",
 	    "LastName": "",
 	    "Phone": "",
-	    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+	    "TermsAccepted": "2018-03-27T19:00:00+00:00",
 	    "Username": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user. | False |

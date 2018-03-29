@@ -20,12 +20,13 @@ Get a single address
 | addressID | string | ID of the address. | True |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -36,6 +37,8 @@ Get a single address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -67,6 +70,7 @@ Get a list of addresses
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -74,7 +78,7 @@ Get a list of addresses
 	            "City": "",
 	            "CompanyName": "",
 	            "Country": "",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
 	            "FirstName": "",
 	            "ID": "",
 	            "LastName": "",
@@ -97,6 +101,8 @@ Get a list of addresses
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -122,6 +128,7 @@ Create a new address
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
@@ -137,6 +144,8 @@ Create a new address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -154,12 +163,13 @@ Create a new address
 | xp | object | Container for extended (custom) properties of the address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -170,6 +180,8 @@ Create a new address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -196,6 +208,7 @@ Create or update an address
 | addressID | string | ID of the address. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
@@ -211,6 +224,8 @@ Create or update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -228,12 +243,13 @@ Create or update an address
 | xp | object | Container for extended (custom) properties of the address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -244,6 +260,8 @@ Create or update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -279,6 +297,7 @@ Partially update an address
 | addressID | string | ID of the address. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
@@ -294,6 +313,8 @@ Partially update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -311,12 +332,13 @@ Partially update an address
 | xp | object | Container for extended (custom) properties of the address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "FirstName": "",
 	    "ID": "",
 	    "LastName": "",
@@ -327,6 +349,8 @@ Partially update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -360,6 +384,7 @@ Get a list of address assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -381,6 +406,8 @@ Get a list of address assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | AddressID | string | ID of the address. | True |
@@ -408,6 +435,7 @@ Save an address assignment
 | buyerID | string | ID of the buyer. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressID": "",
 	    "IsBilling": false,
@@ -415,6 +443,8 @@ Save an address assignment
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | AddressID | string | ID of the address. Required. Sortable: priority level 1. | True |

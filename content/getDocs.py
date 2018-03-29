@@ -60,12 +60,14 @@ def returnSplit(input):
 def parseSample(input):
 	contents = ''
 	body = json.loads(input['Sample'])
-	text = str(json.dumps(body, sort_keys=True, indent=4, separators=(',', ': ')))
+	text = str(json.dumps(body, sort_keys=True, indent=4))
 	#print(text)
 	tabbed = text.replace('\n','\n\t')
+	#print(tabbed)
 	peskyCurlies = re.compile('^{')
 	tabbed = re.sub(peskyCurlies, '\n\t{', tabbed)
-	contents += tabbed
+	#print(tabbed)
+	contents += '\n\t:::json'+tabbed+'\n\n'
 	return(contents)
 
 def parseList(input):
@@ -215,6 +217,7 @@ def main():
 					page['contents'] += '\n## '+returnSplit(str(key)).title()
 					if type(value) == dict:
 						page['contents'] += parseSample(value)
+						#print(page['contents'])
 						page['contents'] += parseFields(value)
 
 						

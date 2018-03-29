@@ -26,6 +26,7 @@ Get a list of promotions visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -33,14 +34,14 @@ Get a list of promotions visible to this user
 	            "Code": "",
 	            "Description": "",
 	            "EligibleExpression": "",
-	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	            "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	            "FinePrint": "",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCount": 0,
 	            "RedemptionLimit": 0,
 	            "RedemptionLimitPerUser": 0,
-	            "StartDate": "2018-03-21T23:00:00+00:00",
+	            "StartDate": "2018-03-27T19:00:00+00:00",
 	            "ValueExpression": "",
 	            "xp": {}
 	        }
@@ -56,6 +57,8 @@ Get a list of promotions visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -81,22 +84,25 @@ Get a single promotion
 | promotionID | string | ID of the promotion. | True |
 
 ## Response Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |

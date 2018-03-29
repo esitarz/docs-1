@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../theme/css/theme.css">
 
   
-  <meta name="description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes array …">
+  <meta name="description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body :::json { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes …">
 
 
 </head>
@@ -84,7 +84,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Description": "",
     "ID": "",
     "MessageTypes": [
@@ -180,7 +181,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "Description": "",
@@ -296,7 +298,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "BuyerID": "",
@@ -402,7 +405,8 @@
 <h2><code>POST</code> <code>v1/messagesenders/assignments</code></h2>
 <p>Save a message sender assignment</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "BuyerID": "",
     "MessageSenderID": "",
     "UserGroupID": ""
@@ -490,7 +494,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "BuyerID": "",
@@ -577,7 +582,8 @@
 <h2><code>POST</code> <code>v1/messagesenders/CCListenerAssignments</code></h2>
 <p>Save a message sender cc listener assignment</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "BuyerID": "",
     "MessageSenderAssignment": {
         "BuyerID": "",

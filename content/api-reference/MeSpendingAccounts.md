@@ -26,16 +26,17 @@ Get a list of spending accounts visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "AllowAsPaymentMethod": false,
 	            "Balance": 0,
-	            "EndDate": "2018-03-21T23:00:00+00:00",
+	            "EndDate": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCode": "",
-	            "StartDate": "2018-03-21T23:00:00+00:00",
+	            "StartDate": "2018-03-27T19:00:00+00:00",
 	            "xp": {}
 	        }
 	    ],
@@ -50,6 +51,8 @@ Get a list of spending accounts visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |
@@ -69,16 +72,19 @@ Get a single spending account
 | spendingAccountID | string | ID of the spending account. | True |
 
 ## Response Body
+	:::json
 	{
 	    "AllowAsPaymentMethod": false,
 	    "Balance": 0,
-	    "EndDate": "2018-03-21T23:00:00+00:00",
+	    "EndDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCode": "",
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the spending account. | False |

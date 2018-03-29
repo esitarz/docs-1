@@ -24,6 +24,7 @@ Get a single product
 | productID | string | ID of the product. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -32,7 +33,7 @@ Get a single product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -49,6 +50,8 @@ Get a single product
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -84,6 +87,7 @@ Get a list of products
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -94,7 +98,7 @@ Get a list of products
 	            "ID": "",
 	            "Inventory": {
 	                "Enabled": false,
-	                "LastUpdated": "2018-03-21T23:00:00+00:00",
+	                "LastUpdated": "2018-03-27T19:00:00+00:00",
 	                "NotificationPoint": 0,
 	                "OrderCanExceed": false,
 	                "QuantityAvailable": 0,
@@ -123,6 +127,8 @@ Get a list of products
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -145,6 +151,7 @@ Get a list of products
 ## `POST` `v1/products`
 Create a new product
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -167,6 +174,8 @@ Create a new product
 	    "ShipWidth": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -185,6 +194,7 @@ Create a new product
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -193,7 +203,7 @@ Create a new product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -210,6 +220,8 @@ Create a new product
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -237,6 +249,7 @@ Create or update a product
 | productID | string | ID of the product. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -259,6 +272,8 @@ Create or update a product
 	    "ShipWidth": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -277,6 +292,7 @@ Create or update a product
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -285,7 +301,7 @@ Create or update a product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -302,6 +318,8 @@ Create or update a product
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -337,6 +355,7 @@ Partially update a product
 | productID | string | ID of the product. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -359,6 +378,8 @@ Partially update a product
 	    "ShipWidth": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -377,6 +398,7 @@ Partially update a product
 | AutoForwardSupplierID | string | ID of the auto forward supplier. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -385,7 +407,7 @@ Partially update a product
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -402,6 +424,8 @@ Partially update a product
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -430,6 +454,7 @@ Generate a variants
 | overwriteExisting | boolean | Overwrite existing of the product. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "AutoForwardSupplierID": "",
@@ -438,7 +463,7 @@ Generate a variants
 	    "ID": "",
 	    "Inventory": {
 	        "Enabled": false,
-	        "LastUpdated": "2018-03-21T23:00:00+00:00",
+	        "LastUpdated": "2018-03-27T19:00:00+00:00",
 	        "NotificationPoint": 0,
 	        "OrderCanExceed": false,
 	        "QuantityAvailable": 0,
@@ -455,6 +480,8 @@ Generate a variants
 	    "VariantCount": 0,
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | DefaultPriceScheduleID | string | ID of the default price schedule. | False |
@@ -488,6 +515,7 @@ Get a list of product variants
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -509,6 +537,8 @@ Get a list of product variants
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. | False |
@@ -526,6 +556,7 @@ Create or update a product variant
 | variantID | string | ID of the variant. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -533,6 +564,8 @@ Create or update a product variant
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -542,6 +575,7 @@ Create or update a product variant
 | xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -549,6 +583,8 @@ Create or update a product variant
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. | False |
@@ -566,6 +602,7 @@ Partially update a product variant
 | variantID | string | ID of the variant. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -573,6 +610,8 @@ Partially update a product variant
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1. | False |
@@ -582,6 +621,7 @@ Partially update a product variant
 | xp | object | Container for extended (custom) properties of the variant. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -589,6 +629,8 @@ Partially update a product variant
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. | False |
@@ -606,6 +648,7 @@ Get a single product variant
 | variantID | string | ID of the variant. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -613,6 +656,8 @@ Get a single product variant
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the variant. | False |
@@ -635,6 +680,7 @@ Get a list of product suppliers
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -655,6 +701,8 @@ Get a list of product suppliers
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the supplier. | False |
@@ -683,12 +731,15 @@ Remove a supplier
 ## `POST` `v1/products/assignments`
 Save a product assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "PriceScheduleID": "",
 	    "ProductID": "",
 	    "UserGroupID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ProductID | string | ID of the product. Required. | True |
@@ -712,6 +763,7 @@ Get a list of product assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -732,6 +784,8 @@ Get a list of product assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ProductID | string | ID of the product. | True |

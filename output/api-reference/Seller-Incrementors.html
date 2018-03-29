@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../theme/css/theme.css">
 
   
-  <meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …">
+  <meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …">
 
 
 </head>
@@ -88,7 +88,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -182,7 +183,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "ID": "",
@@ -242,7 +244,8 @@
 <h2><code>POST</code> <code>v1/incrementors</code></h2>
 <p>Create a new incrementor</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -286,7 +289,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -350,7 +354,8 @@
 </tbody>
 </table>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -394,7 +399,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -479,7 +485,8 @@
 </tbody>
 </table>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,
@@ -523,7 +530,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "LastNumber": 0,
     "LeftPaddingCount": 0,

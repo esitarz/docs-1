@@ -17,18 +17,19 @@ Get a single payment
 | paymentID | string | ID of the payment. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-21T23:00:00+00:00",
+	            "DateExecuted": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -40,6 +41,8 @@ Get a single payment
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. | False |
@@ -68,20 +71,21 @@ Get a list of payments
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "Accepted": false,
 	            "Amount": 0,
 	            "CreditCardID": "",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
 	            "Description": "",
 	            "ID": "",
 	            "SpendingAccountID": "",
 	            "Transactions": [
 	                {
 	                    "Amount": 0,
-	                    "DateExecuted": "2018-03-21T23:00:00+00:00",
+	                    "DateExecuted": "2018-03-27T19:00:00+00:00",
 	                    "ID": "",
 	                    "ResultCode": "",
 	                    "ResultMessage": "",
@@ -105,6 +109,8 @@ Get a list of payments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. | False |
@@ -127,6 +133,7 @@ Create a new payment
 | orderID | string | ID of the order. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
@@ -137,6 +144,8 @@ Create a new payment
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -149,18 +158,19 @@ Create a new payment
 | xp | object | Container for extended (custom) properties of the payment. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-21T23:00:00+00:00",
+	            "DateExecuted": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -172,6 +182,8 @@ Create a new payment
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. | False |
@@ -205,6 +217,7 @@ Partially update a payment
 | paymentID | string | ID of the payment. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
@@ -215,6 +228,8 @@ Partially update a payment
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -227,18 +242,19 @@ Partially update a payment
 | xp | object | Container for extended (custom) properties of the payment. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-21T23:00:00+00:00",
+	            "DateExecuted": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -250,6 +266,8 @@ Partially update a payment
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. | False |
@@ -273,9 +291,10 @@ Create a new payment transaction
 | paymentID | string | ID of the payment. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Amount": 0,
-	    "DateExecuted": "2018-03-21T23:00:00+00:00",
+	    "DateExecuted": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "ResultCode": "",
 	    "ResultMessage": "",
@@ -283,6 +302,8 @@ Create a new payment transaction
 	    "Type": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment transaction. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable. | False |
@@ -295,18 +316,19 @@ Create a new payment transaction
 | xp | object | Container for extended (custom) properties of the payment transaction. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Accepted": false,
 	    "Amount": 0,
 	    "CreditCardID": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Description": "",
 	    "ID": "",
 	    "SpendingAccountID": "",
 	    "Transactions": [
 	        {
 	            "Amount": 0,
-	            "DateExecuted": "2018-03-21T23:00:00+00:00",
+	            "DateExecuted": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "ResultCode": "",
 	            "ResultMessage": "",
@@ -318,6 +340,8 @@ Create a new payment transaction
 	    "Type": "PurchaseOrder",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the payment. | False |

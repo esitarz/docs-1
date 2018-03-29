@@ -63,7 +63,7 @@
           <a href="../api-reference/Seller-AdminAddresses.html">Admin Addresses</a>
         </h4>
         <div class="content">
-          GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-21T23:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of the …
+          GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body :::json { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-27T19:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of …
         </div>
       </div>
     </article>
@@ -89,7 +89,7 @@
           <a href="../api-reference/Seller-AdminUserGroups.html">Admin User Groups</a>
         </h4>
         <div class="content">
-          GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …
+          GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body :::json { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description …
         </div>
       </div>
     </article>
@@ -141,7 +141,7 @@
           <a href="../api-reference/Seller-Incrementors.html">Incrementors</a>
         </h4>
         <div class="content">
-          An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …
+          An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …
         </div>
       </div>
     </article>
@@ -167,7 +167,7 @@
           <a href="../api-reference/Seller-MessageSenders.html">Message Senders</a>
         </h4>
         <div class="content">
-          GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes array …
+          GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body :::json { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes …
         </div>
       </div>
     </article>

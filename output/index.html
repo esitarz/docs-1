@@ -63,7 +63,7 @@
           <a href="./api-reference/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
         </h4>
         <div class="content">
-          GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Name Type Description Required impersonationConfigID string ID of the impersonation config. True Response Body { "BuyerID": "", "ClientID": "", "GroupID": "", "ID": "", "ImpersonationBuyerID": "", "ImpersonationGroupID": "", "ImpersonationUserID": "", "SecurityProfileID": "", "UserID": "" } Name Type Description Required ID string ID of the impersonation config. False ImpersonationBuyerID string ID of the impersonation …
+          GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Name Type Description Required impersonationConfigID string ID of the impersonation config. True Response Body :::json { "BuyerID": "", "ClientID": "", "GroupID": "", "ID": "", "ImpersonationBuyerID": "", "ImpersonationGroupID": "", "ImpersonationUserID": "", "SecurityProfileID": "", "UserID": "" } Name Type Description Required ID string ID of the impersonation config. False ImpersonationBuyerID string ID of the …
         </div>
       </div>
     </article>
@@ -89,7 +89,7 @@
           <a href="./api-reference/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
         </h4>
         <div class="content">
-          POST v1/password/reset Send a verification code Request Body { "ClientID": "", "Email": "", "URL": "", "Username": "" } Name Type Description Required ClientID string ID of the client. Required. True Email string Email of the password reset request. False Username string Username of the password reset request. False URL string URL of the password …
+          POST v1/password/reset Send a verification code Request Body :::json { "ClientID": "", "Email": "", "URL": "", "Username": "" } Name Type Description Required ClientID string ID of the client. Required. True Email string Email of the password reset request. False Username string Username of the password reset request. False URL string URL of the …
         </div>
       </div>
     </article>
@@ -115,7 +115,7 @@
           <a href="./api-reference/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
         </h4>
         <div class="content">
-          GET v1/securityprofiles/{securityProfileID} Get a single security profile Name Type Description Required securityProfileID string ID of the security profile. True Response Body { "ID": "", "Name": "", "Roles": [ "DevCenterImpersonate" ] } Name Type Description Required ID string ID of the security profile. False Name string Name of the security profile. True Roles array Roles …
+          GET v1/securityprofiles/{securityProfileID} Get a single security profile Name Type Description Required securityProfileID string ID of the security profile. True Response Body :::json { "ID": "", "Name": "", "Roles": [ "DevCenterImpersonate" ] } Name Type Description Required ID string ID of the security profile. False Name string Name of the security profile. True Roles array …
         </div>
       </div>
     </article>
@@ -193,7 +193,7 @@
           <a href="./api-reference/Buyers-Buyers.html">Buyers</a>
         </h4>
         <div class="content">
-          Buyers, or customers, are the organizations that view the categories and products and place orders. GET v1/buyers/{buyerID} Get a single buyer Name Type Description Required buyerID string ID of the buyer. True Response Body { "Active": false, "DefaultCatalogID": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of …
+          Buyers, or customers, are the organizations that view the categories and products and place orders. GET v1/buyers/{buyerID} Get a single buyer Name Type Description Required buyerID string ID of the buyer. True Response Body :::json { "Active": false, "DefaultCatalogID": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID …
         </div>
       </div>
     </article>
@@ -713,7 +713,7 @@
           <a href="./api-reference/Orders-And-Fulfillment-Payments.html">Payments</a>
         </h4>
         <div class="content">
-          GET v1/orders/{direction}/{orderID}/payments/{paymentID} Get a single payment Name Type Description Required direction string Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. True orderID string ID of the order. True paymentID string ID of the payment. True Response Body { "Accepted": false, "Amount …
+          GET v1/orders/{direction}/{orderID}/payments/{paymentID} Get a single payment Name Type Description Required direction string Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. True orderID string ID of the order. True paymentID string ID of the payment. True Response Body :::json { "Accepted": false …
         </div>
       </div>
     </article>
@@ -921,7 +921,7 @@
           <a href="./api-reference/Seller-AdminAddresses.html">Admin Addresses</a>
         </h4>
         <div class="content">
-          GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-21T23:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of the …
+          GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body :::json { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-27T19:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of …
         </div>
       </div>
     </article>
@@ -947,7 +947,7 @@
           <a href="./api-reference/Seller-AdminUserGroups.html">Admin User Groups</a>
         </h4>
         <div class="content">
-          GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …
+          GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body :::json { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description …
         </div>
       </div>
     </article>
@@ -999,7 +999,7 @@
           <a href="./api-reference/Seller-Incrementors.html">Incrementors</a>
         </h4>
         <div class="content">
-          An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …
+          An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …
         </div>
       </div>
     </article>
@@ -1025,7 +1025,7 @@
           <a href="./api-reference/Seller-MessageSenders.html">Message Senders</a>
         </h4>
         <div class="content">
-          GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes array …
+          GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body :::json { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes …
         </div>
       </div>
     </article>
@@ -1103,7 +1103,7 @@
           <a href="./api-reference/Suppliers-Suppliers.html">Suppliers</a>
         </h4>
         <div class="content">
-          Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Name Type Description Required supplierID string ID of the supplier. True Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the supplier. False Name string …
+          Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Name Type Description Required supplierID string ID of the supplier. True Response Body :::json { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the supplier. False Name …
         </div>
       </div>
     </article>

@@ -16,14 +16,17 @@ or change their own information.
 ## `POST` `v1/me/creditcards`
 Create a new credit card
 ## Request Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Token | string | Token of the credit card. | False |
@@ -34,17 +37,20 @@ Create a new credit card
 | xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## Response Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the credit card. | False |
@@ -70,14 +76,15 @@ Get a list of credit cards visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
 	            "CardType": "",
 	            "CardholderName": "",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
 	            "Editable": false,
-	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	            "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	            "ID": "",
 	            "PartialAccountNumber": "",
 	            "Token": "",
@@ -95,6 +102,8 @@ Get a list of credit cards visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the credit card. | False |
@@ -115,17 +124,20 @@ Get a single credit card
 | creditcardID | string | ID of the creditcard. | True |
 
 ## Response Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the credit card. | False |
@@ -146,14 +158,17 @@ Create or update a credit card
 | creditcardID | string | ID of the creditcard. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Token | string | Token of the credit card. | False |
@@ -164,17 +179,20 @@ Create or update a credit card
 | xp | object | Container for extended (custom) properties of the credit card. | False |
 
 ## Response Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "ID": "",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the credit card. | False |
@@ -195,14 +213,17 @@ Partially update a credit card
 | creditcardID | string | ID of the creditcard. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CardType": "",
 	    "CardholderName": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "PartialAccountNumber": "",
 	    "Token": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Token | string | Token of the credit card. | False |

@@ -26,6 +26,7 @@ Get a list of addresses visible to this user
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -34,7 +35,7 @@ Get a list of addresses visible to this user
 	            "City": "",
 	            "CompanyName": "",
 	            "Country": "",
-	            "DateCreated": "2018-03-21T23:00:00+00:00",
+	            "DateCreated": "2018-03-27T19:00:00+00:00",
 	            "Editable": false,
 	            "FirstName": "",
 	            "ID": "",
@@ -59,6 +60,8 @@ Get a list of addresses visible to this user
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -82,6 +85,7 @@ Get a list of addresses visible to this user
 ## `POST` `v1/me/addresses`
 Create a new address
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
@@ -98,6 +102,8 @@ Create a new address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Shipping | boolean | Shipping of the address. Searchable: priority level 6. | False |
@@ -116,13 +122,14 @@ Create a new address
 | xp | object | Container for extended (custom) properties of the address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
 	    "FirstName": "",
 	    "ID": "",
@@ -135,6 +142,8 @@ Create a new address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -163,13 +172,14 @@ Get a single address
 | addressID | string | ID of the address. | True |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
 	    "FirstName": "",
 	    "ID": "",
@@ -182,6 +192,8 @@ Get a single address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -210,6 +222,7 @@ Create or update an address
 | addressID | string | ID of the address. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
@@ -226,6 +239,8 @@ Create or update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Shipping | boolean | Shipping of the address. Searchable: priority level 6. | False |
@@ -244,13 +259,14 @@ Create or update an address
 | xp | object | Container for extended (custom) properties of the address. | False |
 
 ## Response Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
 	    "City": "",
 	    "CompanyName": "",
 	    "Country": "",
-	    "DateCreated": "2018-03-21T23:00:00+00:00",
+	    "DateCreated": "2018-03-27T19:00:00+00:00",
 	    "Editable": false,
 	    "FirstName": "",
 	    "ID": "",
@@ -263,6 +279,8 @@ Create or update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the address. | False |
@@ -291,6 +309,7 @@ Partially update an address
 | addressID | string | ID of the address. | True |
 
 ## Request Body
+	:::json
 	{
 	    "AddressName": "",
 	    "Billing": false,
@@ -307,6 +326,8 @@ Partially update an address
 	    "Zip": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | Shipping | boolean | Shipping of the address. Searchable: priority level 6. | False |

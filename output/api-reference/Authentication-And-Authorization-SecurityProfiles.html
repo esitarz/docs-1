@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../theme/css/theme.css">
 
   
-  <meta name="description" content="GET v1/securityprofiles/{securityProfileID} Get a single security profile Name Type Description Required securityProfileID string ID of the security profile. True Response Body { "ID": "", "Name": "", "Roles": [ "DevCenterImpersonate" ] } Name Type Description Required ID string ID of the security profile. False Name string Name of the security profile. True Roles array Roles …">
+  <meta name="description" content="GET v1/securityprofiles/{securityProfileID} Get a single security profile Name Type Description Required securityProfileID string ID of the security profile. True Response Body :::json { "ID": "", "Name": "", "Roles": [ "DevCenterImpersonate" ] } Name Type Description Required ID string ID of the security profile. False Name string Name of the security profile. True Roles array …">
 
 
 </head>
@@ -84,7 +84,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "ID": "",
     "Name": "",
     "Roles": [
@@ -173,7 +174,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "ID": "",
@@ -294,7 +296,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Items": [
         {
             "BuyerID": "",
@@ -400,7 +403,8 @@
 <h2><code>POST</code> <code>v1/securityprofiles/assignments</code></h2>
 <p>Save a security profile assignment</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "BuyerID": "",
     "SecurityProfileID": "",
     "SupplierID": "",

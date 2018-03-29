@@ -15,12 +15,15 @@ Get a single admin user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -41,6 +44,7 @@ Get a list of admin user groups
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -61,6 +65,8 @@ Get a list of admin user groups
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -71,12 +77,15 @@ Get a list of admin user groups
 ## `POST` `v1/usergroups`
 Create a new admin user group
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -85,12 +94,15 @@ Create a new admin user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -106,12 +118,15 @@ Create or update an admin user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -120,12 +135,15 @@ Create or update an admin user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -149,12 +167,15 @@ Partially update an admin user group
 | userGroupID | string | ID of the user group. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -163,12 +184,15 @@ Partially update an admin user group
 | xp | object | Container for extended (custom) properties of the user group. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Description": "",
 	    "ID": "",
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the user group. | False |
@@ -187,6 +211,7 @@ Get a list of admin user group user assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -205,6 +230,8 @@ Get a list of admin user group user assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | UserGroupID | string | ID of the user group. | False |
@@ -222,10 +249,13 @@ Delete an admin user group user assignment
 ## `POST` `v1/usergroups/assignments`
 Save an admin user group user assignment
 ## Request Body
+	:::json
 	{
 	    "UserGroupID": "",
 	    "UserID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | UserGroupID | string | ID of the user group. | False |

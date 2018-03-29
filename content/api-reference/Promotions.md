@@ -21,22 +21,25 @@ Get a single promotion
 | promotionID | string | ID of the promotion. | True |
 
 ## Response Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -67,6 +70,7 @@ Get a list of promotions
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -74,14 +78,14 @@ Get a list of promotions
 	            "Code": "",
 	            "Description": "",
 	            "EligibleExpression": "",
-	            "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	            "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	            "FinePrint": "",
 	            "ID": "",
 	            "Name": "",
 	            "RedemptionCount": 0,
 	            "RedemptionLimit": 0,
 	            "RedemptionLimitPerUser": 0,
-	            "StartDate": "2018-03-21T23:00:00+00:00",
+	            "StartDate": "2018-03-27T19:00:00+00:00",
 	            "ValueExpression": "",
 	            "xp": {}
 	        }
@@ -97,6 +101,8 @@ Get a list of promotions
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -117,21 +123,24 @@ Get a list of promotions
 ## `POST` `v1/promotions`
 Create a new promotion
 ## Request Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -149,22 +158,25 @@ Create a new promotion
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
 ## Response Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -190,21 +202,24 @@ Create or update a promotion
 | promotionID | string | ID of the promotion. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -222,22 +237,25 @@ Create or update a promotion
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
 ## Response Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -271,21 +289,24 @@ Partially update a promotion
 | promotionID | string | ID of the promotion. | True |
 
 ## Request Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -303,22 +324,25 @@ Partially update a promotion
 | xp | object | Container for extended (custom) properties of the promotion. | False |
 
 ## Response Body
+	:::json
 	{
 	    "CanCombine": false,
 	    "Code": "",
 	    "Description": "",
 	    "EligibleExpression": "",
-	    "ExpirationDate": "2018-03-21T23:00:00+00:00",
+	    "ExpirationDate": "2018-03-27T19:00:00+00:00",
 	    "FinePrint": "",
 	    "ID": "",
 	    "Name": "",
 	    "RedemptionCount": 0,
 	    "RedemptionLimit": 0,
 	    "RedemptionLimitPerUser": 0,
-	    "StartDate": "2018-03-21T23:00:00+00:00",
+	    "StartDate": "2018-03-27T19:00:00+00:00",
 	    "ValueExpression": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the promotion. | False |
@@ -350,6 +374,7 @@ Get a list of promotion assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -369,6 +394,8 @@ Get a list of promotion assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | PromotionID | string | ID of the promotion. | True |
@@ -378,11 +405,14 @@ Get a list of promotion assignments
 ## `POST` `v1/promotions/assignments`
 Save a promotion assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "PromotionID": "",
 	    "UserGroupID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | PromotionID | string | ID of the promotion. Required. Sortable: priority level 1. | True |

@@ -72,7 +72,8 @@
 <h2><code>GET</code> <code>v1/me</code></h2>
 <p>Get the Current Authenticated User</p>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "AvailableRoles": [
         ""
@@ -86,7 +87,7 @@
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -172,7 +173,8 @@
 <h2><code>PUT</code> <code>v1/me</code></h2>
 <p>Update the Currently Authenticated User</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "Email": "",
     "FirstName": "",
@@ -180,7 +182,7 @@
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -258,7 +260,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "AvailableRoles": [
         ""
@@ -272,7 +275,7 @@
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -358,7 +361,8 @@
 <h2><code>PATCH</code> <code>v1/me</code></h2>
 <p>Patch the Currently Authenticated User</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "Email": "",
     "FirstName": "",
@@ -366,7 +370,7 @@
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -444,7 +448,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "AvailableRoles": [
         ""
@@ -458,7 +463,7 @@
     "ID": "",
     "LastName": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -562,7 +567,8 @@
 </tbody>
 </table>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "Active": false,
     "Email": "",
     "FirstName": "",
@@ -570,7 +576,7 @@
     "LastName": "",
     "Password": "",
     "Phone": "",
-    "TermsAccepted": "2018-03-21T23:00:00+00:00",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
     "Username": "",
     "xp": {}
 }
@@ -648,7 +654,8 @@
 </tbody>
 </table>
 <h2>Response Body</h2>
-<pre><code>{}
+<pre><code>:::json
+{}
 </code></pre>
 <h2><code>PUT</code> <code>v1/me/orders</code></h2>
 <p>Transfer a anon user order</p>
@@ -674,7 +681,8 @@
 <h2><code>POST</code> <code>v1/me/password</code></h2>
 <p>Reset a password by token</p>
 <h2>Request Body</h2>
-<pre><code>{
+<pre><code>:::json
+{
     "NewPassword": ""
 }
 </code></pre>

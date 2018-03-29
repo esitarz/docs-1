@@ -10,12 +10,15 @@ slug: Authentication-And-Authorization-PasswordResets
 ## `POST` `v1/password/reset`
 Send a verification code
 ## Request Body
+	:::json
 	{
 	    "ClientID": "",
 	    "Email": "",
 	    "URL": "",
 	    "Username": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ClientID | string | ID of the client. Required. | True |
@@ -32,11 +35,14 @@ Reset a password by verification code
 | verificationCode | string | Verification code of the password reset. | True |
 
 ## Request Body
+	:::json
 	{
 	    "ClientID": "",
 	    "Password": "",
 	    "Username": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ClientID | string | ID of the client. Required. | True |

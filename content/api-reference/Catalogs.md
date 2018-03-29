@@ -20,6 +20,7 @@ Get a single catalog
 | catalogID | string | ID of the catalog. | True |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "CategoryCount": 0,
@@ -28,6 +29,8 @@ Get a single catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -50,6 +53,7 @@ Get a list of catalogs
 | filters | object | Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???' | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -72,6 +76,8 @@ Get a list of catalogs
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -84,6 +90,7 @@ Get a list of catalogs
 ## `POST` `v1/catalogs`
 Create a new catalog
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -91,6 +98,8 @@ Create a new catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -100,6 +109,7 @@ Create a new catalog
 | xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "CategoryCount": 0,
@@ -108,6 +118,8 @@ Create a new catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -125,6 +137,7 @@ Create or update a catalog
 | catalogID | string | ID of the catalog. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -132,6 +145,8 @@ Create or update a catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -141,6 +156,7 @@ Create or update a catalog
 | xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "CategoryCount": 0,
@@ -149,6 +165,8 @@ Create or update a catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -174,6 +192,7 @@ Partially update a catalog
 | catalogID | string | ID of the catalog. | True |
 
 ## Request Body
+	:::json
 	{
 	    "Active": false,
 	    "Description": "",
@@ -181,6 +200,8 @@ Partially update a catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2. | False |
@@ -190,6 +211,7 @@ Partially update a catalog
 | xp | object | Container for extended (custom) properties of the catalog. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Active": false,
 	    "CategoryCount": 0,
@@ -198,6 +220,8 @@ Partially update a catalog
 	    "Name": "",
 	    "xp": {}
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | ID | string | ID of the catalog. | False |
@@ -218,6 +242,7 @@ Get a list of catalog assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -238,6 +263,8 @@ Get a list of catalog assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CatalogID | string | ID of the catalog. | True |
@@ -248,12 +275,15 @@ Get a list of catalog assignments
 ## `POST` `v1/catalogs/assignments`
 Save a catalog assignment
 ## Request Body
+	:::json
 	{
 	    "BuyerID": "",
 	    "CatalogID": "",
 	    "ViewAllCategories": false,
 	    "ViewAllProducts": false
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CatalogID | string | ID of the catalog. Required. Sortable: priority level 1. | True |
@@ -282,6 +312,7 @@ Get a list of catalog product assignments
 | pageSize | integer | Number of results to return per page. Default: 20, max: 100. | False |
 
 ## Response Body
+	:::json
 	{
 	    "Items": [
 	        {
@@ -300,6 +331,8 @@ Get a list of catalog product assignments
 	        "TotalPages": 2
 	    }
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CatalogID | string | ID of the catalog. | True |
@@ -308,10 +341,13 @@ Get a list of catalog product assignments
 ## `POST` `v1/catalogs/productassignments`
 Save a catalog product assignment
 ## Request Body
+	:::json
 	{
 	    "CatalogID": "",
 	    "ProductID": ""
 	}
+
+
 | Name | Type | Description | Required | 
 |---|---|---|---|
 | CatalogID | string | ID of the catalog. Required. | True |
