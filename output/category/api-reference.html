@@ -1,324 +1,1130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="english">
+
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-    <meta name="author" content="OrderCloud.io" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="OrderCloud Documentation Content"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content=".."/>
-<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
-  <title>OrderCloud Documentation Content &ndash;   Category API Reference
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  API Reference Articles | OrderCloud Documentation Content
 </title>
+  <link rel="canonical" href="../category/api-reference.html">
+
+
+  <!-- <link rel="stylesheet" href="../theme/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../theme/css/style.min.css?fd56881c">
+  <link rel="stylesheet" href="../theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../theme/css/theme.css">
+
+  
+
+
 </head>
+
 <body>
-  <aside>
-    <div>
-      <a href="..">
-          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
-      </a>
-      <h1><a href="..">OrderCloud Docs</a></h1>
-      
-      <nav>
-          <ul class="list">
-              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
-              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
-              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
-              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
-          </ul>
-      </nav>
-  <hr>
-  <ul class="list">
-        
-          
-          <li>
-            <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
-          </li>
-          
-        
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/buyers.html">Buyers</a>
-          </li>
-          
-        
-      
-      
-      
-      
-      
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
-          </li>
-          
-        
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
-          </li>
-          
-        
-      
-      
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/product-catalogs.html">Product Catalogs</a>
-          </li>
-          
-        
-      
-      
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/seller.html">Seller</a>
-          </li>
-          
-        
-      
-      
-      
-      
-      
-        
-          
-          <li>
-            <a href="../tag/suppliers.html">Suppliers</a>
-          </li>
-          
-        
-      
-      
-      
-  </ul>
-    </aside>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="../">OrderCloud Documentation Content</a></h1>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../frameworks-and-sdks/">Frameworks And Sdks</a></li>
+            <li class="list-inline-item"><a href="../integration-services/">Integration Services</a></li>
+            <li class="list-inline-item"><a href="../platform-guides/">Platform Guides</a></li>
+      </ul>
   </div>
-  <main>
-    <div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  API Reference Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
+        </h4>
+        <div class="content">
+          GET v1/impersonationconfig/{impersonationConfigID} Get a single impersonation config Name Type Description Required impersonationConfigID string ID of the impersonation config. True Response Body { "BuyerID": "", "ClientID": "", "GroupID": "", "ID": "", "ImpersonationBuyerID": "", "ImpersonationGroupID": "", "ImpersonationUserID": "", "SecurityProfileID": "", "UserID": "" } Name Type Description Required ID string ID of the impersonation config. False ImpersonationBuyerID string ID of the impersonation …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/buyers.html">Buyers</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
+        </h4>
+        <div class="content">
+          POST v1/password/reset Send a verification code Request Body { "ClientID": "", "Email": "", "URL": "", "Username": "" } Name Type Description Required ClientID string ID of the client. Required. True Email string Email of the password reset request. False Username string Username of the password reset request. False URL string URL of the password …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
+        </h4>
+        <div class="content">
+          GET v1/securityprofiles/{securityProfileID} Get a single security profile Name Type Description Required securityProfileID string ID of the security profile. True Response Body { "ID": "", "Name": "", "Roles": [ "DevCenterImpersonate" ] } Name Type Description Required ID string ID of the security profile. False Name string Name of the security profile. True Roles array Roles …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-Addresses.html">Addresses</a>
+        </h4>
+        <div class="content">
+          Addresses are used for the purposes of billing and shipping an order. An address may belong to a list that can be shared among many users if appropriate. GET v1/buyers/{buyerID}/addresses/{addressID} Get a single address Name Type Description Required buyerID string ID of the buyer. True addressID …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/product-catalogs.html">Product Catalogs</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-ApprovalRules.html">Approval Rules</a>
+        </h4>
+        <div class="content">
+          Approval rules are used to verify the integrity of an order. Common examples include orders requiring managerial approval, approval for orders that contain a specific product category, approval for quantity thresholds or approval for orders that exceed a specific price. Properties are also available to control the triggers and timing …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/seller.html">Seller</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <div>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-Buyers.html">Buyers</a>
+        </h4>
+        <div class="content">
+          Buyers, or customers, are the organizations that view the categories and products and place orders. GET v1/buyers/{buyerID} Get a single buyer Name Type Description Required buyerID string ID of the buyer. True Response Body { "Active": false, "DefaultCatalogID": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
         <ul>
-            
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
             <li>
-              <a href="../tag/suppliers.html">Suppliers</a>
-            </li>
-            
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
         </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-CostCenters.html">Cost Centers</a>
+        </h4>
+        <div class="content">
+          A cost center is used to allocate organizational expenditures. Different businesses call these by different names such as "allocation codes" or "charge back codes", but the basic purpose is the same - to allocate an expense back to someone or some department of an organization. GET v1/buyers/{buyerID}/costcenters/{costCenterID …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-CreditCards.html">Credit Cards</a>
+        </h4>
+        <div class="content">
+          Credit cards are used as a payment method for an order. A user may have access to one or many credit cards for personal spend or group spending. Credit Cards may be saved and assigned to members of an organization for use during purchase. GET v1/buyers/{buyerID}/creditcards/{creditCardID …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-SpendingAccounts.html">Spending Accounts</a>
+        </h4>
+        <div class="content">
+          Spending Accounts are funds given to users by a managing entity and are managed as part of a user's account. These funds are generally used as "corporate dollars", "rewards dollars", or "gift cards". They can be used to pay for all of or part of an order with parameters that …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-UserGroups.html">User Groups</a>
+        </h4>
+        <div class="content">
+          User Groups are used to streamline the management of users within an application. By placing like users in groups, you can filter content, define order management rules, and manage changes much more easily than trying to account for individual users. GET v1/buyers/{buyerID}/usergroups/{userGroupID} Get a single user …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Buyers-Users.html">Users</a>
+        </h4>
+        <div class="content">
+          A user is a person with access to the application. The properties of a user define who they are and what they are able to do with their login to the application. GET v1/buyers/{buyerID}/users/{userID} Get a single user Name Type Description Required buyerID string ID of …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-Me.html">Me</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCategories.html">Categories</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeOrders.html">Orders</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeProducts.html">Products</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Orders-And-Fulfillment-LineItems.html">Line Items</a>
+        </h4>
+        <div class="content">
+          A Line Item represents a single line on an Order. At a minimum, it contains a single Product SKU and a quantity. A line item may also include Spec values, a Cost Center, shipping details, date needed, and other custom information. GET v1/orders/{direction}/{orderID}/lineitems/{lineItemID} Get a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Orders-And-Fulfillment-Orders.html">Orders</a>
+        </h4>
+        <div class="content">
+          An Order represents a business transaction between two parties. It typically consists of a collection of Line Items, a Payment Method, Tax and Shipping information, etc. The OrderCloud platform defines various "actions" that can be performed against Orders, such as Submit, Approve, Ship, etc. These actions transform the state of …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Orders-And-Fulfillment-Payments.html">Payments</a>
+        </h4>
+        <div class="content">
+          GET v1/orders/{direction}/{orderID}/payments/{paymentID} Get a single payment Name Type Description Required direction string Direction of the order, from the current user's perspective. Possible values: incoming, outgoing. True orderID string ID of the order. True paymentID string ID of the payment. True Response Body { "Accepted": false, "Amount …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Orders-And-Fulfillment-Promotions.html">Promotions</a>
+        </h4>
+        <div class="content">
+          Promotions are used to reduce the cost of a line item or an order. Promotions can have redemption rules that can be applied for available dates, occurences and value. Promotions can be assigned to Products, Categories, Buyers, UserGroups and Users for redemption. GET v1/promotions/{promotionID} Get a single promotion …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Orders-And-Fulfillment-Shipments.html">Shipments</a>
+        </h4>
+        <div class="content">
+          A Shipment is a grouping of one or more Line Items from one or more Orders that is physically packaged and delivered to the Buyer as a single unit. It is typically created by the Seller after the Order is submitted as part of the fulfillment process. GET v1/shipments …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Product-Catalogs-Catalogs.html">Catalogs</a>
+        </h4>
+        <div class="content">
+          A Catalog represents a group of categories used to group and place content for a specific audience. All buyers are issued and assigned a default catalog upon creation. Catalogs can be shared between buyers using assignments. GET v1/catalogs/{catalogID} Get a single catalog Name Type Description Required catalogID string …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Product-Catalogs-Categories.html">Categories</a>
+        </h4>
+        <div class="content">
+          Categories are used within a catalog to group and place content for a specific audience. Content can be in the form of another category, nested categories, products or HTML. GET v1/catalogs/{catalogID}/categories/{categoryID} Get a single category Name Type Description Required catalogID string ID of the catalog. True …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Product-Catalogs-PriceSchedules.html">Price Schedules</a>
+        </h4>
+        <div class="content">
+          Price schedules allow the same product to be sold across multiple channels. A price schedule may include quantity price breaks, min and max quantity per order, whether to apply tax or shipping calculations, or to what type of order the price schedule applies. GET v1/priceschedules/{priceScheduleID} Get a single …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Product-Catalogs-Products.html">Products</a>
+        </h4>
+        <div class="content">
+          A Product represents a physical, digital, or absract good that is offered for sale by a seller organization and is purchase-able by Buyer Users via an Order. Products can be a static SKU or a version of a static SKU, known as a Variant. For example, a variant is often …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Product-Catalogs-Specs.html">Specs</a>
+        </h4>
+        <div class="content">
+          Specs are used to capture user input when adding a Product to an Order. At its simplest, a spec is a name/value pair. A spec value may have a price markup or markdown associated with it. In more advanced scenarios, specs can drive the product SKU. For example, a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Seller-AdminAddresses.html">Admin Addresses</a>
+        </h4>
+        <div class="content">
+          GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-21T23:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Seller-AdminUserGroups.html">Admin User Groups</a>
+        </h4>
+        <div class="content">
+          GET v1/usergroups/{userGroupID} Get a single admin user group Name Type Description Required userGroupID string ID of the user group. True Response Body { "Description": "", "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the user group. False Name string Name of the user group. True Description string …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Seller-AdminUsers.html">Admin Users</a>
+        </h4>
+        <div class="content">
+          Users on an Organization level are users that have administrative access to things like adding users, creating catalogs, processing orders or creating products. These users are not specific to a buyer company. GET v1/adminusers/{userID} Get a single admin user Name Type Description Required userID string ID of the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Seller-Incrementors.html">Incrementors</a>
+        </h4>
+        <div class="content">
+          An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body { "ID": "", "LastNumber": 0, "LeftPaddingCount …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Seller-MessageSenders.html">Message Senders</a>
+        </h4>
+        <div class="content">
+          GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes array …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Suppliers-SupplierUserGroups.html">Supplier User Groups</a>
+        </h4>
+        <div class="content">
+          User Groups are used to streamline the management of users within an application. By placing like users in groups, you can filter content, define order management rules, and manage changes much more easily than trying to account for individual users. GET v1/suppliers/{supplierID}/usergroups/{userGroupID} Get a single supplier …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Suppliers-SupplierUsers.html">Supplier Users</a>
+        </h4>
+        <div class="content">
+          A user is a person with access to the application. The properties of a user define who they are and what they are able to do with their login to the application. GET v1/suppliers/{supplierID}/users/{userID} Get a single supplier user Name Type Description Required supplierID string ID …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="fa fa-clock-o"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="fa fa-folder-open-o"></i>
+            <a href="../category/api-reference.html">API Reference</a>
+          </li>
+            <li>
+              <i class="fa fa-user-o"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Suppliers-Suppliers.html">Suppliers</a>
+        </h4>
+        <div class="content">
+          Suppliers are the organizations that supply products distributed by Seller oganizations. GET v1/suppliers/{supplierID} Get a single supplier Name Type Description Required supplierID string ID of the supplier. True Response Body { "Active": false, "ID": "", "Name": "", "xp": {} } Name Type Description Required ID string ID of the supplier. False Name string …
+        </div>
+      </div>
+    </article>
     </div>
-    
-    <div>
-    </div>
-    
-    <div>
-    </div>
-    
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : "..",
-  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
-  "description": ""
-}
-</script></body>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="../authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
 </html>
