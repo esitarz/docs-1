@@ -28,7 +28,8 @@ THEME_PATHS = ['pelican-themes']
 THEME = 'themes/pelican-alchemy/alchemy'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
-PLUGINS = ['better_tables', 'ace_editor', 'assets']#ace_editor
+# PLUGINS = ['better_tables', 'ace_editor', 'assets']#ace_editor
+PLUGINS = ['better_tables', 'assets']
 
 DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
