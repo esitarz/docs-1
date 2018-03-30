@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="english">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Core Concepts: Assignments | OrderCloud Documentation Content
+</title>
+  <link rel="canonical" href="./platform-guidesarticlescore-concepts-assignments.html">
+
+
+    <link rel="stylesheet" href="./theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="./theme/css/vendors/pygments/default.min.css">
+
+  
+  <meta name="description" content="__Overview There are basic principles around how assignments work that are critical to understanding our data model and more importantly how the data model can be applied to solve the most complex ordering scenarios. Assignments are used to define relationships Assignments are inclusive Assignments can be made at different levels …">
+
+
+</head>
+
+<body>
+  <header class="header">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand" href="./">OrderCloud Documentation Content</a>
+  </div>
+</nav>
+
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="./">OrderCloud Documentation Content</a></h1>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="./frameworks-and-sdks/">Frameworks And Sdks</a></li>
+            <li class="list-inline-item"><a href="./integration-services/">Integration Services</a></li>
+            <li class="list-inline-item"><a href="./platform-guides/">Platform Guides</a></li>
+      </ul>
+  </div>
+</div> -->  </header>
+
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/api-reference.html">api-reference</a>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Addresses.html">Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-ApprovalRules.html">Approval Rules</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Buyers.html">Buyers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-CostCenters.html">Cost Centers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-CreditCards.html">Credit Cards</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-SpendingAccounts.html">Spending Accounts</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-UserGroups.html">User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Users.html">Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-Me.html">Me</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCategories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeOrders.html">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeProducts.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-LineItems.html">Line Items</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Orders.html">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Payments.html">Payments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Promotions.html">Promotions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Shipments.html">Shipments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Catalogs.html">Catalogs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-PriceSchedules.html">Price Schedules</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Products.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Specs.html">Specs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminAddresses.html">Admin Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminUserGroups.html">Admin User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminUsers.html">Admin Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-Incrementors.html">Incrementors</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-MessageSenders.html">Message Senders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-SupplierUserGroups.html">Supplier User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-SupplierUsers.html">Supplier Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-Suppliers.html">Suppliers</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/frameworks-and-sdks.html">frameworks-and-sdks</a>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-application-files.html">Angularjs: Application Files</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-connecting-to-your-organization.html">Angularjs: Connecting To Your Organization</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-contributing.html">Angularjs: Contributing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-source-directory.html">Angularjs: Source Directory</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/csharp-getting-started.html">Csharp: Getting Started</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/integration-services.html">integration-services</a>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-authorize-only-transaction.html">Authorizenet: Authorize Only Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-create-credit-card.html">Authorizenet: Create Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-delete-credit-card.html">Authorizenet: Delete Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-prior-authorization-capture-transaction.html">Authorizenet: Prior Authorization Capture Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-refund-transaction.html">Authorizenet: Refund Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-update-credit-card.html">Authorizenet: Update Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-void-transaction.html">Authorizenet: Void Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-configuring-catalog.html">Shippingrates: Configuring Catalog</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-configuring-integration.html">Shippingrates: Configuring Integration</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-get-line-item-rates.html">Shippingrates: Get Line Item Rates</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-get-rates.html">Shippingrates: Get Rates</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-overview.html">Shippingrates: Overview</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-set-shipping-cost.html">Shippingrates: Set Shipping Cost</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/platform-guides.html">platform-guides</a>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-anonymous-shopping.html">Authentication: Anonymous Shopping</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-developer-access.html">Authentication: Developer Access</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-impersonation.html">Authentication: Impersonation</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-oauth2-workflows.html">Authentication: Oauth2 Workflows</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-refresh-tokens.html">Authentication: Refresh Tokens</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-security-profiles.html">Authentication: Security Profiles</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-conventions.html">Basic Api Features: Conventions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-errors.html">Basic Api Features: Errors</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-extended-properties.html">Basic Api Features: Extended Properties</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-filtering.html">Basic Api Features: Filtering</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-http-methods.html">Basic Api Features: Http Methods</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-pagination.html">Basic Api Features: Pagination</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-searching.html">Basic Api Features: Searching</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-sorting.html">Basic Api Features: Sorting</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/core-concepts-assignments.html">Core Concepts: Assignments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/core-concepts-rules-engine.html">Core Concepts: Rules Engine</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-introduction-to-ordercloud.html">Getting Started: Introduction To Ordercloud</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-quick-start-guide.html">Getting Started: Quick Start Guide</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-using-the-api-console.html">Getting Started: Using The Api Console</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-using-the-dashboard.html">Getting Started: Using The Dashboard</a>
+                    </li>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+          <h1>  Core Concepts: Assignments
+</h1>
+          <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-03-19T15:32:44.250255-05:00">
+          <i class="far fa-clock"></i>
+          Mon 19 March 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="far fa-folder-open-o"></i>
+          <a href="./category/platform-guides.html">platform-guides</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="far fa-user"></i>
+              <a href="./author/ordercloudio.html">OrderCloud.io</a>          </li>
+          <li class="list-inline-item">
+            <i class="far fa-files"></i>
+              <a href="./tag/core-concepts.html">#core concepts</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <h2>__Overview</h2>
+<p>There are basic principles around how assignments work that are critical to
+understanding our data model and more importantly how the data model can be
+applied to solve the most complex ordering scenarios.</p>
+<ul>
+<li>Assignments are used to define relationships</li>
+<li>Assignments are inclusive</li>
+<li>Assignments can be made at different levels depending on the resource</li>
+<li>Assignments may include configuration data</li>
+<li>Assignments cascade down higher levels to the individual user (except pricing)</li>
+<li>Assignments are many to many</li>
+</ul>
+<h2>__Assignments are Used to Define Relationships</h2>
+<p>When you are saving an assignment you are creating a relationship between a
+single resource (address, spending account, etc.) and a buyer party(user, user
+group, or buyer company). There is one exception to this binary rule, which is
+product assignment. The product assignment is a three-way association between
+a product, a buyer party and a price schedule.</p>
+<h2>__Assignments are Inclusive</h2>
+<p>When a buyer user is created they exist in a vacuum. The user will not have
+access to any objects until an assignment is made to them directly, or through
+a higher level party assignment.</p>
+<h2>__Assignments Can be Made at Different Levels</h2>
+<p>Assignments can be made to either the entire buyer company, a specific group
+of users (UserGroup) within that buyer company or for some resources a single
+buyer user.</p>
+<p>You may notice that some assignments contain configuration options. These
+options allow you to provide additional information about the assignment. For
+example, when assigning an address to a user, you can set IsShipping &amp;
+IsBilling, these properties control whether the address can be used as a
+shipping and/or billing address on an order.</p>
+<h2>__Assignments Cascade Down Higher Levels to the Individual User</h2>
+<p>When the platform is looking for what a given buyer user has access to, it is
+checking for assignments. If an assignment is made to a buyer then all the
+users that exist in that buyer organization have access to the assigned
+object. The same principle applies to user groups and their constituent users.
+Regardless of where an assignment is saved, all of these objects are presented
+to the buyer user seamlessly and in a very flat structure.</p>
+<p>The three-way product assignment is the exception to this, in that case the
+most specific pricing assignment will apply. For example, if you have a
+product assignment at the buyer level, but you would like a specific group of
+users to have different pricing, you could make an additional product
+assignment that included a UserGroupID and users assigned to that group would
+no longer see the buyer level pricing.</p>
+<p>The scenario you’ll want to avoid is a user with multiple product assignments
+of the same specificity party level (e.g. a user belonging to two user groups,
+each with different product assignments). While the platform won’t prohibit
+you from making these potentially problematic assignments, the pricing
+returned for any user belonging to multiple pricing groups will always be
+indeterminate.</p>
+<h2>__Assignments are Many to Many</h2>
+<p>Resources can be assigned to many different buyer parties. Those buyer parties
+can be assigned to many other resources. For example, one user can be assigned
+to multiple address while one address can be assigned to multiple users.</p>
+    </div>
+  </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="./authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="./archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="./categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="./tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="english">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Angularjs: Application Files | OrderCloud Documentation Content
+</title>
+  <link rel="canonical" href="./frameworks-and-sdksarticlesangularjs-application-files.html">
+
+
+    <link rel="stylesheet" href="./theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="./theme/css/vendors/pygments/default.min.css">
+
+  
+  <meta name="description" content="Overview The src/app directory contains all code specific to this application. Apart from app.*.js and its accompanying tests (discussed below), this directory is filled with subdirectories corresponding to high-level sections of the application, often corresponding to top-level routes. Each directory can have as many subdirectories as it needs …">
+
+
+</head>
+
+<body>
+  <header class="header">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand" href="./">OrderCloud Documentation Content</a>
+  </div>
+</nav>
+
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="./">OrderCloud Documentation Content</a></h1>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="./frameworks-and-sdks/">Frameworks And Sdks</a></li>
+            <li class="list-inline-item"><a href="./integration-services/">Integration Services</a></li>
+            <li class="list-inline-item"><a href="./platform-guides/">Platform Guides</a></li>
+      </ul>
+  </div>
+</div> -->  </header>
+
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/api-reference.html">api-reference</a>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Addresses.html">Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-ApprovalRules.html">Approval Rules</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Buyers.html">Buyers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-CostCenters.html">Cost Centers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-CreditCards.html">Credit Cards</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-SpendingAccounts.html">Spending Accounts</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-UserGroups.html">User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Buyers-Users.html">Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-Me.html">Me</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCategories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeOrders.html">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeProducts.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-LineItems.html">Line Items</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Orders.html">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Payments.html">Payments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Promotions.html">Promotions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Orders-And-Fulfillment-Shipments.html">Shipments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Catalogs.html">Catalogs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-PriceSchedules.html">Price Schedules</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Products.html">Products</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Product-Catalogs-Specs.html">Specs</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminAddresses.html">Admin Addresses</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminUserGroups.html">Admin User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-AdminUsers.html">Admin Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-Incrementors.html">Incrementors</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Seller-MessageSenders.html">Message Senders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-SupplierUserGroups.html">Supplier User Groups</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-SupplierUsers.html">Supplier Users</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./api-reference/articles/Suppliers-Suppliers.html">Suppliers</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/frameworks-and-sdks.html">frameworks-and-sdks</a>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-application-files.html">Angularjs: Application Files</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-connecting-to-your-organization.html">Angularjs: Connecting To Your Organization</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-contributing.html">Angularjs: Contributing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/angularjs-source-directory.html">Angularjs: Source Directory</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./frameworks-and-sdks/articles/csharp-getting-started.html">Csharp: Getting Started</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/integration-services.html">integration-services</a>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-authorize-only-transaction.html">Authorizenet: Authorize Only Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-create-credit-card.html">Authorizenet: Create Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-delete-credit-card.html">Authorizenet: Delete Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-prior-authorization-capture-transaction.html">Authorizenet: Prior Authorization Capture Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-refund-transaction.html">Authorizenet: Refund Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-update-credit-card.html">Authorizenet: Update Credit Card</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/authorizenet-void-transaction.html">Authorizenet: Void Transaction</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-configuring-catalog.html">Shippingrates: Configuring Catalog</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-configuring-integration.html">Shippingrates: Configuring Integration</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-get-line-item-rates.html">Shippingrates: Get Line Item Rates</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-get-rates.html">Shippingrates: Get Rates</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-overview.html">Shippingrates: Overview</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./integration-services/articles/shippingrates-set-shipping-cost.html">Shippingrates: Set Shipping Cost</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./category/platform-guides.html">platform-guides</a>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-anonymous-shopping.html">Authentication: Anonymous Shopping</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-developer-access.html">Authentication: Developer Access</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-impersonation.html">Authentication: Impersonation</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-oauth2-workflows.html">Authentication: Oauth2 Workflows</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-refresh-tokens.html">Authentication: Refresh Tokens</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/authentication-security-profiles.html">Authentication: Security Profiles</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-conventions.html">Basic Api Features: Conventions</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-errors.html">Basic Api Features: Errors</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-extended-properties.html">Basic Api Features: Extended Properties</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-filtering.html">Basic Api Features: Filtering</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-http-methods.html">Basic Api Features: Http Methods</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-pagination.html">Basic Api Features: Pagination</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-searching.html">Basic Api Features: Searching</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/basic-api-features-sorting.html">Basic Api Features: Sorting</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/core-concepts/articles/core-concepts-assignments.html">Core Concepts: Assignments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-introduction-to-ordercloud.html">Getting Started: Introduction To Ordercloud</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-quick-start-guide.html">Getting Started: Quick Start Guide</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-using-the-api-console.html">Getting Started: Using The Api Console</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./platform-guides/articles/getting-started-using-the-dashboard.html">Getting Started: Using The Dashboard</a>
+                    </li>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+          <h1>  Angularjs: Application Files
+</h1>
+          <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-03-19T15:32:44.250255-05:00">
+          <i class="far fa-clock"></i>
+          Mon 19 March 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="far fa-folder-open-o"></i>
+          <a href="./category/frameworks-and-sdks.html">frameworks-and-sdks</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="far fa-user"></i>
+              <a href="./author/ordercloudio.html">OrderCloud.io</a>          </li>
+          <li class="list-inline-item">
+            <i class="far fa-files"></i>
+              <a href="./tag/angularjs.html">#angularjs</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <h2>Overview</h2>
+<p>The <code>src/app</code> directory contains all code specific to this application. Apart
+from <code>app.*.js</code> and its accompanying tests (discussed below), this directory
+is filled with subdirectories corresponding to high-level sections of the
+application, often corresponding to top-level routes. Each directory can have
+as many subdirectories as it needs, and the build system will understand what
+to do. For example, a top-level route might be <code>productManagement</code>, which
+would be a directory within the <code>src/app</code> directory that conceptually
+corresponds to the top-level route <code>/products</code>, though this is in no way
+enforced. <code>productManagement</code> may then have subdirectories for <code>inventory</code>,
+<code>pricing</code>, <code>product</code>, etc. The <code>product</code> submodule may then define a route of
+<code>/products/:id</code>, ad infinitum.</p>
+<pre><code>src/
+  |- app/
+  |  |- app.constants.json
+  |  |- app.controller.js
+  |  |- app.module.js
+  |  |- app.run.js
+  |  |- app.spec.js
+</code></pre>
+<h2><code>app.constants.json</code></h2>
+<p>This small, yet powerful file host a JSON object of key value pairs to be used
+throughout the application. From this object, the build process will generate
+a file containing AngularJS constants <a href="https://github.com/ordercloud-
+api/angular-seller/blob/development/gulp.config.js#L86-L123">here</a>, which are used
+to connect to your OrderCloud organizations.</p>
+<h2><code>app.controller.js</code></h2>
+<p>This is the application's main controller. <code>AppCtrl</code> is a good place for logic
+not specific to the template or route, such as menu logic or page title
+wiring. This controller also allows for numerous Angular services such as
+<code>$state</code> and <code>$ocMedia</code> and service methods such as <code>ocIsTouchDevice</code> and
+<code>stateLoading</code> to be globally available throughout the application's various
+templates. <code>AppCtrl</code> is not declared in a state provider like the
+application's component controllers. Instead, it is declared directly in
+<code>index.html</code> with <code>ng-controller="AppCtrl as application"</code>.</p>
+<pre><code>angular.module('orderCloud')
+    .controller('AppCtrl', AppController)
+;
+function AppController($state, $ocMedia, LoginService, appname, ocStateLoading, ocIsTouchDevice, ocRoles) {
+    var vm = this;
+    vm.name = appname;
+    vm.$state = $state;
+    vm.$ocMedia = $ocMedia;
+    vm.isTouchDevice = ocIsTouchDevice;
+    vm.stateLoading = ocStateLoading.Watch;
+    vm.logout = LoginService.Logout;
+    vm.userIsAuthorized = ocRoles.UserIsAuthorized;
+}
+</code></pre>
+<h2><code>app.module.js</code></h2>
+<p>This is our main app file. It kickstarts the whole process by requiring all
+the modules that we need.</p>
+<p>By default, the OrderCloud AngularJS Seed includes a few useful modules
+written by the AngularJS and Angular-UI teams. We also include the
+<code>orderCloud.sdk</code> module for connecting to the OrderCloud API. Lastly, some
+helpful third party modules are included as well, such as <code>toastr</code> and
+<code>angular-busy</code>.</p>
+<p>All components within the application are tied directly to the <code>orderCloud</code>
+module, so they do not need to be included here.</p>
+<pre><code>angular.module('orderCloud', [
+        'ngSanitize',
+        'ngAnimate',
+        'ngMessages',
+        'ngTouch',
+        'ui.tree',
+        'ui.router',
+        'ui.select',
+        'ui.bootstrap',
+        'ui.select',
+        'LocalForageModule',
+        'toastr',
+        'angular-busy',
+        'jcs-autoValidate',
+        'treeControl',
+        'hl.sticky',
+        'angularPayments',
+        'ordercloud-angular-sdk'
+    ]
+);
+</code></pre>
+<p>id="-app-run-js-"</p>
+<h2><code>app.run.js</code></h2>
+<p>Use the main applications run method to execute any code after services have
+been instantiated. By default, we initialize <code>ocStateLoading</code>, validation
+error messages (using <code>angular-auto-validate</code>), and validation styling.</p>
+<pre><code>angular.module('orderCloud')
+    .run(AppRun)
+;
+
+
+function AppRun(ocStateLoading, ocRefreshToken, defaultErrorMessageResolver, ocErrorMessages, validator) {
+    ocStateLoading.Init();
+
+
+    defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+        angular.extend(errorMessages, ocErrorMessages);
+    });
+
+
+    validator.setValidElementStyling(false);
+}
+</code></pre>
+<h2><code>app.spec.js</code></h2>
+<p>One of the design philosophies of <code>angular-seller</code> is that tests should exist
+alongside the code they test and that the build system should be smart enough
+to know the difference and react accordingly. As such, the unit test for
+<code>app.*.js</code> is <code>app.spec.js</code>.</p>
+    </div>
+  </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="./authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="./archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="./categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="./tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>

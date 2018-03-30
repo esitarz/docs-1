@@ -2,7 +2,7 @@
 Title: Core Concepts: Rules Engine
 author: OrderCloud.io 
 Date: 2018-03-19 15:32:44.250255
-Category: Platform Guides
+Category: Core Concepts
 Tags: core concepts
 ---
 

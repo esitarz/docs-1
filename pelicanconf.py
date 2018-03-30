@@ -5,7 +5,7 @@ import os
 
 
 AUTHOR = 'OrderCloud.io'
-SITENAME = 'OrderCloud Documentation Content'
+SITENAME = 'OrderCloud Documentation'
 SITEURL = 'localhost:8000'
 SITETITLE = 'OrderCloud Docs'
 
@@ -46,20 +46,7 @@ ARTICLE_URL = os.path.join('{category}','{slug}.html')
 READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 
-
-
 HIDE_DATE = True
-
-# ACE_EDITOR_PLUGIN = {
-
-# 'ACE_EDITOR_SHOW_INVISIBLE' : True,
-# 'ACE_EDITOR_READONLY' : False,
-# 'ACE_EDITOR_AUTOSCROLL' : True
-
-# }
-
-
-# CUSTOM_CSS_URL = 'pelican-plugins/ace_editor/static/style.css'
 
 MARKDOWN = {
     'extension_configs': {
