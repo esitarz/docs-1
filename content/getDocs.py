@@ -1,3 +1,4 @@
+#!python script to format api-reference into markdown files
 from pathlib import Path
 from bs4 import BeautifulSoup
 import markdown
@@ -29,13 +30,13 @@ def unwrap_list(input):
 		contents.append(text)
 
 
-	return(contents) #LIST of strings		
+	return(contents) #LIST of strings
 
 def define_meta(item):
 	#print(item)
-	
+
 	page = dict([('title', ''),('date', ''),('category', ''),('tags', ''),('slug', ''), ('comments',''), ('endpoints','')])
-	
+
 	page['title'] = str(item['Name'])
 	page['date'] = str(date.today())
 
@@ -80,7 +81,7 @@ def parseList(input):
 			if type(bullet) is str:
 				contents += ' '+bullet
 			elif type(bullet) is dict:
-				row = '|'					
+				row = '|'
 				for item in bullet.keys():
 					row += ' '+str(bullet[item])+' |'
 				column = ' | '.join(bullet.keys())
@@ -110,8 +111,8 @@ def parseFields(input):
 			contents += ' '+bullet
 		if type(bullet) is dict:
 			first = True
-			row = '|'					
-			
+			row = '|'
+
 			for item in bullet.keys():
 				row += ' '+str(bullet[item])+' |'
 		column = ' | '.join(bullet.keys())
@@ -135,7 +136,7 @@ def main():
 	print("Total Files To Process: "+str(len(resources)))
 	#del resources[5:]
 	#print("New Total Files To Process: "+str(len(resources)))
-	
+
 	p = Path('.')
 
 	files = list(p.glob('**/api-reference/*.md'))
@@ -144,7 +145,7 @@ def main():
 	lastMod = datetime.utcfromtimestamp(p.stat().st_mtime)
 	docsUpdated = datetime.strptime(d.json()['CommitDate'], "%Y-%m-%dT%H:%M:%S+00:00")  #2018-03-21T22:18:13+00:00
 	print("Docs Content Last Modified: %s" % lastMod)
-	
+
 	print('Generated Docs Last Updated:'+str(docsUpdated))
 
 	if lastMod >= docsUpdated:
@@ -166,7 +167,7 @@ def main():
 		section = resources[resources.index(p)]
 		#print('\nSECTION: ')
 		#print(section['Comments'])
-		
+
 		#page['contents'] += '\n## Comments: \n'
 
 
@@ -175,7 +176,7 @@ def main():
 			page['contents'] += '\n'
 
 		elif type(section['Comments']) is str:
-				
+
 			page['contents'] += pypandoc.convert_text(section['Comments'], 'gfm', format='rst')
 
 		elif type(section['Comments']) is int:
@@ -188,7 +189,7 @@ def main():
 			text = unwrap_list(section['Comments'])
 			page['contents'] += ' '.join(text)
 			page['contents'] += '\n---\n'
-							
+
 
 		endpoints = section['Endpoints']
 		#section = resources[resources.index(p)]
@@ -220,7 +221,7 @@ def main():
 						#print(page['contents'])
 						page['contents'] += parseFields(value)
 
-						
+
 
 
 				elif key == 'ResponseBody' and value == None:
@@ -232,7 +233,7 @@ def main():
 						page['contents'] += parseFields(value)
 
 						#print(value.keys())
-						
+
 					elif key == 'ResponseStatus':
 						page['contents'] += '\n**'+returnSplit(str(key)).title()+'**: `'+str(value)+'`\n'
 
@@ -244,11 +245,11 @@ def main():
 							page['contents']+=parseList(value)
 
 
-										
+
 
 		pages.append(page)
 			#print(pages)
-								
+
 	for page in pages:
 		with open(page['path'], 'w') as mark:
 			mark.write(page['contents'])
@@ -262,4 +263,3 @@ main()
 
 
 #	def unwrap_list(input):
-
