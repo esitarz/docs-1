@@ -23,13 +23,12 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 THEME_PATHS = ['pelican-themes']
-#THEME = 'pelican-themes/flex'
-# THEME = 'themes/flex-ordercloudio'
 THEME = 'themes/pelican-alchemy/alchemy'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
-# PLUGINS = ['better_tables', 'ace_editor', 'assets']#ace_editor
 PLUGINS = ['better_tables', 'assets']
+
+ASSET_SOURCE_PATHS = ['scss',]
 
 DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
@@ -51,16 +50,16 @@ IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 
 HIDE_DATE = True
 
-ACE_EDITOR_PLUGIN = {
+# ACE_EDITOR_PLUGIN = {
 
-'ACE_EDITOR_SHOW_INVISIBLE' : True,
-'ACE_EDITOR_READONLY' : False,
-'ACE_EDITOR_AUTOSCROLL' : True
+# 'ACE_EDITOR_SHOW_INVISIBLE' : True,
+# 'ACE_EDITOR_READONLY' : False,
+# 'ACE_EDITOR_AUTOSCROLL' : True
 
-}
+# }
 
 
-CUSTOM_CSS_URL = 'pelican-plugins/ace_editor/static/style.css'
+# CUSTOM_CSS_URL = 'pelican-plugins/ace_editor/static/style.css'
 
 MARKDOWN = {
     'extension_configs': {
