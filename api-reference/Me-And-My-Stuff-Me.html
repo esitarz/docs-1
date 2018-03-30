@@ -1,0 +1,732 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content=""Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …" />
+<meta name="keywords" content="Me And My Stuff">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Me"/>
+<meta property="og:description" content=""Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference/Me-And-My-Stuff-Me.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Me And My Stuff"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Me</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="Me-And-My-Stuff-Me">Me</h1>
+    <p>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>"Me" is a container for read-only endpoints that return a filtered view</p>
+<p>of things that the current buyer user is allowed to see, i.e. things</p>
+<p>that they are assigned to either directly or as a member of a buyer</p>
+<p>organization or user group. It also provides ways for a user to update</p>
+<p>or change their own information.</p>
+<hr>
+<h2><code>GET</code> <code>v1/me</code></h2>
+<p>Get the Current Authenticated User</p>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "AvailableRoles": [
+        ""
+    ],
+    "Buyer": {
+        "DefaultCatalogID": "",
+        "ID": ""
+    },
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer</td>
+<td>object</td>
+<td>Buyer of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AvailableRoles</td>
+<td>array</td>
+<td>Available roles of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/me</code></h2>
+<p>Update the Currently Authenticated User</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Password": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Password of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user. Max length 100 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "AvailableRoles": [
+        ""
+    ],
+    "Buyer": {
+        "DefaultCatalogID": "",
+        "ID": ""
+    },
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer</td>
+<td>object</td>
+<td>Buyer of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AvailableRoles</td>
+<td>array</td>
+<td>Available roles of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PATCH</code> <code>v1/me</code></h2>
+<p>Patch the Currently Authenticated User</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Password": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Password of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user. Max length 100 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "AvailableRoles": [
+        ""
+    ],
+    "Buyer": {
+        "DefaultCatalogID": "",
+        "ID": ""
+    },
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer</td>
+<td>object</td>
+<td>Buyer of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>AvailableRoles</td>
+<td>array</td>
+<td>Available roles of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/me/register</code></h2>
+<p>Register a register</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anonUserToken</td>
+<td>string</td>
+<td>Anon user token of the user.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "Active": false,
+    "Email": "",
+    "FirstName": "",
+    "ID": "",
+    "LastName": "",
+    "Password": "",
+    "Phone": "",
+    "TermsAccepted": "2018-03-27T19:00:00+00:00",
+    "Username": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the user. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the user. Required. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 3.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Password of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>First name of the user. Required. Max length 100 characters. Searchable: priority level 4. Sortable: priority level 2.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>Last name of the user. Required. Max length 100 characters. Searchable: priority level 3. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the user. Required. Max length 200 characters. Searchable: priority level 5. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>Phone of the user. Max length 100 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TermsAccepted</td>
+<td>date</td>
+<td>Terms accepted of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>Active of the user. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{}
+</code></pre>
+<h2><code>PUT</code> <code>v1/me/orders</code></h2>
+<p>Transfer a anon user order</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>anonUserToken</td>
+<td>string</td>
+<td>Anon user token of the me.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>POST</code> <code>v1/me/password</code></h2>
+<p>Reset a password by token</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "NewPassword": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NewPassword</td>
+<td>string</td>
+<td>New password of the token password reset. Required.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

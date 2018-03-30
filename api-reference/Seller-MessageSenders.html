@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body :::json { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes …" />
+<meta name="keywords" content="Seller">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Message Senders"/>
+<meta property="og:description" content="GET v1/messagesenders/{messageSenderID} Get a single message sender Name Type Description Required messageSenderID string ID of the message sender. True Response Body :::json { "Description": "", "ID": "", "MessageTypes": [ "OrderDeclined" ], "Name": "" } Name Type Description Required ID string ID of the message sender. False Name string Name of the message sender. False MessageTypes …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference/Seller-MessageSenders.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Seller"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Message Senders</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="Seller-MessageSenders">Message Senders</h1>
+    <p>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2><code>GET</code> <code>v1/messagesenders/{messageSenderID}</code></h2>
+<p>Get a single message sender</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messageSenderID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Description": "",
+    "ID": "",
+    "MessageTypes": [
+        "OrderDeclined"
+    ],
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageTypes</td>
+<td>array</td>
+<td>Message types of the message sender.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the message sender.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/messagesenders</code></h2>
+<p>Get a list of message senders</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "Description": "",
+            "ID": "",
+            "MessageTypes": [
+                "OrderDeclined"
+            ],
+            "Name": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageTypes</td>
+<td>array</td>
+<td>Message types of the message sender.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the message sender.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/messagesenders/assignments</code></h2>
+<p>Get a list of message sender assignments</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>messageSenderID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>level</td>
+<td>string</td>
+<td>Level of the message sender assignment. Possible values: User, Group, Company.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "BuyerID": "",
+            "MessageConfigDescription": "",
+            "MessageConfigName": "",
+            "MessageSenderID": "",
+            "UserGroupID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageSenderID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageConfigName</td>
+<td>string</td>
+<td>Message config name of the message sender assignment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageConfigDescription</td>
+<td>string</td>
+<td>Message config description of the message sender assignment.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/messagesenders/{messageSenderID}/assignments</code></h2>
+<p>Delete a message sender assignment</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>messageSenderID</td>
+<td>string</td>
+<td>ID of the message sender.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>POST</code> <code>v1/messagesenders/assignments</code></h2>
+<p>Save a message sender assignment</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "BuyerID": "",
+    "MessageSenderID": "",
+    "UserGroupID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageSenderID</td>
+<td>string</td>
+<td>ID of the message sender. Required. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>GET</code> <code>v1/messagesenders/CCListenerAssignments</code></h2>
+<p>Get a list of message sender cc listener assignments</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "BuyerID": "",
+            "MessageConfigDescription": "",
+            "MessageConfigName": "",
+            "MessageSenderAssignment": {
+                "BuyerID": "",
+                "MessageConfigDescription": "",
+                "MessageConfigName": "",
+                "MessageSenderID": "",
+                "UserGroupID": ""
+            },
+            "MessageType": "OrderDeclined",
+            "UserGroupID": "",
+            "UserID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageSenderAssignment</td>
+<td>object</td>
+<td>Message sender assignment of the message cc listener assignment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageConfigName</td>
+<td>string</td>
+<td>Message config name of the message cc listener assignment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageConfigDescription</td>
+<td>string</td>
+<td>Message config description of the message cc listener assignment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageType</td>
+<td>string</td>
+<td>Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/messagesenders/CCListenerAssignments</code></h2>
+<p>Save a message sender cc listener assignment</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "BuyerID": "",
+    "MessageSenderAssignment": {
+        "BuyerID": "",
+        "MessageSenderID": "",
+        "UserGroupID": ""
+    },
+    "MessageType": "OrderDeclined",
+    "UserGroupID": "",
+    "UserID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageSenderAssignment</td>
+<td>object</td>
+<td>Message sender assignment of the message cc listener assignment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>MessageType</td>
+<td>string</td>
+<td>Message type of the message cc listener assignment. Possible values: OrderDeclined, OrderSubmitted, ShipmentCreated, ForgottenPassword, OrderSubmittedForYourApproval, OrderSubmittedForApproval, OrderApproved, OrderSubmittedForYourApprovalHasBeenApproved, OrderSubmittedForYourApprovalHasBeenDeclined, NewUserInvitation.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer. Searchable: priority level 0. Sortable: priority level 0.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/seller.html">Seller</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

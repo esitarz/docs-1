@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="__Overview With few exceptions, the OrderCloud.io API adheres to a RESTful architectural style. URIs, HTTP verbs, headers, payloads, and response codes all follow consistent and predictable patterns. This guide will outline conventions that permeate the entire platform. __SSL Everywhere API access is only allowed via HTTPS; connections on port …" />
+<meta name="keywords" content="basic api features">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Basic Api Features: Conventions"/>
+<meta property="og:description" content="__Overview With few exceptions, the OrderCloud.io API adheres to a RESTful architectural style. URIs, HTTP verbs, headers, payloads, and response codes all follow consistent and predictable patterns. This guide will outline conventions that permeate the entire platform. __SSL Everywhere API access is only allowed via HTTPS; connections on port …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../platform-guides/basic-api-features-conventions.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-19 15:32:44.250255-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="Platform Guides"/>
+<meta property="article:tag" content="basic api features"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Basic Api Features: Conventions</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="basic-api-features-conventions">Basic Api Features: Conventions</h1>
+    <p>
+        Posted on Mon 19 March 2018 in <a href="../category/platform-guides.html">Platform Guides</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>__Overview</h2>
+<p>With few exceptions, the OrderCloud.io API adheres to a RESTful architectural
+style. URIs, HTTP verbs, headers, payloads, and response codes all follow
+consistent and predictable patterns. This guide will outline conventions that
+permeate the entire platform.</p>
+<h2>__SSL Everywhere</h2>
+<p>API access is only allowed via HTTPS; connections on port 80 are refused
+entirely. This simplifies the token-based authentication.</p>
+<h2>__JSON Everywhere</h2>
+<p>UTF-8 encoded JSON is currently the only supported data format for both
+request and response payloads.</p>
+<h2>__Date Format</h2>
+<p>Dates/times returned in the API are in UTC time and conform to <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO
+8601</a>.</p>
+<h2>__OAuth 2</h2>
+<p>OrderCloud API authentication is based on the <a href="http://tools.ietf.org/html/rfc6749">OAuth 2
+specification</a> and supports four different
+workflows, or, in OAuth terms, grant types. Check out our workflows guide to
+learn more.</p>
+<h2>__Writeable IDs</h2>
+<p>Writable IDs can be extremely useful for back-office integrations. They can
+potentially eliminate the need for a mapping middleware layer.</p>
+<p>Most resources that map to an entity of some sort (Orders, Users, Addresses,
+etc.) contain an ID that is optionally writable on creation or update. If you
+do not pass one, one will be auto-generated and returned in the response, and
+will be guaranteed to be unique. If you choose to pass an ID, you are
+responsible for ensuring uniqueness. Things that live under the context of a
+single Buyer need only be unique within that context. Things that are shared
+(such as products) must be unique across the entire Admin organization.</p>
+<h2>__Error Handling</h2>
+<p>For all unsuccessful requests, we attempt to return the <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error">most appropriate HTTP
+status in the 400
+range</a>.
+Only when something goes terribly wrong on our end will you get a 500
+response. And so long as our platform is responding (i.e. returing anything in
+the 4xx range or 500), you can count on the response body taking a standard
+shape.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/basic-api-features.html">basic api features</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

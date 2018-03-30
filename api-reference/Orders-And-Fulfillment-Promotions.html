@@ -1,0 +1,1330 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="Promotions are used to reduce the cost of a line item or an order. Promotions can have redemption rules that can be applied for available dates, occurences and value. Promotions can be assigned to Products, Categories, Buyers, UserGroups and Users for redemption. GET v1/promotions/{promotionID} Get a single promotion …" />
+<meta name="keywords" content="Orders And Fulfillment">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Promotions"/>
+<meta property="og:description" content="Promotions are used to reduce the cost of a line item or an order. Promotions can have redemption rules that can be applied for available dates, occurences and value. Promotions can be assigned to Products, Categories, Buyers, UserGroups and Users for redemption. GET v1/promotions/{promotionID} Get a single promotion …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference/Orders-And-Fulfillment-Promotions.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Orders And Fulfillment"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Promotions</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="Orders-And-Fulfillment-Promotions">Promotions</h1>
+    <p>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Promotions are used to reduce the cost of a line item or an order.</p>
+<p>Promotions can have redemption rules that can be applied for available</p>
+<p>dates, occurences and value.</p>
+<p>Promotions can be assigned to Products, Categories, Buyers, UserGroups</p>
+<p>and Users for redemption.</p>
+<hr>
+<h2><code>GET</code> <code>v1/promotions/{promotionID}</code></h2>
+<p>Get a single promotion</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/promotions</code></h2>
+<p>Get a list of promotions</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "CanCombine": false,
+            "Code": "",
+            "Description": "",
+            "EligibleExpression": "",
+            "ExpirationDate": "2018-03-27T19:00:00+00:00",
+            "FinePrint": "",
+            "ID": "",
+            "Name": "",
+            "RedemptionCount": 0,
+            "RedemptionLimit": 0,
+            "RedemptionLimitPerUser": 0,
+            "StartDate": "2018-03-27T19:00:00+00:00",
+            "ValueExpression": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/promotions</code></h2>
+<p>Create a new promotion</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/promotions/{promotionID}</code></h2>
+<p>Create or update a promotion</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/promotions/{promotionID}</code></h2>
+<p>Delete a promotion</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>PATCH</code> <code>v1/promotions/{promotionID}</code></h2>
+<p>Partially update a promotion</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion. Max length 2000 characters. Searchable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion. Required. Max length 400 characters. Searchable: priority level 6. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion. Required. Max length 400 characters. Searchable: priority level 7. Sortable.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion. Sortable.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CanCombine": false,
+    "Code": "",
+    "Description": "",
+    "EligibleExpression": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "FinePrint": "",
+    "ID": "",
+    "Name": "",
+    "RedemptionCount": 0,
+    "RedemptionLimit": 0,
+    "RedemptionLimitPerUser": 0,
+    "StartDate": "2018-03-27T19:00:00+00:00",
+    "ValueExpression": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Must be unique. Entered by buyer when adding promo to order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimit</td>
+<td>integer</td>
+<td>Redemption limit of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionLimitPerUser</td>
+<td>integer</td>
+<td>Redemption limit per user of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>RedemptionCount</td>
+<td>integer</td>
+<td>Redemption count of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FinePrint</td>
+<td>string</td>
+<td>Terms, conditions, and other legal jargon.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date</td>
+<td>Start date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>EligibleExpression</td>
+<td>string</td>
+<td>Eligible expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ValueExpression</td>
+<td>string</td>
+<td>Value expression of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>CanCombine</td>
+<td>boolean</td>
+<td>Can combine of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the promotion.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/promotions/assignments</code></h2>
+<p>Get a list of promotion assignments</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>level</td>
+<td>string</td>
+<td>Level of the promotion assignment. Possible values: User, Group, Company.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "BuyerID": "",
+            "PromotionID": "",
+            "UserGroupID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PromotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/promotions/assignments</code></h2>
+<p>Save a promotion assignment</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "BuyerID": "",
+    "PromotionID": "",
+    "UserGroupID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PromotionID</td>
+<td>string</td>
+<td>ID of the promotion. Required. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer. Required. Sortable: priority level 2.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Sortable: priority level 4.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>DELETE</code> <code>v1/promotions/{promotionID}/assignments</code></h2>
+<p>Delete a promotion assignment</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promotionID</td>
+<td>string</td>
+<td>ID of the promotion.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/orders-and-fulfillment.html">Orders And Fulfillment</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

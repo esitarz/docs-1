@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …" />
+<meta name="keywords" content="Seller">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Incrementors"/>
+<meta property="og:description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference/Seller-Incrementors.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Seller"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Incrementors</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="Seller-Incrementors">Incrementors</h1>
+    <p>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>An incrementor is used to add an atomically incremented number to your</p>
+<p>object IDs. For example, "aprefix-{myIncrementorID}", will yield an</p>
+<p>order ID of aprefix-10010.</p>
+<hr>
+<h2><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h2>
+<p>Get a single incrementor</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>incrementorID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/incrementors</code></h2>
+<p>Get a list of incrementors</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "ID": "",
+            "LastNumber": 0,
+            "LeftPaddingCount": 0,
+            "Name": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/incrementors</code></h2>
+<p>Create a new incrementor</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/incrementors/{incrementorID}</code></h2>
+<p>Create or update an incrementor</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>incrementorID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/incrementors/{incrementorID}</code></h2>
+<p>Delete an incrementor</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>incrementorID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>PATCH</code> <code>v1/incrementors/{incrementorID}</code></h2>
+<p>Partially update an incrementor</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>incrementorID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor. Max length 100 characters. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor. Required. Must be between 0 and 2147483647.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor. Required. Must be between 0 and 25.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "LastNumber": 0,
+    "LeftPaddingCount": 0,
+    "Name": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the incrementor.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>LastNumber</td>
+<td>integer</td>
+<td>Last number of the incrementor.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LeftPaddingCount</td>
+<td>integer</td>
+<td>Left padding count of the incrementor.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/seller.html">Seller</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

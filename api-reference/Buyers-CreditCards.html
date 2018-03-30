@@ -1,0 +1,1059 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="Credit cards are used as a payment method for an order. A user may have access to one or many credit cards for personal spend or group spending. Credit Cards may be saved and assigned to members of an organization for use during purchase. GET v1/buyers/{buyerID}/creditcards/{creditCardID …" />
+<meta name="keywords" content="Buyers">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Credit Cards"/>
+<meta property="og:description" content="Credit cards are used as a payment method for an order. A user may have access to one or many credit cards for personal spend or group spending. Credit Cards may be saved and assigned to members of an organization for use during purchase. GET v1/buyers/{buyerID}/creditcards/{creditCardID …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../api-reference/Buyers-CreditCards.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="API Reference"/>
+<meta property="article:tag" content="Buyers"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Credit Cards</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="Buyers-CreditCards">Credit Cards</h1>
+    <p>
+        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Credit cards are used as a payment method for an order. A user may have</p>
+<p>access to one or many credit cards for personal spend or group spending.</p>
+<p>Credit Cards may be saved and assigned to members of an organization for</p>
+<p>use during purchase.</p>
+<hr>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}</code></h2>
+<p>Get a single credit card</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "DateCreated": "2018-03-27T19:00:00+00:00",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards</code></h2>
+<p>Get a list of credit cards</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "CardType": "",
+            "CardholderName": "",
+            "DateCreated": "2018-03-27T19:00:00+00:00",
+            "ExpirationDate": "2018-03-27T19:00:00+00:00",
+            "ID": "",
+            "PartialAccountNumber": "",
+            "Token": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/buyers/{buyerID}/creditcards</code></h2>
+<p>Create a new credit card</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card. Max length 5 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "DateCreated": "2018-03-27T19:00:00+00:00",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>PUT</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}</code></h2>
+<p>Create or update a credit card</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card. Max length 5 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "DateCreated": "2018-03-27T19:00:00+00:00",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>DELETE</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}</code></h2>
+<p>Delete a credit card</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>PATCH</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}</code></h2>
+<p>Partially update a credit card</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card. Can only contain characters Aa-Zz, 0-9, -, and _. Searchable: priority level 1. Sortable: priority level 1.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card. Searchable: priority level 3. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card. Max length 5 characters.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card. Searchable: priority level 2. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card. Searchable: priority level 4. Sortable: priority level 4.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "CardType": "",
+    "CardholderName": "",
+    "DateCreated": "2018-03-27T19:00:00+00:00",
+    "ExpirationDate": "2018-03-27T19:00:00+00:00",
+    "ID": "",
+    "PartialAccountNumber": "",
+    "Token": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>string</td>
+<td>Token of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateCreated</td>
+<td>date</td>
+<td>Date created of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardType</td>
+<td>string</td>
+<td>Card type of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>PartialAccountNumber</td>
+<td>string</td>
+<td>Partial account number of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CardholderName</td>
+<td>string</td>
+<td>Cardholder name of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Expiration date of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the credit card.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/buyers/{buyerID}/creditcards/assignments</code></h2>
+<p>Get a list of credit card assignments</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>level</td>
+<td>string</td>
+<td>Level of the credit card assignment. Possible values: User, Group, Company.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "CreditCardID": "",
+            "UserGroupID": "",
+            "UserID": ""
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>POST</code> <code>v1/buyers/{buyerID}/creditcards/assignments</code></h2>
+<p>Save a credit card assignment</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "CreditCardID": "",
+    "UserGroupID": "",
+    "UserID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreditCardID</td>
+<td>string</td>
+<td>ID of the credit card. Required. Sortable: priority level 1.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>string</td>
+<td>ID of the user. Sortable: priority level 2.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>UserGroupID</td>
+<td>string</td>
+<td>ID of the user group. Sortable: priority level 3.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<h2><code>DELETE</code> <code>v1/buyers/{buyerID}/creditcards/{creditCardID}/assignments</code></h2>
+<p>Delete a credit card assignment</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>creditCardID</td>
+<td>string</td>
+<td>ID of the credit card.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>ID of the user.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>userGroupID</td>
+<td>string</td>
+<td>ID of the user group.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/buyers.html">Buyers</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

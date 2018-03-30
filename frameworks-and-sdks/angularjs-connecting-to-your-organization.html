@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+<meta name="author" content="OrderCloud.io" />
+<meta name="description" content="Linking your front-end application to an OrderCloud seller or buyer organization can be accomplished using the scope and clientid constants described below. Application Constants src/app/app.constants.json is a small, yet powerful file host a JSON object of key value pairs to be used throughout the application. From …" />
+<meta name="keywords" content="angularjs">
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:title" content="Angularjs: Connecting To Your Organization"/>
+<meta property="og:description" content="Linking your front-end application to an OrderCloud seller or buyer organization can be accomplished using the scope and clientid constants described below. Application Constants src/app/app.constants.json is a small, yet powerful file host a JSON object of key value pairs to be used throughout the application. From …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../frameworks-and-sdks/angularjs-connecting-to-your-organization.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-19 15:32:44.250255-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../author/ordercloudio.html">
+<meta property="article:section" content="Frameworks And Sdks"/>
+<meta property="article:tag" content="angularjs"/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash; Angularjs: Connecting To Your Organization</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+    </aside>
+  </div>
+  <main>
+<article class="single">
+  <header>
+    <h1 id="angularjs-connecting-to-your-organization">Angularjs: Connecting To Your Organization</h1>
+    <p>
+        Posted on Mon 19 March 2018 in <a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Linking your front-end application to an OrderCloud seller or buyer
+organization can be accomplished using the <code>scope</code> and <code>clientid</code> constants
+described below.</p>
+<h2>Application Constants</h2>
+<p><code>src/app/app.constants.json</code> is a small, yet powerful file host a JSON object
+of key value pairs to be used throughout the application. From this object,
+the build process will generate a file containing AngularJS constants:
+<a href="https://github.com/ordercloud-api/angular-
+seller/blob/development/gulp.config.js#L86">here</a>, which can then be injected into
+your various AngularJS controllers, factories, providers, etc. Think of it as
+a base configuration or settings file for your application.  </p>
+<table>  
+<tr>  
+<th>
+
+Constant
+
+</th>  
+<th>
+
+Type
+
+</th>  
+<th>
+
+Description
+
+</th> </tr>  
+<tr>  
+<td>
+
+`appname`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A short name for your application. This will be used in the `<title>` as well
+as displayed in the top left navigation of the application.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`scope`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A space delimited string of OrderCloud roles that will be requested during
+authentication.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`clientid`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+An OrderCloud ClientID for the seller, buyer network, or buyer application
+that will be used for authentication.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`environment`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+A string declaring the OrderCloud environment the application will point to.
+Currently, only `production` is available; however, when a large release
+consisting of breaking changes is scheduled, a `staging` environment will be
+provided.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`defaultstate`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+The default ui-router state within the application that users will be directed
+to should they attempt to access a state that does not exist.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`html5mode`
+
+</td>  
+<td>
+
+bool
+
+</td>  
+<td>
+
+True/false whether you want HTML5 Mode enable within the application.
+
+</td> </tr>  
+<tr>  
+<td>
+
+`bootswatchtheme`
+
+</td>  
+<td>
+
+string
+
+</td>  
+<td>
+
+The Bootswatch theme that is automatically applied to the application during
+the build process. A list of available themes can be found
+[here](https://bootswatch.com/). A value of `null` will apply the default
+angular-seller theme.
+
+</td> </tr> </table>
+
+<h2>Process Environment Variable Overrides</h2>
+<p>The constants provided above can be overwritten within your hosting providers
+application settings. For example, within Heroku, you can override these
+constants using their <a href="https://devcenter.heroku.com/articles/config-vars#setting-up-
+config-vars-for-a-deployed-application">Config
+Variables</a>. This is accomplished in the
+<a href="https://github.com/ordercloud-api/angular-
+seller/blob/development/gulp.config.js#L116-L121"><code>gulp.config.js</code></a> file, which can be
+customized to include additional application constants.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="../tag/angularjs.html">angularjs</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>

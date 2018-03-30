@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
+    <link href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="OrderCloud Documentation Content Atom">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+    <meta name="author" content="OrderCloud.io" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="OrderCloud Documentation Content"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="OrderCloud Documentation Content"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
+  <title>OrderCloud Documentation Content &ndash;   Tag Authentication And Authorization
+</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
+      </a>
+      <h1><a href="..">OrderCloud Docs</a></h1>
+      
+      <nav>
+          <ul class="list">
+              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
+              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
+              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
+              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
+          </ul>
+      </nav>
+<hr>
+			<a href="../category/api-reference.html">API Reference</a>
+	: <a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>
+	
+    </aside>
+  </div>
+  <main>
+		<article>
+			<header>
+				<h2><a href="../api-reference/Authentication-And-Authorization-ImpersonationConfigs.html#Authentication-And-Authorization-ImpersonationConfigs">Impersonation Configs</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>				</p>
+			</header>
+			<div>
+					<h2><code>GET</code> <code>v1/impersonationconfig/{impersonationConfigID}</code></h2>
+<p>Get a single impersonation config</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>impersonationConfigID</td>
+<td>string</td>
+<td>ID of the impersonation config.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "BuyerID": "",
+    "ClientID": "",
+    "GroupID": "",
+    "ID": "",
+    "ImpersonationBuyerID": "",
+    "ImpersonationGroupID": "",
+    "ImpersonationUserID": "",
+    "SecurityProfileID": "",
+    "UserID": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the impersonation config.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ImpersonationBuyerID</td>
+<td>string</td>
+<td>ID of the …</td></tr></tbody></table>
+					<br>
+					<a class="btn" href="../api-reference/Authentication-And-Authorization-ImpersonationConfigs.html#Authentication-And-Authorization-ImpersonationConfigs">  Continue reading
+</a>
+			</div>
+				<hr />
+		</article>
+		<article>
+			<header>
+				<h2><a href="../api-reference/Authentication-And-Authorization-PasswordResets.html#Authentication-And-Authorization-PasswordResets">Forgotten Password</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>				</p>
+			</header>
+			<div>
+					<h2><code>POST</code> <code>v1/password/reset</code></h2>
+<p>Send a verification code</p>
+<h2>Request Body</h2>
+<pre><code>:::json
+{
+    "ClientID": "",
+    "Email": "",
+    "URL": "",
+    "Username": ""
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClientID</td>
+<td>string</td>
+<td>ID of the client. Required.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>Email of the password reset request.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>string</td>
+<td>Username of the password reset request.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>string</td>
+<td>URL of the …</td></tr></tbody></table>
+					<br>
+					<a class="btn" href="../api-reference/Authentication-And-Authorization-PasswordResets.html#Authentication-And-Authorization-PasswordResets">  Continue reading
+</a>
+			</div>
+				<hr />
+		</article>
+		<article>
+			<header>
+				<h2><a href="../api-reference/Authentication-And-Authorization-SecurityProfiles.html#Authentication-And-Authorization-SecurityProfiles">Security Profiles</a></h2>
+				<p>
+					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+
+						&#8226;   : 
+
+							<a href="../tag/authentication-and-authorization.html">Authentication And Authorization</a>				</p>
+			</header>
+			<div>
+					<h2><code>GET</code> <code>v1/securityprofiles/{securityProfileID}</code></h2>
+<p>Get a single security profile</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>securityProfileID</td>
+<td>string</td>
+<td>ID of the security profile.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "ID": "",
+    "Name": "",
+    "Roles": [
+        "DevCenterImpersonate"
+    ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the security profile.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name of the security profile.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Roles</td>
+<td>array …</td></tr></tbody></table>
+					<br>
+					<a class="btn" href="../api-reference/Authentication-And-Authorization-SecurityProfiles.html#Authentication-And-Authorization-SecurityProfiles">  Continue reading
+</a>
+			</div>
+		</article>
+    <footer>
+<p>&copy; OrderCloud.io </p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " OrderCloud Documentation Content ",
+  "url" : "..",
+  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
+  "description": ""
+}
+</script></body>
+</html>
