@@ -23,7 +23,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 THEME_PATHS = ['pelican-themes']
-THEME = 'themes/pelican-alchemy/alchemy'
+THEME = 'themes/boots4pelican'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
 PLUGINS = ['better_tables', 'assets']
