@@ -15,6 +15,8 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
+DELETE_OUTPUT_DIRECTORY = True
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -26,7 +28,7 @@ THEME_PATHS = ['pelican-themes']
 THEME = 'themes/boots4pelican'
 
 PLUGIN_PATHS = ['pelican-plugins','Plugins']
-PLUGINS = ['better_tables', 'assets']
+PLUGINS = ['better_tables', 'assets', 'subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
 
@@ -34,14 +36,18 @@ DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-CATEGORY_URL = 'category/{slug}.html'
-CATEGORY_SAVE_AS = 'category/{slug}.html'
+CATEGORY_URL = '{slug}.html'
+CATEGORY_SAVE_AS = '{slug}.html'
+SUBCATEGORY_URL = '(fullurl).html'
+SUBCATEGORY_SAVE_AS = os.path.join('{savepath}.html')
+
+PATH_METADATA= '(?P<subcategory_path>.*)/.*'
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
-ARTICLE_SAVE_AS = os.path.join('{category}','{slug}.html')
-ARTICLE_URL = os.path.join('{category}','{slug}.html')
+ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
+ARTICLE_URL = '{suburl}/{slug}.html'
 
 READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
