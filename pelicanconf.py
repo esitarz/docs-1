@@ -15,7 +15,7 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
-# DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -41,14 +41,14 @@ CATEGORY_SAVE_AS = '{slug}.html'
 SUBCATEGORY_URL = '{fullurl}.html'
 SUBCATEGORY_SAVE_AS = os.path.join('{savepath}.html')
 
-USE_FOLDER_AS_CATEGORY = True
+# USE_FOLDER_AS_CATEGORY = True
 PATH_METADATA= '(?P<subcategory_path>.*)/.*'
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
-ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
-ARTICLE_URL = '{suburl}/{slug}.html'
+# ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
+# ARTICLE_URL = '{suburl}/{slug}.html'
 
 READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
