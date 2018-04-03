@@ -27,8 +27,8 @@ AUTHOR_FEED_RSS = None
 THEME_PATHS = ['pelican-themes']
 THEME = 'themes/boots4pelican'
 
-PLUGIN_PATHS = ['pelican-plugins','Plugins']
-PLUGINS = ['better_tables', 'assets', 'subcategory']
+PLUGIN_PATHS = ['pelican-plugins','plugins']
+PLUGINS = ['better_tables', 'assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
 
@@ -38,9 +38,10 @@ RELATIVE_URLS = True
 
 CATEGORY_URL = '{slug}.html'
 CATEGORY_SAVE_AS = '{slug}.html'
-SUBCATEGORY_URL = '(fullurl).html'
+SUBCATEGORY_URL = '{fullurl}.html'
 SUBCATEGORY_SAVE_AS = os.path.join('{savepath}.html')
 
+USE_FOLDER_AS_CATEGORY = True
 PATH_METADATA= '(?P<subcategory_path>.*)/.*'
 
 PAGE_URL = '{slug}/'

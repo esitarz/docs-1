@@ -40,10 +40,10 @@
             <ul class="nav flex-column">
               {% for category, articles in categories|sort %}
                 <li class="nav-item">
-                  <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
                   {% for article in articles %}
                     <li>
-                        <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                      <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                     </li>
                   {% endfor %}
                 </li>
