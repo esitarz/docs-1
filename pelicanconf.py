@@ -28,7 +28,7 @@ THEME_PATHS = ['pelican-themes']
 THEME = 'themes/boots4pelican'
 
 PLUGIN_PATHS = ['pelican-plugins','plugins']
-PLUGINS = ['better_tables', 'assets', 'docs-subcategory']
+PLUGINS = ['assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
 
