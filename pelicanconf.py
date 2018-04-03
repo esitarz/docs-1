@@ -50,6 +50,8 @@ PAGE_SAVE_AS = '{slug}/index.html'
 ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
 ARTICLE_URL = '{suburl}/{slug}.html'
 
+SUBCATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+
 READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 
