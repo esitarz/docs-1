@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "category.html" %}
 
 {% block head %}
   {{ super() }}
@@ -7,13 +7,13 @@
 
 {% block title %}
   {{ article.title|striptags }} {{ super() }}
-{% endblock %}
+{% endblock title %}
 
 {% block page_header %}
   {{ article.title }}
-{% endblock %}
+{% endblock page_header %}
 
-{% block content %}
+{% block page_content %}
   <article class="article">
     <header>
       <ul class="list-inline">
@@ -51,4 +51,4 @@
     </div>
   </article>
   {% include 'include/comments.html' %}
-{% endblock %}
+{% endblock page_content %}

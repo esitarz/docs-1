@@ -5,15 +5,15 @@
   {% if DESCRIPTION %}
     <meta name="description" content="{{ DESCRIPTION|striptags }}">
   {% endif %}
-{% endblock %}
+{% endblock head %}
 
 {% block title %}
   {{ SITENAME }} | {{ SITESUBTITLE }}
-{% endblock %}
+{% endblock title %}
 
 {% block page_header %}
   Articles
-{% endblock %}
+{% endblock page_header %}
 
 {% block content %}
   {% for article in articles_page.object_list %}
@@ -52,4 +52,4 @@
     {% endif %}
   {% endfor %}
   {% include 'include/pagination.html' %}
-{% endblock %}
+{% endblock content %}

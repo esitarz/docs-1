@@ -1,9 +1,32 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}
   {{ category }} Articles | {{ SITENAME }}
-{% endblock %}
+{% endblock title %}
 
-{% block page_header %}
-  {{ category }} Articles
-{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+          {% for article in articles %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </li>
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <h1>
+        {% block page_header %}
+          {{ category }} Articles
+        {% endblock page_header %}
+      </h1>
+      {% block page_content %}
+        <p class="lead">This is a landing page for {{ category }}.</p>
+      {% endblock page_content %}
+    </div>
+  </div>
+{% endblock content %}

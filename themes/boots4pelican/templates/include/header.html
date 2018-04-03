@@ -1,42 +1,14 @@
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-      <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+    <ul class="navbar-nav">
+      {% if DISPLAY_CATEGORIES_ON_MENU %}
+        {% for cat, null in categories %}
+          <li class="nav-item {% if cat == category %} active{% endif %}">
+            <a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
   </div>
 </nav>
-
-<!-- <div class="row">
-  {% if SITEIMAGE %}
-    <div class="col-sm-4">
-      <a href="{{ SITEURL }}/">
-        <img class="img-fluid rounded" src={{ SITEURL }}{{ SITEIMAGE }} alt="{{ SITENAME }}">
-      </a>
-    </div>
-  {% endif %}
-  <div class="col-sm-{% if SITEIMAGE %}8{% else %}12{% endif %}">
-    <h1 class="title"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-    {% if SITESUBTITLE %}
-      <p class="text-muted">{{ SITESUBTITLE }}</p>
-    {% endif %}
-    {% if LINKS or (DISPLAY_PAGES_ON_MENU and pages) or ICONS %}
-      <ul class="list-inline">
-        {% for title, link in LINKS %}
-          <li class="list-inline-item"><a href="{{ link }}" target="_blank">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for page in pages %}
-            {% if LINKS and loop.first %}
-              <li class="list-inline-item text-muted">|</li>
-            {% endif %}
-            <li class="list-inline-item"><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-        {% for icon, link in ICONS %}
-          {% if (LINKS or (DISPLAY_PAGES_ON_MENU and pages)) and loop.first %}
-            <li class=" list-inline-item text-muted">|</li>
-          {% endif %}
-          <li class="list-inline-item"><a class="far fa-{{ icon }}" href="{{ link }}" target="_blank"></a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </div>
-</div> -->
