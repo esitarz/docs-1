@@ -6,4 +6,4 @@
 *.swp
 *.out
 
-output
+output/**
