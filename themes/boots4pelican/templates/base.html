@@ -20,7 +20,7 @@
   {% assets filters="scss,cssmin", output="css/style.min.css", "main.scss" %}
     <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
   {% endassets %}
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/vendors/pygments/{{ PYGMENTS_STYLE|default('default') }}.min.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('default') }}.min.css">
 
   {% include 'include/xml_feeds.html' %}
   {% block head %}{% endblock %}

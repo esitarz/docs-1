@@ -5,3 +5,4 @@ gitpython
 webassets
 typogrify
 cssmin
+sass

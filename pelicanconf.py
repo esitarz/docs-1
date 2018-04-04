@@ -15,7 +15,7 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
-# DELETE_OUTPUT_DIRECTORY = True
+DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -24,10 +24,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-THEME_PATHS = ['pelican-themes']
 THEME = 'themes/boots4pelican'
 
-PLUGIN_PATHS = ['pelican-plugins','Plugins']
+PLUGIN_PATHS = ['Plugins']
 PLUGINS = ['assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
