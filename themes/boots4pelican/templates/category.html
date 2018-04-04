@@ -10,7 +10,7 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
-          {% for article in articles %}
+          {% for article in articles if category == article.category %}
             <li class="nav-item">
               <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
             </li>
