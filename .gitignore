@@ -1,0 +1,9 @@
+*~
+._*
+*.lock
+*.vscode/**
+*.DS_Store
+*.swp
+*.out
+
+output/**

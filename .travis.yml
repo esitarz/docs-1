@@ -1,3 +1,4 @@
+# ruby and sass for css generation in theme bootstrap4pelican
 language: ruby
 rvm:
   - 2.3.1

@@ -14,6 +14,20 @@
 {% endblock page_header %}
 
 {% block page_content %}
+<nav>
+  {{article.title}} : {{article.category}}
+  <ul>
+  {% for category, articles in categories  %}
+    {% if category.name == article.category %}
+    {% for art in categories.articles %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ SITEURL }}/{{ art.url }}">{{ art.title }}</a>
+    </li>
+    {% endfor %}
+    {% endif %}
+  {% endfor %}
+</ul>
+</nav>
   <article class="article">
     <header>
       <ul class="list-inline">
