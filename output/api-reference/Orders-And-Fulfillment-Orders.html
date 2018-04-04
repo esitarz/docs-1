@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
   <meta name="description" content="An Order represents a business transaction between two parties. It typically consists of a collection of Line Items, a Payment Method, Tax and Shipping information, etc. The OrderCloud platform defines various "actions" that can be performed against Orders, such as Submit, Approve, Ship, etc. These actions transform the state of …">
 
 
@@ -323,7 +326,7 @@
 <p>"actions" that can be performed against Orders, such as Submit, Approve,</p>
 <p>Ship, etc. These actions transform the state of the order and often</p>
 <p>trigger external events such as financial transactions.</p>
-<hr/>
+<hr>
 <h2><code>GET</code> <code>v1/orders/{direction}/{orderID}</code></h2>
 <p>Get a single order</p>
 <table>

@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
   <meta name="description" content="An incrementor is used to add an atomically incremented number to your object IDs. For example, "aprefix-{myIncrementorID}", will yield an order ID of aprefix-10010. GET v1/incrementors/{incrementorID} Get a single incrementor Name Type Description Required incrementorID string ID of the incrementor. True Response Body :::json { "ID": "", "LastNumber": 0 …">
 
 
@@ -320,7 +323,7 @@
       <p>An incrementor is used to add an atomically incremented number to your</p>
 <p>object IDs. For example, "aprefix-{myIncrementorID}", will yield an</p>
 <p>order ID of aprefix-10010.</p>
-<hr/>
+<hr>
 <h2><code>GET</code> <code>v1/incrementors/{incrementorID}</code></h2>
 <p>Get a single incrementor</p>
 <table>

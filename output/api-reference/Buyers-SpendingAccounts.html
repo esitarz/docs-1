@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
   <meta name="description" content="Spending Accounts are funds given to users by a managing entity and are managed as part of a user's account. These funds are generally used as "corporate dollars", "rewards dollars", or "gift cards". They can be used to pay for all of or part of an order with parameters that …">
 
 
@@ -328,7 +331,7 @@
 <p>as a payment method.</p>
 <p>When multiple Spending Accounts are used on a transaction each is</p>
 <p>deducted individually.</p>
-<hr/>
+<hr>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/spendingaccounts/{spendingAccountID}</code></h2>
 <p>Get a single spending account</p>
 <table>

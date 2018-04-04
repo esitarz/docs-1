@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/integration-services.atom.xml">  
   <meta name="description" content="__Set Shipping Cost Overview Once a user selects their desired shipper(s) for their order, the ShippingCost on the Order can be set via the SetShippingCost method. This method will patch the Order with the provided ShippingCost value and return the updated Order. __Set Shipping Cost Request __Set Shipping Cost …">
 
 
@@ -330,50 +333,50 @@ the updated Order.</p>
 any issues with your Order, the following response will be returned containing
 a unique ErrorCode and Message, as well as the request body sent during the
 call. The possible ErrorCodes and Messages are listed below.  </p>
-<table>
-<tr>
+<table>  
+<tr>  
 <th>
 
 ErrorCode
 
-</th>
+</th>  
 <th>
 
 Message
 
-</th>
+</th>  
 <th>
 
 Status Code
 
-</th> </tr>
-<tr>
+</th> </tr>  
+<tr>  
 <td>
 
 ShippingRatesValidation.BuyerIDRequired
 
-</td>
+</td>  
 <td>
 
 BuyerID is required to get shipping rates.
 
-</td>
+</td>  
 <td>
 
 400
 
-</td> </tr>
-<tr>
+</td> </tr>  
+<tr>  
 <td>
 
 ShippingRatesValidation.OrderIDRequired
 
-</td>
+</td>  
 <td>
 
 OrderID is required to get shipping rates.
 
-</td>
+</td>  
 <td>
 
 400

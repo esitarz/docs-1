@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/integration-services.atom.xml">  
   <meta name="description" content="__Void Transaction Overview Though this method is used most commonly by other methods when certain actions fail, it can also be called directly through the integration. This method will void a previous transaction on Authorize.Net, then create a transaction tied to the original payment on OrderCloud.io. __Void Transaction …">
 
 
@@ -338,89 +341,90 @@ executed.</p>
 response will be returned containing a unique ErrorCode and Message, as well
 as the request body sent during the call. The possible ErrorCodes and Messages
 are listed below.  </p>
-<table>
-<tr>
+<table>  
+<tr>  
 <th>
 
 ErrorCode
 
-</th>
+</th>  
 <th>
 
 Message
 
-</th>
+</th>  
 <th>
 
 Status Code
 
-</th> </tr>
-<tr>
+</th> </tr>  
+<tr>  
 <td>
 
 VoidTransaction.OrderIDRequired
 
-</td>
+</td>  
 <td>
 
 OrderID is required to void a transaction.
 
-</td>
+</td>  
 <td>
 
 400
 
-</td> </tr>
-<tr>
+</td> </tr>  
+<tr>  
 <td>
 
 VoidTransaction.PaymentIDRequired
 
-</td>
+</td>  
 <td>
 
 CardDetails.PaymentID or refTransId (optional) is required to void a
 transaction.
 
-</td>
+</td>  
 <td>
 
 400
 
-</td> </tr>
-<tr>
+</td> </tr>  
+<tr>  
 <td>
 
 VoidTransaction.BuyerIDRequired
 
-</td>
+</td>  
 <td>
 
 BuyerID is required to void a transaction.
 
-</td>
+</td>  
 <td>
 
 400
 
-</td> </tr>
-<tr>
+</td> </tr>  
+<tr>  
 <td>
 
 VoidTransaction.CardDetailsRequired
 
-</td>
+</td>  
 <td>
 
 CardDetails.CreditCardID OR CardDetails.CardNumber and
 CardDetails.ExpirationDate are required to void a transaction.
 
-</td>
+</td>  
 <td>
 
 400
 
 </td> </tr> </table>
+
 <h3>OrderCloud.io Error Response</h3>
 <p>If an incorrect <code>BuyerID</code> was provided:</p>
 <p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>

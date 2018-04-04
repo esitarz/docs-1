@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
   <meta name="description" content="Specs are used to capture user input when adding a Product to an Order. At its simplest, a spec is a name/value pair. A spec value may have a price markup or markdown associated with it. In more advanced scenarios, specs can drive the product SKU. For example, a …">
 
 
@@ -324,7 +327,7 @@
 <p>in 3 colors and 3 sizes and therefore have a total of 9 SKUs. **The</p>
 <p>OrderCloud platform will choose the correct SKU based on the</p>
 <p>user-selected color and size specs**.</p>
-<hr/>
+<hr>
 <h2><code>GET</code> <code>v1/specs/{specID}</code></h2>
 <p>Get a single spec</p>
 <table>

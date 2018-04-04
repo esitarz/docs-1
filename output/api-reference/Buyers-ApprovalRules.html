@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
   <link rel="stylesheet" href="../theme/css/vendors/pygments/default.min.css">
 
-  
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
   <meta name="description" content="Approval rules are used to verify the integrity of an order. Common examples include orders requiring managerial approval, approval for orders that contain a specific product category, approval for quantity thresholds or approval for orders that exceed a specific price. Properties are also available to control the triggers and timing …">
 
 
@@ -324,7 +327,7 @@
 <p>Properties are also available to control the triggers and timing for</p>
 <p>processing approvals whether parallel to another rule, or in succession</p>
 <p>of a previous rule.</p>
-<hr/>
+<hr>
 <h2><code>GET</code> <code>v1/buyers/{buyerID}/approvalrules/{approvalRuleID}</code></h2>
 <p>Get a single approval rule</p>
 <table>

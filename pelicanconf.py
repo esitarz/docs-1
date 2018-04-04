@@ -27,7 +27,7 @@ AUTHOR_FEED_RSS = None
 THEME_PATHS = ['pelican-themes']
 THEME = 'themes/boots4pelican'
 
-PLUGIN_PATHS = ['pelican-plugins','plugins']
+PLUGIN_PATHS = ['pelican-plugins','Plugins']
 PLUGINS = ['assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
@@ -41,14 +41,13 @@ CATEGORY_SAVE_AS = '{slug}.html'
 SUBCATEGORY_URL = '{fullurl}.html'
 SUBCATEGORY_SAVE_AS = os.path.join('{savepath}.html')
 
-# USE_FOLDER_AS_CATEGORY = True
 PATH_METADATA= '(?P<subcategory_path>.*)/.*'
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
-# ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
-# ARTICLE_URL = '{suburl}/{slug}.html'
+ARTICLE_SAVE_AS = os.path.join('{subpath}', '{slug}.html')
+ARTICLE_URL = '{suburl}/{slug}.html'
 
 READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
