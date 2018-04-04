@@ -1,463 +1,379 @@
-<script src="localhost:8000/ace-build/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script><style>td.linenos {
-    display: none;
-}
-
-pre {
-    box-sizing: content-box;
-    padding: 0;
-    border-radius: 0;
-}
-
-.ace_gutter-cell {
-    cursor: pointer;
-}
-
-.ace_layer {
-    height: 100% !important;
-}
-
-.ace-chrome .ace_marker-layer .ace_selection {
-    border-radius: 0;
-}
-
-span.o {
-    display: block;
-}</style><script>var ACE_EDITOR_SCROLL_TOP_MARGIN = 0;var ACE_EDITOR_THEME = 'chrome';var ACE_EDITOR_MAXLINES = 50;var ACE_EDITOR_READONLY = false;var ACE_EDITOR_AUTOSCROLL = true;var ACE_EDITOR_SHOW_INVISIBLE = true;var Range = ace.require("ace/range").Range;
-
-var editor_array = {};
-
-var correlationDic = {
-    'bash': 'sh'
-}
-
-// inspiration : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt#A_stricter_parse_function
-filterInt = function (value) {
-  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
-    return Number(value);
-  return NaN;
-}
-
-function linesInAnchor(anchor) {
-  anchorObject = {};
-  anchorObject.first = 0;
-  anchorObject.last = 0;
-  anchorObject.anchor = "";
-  var firstLineIndex = anchor.indexOf("-L");
-  var firstResult = anchor.substring(
-    firstLineIndex + 2
-  );
-  if(filterInt(firstResult)) {
-    anchorObject.first = filterInt(firstResult) - 1;
-    anchorObject.last = anchorObject.first;
-    anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult;
-    return anchorObject;
-  }
-  var secondLineIndex = firstResult.indexOf("-L");
-
-  if (!filterInt(firstResult.substring(0, secondLineIndex))) {
-    return anchorObject;
-  }
-  anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult.substring(0, secondLineIndex);
-
-  anchorObject.first = filterInt(firstResult.substring(0, secondLineIndex)) - 1;
-  var secondResult = firstResult.substring(
-    secondLineIndex + 2
-  );
-  if (!filterInt(secondResult)) {
-    anchorObject.last = anchorObject.first;
-    return anchorObject;
-  }
-  anchorObject.last = filterInt(secondResult) - 1;
-  return anchorObject;
-}
-
-var selectionCallback = function (event, editor) {
-    var editor_id = $(editor.container).attr('id');
-    var range = editor.selection.getRange();
-    location.hash = editor_id + '-L' + parseInt(range.start.row + 1);
-    if ($(editor.container).data().hasOwnProperty("id")) {
-        event.preventDefault();
-    }
-    else if (range.start.row != range.end.row) {
-        location.hash += '-L' + parseInt(range.end.row + 1);
-    }
-    $(editor.container).removeData();
-};
-
-$(function() {
-    var $pre_filter = $('pre.highlight');
-    var pre_len = $pre_filter.length;
-    $pre_filter.each(function(item) {
-        var lang = $(this).find("code").attr('class').substring(9);
-        if (lang in correlationDic) {
-            lang = correlationDic[lang];
-        }
-        var one_render = true;
-        var nb_of_lines = $(this).text().search('\n');
-        // avoid the last carriage return
-        $(this).text($(this).text().substring(0, $(this).text().length));
-
-        // Give a unique id on all editor
-        var editor_id = 'editor' + parseInt(item + 1);
-        $(this).attr('id', editor_id);
-        var editor = ace.edit(editor_id);
-        editor_array[editor_id] = editor;
-        editor.setTheme("ace/theme/" + ACE_EDITOR_THEME);
-        editor.setShowInvisibles(ACE_EDITOR_SHOW_INVISIBLE);
-        editor.setOptions({
-            mode: "ace/mode/" + lang,
-            maxLines: ACE_EDITOR_MAXLINES,
-            readOnly: ACE_EDITOR_READONLY,
-            autoScrollEditorIntoView: ACE_EDITOR_AUTOSCROLL
-        });
-        editor.$blockScrolling = Infinity;
-        if (nb_of_lines === -1) {
-            editor.renderer.setShowGutter(false);
-        }
-
-        editor.renderer.on("afterRender", function(event) {
-            var anchor = linesInAnchor(location.hash);
-            var hash_editor = location.hash.substring(1, location.hash.indexOf("-"));
-            var line = $($(editor.container).find(".ace_gutter-cell")[parseInt(editor_id.substring(6))]);
-            if (hash_editor == editor_id && one_render) {
-                var offset = line.offset();
-                if (offset) {
-                    $(document).scrollTop(offset.top - ACE_EDITOR_SCROLL_TOP_MARGIN);
-                    editor.selection.setRange(new Range(
-                        anchor.first, 0, anchor.last,  Number.MAX_VALUE)
-                    );
-                    one_render = false;
-                }
-            }
-        });
-
-        editor.resize(true);
-        editor.selection.on("changeSelection", function(event) {
-            selectionCallback(event, editor);
-        });
-    });
-
-    $(".ace_gutter-cell").on("click", function(event) {
-        var editor_id = $(this).closest('pre.ace_editor').attr('id');
-        var editor = editor_array[editor_id];
-        var line = parseInt($(this).text()) - 1;
-        editor.selection.setRange(new Range(line, 0, line, Number.MAX_VALUE));
-        $(this).closest('.ace_editor').data({'id': parseInt($(this).text())});
-        selectionCallback(event, editor);
-    });
-});</script>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="english">
+
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
-  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-    <meta name="author" content="OrderCloud.io" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="OrderCloud Documentation Content"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content=".."/>
-<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
-  <title>OrderCloud Documentation Content &ndash;   Tag Me And My Stuff
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  #Me And My Stuff Articles | OrderCloud Documentation
 </title>
+  <link rel="canonical" href="../tag/me-and-my-stuff.html">
+
+
+    <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="../theme/css/pygments/default.min.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  
+
+
 </head>
+
 <body>
-  <aside>
-    <div>
-      <a href="..">
-          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
-      </a>
-      <h1><a href="..">OrderCloud Docs</a></h1>
-      
-      <nav>
-          <ul class="list">
-              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
-              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
-              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
-              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
-          </ul>
-      </nav>
-<hr>
-			<a href="../category/api-reference.html">API Reference</a>
-	: <a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>
-	
-    </aside>
+  <header class="header">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="../">OrderCloud Documentation</a>
+    <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="../api-reference.html">api-reference</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../frameworks-and-sdks.html">frameworks-and-sdks</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../integration-services.html">integration-services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../platform-guides.html">platform-guides</a>
+          </li>
+    </ul>
   </div>
-  <main>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-Me.html#Me-And-My-Stuff-Me">Me</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+</nav>  </header>
 
-						&#8226;   : 
+  <div class="main">
+    <div class="container">
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-Me.html">Me</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCategories.html">Categories</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeOrders.html">Orders</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeProducts.html">Products</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-03-27T00:00:00-05:00">
+            <i class="far fa-clock"></i>
+            Tue 27 March 2018
+          </li>
+          <li>
+            <i class="far fa-folder-open"></i>
+            <a href="../api-reference.html">api-reference</a>
+          </li>
+            <li>
+              <i class="far fa-user"></i>
+                <a href="../author/ordercloudio.html">OrderCloud.io</a>            </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="../api-reference/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+        </h4>
+        <div class="content">
+          "Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
 
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-Me.html#Me-And-My-Stuff-Me">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeAddresses.html#Me-And-My-Stuff-MeAddresses">Addresses</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="../authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
 
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeAddresses.html#Me-And-My-Stuff-MeAddresses">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeCatalogs.html#Me-And-My-Stuff-MeCatalogs">Catalogs</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeCatalogs.html#Me-And-My-Stuff-MeCatalogs">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeCategories.html#Me-And-My-Stuff-MeCategories">Categories</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeCategories.html#Me-And-My-Stuff-MeCategories">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeCostCenters.html#Me-And-My-Stuff-MeCostCenters">Cost Centers</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeCostCenters.html#Me-And-My-Stuff-MeCostCenters">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeCreditCards.html#Me-And-My-Stuff-MeCreditCards">Credit Cards</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeCreditCards.html#Me-And-My-Stuff-MeCreditCards">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeOrders.html#Me-And-My-Stuff-MeOrders">Orders</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeOrders.html#Me-And-My-Stuff-MeOrders">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeProducts.html#Me-And-My-Stuff-MeProducts">Products</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeProducts.html#Me-And-My-Stuff-MeProducts">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MePromotions.html#Me-And-My-Stuff-MePromotions">Promotions</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MePromotions.html#Me-And-My-Stuff-MePromotions">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeShipments.html#Me-And-My-Stuff-MeShipments">Shipments</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeShipments.html#Me-And-My-Stuff-MeShipments">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeSpendingAccounts.html#Me-And-My-Stuff-MeSpendingAccounts">Spending Accounts</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeSpendingAccounts.html#Me-And-My-Stuff-MeSpendingAccounts">  Continue reading
-</a>
-			</div>
-				<hr />
-		</article>
-		<article>
-			<header>
-				<h2><a href="../api-reference\Me-And-My-Stuff-MeUserGroups.html#Me-And-My-Stuff-MeUserGroups">User Groups</a></h2>
-				<p>
-					  Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
-
-						&#8226;   : 
-
-							<a href="../tag/me-and-my-stuff.html">Me And My Stuff</a>				</p>
-			</header>
-			<div>
-					<p>"Me" is a container for read-only endpoints that return a filtered view
-of things that the current buyer user is allowed to see, i.e. things
-that they are assigned to either directly or as a member of a buyer
-organization or user group. It also provides ways for a …</p>
-					<br>
-					<a class="btn" href="../api-reference\Me-And-My-Stuff-MeUserGroups.html#Me-And-My-Stuff-MeUserGroups">  Continue reading
-</a>
-			</div>
-		</article>
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : "..",
-  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
-  "description": ""
-}
-</script></body>
 </html>

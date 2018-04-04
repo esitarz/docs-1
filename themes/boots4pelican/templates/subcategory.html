@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ subcategory.shortname }} Articles | {{ SITENAME }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    {% block page_header %}
+      <h1>{{ subcategory.shortname }} Articles</h1>
+    {% endblock %}
+    <hr>
+      <p class="lead">This is a landing page for {{ subcategory.shortname }}.</p>
+  </div>
+</div>
+{% endblock %}

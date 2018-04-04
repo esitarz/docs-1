@@ -1,232 +1,129 @@
-<script src="localhost:8000/ace-build/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script><style>td.linenos {
-    display: none;
-}
-
-pre {
-    box-sizing: content-box;
-    padding: 0;
-    border-radius: 0;
-}
-
-.ace_gutter-cell {
-    cursor: pointer;
-}
-
-.ace_layer {
-    height: 100% !important;
-}
-
-.ace-chrome .ace_marker-layer .ace_selection {
-    border-radius: 0;
-}
-
-span.o {
-    display: block;
-}</style><script>var ACE_EDITOR_SCROLL_TOP_MARGIN = 0;var ACE_EDITOR_THEME = 'chrome';var ACE_EDITOR_MAXLINES = 50;var ACE_EDITOR_READONLY = false;var ACE_EDITOR_AUTOSCROLL = true;var ACE_EDITOR_SHOW_INVISIBLE = true;var Range = ace.require("ace/range").Range;
-
-var editor_array = {};
-
-var correlationDic = {
-    'bash': 'sh'
-}
-
-// inspiration : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt#A_stricter_parse_function
-filterInt = function (value) {
-  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
-    return Number(value);
-  return NaN;
-}
-
-function linesInAnchor(anchor) {
-  anchorObject = {};
-  anchorObject.first = 0;
-  anchorObject.last = 0;
-  anchorObject.anchor = "";
-  var firstLineIndex = anchor.indexOf("-L");
-  var firstResult = anchor.substring(
-    firstLineIndex + 2
-  );
-  if(filterInt(firstResult)) {
-    anchorObject.first = filterInt(firstResult) - 1;
-    anchorObject.last = anchorObject.first;
-    anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult;
-    return anchorObject;
-  }
-  var secondLineIndex = firstResult.indexOf("-L");
-
-  if (!filterInt(firstResult.substring(0, secondLineIndex))) {
-    return anchorObject;
-  }
-  anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult.substring(0, secondLineIndex);
-
-  anchorObject.first = filterInt(firstResult.substring(0, secondLineIndex)) - 1;
-  var secondResult = firstResult.substring(
-    secondLineIndex + 2
-  );
-  if (!filterInt(secondResult)) {
-    anchorObject.last = anchorObject.first;
-    return anchorObject;
-  }
-  anchorObject.last = filterInt(secondResult) - 1;
-  return anchorObject;
-}
-
-var selectionCallback = function (event, editor) {
-    var editor_id = $(editor.container).attr('id');
-    var range = editor.selection.getRange();
-    location.hash = editor_id + '-L' + parseInt(range.start.row + 1);
-    if ($(editor.container).data().hasOwnProperty("id")) {
-        event.preventDefault();
-    }
-    else if (range.start.row != range.end.row) {
-        location.hash += '-L' + parseInt(range.end.row + 1);
-    }
-    $(editor.container).removeData();
-};
-
-$(function() {
-    var $pre_filter = $('pre.highlight');
-    var pre_len = $pre_filter.length;
-    $pre_filter.each(function(item) {
-        var lang = $(this).find("code").attr('class').substring(9);
-        if (lang in correlationDic) {
-            lang = correlationDic[lang];
-        }
-        var one_render = true;
-        var nb_of_lines = $(this).text().search('\n');
-        // avoid the last carriage return
-        $(this).text($(this).text().substring(0, $(this).text().length));
-
-        // Give a unique id on all editor
-        var editor_id = 'editor' + parseInt(item + 1);
-        $(this).attr('id', editor_id);
-        var editor = ace.edit(editor_id);
-        editor_array[editor_id] = editor;
-        editor.setTheme("ace/theme/" + ACE_EDITOR_THEME);
-        editor.setShowInvisibles(ACE_EDITOR_SHOW_INVISIBLE);
-        editor.setOptions({
-            mode: "ace/mode/" + lang,
-            maxLines: ACE_EDITOR_MAXLINES,
-            readOnly: ACE_EDITOR_READONLY,
-            autoScrollEditorIntoView: ACE_EDITOR_AUTOSCROLL
-        });
-        editor.$blockScrolling = Infinity;
-        if (nb_of_lines === -1) {
-            editor.renderer.setShowGutter(false);
-        }
-
-        editor.renderer.on("afterRender", function(event) {
-            var anchor = linesInAnchor(location.hash);
-            var hash_editor = location.hash.substring(1, location.hash.indexOf("-"));
-            var line = $($(editor.container).find(".ace_gutter-cell")[parseInt(editor_id.substring(6))]);
-            if (hash_editor == editor_id && one_render) {
-                var offset = line.offset();
-                if (offset) {
-                    $(document).scrollTop(offset.top - ACE_EDITOR_SCROLL_TOP_MARGIN);
-                    editor.selection.setRange(new Range(
-                        anchor.first, 0, anchor.last,  Number.MAX_VALUE)
-                    );
-                    one_render = false;
-                }
-            }
-        });
-
-        editor.resize(true);
-        editor.selection.on("changeSelection", function(event) {
-            selectionCallback(event, editor);
-        });
-    });
-
-    $(".ace_gutter-cell").on("click", function(event) {
-        var editor_id = $(this).closest('pre.ace_editor').attr('id');
-        var editor = editor_array[editor_id];
-        var line = parseInt($(this).text()) - 1;
-        editor.selection.setRange(new Range(line, 0, line, Number.MAX_VALUE));
-        $(this).closest('.ace_editor').data({'id': parseInt($(this).text())});
-        selectionCallback(event, editor);
-    });
-});</script>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="english">
+
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.css">
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
-    <link href="./pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-    <meta name="author" content="OrderCloud.io" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="OrderCloud Documentation Content"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="."/>
-<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
-  <title>OrderCloud Documentation Content &ndash;   Tags
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Tags | OrderCloud Documentation
 </title>
+  <link rel="canonical" href="./tags.html">
+
+
+    <link rel="stylesheet" href="./theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="./theme/css/pygments/default.min.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+
+
 </head>
+
 <body>
-  <aside>
-    <div>
-      <a href=".">
-          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
-      </a>
-      <h1><a href=".">OrderCloud Docs</a></h1>
-      
-      <nav>
-          <ul class="list">
-              <li><a href="./category/api-reference.html">API Reference</a> (41)</li>
-              <li><a href="./category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
-              <li><a href="./category/integration-services.html">Integration Services</a> (14)</li>
-              <li><a href="./category/platform-guides.html">Platform Guides</a> (20)</li>
-          </ul>
-      </nav>
-    </aside>
-  </div>
-  <main>
-<article class="single">
-  <header>
-    <h1>  Tags
-</h1>
-  </header>
-  <div>
-    <ul class="list">          <li><a href="./tag/angularjs.html">angularjs</a> (4)</li>
-          <li><a href="./tag/authentication.html">authentication</a> (6)</li>
-          <li><a href="./tag/authentication-and-authorization.html">Authentication And Authorization</a> (3)</li>
-          <li><a href="./tag/authorizenet.html">authorizenet</a> (8)</li>
-          <li><a href="./tag/basic-api-features.html">basic api features</a> (8)</li>
-          <li><a href="./tag/buyers.html">Buyers</a> (8)</li>
-          <li><a href="./tag/core-concepts.html">core concepts</a> (2)</li>
-          <li><a href="./tag/csharp.html">csharp</a> (1)</li>
-          <li><a href="./tag/getting-started.html">getting started</a> (4)</li>
-          <li><a href="./tag/me-and-my-stuff.html">Me And My Stuff</a> (12)</li>
-          <li><a href="./tag/orders-and-fulfillment.html">Orders And Fulfillment</a> (5)</li>
-          <li><a href="./tag/product-catalogs.html">Product Catalogs</a> (5)</li>
-          <li><a href="./tag/seller.html">Seller</a> (5)</li>
-          <li><a href="./tag/shippingrates.html">shippingrates</a> (6)</li>
-          <li><a href="./tag/suppliers.html">Suppliers</a> (3)</li>
+  <header class="header">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="./">OrderCloud Documentation</a>
+    <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="./api-reference.html">api-reference</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./frameworks-and-sdks.html">frameworks-and-sdks</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./integration-services.html">integration-services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./platform-guides.html">platform-guides</a>
+          </li>
     </ul>
   </div>
-</article>
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : ".",
-  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
-  "description": ""
-}
-</script></body>
+</nav>  </header>
+
+  <div class="main">
+    <div class="container">
+  <table class="table table-bordered table-striped">
+      <tr>
+        <td><a href="./tag/angularjs.html">#angularjs</a></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/authentication.html">#authentication</a></td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/authentication-and-authorization.html">#Authentication And Authorization</a></td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/authorizenet.html">#authorizenet</a></td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/basic-api-features.html">#basic api features</a></td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/buyers.html">#Buyers</a></td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/core-concepts.html">#core concepts</a></td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/csharp.html">#csharp</a></td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/getting-started.html">#getting started</a></td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/me-and-my-stuff.html">#Me And My Stuff</a></td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/orders-and-fulfillment.html">#Orders And Fulfillment</a></td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/product-catalogs.html">#Product Catalogs</a></td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/seller.html">#Seller</a></td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/shippingrates.html">#shippingrates</a></td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="./tag/suppliers.html">#Suppliers</a></td>
+        <td>3</td>
+      </tr>
+  </table>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="./authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="./archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="./categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="./tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
 </html>

@@ -1,213 +1,326 @@
-<script src="localhost:8000/ace-build/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script><style>td.linenos {
-    display: none;
-}
-
-pre {
-    box-sizing: content-box;
-    padding: 0;
-    border-radius: 0;
-}
-
-.ace_gutter-cell {
-    cursor: pointer;
-}
-
-.ace_layer {
-    height: 100% !important;
-}
-
-.ace-chrome .ace_marker-layer .ace_selection {
-    border-radius: 0;
-}
-
-span.o {
-    display: block;
-}</style><script>var ACE_EDITOR_SCROLL_TOP_MARGIN = 0;var ACE_EDITOR_THEME = 'chrome';var ACE_EDITOR_MAXLINES = 50;var ACE_EDITOR_READONLY = false;var ACE_EDITOR_AUTOSCROLL = true;var ACE_EDITOR_SHOW_INVISIBLE = true;var Range = ace.require("ace/range").Range;
-
-var editor_array = {};
-
-var correlationDic = {
-    'bash': 'sh'
-}
-
-// inspiration : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt#A_stricter_parse_function
-filterInt = function (value) {
-  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
-    return Number(value);
-  return NaN;
-}
-
-function linesInAnchor(anchor) {
-  anchorObject = {};
-  anchorObject.first = 0;
-  anchorObject.last = 0;
-  anchorObject.anchor = "";
-  var firstLineIndex = anchor.indexOf("-L");
-  var firstResult = anchor.substring(
-    firstLineIndex + 2
-  );
-  if(filterInt(firstResult)) {
-    anchorObject.first = filterInt(firstResult) - 1;
-    anchorObject.last = anchorObject.first;
-    anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult;
-    return anchorObject;
-  }
-  var secondLineIndex = firstResult.indexOf("-L");
-
-  if (!filterInt(firstResult.substring(0, secondLineIndex))) {
-    return anchorObject;
-  }
-  anchorObject.anchor = anchor.substring(0, firstLineIndex + 2) + firstResult.substring(0, secondLineIndex);
-
-  anchorObject.first = filterInt(firstResult.substring(0, secondLineIndex)) - 1;
-  var secondResult = firstResult.substring(
-    secondLineIndex + 2
-  );
-  if (!filterInt(secondResult)) {
-    anchorObject.last = anchorObject.first;
-    return anchorObject;
-  }
-  anchorObject.last = filterInt(secondResult) - 1;
-  return anchorObject;
-}
-
-var selectionCallback = function (event, editor) {
-    var editor_id = $(editor.container).attr('id');
-    var range = editor.selection.getRange();
-    location.hash = editor_id + '-L' + parseInt(range.start.row + 1);
-    if ($(editor.container).data().hasOwnProperty("id")) {
-        event.preventDefault();
-    }
-    else if (range.start.row != range.end.row) {
-        location.hash += '-L' + parseInt(range.end.row + 1);
-    }
-    $(editor.container).removeData();
-};
-
-$(function() {
-    var $pre_filter = $('pre.highlight');
-    var pre_len = $pre_filter.length;
-    $pre_filter.each(function(item) {
-        var lang = $(this).find("code").attr('class').substring(9);
-        if (lang in correlationDic) {
-            lang = correlationDic[lang];
-        }
-        var one_render = true;
-        var nb_of_lines = $(this).text().search('\n');
-        // avoid the last carriage return
-        $(this).text($(this).text().substring(0, $(this).text().length));
-
-        // Give a unique id on all editor
-        var editor_id = 'editor' + parseInt(item + 1);
-        $(this).attr('id', editor_id);
-        var editor = ace.edit(editor_id);
-        editor_array[editor_id] = editor;
-        editor.setTheme("ace/theme/" + ACE_EDITOR_THEME);
-        editor.setShowInvisibles(ACE_EDITOR_SHOW_INVISIBLE);
-        editor.setOptions({
-            mode: "ace/mode/" + lang,
-            maxLines: ACE_EDITOR_MAXLINES,
-            readOnly: ACE_EDITOR_READONLY,
-            autoScrollEditorIntoView: ACE_EDITOR_AUTOSCROLL
-        });
-        editor.$blockScrolling = Infinity;
-        if (nb_of_lines === -1) {
-            editor.renderer.setShowGutter(false);
-        }
-
-        editor.renderer.on("afterRender", function(event) {
-            var anchor = linesInAnchor(location.hash);
-            var hash_editor = location.hash.substring(1, location.hash.indexOf("-"));
-            var line = $($(editor.container).find(".ace_gutter-cell")[parseInt(editor_id.substring(6))]);
-            if (hash_editor == editor_id && one_render) {
-                var offset = line.offset();
-                if (offset) {
-                    $(document).scrollTop(offset.top - ACE_EDITOR_SCROLL_TOP_MARGIN);
-                    editor.selection.setRange(new Range(
-                        anchor.first, 0, anchor.last,  Number.MAX_VALUE)
-                    );
-                    one_render = false;
-                }
-            }
-        });
-
-        editor.resize(true);
-        editor.selection.on("changeSelection", function(event) {
-            selectionCallback(event, editor);
-        });
-    });
-
-    $(".ace_gutter-cell").on("click", function(event) {
-        var editor_id = $(this).closest('pre.ace_editor').attr('id');
-        var editor = editor_array[editor_id];
-        var line = parseInt($(this).text()) - 1;
-        editor.selection.setRange(new Range(line, 0, line, Number.MAX_VALUE));
-        $(this).closest('.ace_editor').data({'id': parseInt($(this).text())});
-        selectionCallback(event, editor);
-    });
-});</script>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="english">
+
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.css">
-  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
-    <link href="../pelican-plugins/ace_editor/static/style.css" rel="stylesheet">
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
-<meta name="author" content="OrderCloud.io" />
-<meta name="description" content="GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body :::json { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-27T19:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of …" />
-<meta name="keywords" content="Seller">
-<meta property="og:site_name" content="OrderCloud Documentation Content"/>
-<meta property="og:title" content="Admin Addresses"/>
-<meta property="og:description" content="GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body :::json { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-27T19:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of …"/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="../api-reference\Seller-AdminAddresses.html"/>
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-03-27 00:00:00-05:00"/>
-<meta property="article:modified_time" content=""/>
-<meta property="article:author" content="../author/ordercloudio.html">
-<meta property="article:section" content="API Reference"/>
-<meta property="article:tag" content="Seller"/>
-<meta property="og:image" content="/images/svg/ordercloudio_horizontal_logo.svg">
-  <title>OrderCloud Documentation Content &ndash; Admin Addresses</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Admin Addresses   api-reference Articles | OrderCloud Documentation
+
+</title>
+  <link rel="canonical" href="../api-reference/Seller-AdminAddresses.html">
+
+
+    <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="../theme/css/pygments/default.min.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/all.atom.xml">
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="https://ordercloud-api.github.io/docs/feeds/api-reference.atom.xml">  
+  <meta name="description" content="GET v1/addresses/{addressID} Get a single admin address Name Type Description Required addressID string ID of the address. True Response Body :::json { "AddressName": "", "City": "", "CompanyName": "", "Country": "", "DateCreated": "2018-03-27T19:00:00+00:00", "FirstName": "", "ID": "", "LastName": "", "Phone": "", "State": "", "Street1": "", "Street2": "", "Zip": "", "xp": {} } Name Type Description Required ID string ID of …">
+
+
 </head>
+
 <body>
-  <aside>
-    <div>
-      <a href="..">
-          <img src="/images/svg/ordercloudio_horizontal_logo.svg" alt="OrderCloud Docs" title="OrderCloud Docs">
-      </a>
-      <h1><a href="..">OrderCloud Docs</a></h1>
-      
-      <nav>
-          <ul class="list">
-              <li><a href="../category/api-reference.html">API Reference</a> (41)</li>
-              <li><a href="../category/frameworks-and-sdks.html">Frameworks And Sdks</a> (5)</li>
-              <li><a href="../category/integration-services.html">Integration Services</a> (14)</li>
-              <li><a href="../category/platform-guides.html">Platform Guides</a> (20)</li>
-          </ul>
-      </nav>
-    </aside>
+  <header class="header">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="../">OrderCloud Documentation</a>
+    <ul class="navbar-nav">
+          <li class="nav-item  active">
+            <a class="nav-link" href="../api-reference.html">api-reference</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../frameworks-and-sdks.html">frameworks-and-sdks</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../integration-services.html">integration-services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../platform-guides.html">platform-guides</a>
+          </li>
+    </ul>
   </div>
-  <main>
-<article class="single">
-  <header>
-    <h1 id="Seller-AdminAddresses">Admin Addresses</h1>
-    <p>
-        Posted on Tue 27 March 2018 in <a href="../category/api-reference.html">API Reference</a>
+</nav>  </header>
 
-
-    </p>
-  </header>
-
-
-  <div>
-    <h2><code>GET</code> <code>v1/addresses/{addressID}</code></h2>
+  <div class="main">
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="h2 nav-link" href="../api-reference.html">api-reference</a>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Addresses.html">Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-ApprovalRules.html">Approval Rules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Buyers.html">Buyers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-CostCenters.html">Cost Centers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-CreditCards.html">Credit Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-SpendingAccounts.html">Spending Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-UserGroups.html">User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Users.html">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-Me.html">Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCategories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeOrders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeProducts.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-LineItems.html">Line Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Orders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Payments.html">Payments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Promotions.html">Promotions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Shipments.html">Shipments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Catalogs.html">Catalogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-PriceSchedules.html">Price Schedules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Specs.html">Specs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminAddresses.html">Admin Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminUserGroups.html">Admin User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminUsers.html">Admin Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-Incrementors.html">Incrementors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-MessageSenders.html">Message Senders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-SupplierUserGroups.html">Supplier User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-SupplierUsers.html">Supplier Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-Suppliers.html">Suppliers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-application-files.html">Angularjs: Application Files</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-connecting-to-your-organization.html">Angularjs: Connecting To Your Organization</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-contributing.html">Angularjs: Contributing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-source-directory.html">Angularjs: Source Directory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/anonymous-shopping.html">Anonymous Shopping</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/core-concepts/assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-authorize-only-transaction.html">Authorizenet: Authorize Only Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-create-credit-card.html">Authorizenet: Create Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-delete-credit-card.html">Authorizenet: Delete Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-prior-authorization-capture-transaction.html">Authorizenet: Prior Authorization Capture Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-refund-transaction.html">Authorizenet: Refund Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-update-credit-card.html">Authorizenet: Update Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-void-transaction.html">Authorizenet: Void Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/conventions.html">Conventions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/csharp-getting-started.html">Csharp: Getting Started</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/developer-access.html">Developer Access</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/errors.html">Errors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/extended-properties.html">Extended Properties</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/filtering.html">Filtering</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/http-methods.html">Http Methods</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/impersonation.html">Impersonation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/introduction-to-ordercloud.html">Introduction To Ordercloud</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/oauth2-workflows.html">Oauth2 Workflows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/pagination.html">Pagination</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/quick-start-guide.html">Quick Start Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/refresh-tokens.html">Refresh Tokens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/core-concepts/rules-engine.html">Rules Engine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/searching.html">Searching</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/security-profiles.html">Security Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-configuring-catalog.html">Shippingrates: Configuring Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-configuring-integration.html">Shippingrates: Configuring Integration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-get-line-item-rates.html">Shippingrates: Get Line Item Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-get-rates.html">Shippingrates: Get Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-overview.html">Shippingrates: Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-set-shipping-cost.html">Shippingrates: Set Shipping Cost</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/sorting.html">Sorting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/using-the-api-console.html">Using The Api Console</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/using-the-dashboard.html">Using The Dashboard</a>
+            </li>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <h1>
+  Admin Addresses
+      </h1>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-03-27T00:00:00-05:00">
+          <i class="far fa-clock"></i>
+          Tue 27 March 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="far fa-folder-open-o"></i>
+          <a href="../api-reference.html">api-reference</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="far fa-user"></i>
+              <a href="../author/ordercloudio.html">OrderCloud.io</a>          </li>
+          <li class="list-inline-item">
+            <i class="far fa-files"></i>
+              <a href="../tag/seller.html">#Seller</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <h2><code>GET</code> <code>v1/addresses/{addressID}</code></h2>
 <p>Get a single admin address</p>
 <table>
 <thead>
@@ -1253,30 +1366,28 @@ $(function() {
 </tr>
 </tbody>
 </table>
+    </div>
+  </article>
+    </div>
   </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="../tag/seller.html">Seller</a>
-    </p>
+    </div>
   </div>
 
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="../authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
 
-
-
-</article>
-    <footer>
-<p>&copy; OrderCloud.io </p>
-<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " OrderCloud Documentation Content ",
-  "url" : "..",
-  "image": "/images/svg/ordercloudio_horizontal_logo.svg",
-  "description": ""
-}
-</script></body>
 </html>
