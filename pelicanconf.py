@@ -31,6 +31,7 @@ PLUGINS = ['assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
 
+USE_FOLDER_AS_CATEGORY = True
 DISPLAY_CATEGORIES_ON_MENU = True
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
