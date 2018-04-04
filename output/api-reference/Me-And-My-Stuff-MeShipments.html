@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="english">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Shipments   api-reference Articles | OrderCloud Documentation
+
+</title>
+  <link rel="canonical" href="../api-reference/Me-And-My-Stuff-MeShipments.html">
+
+
+    <link rel="stylesheet" href="../theme/css/style.min.css?f4453825">
+  <link rel="stylesheet" href="../theme/css/pygments/default.min.css">
+
+  
+  <meta name="description" content=""Me" is a container for read-only endpoints that return a filtered view of things that the current buyer user is allowed to see, i.e. things that they are assigned to either directly or as a member of a buyer organization or user group. It also provides ways for a …">
+
+
+</head>
+
+<body>
+  <header class="header">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container justify-content-between">
+    <a class="navbar-brand" href="../">OrderCloud Documentation</a>
+    <ul class="navbar-nav">
+          <li class="nav-item  active">
+            <a class="nav-link" href="../api-reference.html">api-reference</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../frameworks-and-sdks.html">frameworks-and-sdks</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../integration-services.html">integration-services</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="../platform-guides.html">platform-guides</a>
+          </li>
+    </ul>
+  </div>
+</nav>  </header>
+
+  <div class="main">
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="h2 nav-link" href="../api-reference.html">api-reference</a>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-ImpersonationConfigs.html">Impersonation Configs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-PasswordResets.html">Forgotten Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Authentication-And-Authorization-SecurityProfiles.html">Security Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Addresses.html">Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-ApprovalRules.html">Approval Rules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Buyers.html">Buyers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-CostCenters.html">Cost Centers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-CreditCards.html">Credit Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-SpendingAccounts.html">Spending Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-UserGroups.html">User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Buyers-Users.html">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-Me.html">Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeAddresses.html">Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCatalogs.html">Catalogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCategories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCostCenters.html">Cost Centers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeCreditCards.html">Credit Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeOrders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeProducts.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MePromotions.html">Promotions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeShipments.html">Shipments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeSpendingAccounts.html">Spending Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Me-And-My-Stuff-MeUserGroups.html">User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-LineItems.html">Line Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Orders.html">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Payments.html">Payments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Promotions.html">Promotions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Orders-And-Fulfillment-Shipments.html">Shipments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Catalogs.html">Catalogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-PriceSchedules.html">Price Schedules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Product-Catalogs-Specs.html">Specs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminAddresses.html">Admin Addresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminUserGroups.html">Admin User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-AdminUsers.html">Admin Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-Incrementors.html">Incrementors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Seller-MessageSenders.html">Message Senders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-SupplierUserGroups.html">Supplier User Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-SupplierUsers.html">Supplier Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../api-reference/Suppliers-Suppliers.html">Suppliers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-application-files.html">Angularjs: Application Files</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-connecting-to-your-organization.html">Angularjs: Connecting To Your Organization</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-contributing.html">Angularjs: Contributing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/angularjs-source-directory.html">Angularjs: Source Directory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/anonymous-shopping.html">Anonymous Shopping</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/core-concepts/assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-authorize-and-capture-transaction.html">Authorizenet: Authorize And Capture Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-authorize-only-transaction.html">Authorizenet: Authorize Only Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-create-credit-card.html">Authorizenet: Create Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-delete-credit-card.html">Authorizenet: Delete Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-prior-authorization-capture-transaction.html">Authorizenet: Prior Authorization Capture Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-refund-transaction.html">Authorizenet: Refund Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-update-credit-card.html">Authorizenet: Update Credit Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/authorizenet-void-transaction.html">Authorizenet: Void Transaction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/conventions.html">Conventions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../frameworks-and-sdks/csharp-getting-started.html">Csharp: Getting Started</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/developer-access.html">Developer Access</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/errors.html">Errors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/extended-properties.html">Extended Properties</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/filtering.html">Filtering</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/http-methods.html">Http Methods</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/impersonation.html">Impersonation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/introduction-to-ordercloud.html">Introduction To Ordercloud</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/oauth2-workflows.html">Oauth2 Workflows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/pagination.html">Pagination</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/quick-start-guide.html">Quick Start Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/refresh-tokens.html">Refresh Tokens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/core-concepts/rules-engine.html">Rules Engine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/searching.html">Searching</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/authentication/security-profiles.html">Security Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-configuring-catalog.html">Shippingrates: Configuring Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-configuring-integration.html">Shippingrates: Configuring Integration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-get-line-item-rates.html">Shippingrates: Get Line Item Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-get-rates.html">Shippingrates: Get Rates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-overview.html">Shippingrates: Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../integration-services/shippingrates-set-shipping-cost.html">Shippingrates: Set Shipping Cost</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/basic-api-features/sorting.html">Sorting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/using-the-api-console.html">Using The Api Console</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../platform-guides/getting-started/using-the-dashboard.html">Using The Dashboard</a>
+            </li>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <h1>
+  Shipments
+      </h1>
+<nav>
+  Shipments : api-reference
+  <ul>
+</ul>
+</nav>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-03-27T00:00:00-05:00">
+          <i class="far fa-clock"></i>
+          Tue 27 March 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="far fa-folder-open-o"></i>
+          <a href="../api-reference.html">api-reference</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="far fa-user"></i>
+              <a href="../author/ordercloudio.html">OrderCloud.io</a>          </li>
+          <li class="list-inline-item">
+            <i class="far fa-files"></i>
+              <a href="../tag/me-and-my-stuff.html">#Me And My Stuff</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>"Me" is a container for read-only endpoints that return a filtered view</p>
+<p>of things that the current buyer user is allowed to see, i.e. things</p>
+<p>that they are assigned to either directly or as a member of a buyer</p>
+<p>organization or user group. It also provides ways for a user to update</p>
+<p>or change their own information.</p>
+<hr>
+<h2><code>GET</code> <code>v1/me/shipments</code></h2>
+<p>Get a list of shipments visible to this user</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderID</td>
+<td>string</td>
+<td>ID of the order.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "Account": "",
+            "BuyerID": "",
+            "Cost": 0,
+            "DateDelivered": "2018-03-27T19:00:00+00:00",
+            "DateShipped": "2018-03-27T19:00:00+00:00",
+            "FromAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T19:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "FromAddressID": "",
+            "ID": "",
+            "Shipper": "",
+            "ToAddress": {
+                "AddressName": "",
+                "City": "",
+                "CompanyName": "",
+                "Country": "",
+                "DateCreated": "2018-03-27T19:00:00+00:00",
+                "FirstName": "",
+                "ID": "",
+                "LastName": "",
+                "Phone": "",
+                "State": "",
+                "Street1": "",
+                "Street2": "",
+                "Zip": "",
+                "xp": {}
+            },
+            "ToAddressID": "",
+            "TrackingNumber": "",
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Shipper</td>
+<td>string</td>
+<td>Shipper of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateShipped</td>
+<td>date</td>
+<td>Date shipped of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateDelivered</td>
+<td>date</td>
+<td>Date delivered of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TrackingNumber</td>
+<td>string</td>
+<td>Tracking number of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>float</td>
+<td>Cost of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>string</td>
+<td>Account of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FromAddressID</td>
+<td>string</td>
+<td>ID of the from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ToAddressID</td>
+<td>string</td>
+<td>ID of the to address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FromAddress</td>
+<td>object</td>
+<td>From address of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ToAddress</td>
+<td>object</td>
+<td>To address of the shipment.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/me/shipments/{shipmentID}</code></h2>
+<p>Get a single shipment</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shipmentID</td>
+<td>string</td>
+<td>ID of the shipment.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Account": "",
+    "BuyerID": "",
+    "Cost": 0,
+    "DateDelivered": "2018-03-27T19:00:00+00:00",
+    "DateShipped": "2018-03-27T19:00:00+00:00",
+    "FromAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T19:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "FromAddressID": "",
+    "ID": "",
+    "Shipper": "",
+    "ToAddress": {
+        "AddressName": "",
+        "City": "",
+        "CompanyName": "",
+        "Country": "",
+        "DateCreated": "2018-03-27T19:00:00+00:00",
+        "FirstName": "",
+        "ID": "",
+        "LastName": "",
+        "Phone": "",
+        "State": "",
+        "Street1": "",
+        "Street2": "",
+        "Zip": "",
+        "xp": {}
+    },
+    "ToAddressID": "",
+    "TrackingNumber": "",
+    "xp": {}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>ID of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>string</td>
+<td>ID of the buyer.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Shipper</td>
+<td>string</td>
+<td>Shipper of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateShipped</td>
+<td>date</td>
+<td>Date shipped of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateDelivered</td>
+<td>date</td>
+<td>Date delivered of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>TrackingNumber</td>
+<td>string</td>
+<td>Tracking number of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>float</td>
+<td>Cost of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>string</td>
+<td>Account of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FromAddressID</td>
+<td>string</td>
+<td>ID of the from address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ToAddressID</td>
+<td>string</td>
+<td>ID of the to address.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>FromAddress</td>
+<td>object</td>
+<td>From address of the shipment.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>ToAddress</td>
+<td>object</td>
+<td>To address of the shipment.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2><code>GET</code> <code>v1/me/shipments/{shipmentID}/items</code></h2>
+<p>Get a list of shipment items visible to this user</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shipmentID</td>
+<td>string</td>
+<td>ID of the shipment.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>orderID</td>
+<td>string</td>
+<td>ID of the order.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>Word or phrase to search for.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>searchOn</td>
+<td>string</td>
+<td>Comma-delimited list of fields to search on.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>string</td>
+<td>Comma-delimited list of fields to sort by.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page of results to return. Default: 1</td>
+<td>False</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Number of results to return per page. Default: 20, max: 100.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>filters</td>
+<td>object</td>
+<td>Any additional key/value pairs passed in the query string are interpretted as filters. Valid keys are top-level properties of the returned model or 'xp.???'</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h2>Response Body</h2>
+<pre><code>:::json
+{
+    "Items": [
+        {
+            "CostCenter": "",
+            "DateNeeded": "2018-03-27T19:00:00+00:00",
+            "LineItemID": "",
+            "OrderID": "",
+            "Product": {
+                "Description": "",
+                "ID": "",
+                "Name": "",
+                "QuantityMultiplier": 0,
+                "ShipHeight": 0,
+                "ShipLength": 0,
+                "ShipWeight": 0,
+                "ShipWidth": 0,
+                "xp": {}
+            },
+            "QuantityShipped": 0,
+            "Specs": [
+                {
+                    "Name": "",
+                    "OptionID": "",
+                    "SpecID": "",
+                    "Value": ""
+                }
+            ],
+            "UnitPrice": 0,
+            "xp": {}
+        }
+    ],
+    "Meta": {
+        "ItemRange": [
+            1,
+            20
+        ],
+        "Page": 1,
+        "PageSize": 20,
+        "TotalCount": 25,
+        "TotalPages": 2
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OrderID</td>
+<td>string</td>
+<td>ID of the order.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>LineItemID</td>
+<td>string</td>
+<td>ID of the line item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>QuantityShipped</td>
+<td>integer</td>
+<td>Quantity shipped of the shipment item.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>float</td>
+<td>Unit price of the shipment item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>CostCenter</td>
+<td>string</td>
+<td>Cost center of the shipment item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>DateNeeded</td>
+<td>date</td>
+<td>Date needed of the shipment item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>object</td>
+<td>Product of the shipment item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td>array</td>
+<td>Specs of the shipment item.</td>
+<td>False</td>
+</tr>
+<tr>
+<td>xp</td>
+<td>object</td>
+<td>Container for extended (custom) properties of the shipment item.</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+    </div>
+  </article>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="../authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
