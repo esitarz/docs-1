@@ -1,9 +1,9 @@
 *~
 ._*
 *.lock
-*.vscode
+*.vscode/**
 *.DS_Store
 *.swp
 *.out
 
-output 
+output
