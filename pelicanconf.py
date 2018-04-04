@@ -15,7 +15,7 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
-DELETE_OUTPUT_DIRECTORY = True
+# DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
