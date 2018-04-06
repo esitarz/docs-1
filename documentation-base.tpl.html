@@ -1,0 +1,121 @@
+<aside id="navmenuLeft" class="navmenu navmenu-default navmenu-fixed-left offcanvas-xs hidden-sm hidden-md hidden-lg">
+    <nav>
+        <header class="navmenu-text visible-xs">
+            <h2>Documentation</h2>
+        </header>
+        <ul class="nav navmenu-nav">
+            <li ng-class="{active:application.$state.includes('api-reference')}">
+                <a ui-sref="api-reference({sectionID: null, resourceID: null, endpointID: null})"><i class="fa fa-book"></i> API Reference</a>
+            </li>
+            <li ng-class="{active:application.$state.includes('platform-guides')}">
+                <a ui-sref="platform-guides({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-map-o"></i> Platform Guides</a>
+            </li>
+<!--            <li ng-class="{active:application.$state.includes('use-case-guides')}">
+                <a ui-sref="use-case-guides({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-map-o"></i> Use Case Guides</a>
+            </li>-->
+            <li ng-class="{active:application.$state.includes('frameworks-and-sdks')}">
+                <a ui-sref="frameworks-and-sdks({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-bolt"></i> Frameworks & SDKs</a>
+            </li>
+            <li ng-class="{active:application.$state.includes('integration-services')}">
+                <a ui-sref="integration-services({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-plug"></i> Integrations</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<nav class="navbar navbar-default navbar-secondary navbar-secondary-fixed hidden-xs">
+	<div class="container-fluid">
+        <ul class="nav nav-tabs documentation-nav-tabs">
+            <li ui-sref-active="active"><a ui-sref="api-reference({sectionID: null, resourceID: null, endpointID: null})"><i class="fa fa-book"></i> API Reference</a></li>
+            <li ui-sref-active="active"><a ui-sref="platform-guides({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-map-o"></i> Platform Guides</a></li>
+<!--
+            <li ui-sref-active="active"><a ui-sref="use-case-guides({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-map-o"></i> Use Case Guides</a></li>
+-->
+            <li ui-sref-active="active"><a ui-sref="frameworks-and-sdks({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-bolt"></i> Frameworks & SDKs</a></li>
+            <li ui-sref-active="active"><a ui-sref="integration-services({sectionID: null, guideID: null, detailID: null})"><i class="fa fa-plug"></i> Integrations</a></li>
+        </ul>
+	</div>
+</nav>
+<!--each docs section's main template replaces this view-->
+<ui-view>
+    <main class="oc-docs-home">
+        <div class="oc-banner-full-width oc-tequila-sunrise-bg oc-flex-layout vertical center-center">
+            <div class="container text-center">
+                <h1>Explore the OrderCloud API</h1>
+                <p class="lead text-center">Our RESTful API provides access to OrderCloud.io's B2B eCommerce platform-as-a-service.<br>Dive into our API Docs or download our Swagger Spec to quickly try out our endpoints.
+                </p>
+                <a class="btn btn-knockout btn-lg" href="https://raw.githubusercontent.com/ordercloud-api/swagger/master/ordercloud_swagger.json"
+                    target="_self" download="ordercloud_swagger_spec"><i class="fa fa-download" aria-hidden="true"></i> Get Swagger Spec</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <article>
+                    <div class="oc-flex-layout horizontal wrap center-justified">
+                        <div class="oc-flex-layout flex-col-lg-6 text-center">
+                            <div ui-sref="api-reference" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                                <h2 class="card-title"><i class="fa fa-book color__curry"></i>API Reference</h2>
+                                <p class="small text-muted card-descrip">Complete documentation for api.ordercloud.io.</p>
+                                <a class="btn btn-secondary">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                        <div class="oc-flex-layout flex-col-lg-6 text-center">
+                            <div ui-sref="platform-guides" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                                <h2 class="card-title"><i class="fa fa-map color__ordercloud-blue"></i>Platform Guides</h2>
+                                <p class="small text-muted card-descrip">Jumpstart your project by learning the basics of OrderCloud.</p>
+                                <a class="btn btn-secondary">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+<!--                        <div class="oc-flex-layout flex-col-lg-4 text-center">
+                            <div ui-sref="use-case-guides" class="oc-card-docs oc-card-docs-guides flex oc-flex-layout vertical center-center">
+                                <h2 class="card-title"><i class="fa fa-map color__io-blue"></i>Use Case Guides</h2>
+                                <p class="small text-muted card-descrip">Focused guides on the various OrderCloud.io Resources.</p>
+                                <a class="btn btn-secondary">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>-->
+                        <div class="oc-flex-layout flex-col-lg-6">
+                            <div ui-sref="frameworks-and-sdks" class="oc-card-docs oc-card-docs-guides logo-card flex oc-flex-layout vertical center-center">
+                                <h2 class="card-title"><i class="fa fa-bolt color__sorbet"></i>Frameworks & SDKs</h2>
+                                <p class="small text-muted">Take advantage of our rapid development tools & resources.</p>
+                                <ul>
+                                    <li ng-repeat="chapter in documentation.navSections" ng-if="chapter.type === 'Frameworks and SDKs' ">
+                                        <figure>
+                                            <img ng-src="{{chapter.icon}}" alt="{{chapter.name}}">
+                                            <h6 class="caption">{{chapter.name}}</h6>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="oc-flex-layout flex-col-lg-6">
+                            <div ui-sref="integration-services" class="oc-card-docs oc-card-docs-guides logo-card flex oc-flex-layout vertical center-center">
+                                <h2 class="card-title"><i class="fa fa-plug color__prince-lt"></i>Integration Services</h2>
+                                <p class="small text-muted">Learn how to set up & use our standard integrations.</p>
+                                <ul>
+                                    <li>
+                                        <figure>
+                                            <img src="/assets/images/docs-frameworks/logos/authorizenet_logo.svg" alt="Authorize.NET">
+                                            <h6 class="caption">Authorize.NET</h6>
+                                        </figure>
+                                    </li>
+                                    <li>
+                                        <!--DO NOT use UPS or USPS logos-->
+                                        <figure>
+                                            <img src="/assets/images/docs-frameworks/logos/shippingrates_logo.svg" alt="ShippingRates">
+                                            <h6 class="caption">Shipping Rates</h6>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+</ui-view>
