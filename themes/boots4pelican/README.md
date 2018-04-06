@@ -12,13 +12,21 @@ This theme relies on the [assets plugin](https://github.com/getpelican/pelican-p
 
 You will also need [Ruby Sass](https://sass-lang.com/ruby-sass) installed on your machine to compile the css locally.
 
-This theme uses the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). All `scss` files needed for the project are imported into `scss/main.scss`. This file is then compiled and linked in `templates/base.html`.
+This theme uses the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). All `scss` files required for the project are imported into `scss/main.scss`. This file is then compiled and linked in `templates/base.html`.
 
 ```
 {% assets filters="scss,cssmin", output="css/style.min.css", "main.scss" %}
     <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 {% endassets %}
 ```
+
+## Some Clarification
+
+Bootstrap4 and FontAwesome5 are included as _static_ directories. If you need to pull in recent updates to either library, you should do so manually.
+
+The `scss` directory is placed outside of the `static` folder so that the `scss` files do not get pulled into the output when the static site is generated. The css created by the assets filter shown above contains compiled code from the entire scss directory.
+
+In order to ensure that your custom css is included in the compile, please double-check that your new files are being imported in `main.less`.
 
 ## The original documentations for Alchemy is intact below:
 
