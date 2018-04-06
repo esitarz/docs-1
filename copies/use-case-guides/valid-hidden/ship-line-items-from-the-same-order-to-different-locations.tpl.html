@@ -1,0 +1,108 @@
+<div>
+    <section class="guides-section" id="introduction">
+        <h2>Introduction</h2>
+        <p>This guide will show you how to ship line items from one order to different locations.</p>
+        <p>Let&#x2019;s say for example my user is buying Christmas presents for his family and would like to ship part of his
+            order to his sister in Arizona and the other part of his order to his brother in New York, but he doesn't want
+            to create two separate orders. How can I enable him to do this?</p>
+    </section>
+    <section class="guides-section" id="prerequisites">
+        <h2>Prerequisites</h2>
+        <ul>
+            <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'create-and-assign-a-product'})">Create and Assign a ProductGroups</a></li>
+            <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-saved-address'})">Create and Assign a Saved Address</a></li>
+        </ul>
+    </section>
+    <section class="guides-section" id="1-create-a-new-order">
+        <h2>1. Create a New Order</h2>
+        <p>We will use our saved billing address when creating the order but leave the shipping address blank. Setting the shipping
+            address here will set the shipping address for all of the line items on our order, and we don&#x2019;t want that!</p>
+        <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'Orders', endpointID:'Create'})">Create New Order</a></div>
+
+
+        <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/orders HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;NewOrder&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Standard&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BillingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MySavedBillingAddressID&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Comments&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingCost&quot;</span><span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;TaxCost&quot;</span><span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    </section>
+    <section class="guides-section" id="2-create-the-first-line-item">
+        <h2>2. Create the First Line Item</h2>
+        <p>This first line item will be for the user&#x2019;s sister in Arizona. Set the <code>ShippingAddressID</code> to the
+            saved shipping address ID you created for her.</p>
+        <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'LineItems', endpointID: 'Create'})">Create New Line Item</a></div>
+
+
+        <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/orders/{orderID}/lineitem HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;FirstLineItem&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ProductID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;ABC&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Quantity&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UnitPrice&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CostCenter&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;DateNeeded&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAccount&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;SavedShippingAddressIDForSister&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShipFromAddressID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Specs&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;SpecID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;OptionID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Value&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+        <p>Now we will create a second line item by repeating the previous step, but this time, use the brother&#x2019;s saved
+            <code>ShippingAddressID</code> instead. From here, continue and <a ui-sref="use-case-guides({sectionID:'order-management', guideID:'submit-your-first-order'})">submit the order</a>.</p>
+    </section>
+    <section class="guides-section" id="what-ifs">
+        <h2>What Ifs</h2>
+        <p><strong>What if My user wants to use a temporary address instead of a saved address?</strong><br> When creating the
+            line item, don&#x2019;t set a <code>ShippingAddressID</code>. Then, after you have created your line item, you
+            can set a one time address on your line item with the Ordering &#x2192; Line Items &#x2192; <code>SetShippingAddress</code>            endpoint.
+        </p>
+        <p>An example post to this endpoint is shown here:</p>
+        <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/orders/{orderID}/lineitems/{lineItemID}/shipto HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;TemporaryShippingAddressID&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CompanyName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MyCompanyName&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FirstName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;CustomerFirstName&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;LastName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;CustomerLastName&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street1&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Swimming Lane Dr.&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street2&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;City&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Minneapolis&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;State&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MN&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Zip&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;55414&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Country&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;US&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;AddressName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;OptionalAddressName&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    </section>
+    <section class="guides-section" id="conclusion">
+        <h2>Conclusion</h2>
+        <p>You should now have an understanding for how to ship line items from the same order to different locations.</p>
+    </section>
+</div>

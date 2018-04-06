@@ -1,0 +1,57 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how a buyer user can create a personal address. Addresses created in this way are only accessible
+      to the buyer user that created them via the <a ui-sref="api-reference({'#':'MeAddresses'})">/me/addresss endpoints</a>      </p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+      <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create And Assign Users And User Groups</a></li>
+      <li><a ui-sref="platform-guides({sectionID:'getting-started', guideID:'using-the-api-console', '#':'Impersonation'})">Familiarity with Using Impersonation in our Console</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-impersonate-buyer-user">
+    <h2>1. Impersonate Buyer User</h2>
+    <p>Begin by learning how to <a ui-sref="platform-guides({sectionID:'authentication', guideID:'impersonation'})">Impersonate a Buyer User</a>.
+      The Buyer User you impersonate will need the <a ui-sref="guides({sectionID:'authentication', guideID:'security-profiles', '#':'Roles'})">&#x201C;MeAddressAdmin&#x201D; role</a>      in order to access the appropriate endpoint. </p>
+  </section>
+  <section class="guides-section" id="2-create-a-me-address">
+    <h2>2. Create a ME Address</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'MeAddresses_CreateAddress'})">Create Me Address</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/me/addresses HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;Shipping&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Billing&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CompanyName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Four51&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FirstName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Sarah&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;LastName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Smith&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street1&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;110 North 5th St.&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street2&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Suite 300&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;City&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Minneapolis&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;State&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MN&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Zip&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;55403&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Country&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;US&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;9522940451&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;AddressName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Four51&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    <div class="note">The billing and shipping values designate whether the addresses can be used as a billing address, shipping address or
+      both.</div>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>An authenticated buyer user would make the call in step two in order to make a personal address that only they can view
+      and edit.</p>
+    <p>Often in a pure B2B scenario individual users may not have access to maintain a personal address book. The creation and
+      delegation of available addresses may be maintained in an administrative context by the seller. Learn more about creating
+      and assigning shared addresses in an admin context in the <a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-saved-address'})">Create and Assign A Saved Address</a>      guide.</p>
+  </section>
+</div>

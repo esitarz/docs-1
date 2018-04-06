@@ -1,0 +1,30 @@
+<div id="Searching">
+    <section class="guides-section" id="SearchingOverview">
+        <h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+               data-clipboard-text="{{documentation.generateLink('SearchingOverview')}}"></i> Overview</h2>
+        <p>Searching data client side can be fine for smaller sets of data but can quickly become unwieldy with
+            large sets of data. To address this issue our API supports server side search queries that do all of
+            the heavy lifting for you.</p>
+    </section>
+    <section class="guides-section" id="SearchingQuery">
+        <h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+               data-clipboard-text="{{documentation.generateLink('SearchingQuery')}}"></i> Searching</h2>
+        <p>For open-ended, Google-esque searches, simply provide a search term.</p>
+        Request
+        <pre prism class="language-http" source='GET https://api.ordercloud.io/buyers/xyz/users?search=smith HTTP/1.1'></pre>
+        <p>This will return all results containing "smith", including "Smith", "Smithers", and "McSmith". The
+            fields searched include <code>FirstName</code>,<code>LastName</code>, and <code>UserName</code>. (This of course varies from endpoint to
+            endpoint. View each <a ui-sref="api-reference">endpoint's documentation</a> for specific details).
+            Fields marked “Searchable” in the API reference will be searched.
+        </p>
+        <p>You can optionally specify which fields (of the searchable fields available) are searched by providing a <code>searchOn</code> parameter for any field available on the resource you're searching.
+        </p>
+        <pre prism class="language-http" source='GET https://api.ordercloud.io/buyers/xyz/users?search=smith&searchOn=LastName,UserName HTTP/1.1'></pre>
+    </section>
+    <section class="guides-section" id="CombiningQueries">
+        <h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+               data-clipboard-text="{{documentation.generateLink('CombiningQueries')}}"></i> Combining Queries</h2>
+        <p>Searching can be mixed and matched with Sorting and Filtering to give you ultimate control when defining what is returned from a list.
+        </p>
+    </section>
+</div>

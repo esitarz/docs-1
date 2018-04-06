@@ -1,0 +1,122 @@
+<div id="DeleteCreditCard">
+    <section class="guides-section" id="DeleteCreditCardOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('DeleteCreditCardOverview')}}"></i>
+            Delete Credit Card Overview
+        </h2>
+        <p>
+            When a customer within your buyer application deletes a credit card, the integration endpoint can be called in order to delete that card on OrderCloud.io as
+            well as Authorize.Net. The Customer Payment Profile will be removed on Authorize.Net, followed by the card being deleted on OrderCloud.io. If either call fails,
+            the response from that particular call will be returned. Otherwise, the response will simply be a 204 No Content. If the card is shared, meaning <code>Shared</code> was set to <code>true</code> when the card was created,
+            <code>Shared</code> must be passed as <code>true</code> when deleting.
+        </p>
+    </section>
+    <section class="guides-section" id="DeleteCreditCardRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('DeleteCreditCardRequest')}}"></i>
+            Delete Credit Card Request
+        </h2>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+    "BuyerID": "...",
+    "TransactionType": "deleteCreditCard",
+    "CardDetails": {
+        "CreditCardID": "...",
+        "Shared": false
+    }
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="DeleteCreditCardResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('DeleteCreditCardResponse')}}"></i>
+            Delete Credit Card Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 204 No Content
+Content-Type: application/json; charset=UTF-8
+
+'></pre>
+    </section>
+    <section class="guides-section" id="DeleteCreditCardErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('DeleteCreditCardErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <p>
+            During the credit card delete process, the Authorize.Net Customer Payment Profile will first be deleted. Next, the card will be deleted on OrderCloud.io.
+        </p>
+        <p>
+            Errors will return the exact response directly from the Authorize.Net or OrderCloud.io endpoint that failed. However, if any required fields are missing,
+            a 400 error will be returned before any of the update process is executed.
+        </p>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request, the following response will be returned containing a unique ErrorCode and Message, as well as the
+            request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+        <pre prism class="language-http"
+             source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "ErrorCode": "...",
+    "Message": "...",
+    "Data": {
+        "...Request Body..."
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ErrorCode</th>
+                    <th>Message</th>
+                    <th>Status Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>DeleteCreditCard.CreditCardIDRequired</td>
+                    <td>CardDetails.CreditCardID is required to delete a credit card.</td>
+                    <td>400</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>OrderCloud.io Error Response</h3>
+        <p>If an incorrect <code>BuyerID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Credit Card not found: 2345",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+    </section>
+</div>

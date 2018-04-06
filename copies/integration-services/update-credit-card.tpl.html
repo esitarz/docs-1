@@ -1,0 +1,183 @@
+<div id="UpdateCreditCard">
+    <section class="guides-section" id="UpdateCreditCardOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('UpdateCreditCardOverview')}}"></i>
+            Update Credit Card Overview
+        </h2>
+        <p>
+            When a customer within your buyer application updates a credit card, the integration endpoint can be called in order to update that card on OrderCloud.io as well
+            as Authorize.Net. The Customer Payment Profile will be updated on Authorize.Net, followed by the card being patched on OrderCloud.io. If either step fails, all
+            changes will be reverted in order to keep each system in sync. If the card is shared, meaning <code>Shared</code> was set to <code>true</code> when the card was created,
+            <code>Shared</code> must be passed as <code>true</code> when updating.
+        </p>
+    </section>
+    <section class="guides-section" id="UpdateCreditCardRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('UpdateCreditCardRequest')}}"></i>
+            Update Credit Card Request
+        </h2>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+    "BuyerID": "...",
+    "TransactionType": "updateCreditCard",
+    "CardDetails": {
+        "CreditCardID": "...",
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
+    }
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="UpdateCreditCardResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('UpdateCreditCardResponse')}}"></i>
+            Update Credit Card Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+
+{
+    "ID": "…",
+    "Token": "…",
+    "DateCreated": null,
+    "CardType": "…",
+    "PartialAccountNumber": "…",
+    "CardholderName": "…",
+    "ExpirationDate": null,
+    "xp": null
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="UpdateCreditCardErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('UpdateCreditCardErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <p>
+            During the credit card update process, the Authorize.Net Customer Payment Profile will first be updated. Next, the card will be updated on OrderCloud.io.
+            In the case that either step fails, the card data will be reverted in both locations, ensuring the data is accurate in each system.
+        </p>
+        <p>
+            Errors will return the exact response directly from the Authorize.Net or OrderCloud.io endpoint that failed. However, if any required fields are missing,
+            a 400 error will be returned before any of the update process is executed.
+        </p>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request, the following response will be returned containing a unique ErrorCode and Message, as well as the
+            request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+        <pre prism class="language-http"
+            source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "ErrorCode": "...",
+    "Message": "...",
+    "Data": {
+        "...Request Body..."
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ErrorCode</th>
+                        <th>Message</th>
+                        <th>Status Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>UpdateCreditCard.CreditCardIDRequired</td>
+                        <td>CardDetails.CreditCardID is required to update a credit card.</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Authorize.Net Error Response</h3>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "messages": {
+        "resultCode": "...",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>resultCode</th>
+                    <th>message.code</th>
+                    <th>message.text</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Error</td>
+                    <td>E00013</td>
+                    <td>Card Number is invalid.</td>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td>E00013</td>
+                    <td>Expiration Date is invalid.</td>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td>E00027</td>
+                    <td>The credit card has expired.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>OrderCloud.io Error Response</h3>
+        <p>If an incorrect <code>BuyerID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Credit Card not found: 2345",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+    </section>
+</div>

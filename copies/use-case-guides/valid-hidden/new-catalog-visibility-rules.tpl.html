@@ -1,0 +1,80 @@
+<div>
+    <section class="guides-section" id="introduction">
+        <h2>Introduction</h2>
+        <p>We keep saying it: B2B is hard. Rarely is it a matter of creating a few products, giving them each one price, and
+            opening them up for anyone to buy. There are contracts involved. Often times different buyers see different products
+            at different prices. Sometimes different groups of users within the same buyer organization have varying levels
+            of access to products. Sometimes these variations apply to entire categories of products.</p>
+        <p>To deal with all this complexity, OrderCloud.io makes heavy use of the concept of assignments. Allowing a buyer user
+            to see a product typically means assigning the catalog to the buyer organization, assigning the user to some
+            party (a user group or the entire organization), assigning that party to a category containing the product, and,
+            finally, assigning the party to the product, which must also include a price schedule associated with that party-product
+            relationship.</p>
+        <p>That&#x2019;s a fair amount of work, and although it gives you extremely precise control over who sees what, it&#x2019;s
+            often more control than you really need, which can make catalog management overly burdensome.</p>
+        <p>This is all about to change. In our next major release, we will be rolling out powerful new features aimed at simplifying
+            catalog management for cases where you don&#x2019;t need such fine-grained control. Let&#x2019;s explore these
+            features by use case:</p>
+    </section>
+    <section class="guides-section" id="scenario-1-i-want-control-over-who-sees-what-but-pricing-usually-doesn-t-vary-from-buyer-to-buyer-">
+        <h2>Scenario 1: &quot;I want control over who sees what, but pricing usually doesn&#x2019;t vary from buyer to buyer.&quot;</h2>
+        <p>For this, we&#x2019;re introducing <strong>default price schedules</strong>. Just populate <code>DefaultPriceScheduleID</code>            on the Product model, leave it out of <code>ProductAssignments</code>, and those assigned parties will get the
+            default pricing. <code>ProductAssignment</code> still has a <code>PriceScheduleID</code>, and it takes precedence
+            over the default, but it is now optional. Giving each product a default price schedule is recommended in the
+            majority of cases.</p>
+    </section>
+    <section class="guides-section" id="scenario-2-i-want-to-allow-some-users-to-em-see-em-certain-products-but-not-em-buy-em-them-">
+        <h2>Scenario 2: &quot;I want to allow some users to <em>see</em> certain products but not <em>buy</em> them.&quot;</h2>
+        <p>This is a case where you would <strong>NOT</strong> use a default price schedule. If other visibility requirements
+            are met but neither <code>Product.DefaultPriceSchedule</code> nor any <code>ProductAssignment.PriceScheduleID</code>            related to the user is populated, the product will be visible to the user but not purchase-able.</p>
+    </section>
+    <section class="guides-section" id="scenario-3-when-i-assign-a-catalog-to-a-buyer-organization-i-just-want-everybody-in-that-organization-to-see-everything-in-the-catalog-">
+        <h2>Scenario 3: &quot;When I assign a catalog to a buyer organization, I just want everybody in that organization to
+            see everything in the catalog.&quot;</h2>
+        <p>If your visibility rules are fairly simple, you&#x2019;ll appreciate this one. <code>CatalogAssignment</code> (the
+            relationship between Catalog and Buyer organization) has 2 new properties: <code>ViewAllCategories</code> and
+            <code>ViewAllProducts</code>. And yup, setting them to <code>true</code> does exactly what you think it does.
+            These settings tend to go hand in hand with default price schedules; without those, you&#x2019;d need to create
+            product assignments anyway just to get pricing in place.</p>
+    </section>
+    <section class="guides-section" id="scenario-4-i-want-to-control-visibility-at-the-category-level-but-when-i-assign-a-category-i-want-all-products-and-subcategories-within-it-to-be-visible-to-the-assigned-party-automatically-">
+        <h2>Scenario 4: &quot;I want to control visibility at the category level, but when I assign a category, I want all products
+            and subcategories within it to be visible to the assigned party automatically.&quot;</h2>
+        <p>Here we get a little more fine-grained with assignments, but still not all the way down to individual products. You&#x2019;ll
+            want <code>CatalogAssignment.ViewAllCategories</code> and <code>CatalogAssignment.ViewAllProducts</code> set
+            to <code>false</code>, and set <code>CategoryAssignment.Visible</code> and <code>CategoryAssignment.ViewAllProducts</code>            to <code>true</code> as needed. Note that while <code>CatalogAssignment</code> can only be applied to an entire
+            buyer organization, <code>CategoryAssignment</code> can apply to the entire organization or a user group within
+            it.</p>
+    </section>
+    <section class="guides-section" id="scenario-5-i-want-everybody-to-see-everything-except-a-specific-category-">
+        <h2>Scenario 5: &quot;I want everybody to see everything except a specific category.&quot;</h2>
+        <p><code>CategoryAssignment.Visible</code> and <code>CategoryAssignment.ViewAllProducts</code> have 3 possible values:
+            <code>true</code>, <code>false</code>, or <code>null</code>. <code>null</code> means &#x201C;inherit this setting
+            from my parent&#x201D;, i.e. the parent category or, in the case of top-level categories, the catalog. This is
+            a very powerful concept - it means you turn on <code>ViewAllCategories</code> and <code>ViewAllProducts</code>            on the <code>CatalogAssignment</code>, and then turn off either or both anywhere down the category tree. Category-level
+            settings, whether true or false, will always override their corresponding catalog-level settings.</p>
+    </section>
+    <section class="guides-section" id="scenario-6-i-want-to-temporarily-hide-an-entire-catalog-from-all-buyers-it-s-assigned-to-">
+        <h2>Scenario 6: &quot;I want to temporarily hide an entire catalog from all buyers it&#x2019;s assigned to.&quot;</h2>
+        <p>Product and Category have always had an Active bit, independent of assignments, that allows you to effectively hide
+            it from everyone by setting it to <code>false</code>. We are now adding an Active bit at the Catalog level as
+            well.</p>
+    </section>
+    <section class="guides-section" id="scenario-7-i-want-a-search-driven-catalog-where-products-do-not-belong-to-categories-">
+        <h2>Scenario 7: &quot;I want a search-driven catalog where products do not belong to categories.&quot;</h2>
+        <p>We&#x2019;ve already discussed that a product&#x2019;s assignment to a buyer party (<code>ProductAssignment</code>)
+            is no longer required for visibility. The same holds true for a product&#x2019;s assignment to a category. As
+            long as <code>CatalogAssignment.ViewAllProducts</code> is <code>true</code>, the only requirement for a product
+            to become visible via search or direct link is the existence of a <code>CatalogProductAssignment</code>. (Note:
+            This assignment is technically required in all product visibility scenarios. If you do not create one before
+            assigning the product to a category, it will be created implicitly. But if it doesn&#x2019;t exist before creating
+            a <code>ProductAssignment</code>, an error will occur. No more &#x201C;floating&#x201D; product-party relationships
+            - the Catalog is King!)</p>
+    </section>
+    <section class="guides-section" id="conclusion">
+        <h2>Conclusion</h2>
+        <p>We&#x2019;re confident that most OrderClould.io developers will find at least a subset of these new features useful.
+            Getting to know them now and taking advantage of them whenever possible will relieve you of many catalog maintenance
+            headaches down the road.</p>
+    </section>
+</div>

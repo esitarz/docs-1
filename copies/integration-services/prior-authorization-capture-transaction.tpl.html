@@ -1,0 +1,161 @@
+<div id="PriorAuthorizationCapture">
+    <section class="guides-section" id="PriorAuthorizationCaptureOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('PriorAuthorizationCaptureOverview')}}"></i>
+            Prior Authorization Capture Transaction Overview
+        </h2>
+        <p>
+            In the case that Authorize Only was previously used for a payment, Prior Authorization Capture Transaction can be used to actually capture the payment.
+            This method will first capture the payment on Authorize.Net, then create an additional transaction on the previously created payment on OrderCloud.io.
+        </p>
+        <p>
+            If the capture transaction is successful, but there is an error while creating the transaction on OrderCloud.io, the Authorize.Net transaction will be voided.
+        </p>
+    </section>
+    <section class="guides-section" id="PriorAuthorizationCaptureRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('PriorAuthorizationCaptureRequest')}}"></i>
+            Prior Authorization Capture Transaction Request
+        </h2>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+    "BuyerID": "...",
+    "OrderID": "...",
+    "OrderDirection": "outgoing",
+    "TransactionType": "priorAuthCaptureTransaction",
+    "CardDetails": {
+        "PaymentID": "..."
+    }
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="PriorAuthorizationCaptureResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('PriorAuthorizationCaptureResponse')}}"></i>
+            Prior Authorization Capture Transaction Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+
+{
+    "ChargeStatus": "...",
+    "CreditCardID": "...",
+    "PaymentID": "...",
+    "TransactionID": "...",
+    "Messages": [
+        {
+            "code": "1",
+            "description": "..."
+        }
+    ]
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="PriorAuthorizationCaptureErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('PriorAuthorizationCaptureErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <p>
+            During the prior authorization capture process, the Authorize.Net payment authorization will be captured, followed by the creation of the transaction on OrderCloud.io.
+            In the case that the OrderCloud.io step fails, the transaction will be voided automatically on Authorize.Net.
+        </p>
+        <p>
+            Errors will return the exact response directly from the Authorize.Net or OrderCloud.io endpoint that failed. However, if any required fields are missing,
+            a 400 error will be returned before any of the update process is executed.
+        </p>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request, the following response will be returned containing a unique ErrorCode and Message, as well as the
+            request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+        <pre prism class="language-http"
+             source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "ErrorCode": "...",
+    "Message": "...",
+    "Data": {
+        "...Request Body..."
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ErrorCode</th>
+                    <th>Message</th>
+                    <th>Status Code</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>PriorAuthCaptureTransaction.OrderIDRequired</td>
+                    <td>OrderID is required to capture a prior authorization.</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>PriorAuthCaptureTransaction.PaymentIDRequired</td>
+                    <td>CardDetails.PaymentID is required to capture a prior authorization.</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>PriorAuthCaptureTransaction.BuyerIDRequired</td>
+                    <td>BuyerID is required to capture a prior authorization.</td>
+                    <td>400</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>OrderCloud.io Error Response</h3>
+        <p>If an incorrect <code>BuyerID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>CardDetails.PaymentID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Payment not found: 2345",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>OrderID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Order not found: 3456",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+    </section>
+</div>

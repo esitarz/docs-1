@@ -1,0 +1,185 @@
+<div>
+	<section class="guides-section">
+		<div class="alert alert-note" role="alert">
+			<h4>
+				We are currently updating and enhancing our C# SDK. When that work is complete, we'll publish an updated guide here.
+				In the meantime, you can still use our <a href="https://github.com/ordercloud-api/OrderCloud-CSharp-SDK" target="_blank">existing C# SDK</a>.
+				Please don't hesitate to <a ui-sref="{{application.links.community}}">contact us</a> with any questions.
+			</h4>
+		</div>
+	</section>
+	<!--<section class="guides-section" id="Requirements">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Requirements')}}"></i> Requirements</h2>
+			   <ul>
+				   <li>.NET 4.0 or later</li>
+				   <li>Windows Phone 7.1 (Mango)</li>
+			   </ul>
+	</section>
+	<section class="guides-section" id="Installation">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Installation')}}"></i> Installation</h2>
+			   <p>Run the following command in Nuget</p>
+			   <pre prism class="language-csharp" source="Install-Package OrderCloud"></pre>
+	</section>
+	<section class="guides-section" id="Configuration">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Configuration')}}"></i> Configuration</h2>
+
+			   <p>Before you can make any API calls, you will first need to define the ClientID and scopes.</p>
+			   <p><strong>client_id</strong> identifies the Organization or Buyer Organization you will be interacting with. It can be found in the application tab of your Dashboard. Check out <a ui-sref="platform-guides({sectionID:'getting-started',guideID:'using-the-dashboard', detailID: 'Applications'})">this</a> guide for more information.</p>
+			   <p><strong>scopes</strong> is an array of roles the app will request from the Oauth server. Roles are unique for each API Client and can be limited further via each user's Security Profile. Our example is using the <code>FullAccess</code> and <code>DevCenterImpersonate</code> roles. Check out <a ui-sref="platform-guides({sectionID:'authentication', guideID:'security-profiles'})">this</a> guide for more information on roles and Security Profiles. </p>
+			   <p>Set your client_id and scopes:</p>
+			   <pre prism class="language-csharp" source='// Using directives for OrderCloud
+using OrderCloud.Api;
+using OrderCloud.Client;
+using OrderCloud.Model;
+
+// Setup authorization
+Configuration.Default.ClientID = "MY_CLIENT_ID";
+Configuration.Default.Scopes = new String[] {"FullAccess","DevCenterImpersonate"};
+'>
+			   </pre>
+	</section>
+	<section class="guides-section" id="Authentication">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Authentication')}}"></i> Authentication</h2>
+			   <p>To authenticate, you will need the username and a password of a user created in the <a ui-sref="platform-guides({sectionID:'getting-started',guideID:'using-the-api-console'})">API Console</a>.</p>
+	 <p>The following function will retrieve the access token and set it in the header of every subsequent request.</p>
+	  <pre prism class="language-csharp" source='ApiAuth.Login("MY_USERNAME", "MY_PASSWORD");'></pre>
+	  <p>The full example is shown here:</p>
+			   <pre prism class="language-csharp" source='// Using directives for OrderCloud
+using OrderCloud.Api;
+using OrderCloud.Client;
+using OrderCloud.Model;
+
+namespace MyApp {
+class MyClass {
+public void main() {
+// Setup authorization
+Configuration.Default.ClientID = "MY_CLIENT_ID";
+Configuration.Default.Scopes = new String[] {"FullAccess","DevCenterImpersonate"};
+
+ApiAuth.Login("MY_USERNAME", "MY_PASSWORD"");
+}
+}
+}
+'>
+			   </pre>
+	</section>
+	<section class="guides-section" id="Impersonation">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Impersonation')}}"></i> Impersonation</h2>
+			   <p>The SDK also supports making an API call on behalf of (<a ui-sref="platform-guides({sectionID:'authentication',guideID:'impersonation'})">impersonation</a>) a user.</p>
+			   <p>You will first need to set the impersonation token by providing the BuyerID, UserID and the roles.</p>
+			   <pre prism class="language-csharp" source=' AccessToken impersonationToken = userApiInstance.GetAccessToken("MY_BUYER_ID", "MY_USER_ID", new ImpersonateTokenRequest("MY_CLIENT_ID", "MY_ROLES");'>
+			   </pre>
+			   <p>Then you can use the following function to start Impersonation</p>
+			   <pre prism class="language-csharp" source='ApiAuth.startImpersonate(impersonationToken);'></pre>
+			   <p>and the following function to stop Impersonation</p>
+			   <pre prism class="language-csharp" source='ApiAuth.stopImpersonate();'></pre>
+			   <p>Even though impersonation stopped, the original access token was saved. Now the function can be called with no arguments and it will use the previously saved access token. If you need to change who you are impersonating you can provide new parameters.</p>
+			   <p>The full example is shown here:</p>
+			   <pre prism class="language-csharp" source='using System;
+using System.Diagnostics;
+// Using directives for OrderCloud
+using OrderCloud.Api;
+using OrderCloud.Client;
+using OrderCloud.Model;
+
+namespace MyApp {
+class MyClass {
+public void main() {
+// Setup authorization
+Configuration.Default.ClientID = "MY_CLIENT_ID";
+Configuration.Default.Scopes = new String[] {"FullAccess","DevCenterImpersonate"};
+
+var userApiInstance = new UserApi();
+try
+{
+AccessToken impersonationToken = userApiInstance.GetAccessToken("MY_BUYER_ID", "MY_USER_ID", new ImpersonateTokenRequest("MY_CLIENT_ID", "MY_ROLES");
+ApiAuth.startImpersonate(impersonationToken);
+}
+catch (Exception e)
+{
+Debug.Print("Exception when attempting to impersonate:" + e.Message);
+}
+
+ApiAuth.stopImpersonate();
+}
+}
+}'>
+			   </pre>
+	</section>
+	<section class="guides-section" id="Example">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Example')}}"></i>Example</h2>
+			   <p>Let’s see how you might use the C# SDK to get a list of products. First we’ll need to create a new instance of Products.</p>
+			   <pre prism class="language-csharp" source="var productApiInstance = new ProductApi();"></pre>
+			   <p>Now we can use the <a ui-sref="api-reference({sectionID: 'ProductCatalogs', resourceID: 'Products', endpointID:'List'})">ListProducts</a> endpoint to get a list of products and print the result</p>
+			   <pre prism class="language-csharp" source=' try
+{
+ListProduct products = productApiInstance.List();
+
+foreach (var p in products.Items)
+{
+  Debug.Print("Product #" + p.ID + ": " + p.Name);
+}
+}
+catch (Exception e)
+{
+Debug.Print("Exception when fetching products:" + e.Message);
+}'>
+			   </pre>
+			   <p>The full example is shown here: </p>
+			   <pre prism class="language-csharp" source='using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using OrderCloud.Api;
+using OrderCloud.Client;
+using OrderCloud.Model;
+
+namespace OrderCloudConsole
+{
+class Program
+{
+static void Main(string[] args)
+{
+MainAsync(args).Wait();
+}
+
+static async Task MainAsync(string[] args)
+{
+// Setup authorization
+Configuration.Default.ClientID = "MY_CLIENT_ID";
+Configuration.Default.Scopes = new String[] { "FullAccess","DevCenterImpersonate" };
+
+await ApiAuth.Login("MY_USERNAME", "MY_PASSWORD");
+
+var productApiInstance = new ProductApi();
+try
+{
+ListProduct products = productApiInstance.List();
+
+foreach (var p in products.Items)
+{
+  Debug.Print("Product #" + p.ID + ": " + p.Name);
+}
+}
+catch (Exception e)
+{
+Debug.Print("Exception when fetching products:" + e.Message);
+}
+}
+}
+}'>
+			   </pre>
+			   <p> For more API usage examples take a look at our <a href="https://github.com/ordercloud-api/csharp-sdk">C# SDK repository</a>.</p>
+	</section>
+	<section class="guides-section" id="Conclusion">
+		<h2><i class="fa fa-hashtag" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Conclusion')}}"></i>Conclusion</h2>
+			   <p>You should now have enough information to get started building on our platform! The <a ui-sref="api-reference">API reference</a> should be your go-to guide for working with the API but be sure to check out the <a ui-sref="platform-guides">API guides</a> and the <a href="https://github.com/ordercloud-api/csharp-sdk">C# SDK repository</a> as well.</p>
+			   <p>If you notice anything wrong with this guide or have any questions please don't hesitate to reach out to our Developer community on <a href="http://community.ordercloud.io/">Slack</a> or post your question on <a href="http://stackoverflow.com/">Stack Overflow</a> - just use the tag <code>ordercloud</code>.</p>
+	</section>-->
+</div>

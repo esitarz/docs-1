@@ -1,0 +1,57 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to add a Quantity Multiplier to a product. The Quantity Multiplier is used to show the
+      buyer user how many units per single line item they are ordering. </p>
+    <div class="note">Please note the Quantity Multiplier is static numerical text that is displayed on the product detail page. It is <strong>not</strong>      used to calculate total quantity of a line item.</div>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'create-and-assign-a-product'})">Create and Assign a Product</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-creating-a-quantity-multiplier-for-a-product">
+    <h2>1. Creating a Quantity Multiplier for a Product</h2>
+    <p>When creating a new product, simply set the <code>QuantityMultiplier</code> to the desired value. In our example, our
+      <code>exampleproduct</code> is sold in quantities of <code>1000</code>:</p>
+    <div class="api-reference">API reference: <a ui-sref="api-reference({sectionID: 'ProductCatalogs', resourceID: 'Products', endpointID:'Create'})">Create New Product</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/products HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;exampleproduct&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Example Product&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;QuantityMultiplier&quot;</span><span class="token punctuation">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Active&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Static&quot;</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="2-update-the-quantity-multiplier-on-an-existing-product">
+    <h2>2. Update the Quantity Multiplier on an Existing Product</h2>
+    <p>Now let&#x2019;s pretend the quantity of units sold in our <code>exampleproduct</code> has changed from <code>1000</code>      units per box to <code>1500</code> units per box. Since the product has already been created, we can easily update
+      the <code>QuantityMultiplier</code> of our product using the <code>Patch</code> method. Start by entering the <code>productID</code>      for the product being updated (<code>exampleproduct</code>) and only include the value you would like to <code>Patch</code>      in the Request Body:</p>
+    <div class="api-reference">API reference: <a ui-sref="api-reference({sectionID: 'ProductCatalogs', resourceID: 'Products', endpointID:'Update'})">Update Product</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">PATCH</span> https://api.ordercloud.io/products HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;QuantityMultiplier&quot;</span><span class="token punctuation">:</span> <span class="token number">1500</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>You should now be able to set a Quantity Multiplier on your products. Often times, your <code>QuantityMultiplier</code>      will be set to <code>1</code> because the Quantity Multiplier is used to specify how many units are in each single
+      line item.</p>
+  </section>
+</div>

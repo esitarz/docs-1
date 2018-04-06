@@ -1,0 +1,50 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will show you two ways to create a Buyer Organization. The first method will walk you through creating an
+      organization via raw HTTP requests, and the second method will walk you through creating this using our Dashboard.</p>
+    <p>A Buyer Organization is a collection of users or groups that will access your app for the purposes of ordering products.
+      The Buyer Organization represents the top level for buyer-related assignments such as payments, addresses and categories.
+      </p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <p>&#x25CF; <a ui-sref="platform-guides({sectionID:'getting-started', guideID:'quick-start-guide', detailID:'FirstOrg'})">Created a Seller Organization</a></p>
+  </section>
+  <section class="guides-section" id="1-create-a-buyer-organization-from-the-console">
+    <h2>1. Create a Buyer Organization from the Console</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'Buyers_Create'})">Create New Buyer</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json; charset=UTF-8<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;DefaultCatalogID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Active&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    <div class="note">The <code>DefaultCatalogID</code> field allows buyer organizations to inherit catalogs that already exist. If no <code>DefaultCatalogID</code>      is provided, a new Catalog will automatically be generated on your behalf, with the ID matching the <code>BuyerID</code>.</div>
+  </section>
+  <section class="guides-section" id="2-create-a-buyer-organization-from-the-dashboard">
+    <h2>2. Create a Buyer Organization from the Dashboard</h2>
+    <p>This method allows non-programmers to create buyer organizations using the dashboard interface.</p>
+    <ol>
+      <li>Select the Seller Organization this Buyer should be created in.</li>
+      <li>Navigate to &#x201C;Buyer Organizations&#x201D;</li>
+      <li>Click the &quot;+ New&quot; button at the top screen within the Buyer Organizations section of the Dashboard. You will
+        be asked to provide a Name, Buyer ID (optional) and define a Default Catalog.</li>
+    </ol>
+    <p><img src="assets/images/docs-guides/base-use-cases/NewBuyerFromDashboard.png" alt="BuyerOrg"></p>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>You should now have an understanding how to create a Buyer Organization and should be well on your way to setting up
+      the organizations for your storefront.</p>
+  </section>
+</div>

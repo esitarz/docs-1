@@ -1,0 +1,132 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide illustrates how to build up, pay for, and ultimately submit a very basic order.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <p>In order to follow along with this guide, you will need to have a user who has access to a product. This requires that
+      you:</p>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'create-and-assign-a-product'})">Create And Assign A Product</a></li>
+      <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'create-and-assign-price-schedule'})">Create And Assign Price Schedule</a></li>
+      <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'make-an-assignment'})">Make An Assignment</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-an-order">
+    <h2>1. Create an Order</h2>
+    <p>An order has no required fields upon creation. In fact, it may make the most sense to simply create a blank order and
+      update it as information is gathered from your user, e.g., when entering a shipping address, billing info, etc. </p>
+    <p>This order creation step will define the order ID. If an ID is not provided, a random unique one will be automatically
+      generated for you. This is true for anything being created on our platform, read more about it in the <a ui-sref="platform-guides({sectionID:'basic-api-features', guideID:'conventions', detailID:'WriteableIDs'})">Basic API Features</a>      guide.</p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'Orders', endpointID:'Create'})">Create New Order</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/orders/{direction} HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FromCompanyID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FromUserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BillingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Comments&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingCost&quot;</span><span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;TaxCost&quot;</span><span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="2-create-line-items">
+    <h2>2. Create Line Items</h2>
+    <p>Now that we have an order we can begin creating line items as a part of that order. A line item in the most basic sense
+      is simply a product with a quantity. You need at least one line item to complete an order but can create as many as
+      you&#x2019;d like.</p>
+    <p>Defining line items independently of an order allows us to retrieve line item information only when we need it. </p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'LineItems', endpointID:'Create'})">Create New Line Item</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/orders/{direction}/{orderID}/lineitems HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ProductID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Quantity&quot;</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UnitPrice&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CostCenter&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;DateNeeded&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAccount&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShippingAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ShipFromAddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Specs&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;SpecID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;OptionID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;Value&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="3-create-a-payment">
+    <h2>3. Create a Payment</h2>
+    <p>Now that we have added the line items to our order, we are ready to pay. To do this, we will create a payment. Although
+      not covered in this guide, an order can have any number of payments of any type, and a single payment can be composed
+      of multiple transactions.</p>
+    <p>There are three payment types:</p>
+    <ul>
+      <li><code>PurchaseOrder</code></li>
+      <li><code>CreditCard</code></li>
+      <li><code>SpendingAccount</code></li>
+    </ul>
+    <p>A credit card and spending account will also need to include their respective ID&#x2019;s in the request body. To keep
+      things simple we will use a payment <code>Type</code> of <code>PurchaseOrder</code> for the entire order. This means
+      that you are leaving it up to the seller to invoice the customer to pay for the order. </p>
+    <div class="note"><code>Amount</code> is optional and will autogenerate the order total minus any existing partial payments.</div>
+
+
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'Payments', endpointID:'Create'})">Create New Payment</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/orders/{direction}/{orderID}/payments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;RetailPurchaseOrder&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;PurchaseOrder&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Description&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Amount&quot;</span><span class="token punctuation">:</span> <span class="token number">19.99</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="4-submit-order">
+    <h2>4. Submit Order</h2>
+    <p>The final step is to submit an order. Submitting an order will simply change the IsSubmitted value on an order to true,
+      allowing us to ship the order. For more complex scenarios you may have an approval process that automatically triggers
+      this call once a predetermined set of conditions is true. </p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'OrdersAndFulfillment', resourceID: 'Orders', endpointID:'Submit'})">Submit Order</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/orders/{direction}/{orderID}/submit HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json
+</pre>
+    <p>Unlike the other calls we made, this one will not require a request body.</p>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You have successfully submitted a very basic order. You should now have an understanding of requirements
+      for submitting an order and hopefully had a chance to see where you can customize the ordering experience to fit your
+      needs. Continue reading our guides to gain a deeper understanding.</p>
+  </section>
+</div>

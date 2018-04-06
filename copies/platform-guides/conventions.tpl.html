@@ -1,0 +1,38 @@
+<div id="Conventions">
+	<section class="guides-section" id="Overview">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('Overview')}}"></i> Overview</h2>
+		<p> With few exceptions, the OrderCloud.io API adheres to a RESTful architectural style. URIs, HTTP verbs, headers, payloads, and response codes all follow consistent and predictable patterns. This guide will outline conventions that permeate the entire platform.</p>
+	</section>
+	<section class="guides-section" id="SSLEverywhere">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('SSLEverywhere')}}"></i> SSL Everywhere</h2>
+		<p>API access is only allowed via HTTPS; connections on port 80 are refused entirely. This simplifies the token-based authentication.</p>
+	</section>
+	<section class="guides-section" id="JSONEverywhere">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('JSONEverywhere')}}"></i> JSON Everywhere</h2>
+		<p>UTF-8 encoded JSON is currently the only supported data format for both request and response payloads.</p>
+	</section>
+	<section class="guides-section" id="DateFormat">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('DateFormat')}}"></i>Date Format</h2>
+		<p>Dates/times returned in the API are in UTC time and conform to <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.</p>
+	</section>
+	<section class="guides-section" id="OAuth2">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('OAuth2')}}"></i> OAuth 2</h2>
+		<p>OrderCloud API authentication is based on the <a href="http://tools.ietf.org/html/rfc6749" target="_blank">OAuth 2 specification</a> and supports four different workflows, or, in OAuth terms, grant types. Check out our <a ui-sref="platform-guides({sectionID:'authentication', guideID:'oauth2-workflows'})">workflows guide</a> to learn more.</p>
+	</section>
+	<section class="guides-section" id="WriteableIDs">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('WriteableIDs')}}"></i>Writeable IDs</h2>
+		<p >Writable IDs can be extremely useful for back-office integrations. They can potentially eliminate the need for a mapping middleware layer.</p>
+		<p>Most resources that map to an entity of some sort (Orders, Users, Addresses, etc.) contain an ID that is optionally writable on creation or update. If you do not pass one, one will be  auto-generated and returned in the response, and will be guaranteed to be unique. If you choose to pass an ID, you are responsible for ensuring uniqueness. Things that live under the context of a single Buyer need only be unique within that context. Things that are shared (such as products) must be unique across the entire Admin organization.</p>
+	</section>
+	<section class="guides-section" id="ErrorHandling">
+		<h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+			   data-clipboard-text="{{documentation.generateLink('ErrorHandling')}}"></i>Error Handling</h2>
+		 <p>For all unsuccessful requests, we attempt to return the <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error">most appropriate HTTP status in the 400 range</a>. Only when something goes terribly wrong on our end will you get a 500 response. And so long as our platform is responding (i.e. returing anything in the 4xx range or 500), you can count on the response body taking a standard shape.</p>
+	</section>
+</div>

@@ -1,0 +1,81 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to create and assign Admin Users and Admin User Groups. An Admin User is simply a user
+      created at the organization level. Admin Users and Admin User Groups can only be created within a Seller Application.
+      </p>
+    <p>An Admin User and a Buyer User only truly differ based on the <a ui-sref="platform-guides({sectionID:'authentication', guideID:'security-profiles'})">Security Profile</a>      assigned to them, so an Admin User can be given the same roles to do what a Buyer User can do and vice versa. However,
+      it is intended that Admin Users will perform admin level activities such as managing the organization&#x2019;s catalog,
+      while a Buyer User will perform buyer level activities such as creating and submitting orders.</p>
+    <p>Admin User Groups exist to organize Admin Users at a group level so multiple Admin Users can be assigned to one specific
+      Security Profile, instead of having to assign that Security Profile to each individual user.</p>
+  </section>
+  <section class="guides-section" id="1-create-an-admin-user">
+      <h2>1. Create an Admin User</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'AdminUsers_Create'})">Create an Admin User</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/adminusers HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;adminuser&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Username&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;adminuser01&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Password&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FirstName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;admin&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;LastName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Email&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;demo@demo.com&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;000-000-0000&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;TermsAccepted&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Active&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    <div class="note">If you don&#x2019;t provide an ID, OrderCloud.io will automatically create a randomly generated one for you. The same
+      is true for any endpoint. Learn more about this Basic API Feature <a ui-sref="platform-guides({sectionID:'basic-api-features', guideID:'conventions', '#':'WriteableIDs'})">here</a>.</div>
+
+
+  </section>
+  <section class="guides-section" id="2-create-admin-user-group">
+    <h2>2. Create Admin User Group</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'AdminUserGroups_Create'})">Create Admin User Group</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/usergroups HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;adminusergroup&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Admin User Group&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Description&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;An admin user group&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="3-assign-admin-user-to-the-admin-user-group">
+    <h2>3. Assign Admin User to the Admin User Group</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'AdminUserGroups_SaveUserAssignment'})">Assign Admin User to Admin User Group</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/usergroups/assignments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;UserGroupID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;adminusergroup&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;adminuser&quot;</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You have successfully created an Admin User, created an Admin User Group, and assigned that Admin User
+      to the Admin User Group. Looking to create a user or user group within a buyer organization? Check out the <a
+        ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create And Assign Users And User Groups</a>      guide.</p>
+  </section>
+</div>

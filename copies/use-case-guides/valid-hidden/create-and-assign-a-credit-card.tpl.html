@@ -1,0 +1,67 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to create and assign a credit card to a user / user group in your buyer company. </p>
+    <p>Credit Cards can be used as a payment method for an order. You can create credit cards and assign them directly to a
+      user, and you can also create credit cards and assign them to a group, to be shared by multiple users. Once these assignments
+      are made, these cards will be available to the user to select as a method of payment.</p>
+  </section>
+  <section class="guides-section" id="how-sensitive-information-is-handled-in-ordercloud-io">
+      <h2>How Sensitive Information Is Handled In OrderCloud.io</h2>
+    <p>Sensitive credit card data is <strong>NOT</strong> stored in OrderCloud.io. Data is passed through the Token which is
+      acquired from an integration with a payment processor (example: PayPal, <a ui-sref="integration-services({sectionID:'authorizenet', guideID:'overview'})">Authorize.net</a>,
+      etc.) </p>
+    <p>A very typical set up will include some middleware entity that has <a ui-sref="platform-guides({sectionID:'getting-started', guideID:'using-the-dashboard', detailID:'Webhooks'})">elevated roles</a>      that will handle the retrieving and storing of a token, so that the token is not directly accessible by the user.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create And Assign Users And User Groups</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-a-credit-card">
+    <h2>1. Create a Credit Card</h2>
+    <div class="&#x201D;api-reference&#x201D;">API Reference: <a ui-sref="api-reference({'#':'MeCreditCards'})">Create a Credit Card</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/me/creditcards HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;Token&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;B160F42X3C883B52-1111&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;CardType&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;VISA&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;PartialAccountNumber&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;1111&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;CardholderName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;John Smith&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ExpirationDate&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;2019-07&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="2-assign-the-credit-card">
+    <h2>2. Assign the Credit Card</h2>
+    <p>For this example, we will be assigning the credit card to a <code>User</code>. That means that this user will have access
+      to this credit card as a method of payment. If you have, for example, a corporate credit card that can be used by multiple
+      users, then you could assign that card to a <code>UserGroup</code> instead of directly to a <code>User</code>:</p>
+    <div class="&#x201D;api-reference&#x201D;">API Reference: <a ui-sref="api-reference({'#':'CreditCards_SaveAssignment'})">Save Assignment</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/creditcards/assignments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;CreditCardID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;C20jcZ2-EiN2MsV4pZY-x&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;abc16&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserGroupID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>You should now be able to create and assign as many credit cards as you need. If you would like to learn more about Cost
+      Centers, check out the <a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-cost-center'})">Create and Assign Cost Centers</a>      guide.</p>
+  </section>
+</div>

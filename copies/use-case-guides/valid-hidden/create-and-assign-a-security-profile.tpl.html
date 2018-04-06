@@ -1,0 +1,60 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to create and assign a Security Profile to a party in your Seller Organization. </p>
+    <p><a ui-sref="guides({sectionID:'authentication', guideID:'security-profiles'})">Security Profiles</a>      are an assortment of roles that give access to specific endpoints in the OrderCloud.io API. Some examples include creating
+      a Security Profile for admin users who specifically administer all aspects of a catalog, or a Security Profile for
+      integration middleware that needs elevated roles to update shipping, tax costs and store credit cards.</p>
+    <p>In this guide, we&#x2019;ll be creating a Security Profile for a Catalog Administrator role and assigning that profile
+      to an Admin User Group within a Seller Organization as an example.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-security-profile'})">Make an Assignment</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-a-security-profile-in-the-dashboard">
+    <h2>1. Create a Security Profile In The Dashboard</h2>
+    <p>A Security Profile is created in the dashboard. To create a profile, go to your dashboard, select a Seller Organization,
+      then select Security Profiles from the left-hand menu.</p>
+    <p>Click green + NEW button in the top right corner.</p>
+    <p>Enter a name for your Security Profile (e.g. Catalog Administrator). You also have the option to give your profile an
+      ID (e.g. CatalogAdministrator). If you leave this field blank, an ID will be automatically generated.</p>
+    <p>Select the roles for your profile. In this example, we will use <code>ProductAdmin</code>, <code>InventoryAdmin</code>,
+      <code>ProductAssignmentAdmin</code>, <code>CategoryAdmin</code>, <code>PriceScheduleAdmin</code>, <code>CatalogAdmin</code>.
+      For more information about roles and their definitions, check out the <a ui-sref="platform-guides({sectionID:'authentication', guideID:'security-profiles'})">Security Profiles</a>      Platform Guide. </p>
+    <p>Click <em>Create Security Profile</em> to save your profile.</p>
+    <p><img src="assets/images/docs-guides/base-use-cases/CreateandAssignSecurityProfile.png" alt="SecurityProfile"></p>
+  </section>
+  <section class="guides-section" id="2-assign-the-security-profile">
+    <h2>2. Assign the Security Profile</h2>
+    <p>Security Profiles are created within the Dashboard, but assigning them takes place either in the Console or your own
+      application&#x2019;s code.</p>
+    <div class="note">Security Profiles can be assigned to any party including a Seller Organization, Admin User Group, Admin User, Buyer Company,
+      Buyer User Group, or Buyer User. This allows you to grant a separate set of permissions at various levels throughout
+      the organization.</div>
+
+
+    <p>For this example we will be assigning our Security Profile to an Admin User Group.</p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'SecurityProfiles_SaveAssignment'})">Save Assignment</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/securityprofiles/assignments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;SecurityProfileID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;CatalogAdministrator&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BuyerID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserGroupID&quot;</span><span class="token punctuation">:</span> &quot;AdminUserGroup&#x201D;
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You should now be able to create and assign a Security Profile to various parties within your organization.</p>
+  </section>
+</div>

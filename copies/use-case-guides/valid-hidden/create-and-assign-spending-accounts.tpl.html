@@ -1,0 +1,71 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to create and assign a spending account to a user in a buyer organization so that a user
+      can select this spending account at checkout as their method of payment.</p>
+    <p>Spending accounts are funds given to users by a managing entity and are managed as part of a user's account. These funds
+      are generally used as &quot;corporate dollars&quot;, &quot;rewards dollars&quot;, or &quot;gift cards&quot;.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+      <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create And Assign Users And User Groups</a></li>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'make-an-assignment'})">Understand how to make Assignmentst</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-a-spending-account">
+    <h2>1. Create a Spending Account</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'SpendingAccounts_Create'})">Create a New Spending Account</a></div>
+
+
+    <pre class="language-javascript">POST https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>api<span class="token punctuation">.</span>ordercloud<span class="token punctuation">.</span>io<span class="token operator">/</span>v1<span class="token operator">/</span>buyers<span class="token operator">/</span><span class="token punctuation">{</span>buyerID<span class="token punctuation">}</span><span class="token operator">/</span>spendingaccounts HTTP<span class="token operator">/</span><span class="token number">1.1</span>
+Authorization<span class="token punctuation">:</span> Bearer put_access_token_here
+Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
+
+
+<span class="token punctuation">{</span>
+ <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;NewSpendingAccountID&quot;</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;Name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;NewSpendingAccount&quot;</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;Balance&quot;</span><span class="token punctuation">:</span> <span class="token number">500.00</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;AllowAsPaymentMethod&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;RedemptionCode&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;StartDate&quot;</span><span class="token punctuation">:</span> <span class="token number">2016</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;EndDate&quot;</span><span class="token punctuation">:</span> <span class="token number">2017</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">23</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</pre>
+    <p><code>AllowAsPaymentMethod</code>: This property determines whether or not a spending account can be used as a payment
+      method on an order. While the use case of setting the value to true is most common, there are times when you may need
+      to set it to false. For example, you would set the value to false if you want to use a spending account to track spending
+      by party, as opposed to allowing it as a method of payment.</p>
+    <p><code>RedemptionCode</code>: This property can be used to create a spending account that behaves much like a traditional
+      gift card. The value can be set to any combination of alphanumeric characters as long as it is under 100 characters.</p>
+    <p><code>AllowExceed</code>: This property is set on the assignment and can be true or false. It determines if the party
+      can exceed the balance in the spending account.</p>
+  </section>
+  <section class="guides-section" id="2-assign-the-spending-account">
+    <h2>2. Assign the Spending Account</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'SpendingAccounts_SaveAssignment'})">Save Spending Account Assignment</a></div>
+
+
+    <pre class="language-javascript">POST https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>api<span class="token punctuation">.</span>ordercloud<span class="token punctuation">.</span>io<span class="token operator">/</span>v1<span class="token operator">/</span>buyers<span class="token operator">/</span><span class="token punctuation">{</span>buyerID<span class="token punctuation">}</span><span class="token operator">/</span>spendingaccounts<span class="token operator">/</span>assignments HTTP<span class="token operator">/</span><span class="token number">1.1</span>
+Authorization<span class="token punctuation">:</span> Bearer put_access_token_here
+Content<span class="token operator">-</span>Type<span class="token punctuation">:</span> application<span class="token operator">/</span>json
+
+
+<span class="token punctuation">{</span>
+ <span class="token string">&quot;SpendingAccountID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;NewSpendingAccountID&quot;</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;ExistingUserID&quot;</span><span class="token punctuation">,</span>
+ <span class="token string">&quot;UserGroupID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;AllowExceed&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You&#x2019;ve now created and assigned a spending account. They can be used to pay for all of or part
+      of an order. Spending accounts can be assigned to users, user groups, and at the buyer level. Multiple spending accounts
+      can be assigned to a member of an organization and applied to all transactions. When multiple spending accounts are
+      used on a transaction each is deducted individually.</p>
+  </section>
+</div>

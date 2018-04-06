@@ -1,0 +1,62 @@
+<div>
+        <p>Linking your front-end application to an OrderCloud seller or buyer organization can be accomplished using the <code>scope</code> and <code>clientid</code> constants described below.</p>
+    <section class="guides-section" id="application-constants">
+        <h2>Application Constants</h2>
+        <p><code>src/app/app.constants.json</code> is a small, yet powerful file host a JSON object of key value pairs to be used throughout the application. From this object, the build process will generate a file containing AngularJS constants:
+            <a href="https://github.com/ordercloud-api/angular-seller/blob/development/gulp.config.js#L86">here</a>, which can then be injected into your various AngularJS controllers, factories, providers, etc. Think of it as a base configuration or
+            settings file for your application.</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Constant</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>appname</code></td>
+                    <td>string</td>
+                    <td>A short name for your application. This will be used in the <code>&lt;title&gt;</code> as well as displayed in the top left navigation of the application.</td>
+                </tr>
+                <tr>
+                    <td><code>scope</code></td>
+                    <td>string</td>
+                    <td>A space delimited string of <a ui-sref="platform-guides({sectionID:'authentication', guideID:'security-profiles', detailID:'Roles'})">OrderCloud roles</a> that will be requested during authentication.</td>
+                </tr>
+                <tr>
+                    <td><code>clientid</code></td>
+                    <td>string</td>
+                    <td>An <a ui-sref="platform-guides({sectionID:'getting-started', guideID:'using-the-dashboard', detailID:'Applications'})">OrderCloud ClientID</a> for the seller, buyer network, or buyer application that will be used for authentication.</td>
+                </tr>
+                <tr>
+                    <td><code>environment</code></td>
+                    <td>string</td>
+                    <td>A string declaring the OrderCloud environment the application will point to. Currently, only <code>production</code> is available; however, when a large release consisting of breaking changes is scheduled, a <code>staging</code> environment
+                        will be provided.</td>
+                </tr>
+                <tr>
+                    <td><code>defaultstate</code></td>
+                    <td>string</td>
+                    <td>The default ui-router state within the application that users will be directed to should they attempt to access a state that does not exist.</td>
+                </tr>
+                <tr>
+                    <td><code>html5mode</code></td>
+                    <td>bool</td>
+                    <td>True/false whether you want HTML5 Mode enable within the application.</td>
+                </tr>
+                <tr>
+                    <td><code>bootswatchtheme</code></td>
+                    <td>string</td>
+                    <td>The Bootswatch theme that is automatically applied to the application during the build process. A list of available themes can be found <a href="https://bootswatch.com/">here</a>. A value of <code>null</code> will apply the default
+                        angular-seller theme.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="guides-section" id="process-environment-variable-overrides">
+        <h2>Process Environment Variable Overrides</h2>
+        <p>The constants provided above can be overwritten within your hosting providers application settings. For example, within Heroku, you can override these constants using their <a href="https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application">Config Variables</a>.
+            This is accomplished in the <a href="https://github.com/ordercloud-api/angular-seller/blob/development/gulp.config.js#L116-L121"><code>gulp.config.js</code></a> file, which can be customized to include additional application constants.</p>
+    </section>
+</div>

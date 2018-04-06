@@ -1,0 +1,266 @@
+<div id="AuthorizeAndCapture">
+    <section class="guides-section" id="AuthorizeAndCaptureOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('AuthorizeAndCaptureOverview')}}"></i>
+            Authorize and Capture Transaction Overview
+        </h2>
+        <p>
+            Authorizing and Capturing a credit card transaction is one of the most involved methods included in this integration. This method will create a new
+            Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if one does not already exist, authorize and capture a payment transaction
+            on Authorize.Net, create a payment on OrderCloud.io tied to the authenticated user’s current Order (if a payment already exists, simply pass the ID in <code>PaymentID</code>),
+            and also create a transaction tied to that payment.
+        </p>
+        <p>
+            If the transaction authorization and capture are successful, but there is an error while creating the payment or transaction on OrderCloud.io,
+            the Authorize.Net transaction will be voided.
+        </p>
+    </section>
+    <section class="guides-section" id="AuthorizeAndCaptureRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('AuthorizeAndCaptureRequest')}}"></i>
+            Authorize and Capture Transaction Request
+        </h2>
+        <p>
+            This method requires either CardDetails.CreditCardID (for a previously created card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a new card).
+        </p>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+    "BuyerID": "...",
+    "OrderID": "...",
+    "OrderDirection": "outgoing",
+    "Amount": 0.00,
+    "TransactionType": "authCaptureTransaction",
+    "CardDetails": {
+        "PaymentID": "...",
+        "CreditCardID": "...",
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
+    }
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="AuthorizeAndCaptureResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('AuthorizeAndCaptureResponse')}}"></i>
+            Authorize and Capture Transaction Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+
+{
+    "ChargeStatus": "...",
+    "CreditCardID": "...",
+    "PaymentID": "...",
+    "TransactionID": "...",
+    "Messages": [
+        {
+            "code": "1",
+            "description": "..."
+        }
+    ]
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="AuthorizeAndCaptureErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('AuthorizeAndCaptureErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <p>
+            During the authorization and capture process, the Authorize.Net payment transaction will be created first, followed by the payment and transaction on OrderCloud.io.
+            In the case that the OrderCloud.io steps fail, the transaction will be voided automatically on Authorize.Net.
+        </p>
+        <p>
+            Errors will return the exact response directly from the Authorize.Net or OrderCloud.io endpoint that failed. However, if any required fields are missing,
+            a 400 error will be returned before any of the update process is executed.
+        </p>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request, the following response will be returned containing a unique ErrorCode and Message, as well as the
+            request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+        <pre prism class="language-http"
+             source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "ErrorCode": "...",
+    "Message": "...",
+    "Data": {
+        "...Request Body..."
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ErrorCode</th>
+                        <th>Message</th>
+                        <th>Status Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AuthCaptureTransaction.OrderIDRequired</td>
+                        <td>OrderID is required to authorize and capture a credit card.</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>AuthCaptureTransaction.AmountRequired</td>
+                        <td>Amount is required to authorize and capture a credit card.</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>AuthCaptureTransaction.BuyerIDRequired</td>
+                        <td>BuyerID is required to authorize and capture a credit card.</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>AuthCaptureTransaction.CardDetailsRequired</td>
+                        <td>CardDetails.CreditCardID OR CardDetails.CardNumber and CardDetails.ExpirationDate are required to authorize and capture a credit card.</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Authorize.Net Error Response</h3>
+        <pre prism class="language-http"
+source='HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "transactionResponse": {
+        "responseCode": "3",
+        "authCode": "",
+        "avsResultCode": "...",
+        "cvvResultCode": "",
+        "cavvResultCode": "",
+        "transId": "0",
+        "refTransID": "",
+        "transHash": "...",
+        "testRequest": "0",
+        "accountNumber": "...",
+        "accountType": "",
+        "errors": [
+            {
+                "errorCode": "...",
+                "errorText": "..."
+            }
+        ],
+        "transHashSha2": ""
+    },
+    "refId": "...",
+    "messages": {
+        "resultCode": "Error",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>responseCode</th>
+                        <th>errorCode</th>
+                        <th>errorText</th>
+                        <th>resultCode</th>
+                        <th>message.code</th>
+                        <th>message.text</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>A valid amount is required.</td>
+                        <td>Error</td>
+                        <td>E00027</td>
+                        <td>The transaction was unsuccessful.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>The credit card number is invalid.</td>
+                        <td>Error</td>
+                        <td>E00027</td>
+                        <td>The transaction was unsuccessful.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>7</td>
+                        <td>Credit card expiration date is invalid.</td>
+                        <td>Error</td>
+                        <td>E00027</td>
+                        <td>The transaction was unsuccessful.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>The credit card has expired.</td>
+                        <td>Error</td>
+                        <td>E00027</td>
+                        <td>The transaction was unsuccessful.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>OrderCloud.io Error Response</h3>
+        <p>If an incorrect <code>BuyerID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>CardDetails.CreditCardID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Credit Card not found: 2345",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+        <p>If an incorrect <code>OrderID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Order not found: 3456",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+    </section>
+</div>

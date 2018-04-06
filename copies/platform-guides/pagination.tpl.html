@@ -1,0 +1,38 @@
+<div id="Pagination">
+    <section class="guides-section" id="PaginationOverview">
+        <h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+               data-clipboard-text="{{documentation.generateLink('PaginationOverview')}}"></i> Overview</h2>
+        <p>Most OrderCloud.io Resources include a method for listing items from that Resource. These resources can
+            potentially include thousands of items so restricting the data that is returned from such a request
+            is not only practical but necessary. OrderCloud.io offers server-side pagination that partitions the
+            data returned from these requests into manageable chunks to optimize client-side performance</p>
+    </section>
+    <section class="guides-section" id="Listing">
+        <h2><i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard
+               data-clipboard-text="{{documentation.generateLink('Listing')}}"></i> Listing</h2>
+        <p>A request to list a resource will return an object with two values: <code>Meta</code> and
+            <code>Items</code>. The <code>Meta</code> value
+            returns important information regarding your query, such as total results, how many results are
+            shown in the Items array, how many more pages of results there are, and what page you are currently
+            on. The Items array stores the actual results of the resource you are querying.</p>
+        <pre prism class="language-http" source='HTTP/1.1 201 CREATED
+Content-Type: application/json; charset=UTF-8
+
+{
+"Meta": {
+"Page": 1,
+"PageSize": 20,
+"TotalCount": 25,
+"TotalPages": 2,
+"ItemRange": [1, 20]
+},
+"Items": ["..."]
+}
+        '></pre>
+        <p>Lists default to 20 items per page, but you can set the <code>pageSize</code> up to 100. If you have more results
+            than the page count, you will have multiple pages. You can use the <code>Page</code> and <code>PageSize</code> values from the
+            <code>Meta</code> object to specify the page (starting at 1) and items per page. Note that unlike the page
+            parameter, <code>ItemRange</code> values are zero-based.</p>
+    </section>
+
+</div>

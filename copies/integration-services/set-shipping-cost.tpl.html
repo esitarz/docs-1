@@ -1,0 +1,113 @@
+<div>
+    <section class="guides-section" id="SetShippingCostOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('SetShippingCostOverview')}}"></i>
+            Set Shipping Cost Overview
+        </h2>
+        <p>
+            Once a user selects their desired shipper(s) for their order, the <code>ShippingCost</code> on the Order can be set via the <i>SetShippingCost</i> method.
+            This method will patch the Order with the provided <code>ShippingCost</code> value and return the updated Order.
+        </p>
+    </section>
+    <section class="guides-section" id="SetShippingCostRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('SetShippingCostRequest')}}"></i>
+            Set Shipping Cost Request
+        </h2>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/shippingrates HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+"BuyerID": "...",
+"TransactionType": "SetShippingCost",
+"OrderID": "...",
+"ShippingCost": 6
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="SetShippingCostResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('SetShippingCostResponse')}}"></i>
+            Set Shipping Cost Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+
+{
+"ID": "12345",
+"Type": "Standard",
+"FromUserID": "3456",
+"FromUserFirstName": "Sample",
+"FromUserLastName": "User",
+"BillingAddressID": null,
+"BillingAddress": null,
+"ShippingAddressID": “7654”,
+"Comments": null,
+"LineItemCount": 3,
+"Status": "Unsubmitted",
+"DateCreated": "2016-11-09T19:20:44.19+00:00",
+"DateSubmitted": null,
+"DateApproved": null,
+"DateDeclined": null,
+"DateCanceled": null,
+"DateCompleted": null,
+"Subtotal": 30,
+"ShippingCost": 6,
+"TaxCost": 0,
+"PromotionDiscount": 0,
+"Total": 36,
+"IsSubmitted": false,
+"xp": null
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="SetShippingCostErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('SetShippingCostErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request or there are any issues with your Order, the following response will be returned containing
+            a unique ErrorCode and Message, as well as the request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+                        <pre prism class="language-http"
+                             source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+"ErrorCode": "...",
+"Message": "...",
+"Data": {
+"...Request Body..."
+}
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ErrorCode</th>
+                        <th>Message</th>
+                        <th>Status Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ShippingRatesValidation.BuyerIDRequired</td>
+                        <td>BuyerID is required to get shipping rates.</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>ShippingRatesValidation.OrderIDRequired</td>
+                        <td>OrderID is required to get shipping rates.</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

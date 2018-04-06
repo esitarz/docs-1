@@ -1,0 +1,80 @@
+<div>
+  <section class="guides-section" id="overview">
+    <h2>Overview</h2>
+    <p>In some instances, you may want to allow a user to order on behalf of another user.
+      We see this use case a lot in Customer Service Desk and Call Center scenarios where
+      customers will call their orders in and the service rep places the order on the customer’s behalf.
+      This workflow preserves the reporting data, email notifications, and presents the catalog ordering
+      rules the buyer is configured for.
+    </p>
+
+    <p>The OrderCloud.io API supports this capability by allowing certain users to make API calls on behalf of a buyer user,
+      which we refer to as impersonation. If you're an admin user, with the <code>BuyerImpersonation</code> role you can impersonate any
+      buyer user under your organizational umbrella as long as an applicable Impersonation Config has been created.
+      If you're a buyer user with the <code>BuyerImpersonation</code> role can impersonate any other buyer user within the same buyer
+      company as long as an applicable Impersonation Config has been created.
+    </p>
+  </section>
+  <section class="guides-section" id="creating-an-impersonation-config">
+    <h2>Creating an Impersonation Config</h2>
+    <p>
+      <code>ImpersonationBuyerID</code>, <code>ImpersonationGroupID</code>, and <code>ImpersonationUserID</code> all reference the party
+      you want to grant access to do the impersonating. While <code>BuyerID</code>, <code>GroupID</code>, <code>UserID</code> all reference
+      the party who will be impersonated. The <code>SecurityProfileID</code> is the Security Profile you would like to grant the user doing
+      the impersonating (only while they are impersonating). <code>ClientID</code> is the specific application impersonation will be allowed in,
+      if you need to impersonate in multiple applications, you’ll need to set up multiple Impersonation Configs.
+    </p>
+    <div class="api-reference">
+      API reference: <a ui-sref="api-reference({sectionID: 'AuthenticationAndAuthorization', resourceID: 'ImpersonationConfigs', endpointID: 'Create'})">Create Impersonation Config</a>
+    </div>
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> POST</span> https://api.ordercloud.io/v1/impersonationconfig HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ImpersonationBuyerID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ImpersonationGroupID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ImpersonationUserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BuyerID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;GroupID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;SecurityProfileID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ClientID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BuyerID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation"></span>
+<span class="token punctuation">}</span>
+
+</span></pre>
+  </section>
+  <section class="guides-section" id="retrieving-the-access-token">
+    <h2>Retrieving the Access Token</h2>
+    <p>After you have successfully created an applicable Impersonation Config, the next step is to retrieve that buyer user's Access Token by using the Users <code>GetAccessToken</code> endpoint:</p>
+    <div class="api-reference">API reference: <a ui-sref="api-reference({sectionID: 'Buyers', resourceID: 'Users', endpointID: 'GetAccessToken'})">Get Access Token</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/users/{userID}/accesstoken HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ClientID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;&#x2026;&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Roles&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;DevCenterImpersonate&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="subsequent-requests">
+    <h2>Subsequent Requests</h2>
+    <p>The<code>access_token</code> from the response will need to be included for each and every OrderCloud.io API request
+      in the Authorization header prefaced by <code>Bearer</code>:</p>
+    <pre class="language-http"><span class="token request-line"><span class="token property">GET</span> https://api.ordercloud.io/v1/buyers HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json
+</pre>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>You should now have a basic understanding of how to impersonate a buyer user on Ordercloud.io, and when you may need to use this functionality.</p>
+  </section>
+</div>

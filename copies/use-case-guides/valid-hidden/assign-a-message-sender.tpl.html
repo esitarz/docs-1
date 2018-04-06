@@ -1,0 +1,70 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to assign a Message Sender. Assigning a Message Sender is the final step to enabling automatic
+      user communications in OrderCloud.</p>
+    <p>This guide will also teach you how to make an assignment between a single party and a single Message Sender. Message
+      Senders can be assigned to multiple parties in your Organization and each party can have a relationship to more than
+      one Message Sender.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-a-mandrill-message-sender'})">Create a Mandrill Message Sender</a></li>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create and Assign User and User Groups</a></li>
+      <li><a ui-sref="use-case-guides({sectionID:'product-catalog-management', guideID:'make-an-assignment'})">Make an Assignment</a></li>
+    </ul>
+    <div class="note">Please Note: we will be using the &#x201C;Forgot Password Sender&#x201D; that we reference in the <a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-a-mandrill-message-sender'})">Create a Mandrill Message Sender</a>      guide as our example throughout this guide.</div>
+
+
+  </section>
+  <section class="guides-section" id="1-find-your-message-sender-id">
+    <h2>1. Find Your Message Sender ID</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({sectionID: 'Seller', resourceID: 'MessageSenders', endpointID:'List'})">List Message Sender</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">GET</span> https://api.ordercloud.io/v1/MessageSenders HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json
+</pre>
+    <p>Send the list request and copy the ID of the &quot;Forgot Password Sender&quot;, which was created in previously.</p>
+  </section>
+  <section class="guides-section" id="2-assign-the-message-sender">
+    <h2>2. Assign the Message Sender</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'MessageSenders_SaveAssignment'})">Save Assignment Message Sender</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/MessageSenders/assignments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;MessageSenderID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;message_sender_id&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;BuyerID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;buyer_organization_id&quot;</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    <p>This assignment will enable the &quot;Forgot Password Sender&quot; for the entire Buyer Organization.</p>
+  </section>
+  <section class="guides-section" id="3-test-your-message-sender-and-assignment">
+    <h2>3. Test Your Message Sender and Assignment</h2>
+    <p>In order to confirm that you have set up and assigned your Message Sender correctly, trigger the Password Reset feature
+      for a Buyer User and check the email inbox associated with the Buyer User's email address for a Password Reset notification.</p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'PasswordResets_SendVerificationCode'})">SendVerificationCode</a></div>
+
+
+    <p>POST <a href="https://api.ordercloud.io/v1/password/reset">https://api.ordercloud.io/v1/password/reset</a> HTTP/1.1 Authentication:
+      Bearer put_access_token_here Content-Type: application/json</p>
+    <pre class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;ClientID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;ExampleClientID&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Username&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;JohnDoe&quot;</span>
+<span class="token punctuation">}</span>
+</pre>
+    <p>At this point, your Buyer User's inbox, in this case JohnDoe, should have a new email that was sent from your Message
+      Sender.</p>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>You have learned how to assign custom Mandrill Message Senders and test your configuration using the API Console.</p>
+  </section>
+</div>

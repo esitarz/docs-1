@@ -1,0 +1,78 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will show you how to create a Buy One Get One (BOGO) Promotion. BOGO promotions come in many forms and this
+      is not meant to be an exhaustive list of all of all possible implementations. Rather, it is meant to be used as a starting
+      point for how you might create your own custom BOGO promotion on OrderCloud.io. </p>
+    <p>Let&#x2019;s say, for example, that you own a retail clothing store that specializes in pants. Inventory for your new
+      Fall selection is coming in next week and you need a way to quickly sell your current inventory. In order to do this,
+      you&#x2019;d like to create a Buy One Get One promotion. With this promotion, if a shopper places an order containing
+      at least two pairs of this season&#x2019;s pants (we&#x2019;ll call these Product XYZ), they will receive a discount
+      equal to one pair of pants.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-promotion'})">Create And Assign A Promotion</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-an-eligible-expression">
+    <h2>1. Create an Eligible Expression</h2>
+    <p>An eligible expression determines which type of order is eligible for the promotion. In this example, make sure that
+      there is a quantity greater than one for Product XYZ. We can do this with the following logic expression:</p>
+    <p><code>EligibleExpression = &quot;items.quantity(ProductID = 'XYZ') &gt; 1&quot;</code></p>
+  </section>
+  <section class="guides-section" id="2-create-a-value-expression">
+    <h2>2. Create a Value Expression</h2>
+    <p>Now you need to define the value expression, which is the amount that will be subtracted from the total. In this example,
+      we want the value expression to be equal to the cost of one pair of pants. We can define this with the following logic
+      expression.</p>
+    <p><code>ValueExpression = &quot;items.total(ProductID = 'XYZ') / items.quantity(ProductID = 'XYZ')&quot;</code></p>
+    <p>The expression above is calculating the unit price of one pair of pants by taking the total price for all instances of
+      the product and dividing it by the total quantity. In simpler pricing scenarios you might be able to set an actual
+      value such as 10.99.</p>
+  </section>
+  <section class="guides-section" id="3-create-your-promotion">
+    <h2>3. Create Your Promotion</h2>
+    <p>Now we can use the information we&#x2019;ve gathered and submit a request to the Organizations &#x2192; Promotions &#x2192;
+      Create New Promotion endpoint. Here&#x2019;s what that will look like:</p>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'Promotions_Create'})">Create New Promotion</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/promotions HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json; charset=UTF-8<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;BOGO&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Code&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;BOGO&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Name&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Buy One Get One Free&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;RedemptionLimit&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;RedemptionLimitPerUser&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Description&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Buy One Get One Free promotion for the XYZ product. Available starting on 11/1 and ending on 11/15&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FinePrint&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;StartDate&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;11/1/2016&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ExpirationDate&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;11/15/2016&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;EligibleExpression&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;items.quantity(ProductID = 'XYZ') &gt; 1&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;ValueExpression&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;items.total(ProductID = 'XYZ') / items.quantity(ProductID = 'XYZ')&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CanCombine&quot;</span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="4-assign-promotion-to-a-party">
+    <h2>4. Assign Promotion to a Party</h2>
+    <p>In order to put this promotion into action, you need to assign it to a party, such as an organization or user group.
+      Refer back to the <a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-promotion'})">Create and Assign a Promotion</a>      mentioned in the Prerequisites for instructions.</p>
+    <h2 id="what-ifs">What Ifs</h2>
+    <p><strong>What If I want to change the the Eligible Expression or Value Expression?</strong><br> Luckily, the OrderCloud.io
+      rules engine allows you to create your own custom logic expressions, limited only by your creativity. Check out our
+      <a ui-sref="platform-guides({sectionID:'core-concepts', guideID:'rules-engine'})">Rules Engine</a>      to learn more and get started.</p>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You have created a BOGO promotion. If you would like to create general promotions, refer to the <a
+        ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-a-promotion'})">Create and Assign a Promotion</a>      guide.</p>
+  </section>
+</div>

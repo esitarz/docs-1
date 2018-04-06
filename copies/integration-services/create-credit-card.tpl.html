@@ -1,0 +1,173 @@
+<div id="CreateCreditCard">
+    <section class="guides-section" id="CreateCreditCardOverview">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('CreateCreditCardOverview')}}"></i>
+            Create Credit Card Overview
+        </h2>
+        <p>
+            When a customer within your buyer application creates a credit card, the integration endpoint can be called in order to create that card within OrderCloud.io
+            as well as Authorize.Net. The card will created as a personal card by default. However, passing <code>true</code> for <code>Shared</code> assign the card to the entire 
+            Buyer Organization provided in the <code>BuyerID</code>.
+            
+            This endpoint will create a Customer Profile within Authorize.Net if one does not already exist (Authorize.Net Customer Profile ID
+            will be saved as xp.AuthorizeNetProfileID on the User), create a Customer Payment Profile within Authorize.Net that securely stores the tokenized data for the card,
+            and finally create and assign the card on OrderCloud.io to the authenticate user.
+        </p>
+    </section>
+    <section class="guides-section" id="CreateCreditCardRequest">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('CreateCreditCardRequest')}}"></i>
+            Create Credit Card Request
+        </h2>
+        <pre prism class="language-http"
+             source='POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+Authorization: bearer insert_access_token_here
+Content-Type: application/json; charset=UTF-8
+
+{
+    "BuyerID": "...",
+    "TransactionType": "createCreditCard",
+    "CardDetails": {
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
+    }   
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="CreateCreditCardResponse">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('CreateCreditCardResponse')}}"></i>
+            Create Credit Card Response
+        </h2>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+
+{
+    "ID": "…",
+    "Token": "…",
+    "DateCreated": null,
+    "CardType": "…",
+    "PartialAccountNumber": "…",
+    "CardholderName": "…",
+    "ExpirationDate": null,
+    "xp": null
+}
+'></pre>
+    </section>
+    <section class="guides-section" id="CreateCreditCardErrorHandling">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('CreateCreditCardErrorHandling')}}"></i>
+            Error Handling
+        </h2>
+        <p>
+            During the credit card create process, the Authorize.Net Customer Profile and Customer Payment Profile are created (if necessary) first, followed by the creation
+            of the card on OrderCloud.io. Therefore, if any errors occur, they will occur in that order. Errors will return the exact response directly from the Authorize.Net
+            or OrderCloud.io endpoint that failed. However, if any required fields are missing, a 400 error will be returned before any of the creation process is executed.
+        </p>
+        <h3>Validation Response</h3>
+        <p>
+            In the case that a required field is missing from your request, the following response will be returned containing a unique ErrorCode and Message, as well as the
+            request body sent during the call. The possible ErrorCodes and Messages are listed below.
+        </p>
+        <pre prism class="language-http"
+             source='HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+    "ErrorCode": "...",
+    "Message": "...",
+    "Data": {
+        "...Request Body..."
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ErrorCode</th>
+                        <th>Message</th>
+                        <th>Status Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CreateCreditCard.CardNumberRequired</td>
+                        <td>CardDetails.CardNumber is required to create a new credit card.</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>CreateCreditCard.ExpirationDateRequired</td>
+                        <td>CardDetails.ExpirationDate is required to create a new credit card.</td>
+                        <td>400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Authorize.Net Error Response</h3>
+        <pre prism class="language-http"
+             source='HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "messages": {
+        "resultCode": "...",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
+    }
+}
+'></pre>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>resultCode</th>
+                        <th>message.code</th>
+                        <th>message.text</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Error</td>
+                        <td>E00013</td>
+                        <td>Card Number is invalid.</td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>E00013</td>
+                        <td>Expiration Date is invalid.</td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td>E00027</td>
+                        <td>The credit card has expired.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>OrderCloud.io Error Response</h3>
+        <p>If an incorrect <code>BuyerID</code> was provided:</p>
+        <pre class="language-http" prism source='HTTP/1.1 404 Not Found
+Content-Type: application/json
+
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
+'></pre>
+    </section>
+</div>

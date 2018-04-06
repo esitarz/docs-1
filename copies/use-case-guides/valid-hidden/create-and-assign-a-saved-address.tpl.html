@@ -1,0 +1,71 @@
+<div>
+  <section class="guides-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>This guide will teach you how to create and assign a saved address to a user in your buyer company. Any users assigned
+      an address in this way can utilize that address while ordering.</p>
+    <p>The buyer address endpoints in this guide will most frequently be used in an administrative context in order to make
+      specific addresses available across specific subsets of buyer users via assignment.</p>
+    <p>For example, a manufacturer may wish to restrict resellers to specific shipping address(es) based on the various brick
+      and mortar retail locations they are authorized to order for.</p>
+  </section>
+  <section class="guides-section" id="prerequisites">
+    <h2>Prerequisites</h2>
+    <ul>
+      <li><a ui-sref="use-case-guides({sectionID:'buyer-and-seller-organization-management', guideID:'create-and-assign-users-and-user-groups'})">Create And Assign Users And User Groups</a></li>
+    </ul>
+  </section>
+  <section class="guides-section" id="1-create-an-address">
+    <h2>1. Create an Address</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'Addresses_Create'})">Create an Address</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/addresses HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;ID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;HomeAddressID&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;CompanyName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;OrderCloud&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;FirstName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;LastName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Smith&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street1&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;100 N. 5th St.&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Street2&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;City&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;Minneapolis&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;State&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MN&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Zip&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;55414&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Country&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;US&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;Phone&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;AddressName&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;myAddress&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;xp&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</span></pre>
+  </section>
+  <section class="guides-section" id="2-assign-the-address">
+    <h2>2. Assign the Address</h2>
+    <div class="api-reference">API Reference: <a ui-sref="api-reference({'#':'Addresses_SaveAssignment'})">Save Address Assignment</a></div>
+
+
+    <pre class="language-http"><span class="token request-line"><span class="token property">POST</span> https://api.ordercloud.io/v1/buyers/{buyerID}/addresses/assignments HTTP/1.1</span>
+<span class="token header-name keyword">Authentication:</span> Bearer put_access_token_here
+<span class="token header-name keyword">Content-Type:</span> application/json<span class="token application/json">
+
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;AddressID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;HomeAddressID&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserID&quot;</span><span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;UserGroupID&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;MyUserGroup&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;IsShipping&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;IsBilling&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</span></pre>
+    <p>
+      <div class="note">Any user in that user group will now inherit this address. The <code>IsShipping</code> and <code>IsBilling</code> fields
+        define how this address can be used.</div>
+    </p>
+  </section>
+  <section class="guides-section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>Congratulations! You should now be very comfortable creating and assigning addresses to users within a buyer organization.</p>
+  </section>
+</div>

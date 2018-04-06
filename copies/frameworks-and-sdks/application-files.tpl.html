@@ -1,0 +1,93 @@
+<div>
+    <section class="guides-section" id="overview">
+        <h2>Overview</h2>
+        <p>The <code>src/app</code> directory contains all code specific to this application. Apart from <code>app.*.js</code> and its accompanying tests (discussed below), this directory is filled with subdirectories corresponding to high-level sections
+            of the application, often corresponding to top-level routes. Each directory can have as many subdirectories as it needs, and the build system will understand what to do. For example, a top-level route might be <code>productManagement</code>,
+            which would be a directory within the <code>src/app</code> directory that conceptually corresponds to the top-level route <code>/products</code>, though this is in no way enforced. <code>productManagement</code> may then have subdirectories
+            for <code>inventory</code>, <code>pricing</code>, <code>product</code>, etc. The <code>product</code> submodule may then define a route of <code>/products/:id</code>, ad infinitum.</p>
+            <pre>src/
+  |- app/
+  |  |- app.constants.json
+  |  |- app.controller.js
+  |  |- app.module.js
+  |  |- app.run.js
+  |  |- app.spec.js</pre>
+    </section>
+    <section class="guides-section" id="-app-constants-json-">
+        <h2><code>app.constants.json</code></h2>
+        <p>This small, yet powerful file host a JSON object of key value pairs to be used throughout the application. From this object, the build process will generate a file containing AngularJS constants <a href="https://github.com/ordercloud-api/angular-seller/blob/development/gulp.config.js#L86-L123">here</a>,
+            which are used to <a ui-sref="frameworks-and-sdks({sectionID:'angularjs', guideID:'connecting-to-your-organization'})">connect to your OrderCloud organizations</a>.</p>
+    </section>
+    <section class="guides-section" id="-app-controller-js-">
+        <h2><code>app.controller.js</code></h2>
+        <p>This is the application's main controller. <code>AppCtrl</code> is a good place for logic not specific to the template or route, such as menu logic or page title wiring. This controller also allows for numerous Angular services such as <code>$state</code>            and <code>$ocMedia</code> and service methods such as <code>ocIsTouchDevice</code> and <code>stateLoading</code> to be globally available throughout the application's various templates. <code>AppCtrl</code> is not declared in a state provider
+            like the application's component controllers. Instead, it is declared directly in <code>index.html</code> with <code>ng-controller=&quot;AppCtrl as application&quot;</code>.</p>
+<pre class="language-javascript">angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'orderCloud'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token string">'AppCtrl'</span><span class="token punctuation">,</span> AppController<span class="token punctuation">)</span>
+<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">AppController</span><span class="token punctuation">(</span>$state<span class="token punctuation">,</span> $ocMedia<span class="token punctuation">,</span> LoginService<span class="token punctuation">,</span> appname<span class="token punctuation">,</span> ocStateLoading<span class="token punctuation">,</span> ocIsTouchDevice<span class="token punctuation">,</span> ocRoles<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>name <span class="token operator">=</span> appname<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>$state <span class="token operator">=</span> $state<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>$ocMedia <span class="token operator">=</span> $ocMedia<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>isTouchDevice <span class="token operator">=</span> ocIsTouchDevice<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>stateLoading <span class="token operator">=</span> ocStateLoading<span class="token punctuation">.</span>Watch<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>logout <span class="token operator">=</span> LoginService<span class="token punctuation">.</span>Logout<span class="token punctuation">;</span>
+    vm<span class="token punctuation">.</span>userIsAuthorized <span class="token operator">=</span> ocRoles<span class="token punctuation">.</span>UserIsAuthorized<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    </section>
+    <section class="guides-section" id="-app-module-js-">
+        <h2><code>app.module.js</code></h2>
+        <p>This is our main app file. It kickstarts the whole process by requiring all the modules that we need.</p>
+        <p>By default, the OrderCloud AngularJS Seed includes a few useful modules written by the AngularJS and Angular-UI teams. We also include the <code>orderCloud.sdk</code> module for connecting to the OrderCloud API. Lastly, some helpful third party
+            modules are included as well, such as <code>toastr</code> and <code>angular-busy</code>.</p>
+        <p>All components within the application are tied directly to the <code>orderCloud</code> module, so they do not need to be included here.</p>
+        <pre class="language-javascript">angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'orderCloud'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+        <span class="token string">'ngSanitize'</span><span class="token punctuation">,</span>
+        <span class="token string">'ngAnimate'</span><span class="token punctuation">,</span>
+        <span class="token string">'ngMessages'</span><span class="token punctuation">,</span>
+        <span class="token string">'ngTouch'</span><span class="token punctuation">,</span>
+        <span class="token string">'ui.tree'</span><span class="token punctuation">,</span>
+        <span class="token string">'ui.router'</span><span class="token punctuation">,</span>
+        <span class="token string">'ui.select'</span><span class="token punctuation">,</span>
+        <span class="token string">'ui.bootstrap'</span><span class="token punctuation">,</span>
+        <span class="token string">'ui.select'</span><span class="token punctuation">,</span>
+        <span class="token string">'LocalForageModule'</span><span class="token punctuation">,</span>
+        <span class="token string">'toastr'</span><span class="token punctuation">,</span>
+        <span class="token string">'angular-busy'</span><span class="token punctuation">,</span>
+        <span class="token string">'jcs-autoValidate'</span><span class="token punctuation">,</span>
+        <span class="token string">'treeControl'</span><span class="token punctuation">,</span>
+        <span class="token string">'hl.sticky'</span><span class="token punctuation">,</span>
+        <span class="token string">'angularPayments'</span><span class="token punctuation">,</span>
+        <span class="token string">'ordercloud-angular-sdk'</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
+    </section>
+    <section class="guides-section"> id="-app-run-js-"
+        <h2><code>app.run.js</code></h2>
+        <p>Use the main applications run method to execute any code after services have been instantiated. By default, we initialize <code>ocStateLoading</code>, validation error messages (using <code>angular-auto-validate</code>), and validation styling.</p>
+        <pre class="language-javascript">angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'orderCloud'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>AppRun<span class="token punctuation">)</span>
+<span class="token punctuation">;</span>
+
+
+<span class="token keyword">function</span> <span class="token function">AppRun</span><span class="token punctuation">(</span>ocStateLoading<span class="token punctuation">,</span> ocRefreshToken<span class="token punctuation">,</span> defaultErrorMessageResolver<span class="token punctuation">,</span> ocErrorMessages<span class="token punctuation">,</span> validator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ocStateLoading<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    defaultErrorMessageResolver<span class="token punctuation">.</span><span class="token function">getErrorMessages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>errorMessages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        angular<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>errorMessages<span class="token punctuation">,</span> ocErrorMessages<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    validator<span class="token punctuation">.</span><span class="token function">setValidElementStyling</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+    </section>
+    <section class="guides-section" id="-app-spec-js-">
+        <h2><code>app.spec.js</code></h2>
+        <p>One of the design philosophies of <code>angular-seller</code> is that tests should exist alongside the code they test and that the build system should be smart enough to know the difference and react accordingly. As such, the unit test for <code>app.*.js</code>            is <code>app.spec.js</code>.</p>
+    </section>
+</div>
