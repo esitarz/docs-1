@@ -1,6 +1,26 @@
-# Pelican Alchemy
+# boots4pelican
 
-> A magical ✨ Pelican theme
+> A slightly more magical ✨ Pelican theme
+
+boots4pelican is built on top of the Alchemy theme.
+
+## boots4pelican Installation
+
+All installation steps from the original Alchemy repo still apply here, with a few additional dependencies added so that you can leverage SASS during your static site buildout!
+
+This theme relies on the [assets plugin](https://github.com/getpelican/pelican-plugins/tree/master/assets) - which is included as a project dependency in `requirements.txt`.
+
+You will also need [Ruby Sass](https://sass-lang.com/ruby-sass) installed on your machine to compile the css locally.
+
+This theme uses the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). All `scss` files needed for the project are imported into `scss/main.scss`. This file is then compiled and linked in `templates/base.html`.
+
+```
+{% assets filters="scss,cssmin", output="css/style.min.css", "main.scss" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+{% endassets %}
+```
+
+## The original documentations for Alchemy is intact below:
 
 Alchemy is a functional, clean, responsive theme for the [Pelican](http://getpelican.com) static site generator.
 
