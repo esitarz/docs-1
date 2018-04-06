@@ -1,6 +1,7 @@
 *~
 ._*
 *.lock
+*.pyc
 *.vscode/**
 *.DS_Store
 *.swp
