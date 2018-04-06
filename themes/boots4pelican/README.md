@@ -22,7 +22,7 @@ This theme uses the [7-1 pattern](https://sass-guidelin.es/#the-7-1-pattern). Al
 
 ## Some Clarification
 
-Bootstrap4 and FontAwesome5 are included as _static_ directories. If you need to pull in recent updates to either library, you should do so manually.
+[Bootstrap4](https://github.com/twbs/bootstrap) (v4.0.0) and [FontAwesome5](https://github.com/FortAwesome/Font-Awesome) (v5.0.9) are included as _static_ directories. If you need to pull in recent updates to either library, you should do so manually.
 
 The `scss` directory is placed outside of the `static` folder so that the `scss` files do not get pulled into the output when the static site is generated. The css created by the assets filter shown above contains compiled code from the entire scss directory.
 
