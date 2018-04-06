@@ -10,7 +10,7 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
-          {% for article in articles|sort(attribute='subcategories') %} 
+          {% for article in articles|sort(attribute='subcategories') if category == article.category %} 
             <li class="nav-item">
               {% if loop.first %}
                 <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname') }}</a>
