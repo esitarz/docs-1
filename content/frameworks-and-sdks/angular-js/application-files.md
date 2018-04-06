@@ -1,6 +1,6 @@
 ---
 Title: Angularjs: Application Files
-author: OrderCloud.io 
+author: OrderCloud.io
 Date: 2018-03-19 15:32:44.250255
 Category: Frameworks And Sdks
 Tags: angularjs
@@ -19,8 +19,8 @@ enforced. `productManagement` may then have subdirectories for `inventory`,
 `pricing`, `product`, etc. The `product` submodule may then define a route of
 `/products/:id`, ad infinitum.
 
-    
-    
+
+
     src/
       |- app/
       |  |- app.constants.json
@@ -48,8 +48,8 @@ templates. `AppCtrl` is not declared in a state provider like the
 application's component controllers. Instead, it is declared directly in
 `index.html` with `ng-controller="AppCtrl as application"`.
 
-    
-    
+
+
     angular.module('orderCloud')
         .controller('AppCtrl', AppController)
     ;
@@ -63,7 +63,7 @@ application's component controllers. Instead, it is declared directly in
         vm.logout = LoginService.Logout;
         vm.userIsAuthorized = ocRoles.UserIsAuthorized;
     }
-    
+
 
 ## `app.module.js`
 
@@ -79,8 +79,7 @@ helpful third party modules are included as well, such as `toastr` and
 All components within the application are tied directly to the `orderCloud`
 module, so they do not need to be included here.
 
-    
-    
+
     angular.module('orderCloud', [
             'ngSanitize',
             'ngAnimate',
@@ -101,9 +100,7 @@ module, so they do not need to be included here.
             'ordercloud-angular-sdk'
         ]
     );
-    
 
-id="-app-run-js-"
 
 ## `app.run.js`
 
@@ -111,25 +108,25 @@ Use the main applications run method to execute any code after services have
 been instantiated. By default, we initialize `ocStateLoading`, validation
 error messages (using `angular-auto-validate`), and validation styling.
 
-    
-    
+
+
     angular.module('orderCloud')
         .run(AppRun)
     ;
-    
-    
+
+
     function AppRun(ocStateLoading, ocRefreshToken, defaultErrorMessageResolver, ocErrorMessages, validator) {
         ocStateLoading.Init();
-    
-    
+
+
         defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
             angular.extend(errorMessages, ocErrorMessages);
         });
-    
-    
+
+
         validator.setValidElementStyling(false);
     }
-    
+
 
 ## `app.spec.js`
 
@@ -137,4 +134,3 @@ One of the design philosophies of `angular-seller` is that tests should exist
 alongside the code they test and that the build system should be smart enough
 to know the difference and react accordingly. As such, the unit test for
 `app.*.js` is `app.spec.js`.
-
