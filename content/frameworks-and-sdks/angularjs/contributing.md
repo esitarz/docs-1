@@ -1,6 +1,7 @@
 ---
-title: Contributing
+title: Angularjs: Contributing
 date: 2018-04-16
+category:Angularjs
 ---
 
 

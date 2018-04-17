@@ -1,6 +1,7 @@
 ---
-title: Http Methods
+title: Basic Api Features: Http Methods
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

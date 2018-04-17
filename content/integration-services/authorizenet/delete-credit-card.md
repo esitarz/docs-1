@@ -1,6 +1,7 @@
 ---
-title: Delete Credit Card
+title: Authorizenet: Delete Credit Card
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

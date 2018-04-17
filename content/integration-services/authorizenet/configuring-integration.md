@@ -1,6 +1,7 @@
 ---
-title: Configuring Integration
+title: Authorizenet: Configuring Integration
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

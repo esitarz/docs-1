@@ -1,6 +1,7 @@
 ---
-title: Get Rates
+title: Shippingrates: Get Rates
 date: 2018-04-16
+category:Shippingrates
 ---
 
 

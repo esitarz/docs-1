@@ -1,6 +1,7 @@
 ---
-title: Set Shipping Cost
+title: Shippingrates: Set Shipping Cost
 date: 2018-04-16
+category:Shippingrates
 ---
 
 

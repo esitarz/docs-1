@@ -29,7 +29,15 @@ def createLoc(item):
 def format2MD(item, location):
 
     #print(item)
-    #print(location)
+    print(location.parts)
+
+    category = str(location.parts[3])
+    category = (category.replace('-', ' ')).title()
+
+
+
+    title = category+': '+location.stem
+    title = (str(title).replace('-', ' ')).title()
 
     html = item.read_text('unicode_escape')
 
@@ -37,10 +45,10 @@ def format2MD(item, location):
 
     soup = BeautifulSoup(html, 'html5lib')
 
-    title = (str(location).replace('-', ' ')).title()
+    
     date = '2018-04-16'
 
-    header = '---\ntitle: '+title+'\ndate: '+date+'\n---\n'
+    header = '---\ntitle: '+title+'\ndate: '+date+'\ncategory:'+category+'\n---\n'
     print(header)
 
     text = header
@@ -62,8 +70,8 @@ def format2MD(item, location):
         tag.unwrap()
 
     for tag in soup.find_all('pre'):
-        tag.insert_before('\n```\n')
-        tag.insert_after('\n```\n')
+        tag.insert_before('```')
+        tag.insert_after('```')
         source = []
         if 'class' in tag.attrs and tag.string is not None:
             tag.string.join(tag.attrs['class'])
@@ -92,7 +100,7 @@ def format2MD(item, location):
 
     for line in soup:
         markdown = format_html.handle(str(line).strip())
-        print(markdown)
+        #print(markdown)
         text+=(markdown)
     
 
@@ -116,7 +124,7 @@ def main():
         
         location = createLoc(item)
         print(location.stem)
-        page = format2MD(item, location.stem)
+        page = format2MD(item, location)
         pages[location] = page
 
     for key, value in pages.items():

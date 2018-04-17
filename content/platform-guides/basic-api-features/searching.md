@@ -1,6 +1,7 @@
 ---
-title: Searching
+title: Basic Api Features: Searching
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

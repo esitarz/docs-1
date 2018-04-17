@@ -1,6 +1,7 @@
 ---
-title: Quick Start Guide
+title: Getting Started: Quick Start Guide
 date: 2018-04-16
+category:Getting Started
 ---
 
 

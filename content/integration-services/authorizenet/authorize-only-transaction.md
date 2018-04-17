@@ -1,6 +1,7 @@
 ---
-title: Authorize Only Transaction
+title: Authorizenet: Authorize Only Transaction
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

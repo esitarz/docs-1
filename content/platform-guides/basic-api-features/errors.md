@@ -1,6 +1,7 @@
 ---
-title: Errors
+title: Basic Api Features: Errors
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

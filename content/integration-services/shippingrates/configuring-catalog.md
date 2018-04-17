@@ -1,6 +1,7 @@
 ---
-title: Configuring Catalog
+title: Shippingrates: Configuring Catalog
 date: 2018-04-16
+category:Shippingrates
 ---
 
 

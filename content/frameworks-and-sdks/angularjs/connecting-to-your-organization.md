@@ -1,6 +1,7 @@
 ---
-title: Connecting To Your Organization
+title: Angularjs: Connecting To Your Organization
 date: 2018-04-16
+category:Angularjs
 ---
 
 

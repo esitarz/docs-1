@@ -27,7 +27,7 @@ AUTHOR_FEED_RSS = None
 THEME = 'themes/boots4pelican'
 
 PLUGIN_PATHS = ['Plugins']
-PLUGINS = ['assets', 'docs-subcategory']
+PLUGINS = ['assets', 'docs-subcategory', 'ace-editor']
 
 ASSET_SOURCE_PATHS = ['scss',]
 
@@ -62,7 +62,7 @@ MARKDOWN = {
     'output_format': 'html5',
 
     'markdown.extensions.codehilite': {
-        'noclasses' : True,
+        'noclasses' : False,
         'pygments_style':'native',
         'css_class': 'highlight',
         'linenums': True,

@@ -1,6 +1,7 @@
 ---
-title: Extended Properties
+title: Basic Api Features: Extended Properties
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

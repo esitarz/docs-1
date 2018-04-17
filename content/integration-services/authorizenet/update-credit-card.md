@@ -1,6 +1,7 @@
 ---
-title: Update Credit Card
+title: Authorizenet: Update Credit Card
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

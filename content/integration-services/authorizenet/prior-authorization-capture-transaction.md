@@ -1,6 +1,7 @@
 ---
-title: Prior Authorization Capture Transaction
+title: Authorizenet: Prior Authorization Capture Transaction
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

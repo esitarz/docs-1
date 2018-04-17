@@ -1,6 +1,7 @@
 ---
-title: Authorize And Capture Transaction
+title: Authorizenet: Authorize And Capture Transaction
 date: 2018-04-16
+category:Authorizenet
 ---
 
 

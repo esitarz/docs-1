@@ -1,6 +1,7 @@
 ---
-title: Get Line Item Rates
+title: Shippingrates: Get Line Item Rates
 date: 2018-04-16
+category:Shippingrates
 ---
 
 

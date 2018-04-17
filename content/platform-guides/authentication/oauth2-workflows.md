@@ -1,6 +1,7 @@
 ---
-title: Oauth2 Workflows
+title: Authentication: Oauth2 Workflows
 date: 2018-04-16
+category:Authentication
 ---
 
 

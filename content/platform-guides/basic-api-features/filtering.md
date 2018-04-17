@@ -1,6 +1,7 @@
 ---
-title: Filtering
+title: Basic Api Features: Filtering
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

@@ -1,6 +1,7 @@
 ---
-title: Anonymous Shopping
+title: Authentication: Anonymous Shopping
 date: 2018-04-16
+category:Authentication
 ---
 
 

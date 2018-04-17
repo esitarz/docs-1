@@ -1,6 +1,7 @@
 ---
-title: Assignments
+title: Core Concepts: Assignments
 date: 2018-04-16
+category:Core Concepts
 ---
 
 

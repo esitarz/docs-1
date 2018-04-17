@@ -1,6 +1,7 @@
 ---
-title: Using The Api Console
+title: Getting Started: Using The Api Console
 date: 2018-04-16
+category:Getting Started
 ---
 
 

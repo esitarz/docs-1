@@ -1,6 +1,7 @@
 ---
-title: Sorting
+title: Basic Api Features: Sorting
 date: 2018-04-16
+category:Basic Api Features
 ---
 
 

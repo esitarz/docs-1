@@ -1,6 +1,7 @@
 ---
-title: Using The Dashboard
+title: Getting Started: Using The Dashboard
 date: 2018-04-16
+category:Getting Started
 ---
 
 

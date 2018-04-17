@@ -1,6 +1,7 @@
 ---
-title: Void Transaction
+title: Authorizenet: Void Transaction
 date: 2018-04-16
+category:Authorizenet
 ---
 
 
