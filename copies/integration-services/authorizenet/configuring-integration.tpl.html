@@ -1,0 +1,30 @@
+<div id="ConfiguringIntegration">
+    <section class="guides-section" id="AuthorizeNetCredentials">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('AuthorizeNetCredentials')}}"></i>
+            Authorize.Net Credentials
+        </h2>
+        <p>
+            To configure your integration, register for an account on <a href="https://www.authorize.net/solutions/merchantsolutions/pricing/" target="_blank">Authorize.Net</a>
+            or login to your existing account. Navigate to <i>Account > Settings</i> to obtain your Api Login ID and Transaction Key.
+        </p>
+        <figure class="oc-docs-image-outline">
+            <img src="assets/images/docs-guides/integrations/authorizenet/authorize-net-credentials.png" alt="">
+        </figure>
+    </section>
+    <section class="guides-section" id="OrderCloudioConfiguration">
+        <h2>
+            <i class="fa fa-link" ngclipboard-success="documentation.copyLinkSuccess(e)" ngclipboard data-clipboard-text="{{documentation.generateLink('OrderCloudioConfiguration')}}"></i>
+            OrderCloud.io Configuration
+        </h2>
+        <p>
+            Once you’ve obtained these credentials, navigate to the Dashboard <a ng-href="{{application.links.dashboard + '/integrations'}}">Integrations</a> page within OrderCloud.io and select Authorize.Net.
+        </p>
+        <figure class="oc-docs-image-outline">
+            <img src="assets/images/docs-guides/integrations/authorizenet/authorize-net-configuration.png" alt="">
+        </figure>
+        <p>
+            Fill in your credentials from above in the form, select which environment within Authorize.Net you’ll be working in, then click Save Information.
+        </p>
+    </section>
+</div>

@@ -1,50 +1,110 @@
 ---
-Title: Using The Dashboard
-author: OrderCloud.io 
-Date: 2018-03-19 15:32:44.250255
-Tags: getting started
+title: Using The Dashboard
+date: 2018-04-16
 ---
 
 
+
+
+
+
 ## __Overview
+
+
+
+
 
 The OrderCloud.io Dashboard is the central hub for managing your OrderCloud
 organizations and applications. This guide is meant to help you understand all
 the tools available to you and your team while creating and maintaining
 amazing B2B eCommerce solutions.
 
+
+
+
+
 You will not be able to view the Dashboard if you haven't created an account.
 If you haven't already, register for OrderCloud.io to access your free
 account.
 
-## __Getting to the Dashboard
+
+
+
+
+
+
+
+
+##  __Getting to the Dashboard
+
+
+
+
 
 Upon logging in for the first time you will be taken to your account profile
 page. Here you can edit your profile information and change your password.
 
+
+
+
+
 Below your profile information you should see a _"My Seller Organizations"_
 tab with a new seller organization called _"Default trial company"_.
 
-![]({filename}/images/docs-guides/getting-started/dashboard/navigation.jpg)
+
+
+![](assets/images/docs-guides/getting-started/dashboard/navigation.jpg)
+
+
+
+
 
 Clicking on a seller in this list or creating a new organization will redirect
 you to what we call the **OrderCloud.io Dashboard**. Once you're in the
 dashboard you are now working within the context of a _single_ seller
 organization.
 
+
+
+
+
+
+
+
+
 ## __Seller Organization Settings
+
+
+
+
 
 This is the page you will land on when opening any organization. The view has
 two tabs: **Seller Options** and **Contributors**.
 
-### __Seller Options
+
+
+
+
+###  __Seller Options
+
+
+
+
 
 The organization owner has exclusive permission to change the seller options
 including updating the organization name, transferring the org to a
 contributing developer, or deleting the seller entirely. If you're a
 contributor, you can choose to leave the organization from this view.
 
-### __Contributors
+
+
+
+
+###  __Contributors
+
+
+
+
 
 Most B2B eCommerce projects require some level of collaboration. By sharing
 your organization with other team members on OrderCloud you can all work
@@ -52,9 +112,19 @@ together on a single seller. Once a new contributor is added you can refine
 their access to your organization by adjusting their **permissions** & **data
 access**.
 
+
+
+
+
 #### Contributor Permissions
 
-![]({filename}/images/docs-guides/getting-started/dashboard/permissions.jpg)
+
+
+![](assets/images/docs-guides/getting-started/dashboard/permissions.jpg)
+
+
+
+
 
 Each permission controls whether or not a given contributor can access
 specific dashboard functionality for your seller organization. For example,
@@ -62,9 +132,19 @@ you may have one contributor that is responsible for creating webhooks and
 integrations and another who is responsible for setting up security profiles
 for your end users.
 
+
+
+
+
 #### Contributor Data Access
 
-![]({filename}/images/docs-guides/getting-started/dashboard/data_access.jpg)
+
+
+![](assets/images/docs-guides/getting-started/dashboard/data_access.jpg)
+
+
+
+
 
 Data Access gives you control over which roles (if any) a given contributor
 can request when using the OrderCloud API with this seller organization or any
@@ -75,19 +155,61 @@ each developer to accomplish their project tasks to avoid unwanted or
 unexpected changes to your organization's data. OrderCloud roles are covered
 in-depth later in this guide.
 
-## __Dashboard Features
 
-![]({filename}/images/docs-guides/getting-started/dashboard/features.jpg)
+
+
+
+
+
+
+
+##  __Dashboard Features
+
+
+
+
+
+
+
+![](assets/images/docs-guides/getting-started/dashboard/features.jpg)
+
+
+
+
+
+
+
+
 
 The left-hand menu is where you can access each of the dashboard features
 available to you for a given seller organization. Some features such as
 Message Senders or Integrations will be hidden from this menu if you do not
 have permission to access them.
 
+
+
+
+
 Beyond these basic navigation items, there is a _"Switch Organization"_ button
 which allows you to quickly change your active seller organization.
 
-## __Buyer Organizations
+
+
+
+
+
+
+
+
+
+
+
+
+##  __Buyer Organizations
+
+
+
+
 
 The OrderCloud Dashboard provides a simple user interface for managing a
 seller's buyer organizations. Each buyer organization has a `Name` and `ID`
@@ -96,7 +218,19 @@ status of _"inactive"_ is blocked from submitting orders. The Buyer API allows
 full control of buyer organizations as well; however, managing the API Clients
 of each organization is restricted to the OrderCloud Dashboard.
 
-## __Applications
+
+
+
+
+
+
+
+
+##  __Applications
+
+
+
+
 
 Seller and Buyer Organizations each have their own set of applications.
 Clicking _"Seller Applications"_ in the left nav will give you a list of
@@ -104,13 +238,24 @@ applications that can be used by your organization's Admin Users. Buyer
 Applications are visible under each respective Buyer Organization and can be
 accessed by the Users under that buyer.
 
+
+
+
+
 ### Application Settings
+
+
+
+
 
 Opening an individual application will bring you to the **Settings** tab for
 that application. Seller Organization owners and contributors with permission
 to administer applications can update application information in this tab and
-activate/deactivate the application. Within this tab you’ll find the
-following:  
+activate/deactivate the application. Within this tab youâll find the
+following:
+
+
+
   
 <table>  
 <tr>  
@@ -191,26 +336,58 @@ How long (in minutes) you are able to obtain a new Access Token (max: 43200m)
 
 </td> </tr> </table>
 
+
+
+
+
 ### Active Webhooks
+
+
+
+
 
 The _"webhooks"_ tab is visible to owners and contributors with permission to
 administer webhooks. This is where you will enable / disable webhooks for a
 given application. Create a webhook once using the Webhooks feature and apply
 it to one or many applications using this workflow.
 
+
+
+
+
 ### Active Integrations
+
+
+
+
 
 The application _"integrations"_ tab works a lot like the _"webhooks"_ tab.
 Only Seller Organization owners and contributors with permission to administer
 integrations will see it. By clicking _"add"_ you can choose from any of your
 configured integration services and apply it to said application.
 
-## __Security Profiles
+
+
+
+
+
+
+
+
+##  __Security Profiles
+
+
+
+
 
 This feature is available to organization owners and contributors with
 permission to administer security. Security Profiles are groupings of roles
 that can be later assigned to admin and buyer users using the Security
 Profiles API.
+
+
+
+
 
 The granular nature of OrderCloud roles enables you to control exactly which
 API endpoints and/or data each user can access within your organization
@@ -218,7 +395,13 @@ API endpoints and/or data each user can access within your organization
 allows read and write access of a given resource while a **Reader** role
 allows only read access.
 
-![]({filename}/images/docs-guides/getting-started/dashboard/security.jpg)
+
+
+![](assets/images/docs-guides/getting-started/dashboard/security.jpg)
+
+
+
+
 
 It is **strongly discouraged** and considered a security risk to give your
 admin or buyer users the `FullAccess` role. While it may be convenient to use
@@ -226,11 +409,27 @@ in the early stages of development - it is **always** better to give end users
 a combination of more granular roles that align to the actions they will be
 taking in the application.
 
+
+
+
+
 If you can't seem to find the role that's right for your users, please
 [contact us](http://www.ordercloud.io/contact) with your request and if deemed
 appropriate by our development team, the role will be added to the API.
 
+
+
+
+
+
+
+
+
 ## __Extended Properties
+
+
+
+
 
 The Extended Properties (XP) feature was created to improve the performance of
 filtered API queries. Instead of automatically indexing any new XP, we ask
@@ -238,7 +437,19 @@ developers to define which properties they would like to be indexed
 beforehand. Once an XP key is added to this list, relevant Extended Properties
 created from that point on will be available for filtering.
 
+
+
+
+
+
+
+
+
 ## __Webhooks
+
+
+
+
 
 Webhooks enable user-defined HTTP callbacks for all writeable endpoints in the
 OrderCloud API. They can be used to perform follow up tasks such as updating
@@ -247,8 +458,15 @@ through a 3rd party system when an order is submitted. Webhooks are
 fundamentally designed to provide maximum flexibility within the integrated
 solution.
 
+
+
+
+
 Owners and contributors with permission to administer webhooks can access this
-feature. OrderCloud requires standard webhook information:  
+feature. OrderCloud requires standard webhook information:
+
+
+
   
 <table>  
 <tr>  
@@ -288,8 +506,15 @@ will be passed along to the webhooks that use it.
 
 </td> </tr> </table>
 
+
+
+
+
 Beyond this basic info, we've enhanced our webhooks with some other, more
-nuanced options:  
+nuanced options:
+
+
+
   
 <table>  
 <tr>  
@@ -308,27 +533,65 @@ doesn't have permission to view).
 
 </td> </tr> </table>
 
+
+
+
+
+
+
+
+
 ## __Integrations
+
+
+
+
 
 Organization owners and contributors with permission to administer
 integrations can access this feature. Choose a service from the _"Available
 Services"_ tab and click _"Add"_.
 
-![]({filename}/images/docs-guides/getting-
+
+
+![](assets/images/docs-guides/getting-
 started/dashboard/available_services.jpg)
+
+
+
+
 
 You will be prompted to fill out the information required for OrderCloud to
 communicate with the new account.
 
-![]({filename}/images/docs-guides/getting-started/dashboard/authorize_net.jpg)
+
+
+![](assets/images/docs-guides/getting-started/dashboard/authorize_net.jpg)
+
+
+
+
 
 Any applications that have the configured integration activated will have
 access to use it.
 
+
+
+
+
+
+
 ## __Conclusion
+
+
+
+
 
 In summary, everything you need to create and maintain a robust API-driven
 application is at your fingertips in the OrderCloud Dashboard. We're always
 looking for ways to improve the experience, so any feedback or suggestions you
 have as a user of the platform are greatly appreciated.
+
+
+
+
 

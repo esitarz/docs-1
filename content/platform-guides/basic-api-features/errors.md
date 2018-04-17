@@ -1,12 +1,18 @@
 ---
-Title: Errors
-author: OrderCloud.io 
-Date: 2018-03-19 15:32:44.250255
-Tags: basic api features
+title: Errors
+date: 2018-04-16
 ---
 
 
+
+
+
+
 ## __Overview
+
+
+
+
 
 OrderCloud.io uses conventional HTTP response codes to indicate success or
 failure of an API request. In general, codes in the `2xx` range indicate
@@ -16,7 +22,20 @@ terribly wrong on our end will you receive a `500` response. As long as the
 platform is responding you can count on the response body taking a standard
 shape.
 
-## __HTTP Status Code Summary  
+
+
+
+
+
+
+
+
+##  __HTTP Status Code Summary
+
+
+
+
+
   
 <table>  
 <tr>  
@@ -111,4 +130,10 @@ There was a server-side issue. Please contact us if you encounter this error
 code.
 
 </td> </tr> </table>
+
+
+
+
+
+
 
