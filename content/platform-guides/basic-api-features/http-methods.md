@@ -1,18 +1,37 @@
 ---
-Title: Http Methods
-author: OrderCloud.io 
-Date: 2018-03-19 15:32:44.250255
-Tags: basic api features
+title: Http Methods
+date: 2018-04-16
 ---
 
 
+
+
+
+
 ## __Overview
+
+
+
+
 
 A resource is a set of endpoints used to interact with an object of that same
 name. OrderCloud.io adheres to RESTful conventions in its usage of HTTP verbs.
 You can expect a subset of the following methods to exist on every Resource.
 
-## __HTTP Methods  
+
+
+
+
+
+
+
+
+##  __HTTP Methods
+
+
+
+
+
   
 <table>  
 <tr>  
@@ -162,4 +181,10 @@ Deletes an item
 Delete address ABC from the database
 
 </td> </tr> </table>
+
+
+
+
+
+
 
