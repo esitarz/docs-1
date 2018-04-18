@@ -1,19 +1,11 @@
 ---
-title: Basic Api Features: Extended Properties
+title: Basic API Features: Extended Properties
 date: 2018-04-16
-category:Basic Api Features
+Category: Basic API Features
 ---
 
 
-
-
-
-
 ## Overview
-
-
-
-
 
 The reality of all enterprise platforms is the need to customize the data
 model. To accommodate this, OrderCloud.io designed a property called Extended
@@ -28,37 +20,13 @@ schema-less solution with XP and exposed it on virtually every API resource.
 We may not have `Product.YourSpecialDataPoint`, but we do have
 `Product.xp.YourSpecialDataPoint`.
 
-
-
-
-
-
-
-
-
 ## Add, Update and Remove XP
-
-
-
-
 
 The entire XP object must be **8000 bytes** or less and must be a valid JSON
 object. Any key-value pairs of numbers, strings, booleans, arrays, and even
 other objects can be used.
 
-
-
-
-
-
-
-
-
 ## Adding XP
-
-
-
-
 
 Let's say one of the requirements for your solution includes storing the age
 and gender of users. You can accomplish this by storing those data points in
@@ -96,23 +64,11 @@ valid JSON.
 
 ```
 
-
-
-
-
-
-
-
-
 ## Nesting XP
-
-
-
-
 
 Let's say requirements have shifted and the solution now requires the ability
 to store information about the user's employment details, specifically job
-title and department. This can easily be accomplished using nested objects
+title: and department. This can easily be accomplished using nested objects
 within XP.
 
 
@@ -150,21 +106,9 @@ within XP.
 
 ```
 
-
-
-
-
-
-
-
-
 ## Modifying XP
 
-
-
-
-
-Now let's say Jane Smith receives a promotion. To update her job title we can
+Now let's say Jane Smith receives a promotion. To update her job title: we can
 use `PATCH` to modify the relevant data. Instead of sending the entire user
 object, we can send the XP key and the object that we want to update, the
 other XP (gender and age) will persist.
@@ -192,19 +136,7 @@ other XP (gender and age) will persist.
 
 ```
 
-
-
-
-
-
-
-
-
 ## Deleting XP
-
-
-
-
 
 The only way to remove a specific xp from your resource is to use the Update
 (PUT) method. First GET the resource, then copy the response body returned,
@@ -244,10 +176,6 @@ from this user.
 
 ```
 
-
-
-
-
 Then, use the response body from the request above (without the xp you wish to
 remove):
 
@@ -281,19 +209,7 @@ remove):
 
 ```
 
-
-
-
-
-
-
-
-
 ## Searching on XP
-
-
-
-
 
 Not only can XP be used to extend the functionality of your application, but
 you can use filters to search for indexed xp values on any given resource.
@@ -318,10 +234,6 @@ XP:
 
 ```
 
-
-
-
-
 Note how the dot (".") notation is used in the query string to filter on the
 specified deeply nested XP field. Check out the searching, filtering and
 sorting guides to learn more about querying.
@@ -330,26 +242,10 @@ sorting guides to learn more about querying.
 
 
 
-
-
-
-
-
-
-
-
 ## Summary
-
-
-
-
 
 XP is a very powerful feature to extend the capabilities of your application.
 It provides the flexibility developers need to meet challenging requirements,
 giving you the ability to provide a highly customized solutions. Head over to
 the API Console to try it for yourself!
-
-
-
-
 

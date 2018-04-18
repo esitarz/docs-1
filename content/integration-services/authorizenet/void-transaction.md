@@ -1,38 +1,18 @@
 ---
-title: Authorizenet: Void Transaction
+title: Authorize.Net: Void Transaction
 date: 2018-04-16
-category:Authorizenet
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Void Transaction Overview
-
-
-
-
+##  Void Transaction Overview
 
 Though this method is used most commonly by other methods when certain actions
 fail, it can also be called directly through the integration. This method will
 void a previous transaction on Authorize.Net, then create a transaction tied
 to the original payment on OrderCloud.io.
 
-
-
-
-
-
-
-
-
-##  __Void Transaction Request
-
-
-
-
+##  Void Transaction Request
 
 This method requires either CardDetails.CreditCardID (for a previously created
 card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
@@ -46,7 +26,7 @@ created payment being voided.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -71,15 +51,7 @@ created payment being voided.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Void Transaction Response
+##  Void Transaction Response
 
 
 
@@ -108,34 +80,14 @@ created payment being voided.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -163,10 +115,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -255,15 +203,7 @@ CardDetails.ExpirationDate are required to void a transaction.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -291,10 +231,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -320,10 +256,6 @@ If an incorrect `CardDetails.CreditCardID` was provided:
     
 
 ```
-
-
-
-
 
 If an incorrect `CardDetails.PaymentID` was provided:
 
@@ -351,10 +283,6 @@ If an incorrect `CardDetails.PaymentID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `OrderID` was provided:
 
 
@@ -380,8 +308,4 @@ If an incorrect `OrderID` was provided:
     
 
 ```
-
-
-
-
 

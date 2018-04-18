@@ -1,19 +1,11 @@
 ---
 title: Authentication: Impersonation
 date: 2018-04-16
-category:Authentication
+category: Authentication
 ---
 
 
-
-
-
-
 ## Overview
-
-
-
-
 
 In some instances, you may want to allow a user to order on behalf of another
 user. We see this use case a lot in Customer Service Desk and Call Center
@@ -21,10 +13,6 @@ scenarios where customers will call their orders in and the service rep places
 the order on the customerâs behalf. This workflow preserves the reporting
 data, email notifications, and presents the catalog ordering rules the buyer
 is configured for.
-
-
-
-
 
 The OrderCloud.io API supports this capability by allowing certain users to
 make API calls on behalf of a buyer user, which we refer to as impersonation.
@@ -35,19 +23,7 @@ the `BuyerImpersonation` role can impersonate any other buyer user within the
 same buyer company as long as an applicable Impersonation Config has been
 created.
 
-
-
-
-
-
-
-
-
 ## Creating an Impersonation Config
-
-
-
-
 
 `ImpersonationBuyerID`, `ImpersonationGroupID`, and `ImpersonationUserID` all
 reference the party you want to grant access to do the impersonating. While
@@ -63,10 +39,6 @@ multiple Impersonation Configs.
 API reference:
 
 Create Impersonation Config
-
-
-
-
 
 ```
 
@@ -94,19 +66,7 @@ Create Impersonation Config
 
 ```
 
-
-
-
-
-
-
-
-
 ## Retrieving the Access Token
-
-
-
-
 
 After you have successfully created an applicable Impersonation Config, the
 next step is to retrieve that buyer user's Access Token by using the Users
@@ -139,19 +99,7 @@ Get Access Token
 
 ```
 
-
-
-
-
-
-
-
-
 ## Subsequent Requests
-
-
-
-
 
 The`access_token` from the response will need to be included for each and
 every OrderCloud.io API request in the Authorization header prefaced by
@@ -171,24 +119,8 @@ every OrderCloud.io API request in the Authorization header prefaced by
 
 ```
 
-
-
-
-
-
-
-
-
 ## Conclusion
-
-
-
-
 
 You should now have a basic understanding of how to impersonate a buyer user
 on Ordercloud.io, and when you may need to use this functionality.
-
-
-
-
 

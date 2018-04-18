@@ -1,34 +1,18 @@
 ---
-title: Shippingrates: Set Shipping Cost
+title: Shipping Rates: Set Shipping Cost
 date: 2018-04-16
-category:Shippingrates
+category: Shipping Rates
 ---
 
 
-
-
-
-
-##  __Set Shipping Cost Overview
-
-
-
-
+##  Set Shipping Cost Overview
 
 Once a user selects their desired shipper(s) for their order, the
 `ShippingCost` on the Order can be set via the _SetShippingCost_ method. This
 method will patch the Order with the provided `ShippingCost` value and return
 the updated Order.
 
-
-
-
-
-
-
-
-
-##  __Set Shipping Cost Request
+##  Set Shipping Cost Request
 
 
 
@@ -37,7 +21,7 @@ the updated Order.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/shippingrates HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Shipping Rates HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -52,15 +36,7 @@ the updated Order.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Set Shipping Cost Response
+##  Set Shipping Cost Response
 
 
 
@@ -103,25 +79,9 @@ the updated Order.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request or there are
 any issues with your Order, the following response will be returned containing
@@ -150,10 +110,6 @@ call. The possible ErrorCodes and Messages are listed below.
 
 ```
 
-
-
-
-
   
 <table>  
 <tr>  
@@ -175,7 +131,7 @@ Status Code
 <tr>  
 <td>
 
-ShippingRatesValidation.BuyerIDRequired
+Shipping RatesValidation.BuyerIDRequired
 
 </td>  
 <td>
@@ -191,7 +147,7 @@ BuyerID is required to get shipping rates.
 <tr>  
 <td>
 
-ShippingRatesValidation.OrderIDRequired
+Shipping RatesValidation.OrderIDRequired
 
 </td>  
 <td>
@@ -204,10 +160,6 @@ OrderID is required to get shipping rates.
 400
 
 </td> </tr> </table>
-
-
-
-
 
 
 

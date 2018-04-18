@@ -1,47 +1,22 @@
 ---
-title: Authorizenet: Refund Transaction
+title: Authorize.Net: Refund Transaction
 date: 2018-04-16
-category:Authorizenet
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Refund Transaction Overview
-
-
-
-
+##  Refund Transaction Overview
 
 In the case that a refund is required for a previously captured transaction,
-use the Refund Transaction method. This method will refund the transaction on
-Authorize.Net for either an existing card or dynamically to the card details
+use the Refund Transaction method. This method will refund the transaction onAuthorize.Net for either an existing card or dynamically to the card details
 provided then create an additional transaction on the existing payment on
 OrderCloud.io.
-
-
-
-
 
 If the refund transaction is successful, but there is an error while creating
 the transaction on OrderCloud.io, the Authorize.Net transaction will be
 voided.
 
-
-
-
-
-
-
-
-
-##  __Refund Transaction Request
-
-
-
-
+##  Refund Transaction Request
 
 This method requires either CardDetails.CreditCardID (for a previously created
 card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
@@ -55,7 +30,7 @@ created payment being refunded.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -80,15 +55,7 @@ created payment being refunded.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Refund Transaction Response
+##  Refund Transaction Response
 
 
 
@@ -117,43 +84,18 @@ created payment being refunded.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the refund process, the Authorize.Net refund transaction will be
 created first, followed by the transaction on OrderCloud.io. In the case that
-the OrderCloud.io step fails, the refund will be voided automatically on
-Authorize.Net.
-
-
-
-
+the OrderCloud.io step fails, the refund will be voided automatically onAuthorize.Net.
 
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -181,10 +123,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -272,15 +210,7 @@ CardDetails.ExpirationDate are required to refund a transaction.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -308,10 +238,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -337,10 +263,6 @@ If an incorrect `CardDetails.CreditCardID` was provided:
     
 
 ```
-
-
-
-
 
 If an incorrect `CardDetails.PaymentID` was provided:
 
@@ -368,10 +290,6 @@ If an incorrect `CardDetails.PaymentID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `OrderID` was provided:
 
 
@@ -397,8 +315,4 @@ If an incorrect `OrderID` was provided:
     
 
 ```
-
-
-
-
 

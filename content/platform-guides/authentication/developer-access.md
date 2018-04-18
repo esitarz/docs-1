@@ -1,28 +1,16 @@
 ---
 title: Authentication: Developer Access
 date: 2018-04-16
-category:Authentication
+category: Authentication
 ---
 
 
-
-
-
-
-## __Developer Access
-
-
-
-
+## Developer Access
 
 In order to make it easier for developers to get in and start testing
 applications we made a unique role called `DevCenterImpersonate`. This role
 allows you to log into your application with your Dev Center username and
 password so you don't have to go through the trouble of creating a user first.
-
-
-
-
 
 To take advantage of this feature simply include the role
 `DevCenterImpersonate` in the scope of your authentication request:
@@ -41,8 +29,4 @@ To take advantage of this feature simply include the role
     
 
 ```
-
-
-
-
 

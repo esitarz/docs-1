@@ -13,19 +13,19 @@
               
               {% if article.subcategories|count > 0 %}
                 {% if loop.first %}
-                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname') }}</a>
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname')|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
                   {% elif loop.previtem is defined and loop.previtem.subcategories != article.subcategories %}
-                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories[0].url }}">{{ article.subcategories[0].shortname }}</a>
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories[0].url }}">{{ article.subcategories[0].shortname|replace("-", " ")|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
                 {% endif %}
                 {% for subcategory in article.subcategories|sort %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
                   </li>
                 {% endfor %}
                 
               {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                  <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
                 </li>
               {% endif %}
               

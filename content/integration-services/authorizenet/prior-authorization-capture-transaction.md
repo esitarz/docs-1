@@ -1,42 +1,22 @@
 ---
-title: Authorizenet: Prior Authorization Capture Transaction
+title: Authorize.Net: Prior Authorization Capture Transaction
 date: 2018-04-16
-category:Authorizenet
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Prior Authorization Capture Transaction Overview
-
-
-
-
+##  Prior Authorization Capture Transaction Overview
 
 In the case that Authorize Only was previously used for a payment, Prior
 Authorization Capture Transaction can be used to actually capture the payment.
 This method will first capture the payment on Authorize.Net, then create an
 additional transaction on the previously created payment on OrderCloud.io.
 
-
-
-
-
 If the capture transaction is successful, but there is an error while creating
 the transaction on OrderCloud.io, the Authorize.Net transaction will be
 voided.
 
-
-
-
-
-
-
-
-
-##  __Prior Authorization Capture Transaction Request
+##  Prior Authorization Capture Transaction Request
 
 
 
@@ -45,7 +25,7 @@ voided.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -63,15 +43,7 @@ voided.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Prior Authorization Capture Transaction Response
+##  Prior Authorization Capture Transaction Response
 
 
 
@@ -100,43 +72,19 @@ voided.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the prior authorization capture process, the Authorize.Net payment
 authorization will be captured, followed by the creation of the transaction on
 OrderCloud.io. In the case that the OrderCloud.io step fails, the transaction
 will be voided automatically on Authorize.Net.
 
-
-
-
-
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -164,10 +112,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -238,15 +182,7 @@ BuyerID is required to capture a prior authorization.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -274,10 +210,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.PaymentID` was provided:
 
 
@@ -304,10 +236,6 @@ If an incorrect `CardDetails.PaymentID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `OrderID` was provided:
 
 
@@ -333,8 +261,4 @@ If an incorrect `OrderID` was provided:
     
 
 ```
-
-
-
-
 

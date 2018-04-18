@@ -1,49 +1,23 @@
 ---
-title: Authorizenet: Authorize And Capture Transaction
+title: Authorize.Net: Authorize And Capture Transaction
 date: 2018-04-16
-category:Authorizenet
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Authorize and Capture Transaction Overview
-
-
-
-
+##  Authorize and Capture Transaction Overview
 
 Authorizing and Capturing a credit card transaction is one of the most
 involved methods included in this integration. This method will create a new
 Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
-one does not already exist, authorize and capture a payment transaction on
-Authorize.Net, create a payment on OrderCloud.io tied to the authenticated
+one does not already exist, authorize and capture a payment transaction onAuthorize.Net, create a payment on OrderCloud.io tied to the authenticated
 userâs current Order (if a payment already exists, simply pass the ID in
 `PaymentID`), and also create a transaction tied to that payment.
 
-
-
-
-
 If the transaction authorization and capture are successful, but there is an
-error while creating the payment or transaction on OrderCloud.io, the
-Authorize.Net transaction will be voided.
+error while creating the payment or transaction on OrderCloud.io, theAuthorize.Net transaction will be voided.
 
-
-
-
-
-
-
-
-
-##  __Authorize and Capture Transaction Request
-
-
-
-
+##  Authorize and Capture Transaction Request
 
 This method requires either CardDetails.CreditCardID (for a previously created
 card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
@@ -56,7 +30,7 @@ new card).
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -82,15 +56,7 @@ new card).
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Authorize and Capture Transaction Response
+##  Authorize and Capture Transaction Response
 
 
 
@@ -119,43 +85,19 @@ new card).
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the authorization and capture process, the Authorize.Net payment
 transaction will be created first, followed by the payment and transaction on
 OrderCloud.io. In the case that the OrderCloud.io steps fail, the transaction
 will be voided automatically on Authorize.Net.
 
-
-
-
-
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -183,10 +125,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -275,10 +213,6 @@ card.
 
 
 
-
-
-
-
 ### Authorize.Net Error Response
 
 
@@ -327,10 +261,6 @@ card.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -492,15 +422,7 @@ The transaction was unsuccessful.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -528,10 +450,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -558,10 +476,6 @@ If an incorrect `CardDetails.CreditCardID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `OrderID` was provided:
 
 
@@ -587,8 +501,4 @@ If an incorrect `OrderID` was provided:
     
 
 ```
-
-
-
-
 

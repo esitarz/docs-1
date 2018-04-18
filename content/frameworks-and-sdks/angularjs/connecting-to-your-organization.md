@@ -3,25 +3,13 @@ title: Angularjs: Connecting To Your Organization
 date: 2018-04-16
 category:Angularjs
 ---
-
-
-
-
 Linking your front-end application to an OrderCloud seller or buyer
 organization can be accomplished using the `scope` and `clientid` constants
 described below.
 
 
 
-
-
-
-
 ## Application Constants
-
-
-
-
 
 `src/app/app.constants.json` is a small, yet powerful file host a JSON object
 of key value pairs to be used throughout the application. From this object,
@@ -174,19 +162,7 @@ angular-seller theme.
 
 </td> </tr> </table>
 
-
-
-
-
-
-
-
-
 ## Process Environment Variable Overrides
-
-
-
-
 
 The constants provided above can be overwritten within your hosting providers
 application settings. For example, within Heroku, you can override these
@@ -196,8 +172,4 @@ config-vars-for-a-deployed-application). This is accomplished in the
 [`gulp.config.js`](https://github.com/ordercloud-api/angular-
 seller/blob/development/gulp.config.js#L116-L121) file, which can be
 customized to include additional application constants.
-
-
-
-
 

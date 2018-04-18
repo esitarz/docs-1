@@ -5,15 +5,7 @@ category:Angularjs
 ---
 
 
-
-
-
-
 ## `./src/` Directory
-
-
-
-
 
 This is where the majority of development work will occur. It contains all of
 the application code, tests, and assets.
@@ -22,40 +14,16 @@ the application code, tests, and assets.
 
   
 
-
-
-
-
   * **src/app/** \- contains all of the application code and corresponding tests
   * `src/assets/` - static files like fonts and images
   * **src/index.html** \- this is the HTML document of the single-page application
 
-
-
-
-
-
-
-
-
 ## `index.html`
-
-
-
-
 
 The index file is the HTML document of the single-page application (SPA). This
 is the highest level container for everything in your angular application.
 
-
-
-
-
 ### `<html>`
-
-
-
-
 
 The application module (orderCloud) and application controller (AppCtrl) are
 both loaded on the `<html>` element. We use the [controllerAs
@@ -63,15 +31,7 @@ syntax](https://toddmotto.com/digging-into-angulars-controller-as-syntax/), so
 keep in mind that anything attached to the `AppCtrl` view model is accessible
 under the name `application` in all of your template files.
 
-
-
-
-
 ### `<head>`
-
-
-
-
 
 Within the `<head>` element there are some basic `<meta>` tags and a dynamic
 `<title>` tag which takes advantage of `ui-router`'s `$state` service and the
@@ -93,29 +53,13 @@ controllerAs syntax below:
 
 ```
 
-
-
-
-
 After the `<title>`, there are some very important comments that are used to
 dynamically set the `base[href]` attribute and inject reference bower and
 application CSS styles during the gulp `build` and `compile`.
 
-
-
-
-
 At the end of the `<head>` you will find the link for the OrderCloud favicon.
 
-
-
-
-
 ### `<body>`
-
-
-
-
 
 The body element contains the `ui-view` in which all other application
 templates will be loaded. Within the `<ui-view>` element we've placed the HTML
@@ -123,14 +67,6 @@ used by [angular-busy](https://github.com/ordercloud-api/angular-
 seller/blob/development/src/app/common/config/angular-busy/angular-busy.js) to
 display a loading indicator while angular bootstraps itself.
 
-
-
-
-
 At the end of the body we again have some important comment markup that is
 used to dynamically inject all of the bower and application javascript files.
-
-
-
-
 

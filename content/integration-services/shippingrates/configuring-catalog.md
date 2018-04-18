@@ -1,36 +1,16 @@
 ---
-title: Shippingrates: Configuring Catalog
+title: Shipping Rates: Configuring Catalog
 date: 2018-04-16
-category:Shippingrates
+category: Shipping Rates
 ---
 
 
-
-
-
-
-##  __Configuring Catalog Overview
-
-
-
-
+##  Configuring Catalog Overview
 
 In order to be considered when estimating shipping rates, products and their
 price schedules will need a few things set up first.
 
-
-
-
-
-
-
-
-
-##  __ApplyShipping
-
-
-
-
+##  ApplyShipping
 
 First, `ApplyShipping` will need to be set to true on the price schedule
 assigned to the product. Any Line Items containing Products without this value
@@ -67,38 +47,14 @@ rates. Here's a sample Price Schedule with this configuration set:
 
 ```
 
-
-
-
-
-
-
-
-
-##  __ShipWeight
-
-
-
-
+##  ShipWeight
 
 Next, a `ShipWeight` (in lbs.) should to be set on the Product being ordered
 to provide accurate shipping rates. If a value is not set, the Product will
 still be included in the calculation. However, a weight of `0` will be used
 when calculating rates, resulting in inaccurate rates.
 
-
-
-
-
-
-
-
-
-##  __ShipFromAddressID
-
-
-
-
+##  ShipFromAddressID
 
 Next, a `ShipFromAddressID` needs to be set on the Product being ordered to be
 considered when estimating shipping rates. The value for this field should be
@@ -169,8 +125,4 @@ as a `ShipWeight`:
     
 
 ```
-
-
-
-
 

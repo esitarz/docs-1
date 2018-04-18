@@ -5,31 +5,23 @@ category:Csharp
 ---
 
 
-
-
-
-
-####  We are currently updating and enhancing our C# SDK. When that work is
+# We are currently updating and enhancing our C# SDK. When that work is
 complete, we'll publish an updated guide here. In the meantime, you can still
 use our [existing C# SDK](https://github.com/ordercloud-api/OrderCloud-CSharp-
 SDK). Please don't hesitate to contact us with any questions.
 
 
 
-
-
-
-
-## __Requirements
+## Requirements
 
   * .NET 4.0 or later
   * Windows Phone 7.1 (Mango)
 
-## __Installation
+## Installation
 
 Run the following command in Nuget
 
-## __Configuration
+## Configuration
 
 Before you can make any API calls, you will first need to define the ClientID
 and scopes.
@@ -50,7 +42,7 @@ Set your client_id and scopes:
     
     
 
-## __Authentication
+## Authentication
 
 To authenticate, you will need the username and a password of a user created
 in the API Console.
@@ -64,7 +56,7 @@ The full example is shown here:
     
     
 
-## __Impersonation
+## Impersonation
 
 The SDK also supports making an API call on behalf of (impersonation) a user.
 
@@ -90,7 +82,7 @@ The full example is shown here:
     
     
 
-## __Example
+## Example
 
 Letâs see how you might use the C# SDK to get a list of products. First
 weâll need to create a new instance of Products.
@@ -111,7 +103,7 @@ The full example is shown here:
 For more API usage examples take a look at our [C# SDK
 repository](https://github.com/ordercloud-api/csharp-sdk).
 
-## __Conclusion
+## Conclusion
 
 You should now have enough information to get started building on our
 platform! The API reference should be your go-to guide for working with the
