@@ -5,7 +5,7 @@
       {% if DISPLAY_CATEGORIES_ON_MENU %}
         {% for cat, null in categories %}
           <li class="nav-item {% if cat == category %} active{% endif %}">
-            <a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+            <a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}</a>
           </li>
         {% endfor %}
       {% endif %}

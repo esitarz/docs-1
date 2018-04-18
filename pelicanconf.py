@@ -27,7 +27,7 @@ AUTHOR_FEED_RSS = None
 THEME = 'themes/boots4pelican'
 
 PLUGIN_PATHS = ['Plugins']
-PLUGINS = ['assets', 'docs-subcategory', 'ace-editor']
+PLUGINS = ['assets', 'docs-subcategory']
 
 ASSET_SOURCE_PATHS = ['scss',]
 

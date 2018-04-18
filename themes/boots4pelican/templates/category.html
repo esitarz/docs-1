@@ -1,27 +1,34 @@
 {% extends "base.html" %}
-
 {% block title %}
   {{ category }} Articles | {{ SITENAME }}
 {% endblock title %}
-
 {% block content %}
   <div class="row">
     <div class="col-sm-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
-          {% for article in articles|sort(attribute='subcategories') %} 
+          <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}</a>
+          {% for article in articles|sort(attribute='subcategories') %}
             <li class="nav-item">
-              {% if loop.first %}
-                <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname') }}</a>
-              {% elif loop.previtem is defined and loop.previtem.subcategories != article.subcategories %}
-                <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories[0].url }}">{{ article.subcategories[0].shortname }}</a>
-              {% endif %} 
-              {% for subcategory in article.subcategories|sort %}
-                <li class="nav-item"> 
+              
+              {% if article.subcategories|count > 0 %}
+                {% if loop.first %}
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname') }}</a>
+                  {% elif loop.previtem is defined and loop.previtem.subcategories != article.subcategories %}
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories[0].url }}">{{ article.subcategories[0].shortname }}</a>
+                {% endif %}
+                {% for subcategory in article.subcategories|sort %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                  </li>
+                {% endfor %}
+                
+              {% else %}
+                <li class="nav-item">
                   <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                 </li>
-              {% endfor %}
+              {% endif %}
+              
             </li>
           {% endfor %}
         </li>
@@ -29,12 +36,12 @@
     </div>
     <div class="col-sm-9">
       <h1>
-        {% block page_header %}
-          {{ category }} Articles
-        {% endblock page_header %}
+      {% block page_header %}
+        {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }} Articles
+      {% endblock page_header %}
       </h1>
       {% block page_content %}
-        <p class="lead">This is a landing page for {{ category }}.</p>
+        <p class="lead">This is a landing page for {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}.</p>
       {% endblock page_content %}
     </div>
   </div>
