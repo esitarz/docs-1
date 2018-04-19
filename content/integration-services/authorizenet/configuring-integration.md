@@ -1,18 +1,11 @@
 ---
-title: Configuring Integration
+title: Authorize.Net: Configuring Integration
 date: 2018-04-16
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Authorize.Net Credentials
-
-
-
-
+##  Authorize.Net Credentials
 
 To configure your integration, register for an account on
 [Authorize.Net](https://www.authorize.net/solutions/merchantsolutions/pricing/)
@@ -21,39 +14,19 @@ your Api Login ID and Transaction Key.
 
 
 
-![](assets/images/docs-guides/integrations/authorizenet/authorize-net-
+![](assets/images/docs-guides/integrations/Authorize.Net/authorize-net-
 credentials.png)
 
-
-
-
-
-
-
-
-
-##  __OrderCloud.io Configuration
-
-
-
-
+##  OrderCloud.io Configuration
 
 Once youâve obtained these credentials, navigate to the Dashboard
 Integrations page within OrderCloud.io and select Authorize.Net.
 
 
 
-![](assets/images/docs-guides/integrations/authorizenet/authorize-net-
+![](assets/images/docs-guides/integrations/Authorize.Net/authorize-net-
 configuration.png)
-
-
-
-
 
 Fill in your credentials from above in the form, select which environment
 within Authorize.Net youâll be working in, then click Save Information.
-
-
-
-
 

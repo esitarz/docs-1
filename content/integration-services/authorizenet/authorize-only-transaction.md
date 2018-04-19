@@ -1,18 +1,11 @@
 ---
-title: Authorize Only Transaction
+title: Authorize.Net: Authorize Only Transaction
 date: 2018-04-16
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Authorize Only Transaction Overview
-
-
-
-
+##  Authorize Only Transaction Overview
 
 Though a payment is not actually being captured, the Authorize Only
 transaction method involves just as many integration calls as Authorizing and
@@ -25,27 +18,11 @@ a transaction tied to that payment. The main differences are that the payment
 will not be captured on Authorize.Net and the transaction on OrderCloud.io
 will only reference that authorization.
 
-
-
-
-
 If the authorization transaction is successful, but there is an error while
 creating the payment or transaction on OrderCloud.io, the Authorize.Net
 transaction will be voided.
 
-
-
-
-
-
-
-
-
-##  __Authorize Only Request
-
-
-
-
+##  Authorize Only Request
 
 This method requires either CardDetails.CreditCardID (for a previously created
 card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
@@ -58,7 +35,7 @@ new card).
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -84,15 +61,7 @@ new card).
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Authorize Only Response
+##  Authorize Only Response
 
 
 
@@ -121,43 +90,19 @@ new card).
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the authorization only process, the Authorize.Net payment authorization
 transaction will be created first, followed by the payment and transaction on
 OrderCloud.io. In the case that the OrderCloud.io steps fail, the transaction
 will be voided automatically on Authorize.Net.
 
-
-
-
-
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -185,10 +130,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -276,10 +217,6 @@ CardDetails.ExpirationDate are required to authorize a credit card.
 
 
 
-
-
-
-
 ### Authorize.Net Error Response
 
 
@@ -328,10 +265,6 @@ CardDetails.ExpirationDate are required to authorize a credit card.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -493,15 +426,7 @@ The transaction was unsuccessful.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -529,10 +454,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -559,10 +480,6 @@ If an incorrect `CardDetails.CreditCardID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `OrderID` was provided:
 
 
@@ -588,8 +505,4 @@ If an incorrect `OrderID` was provided:
     
 
 ```
-
-
-
-
 

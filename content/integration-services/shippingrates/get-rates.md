@@ -1,18 +1,11 @@
 ---
-title: Get Rates
+title: Shipping Rates: Get Rates
 date: 2018-04-16
+category: Shipping Rates
 ---
 
 
-
-
-
-
-##  __Get Rates Overview
-
-
-
-
+##  Get Rates Overview
 
 The first method available within the OrderCloud.io Shipping Rates integration
 is _GetRates_. This method will group together Line Items on an Order based on
@@ -21,37 +14,17 @@ the Line Items' `ShippingAddress` and the Line Item Products'
 included Products' `ShipWeight`, and obtain shipping rate estimates from the
 carriers selected in your integration configuration.
 
-
-
-
-
 As mentioned in the Catalog Configuration, Line Items will not be included in
 the shipping rate calculation for the following reasons:
-
-
-
-
 
   * No `ShippingAddress` is set on the Line Item
   * No `ShipFromAddressID` is set on the Product
   * `ApplyShipping` is not set to true on the Productâs Price Schedule
 
-
-
-
-
 Also, if a `ShipWeight` (in lbs.) is not set on a Product, a weight of `0`
 will be used when calculating rates, resulting in an inaccurate estimate.
 
-
-
-
-
-
-
-
-
-##  __Get Rates Request
+##  Get Rates Request
 
 
 
@@ -60,7 +33,7 @@ will be used when calculating rates, resulting in an inaccurate estimate.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/shippingrates HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Shipping Rates HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -74,15 +47,7 @@ will be used when calculating rates, resulting in an inaccurate estimate.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Get Rates Response
+##  Get Rates Response
 
 
 
@@ -131,25 +96,9 @@ will be used when calculating rates, resulting in an inaccurate estimate.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request or there are
 any issues with your Order, the following response will be returned containing
@@ -178,10 +127,6 @@ call. The possible ErrorCodes and Messages are listed below.
 
 ```
 
-
-
-
-
   
 <table>  
 <tr>  
@@ -203,7 +148,7 @@ Status Code
 <tr>  
 <td>
 
-ShippingRatesValidation.BuyerIDRequired
+Shipping RatesValidation.BuyerIDRequired
 
 </td>  
 <td>
@@ -219,7 +164,7 @@ BuyerID is required to get shipping rates.
 <tr>  
 <td>
 
-ShippingRatesValidation.OrderIDRequired
+Shipping RatesValidation.OrderIDRequired
 
 </td>  
 <td>
@@ -235,7 +180,7 @@ OrderID is required to get shipping rates.
 <tr>  
 <td>
 
-ShippingRatesValidation.LineItemsRequired
+Shipping RatesValidation.LineItemsRequired
 
 </td>  
 <td>
@@ -248,10 +193,6 @@ At least one line item is required to get shipping rates.
 400
 
 </td> </tr> </table>
-
-
-
-
 
 
 

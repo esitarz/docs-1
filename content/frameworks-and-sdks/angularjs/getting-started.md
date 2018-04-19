@@ -1,18 +1,11 @@
 ---
-title: Getting Started
+title: Angularjs: Getting Started
 date: 2018-04-16
+category:Angularjs
 ---
 
 
-
-
-
-
 ## Introduction
-
-
-
-
 
 OrderCloud provides fully functional, open source starter applications built
 for seller and buyer users on the OrderCloud.io platform in Angular 1.X.
@@ -20,52 +13,20 @@ Ideally solution implementers will fork or clone this repository to maintain
 their customized admin application through merges and pull requests after new
 versions are released in the base fork (this repository).
 
-
-
-
-
 The starter app for both types of applications can be found on GitHub by
 following the links below:
-
-
-
-
 
   * [seller starter application](https://github.com/ordercloud-api/angular-seller)
   * [buyer starter application](https://github.com/ordercloud-api/angular-buyer)
 
-
-
-
-
-
-
-
-
 ## Prerequisites
-
-
-
-
 
   * [Git (version control)](https://git-scm.com/)
   * [Node.js (npm)](http://nodejs.org/)
   * [Bower (another package manager)](https://bower.io/#install-bower)
   * [Gulp.js (automation)](http://gulpjs.com/)
 
-
-
-
-
-
-
-
-
 ## Installation
-
-
-
-
 
 Install the project dependencies:
 
@@ -79,10 +40,6 @@ Install the project dependencies:
     $ npm install
 
 ```
-
-
-
-
 
 If for some reason the `post-install` script fails, reattempt the bower
 install manually:
@@ -98,19 +55,7 @@ install manually:
 
 ```
 
-
-
-
-
-
-
-
-
 ## Local Development
-
-
-
-
 
 To view your application locally while you work, run the following gulp
 command:
@@ -126,35 +71,15 @@ command:
 
 ```
 
-
-
-
-
 This will pull together everything in the projects `./src/` directory and put
 the result into a new `./build/` folder (ignored by source control).
-
-
-
-
 
 After the build succeeds, an express server will fire up and open the app in
 your default browser @ `http://localhost:3000/`. Additionally, a watch is
 initiated so that [BrowserSync](https://browsersync.io/) can automatically
 refresh the app when changes to the `./src/` directory are made.
 
-
-
-
-
-
-
-
-
 ## Running Unit and E2E Tests
-
-
-
-
 
 [Karma](https://karma-runner.github.io/1.0/index.html),
 [Jasmine](https://jasmine.github.io/), and [Protrator (e2e test framework for
@@ -231,19 +156,7 @@ Runs both the unit and E2E tests
 
 </td> </tr> </table>
 
-
-
-
-
-
-
-
-
 ## Compiling for Production
-
-
-
-
 
 You can run the following command to compile your code to a production-ready
 state:
@@ -259,45 +172,21 @@ state:
 
 ```
 
-
-
-
-
 This will concat all similar file types into a single file, minify the code,
 and drop the result into a new `./compile/` folder. Images in the
 `./src/assets/` directory are compressed for web optimization and template
 file contents are stringified and added to the angular `$templateCache` for
 faster load times.
 
-
-
-
-
 > While we've worked hard to ensure that your app will behave the same on both
 build and compile, it is always recommended that the compiled code be
 thoroughly tested before moving to production.
-
-
-
-
 
 When the compile is complete, the express server will fire up again and open
 the app @ `http://localhost:3000/`. For performance reasons the watch is not
 fired on compile like it is on build.
 
-
-
-
-
-
-
-
-
 ## Deploying to [GitHub Pages](https://pages.github.com/)
-
-
-
-
 
 Having worked in the B2B world for over 15 years we know that showing
 development progress is extremely important, especially during large projects.
@@ -315,17 +204,9 @@ directly to a gh-pages branch for fast and easy demos!
 
 ```
 
-
-
-
-
 This will push a compiled version of your working copy directly to your
 default git remote and can be viewed here @ `username.github.io/repository-
 name`.
-
-
-
-
 
 **Important Note!** Your angular app _must **not**_ be in HTML5 mode for the
 routing on gh-pages to work properly. This can be changed in
@@ -334,10 +215,6 @@ routing on gh-pages to work properly. This can be changed in
 Github pages can take a few minutes (about 10) to propagate before your app
 will become available.
 
-
-
-
-
 Of course, this is not the only deployment option available. Angular-based
 OrderCloud applications are
 [preconfigured](https://devcenter.heroku.com/categories/nodejs) to be deployed
@@ -345,8 +222,4 @@ on [Heroku](https://www.heroku.com/) using their [GitHub
 integration](https://devcenter.heroku.com/articles/github-integration) and the
 `./compile` directory is made up of entirely static files that can be easily
 deployed to any hosting provider.
-
-
-
-
 

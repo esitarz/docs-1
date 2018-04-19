@@ -1,8 +1,8 @@
 ---
-Title: Frameworks And Sdks
+Title: Frameworks And SDKs
 author: OrderCloud.io
 slug: frameworks-and-sdks
-icon: fa fa-bolt color__sorbet 
+icon: fa fa-bolt colorsorbet 
 ---
 Take advantage of our rapid development tools & resources.
 

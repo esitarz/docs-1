@@ -1,18 +1,11 @@
 ---
-title: Rules Engine
+title: Core Concepts: Rules Engine
 date: 2018-04-16
+category: Core Concepts
 ---
 
 
-
-
-
-
-## __Introduction
-
-
-
-
+## Introduction
 
 Whatâs a rules engine? Itâs a system that executes rules. Okay...so
 whatâs a rule? In its simplest form, itâs an if-then statement that is
@@ -23,15 +16,7 @@ custom **logic expressions**. Effectively, weâre going to allow you to
 extend platform behavior in much the same way xp allows you to extend the data
 model.
 
-
-
-
-
 Here is an example:
-
-
-
-
 
 Say you want every order over $200 with some specific xp value to require
 approval from a manager. You would first create a UserGroup containing all
@@ -50,19 +35,7 @@ and set the Expression to this:
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Supported Operations
-
-
-
-
+##  Supported Operations
 
   * `order` supports the same properties as the Order model returned from /orders API endpoints, including xp.
   * `= `, `< `, `>`, `<=`, `>=` comparison operators are supported.
@@ -72,19 +45,7 @@ and set the Expression to this:
   * Date values must be enclosed in # symbols, i.e #5/15/2016#
   * Parentheses may be used to enclose sub-expressions and control order of execution.
 
-
-
-
-
-
-
-
-
-## __Line Item Control
-
-
-
-
+## Line Item Control
 
 What about line items? Glad you asked, because which products are being
 purchased, in what quantities, charged against which cost centers, etc, are
@@ -104,10 +65,6 @@ require approval on all orders over $200 charged to cost center ABC:
 
 ```
 
-
-
-
-
 Thatâs pretty powerful, but itâs more likely that you only care about the
 _subtotal_ of just the line items matching your CostCenter condition. For this
 you can use the `items.total` function:
@@ -124,10 +81,6 @@ you can use the `items.total` function:
 
 ```
 
-
-
-
-
 The condition inside the function (called a filter) can be more complex and
 contain `and`, `or`, etc. just like other parts of the expression:
 
@@ -142,10 +95,6 @@ contain `and`, `or`, etc. just like other parts of the expression:
     
 
 ```
-
-
-
-
 
 It also has access to a special filter that allows you check whether a product
 is in a certain category:
@@ -180,19 +129,7 @@ and one special filter:
 
   * `product.incategory('mycustomcategory')`
 
-
-
-
-
-
-
-
-
-## __ComplexApprovals
-
-
-
-
+## ComplexApprovals
 
 Speaking of functions, there is one defined on `order`:
 
@@ -208,18 +145,10 @@ Speaking of functions, there is one defined on `order`:
 
 ```
 
-
-
-
-
 This oneâs powerful, because it allows you to set up multi-level approval
 workflows by chaining rules together. For example, in a larger organization,
 getting the approval from a department manager might not be enough, and a
 higher-level VP must also sign off.
-
-
-
-
 
 All valid elements of rule expressions can be mixed & matched as needed,
 allowing for very sophisticated rules to be supported:
@@ -236,37 +165,17 @@ allowing for very sophisticated rules to be supported:
 
 ```
 
-
-
-
-
 A word of caution: Rules are easy to write and very powerful, but can be very
 tricky to debug when they donât work quite like you thought they would.
 Donât get more fancy with them than you need to. As always, weâre here to
 help if you need guidance.
 
-
-
-
-
-
-
-
-
-##  __Where to go from here?
-
-
-
-
+##  Where to go from here?
 
 You can also leverage the power of the rules engine to create custom
 Promotions. Both the promotion EligibleExpression and ValueExpression accept
 expressions just like the ones described above. Here are some other things we
 may leverage the rules engine for in the future:
-
-
-
-
 
   * Custom validation (upon creating/editing things)
   * Time-based approval rules (aggregated totals over past week/month/quarter, etc.)
@@ -274,15 +183,7 @@ may leverage the rules engine for in the future:
   * Replenish inventory
   * Fire off a notification via webhooks
 
-
-
-
-
 Weâd love to get your thoughts on these ideas. Look for significant
 enhancements to the rules engine and new applications of it in the months
 ahead.
-
-
-
-
 

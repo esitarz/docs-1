@@ -1,18 +1,11 @@
 ---
-title: Delete Credit Card
+title: Authorize.Net: Delete Credit Card
 date: 2018-04-16
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Delete Credit Card Overview
-
-
-
-
+##  Delete Credit Card Overview
 
 When a customer within your buyer application deletes a credit card, the
 integration endpoint can be called in order to delete that card on
@@ -23,15 +16,7 @@ Otherwise, the response will simply be a 204 No Content. If the card is
 shared, meaning `Shared` was set to `true` when the card was created, `Shared`
 must be passed as `true` when deleting.
 
-
-
-
-
-
-
-
-
-##  __Delete Credit Card Request
+##  Delete Credit Card Request
 
 
 
@@ -40,7 +25,7 @@ must be passed as `true` when deleting.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -57,15 +42,7 @@ must be passed as `true` when deleting.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Delete Credit Card Response
+##  Delete Credit Card Response
 
 
 
@@ -82,42 +59,18 @@ must be passed as `true` when deleting.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the credit card delete process, the Authorize.Net Customer Payment
 Profile will first be deleted. Next, the card will be deleted on
 OrderCloud.io.
-
-
-
-
 
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -145,10 +98,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -187,15 +136,7 @@ CardDetails.CreditCardID is required to delete a credit card.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -223,10 +164,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -252,8 +189,4 @@ If an incorrect `CardDetails.CreditCardID` was provided:
     
 
 ```
-
-
-
-
 

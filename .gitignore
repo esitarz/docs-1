@@ -11,5 +11,5 @@ __pycache__
 output/**
 
 formatted
-
+themes/pelican-elegant/*
 config.ini

@@ -1,55 +1,42 @@
 {% extends "base.html" %}
-
 {% block head %}
   {{ super() }}
   {% if DESCRIPTION %}
     <meta name="description" content="{{ DESCRIPTION|striptags }}">
   {% endif %}
 {% endblock head %}
-
 {% block title %}
   {{ SITENAME }} | {{ SITESUBTITLE }}
 {% endblock title %}
-
-{% block page_header %}
-  Articles
-{% endblock page_header %}
-
 {% block content %}
-  {% for article in articles_page.object_list %}
-    <article class="row teaser">
-      <header class="col-sm-4 text-muted">
-        <ul>
-          <li title="{{ article.date.isoformat() }}">
-            <i class="far fa-clock"></i>
-            {{ article.locale_date }}
-          </li>
-          <li>
-            <i class="far fa-folder-open"></i>
-            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-          </li>
-          {% if not HIDE_AUTHORS and article.authors %}
-            <li>
-              <i class="far fa-user"></i>
-              {% for author in article.authors %}
-                <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>{% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </li>
-          {% endif %}
-        </ul>
-      </header>
-      <div class="col-sm-8">
-        <h4 class="title">
-          <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-        </h4>
-        <div class="content">
-          {{ article.summary|striptags }}
-        </div>
+  
+
+    <div class="jumbotron">
+      <h1 class="display-4">Explore the OrderCloud Platform!</h1>
+      <p class="lead">Our RESTful API provides access to OrderCloud's B2B eCommerce platform-as-a-service.</p>
+      <hr class="my-4">
+      <p>Dive into our API Reference docs, or download our Swagger Spec to quickly try out our endpoints.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="https://github.com/ordercloud-api/swagger/" role="button">Check Out Our Swagger Spec!</a>
+      </p>
+    </div>
+    <div class ="container-fluid">
+      <h2 class= "display-6"> Types of Documentation</h2>
+      <div class="row flex-row align-items-stretch">
+        {% for category, articles in categories|sort %}
+          {% for page in pages if page.slug == category %}
+            <div class="col-md-4 col-lg-3" >
+              <div class="card bg-light mb-3" style="max-width: 20rem; min-height: 20rem;">
+                
+                <div class="card-header"><a href="{{ SITEURL }}/{{ category.url }}">{{page.title}}</a></div>
+                <div class="card-body">
+                  <h4 class="card-title">{{page.title}}</h4>
+                  <p class="card-text">{{page.content}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
       </div>
-    </article>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
-  {% include 'include/pagination.html' %}
-{% endblock content %}
+
+  {% endblock content %}

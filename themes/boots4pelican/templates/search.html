@@ -1,0 +1,39 @@
+{% extends "category.html" %}
+
+{% block title %}
+  Search | {{ SITENAME }}
+{% endblock title %}
+
+{% block script %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
+
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+         {% if 'tipue_search' in PLUGINS %}
+             'mode' : 'json',
+         {% else %}
+             'mode': 'live',
+         {% endif %}
+         'show': 10,
+         'newWindow': false,
+         {# I cannot place following statements in the conditionals above because then Tipue Search fails to work. Possibly a bug in Tipue Search. #}
+         {% if 'tipue_search' in PLUGINS %}
+             'contentLocation': 'tipuesearch_content.json'
+         {% else %}
+             'liveDescription': '.article-content'
+         {% endif %}
+     });
+});
+</script>
+{% endblock script %}
+
+{% block content %}
+    <div class="row my-3">
+        <div id="tipue_search_content" class="col my-3"><div class="col" id="tipue_search_loading"></div></div>
+    </div>
+
+{% endblock content %}

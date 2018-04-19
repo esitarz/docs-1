@@ -1,18 +1,11 @@
 ---
-title: Create Credit Card
+title: Authorize.Net: Create Credit Card
 date: 2018-04-16
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Create Credit Card Overview
-
-
-
-
+##  Create Credit Card Overview
 
 When a customer within your buyer application creates a credit card, the
 integration endpoint can be called in order to create that card within
@@ -20,20 +13,12 @@ OrderCloud.io as well as Authorize.Net. The card will created as a personal
 card by default. However, passing `true` for `Shared` assign the card to the
 entire Buyer Organization provided in the `BuyerID`. This endpoint will create
 a Customer Profile within Authorize.Net if one does not already exist
-(Authorize.Net Customer Profile ID will be saved as xp.AuthorizeNetProfileID
+(Authorize.Net Customer Profile ID will be saved as xp.Authorize.NetProfileID
 on the User), create a Customer Payment Profile within Authorize.Net that
 securely stores the tokenized data for the card, and finally create and assign
 the card on OrderCloud.io to the authenticate user.
 
-
-
-
-
-
-
-
-
-##  __Create Credit Card Request
+##  Create Credit Card Request
 
 
 
@@ -42,7 +27,7 @@ the card on OrderCloud.io to the authenticate user.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -63,15 +48,7 @@ the card on OrderCloud.io to the authenticate user.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Create Credit Card Response
+##  Create Credit Card Response
 
 
 
@@ -98,19 +75,7 @@ the card on OrderCloud.io to the authenticate user.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the credit card create process, the Authorize.Net Customer Profile and
 Customer Payment Profile are created (if necessary) first, followed by the
@@ -120,15 +85,7 @@ the Authorize.Net or OrderCloud.io endpoint that failed. However, if any
 required fields are missing, a 400 error will be returned before any of the
 creation process is executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -156,10 +113,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -214,10 +167,6 @@ CardDetails.ExpirationDate is required to create a new credit card.
 
 
 
-
-
-
-
 ### Authorize.Net Error Response
 
 
@@ -245,10 +194,6 @@ CardDetails.ExpirationDate is required to create a new credit card.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -319,15 +264,7 @@ The credit card has expired.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -354,8 +291,4 @@ If an incorrect `BuyerID` was provided:
     
 
 ```
-
-
-
-
 

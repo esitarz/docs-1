@@ -1,18 +1,11 @@
 ---
-title: Update Credit Card
+title: Authorize.Net: Update Credit Card
 date: 2018-04-16
+category: Authorize.Net
 ---
 
 
-
-
-
-
-##  __Update Credit Card Overview
-
-
-
-
+##  Update Credit Card Overview
 
 When a customer within your buyer application updates a credit card, the
 integration endpoint can be called in order to update that card on
@@ -22,15 +15,7 @@ If either step fails, all changes will be reverted in order to keep each
 system in sync. If the card is shared, meaning `Shared` was set to `true` when
 the card was created, `Shared` must be passed as `true` when updating.
 
-
-
-
-
-
-
-
-
-##  __Update Credit Card Request
+##  Update Credit Card Request
 
 
 
@@ -39,7 +24,7 @@ the card was created, `Shared` must be passed as `true` when updating.
 
     
     
-    POST https://api.ordercloud.io/v1/integrationproxy/authorizenet HTTP/1.1
+    POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
     
@@ -61,15 +46,7 @@ the card was created, `Shared` must be passed as `true` when updating.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Update Credit Card Response
+##  Update Credit Card Response
 
 
 
@@ -96,43 +73,19 @@ the card was created, `Shared` must be passed as `true` when updating.
 
 ```
 
-
-
-
-
-
-
-
-
-##  __Error Handling
-
-
-
-
+##  Error Handling
 
 During the credit card update process, the Authorize.Net Customer Payment
 Profile will first be updated. Next, the card will be updated on
 OrderCloud.io. In the case that either step fails, the card data will be
 reverted in both locations, ensuring the data is accurate in each system.
 
-
-
-
-
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
 missing, a 400 error will be returned before any of the update process is
 executed.
 
-
-
-
-
 ### Validation Response
-
-
-
-
 
 In the case that a required field is missing from your request, the following
 response will be returned containing a unique ErrorCode and Message, as well
@@ -160,10 +113,6 @@ are listed below.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -202,10 +151,6 @@ CardDetails.CreditCardID is required to update a credit card.
 
 
 
-
-
-
-
 ### Authorize.Net Error Response
 
 
@@ -233,10 +178,6 @@ CardDetails.CreditCardID is required to update a credit card.
     
 
 ```
-
-
-
-
 
   
 <table>  
@@ -307,15 +248,7 @@ The credit card has expired.
 
 
 
-
-
-
-
 ### OrderCloud.io Error Response
-
-
-
-
 
 If an incorrect `BuyerID` was provided:
 
@@ -343,10 +276,6 @@ If an incorrect `BuyerID` was provided:
 
 ```
 
-
-
-
-
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
@@ -372,8 +301,4 @@ If an incorrect `CardDetails.CreditCardID` was provided:
     
 
 ```
-
-
-
-
 

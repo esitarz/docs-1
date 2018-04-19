@@ -85,3 +85,9 @@ Alchemy follows the [Contributor Covenant](CODE_OF_CONDUCT.md) code of conduct.
 ## License
 
 [MIT](LICENSE) © 2017 Nairobi GNU/Linux Users Group
+
+
+
+Tips and Tricks:
+
+- [Tipue Search]() can replace frequently mispelled searches with the correct option. See `tipuesearch_replace` in the [Tipue Search]() folder.
