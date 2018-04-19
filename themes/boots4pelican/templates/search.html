@@ -1,22 +1,15 @@
 {% extends "category.html" %}
 
-{% block head %}
-  {{ super() }}
-  <meta name="description" content="{{ article.summary|striptags }}">
-{% endblock %}
-
 {% block title %}
   Search | {{ SITENAME }}
 {% endblock title %}
 
 {% block script %}
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    {% if 'assets' in PLUGINS %}
-    {% include '_includes/minify_tipuesearch.html' with context %}
-    {% else %}
+
 <script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
-    {% endif %}
+
 <script>
 $(document).ready(function() {
      $('#tipue_search_input').tipuesearch({
@@ -39,9 +32,8 @@ $(document).ready(function() {
 {% endblock script %}
 
 {% block content %}
-<article>
-    <div class="span8 offset2">
-        <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+    <div class="row my-3">
+        <div id="tipue_search_content" class="col my-3"><div class="col" id="tipue_search_loading"></div></div>
     </div>
-</article>
+
 {% endblock content %}

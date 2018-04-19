@@ -37,8 +37,9 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-8 col-md-8">
-      <h1>
+    <div class="col-sm-8 col-md-8 ">
+      
+      <h1 class = "display">
       {% block page_header %}
         {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }} Articles
       {% endblock page_header %}

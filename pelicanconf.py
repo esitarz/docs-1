@@ -15,6 +15,8 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
+DIRECT_TEMPLATES =  ['search']
+
 # DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
@@ -26,10 +28,10 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'themes/boots4pelican'
 
-PLUGIN_PATHS = ['Plugins']
-PLUGINS = ['assets', 'docs-subcategory']
+PLUGIN_PATHS = ['Plugins', '../pelican/pelican-plugins']
+PLUGINS = ['assets', 'docs-subcategory', 'tipue_search']
 
-ASSET_SOURCE_PATHS = ['scss',]
+ASSET_SOURCE_PATHS = ['scss']
 
 USE_FOLDER_AS_CATEGORY = True
 DISPLAY_CATEGORIES_ON_MENU = True
