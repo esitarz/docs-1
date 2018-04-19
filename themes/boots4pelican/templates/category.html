@@ -24,6 +24,9 @@
                 {% endfor %}
                 
               {% else %}
+                {% if loop.first %}
+                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.category.slug }}">{{ article.category.name|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
+                {% endif %}
                 <li class="nav-item">
                   <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
                 </li>
