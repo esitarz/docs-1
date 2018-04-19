@@ -4,9 +4,9 @@
 {% endblock title %}
 {% block content %}
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-4 col-md-4">
       <ul class="nav flex-column">
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}</a>
           {% for article in articles|sort(attribute='subcategories') %}
             <li class="nav-item">
@@ -37,7 +37,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-8 col-md-8">
       <h1>
       {% block page_header %}
         {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }} Articles
