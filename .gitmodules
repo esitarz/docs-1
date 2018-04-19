@@ -1,0 +1,4 @@
+
+[submodule "themes/boots4pelican/static/tipuesearch/tipuesearch"]
+	path = themes/boots4pelican/static/tipuesearch/tipuesearch
+	url = https://github.com/Tipue/Tipue-Search.git
