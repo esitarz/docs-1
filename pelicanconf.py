@@ -15,7 +15,7 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
-DIRECT_TEMPLATES =  ['search']
+DIRECT_TEMPLATES =  ['search', 'index']
 
 # DELETE_OUTPUT_DIRECTORY = True
 
@@ -28,7 +28,7 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'themes/boots4pelican'
 
-PLUGIN_PATHS = ['Plugins', '../pelican/pelican-plugins']
+PLUGIN_PATHS = ['Plugins']
 PLUGINS = ['assets', 'docs-subcategory', 'tipue_search']
 
 ASSET_SOURCE_PATHS = ['scss']
