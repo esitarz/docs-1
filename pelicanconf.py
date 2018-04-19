@@ -15,7 +15,7 @@ TIMEZONE = 'America/Chicago'
 
 DEFAULT_LANG = 'English'
 
-DIRECT_TEMPLATES =  ['search', 'index']
+DIRECT_TEMPLATES =  ['search', 'index', '404']
 
 # DELETE_OUTPUT_DIRECTORY = True
 
