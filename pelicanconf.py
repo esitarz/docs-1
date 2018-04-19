@@ -55,6 +55,7 @@ READERS = {'html': None}
 IGNORE_FILES = ['**/pelican-plugins/*','**/pelican-themes/*','**/copies/*']
 
 HIDE_DATE = True
+HIDE_FOOTER_NAV = True
 
 MARKDOWN = {
     'extension_configs': {
