@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ordercloud-api/docs.svg?branch=master)](https://travis-ci.org/ordercloud-api/docs)
+
 # OrderCloud.io Documentation
 
 This is the repository for the [OrderCloud.io](https://ordercloud.io/) platform's [documentation site](https://ordercloud-api.github.io/docs/). We use [pelican](https://github.com/getpelican) to generate this site.
