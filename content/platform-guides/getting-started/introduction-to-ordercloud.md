@@ -16,7 +16,7 @@ customize it to limits of your imagination.
 
 ### Benefits of a RESTful API
 
-Whether it's the central hub of a mobile purchasing app or one small piece
+Whether it's the central hub of a mobile purchasing app or one small piece
 of a larger microservices-based solution, the benefits of a RESTful API vs.
 other approaches are clear.
 
@@ -27,7 +27,7 @@ other approaches are clear.
 ![](assets/images/docs-guides/getting-started/intro/agnostic.jpg)
 
 OrderCloud.io enables developers to use their tech stack of choice. Plus,
-releases are automatic and non-breaking; there's a clear, inherent boundary
+releases are automatic and non-breaking; there's a clear, inherent boundary
 between our code and yours.
 
 Nearly all modern web and mobile front-end frameworks are designed to work
@@ -76,7 +76,7 @@ contract.
 People within the buyer organization may play different roles in the
 purchasing process and see different things. If one user places an order over
 a certain amount, it may require approval from their manager. Another user in
-a branch office may only see that office's address in their shipping
+a branch office may only see that office's address in their shipping
 options. Still another may have the ability to administer users, addresses, or
 even products.
 
@@ -94,7 +94,7 @@ organization grows.
 Multi-tiered assignments of roles and other things comprise a powerful
 mechanism for customizing the buyer experience down to the individual user.
 But once configured, the shopper (and developer for that matter) wants a fast
-and intuitive experience that's more concerned with what they see than how
+and intuitive experience that's more concerned with what they see than how
 they see it.
 
 OrderCloud.io provides a group of endpoints, commonly referred to as the
@@ -118,20 +118,20 @@ OrderCloud.io provides the ability to accurately model:
 
 ### Complex Ordering Processes
 
-In B2B, order flow isn't always as simple as a buyer submitting an order and
+In B2B, order flow isn't always as simple as a buyer submitting an order and
 a seller fulfilling it. On the buyer side, the order may need to go through a
 multi-tier approval process. The rules around what conditions require an
 approval (user, order total, specific products, quantities, etc.), who is
 allowed to approve, and at what stage in the workflow, can get complex.
 
-OrderCloud.io's built-in rules engine allows you to express these rules as
+OrderCloud.io's built-in rules engine allows you to express these rules as
 formulas that get evaluated each time an order is submitted or approved. When
 an approval triggers no further rules, the order is passed on to the seller.
 
 ### Assisted Ordering
 
 Among the primary goals of any eCommerce system are automation and empowering
-the buyer. But in B2B, sometimes there's no substitute for the personalized
+the buyer. But in B2B, sometimes there's no substitute for the personalized
 service afforded by CSRs (Customer Service Representatives) at call centers.
 
 OrderCloud.io provides a clear method of impersonating a buyer user. This
@@ -184,12 +184,12 @@ order ID of aprefix-10010.
 
 ### XP
 
-We recognize that OrderCloud.io's core data model can't cover every
+We recognize that OrderCloud.io's core data model can't cover every
 conceivable scenario. Predicting every column in every table that your
-hypothetical database might need is impractical. That's why we created our
+hypothetical database might need is impractical. That's why we created our
 own schema-less solution with Extended Properties (most commonly referred to
 as 'xp') and exposed it on virtually every API resource. For example, our
-User model doesn't define a Gender attribute, but you can easily add one if
+User model doesn't define a Gender attribute, but you can easily add one if
 you need it:
 
 ```

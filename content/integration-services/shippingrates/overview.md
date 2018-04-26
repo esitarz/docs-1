@@ -20,7 +20,7 @@ based on their `ShippingAddress` and the Line Item Product's
 `ShipFromAddress`. Rates will be returned based on these determined shipments.
 
 GetLineItemRates will obtain shipping rates for each Line Item individually,
-regardless of the item's `ShippingAddress` and the Line Item Product's
+regardless of the item's `ShippingAddress` and the Line Item Product's
 `ShipFromAddress`.
 
 SetShippingCost simply allows your application to set an Order's

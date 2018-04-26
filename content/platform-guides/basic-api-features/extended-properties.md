@@ -141,8 +141,8 @@ other XP (gender and age) will persist.
 The only way to remove a specific xp from your resource is to use the Update
 (PUT) method. First GET the resource, then copy the response body returned,
 paste it into your PUT request and omit the xp key/value you wish to remove.
-Alternatively, if you don't need it actually deleted, you are able to set
-any xp's value to null. In the example below, we're removing the "Age" xp
+Alternatively, if you don't need it actually deleted, you are able to set
+any xp's value to null. In the example below, we're removing the "Age" xp
 from this user.
 
 

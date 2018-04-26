@@ -7,7 +7,7 @@ category: Authentication
 
 ## Overview
 
-You will learn how to set-up and use refresh tokens which will allow your
+You will learn how to set up and use refresh tokens which will allow your
 users to remain signed in without having to reauthenticate. This guide assumes
 you already know how to authenticate using one of the four workflows
 
@@ -17,30 +17,18 @@ A successful request to authenticate will return a response much like the
 following.
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: application/json; charset=UTF-8
-    
 
 ```
 
-
-
 ```
-
-
-    
-    
     {
     "access_token": "eyJ0eXAi0iJKV1QiLCJhbGci0iJ",
     "token_type" : "bearer",
     "expires_in" : 35999,
     "refresh_token": "878ca890-af6a-48b6-98a2-1e1cf4a.."
     }
-    
 
 ```
 
@@ -116,16 +104,12 @@ This will be the refresh_token from the first response
 A successful request might look like this:
 
 ```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: text/html; charset=UTF-8
-    
-    client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=refresh_token&refresh_token=878ca890-af6a48b6-98a2-1e1cf4a&scope=FullAccess
-    
+```
 
+```   
+    client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=refresh_token&refresh_token=878ca890-af6a48b6-98a2-1e1cf4a&scope=FullAccess
 ```
 
 

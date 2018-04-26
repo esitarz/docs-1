@@ -18,14 +18,8 @@ URL.
 
 
 ```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: text/html; charset=UTF-8
-    
-
 ```
 
 ## Required Information
@@ -48,19 +42,17 @@ authentication with this workflow requires the following information:
   5. Grant Type: `grant_type=password`
 
 
-
+HTTP Verb and Endpoint URL, Request Header:
 ```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: text/html; charset=UTF-8
-    
-    client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=password&username=xxxxxxxx&password=xxxxxxxx&scope=Shopper
-    
-
 ```
+Request Body:
+```   
+    client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=password&username=xxxxxxxx&password=xxxxxxxx&scope=Shopper  
+```
+
+We generally expect a JSON body in OrderCloud API requests, but authentication is an exception to that rule.
 
 ## 2\. Client Credentials Grant Type
 
@@ -76,46 +68,39 @@ authentication with this workflow requires the following information:
   4. Grant Type: `grant_type=client_credentials`
 
 
-
+HTTP Verb and Endpoint URL, Request Header:
 ```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: text/html; charset=UTF-8
-    
+```
+Request Body:
+```   
     client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=client_credentials&client_secret=xxxxxxxxxxxxx&scope=FullAccess
-    
-
 ```
 
 ## 3\. Anonymous Shopping or Guest Checkout
 
 There are some B2B clients that will want to enable visitors to browse a
 catalog of products and/or checkout without registering themselves. We call
-this Anonymous Shopping or Guest Checkout. An in-depth guide for this workflow
-is detailed here
+this Anonymous Shopping or Guest Checkout, and have a [more detailed guide]({filename}/platform-guides/authentication/anonymous-shopping.md) for this functionality.
 
 ## 4\. Elevated Password Grant Type
 
-The final workflow is the same as the Password Grant Type workflow except that
+The final workflow is the same as the Password Grant Type workflow, except that
 it has an additional requirement of Client Secret. This type of workflow would
 be used if you want to add an additional layer of security.
 
 To use this workflow you will first need to set the Client Secret in the
-Dashboard's app tab and include the Client Secret in each request
+Organization's Dashboard, and consequently include the Client Secret in each request
 
 
-
+HTTP Verb and Endpoint URL, Request Header:
 ```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     Content-Type: text/html; charset=UTF-8
-    
+```
+Request Body:
+```    
     client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&grant_type=client_credentials&client_secret=xxxxxxxxxxxxx&scope=FullAccess
     
 
@@ -124,40 +109,29 @@ Dashboard's app tab and include the Client Secret in each request
 ## Subsequent Requests
 
 A successful authentication (using one of the four workflows) will yield the
-following response:
+following response body:
 
 
 
 ```
-
-
-    
-    
     {
-    "access_token": "eyJ0eXAi0iJKV1QiLCJhbGci0iJ",
+    "access_token": "eyJ0eXAi0iJKV1QiLCJhbGci0iJ...",
     "token_type" : "bearer",
     "expires_in" : 35999,
-    "refresh_token": "878ca890-af6a-48b6-98a2-1e1cf4a.."
+    "refresh_token": "878ca890-af6a-48b6-98a2-1e1cf4a..."
     }
-    
-
 ```
 
 The `access_token` from the response will need to be included in each and
-every OrderCloud.io API request as part of the Authorization header prefaced
+every OrderCloud.io API request as part of the Authorization header, prefaced
 by `Bearer`.
 
 
 
 ```
-
-
-    
-    
     GET https://api.ordercloud.io/v1/buyers HTTP/1.1
     Authentication: Bearer eyJ0eXAi0iJKV1QiLCJhbGci0iJ9...
     Content-Type: application/json; charset=UTF-8
-    
 
 ```
 
@@ -165,5 +139,5 @@ by `Bearer`.
 
 You should now have a basic understanding of the four different OAuth 2
 workflows. Each of these workflows return a token which allows you to make
-authenticated calls to OrderCloud.io.
+authenticated calls to the OrderCloud API.
 

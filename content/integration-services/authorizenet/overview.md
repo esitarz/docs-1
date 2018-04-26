@@ -21,7 +21,7 @@ only handle all customer and payment data with Authorize.Net (Customer
 Profiles, Customer Payment Profiles, Payment Transactions), but will handle
 all of the necessary OrderCloud.io endpoints as well (CreditCards, Payments,
 and Transactions). Once you have an account established on Authorize.Net, all
-you'll need is your API Login ID and Transaction Key to take advantage of
+you'll need is your API Login ID and Transaction Key to take advantage of
 the various integration endpoints documented here.
 
 > Note: OrderCloud.io does not store full Credit Card numbers in our API. We will only store the Authorize.Net token, and never the full Credit Card number.

@@ -60,10 +60,10 @@ users to have different pricing, you could make an additional product
 assignment that included a UserGroupID and users assigned to that group would
 no longer see the buyer level pricing.
 
-The scenario you'll want to avoid is a user with multiple product
+The scenario you'll want to avoid is a user with multiple product
 assignments of the same specificity party level (e.g. a user belonging to two
 user groups, each with different product assignments). While the platform
-won't prohibit you from making these potentially problematic assignments,
+won't prohibit you from making these potentially problematic assignments,
 the pricing returned for any user belonging to multiple pricing groups will
 always be indeterminate.
 

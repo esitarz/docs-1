@@ -11,7 +11,7 @@ category: Authorize.Net
 involved methods included in this integration. This method does the following:
 
 1. create a new Customer Payment Profile on Authorize.Net and a credit card on OrderCloud.io if one does not already exist
-2. authorize and capture a payment transaction on Authorize.Net and create a payment on OrderCloud.io tied to the authenticated user's current Order
+2. authorize and capture a payment transaction on Authorize.Net and create a payment on OrderCloud.io tied to the authenticated user's current Order
 3. if a payment already exists on Authorize.net, simply pass the `PaymentID` in the *Authorize and Capture Transaction* call, and it will create an Authorize.Net transaction tied to that payment.
 
 If the transaction authorization and capture are successful, but there is an

@@ -19,7 +19,7 @@ the shipping rate calculation for the following reasons:
 
   * No `ShippingAddress` is set on the Line Item
   * No `ShipFromAddressID` is set on the Product
-  * `ApplyShipping` is not set to true on the Product's Price Schedule
+  * `ApplyShipping` is not set to true on the Product's Price Schedule
 
 Also, if a `ShipWeight` (in lbs.) is not set on a Product, a weight of `0`
 will be used when calculating rates, resulting in an inaccurate estimate.

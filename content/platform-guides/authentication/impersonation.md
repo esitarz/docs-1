@@ -10,7 +10,7 @@ category: Authentication
 In some instances, you may want to allow a user to order on behalf of another
 user. We see this use-case a lot in Customer Service Desk and Call Center
 scenarios where customers will call their orders in, and the service rep places
-the order on the customer's behalf. This workflow preserves the reporting
+the order on the customer's behalf. This workflow preserves the reporting
 data and email notifications, and presents the catalog ordering rules the buyer
 is configured for.
 
@@ -31,7 +31,7 @@ reference the party you want to grant access to do the impersonating. While
 impersonated. The `SecurityProfileID` is the Security Profile you would like
 to grant the user doing the impersonating (only while they are impersonating).
 `ClientID` is the specific application impersonation will be allowed in, if
-you need to impersonate in multiple applications, you'll need to set up
+you need to impersonate in multiple applications, you'll need to set up
 multiple Impersonation Configs.
 
 Create Impersonation Config

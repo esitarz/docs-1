@@ -7,12 +7,12 @@ category: Core Concepts
 
 ## Introduction
 
-What's a rules engine? It's a system that executes rules. Okay...so
-what's a rule? In its simplest form, it's an if-then statement that is
+What's a rules engine? It's a system that executes rules. Okay...so
+what's a rule? In its simplest form, it's an if-then statement that is
 provided from the outside, rather than being 'baked in' to the engine
-itself. In the case of OrderCloud.io, we'll define the 'thens' (starting
+itself. In the case of OrderCloud.io, we'll define the 'thens' (starting
 with 'order requires approval') and allow you to define the 'ifs' via
-custom **logic expressions**. Effectively, we're going to allow you to
+custom **logic expressions**. Effectively, we're going to allow you to
 extend platform behavior in much the same way xp allows you to extend the data
 model.
 
@@ -50,7 +50,7 @@ and set the Expression to this:
 What about line items? Glad you asked, because which products are being
 purchased, in what quantities, charged against which cost centers, etc, are
 very common in the world of approval rules. But line items are a collection,
-so we turn to aggregate functions to inspect them. Here's how you would
+so we turn to aggregate functions to inspect them. Here's how you would
 require approval on all orders over $200 charged to cost center ABC:
 
 
@@ -65,7 +65,7 @@ require approval on all orders over $200 charged to cost center ABC:
 
 ```
 
-That's pretty powerful, but it's more likely that you only care about the
+That's pretty powerful, but it's more likely that you only care about the
 _subtotal_ of just the line items matching your CostCenter condition. For this
 you can use the `items.total` function:
 
@@ -145,7 +145,7 @@ Speaking of functions, there is one defined on `order`:
 
 ```
 
-This one's powerful, because it allows you to set up multi-level approval
+This one's powerful, because it allows you to set up multi-level approval
 workflows by chaining rules together. For example, in a larger organization,
 getting the approval from a department manager might not be enough, and a
 higher-level VP must also sign off.
@@ -166,8 +166,8 @@ allowing for very sophisticated rules to be supported:
 ```
 
 A word of caution: Rules are easy to write and very powerful, but can be very
-tricky to debug when they don't work quite like you thought they would.
-Don't get more fancy with them than you need to. As always, we're here to
+tricky to debug when they don't work quite like you thought they would.
+Don't get more fancy with them than you need to. As always, we're here to
 help if you need guidance.
 
 ##  Where to go from here?
@@ -183,7 +183,7 @@ may leverage the rules engine for in the future:
   * Replenish inventory
   * Fire off a notification via webhooks
 
-We'd love to get your thoughts on these ideas. Look for significant
+We'd love to get your thoughts on these ideas. Look for significant
 enhancements to the rules engine and new applications of it in the months
 ahead.
 
