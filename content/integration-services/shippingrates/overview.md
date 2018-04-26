@@ -20,7 +20,7 @@ based on their `ShippingAddress` and the Line Item Product's
 `ShipFromAddress`. Rates will be returned based on these determined shipments.
 
 GetLineItemRates will obtain shipping rates for each Line Item individually,
-regardless of the itemâs `ShippingAddress` and the Line Item Productâs
+regardless of the item's `ShippingAddress` and the Line Item Product's
 `ShipFromAddress`.
 
 SetShippingCost simply allows your application to set an Order's
@@ -41,7 +41,5 @@ addresses, or simply because the carrier's web services are not functioning
 properly.
 
 OrderCloud.io's Shipping Rates integration not only requires configuration for
-the integration endpoint itself, but for the products that will be included
-for shipping rate estimates as well. These topics will be covered in the
-following sections.
+the [integration endpoint]({filename}configuring-integration.md) itself, but also for [the products that will be included]({filename}configuring-catalog.md) for shipping rate estimates as well. 
 

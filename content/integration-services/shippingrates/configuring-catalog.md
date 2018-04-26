@@ -10,7 +10,7 @@ category: Shipping Rates
 In order to be considered when estimating shipping rates, products and their
 price schedules will need a few things set up first.
 
-##  ApplyShipping
+##  `ApplyShipping`
 
 First, `ApplyShipping` will need to be set to true on the price schedule
 assigned to the product. Any Line Items containing Products without this value
@@ -20,11 +20,7 @@ rates. Here's a sample Price Schedule with this configuration set:
 
 
 ```
-
-
-    
-    
-    {
+{
     "ID": "SamplePriceSchedule",
     "Name": "Sample",
     "ApplyTax": false,
@@ -35,21 +31,18 @@ rates. Here's a sample Price Schedule with this configuration set:
     "RestrictedQuantity": false,
     "OrderType": "Standard",
     "PriceBreaks": [
-    {
-    "Quantity": 1,
-    "Price": 10
-    }
+        {
+            "Quantity": 1,
+            "Price": 10
+        }
     ],
     "xp": null
-    }
-    
-    
-
+}
 ```
 
 ##  ShipWeight
 
-Next, a `ShipWeight` (in lbs.) should to be set on the Product being ordered
+Next, a `ShipWeight` (in pounds) should to be set on the Product being ordered
 to provide accurate shipping rates. If a value is not set, the Product will
 still be included in the calculation. However, a weight of `0` will be used
 when calculating rates, resulting in inaccurate rates.
@@ -69,11 +62,7 @@ as a `ShipWeight`:
 
 
 ```
-
-
-    
-    
-    {
+{
     "ID": "SampleAdminAddress",
     "CompanyName": "Sample Co",
     "FirstName": "Shipping",
@@ -87,20 +76,13 @@ as a `ShipWeight`:
     "Phone": "5554325678",
     "AddressName": "Sample Address",
     "xp": null
-    }
-    
-    
-
+}
 ```
 
 
 
 ```
-
-
-    
-    
-    {
+{
     "ID": "SampleProduct",
     "Name": "Sample",
     "Description": "This is a sample product",
@@ -120,9 +102,6 @@ as a `ShipWeight`:
     "InventoryVisible": false,
     "VariantCount": 0,
     "ShipFromAddressID": "SampleAdminAddress"
-    }
-    
-    
-
+}
 ```
 

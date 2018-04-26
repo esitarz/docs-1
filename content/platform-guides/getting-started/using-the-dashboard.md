@@ -116,7 +116,7 @@ accessed by the Users under that buyer.
 Opening an individual application will bring you to the **Settings** tab for
 that application. Seller Organization owners and contributors with permission
 to administer applications can update application information in this tab and
-activate/deactivate the application. Within this tab youâll find the
+activate/deactivate the application. Within this tab you'll find the
 following:
 
 

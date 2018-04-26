@@ -11,7 +11,7 @@ OrderCloud.io is a RESTful API that enables you to create complex, custom B2B
 eCommerce solutions.
 
 This guide is meant to get you started with OrderCloud.io as quickly as
-possible. In order to accomplish this, weâve stripped away some of the
+possible. In order to accomplish this, we've stripped away some of the
 detail, so keep an eye out for links to relevant guides that provide much more
 in-depth explanations.
 

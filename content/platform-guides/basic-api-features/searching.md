@@ -30,7 +30,7 @@ Request
 This will return all results containing "smith", including "Smith",
 "Smithers", and "McSmith". The fields searched include `FirstName`,`LastName`,
 and `UserName`. (This of course varies from endpoint to endpoint. View each
-endpoint's documentation for specific details). Fields marked âSearchableâ
+endpoint's documentation for specific details). Fields marked 'Searchable'
 in the API reference will be searched.
 
 You can optionally specify which fields (of the searchable fields available)

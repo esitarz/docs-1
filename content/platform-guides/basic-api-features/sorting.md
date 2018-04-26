@@ -9,7 +9,7 @@ Category: Basic API Features
 
 Most OrderCloud.io Resources include a method for listing items from that
 Resource. The results returned from a list method have a default sort order,
-but you can also specify a sort order. Properties marked as âSortableâ in
+but you can also specify a sort order. Properties marked as 'Sortable' in
 the API Reference can be sorted on.
 
 ## Sorting

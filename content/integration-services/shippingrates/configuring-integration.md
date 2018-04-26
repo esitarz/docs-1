@@ -7,20 +7,15 @@ category: Shipping Rates
 
 ##  Creating Configuration
 
-To configure your integration, navigate to the Dashboard Dashboard
-Integrations page within OrderCloud.io and select Shipping Rates.
+To configure your integration, navigate to the Organization Dashboard
+Integrations page within OrderCloud.io and select "Shipping Rates".
 
 ###  Selecting Carriers
 
-First, select which carriers you would like shipping rate estimates returned
-from. Current options include USPS and UPS. If UPS or FedEx are selected, you
-have the option to enter your account credentials in order to receive shipping
-rates specific to your account.
+First, select which carriers to have shipping rate estimates returned
+from. Current options include **USPS** and **UPS**. If **UPS** or **FedEx** are selected, you have the option to enter your account credentials in order to receive shipping rates specific to your account.
 
-
-
-![](assets/images/docs-guides/integrations/Shipping Rates/Shipping Rates-
-configuration-carriers.png)
+![screen-shot of the Shipping Rates Carrier configuration in the OrderCloud Organization Dashboard]({attach}/images/docs-guides/integrations/shippingrates/shippingrates-configuration-carriers.png)
 
 ###  Rate Adjustments
 
@@ -28,10 +23,7 @@ Next, shipping rate estimates can be configured to be automatically increased
 or decreased based on a percentage or flat rate. These adjustments can be made
 at a global level (all carriers) or at the carrier level.
 
-
-
-![](assets/images/docs-guides/integrations/Shipping Rates/Shipping Rates-
-configuration-rate-adjustment.png)
+![screen-shot of the Shipping Rates Rate Adjustment configuration in the OrderCloud Organization Dashboard]({attach}/images/docs-guides/integrations/shippingrates/shippingrates-configuration-rate-adjustment.png)
 
 ###  Manual Shippers
 
@@ -43,21 +35,12 @@ for that specific shipper. You can configure each manual shipper to always be
 returned or only be returned when no rate estimates are obtained from your
 selected carrier(s).
 
-
-
-![](assets/images/docs-guides/integrations/Shipping Rates/Shipping Rates-
-configuration-manual-shippers.png)
+![screen-shot of the Shipping Rates Manual Shippers configuration in the OrderCloud Organization Dashboard]({attach}/images/docs-guides/integrations/shippingrates/shippingrates-configuration-manual-shippers.png)
 
 ##  Assigning Configuration
 
-After your configuration has been created, navigate to a Buyer Application
-that will be using the integration. Select the Integrations tab, then click
-Add. Since you previously created the Shipping Rates configuration, it should
-be available within the modal. Simply click Enable and your Buyer Application
-will be ready to use the Shipping Rates integration.
+After your configuration has been created, open the Buyer Application that you want to enable that configuration in. On the Integrations tab, you will be able to add your previously created the Shipping Rates configuration. Enable the configuration, and your Buyer Application will be ready to use the Shipping Rates integration.
 
 
-
-![](assets/images/docs-guides/integrations/Shipping Rates/Shipping Rates-
-assignment.png)
+![screen-shot of the available Active Integration configurations in the OrderCloud Buyer Application Dashboard]({attach}/images/docs-guides/integrations/shippingrates/shippingrates-assignment.png)
 

@@ -17,23 +17,18 @@ the updated Order.
 
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/v1/integrationproxy/Shipping Rates HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "BuyerID": "...",
     "TransactionType": "SetShippingCost",
     "OrderID": "...",
     "ShippingCost": 6
-    }
-    
-    
-
+}
 ```
 
 ##  Set Shipping Cost Response
@@ -41,14 +36,12 @@ the updated Order.
 
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "ID": "12345",
     "Type": "Standard",
     "FromUserID": "3456",
@@ -56,7 +49,7 @@ the updated Order.
     "FromUserLastName": "User",
     "BillingAddressID": null,
     "BillingAddress": null,
-    "ShippingAddressID": â7654â,
+    "ShippingAddressID": "7654",
     "Comments": null,
     "LineItemCount": 3,
     "Status": "Unsubmitted",
@@ -73,10 +66,7 @@ the updated Order.
     "Total": 36,
     "IsSubmitted": false,
     "xp": null
-    }
-    
-    
-
+}
 ```
 
 ##  Error Handling
@@ -91,23 +81,18 @@ call. The possible ErrorCodes and Messages are listed below.
 
 
 ```
-
-
-    
-    
     HTTP/1.1 400 Bad Request
     Content-Type: application/json
-    
-    {
+```
+
+```    
+{
     "ErrorCode": "...",
     "Message": "...",
     "Data": {
-    "...Request Body..."
+        "...Request Body...": null
     }
-    }
-    
-    
-
+}
 ```
 
   
