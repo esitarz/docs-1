@@ -7,82 +7,72 @@ category: Authorize.Net
 
 ##  Authorize and Capture Transaction Overview
 
-Authorizing and Capturing a credit card transaction is one of the most
-involved methods included in this integration. This method will create a new
-Customer Payment Profile on Authorize.Net and credit card on OrderCloud.io if
-one does not already exist, authorize and capture a payment transaction onAuthorize.Net, create a payment on OrderCloud.io tied to the authenticated
-userâs current Order (if a payment already exists, simply pass the ID in
-`PaymentID`), and also create a transaction tied to that payment.
+**Authorizing and Capturing** a credit card transaction is one of the most
+involved methods included in this integration. This method does the following:
+
+1. create a new Customer Payment Profile on Authorize.Net and a credit card on OrderCloud.io if one does not already exist
+2. authorize and capture a payment transaction on Authorize.Net and create a payment on OrderCloud.io tied to the authenticated user's current Order
+3. if a payment already exists on Authorize.net, simply pass the `PaymentID` in the *Authorize and Capture Transaction* call, and it will create an Authorize.Net transaction tied to that payment.
 
 If the transaction authorization and capture are successful, but there is an
-error while creating the payment or transaction on OrderCloud.io, theAuthorize.Net transaction will be voided.
+error while creating the payment or transaction on OrderCloud.io, the Authorize.Net transaction will be voided.
 
 ##  Authorize and Capture Transaction Request
 
-This method requires either CardDetails.CreditCardID (for a previously created
-card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
-new card).
+This method requires either `CardDetails.CreditCardID` (for a previously created card) or `CardDetails.CardNumber` and `CardDetails.ExpirationDate` (in order to create a new card).
 
+
+> Note: The `access_token` referenced below is the user's OrderCloud.io Access Token
 
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "BuyerID": "...",
     "OrderID": "...",
     "OrderDirection": "outgoing",
-    "Amount": 0.00,
+    "Amount": 0.0,
     "TransactionType": "authCaptureTransaction",
     "CardDetails": {
-    "PaymentID": "...",
-    "CreditCardID": "...",
-    "CardholderName": "...",
-    "CardType": "...",
-    "CardNumber": "...",
-    "ExpirationDate": "...",
-    "CardCode": "...",
-    "Shared": false
+        "PaymentID": "...",
+        "CreditCardID": "...",
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
     }
-    }
-    
-    
+}
 
 ```
 
 ##  Authorize and Capture Transaction Response
 
 
-
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```   
+{
     "ChargeStatus": "...",
     "CreditCardID": "...",
     "PaymentID": "...",
     "TransactionID": "...",
     "Messages": [
-    {
-    "code": "1",
-    "description": "..."
-    }
+        {
+            "code": "1",
+            "description": "..."
+        }
     ]
-    }
-    
-    
-
+}
 ```
 
 ##  Error Handling
@@ -106,23 +96,19 @@ are listed below.
 
 
 
-```
-
-
-    
-    
+``` 
     HTTP/1.1 400 Bad Request
     Content-Type: application/json
-    
-    {
+```
+
+```    
+{
     "ErrorCode": "...",
     "Message": "...",
     "Data": {
-    "...Request Body..."
+        "...Request Body...": null
     }
-    }
-    
-    
+}
 
 ```
 
@@ -215,50 +201,45 @@ card.
 
 ### Authorize.Net Error Response
 
-
+> Note: Generally, an error response from Authorize.Net will return with a 200 HTTP status code. You'll need to look to the error response body for details of the error itself.
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json
-    
-    {
+```
+```    
+{
     "transactionResponse": {
-    "responseCode": "3",
-    "authCode": "",
-    "avsResultCode": "...",
-    "cvvResultCode": "",
-    "cavvResultCode": "",
-    "transId": "0",
-    "refTransID": "",
-    "transHash": "...",
-    "testRequest": "0",
-    "accountNumber": "...",
-    "accountType": "",
-    "errors": [
-    {
-    "errorCode": "...",
-    "errorText": "..."
-    }
-    ],
-    "transHashSha2": ""
+        "responseCode": "3",
+        "authCode": "",
+        "avsResultCode": "...",
+        "cvvResultCode": "",
+        "cavvResultCode": "",
+        "transId": "0",
+        "refTransID": "",
+        "transHash": "...",
+        "testRequest": "0",
+        "accountNumber": "...",
+        "accountType": "",
+        "errors": [
+            {
+                "errorCode": "...",
+                "errorText": "..."
+            }
+        ],
+        "transHashSha2": ""
     },
     "refId": "...",
     "messages": {
-    "resultCode": "Error",
-    "message": [
-    {
-    "code": "...",
-    "text": "..."
+        "resultCode": "Error",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
     }
-    ]
-    }
-    }
-    
-    
+}
 
 ```
 
@@ -424,81 +405,67 @@ The transaction was unsuccessful.
 
 ### OrderCloud.io Error Response
 
+> Note: If the error is from OrderCloud.io, a `404` HTTP status code will generally be returned.
+
 If an incorrect `BuyerID` was provided:
 
 
 
 ```
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+```
 
-
-    
-    
-    HTTP/1.1 404 Not Found
-    Content-Type: application/json
-    
-    {
+```
+{
     "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Buyer not found: 1234",
-    "Data": null
-    }
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
     ]
-    }
-    
-    
-
+}
+   
 ```
 
 If an incorrect `CardDetails.CreditCardID` was provided:
 
-
-
 ```
-
-
-    
-    
-    HTTP/1.1 404 Not Found
-    Content-Type: application/json
-    
-    {
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+```
+```    
+{
     "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Credit Card not found: 2345",
-    "Data": null
-    }
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Credit Card not found: 2345",
+            "Data": null
+        }
     ]
-    }
-    
-    
-
+}
 ```
 
 If an incorrect `OrderID` was provided:
 
 
 
-```
-
-
-    
-    
+``` 
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Order not found: 3456",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```   
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Order not found: 3456",
+            "Data": null
+        }
+    ]
+}
+    
 ```
 

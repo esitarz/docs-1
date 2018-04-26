@@ -14,41 +14,33 @@ to the original payment on OrderCloud.io.
 
 ##  Void Transaction Request
 
-This method requires either CardDetails.CreditCardID (for a previously created
-card) or CardDetails.CardNumber and CardDetails.ExpirationDate (to create a
-new card). It also requires CardDetails.PaymentID referencing the previously
-created payment being voided.
+This method requires either `CardDetails.CreditCardID` (for a previously created card) or `CardDetails.CardNumber` and `CardDetails.ExpirationDate` (to create a new card). It also requires `CardDetails.PaymentID` referencing the previously created payment being voided.
 
 
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "BuyerID": "...",
     "OrderID": "...",
     "OrderDirection": "outgoing",
     "TransactionType": "voidTransaction",
     "CardDetails": {
-    "PaymentID": "...",
-    "CreditCardID": "...",
-    "CardholderName": "...",
-    "CardType": "...",
-    "CardNumber": "...",
-    "ExpirationDate": "...",
-    "CardCode": "...",
-    "Shared": false
+        "PaymentID": "...",
+        "CreditCardID": "...",
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
     }
-    }
-    
-    
-
+}
 ```
 
 ##  Void Transaction Response
@@ -56,64 +48,52 @@ created payment being voided.
 
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```
+{
     "ChargeStatus": "...",
     "CreditCardID": "...",
     "PaymentID": "...",
     "TransactionID": "...",
     "Messages": [
-    {
-    "code": "1",
-    "description": "..."
-    }
+        {
+            "code": "1",
+            "description": "..."
+        }
     ]
-    }
-    
-    
-
+}
 ```
 
 ##  Error Handling
 
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
-missing, a 400 error will be returned before any of the update process is
+missing, a `400` error will be returned before any of the update process is
 executed.
 
 ### Validation Response
 
 In the case that a required field is missing from your request, the following
-response will be returned containing a unique ErrorCode and Message, as well
-as the request body sent during the call. The possible ErrorCodes and Messages
-are listed below.
+response will be returned containing a unique `ErrorCode` and `Message`, as well as the request body sent during the call. The possible `ErrorCodes` and `Messages` are listed below.
 
 
 
 ```
-
-
-    
-    
     HTTP/1.1 400 Bad Request
     Content-Type: application/json
-    
-    {
+```
+
+```
+{
     "ErrorCode": "...",
     "Message": "...",
     "Data": {
-    "...Request Body..."
+        "...Request Body...": null
     }
-    }
-    
-    
-
+}
 ```
 
   
@@ -209,52 +189,40 @@ If an incorrect `BuyerID` was provided:
 
 
 
-```
-
-
-    
-    
+``` 
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Buyer not found: 1234",
-    "Data": null
-    }
-    ]
-    }
-    
-    
-
 ```
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}```
 
 If an incorrect `CardDetails.CreditCardID` was provided:
 
 
 
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "CreditCard not found: 2345",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "CreditCard not found: 2345",
+            "Data": null
+        }
+    ]
+}
 ```
 
 If an incorrect `CardDetails.PaymentID` was provided:
@@ -262,25 +230,20 @@ If an incorrect `CardDetails.PaymentID` was provided:
 
 
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Payment not found: 3456",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Payment not found: 3456",
+            "Data": null
+        }
+    ]
+}
 ```
 
 If an incorrect `OrderID` was provided:
@@ -288,24 +251,19 @@ If an incorrect `OrderID` was provided:
 
 
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Order not found: 4567",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Order not found: 4567",
+            "Data": null
+        }
+    ]
+}
 ```
 

@@ -7,70 +7,57 @@ category: Authorize.Net
 
 ##  Update Credit Card Overview
 
-When a customer within your buyer application updates a credit card, the
-integration endpoint can be called in order to update that card on
-OrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be
-updated on Authorize.Net, followed by the card being patched on OrderCloud.io.
+When a customer within your buyer application updates a credit card, the **Update Credit Card** integration endpoint can be called in order to update that card onOrderCloud.io as well as Authorize.Net. The Customer Payment Profile will be updated on Authorize.Net, followed by the card being patched on OrderCloud.io.
+
 If either step fails, all changes will be reverted in order to keep each
 system in sync. If the card is shared, meaning `Shared` was set to `true` when
 the card was created, `Shared` must be passed as `true` when updating.
 
-##  Update Credit Card Request
-
+###  Update Credit Card Request
 
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "BuyerID": "...",
     "TransactionType": "updateCreditCard",
     "CardDetails": {
-    "CreditCardID": "...",
-    "CardholderName": "...",
-    "CardType": "...",
-    "CardNumber": "...",
-    "ExpirationDate": "...",
-    "CardCode": "...",
-    "Shared": false
+        "CreditCardID": "...",
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
     }
-    }
-    
-    
-
+}
 ```
 
-##  Update Credit Card Response
+###  Update Credit Card Response
 
 
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
-    
-    {
-    "ID": "â¦",
-    "Token": "â¦",
+```
+
+```    
+{
+    "ID": "'¦",
+    "Token": "'¦",
     "DateCreated": null,
-    "CardType": "â¦",
-    "PartialAccountNumber": "â¦",
-    "CardholderName": "â¦",
+    "CardType": "'¦",
+    "PartialAccountNumber": "'¦",
+    "CardholderName": "'¦",
     "ExpirationDate": null,
     "xp": null
-    }
-    
-    
-
+}
 ```
 
 ##  Error Handling
@@ -82,7 +69,7 @@ reverted in both locations, ensuring the data is accurate in each system.
 
 Errors will return the exact response directly from the Authorize.Net or
 OrderCloud.io endpoint that failed. However, if any required fields are
-missing, a 400 error will be returned before any of the update process is
+missing, a `400` error will be returned before any of the update process is
 executed.
 
 ### Validation Response
@@ -95,23 +82,18 @@ are listed below.
 
 
 ```
-
-
-    
-    
     HTTP/1.1 400 Bad Request
     Content-Type: application/json
-    
-    {
+```
+
+```    
+{
     "ErrorCode": "...",
     "Message": "...",
     "Data": {
-    "...Request Body..."
+        "...Request Body...": null
     }
-    }
-    
-    
-
+}
 ```
 
   
@@ -156,27 +138,22 @@ CardDetails.CreditCardID is required to update a credit card.
 
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json
-    
-    {
-    "messages": {
-    "resultCode": "...",
-    "message": [
-    {
-    "code": "...",
-    "text": "..."
-    }
-    ]
-    }
-    }
-    
-    
+```
 
+```    
+{
+    "messages": {
+        "resultCode": "...",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
+    }
+}
 ```
 
   
@@ -253,27 +230,21 @@ The credit card has expired.
 If an incorrect `BuyerID` was provided:
 
 
-
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Buyer not found: 1234",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
 ```
 
 If an incorrect `CardDetails.CreditCardID` was provided:
@@ -281,24 +252,19 @@ If an incorrect `CardDetails.CreditCardID` was provided:
 
 
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Credit Card not found: 2345",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Credit Card not found: 2345",
+            "Data": null
+        }
+    ]
+}
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: Csharp: Getting Started
+title: C#/.NET Client Library 
 date: 2018-04-16
 category: Csharp
 ---

@@ -9,70 +9,54 @@ category: Authorize.Net
 
 When a customer within your buyer application creates a credit card, the
 integration endpoint can be called in order to create that card within
-OrderCloud.io as well as Authorize.Net. The card will created as a personal
-card by default. However, passing `true` for `Shared` assign the card to the
-entire Buyer Organization provided in the `BuyerID`. This endpoint will create
-a Customer Profile within Authorize.Net if one does not already exist
-(Authorize.Net Customer Profile ID will be saved as xp.Authorize.NetProfileID
-on the User), create a Customer Payment Profile within Authorize.Net that
-securely stores the tokenized data for the card, and finally create and assign
-the card on OrderCloud.io to the authenticate user.
+OrderCloud.io as well as Authorize.Net. 
 
-##  Create Credit Card Request
+> Note: The card will created as a personal card by default in OrderCloud.io. However, passing `true` for `Shared` assigns the card to the entire Buyer Organization provided in the `BuyerID`. 
 
+This endpoint will create a Customer Profile within Authorize.Net if one does not already exist, and the Authorize.Net Customer Profile ID will be saved as xp.Authorize.NetProfileID on the OrderCloud User. A Customer Payment Profile will be created within Authorize.Net that securely stores the tokenized data for the card, and finally, the integrations will create and assign the card on OrderCloud.io to the authenticated user.
+
+###  Create Credit Card Request
 
 
 ```
-
-
-    
-    
     POST https://api.ordercloud.io/v1/integrationproxy/Authorize.Net HTTP/1.1
     Authorization: bearer insert_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-    {
+```
+
+```    
+{
     "BuyerID": "...",
     "TransactionType": "createCreditCard",
     "CardDetails": {
-    "CardholderName": "...",
-    "CardType": "...",
-    "CardNumber": "...",
-    "ExpirationDate": "...",
-    "CardCode": "...",
-    "Shared": false
-    }   
+        "CardholderName": "...",
+        "CardType": "...",
+        "CardNumber": "...",
+        "ExpirationDate": "...",
+        "CardCode": "...",
+        "Shared": false
     }
-    
-    
-
+}
 ```
 
-##  Create Credit Card Response
-
-
+###  Create Credit Card Response
 
 ```
-
-
-    
-    
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=UTF-8
-    
-    {
-    "ID": "â¦",
-    "Token": "â¦",
+```
+
+```    
+{
+    "ID": "...",
+    "Token": "...",
     "DateCreated": null,
-    "CardType": "â¦",
-    "PartialAccountNumber": "â¦",
-    "CardholderName": "â¦",
+    "CardType": "...",
+    "PartialAccountNumber": "...",
+    "CardholderName": "...",
     "ExpirationDate": null,
     "xp": null
-    }
-    
-    
-
+}
 ```
 
 ##  Error Handling
@@ -80,38 +64,32 @@ the card on OrderCloud.io to the authenticate user.
 During the credit card create process, the Authorize.Net Customer Profile and
 Customer Payment Profile are created (if necessary) first, followed by the
 creation of the card on OrderCloud.io. Therefore, if any errors occur, they
-will occur in that order. Errors will return the exact response directly from
-the Authorize.Net or OrderCloud.io endpoint that failed. However, if any
-required fields are missing, a 400 error will be returned before any of the
-creation process is executed.
+will occur in that order. 
+
+Errors will return the exact response directly from the Authorize.Net or OrderCloud.io endpoint that failed. However, if any
+required fields are missing, a `400` error will be returned before any of the
+creation process are executed.
 
 ### Validation Response
 
 In the case that a required field is missing from your request, the following
-response will be returned containing a unique ErrorCode and Message, as well
-as the request body sent during the call. The possible ErrorCodes and Messages
+response will be returned containing a unique `ErrorCode` and `Message`, as well
+as the request body sent during the call. The possible `ErrorCodes` and `Messages`
 are listed below.
 
-
-
 ```
-
-
-    
-    
     HTTP/1.1 400 Bad Request
     Content-Type: application/json
-    
-    {
+```
+
+```    
+{
     "ErrorCode": "...",
     "Message": "...",
     "Data": {
-    "...Request Body..."
+        "...Request Body...": null
     }
-    }
-    
-    
-
+}
 ```
 
   
@@ -172,27 +150,22 @@ CardDetails.ExpirationDate is required to create a new credit card.
 
 
 ```
-
-
-    
-    
-    HTTP/1.1 200 OK
+   HTTP/1.1 200 OK
     Content-Type: application/json
-    
-    {
-    "messages": {
-    "resultCode": "...",
-    "message": [
-    {
-    "code": "...",
-    "text": "..."
-    }
-    ]
-    }
-    }
-    
-    
+```
 
+```   
+{
+    "messages": {
+        "resultCode": "...",
+        "message": [
+            {
+                "code": "...",
+                "text": "..."
+            }
+        ]
+    }
+}
 ```
 
   
@@ -271,24 +244,19 @@ If an incorrect `BuyerID` was provided:
 
 
 ```
-
-
-    
-    
     HTTP/1.1 404 Not Found
     Content-Type: application/json
-    
-    {
-    "Errors": [
-    {
-    "ErrorCode": "NotFound",
-    "Message": "Buyer not found: 1234",
-    "Data": null
-    }
-    ]
-    }
-    
-    
+```
 
+```    
+{
+    "Errors": [
+        {
+            "ErrorCode": "NotFound",
+            "Message": "Buyer not found: 1234",
+            "Data": null
+        }
+    ]
+}
 ```
 
