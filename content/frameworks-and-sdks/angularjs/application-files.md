@@ -1,7 +1,7 @@
 ---
 title: Angularjs: Application Files
 date: 2018-04-16
-category:Angularjs
+category: Angularjs
 ---
 
 
@@ -22,10 +22,6 @@ enforced. `productManagement` may then have subdirectories for `inventory`,
 
 
 ```
-
-
-    
-    
     src/
     |- app/
     |  |- app.constants.json
@@ -58,13 +54,9 @@ application's component controllers. Instead, it is declared directly in
 
 
 ```
-
-
-    
-    
     angular.module('orderCloud')
-    .controller('AppCtrl', AppController)
-    ;
+    .controller('AppCtrl', AppController);
+
     function AppController($state, $ocMedia, LoginService, appname, ocStateLoading, ocIsTouchDevice, ocRoles) {
     var vm = this;
     vm.name = appname;
@@ -74,8 +66,7 @@ application's component controllers. Instead, it is declared directly in
     vm.stateLoading = ocStateLoading.Watch;
     vm.logout = LoginService.Logout;
     vm.userIsAuthorized = ocRoles.UserIsAuthorized;
-    }
-    
+    } 
 
 ```
 
@@ -96,10 +87,6 @@ module, so they do not need to be included here.
 
 
 ```
-
-
-    
-    
     angular.module('orderCloud', [
     'ngSanitize',
     'ngAnimate',
@@ -120,11 +107,10 @@ module, so they do not need to be included here.
     'ordercloud-angular-sdk'
     ]
     );
-    
 
 ```
 
-id="-app-run-js-"
+
 
 
 
@@ -137,9 +123,6 @@ error messages (using `angular-auto-validate`), and validation styling.
 
 
 ```
-
-
-    
     
     angular.module('orderCloud')
     .run(AppRun)

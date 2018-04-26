@@ -1,13 +1,11 @@
 ---
 title: Angularjs: Connecting To Your Organization
 date: 2018-04-16
-category:Angularjs
+category: Angularjs
 ---
 Linking your front-end application to an OrderCloud seller or buyer
 organization can be accomplished using the `scope` and `clientid` constants
 described below.
-
-
 
 ## Application Constants
 
@@ -18,9 +16,6 @@ the build process will generate a file containing AngularJS constants:
 seller/blob/development/gulp.config.js#L86), which can then be injected into
 your various AngularJS controllers, factories, providers, etc. Think of it as
 a base configuration or settings file for your application.
-
-
-
   
 <table>  
 <tr>  

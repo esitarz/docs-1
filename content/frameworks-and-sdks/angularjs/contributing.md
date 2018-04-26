@@ -1,11 +1,11 @@
 ---
 title: Angularjs: Contributing
 date: 2018-04-16
-category:Angularjs
+category: Angularjs
 ---
 
 
-The OrderCloud team welcomes any and all open-source contributors to create a
+The OrderCloud team welcomes any and all open-source contributors. Create a
 pull request for bug fixes, enhancements, or new features (pending review).
 
 Prior to writing any code, be sure to open an issue

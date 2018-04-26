@@ -10,13 +10,9 @@ category:Angularjs
 This is where the majority of development work will occur. It contains all of
 the application code, tests, and assets.
 
-
-
-  
-
-  * **src/app/** \- contains all of the application code and corresponding tests
-  * `src/assets/` - static files like fonts and images
-  * **src/index.html** \- this is the HTML document of the single-page application
+* **src/app/** \- contains all of the application code and corresponding tests
+* `src/assets/` - static files like fonts and images
+* **src/index.html** \- this is the HTML document of the single-page application
 
 ## `index.html`
 
@@ -41,16 +37,10 @@ controllerAs syntax below:
 
 
 ```
-
-
-    
-    
     //dynamic application title
     <title ng-bind="application.$state.current.data.pageTitle + (application.$state.current.data.pageTitle ? ' | ' : '') + application.name()">
     OrderCloud
     </title>
-    
-
 ```
 
 After the `<title>`, there are some very important comments that are used to

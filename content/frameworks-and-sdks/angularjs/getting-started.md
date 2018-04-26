@@ -33,12 +33,7 @@ Install the project dependencies:
 
 
 ```
-
-
-    
-    
     $ npm install
-
 ```
 
 If for some reason the `post-install` script fails, reattempt the bower
@@ -47,12 +42,7 @@ install manually:
 
 
 ```
-
-
-    
-    
     $ bower install
-
 ```
 
 ## Local Development
@@ -63,12 +53,7 @@ command:
 
 
 ```
-
-
-    
-    
     $ gulp build
-
 ```
 
 This will pull together everything in the projects `./src/` directory and put
@@ -161,15 +146,8 @@ Runs both the unit and E2E tests
 You can run the following command to compile your code to a production-ready
 state:
 
-
-
 ```
-
-
-    
-    
-    $ gulp compile
-
+  $ gulp compile
 ```
 
 This will concat all similar file types into a single file, minify the code,
@@ -196,23 +174,18 @@ directly to a gh-pages branch for fast and easy demos!
 
 
 ```
-
-
-    
-    
     $ gulp deploy
-
 ```
 
 This will push a compiled version of your working copy directly to your
 default git remote and can be viewed here @ `username.github.io/repository-
 name`.
 
-**Important Note!** Your angular app _must **not**_ be in HTML5 mode for the
+> **Important Note!** Your angular app _must **not**_ be in HTML5 mode for the
 routing on gh-pages to work properly. This can be changed in
 `./src/app/app.constants.json` prior to running the task.
 
-Github pages can take a few minutes (about 10) to propagate before your app
+Github pages can take a few minutes (about 10, in our experience) to propagate before your app
 will become available.
 
 Of course, this is not the only deployment option available. Angular-based
