@@ -3,52 +3,32 @@
   {{ category }} Articles | {{ SITENAME }}
 {% endblock title %}
 {% block content %}
- <div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-md-4">
-      <ul class="nav flex-column">
-        <li class="nav-item dropdown">
-          <a class="h2 nav-link" href="{{ SITEURL }}/{{ category.url }}">{{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}</a>
-          {% for article in articles|sort(attribute='subcategories') %}
-            <li class="nav-item">
-              
-              {% if article.subcategories|count > 0 %}
-                {% if loop.first %}
-                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories|join(', ', attribute='url') }}">{{ article.subcategories|join(', ', attribute='shortname')|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
-                  {% elif loop.previtem is defined and loop.previtem.subcategories != article.subcategories %}
-                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.subcategories[0].url }}">{{ article.subcategories[0].shortname|replace("-", " ")|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
-                {% endif %}
-                {% for subcategory in article.subcategories|sort %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
-                  </li>
-                {% endfor %}
-                
-              {% else %}
-                {% if loop.first %}
-                  <a class="h3 nav-link" href="{{ SITEURL }}/{{ article.category.slug }}">{{ article.category.name|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
-                {% endif %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title|replace("-", " ")|replace("Angularjs", "Angular JS")|replace("Csharp", "C#/.NET")|replace("Api", "API")|replace("Authorizenet", "Authorize.Net")|replace("Shippingrates", "Shipping Rates")|replace("Http", "HTTP") }}</a>
-                </li>
-              {% endif %}
-              
-            </li>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        {% include 'include/side-nav.html' %}
+      <div class="col-sm-8 col-md-8 ">
+        
+        {% block page_header %}
+          {% for page in pages if page.slug == category %}
+            <h1 class = "display">
+            {{page.name}}
           {% endfor %}
-        </li>
-      </ul>
+          </h1>
+        {% endblock page_header %}
+        
+        {% block page_content %}
+          {% for page in pages if page.slug == category %}
+          <div>
+            <h1>{{page.title}}</h1>
+            <p class="lead">
+              {{page.content}}
+            </p>
+          </div>
+          {% endfor %}
+        {% endblock page_content %}
+      </div>
     </div>
-    <div class="col-sm-8 col-md-8 ">
-      
-      <h1 class = "display">
-      {% block page_header %}
-        {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }} Articles
-      {% endblock page_header %}
-      </h1>
-      {% block page_content %}
-        <p class="lead">This is a landing page for {{ category.name|replace("-", " ")|title|replace("Api", "API")|replace("Sdk", "SDK") }}.</p>
-      {% endblock page_content %}
-    </div>
+    
   </div>
-</div>
 {% endblock content %}
