@@ -4,7 +4,6 @@ date: 2018-04-16
 category: Core Concepts
 ---
 
-
 ## Overview
 
 There are basic principles around how assignments work that are critical to

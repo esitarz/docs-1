@@ -7,8 +7,6 @@ category: Getting Started
 
 ## What is OrderCloud.io?
 
-### Overview
-
 OrderCloud.io is a cloud-hosted B2B eCommerce platform exposed entirely via a
 RESTful API. It enables rapid development of custom, secure, and scalable B2B
 eCommerce solutions. Spin up a fully functional B2B app in minutes and
@@ -22,9 +20,7 @@ other approaches are clear.
 
 * * *
 
-
-
-![](assets/images/docs-guides/getting-started/intro/agnostic.jpg)
+![""]({attach}/images/docs-guides/getting-started/intro/agnostic.jpg)
 
 OrderCloud.io enables developers to use their tech stack of choice. Plus,
 releases are automatic and non-breaking; there's a clear, inherent boundary
@@ -35,9 +31,7 @@ well out of the box with JSON-over-HTTP services that follow RESTful patterns.
 
 * * *
 
-
-
-![](assets/images/docs-guides/getting-started/intro/scale.jpg)
+![""]({attach}/images/docs-guides/getting-started/intro/scale.jpg)
 
 Unlike on-premise solutions, server infrastructure and data security are taken
 care of for you. Start small and scale up only as your business usage grows.
@@ -48,12 +42,7 @@ is virtually limitless.
 * * *
 
 OrderCloud.io plays nicely with other similarly architected services. We are
-entering the age of
-[microservices](http://martinfowler.com/articles/microservices.html), where
-best-of-breed solutions are not built from scratch. Rather, they are assembled
-from the best parts. Our "part" is B2B eCommerce and Order Management, a
-complex domain in which we have spent {{documentation.yearsSinceFounding}}
-years building and refining an incredibly rich and flexible data model.
+entering the age of [microservices](http://martinfowler.com/articles/microservices.html), where best-of-breed solutions are not built from scratch. Rather, they are assembled from the best parts. Our "part" is B2B eCommerce and Order Management, a complex domain in which we have spent {{ YEARS_SINCE_FOUNDING }}  years building and refining an incredibly rich and flexible data model.
 
 ## How OrderCloud.io Supports Complex B2B eCommerce
 
@@ -189,29 +178,21 @@ conceivable scenario. Predicting every column in every table that your
 hypothetical database might need is impractical. That's why we created our
 own schema-less solution with Extended Properties (most commonly referred to
 as 'xp') and exposed it on virtually every API resource. For example, our
-User model doesn't define a Gender attribute, but you can easily add one if
+User model doesn't define a FavoriteColor attribute, but you can easily add one if
 you need it:
 
 ```
-
-
-    
-    
-    User.xp.Gender='Male'
-    
+    User.xp.FavoriteColor='Dark Blue'
 
 ```
 
-And later you can get a list of all users that are male
+And later you can get a list of all users with blue as a favorite color:
 
 
 
 ```
 
-
-    
-    
-    GET https://api.ordercloud.io/v1/buyers/exampleBuyerID/users?xp.Gender=Male HTTP/1.1
+    GET https://api.ordercloud.io/v1/buyers/exampleBuyerID/users?xp.FavoriteColor=*blue* HTTP/1.1
     
 
 ```
@@ -224,12 +205,7 @@ endpoints support pagination.
 
 
 ```
-
-
-    
-    
-    GET https://api.ordercloud.io/v1/products?search=foo&searchOn=Name,Description&sortBy=ID&pageSize=100&page=2 HTTP/1.1
-    
+    GET https://api.ordercloud.io/v1/products?search=foo&searchOn=Name,Description&sortBy=ID&pageSize=100&page=2 HTTP/1.1 
 
 ```
 
@@ -245,7 +221,7 @@ to provide maximum flexibility within the integrated solution.
 ## Security
 
 If facilitating billions of dollars worth of transactions over
-{{documentation.yearsSinceFounding}} years in business has taught us one
+{{ YEARS_SINCE_FOUNDING }} years in business has taught us one
 thing, it's that no shortcuts can be taken when it comes to security. We are
 SOC 2 type II and HIPAA Security Rule compliant, and we support the PCI
 compliance of applications accessing our API through appropriate security

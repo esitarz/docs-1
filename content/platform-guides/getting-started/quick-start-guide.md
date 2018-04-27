@@ -18,14 +18,7 @@ in-depth explanations.
 ## Creating an Account
 
 The first thing you will need to do is create an account. Registration is free
-and gives you access to the entire OrderCloud.io platform.
-
-
-
-TODO: Add image once dashboard subdomain design is complete
-
-After you submit your email address, you will be sent a verification code
-which will be required to complete the registration process.
+and gives you access to the entire OrderCloud.io platform. After you register, you will be sent a verification code which will be required to complete the registration process.
 
 ## Your First Seller Organization
 
@@ -57,9 +50,7 @@ a single application on OrderCloud.io. Feel free to use the ClientID from the
 "default access" application that was automatically created on your first
 Seller Organization.
 
-
-
-![](/assets/images/docs-guides/getting-started/quick-start-guide/quick-start-
+![""]({attach}images/docs-guides/getting-started/quick-start-guide/quick-start-
 guide-1.jpg)
 
 The second thing you will need is a list of roles, or in OAuth terms, scope.
@@ -77,39 +68,19 @@ malicious attacks or oblivious users.
 Using your ClientID, roles list, and Dev Center username/password, request an
 access token following the example below:
 
-
-
-  
-
 Request
 
-```
-
-
-    
-    
     POST https://auth.ordercloud.io/oauth/token HTTP/1.1
     client_id=15191541-D508-1Df7-8014-b489C72122E&grant_type=password&username=exampleuser&password=
     examplepass&scope=DevCenterImpersonate+FullAccess
-    
-    
 
-```
-
-
-
-  
 
 Response
 
-```
-
-
-    
-    
     HTTP/1.1 200 OK
     content-type: application/json;
-    
+   
+    :::json
     {
     "access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJ",
     "token_type":"bearer",
@@ -119,8 +90,6 @@ Response
     
     
 
-```
-
 ##  Subsequent Requests
 
 Using the access_token from the OAuth response make your first `GET` request
@@ -129,38 +98,20 @@ the currently authenticated user. (In this case, you will appear as the
 default user because we authenticated as a developer). Make sure you put your
 `access_token` in the Authentication header before making the request.
 
-
-
-  
-
 Request
 
-```
 
-
-    
-    
     GET https://api.ordercloud.io/v1/me HTTP/1.1
     Authentication: Bearer put_access_token_here
     Content-Type: application/json; charset=UTF-8
-    
-
-```
-
-
-
-  
 
 Response
 
-```
-
-
-    
-    
     HTTP/1.1 200 OK
     content-type: application/json;
     
+
+    :::json
     {
     "ID":"424DCA0B-3A82-4A43-9491-70643C042B19",
     "Username":"08AEBA55-1379-4A4B-9148-DE844B522631",
@@ -173,10 +124,4 @@ Response
     "xp": null,
     "SecurityProfileID": null
     }
-    
-    
-
-```
-
-
 

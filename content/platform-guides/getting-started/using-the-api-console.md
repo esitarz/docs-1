@@ -20,9 +20,7 @@ application in the dashboard. If you navigate directly to the console via the
 top navigation, you will be prompted to choose a Seller or Buyer application
 before continuing.
 
-
-
-![](assets/images/docs-guides/getting-started/using-the-api-console/seller-
+![""]({attach}images/docs-guides/getting-started/using-the-api-console/seller-
 and-buyer.png)
 
 ##  Current User
@@ -34,9 +32,7 @@ making you the seller organization's "Default contact user". **This is not a
 real user** , it is simply there to allow developers access to the API before
 any real users have been created.
 
-
-
-![](assets/images/docs-guides/getting-started/using-the-api-console/current-
+![""]({attach}images/docs-guides/getting-started/using-the-api-console/current-
 user.png)
 
 ##  Current Context
@@ -50,9 +46,7 @@ each item.
 By clicking "Change Context" you can open a different OrderCloud application
 without ever leaving the API Console.
 
-
-
-![](assets/images/docs-guides/getting-started/using-the-api-console/current-
+![]({attach}images/docs-guides/getting-started/using-the-api-console/current-
 context.png)
 
 ##  Impersonation
@@ -74,9 +68,7 @@ specific parameter values for the duration of your console session. If you
 know you'll always be working with the same buyer, enter the Buyer ID
 parameter once, click the lock button and forget about it!
 
-
-
-![](assets/images/docs-guides/getting-started/using-the-api-console/lockable-
+![""]({attach}images/docs-guides/getting-started/using-the-api-console/lockable-
 params.png)
 
 ## Making Requests
