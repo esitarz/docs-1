@@ -24,28 +24,26 @@ array stores the actual results of the resource you are querying.
 
 
 
-```
-
-
-    
-    
-    HTTP/1.1 201 CREATED
+    HTTP/1.1 200 SUCCESS
     Content-Type: application/json; charset=UTF-8
-    
+
+    :::json    
     {
-    "Meta": {
-    "Page": 1,
-    "PageSize": 20,
-    "TotalCount": 25,
-    "TotalPages": 2,
-    "ItemRange": [1, 20]
-    },
-    "Items": ["..."]
+        "Meta": {
+            "Page": 1,
+            "PageSize": 20,
+            "TotalCount": 25,
+            "TotalPages": 2,
+            "ItemRange": [
+                1,
+                20
+            ]
+        },
+        "Items": [
+            "..."
+        ]
     }
     
-    
-
-```
 
 Lists default to 20 items per page, but you can set the `pageSize` up to 100.
 If you have more results than the page count, you will have multiple pages.

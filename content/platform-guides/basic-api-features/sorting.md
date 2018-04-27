@@ -17,21 +17,11 @@ the API Reference can be sorted on.
 Perhaps you want to sort the results by the Last Name of the person who placed
 an order. To do this you can simply include the `sortBy` parameter for the
 field you would like to sort by.
-
-
-
-```
-
-
-    
-    
+   
     GET https://api.ordercloud.io/me/orders/incoming?sortBy=!LastName HTTP/1.1
     
 
-```
-
 ##  Combining Queries
 
-Sorting can be mixed and matched with Searching and Filtering to give you
-ultimate control when defining what is returned from a list.
+Sorting can be mixed and matched with [Searching]({filename}searching.md) and [Filtering]({filename}filtering.md) to give you ultimate control when defining what is returned from a list.
 

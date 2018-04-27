@@ -24,14 +24,14 @@ request and response payloads.
 
 ##  Date Format
 
-Dates/times returned in the API are in UTC time and conform to [ISO
+Dates and Times returned in the API are in UTC time and conform to [ISO
 8601](http://en.wikipedia.org/wiki/ISO_8601).
 
 ##  OAuth 2
 
 OrderCloud API authentication is based on the [OAuth 2
 specification](http://tools.ietf.org/html/rfc6749) and supports four different
-workflows, or, in OAuth terms, grant types. Check out our workflows guide to
+workflows, or, in OAuth terms, grant types. Check out our [workflows guide]({filename}/platform-guides/authentication/oauth2-workflows.md) to
 learn more.
 
 ##  Writeable IDs
@@ -47,13 +47,15 @@ responsible for ensuring uniqueness. Things that live under the context of a
 single Buyer need only be unique within that context. Things that are shared
 (such as products) must be unique across the entire Admin organization.
 
+We've also introduced [Incrementors]({filename}/api-reference/Incrementors.md), which allows generated IDs to conform to a specific format.
+
 ##  Error Handling
 
 For all unsuccessful requests, we attempt to return the [most appropriate HTTP
-status in the 400
+status in the `400`
 range](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error).
-Only when something goes terribly wrong on our end will you get a 500
-response. And so long as our platform is responding (i.e. returing anything in
-the 4xx range or 500), you can count on the response body taking a standard
+Only when something goes terribly wrong on our end will you get a `500`
+response. And so long as our platform is responding (i.e. returning anything in
+the `4xx` range or `500`), you can count on the response body taking a standard
 shape.
 

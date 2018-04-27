@@ -17,15 +17,7 @@ For open-ended, Google-esque searches, simply provide a search term.
 
 Request
 
-```
-
-
-    
-    
     GET https://api.ordercloud.io/buyers/xyz/users?search=smith HTTP/1.1
-    
-
-```
 
 This will return all results containing "smith", including "Smith",
 "Smithers", and "McSmith". The fields searched include `FirstName`,`LastName`,
@@ -37,20 +29,9 @@ You can optionally specify which fields (of the searchable fields available)
 are searched by providing a `searchOn` parameter for any field available on
 the resource you're searching.
 
-
-
-```
-
-
-    
-    
     GET https://api.ordercloud.io/buyers/xyz/users?search=smith&searchOn=LastName,UserName HTTP/1.1
-    
-
-```
 
 ##  Combining Queries
 
-Searching can be mixed and matched with Sorting and Filtering to give you
-ultimate control when defining what is returned from a list.
+Searching can be mixed and matched with [Sorting]({filename}sorting.md) and [Filtering]({filename}filtering.md) to give you ultimate control when defining what is returned from a list.
 
