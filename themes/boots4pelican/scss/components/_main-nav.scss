@@ -1,3 +1,21 @@
+// TODO: This probably should not use min-aspect-ratio
 .navbar-brand {
-    min-width: 10vw;
+    img {
+        width: 150px;
+    }
+}
+
+#mainnav {
+    .input-group {
+        .form-control {
+            background-color: transparent;
+            color: white;
+            &::placeholder {
+                color: white;
+            }
+            &:focus {
+                background-color: transparent;
+            }
+        }
+    }
 }
