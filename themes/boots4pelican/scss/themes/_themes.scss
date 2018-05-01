@@ -1,21 +1,35 @@
 //== Ordercloud Colors
 
-$io-blue:           #0C648E;
-$ordercloud-blue:   #0090D6;
-$four51-blue:       #003843;
-$ragheb-red:        #9A0F00;
-$coral-red:         #fb3640;
-$radically-yellow:  #FBD764;
-$sunset-yellow:     #c68900;
-$alien-green:       #00DF61;
-$spanish-green:     #009440;
-$sorbet:            #f26964;
-$curry:             #fab44b;
-$prince-lt:         #4555AD;
-$prince-nelson:     #2d3770;
-$four51-ltgray:     #E4E5E6;
-$four51-dkgray:     #A2A2A2;
-$four51-black:      #231F20;
+$io-blue:                   #0C648E;
+$ordercloud-blue:           #0090D6;
+$four51-blue:               #003843;
+$ragheb-red:                #9A0F00;
+$coral-red:                 #fb3640;
+$radically-yellow:          #FBD764;
+$sunset-yellow:             #c68900;
+$alien-green:               #00DF61;
+$spanish-green:             #009440;
+$sorbet:                    #f26964;
+$curry:                     #fab44b;
+$prince-lt:                 #4555AD;
+$prince-nelson:             #2d3770;
+$four51-ltgray:             #E4E5E6;
+$four51-dkgray:             #A2A2A2;
+$four51-black:              #231F20;
+
+// Bootstrap Colors
+
+$blue:    $io-blue;
+$indigo:  $prince-nelson;
+$purple:  $prince-lt;
+$pink:    $sorbet;
+$red:     $coral-red;
+$orange:  $curry;
+$yellow:  $radically-yellow;
+$green:   $spanish-green;
+$teal:    $alien-green;
+$cyan:    $ordercloud-blue;
+
 
 $ordercloudio-gradient:       linear-gradient(140deg,$ordercloud-blue 0, $io-blue 100%);
 $io-gradient:                 linear-gradient(140deg,$io-blue 0, $ordercloud-blue 100%);
@@ -25,13 +39,3 @@ $purple-rain-lt-gradient:     linear-gradient(140deg,lighten($prince-lt, 10) 0, 
 $ordercloud-four51-gradient:  linear-gradient(140deg,$ordercloud-blue 0, $four51-blue 100%);
 $radically-io-gradient:       linear-gradient(140deg, $sorbet 0, $prince-lt 100%);
 $yellow-gradient:             linear-gradient(140deg, $curry 0, $radically-yellow 100%);
-
-//== Bootstrap Colors
-
-$gray-base:         $four51-black;
-
-$brand-primary:     $io-blue;
-$brand-warning:     $sunset-yellow;
-$brand-danger:      $ragheb-red;
-$brand-success:     $spanish-green;
-$brand-info:        $ordercloud-blue;

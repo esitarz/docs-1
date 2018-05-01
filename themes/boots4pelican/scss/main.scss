@@ -1,3 +1,7 @@
+// Import themes last
+
+@import 'themes/themes';
+
 @import 'abstracts/variables';
 @import 'components/components';
 @import 'global/global';
@@ -10,7 +14,3 @@
 // Add shameful files to be refactored
 
 @import 'shame';
-
-// Import themes last
-
-@import 'themes/themes';
