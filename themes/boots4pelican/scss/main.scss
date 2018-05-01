@@ -1,4 +1,4 @@
-// Import themes last
+// THEMES GOES FIRST IN BOOTSTRAP 4
 
 @import 'themes/themes';
 
@@ -8,8 +8,8 @@
 @import 'layout/layout';
 @import 'pages/pages';
 @import 'vendors/bootstrap/bootstrap',
-        'vendors/fontawesome/fa-regular',
-        'vendors/fontawesome/fontawesome';
+        'vendors/fontawesome/fa-solid',
+        'vendors/fontawesome/fontawesome.scss';
 
 // Add shameful files to be refactored
 
