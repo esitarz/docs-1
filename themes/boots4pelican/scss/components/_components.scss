@@ -1,3 +1,4 @@
-@import 'vendors/bootstrap/_variables.scss';
+@import 'vendors/bootstrap/variables';
 
-@import 'main-nav.scss'
+@import 'nav',
+        'jumbotron';

@@ -1,0 +1,30 @@
+.navbar-brand {
+    img {
+        width: 150px;
+    }
+    color: $primary;
+}
+
+#mainnav {
+    .input-group {
+        .form-control {
+            background-color: transparent;
+            color: white;
+            transition: background-color 250ms ease;
+            -moz-transition: background-color 250ms ease;
+            -webkit-transition: background-color 250ms ease;
+            -o-transition: background-color 250ms ease;
+            -ms-transition: background-color 250ms ease;
+            &::placeholder {
+                color: white;
+            }
+            &:focus {
+                background-color: rgba($white, .25);
+            }
+        }
+    }
+}
+
+#subnav {
+    background-color: transparent;
+}
