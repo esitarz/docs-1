@@ -13,3 +13,9 @@ output/**
 formatted
 themes/pelican-elegant/*
 config.ini
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/static-documentation.iml
+.idea/vcs.xml
+.idea/workspace.xml
