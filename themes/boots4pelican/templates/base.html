@@ -13,7 +13,9 @@
   <link rel="manifest" href="{{ SITEURL }}/manifest.json">
   <meta name="theme-color" content="#333333"> {% endif %} {% assets filters="scss,cssmin", output="css/style.min.css", "main.scss" %}
   <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}"> {% endassets %}
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('default') }}.min.css"> {% include 'include/xml_feeds.html' %} {% block head %}{% endblock %} {% include 'include/analytics.html' %}
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('default') }}.min.css">
+  {% include 'include/xml_feeds.html' %} {% block head %}{% endblock %} {% include 'include/analytics.html' %}
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7423534/6512552/css/fonts.css" />
 </head>
 
 <body>
