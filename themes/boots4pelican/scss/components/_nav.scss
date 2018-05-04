@@ -28,3 +28,20 @@
 #subnav {
     background-color: transparent;
 }
+
+.dropdown {
+    .dropdown-menu {
+        display: block;
+        opacity: 0;
+        -moz-transition: all 250ms ease;
+        -webkit-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        transition: all 250ms ease;
+    }
+    &:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
