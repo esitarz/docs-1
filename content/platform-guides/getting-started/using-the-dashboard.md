@@ -24,7 +24,7 @@ page. Here you can edit your profile information and change your password.
 Below your profile information you should see a _"My Seller Organizations"_
 tab with a new seller organization called _"Default trial company"_.
 
-![]({attach}images/docs-guides/getting-started/dashboard/navigation.jpg)
+![ordercloud navigation]({attach}/images/docs-guides/getting-started/dashboard/navigation.jpg)
 
 Clicking on a seller in this list or creating a new organization will redirect
 you to what we call the **OrderCloud.io Dashboard**. Once you're in the
@@ -55,7 +55,7 @@ access**.
 
 
 
-![]({attach}images/docs-guides/getting-started/dashboard/permissions.jpg)
+![permissions]({attach}/images/docs-guides/getting-started/dashboard/permissions.jpg)
 
 Each permission controls whether or not a given contributor can access
 specific dashboard functionality for your seller organization. For example,
@@ -67,7 +67,7 @@ for your end users.
 
 
 
-![]({attach}images/docs-guides/getting-started/dashboard/data_access.jpg)
+![data access]({attach}/images/docs-guides/getting-started/dashboard/data_access.jpg)
 
 Data Access gives you control over which roles (if any) a given contributor
 can request when using the OrderCloud API with this seller organization or any
@@ -82,7 +82,7 @@ in-depth later in this guide.
 
 
 
-![]({attach}images/docs-guides/getting-started/dashboard/features.jpg)
+![features]({attach}/images/docs-guides/getting-started/dashboard/features.jpg)
 
 The left-hand menu is where you can access each of the dashboard features
 available to you for a given seller organization. Some features such as
@@ -228,7 +228,7 @@ allows only read access.
 
 
 
-![]({attach}images/docs-guides/getting-started/dashboard/security.jpg)
+![security]({attach}/images/docs-guides/getting-started/dashboard/security.jpg)
 
 It is **strongly discouraged** and considered a security risk to give your
 admin or buyer users the `FullAccess` role. While it may be convenient to use
@@ -340,7 +340,7 @@ communicate with the new account.
 
 
 
-![]({attach}images/docs-guides/getting-started/dashboard/authorize_net.jpg)
+![authorize.net]({attach}/images/docs-guides/getting-started/dashboard/authorize_net.jpg)
 
 Any applications that have the configured integration activated will have
 access to use it.
