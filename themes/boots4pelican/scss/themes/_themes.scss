@@ -13,6 +13,7 @@ $sorbet:                    #f26964;
 $curry:                     #fab44b;
 $prince-lt:                 #4555AD;
 $prince-nelson:             #2d3770;
+$white:                     #ffffff;
 $four51-ltgray:             #E4E5E6;
 $four51-dkgray:             #A2A2A2;
 $four51-black:              #231F20;
@@ -39,3 +40,8 @@ $purple-rain-lt-gradient:     linear-gradient(140deg,lighten($prince-lt, 10) 0, 
 $ordercloud-four51-gradient:  linear-gradient(140deg,$ordercloud-blue 0, $four51-blue 100%);
 $radically-io-gradient:       linear-gradient(140deg, $sorbet 0, $prince-lt 100%);
 $yellow-gradient:             linear-gradient(140deg, $curry 0, $radically-yellow 100%);
+
+// Typography
+
+@import url('https://cloud.typography.com/7423534/6512552/css/fonts.css');
+$font-family-sans-serif:  'Gotham A', 'Gotham B', Arial, "Helvetica Neue", Helvetica, sans-serif;
