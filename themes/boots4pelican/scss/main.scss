@@ -1,18 +1,17 @@
-@import
-    'abstracts/variables';
-@import 
-    'components/components';
-@import
-    'global/global';
-@import
-    'layout/layout';
-@import
-    'pages/pages';
-@import
-    'vendors/bootstrap/bootstrap',
-    'vendors/fontawesome/fa-regular',
-    'vendors/fontawesome/fontawesome';
-// Add shameful files to be refactored
-@import 'shame';
-// Import themes last
+// THEMES GOES FIRST IN BOOTSTRAP 4
 @import 'themes/themes';
+
+@import 'vendors/bootstrap/bootstrap';
+
+@import 'abstracts/variables';
+@import 'components/components';
+@import 'global/global';
+@import 'layout/layout';
+@import 'pages/pages';
+
+@import 'vendors/fontawesome/fa-solid',
+        'vendors/fontawesome/fontawesome';
+
+// Add shameful files to be refactored
+
+@import 'shame';
