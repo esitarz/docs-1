@@ -5,9 +5,9 @@
 {% block content %}
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 col-md-4">
+      <div class="col-sm-4">
         {% include 'include/side-nav.html' %}
-      <div class="col-sm-8 col-md-8 ">
+      <div class="col-sm-8">
         
         {% block page_header %}
           {% for page in pages if page.slug == category %}
